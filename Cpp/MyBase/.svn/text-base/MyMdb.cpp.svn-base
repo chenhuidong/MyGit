@@ -1,0 +1,8 @@
+#include "MyMdb.h"
+
+int  main(int argc, char const *argv[])
+{
+	CPocket myrecord(123, 234, 456);
+	cout<<myrecord.m_acct_id.m_iKeyId<<" "<< myrecord.m_amount<<" "<<myrecord.m_deduct_value<<endl;
+	return 0;
+}

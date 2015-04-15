@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/appid8b4vc88dbp/!svn/ver/11/MyProgram/Shell
+END
+exec_files.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/appid8b4vc88dbp/!svn/ver/11/MyProgram/Shell/exec_files.sh
+END
+fast_trust.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/appid8b4vc88dbp/!svn/ver/11/MyProgram/Shell/fast_trust.sh
+END
+dispatch_files.sh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/appid8b4vc88dbp/!svn/ver/11/MyProgram/Shell/dispatch_files.sh
+END
+monitor_files.tar
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/appid8b4vc88dbp/!svn/ver/11/MyProgram/Shell/monitor_files.tar
+END
