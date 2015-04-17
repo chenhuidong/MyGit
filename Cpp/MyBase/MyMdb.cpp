@@ -11,6 +11,7 @@ int  main(int argc, char const *argv[])
         tabPocket.TInsert(rPocketRecord.acct_id, rPocketRecord);	
 
 	//cout<<tabPocket[123].acct_id<<" "<<tabPocket[123].amount<<" "<<tabPocket[123].deduct_value<<endl;
+	cout<<tabPocket[123]<<endl;
 	cout<<tabPocket[234]<<endl;
 	return 0;
 }

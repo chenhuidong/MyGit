@@ -18,10 +18,11 @@ public:
 		return oOutput;
 	}
 
-	void setKeyId(int iKeyId)
-	{
-		m_iKeyId = iKeyId;
-	}
+	//void setKeyId(int iKeyId)
+	//{
+	//	m_iKeyId = iKeyId;
+	//}
+	
 	bool operator < (const CKeyClass& o) const
 	{
 		return m_iKeyId<o.m_iKeyId;
@@ -46,7 +47,6 @@ class CPocketRecord
 {
 public:
 	CPocketRecord():acct_id(0), amount(0), deduct_value(0){}
-	//CPocketRecord(int iAcctId, int iAmount, int iDeductValue):acct_id(iAcctId), amount(iAmount), deduct_value(iDeductValue){}
 	friend ostream &operator<<(ostream &oOutput,const CPocketRecord &o) 
         {
                 oOutput<<o.acct_id<<" "<<o.amount<<" "<<o.deduct_value;
@@ -55,7 +55,7 @@ public:
 
 	void setPocketRecord(int iAcctId, int iAmount, int iDeductValue)
 	{
-		acct_id.setKeyId(iAcctId);
+		acct_id = iAcctId;
 		amount = iAmount;
 		deduct_value = iDeductValue;
 	}
