@@ -71,9 +71,6 @@ public:
 	FILED(int deduct_value);
 };
 
-//int CPocketRecord::_oid = 0;
-
-
 class CPocket: public MyTable<CPocketRecord>
 {
 //public:
