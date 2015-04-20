@@ -6,6 +6,7 @@
 class CKeyClass;
 #define KEY(key) CKeyClass key
 #define FILED(filed) filed
+#define TOID {int _oid}
 
 class CKeyClass
 {
@@ -37,7 +38,7 @@ class MyTable: public map<CKeyClass, T>
 {
 public:
 	MyTable():m_iSequence(0){}
-	
+
 	void TInsert(CKeyClass &oKeyObj, T &oValueObj)
 	{
 		oValueObj._oid = m_iSequence++;
@@ -64,7 +65,8 @@ public:
 		amount = iAmount;
 		deduct_value = iDeductValue;
 	}
-	int _oid;
+
+	TOID;
 	KEY(acct_id);
 	FILED(int amount);
 	FILED(int deduct_value);
