@@ -36,13 +36,15 @@ template <class T>
 class MyTable: public map<CKeyClass, T>
 {
 public:
+	MyTable():m_iSequence(0){}
+	
 	void TInsert(CKeyClass &oKeyObj, T &oValueObj)
 	{
 		oValueObj._oid = m_iSequence++;
 		insert( make_pair( oKeyObj, oValueObj));
 	}
 
-	int m_iSequence = 0;
+	int m_iSequence;
 };
 
 
