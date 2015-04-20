@@ -38,20 +38,24 @@ class MyTable: public map<CKeyClass, T>
 public:
 	void TInsert(CKeyClass &oKeyObj, T &oValueObj)
 	{
+		oValueObj._oid = m_iSequence++;
 		insert( make_pair( oKeyObj, oValueObj));
 	}
 
+	static int m_iSequence;
 };
+
+int MyTable::m_iSequence = 0;
 
 class CPocketRecord
 {
 public:
 	CPocketRecord():acct_id(0), amount(0), deduct_value(0){}
 	friend ostream &operator<<(ostream &oOutput,const CPocketRecord &o) 
-        {
-                oOutput<<o.acct_id<<" "<<o.amount<<" "<<o.deduct_value;
-                return oOutput;
-        }	
+	{
+		oOutput<<o._oid<<" "<<o.acct_id<<" "<<o.amount<<" "<<o.deduct_value;
+		return oOutput;
+	}	
 
 	void setPocketRecord(int iAcctId, int iAmount, int iDeductValue)
 	{
@@ -59,15 +63,18 @@ public:
 		amount = iAmount;
 		deduct_value = iDeductValue;
 	}
+	int _oid;
 	KEY(acct_id);
 	FILED(int amount);
 	FILED(int deduct_value);
 };
 
+//int CPocketRecord::_oid = 0;
+
 
 class CPocket: public MyTable<CPocketRecord>
 {
-
+//public:
 };
 
 
