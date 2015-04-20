@@ -6,7 +6,6 @@
 class CKeyClass;
 #define KEY(key) CKeyClass key
 #define FILED(filed) filed
-#define TOID {int _oid}
 
 class CKeyClass
 {
@@ -66,7 +65,7 @@ public:
 		deduct_value = iDeductValue;
 	}
 
-	TOID;
+	int _oid;
 	KEY(acct_id);
 	FILED(int amount);
 	FILED(int deduct_value);
