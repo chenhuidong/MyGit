@@ -42,10 +42,10 @@ public:
 		insert( make_pair( oKeyObj, oValueObj));
 	}
 
-	static int m_iSequence;
+	static int m_iSequence = 0;
 };
 
-int MyTable::m_iSequence = 0;
+//int MyTable::m_iSequence = 0;
 
 class CPocketRecord
 {
