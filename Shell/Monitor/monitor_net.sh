@@ -19,7 +19,8 @@ function networkAndFtp()
     else  
         #ÍÂ²»³©ͨ 		
 	#sudo /etc/init.d/networking restart
-	echo "NO"		
+	echo "NO"
+        sudo shutdown -r now
     fi  
 }
 
