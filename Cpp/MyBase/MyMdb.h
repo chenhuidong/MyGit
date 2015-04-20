@@ -26,7 +26,7 @@ template <class T>
 class MyTable: public map<CKeyClass, T>
 {
 public:
-	void TInsert(CKeyClass oKeyObj, T oValueObj)
+	void TInsert(CKeyClass &oKeyObj, T &oValueObj)
 	{
 		insert( make_pair( oKeyObj, oValueObj));
 	}
