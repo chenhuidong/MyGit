@@ -8,7 +8,7 @@ class Factory
 { 
 public: 
 	virtual ~Factory() = 0;
-	virtual Product* CreateProduct(const char* strConcreteProduct) = 0;
+	virtual Product& CreateProduct(const char* strConcreteProduct) = 0;
 protected: 
 	Factory();
 private:
@@ -19,7 +19,7 @@ class ConcreteFactory:public Factory
 public:
 	~ConcreteFactory();
 	ConcreteFactory();
-	Product* CreateProduct(const char* strConcreteProduct);
+	Product& CreateProduct(const char* strConcreteProduct);
 protected:
 private:
 };
