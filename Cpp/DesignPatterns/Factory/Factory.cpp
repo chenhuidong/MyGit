@@ -12,7 +12,7 @@ ConcreteFactory::ConcreteFactory()
 
 ConcreteFactory::~ConcreteFactory() {}
 
-Product* ConcreteFactory::CreateProduct(const char* strConcreteProduct) 
+Product& ConcreteFactory::CreateProduct(const char* strConcreteProduct) 
 { 
 	if(strcmp(strConcreteProduct, "ConcreteProduct1") == 0)
 		return new ConcreteProduct1();
