@@ -1,6 +1,7 @@
 //Factory.h
 #ifndef _FACTORY_H_ 
 #define _FACTORY_H_
+#include "../../stdafx.h"
 
 class Product;
 class Factory 
