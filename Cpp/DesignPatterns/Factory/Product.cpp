@@ -6,10 +6,24 @@ using namespace std;
 Product::Product() {}
 Product::~Product() {}
 
-ConcreteProduct::ConcreteProduct() 
+ConcreteProduct1::ConcreteProduct1() 
 { 
-	cout<<"ConcreteProduct...."<<endl; 
+	cout<<"ConcreteProduct1...."<<endl; 
 }
 
-ConcreteProduct::~ConcreteProduct() {}
+ConcreteProduct1::~ConcreteProduct1() {}
 
+
+ConcreteProduct2::ConcreteProduct2() 
+{ 
+	cout<<"ConcreteProduct2...."<<endl; 
+}
+
+ConcreteProduct2::~ConcreteProduct2() {}
+
+ConcreteProduct3::ConcreteProduct3() 
+{ 
+	cout<<"ConcreteProduct3...."<<endl; 
+}
+
+ConcreteProduct3::~ConcreteProduct3() {}
