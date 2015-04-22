@@ -1,8 +1,7 @@
 //main.cpp
 #include "Factory.h" 
 #include "Product.h"
-#include <iostream> 
-using namespace std;
+#include "../../stdafx.h"
 
 int main(int argc,char* argv[]) 
 { 
