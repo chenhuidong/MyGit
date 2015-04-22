@@ -12,7 +12,7 @@ ConcreteFactory::ConcreteFactory()
 	cout<<"ConcreteFactory....."<<endl; 
 }
 
-ConcreteFactory::~ConcreteFactory(){}
+ConcreteFactory::~ConcreteFactory() {}
 
 Product* ConcreteFactory::CreateProduct() 
 { 
