@@ -16,11 +16,12 @@ ConcreteFactory::~ConcreteFactory() {}
 
 Product* ConcreteFactory::CreateProduct(const char* strConcreteProduct) 
 { 
-	switch(strConcreteProduct)
-	{
-		case "ConcreteProduct1":return new ConcreteProduct1();
-		case "ConcreteProduct2":return new ConcreteProduct2();
-		case "ConcreteProduct3":return new ConcreteProduct3();
-		default:return null;
-	} 
+	if(strcmp(strConcreteProduct, "ConcreteProduct1") == 0)
+		return new ConcreteProduct1();
+	else if (strcmp(strConcreteProduct, "ConcreteProduct2") == 0)
+		return new ConcreteProduct2();
+	else if (strcmp(strConcreteProduct, "ConcreteProduct3") == 0)
+		return new ConcreteProduct4();
+	else 
+		return null;
 }
