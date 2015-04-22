@@ -1,8 +1,6 @@
 //Factory.cpp
 #include "Factory.h"
 #include "Product.h"
-#include <iostream> 
-using namespace std;
 
 Factory::Factory() {}
 Factory::~Factory() {}
@@ -23,5 +21,5 @@ Product* ConcreteFactory::CreateProduct(const char* strConcreteProduct)
 	else if (strcmp(strConcreteProduct, "ConcreteProduct3") == 0)
 		return new ConcreteProduct4();
 	else 
-		return null;
+		return NULL;
 }
