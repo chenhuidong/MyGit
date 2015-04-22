@@ -7,7 +7,7 @@ class Factory
 { 
 public: 
 	virtual ~Factory() = 0;
-	//virtual Product* CreateProduct() = 0;
+	virtual Product* CreateProduct() = 0;
 protected: 
 	Factory();
 private:
@@ -18,9 +18,7 @@ class ConcreteFactory:public Factory
 public:
 	~ConcreteFactory();
 	ConcreteFactory();
-	Product* CreateProduct1();
-	Product* CreateProduct2();
-	Product* CreateProduct3();
+	Product* CreateProduct();
 protected:
 private:
 };

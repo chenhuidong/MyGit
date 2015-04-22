@@ -14,17 +14,7 @@ ConcreteFactory::ConcreteFactory()
 
 ConcreteFactory::~ConcreteFactory() {}
 
-Product* ConcreteFactory::CreateProduct1() 
+Product* ConcreteFactory::CreateProduct() 
 { 
-	return new ConcreteProduct1(); 
-}
-
-Product* ConcreteFactory::CreateProduct2() 
-{ 
-	return new ConcreteProduct2(); 
-}
-
-Product* ConcreteFactory::CreateProduct3() 
-{ 
-	return new ConcreteProduct3(); 
+	return new ConcreteProduct(); 
 }
