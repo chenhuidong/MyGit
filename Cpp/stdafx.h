@@ -7,6 +7,7 @@
 #include <map>
 #include <set>
 #include <sys/types.h>
+#include <string>
 using namespace std;
 
 #define  ___ANONYMOUS1(var, line)  var##line
