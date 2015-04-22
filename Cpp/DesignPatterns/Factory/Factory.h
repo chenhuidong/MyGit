@@ -1,5 +1,6 @@
 //Factory.h
-#ifndef _FACTORY_H_ #define _FACTORY_H_
+#ifndef _FACTORY_H_ 
+#define _FACTORY_H_
 
 class Product;
 class Factory 
@@ -21,4 +22,5 @@ public:
 protected:
 private:
 };
+
 #endif //~_FACTORY_H_
