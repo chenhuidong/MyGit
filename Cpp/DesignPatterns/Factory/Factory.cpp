@@ -16,5 +16,11 @@ ConcreteFactory::~ConcreteFactory() {}
 
 Product* ConcreteFactory::CreateProduct(const char* strConcreteProduct) 
 { 
-	return new ConcreteProduct1(); 
+	switch(strConcreteProduct)
+	{
+		case "ConcreteProduct1":return new ConcreteProduct1();
+		case "ConcreteProduct2":return new ConcreteProduct2();
+		case "ConcreteProduct3":return new ConcreteProduct3();
+		default:return null;
+	} 
 }
