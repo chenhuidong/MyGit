@@ -12,6 +12,10 @@ ConcreteProduct1::ConcreteProduct1()
 }
 
 ConcreteProduct1::~ConcreteProduct1() {}
+void ConcreteProduct1::test() 
+{
+	cout<<"test1"<<endl;
+}
 
 
 ConcreteProduct2::ConcreteProduct2() 

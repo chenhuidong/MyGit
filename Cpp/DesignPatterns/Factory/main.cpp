@@ -9,5 +9,7 @@ int main(int argc,char* argv[])
 	Product* p1 = fac->CreateProduct("ConcreteProduct1");
 	Product* p2 = fac->CreateProduct("ConcreteProduct2");
 	Product* p3 = fac->CreateProduct("ConcreteProduct3");
+
+	p1->test();
 	return 0; 
 }

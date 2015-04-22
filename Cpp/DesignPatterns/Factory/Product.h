@@ -17,6 +17,7 @@ class ConcreteProduct1:public Product
 public: 
 	~ConcreteProduct1();
 	ConcreteProduct1(); 
+	void test();
 protected:
 private:
 };
