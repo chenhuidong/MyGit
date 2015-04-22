@@ -11,5 +11,5 @@ ConcreteProduct::ConcreteProduct()
 	cout<<"ConcreteProduct...."<<endl; 
 }
 
-ConcreteProduct::~ConcreteProduct(){}
+ConcreteProduct::~ConcreteProduct() {}
 
