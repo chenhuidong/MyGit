@@ -19,7 +19,7 @@ Product* ConcreteFactory::CreateProduct(const char* strConcreteProduct)
 	else if (strcmp(strConcreteProduct, "ConcreteProduct2") == 0)
 		return new ConcreteProduct2();
 	else if (strcmp(strConcreteProduct, "ConcreteProduct3") == 0)
-		return new ConcreteProduct4();
+		return new ConcreteProduct3();
 	else 
-		return (Product *)NULL;
+		return NULL;
 }
