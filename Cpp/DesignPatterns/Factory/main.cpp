@@ -7,6 +7,6 @@ using namespace std;
 int main(int argc,char* argv[]) 
 { 
 	Factory* fac = new ConcreteFactory();
-	Product* p1 = fac->CreateProduct();
+	Product* p1 = fac->CreateProduct("fdsaf");
 	return 0; 
 }

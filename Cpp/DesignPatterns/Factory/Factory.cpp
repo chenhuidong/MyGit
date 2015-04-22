@@ -14,7 +14,7 @@ ConcreteFactory::ConcreteFactory()
 
 ConcreteFactory::~ConcreteFactory() {}
 
-Product* ConcreteFactory::CreateProduct() 
+Product* ConcreteFactory::CreateProduct(const char* strConcreteProduct) 
 { 
 	return new ConcreteProduct1(); 
 }
