@@ -18,7 +18,9 @@ class ConcreteFactory:public Factory
 public:
 	~ConcreteFactory();
 	ConcreteFactory();
-	Product* CreateProduct();
+	Product* CreateProduct1();
+	Product* CreateProduct2();
+	Product* CreateProduct3();
 protected:
 private:
 };
