@@ -21,4 +21,6 @@ public:
 	ProductPart* BuildPart();
 protected:
 private:
-}; #endif //~_PRODUCT_H_
+}; 
+
+#endif //~_PRODUCT_H_

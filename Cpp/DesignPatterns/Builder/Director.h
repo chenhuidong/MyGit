@@ -13,4 +13,5 @@ protected:
 private: 
 	Builder* _bld;
 };
+
 #endif //~_DIRECTOR_H_
