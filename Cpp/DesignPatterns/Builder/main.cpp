@@ -9,5 +9,6 @@ int main(int argc,char* argv[])
 	Director* pDirector = new Director(pBuild);
 	pDirector->Construct();
 	Product * pProduct= pBuild->GetProduct();
+	cout<<pProduct->getPartA()<<" "<<pProduct->getPartB()<<" "pProduct->getPartC()<<endl;
 	return 0; 
 }
