@@ -2,6 +2,7 @@
 #include "Factory.h"
 #include "Product.h"
 
+/*
 Factory::Factory() {}
 Factory::~Factory() {}
 
@@ -22,4 +23,21 @@ Product* ConcreteFactory::CreateProduct(const char* strConcreteProduct)
 		return new ConcreteProduct3();
 	else 
 		return NULL;
+}
+*/
+
+Factory::Factory() {}
+Factory::~Factory() {}
+
+AbstractFactory::AbstractFactory() 
+{ 
+	cout<<"AbstractFactory....."<<endl; 
+}
+
+AbstractFactory::~AbstractFactory() {}
+
+template <class T>
+Product* AbstractFactory::CreateProduct(T t) 
+{ 
+	return new T();
 }

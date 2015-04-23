@@ -4,6 +4,7 @@
 #include "../../stdafx.h"
 
 class Product;
+/*
 class Factory 
 { 
 public: 
@@ -14,6 +15,7 @@ protected:
 private:
 };
 
+
 class ConcreteFactory:public Factory 
 { 
 public:
@@ -22,6 +24,26 @@ public:
 	Product* CreateProduct(const char* strConcreteProduct);
 protected:
 private:
+};
+*/
+class Factory 
+{ 
+public: 
+	virtual ~Factory() = 0;
+	template <class T>
+	virtual Product* CreateProduct(T t) = 0;
+protected: 
+	Factory();
+private:
+};
+
+class AbstractFactory:public Factory
+{
+public:
+	~AbstractFactory();
+	AbstractFactory();
+	template <class T>
+	Product * CreateProduct(T t);
 };
 
 #endif //~_FACTORY_H_
