@@ -11,19 +11,19 @@ Product::~Product()
 	cout<<"bulided a product.."<<endl; 
 }
 
-void setPartA(const string& s)
+void Product::setPartA(const string& s)
 {
 	m_strA = s;
 	cout<<"builded partA of product.."<<endl; 
 }
 
-void setPartB(const string& s)
+void Product::setPartB(const string& s)
 {
 	m_strB = s;
 	cout<<"builded partB of product.."<<endl; 
 }
 
-void setPartC(const string& s)
+void Product::setPartC(const string& s)
 {
 	m_strC = s;
 	cout<<"builded partC of product.."<<endl; 
