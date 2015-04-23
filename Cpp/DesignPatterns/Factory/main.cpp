@@ -13,6 +13,7 @@ int main(int argc,char* argv[])
 	((ConcreteProduct1 *)p1)->test();
 	*/
 	AbstractFactory * fac = new AbstractFactory();
+	fac->CreateProduct(ConcreteProduct1 t);
 	//Product* p1 = fac->CreateProduct(ConcreteProduct1);
 	return 0;
 }
