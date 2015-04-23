@@ -38,7 +38,7 @@ private:
 };
 
 template <class T>
-class AbstractFactory: public Factory
+class AbstractFactory:public Factory
 {
 public:
 	~AbstractFactory();
