@@ -31,7 +31,6 @@ class Factory
 { 
 public: 
 	virtual ~Factory() = 0;
-	template <class T>
 	virtual Product* CreateProduct() = 0;
 protected: 
 	Factory();
