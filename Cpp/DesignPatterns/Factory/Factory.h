@@ -26,18 +26,8 @@ protected:
 private:
 };
 */
-class Factory 
-{ 
-public: 
-	virtual ~Factory() = 0;
-	template <class T>
-	virtual Product* CreateProduct(T t) = 0;
-protected: 
-	Factory();
-private:
-};
 
-class AbstractFactory:public Factory
+class AbstractFactory
 {
 public:
 	~AbstractFactory();
