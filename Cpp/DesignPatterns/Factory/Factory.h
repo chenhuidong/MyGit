@@ -26,9 +26,20 @@ protected:
 private:
 };
 */
+template <class T>
+class Factory 
+{ 
+public: 
+	virtual ~Factory() = 0;
+	template <class T>
+	virtual Product* CreateProduct() = 0;
+protected: 
+	Factory();
+private:
+};
 
 template <class T>
-class AbstractFactory
+class AbstractFactory: public Factory
 {
 public:
 	~AbstractFactory();

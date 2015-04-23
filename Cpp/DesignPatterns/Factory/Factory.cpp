@@ -26,6 +26,8 @@ Product* ConcreteFactory::CreateProduct(const char* strConcreteProduct)
 }
 */
 
+Factory::Factory() {}
+Factory::~Factory() {}
 
 AbstractFactory::AbstractFactory() 
 { 
