@@ -5,7 +5,8 @@
 
 int main(int argc,char* argv[]) 
 {
-	Director* d = new Director(new ConcreteBuilder());
-	d->Construct();
+	ConcreteBuilder* pBuild = new ConcreteBuilder();
+	Director* pDir = new Director(pBuild);
+	pDir->Construct();
 	return 0; 
 }
