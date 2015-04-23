@@ -1,6 +1,7 @@
 //Product.h
 #ifndef _PRODUCT_H_ 
 #define _PRODUCT_H_
+#include "../../stdafx.h"
 
 class Product 
 { 

@@ -1,8 +1,7 @@
 //Builder.h
 #ifndef _BUILDER_H_ 
 #define _BUILDER_H_
-#include <string> 
-using namespace std;
+#include "../../stdafx.h"
 
 class Product;
 class Builder 
