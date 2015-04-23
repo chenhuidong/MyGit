@@ -11,5 +11,5 @@ int main(int argc,char* argv[])
 	Product* p3 = fac->CreateProduct("ConcreteProduct3");
 
 	((ConcreteProduct1 *)p1)->test();
-	return 0; 
+	return 0;
 }
