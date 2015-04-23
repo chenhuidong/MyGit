@@ -1,5 +1,5 @@
 //Director.cpp
-#include "director.h" 
+#include "Director.h" 
 #include "Builder.h"
 
 Director::Director(Builder* bld) 
