@@ -29,17 +29,17 @@ void Product::setPartC(const string& s)
 	cout<<"builded partC of product.."<<endl; 
 }
 
-const string& getPartA()
+const string& Product::getPartA()
 {
 	return m_strA;
 }
 
-const string& getPartB()
+const string& Product::getPartB()
 {
 	return m_strB;
 }
 
-const string& getPartC()
+const string& Product::getPartC()
 {
 	return m_strC;
 }
