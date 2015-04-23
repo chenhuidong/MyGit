@@ -1,15 +1,13 @@
 //Builder.cpp
 #include "Builder.h" 
 #include "Product.h"
-#include <iostream>
-using namespace std;
 
 Builder::Builder() {}
 Builder::~Builder() {}
 
 ConcreteBuilder::ConcreteBuilder()
 {
-	cout<<"concrete bulider..."<<buildPara<<endl; 
+	cout<<"concrete bulider..."<<endl; 
 	m_pProduct = new Product();
 }
 
