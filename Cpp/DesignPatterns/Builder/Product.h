@@ -8,19 +8,14 @@ class Product
 public: 
 	Product();
 	~Product();
-	void ProducePart();
+	void setPartA(const string& s);
+	void setPartB(const string& s);
+	void setPartC(const string& s);
 protected:
 private:
+	string m_strA;
+	string m_strB;
+	string m_strC;
 };
-
-class ProductPart 
-{ 
-public: 
-	ProductPart();
-	~ProductPart();
-	ProductPart* BuildPart();
-protected:
-private:
-}; 
 
 #endif //~_PRODUCT_H_

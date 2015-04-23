@@ -12,7 +12,8 @@ public:
 	virtual void BuildPartB(const string& buildPara) = 0;
 	virtual void BuildPartC(const string& buildPara) = 0;
 	virtual Product* GetProduct() = 0;
-	protected: Builder();
+protected: 
+	Builder();
 
 private:
 };
@@ -28,6 +29,7 @@ public:
 	Product* GetProduct();
 protected: 
 private:
+	Product *m_pProduct;
 };
 
 #endif //~_BUILDER_H_

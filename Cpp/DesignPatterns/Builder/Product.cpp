@@ -3,29 +3,28 @@
 
 Product::Product() 
 { 
-	ProducePart();
-	cout<<"return a product"<<endl; 
+	cout<<"bulid a product.."<<endl; 
 }
 
 Product::~Product() 
 {
+	cout<<"bulided a product.."<<endl; 
 }
 
-void Product::ProducePart() 
-{ 
-	cout<<"build part of product.."<<endl; 
-}
-
-ProductPart::ProductPart() 
-{ 
-	cout<<"build productpart.."<<endl; 
-}
-
-ProductPart::~ProductPart() 
+void setPartA(const string& s)
 {
+	m_strA = s;
+	cout<<"builded partA of product.."<<endl; 
 }
 
-ProductPart* ProductPart::BuildPart() 
-{ 
-	return new ProductPart; 
+void setPartB(const string& s)
+{
+	m_strB = s;
+	cout<<"builded partB of product.."<<endl; 
+}
+
+void setPartC(const string& s)
+{
+	m_strC = s;
+	cout<<"builded partC of product.."<<endl; 
 }

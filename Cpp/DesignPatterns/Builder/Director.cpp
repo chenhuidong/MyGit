@@ -7,11 +7,15 @@ Director::Director(Builder* bld)
 	_bld = bld;
 }
 
-Director::~Director() {}
+Director::~Director() 
+{
+	delete _bld;
+	_bld = NULL;
+}
 
 void Director::Construct() 
 { 
-	_bld->BuildPartA("user-defined"); 
-	_bld->BuildPartB("user-defined"); 
-	_bld->BuildPartC("user-defined"); 
+	_bld->BuildPartA("partA"); 
+	_bld->BuildPartB("partB"); 
+	_bld->BuildPartC("partC"); 
 }
