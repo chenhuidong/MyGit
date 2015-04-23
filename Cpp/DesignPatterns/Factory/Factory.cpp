@@ -35,7 +35,7 @@ AbstractFactory::AbstractFactory()
 AbstractFactory::~AbstractFactory() {}
 
 template <class T>
-Product* AbstractFactory::CreateProduct(T t) 
+Product* AbstractFactory::CreateProduct() 
 { 
 	return new T();
 }

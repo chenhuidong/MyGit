@@ -27,13 +27,14 @@ private:
 };
 */
 
+template <class T>
 class AbstractFactory
 {
 public:
 	~AbstractFactory();
 	AbstractFactory();
 	template <class T>
-	Product * CreateProduct(T t);
+	Product * CreateProduct();
 };
 
 #endif //~_FACTORY_H_
