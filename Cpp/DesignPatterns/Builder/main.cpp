@@ -10,5 +10,9 @@ int main(int argc,char* argv[])
 	pDirector->Construct();
 	Product * pProduct= pBuild->GetProduct();
 	cout<<pProduct->getPartA()<<" "<<pProduct->getPartB()<<" "<<pProduct->getPartC()<<endl;
+	delete pDirector;
+	pDirector = NULL;
+	delete pProduct;
+	pProduct = NULL;
 	return 0; 
 }
