@@ -13,8 +13,9 @@ ConcreteBuilder::ConcreteBuilder()
 
 ConcreteBuilder::~ConcreteBuilder() 
 {
-	//delete m_pProduct;
-	//m_pProduct = NULL;
+	delete m_pProduct;
+	m_pProduct = NULL;
+	cout<<"ConcreteBuilder delete"<<endl;
 }
 
 void ConcreteBuilder::BuildPartA(const string& buildPara) 

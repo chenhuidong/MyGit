@@ -11,6 +11,7 @@ Director::~Director()
 {
 	delete _bld;
 	_bld = NULL;
+	cout<<"director delete"<<endl;
 }
 
 void Director::Construct() 
