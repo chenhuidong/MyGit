@@ -28,3 +28,18 @@ void Product::setPartC(const string& s)
 	m_strC = s;
 	cout<<"builded partC of product.."<<endl; 
 }
+
+const string& getPartA()
+{
+	return m_strA;
+}
+
+const string& getPartB()
+{
+	return m_strB;
+}
+
+const string& getPartC()
+{
+	return m_strC;
+}

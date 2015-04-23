@@ -11,6 +11,9 @@ public:
 	void setPartA(const string& s);
 	void setPartB(const string& s);
 	void setPartC(const string& s);
+	const string& getPartA();
+	const string& getPartB();
+	const string& getPartC();
 protected:
 private:
 	string m_strA;
