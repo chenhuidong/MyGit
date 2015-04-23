@@ -5,17 +5,12 @@
 
 int main(int argc,char* argv[]) 
 { 
-	/*Factory* fac = new ConcreteFactory();
+	Factory* fac = new ConcreteFactory();
 	Product* p1 = fac->CreateProduct("ConcreteProduct1");
 	Product* p2 = fac->CreateProduct("ConcreteProduct2");
 	Product* p3 = fac->CreateProduct("ConcreteProduct3");
 
 	((ConcreteProduct1 *)p1)->test();
-	*/
-	//AbstractFactory * fac = new AbstractFactory();
-	//fac->CreateProduct(ConcreteProduct1 t);
-	//Product* p1 = fac->CreateProduct(ConcreteProduct1);
-	Factory* fac = new AbstractFactory<ConcreteProduct1>();
-	Product* p1 = fac->CreateProduct();
+
 	return 0;
 }
