@@ -13,6 +13,6 @@ int main(int argc,char* argv[])
 	delete pDirector;
 	pDirector = NULL;
 	delete pBuild;
-	pProduct = NULL;
+	pBuild = NULL;
 	return 0; 
 }

@@ -10,8 +10,6 @@ Director::Director(Builder* bld)
 
 Director::~Director() 
 {
-	delete _bld;
-	_bld = NULL;
 	cout<<"director end..."<<endl;
 }
 
