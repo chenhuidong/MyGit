@@ -3,12 +3,12 @@
 
 Product::Product() 
 { 
-	cout<<"bulid a product.."<<endl; 
+	cout<<"product begin.."<<endl; 
 }
 
 Product::~Product() 
 {
-	cout<<"bulided a product.."<<endl; 
+	cout<<"product end.."<<endl; 
 }
 
 void Product::setPartA(const string& s)
@@ -20,13 +20,13 @@ void Product::setPartA(const string& s)
 void Product::setPartB(const string& s)
 {
 	m_strB = s;
-	cout<<"builded partB of product.."<<endl; 
+	cout<<"builded partB of product..."<<endl; 
 }
 
 void Product::setPartC(const string& s)
 {
 	m_strC = s;
-	cout<<"builded partC of product.."<<endl; 
+	cout<<"builded partC of product..."<<endl; 
 }
 
 const string& Product::getPartA()

@@ -7,7 +7,7 @@ Builder::~Builder() {}
 
 ConcreteBuilder::ConcreteBuilder()
 {
-	cout<<"concrete bulider..."<<endl; 
+	cout<<"concretebulider begin..."<<endl; 
 	m_pProduct = new Product();
 }
 
@@ -15,7 +15,7 @@ ConcreteBuilder::~ConcreteBuilder()
 {
 	delete m_pProduct;
 	m_pProduct = NULL;
-	cout<<"ConcreteBuilder delete"<<endl;
+	cout<<"ConcreteBuilder end..."<<endl;
 }
 
 void ConcreteBuilder::BuildPartA(const string& buildPara) 

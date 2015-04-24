@@ -5,13 +5,14 @@
 Director::Director(Builder* bld) 
 { 
 	_bld = bld;
+	cout<<"director begin..."<<endl;
 }
 
 Director::~Director() 
 {
 	delete _bld;
 	_bld = NULL;
-	cout<<"director delete"<<endl;
+	cout<<"director end..."<<endl;
 }
 
 void Director::Construct() 

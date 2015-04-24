@@ -12,7 +12,7 @@ int main(int argc,char* argv[])
 	cout<<pProduct->getPartA()<<" "<<pProduct->getPartB()<<" "<<pProduct->getPartC()<<endl;
 	delete pDirector;
 	pDirector = NULL;
-	delete pProduct;
+	delete pBuild;
 	pProduct = NULL;
 	return 0; 
 }
