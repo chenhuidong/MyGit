@@ -1,5 +1,5 @@
 //Adapter.cpp
-#include "Adapter.h"
+#include "Adapter1.h"
 #include <iostream>
 
 Target::Target() {}

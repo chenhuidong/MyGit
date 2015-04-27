@@ -1,5 +1,5 @@
 //main.cpp
-#include "Adapter.h"
+#include "Adapter1.h"
 #include <iostream> 
 using namespace std;
 
