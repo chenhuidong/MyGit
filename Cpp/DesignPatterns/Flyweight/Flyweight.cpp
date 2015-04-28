@@ -23,5 +23,5 @@ ConcreteFlyweight::~ConcreteFlyweight() {}
 
 void ConcreteFlyweight::Operation(const string& extrinsicState) 
 { 
-	cout<<"ConcreteFlyweight:M "<<this->GetIntrinsicState()<<" V"<<extrinsicState<<" "<<endl; 
+	cout<<"ConcreteFlyweight:M "<<this->GetIntrinsicState()<<" V "<<extrinsicState<<" "<<endl; 
 }
