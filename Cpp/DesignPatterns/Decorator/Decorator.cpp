@@ -26,7 +26,7 @@ ConcreteDecorator::ConcreteDecorator(Component* com):Decorator(com) {}
 ConcreteDecorator::~ConcreteDecorator() {}
 void ConcreteDecorator::AddedBehavior() 
 { 
-	std::cout<<"ConcreteDecorator::AddedBehacior...."<<std::endl; 
+	std::cout<<"ConcreteDecorator::AddedBehavior...."<<std::endl; 
 } 
 void ConcreteDecorator::Operation() 
 { 
