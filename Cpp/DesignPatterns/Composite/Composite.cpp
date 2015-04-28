@@ -1,7 +1,7 @@
 //Composite.cpp
 #include "Composite.h" 
 #include "Component.h"
-#define NULL 0 //define NULL POINTOR
+//#define NULL 0 //define NULL POINTOR
 
 Composite::Composite() 
 { 
