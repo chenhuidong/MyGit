@@ -10,6 +10,7 @@ int main(int argc,char* argv[])
 	Flyweight* fw1 = fc->GetFlyweight("hello"); 
 	Flyweight* fw2 = fc->GetFlyweight("world!");
 	Flyweight* fw3 = fc->GetFlyweight("hello");
-	fw1->Operation();
+	fw1->Operation("hello");
+	fw2->Operation("world!");
 	return 0; 
 }
