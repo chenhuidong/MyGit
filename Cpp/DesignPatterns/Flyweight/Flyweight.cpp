@@ -8,7 +8,10 @@ Flyweight::Flyweight(string intrinsicState)
 	this->_intrinsicState = intrinsicState; 
 }
 Flyweight::~Flyweight() {}
-void Flyweight::Operation(const string& extrinsicState) {}
+void Flyweight::Operation(const string& extrinsicState) 
+{
+	cout<<"fds"<<endl;
+}
 
 string Flyweight::GetIntrinsicState() 
 { 
