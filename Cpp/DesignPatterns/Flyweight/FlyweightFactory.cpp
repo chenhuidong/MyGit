@@ -4,8 +4,10 @@
 #include <string> 
 #include <cassert> 
 using namespace std;
+
 FlyweightFactory::FlyweightFactory() {}
 FlyweightFactory::~FlyweightFactory() {}
+
 Flyweight* FlyweightFactory::GetFlyweight(const string& key) 
 { 
 	vector<Flyweight*>::iterator it = _fly.begin();
