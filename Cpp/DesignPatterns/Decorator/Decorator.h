@@ -7,7 +7,8 @@ class Component
 public: 
 	virtual ~Component();
 	virtual void Operation();
-	protected: Component();
+protected: 
+	Component();
 private:
 };
 

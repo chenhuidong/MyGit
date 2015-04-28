@@ -9,5 +9,5 @@ int main(int argc,char* argv[])
 	Decorator* dec = new ConcreteDecorator(com);
 	dec->Operation();
 	delete dec;
-	return 0; 
+	return 0;
 }
