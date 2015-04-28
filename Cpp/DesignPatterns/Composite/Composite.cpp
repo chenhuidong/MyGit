@@ -24,7 +24,7 @@ void Composite::Add(Component* com)
 
 void Composite::Remove(Component* com) 
 { 
-	comVec.erase(com); 
+	comVec.erase(&com); 
 }
 
 Component* Composite::GetChild(int index) 
