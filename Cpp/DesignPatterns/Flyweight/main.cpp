@@ -12,5 +12,6 @@ int main(int argc,char* argv[])
 	Flyweight* fw3 = fc->GetFlyweight("hello");
 	fw1->Operation("hello");
 	fw2->Operation("world!");
+	fw1->Operation("world!");
 	return 0; 
 }
