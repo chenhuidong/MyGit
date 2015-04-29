@@ -21,7 +21,8 @@ private:
 class ConcreteObserverA:public Observer 
 { 
 public: 
-	virtual Subject* GetSubject(); ConcreteObserverA(Subject* sub);
+	virtual Subject* GetSubject(); 
+	ConcreteObserverA(Subject* sub);
 	virtual ~ConcreteObserverA();
 	//传入Subject作为参数，这样可以让一个View属于多个的Subject。void Update(Subject* sub);
 	void PrintInfo();
@@ -31,7 +32,8 @@ protected:
 
 class ConcreteObserverB:public Observer 
 { 
-	public: virtual Subject* GetSubject(); 
+public: 
+	virtual Subject* GetSubject(); 
 	ConcreteObserverB(Subject* sub);
 
 	virtual ~ConcreteObserverB();

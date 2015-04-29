@@ -8,7 +8,7 @@ typedef string state;
 
 Subject::Subject() { //****在模板的使用之前一定要new，创建 _obvs = new list<Observer*>;
 }
-Subject::~Subject() { }
+Subject::~Subject() {}
 
 void Subject::Attach(Observer* obv) 
 { 
@@ -17,7 +17,8 @@ void Subject::Attach(Observer* obv)
 
 void Subject::Detach(Observer* obv) 
 { 
-	if (obv != NULL) _obvs->remove(obv); 
+	if (obv != NULL) 
+		_obvs->remove(obv); 
 }
 
 void Subject::Notify() 
