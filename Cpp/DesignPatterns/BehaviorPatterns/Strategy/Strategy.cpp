@@ -1,4 +1,8 @@
-//Strategy.cpp #include "Strategy.h" #include <iostream> using namespace std;
+//Strategy.cpp 
+#include "Strategy.h" 
+#include <iostream> 
+using namespace std;
+
 Strategy::Strategy() {}
 Strategy::~Strategy() 
 { 
