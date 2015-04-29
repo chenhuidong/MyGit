@@ -37,7 +37,6 @@ class ConcreteObserverB:public Observer
 public: 
 	virtual Subject* GetSubject(); 
 	ConcreteObserverB(Subject* sub);
-
 	virtual ~ConcreteObserverB();
 	//传入Subject作为参数，这样可以让一个View属于多个的Subject。
 	void Update(Subject* sub);

@@ -22,7 +22,9 @@ ConcreteObserverA::~ConcreteObserverA()
 {
 	_sub->Detach(this);
 	if (_sub != 0) 
-		{ delete _sub; } 
+	{ 
+		delete _sub; 
+	} 
 }
 
 Subject* ConcreteObserverA::GetSubject() 
