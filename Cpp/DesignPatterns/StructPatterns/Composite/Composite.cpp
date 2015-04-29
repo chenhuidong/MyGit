@@ -27,11 +27,11 @@ void Composite::Remove(Component* com)
 	//comVec.erase(&com);
 	//comVec.clear();
 	vector<Component*>::iterator it;
-	for(it=array.begin();it!=array.end();)
+	for(it=comVec.begin();it!=comVec.end();)
 	{
 		if(com==*it)
 		{
-			array.erase(it);
+			comVec.erase(it);
 		}
 		else
 		{
