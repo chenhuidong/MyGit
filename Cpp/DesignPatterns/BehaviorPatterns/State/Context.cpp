@@ -20,7 +20,8 @@ void Context::OprationInterface()
 
 bool Context::ChangeState(State* state) 
 { 
-	_state->ChangeState(this,state); this->_state = state;
+	//_state->ChangeState(this,state); 
+	this->_state = state;
 	return true;
 }
 
