@@ -20,9 +20,13 @@ int main(int argc,char* argv[])
 	ll->Operation();
 	cout<<"3"<<endl<<endl;
 
-	com->Remove(ll);
+	com->Add(l);
 	com->Operation();
 	cout<<"4"<<endl<<endl;
+
+	com->Remove(ll);
+	com->Operation();
+	cout<<"5"<<endl<<endl;
 
 	return 0; 
 }
