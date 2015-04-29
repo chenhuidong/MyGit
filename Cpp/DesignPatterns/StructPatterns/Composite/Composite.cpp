@@ -25,7 +25,20 @@ void Composite::Add(Component* com)
 void Composite::Remove(Component* com) 
 { 
 	//comVec.erase(&com);
-	comVec.clear(); 
+	//comVec.clear();
+	vector<Component*>::iterator it;
+	for(it=array.begin();it!=array.end();)
+	{
+		if(com==*it)
+		{
+			array.erase(it);
+		}
+		else
+		{
+			it++;
+		}
+	}
+
 }
 
 Component* Composite::GetChild(int index) 
