@@ -6,7 +6,8 @@ class AbstractClass
 {
 public:
 	virtual ~AbstractClass();
-	void TemplateMethod(); protected:
+	void TemplateMethod(); 
+protected:
 	virtual void PrimitiveOperation1() = 0;
 	virtual void PrimitiveOperation2() = 0;
 	AbstractClass(); 
