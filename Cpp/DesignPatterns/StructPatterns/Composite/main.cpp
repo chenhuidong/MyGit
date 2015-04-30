@@ -15,18 +15,22 @@ int main(int argc,char* argv[])
 	com->Add(l);
 	com->Operation();
 	cout<<"2"<<endl<<endl;
-
+	/*
 	Component* ll = com->GetChild(0);
 	ll->Operation();
 	cout<<"3"<<endl<<endl;
-
-	com->Add(l);
-	com->Operation();
+	*/
+	Leaf1* lll = new Leaf1(); 
+	lll->Operation();
 	cout<<"4"<<endl<<endl;
+
+	com->Add(lll);
+	com->Operation();
+	cout<<"5"<<endl<<endl;
 
 	com->Remove(ll);
 	com->Operation();
-	cout<<"5"<<endl<<endl;
+	cout<<"6"<<endl<<endl;
 
 	return 0; 
 }

@@ -9,3 +9,11 @@ void Leaf::Operation()
 { 
 	cout<<"Leaf operation....."<<endl; 
 }
+
+
+Leaf1::Leaf1() {}
+Leaf1::~Leaf1() {}
+void Leaf1::Operation() 
+{ 
+	cout<<"Leaf1 operation....."<<endl; 
+}

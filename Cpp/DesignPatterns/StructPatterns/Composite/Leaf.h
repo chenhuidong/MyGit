@@ -13,4 +13,14 @@ protected:
 private:
 }; 
 
+class Leaf1:public Component 
+{ 
+public: 
+	Leaf1();
+	~Leaf1();
+	void Operation();
+protected:
+private:
+}; 
+
 #endif //~_LEAF_H_
