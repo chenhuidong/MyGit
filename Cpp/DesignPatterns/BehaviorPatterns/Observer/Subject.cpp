@@ -24,14 +24,14 @@ void Subject::Detach(Observer* obv)
 
 void Subject::Notify() 
 {
-	/*list<Observer*>::iterator it;
-	it = _obvs->begin();
-	for (;it != _obvs->end();it++) 
+	list<Observer*>::iterator it;
+	it = _obvs.begin();
+	for (;it != _obvs.end();it++) 
 	{ 
 		//关于模板和iterator的用法
 		(*it)->Update(this); 
 	} 
-	*/
+	
 }
 
 ConcreteSubject::ConcreteSubject() 
