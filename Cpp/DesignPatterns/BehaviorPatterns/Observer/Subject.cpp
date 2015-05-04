@@ -12,7 +12,8 @@ Subject::~Subject() {}
 
 void Subject::Attach(Observer* obv) 
 { 
-	_obvs->push_front(obv); 
+	//_obvs->push_front(obv); 
+	_obvs->push_back(obv); 
 }
 
 void Subject::Detach(Observer* obv) 

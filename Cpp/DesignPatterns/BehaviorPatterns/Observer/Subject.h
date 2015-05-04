@@ -19,7 +19,7 @@ public:
 protected: 
 	Subject();
 private: 
-	list<Observer* >* _obvs;
+	list<Observer* > * _obvs;
 };
 
 class ConcreteSubject:public Subject 
