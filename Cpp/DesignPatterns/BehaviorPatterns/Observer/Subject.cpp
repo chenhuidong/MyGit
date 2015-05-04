@@ -31,7 +31,6 @@ void Subject::Notify()
 		//关于模板和iterator的用法
 		(*it)->Update(this); 
 	} 
-	
 }
 
 ConcreteSubject::ConcreteSubject() 
