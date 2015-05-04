@@ -13,24 +13,25 @@ Subject::~Subject() {}
 void Subject::Attach(Observer* obv) 
 { 
 	//_obvs->push_front(obv); 
-	_obvs->push_back(obv); 
+	_obvs.push_back(obv); 
 }
 
 void Subject::Detach(Observer* obv) 
 { 
 	if (obv != NULL) 
-		_obvs->remove(obv); 
+		_obvs.remove(obv); 
 }
 
 void Subject::Notify() 
 {
-	list<Observer*>::iterator it;
+	/*list<Observer*>::iterator it;
 	it = _obvs->begin();
 	for (;it != _obvs->end();it++) 
 	{ 
 		//关于模板和iterator的用法
 		(*it)->Update(this); 
 	} 
+	*/
 }
 
 ConcreteSubject::ConcreteSubject() 
