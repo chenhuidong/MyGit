@@ -33,7 +33,7 @@ void ConcreteColleageA::SetState(const string& sdt)
 void ConcreteColleageA::Aciton() 
 { 
 	_mdt->DoActionFromAtoB();
-	cout<<"State of ConcreteColleageB:"<<" "<<this->GetState()<<endl; 
+	cout<<"State of ConcreteColleageA:"<<" "<<this->GetState()<<endl; 
 }
 
 ConcreteColleageB::ConcreteColleageB() {}
