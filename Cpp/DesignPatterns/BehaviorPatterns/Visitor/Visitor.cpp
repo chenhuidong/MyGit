@@ -20,13 +20,9 @@ void ConcreteVisitorA::VisitConcreteElementB(Element* elm)
 	cout<<"i will visit ConcreteElementB..."<<endl;
 } 
 
-ConcreteVisitorB::ConcreteVisitorB()
-{
-} 
 
-ConcreteVisitorB::~ConcreteVisitorB()
-{
-} 
+ConcreteVisitorB::ConcreteVisitorB() {} 
+ConcreteVisitorB::~ConcreteVisitorB() {} 
 
 void ConcreteVisitorB::VisitConcreteElementA(Element* elm)
 {

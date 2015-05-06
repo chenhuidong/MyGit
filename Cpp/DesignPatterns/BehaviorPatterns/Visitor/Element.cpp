@@ -20,6 +20,6 @@ ConcreteElementB::ConcreteElementB() {}
 ConcreteElementB::~ConcreteElementB() {} 
 void ConcreteElementB::Accept(Visitor* vis)
 {
-	cout<<"visiting ConcreteElementB..."<<endl;
 	vis->VisitConcreteElementB(this);
+	cout<<"visiting ConcreteElementB..."<<endl;
 }
