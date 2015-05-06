@@ -12,12 +12,12 @@ ConcreteVisitorA::~ConcreteVisitorA() {}
 
 void ConcreteVisitorA::VisitConcreteElementA(Element* elm)
 {
-	cout<<"i will visit ConcreteElementA..."<<endl;
+	cout<<"i will visit ConcreteElementAA..."<<endl;
 } 
 
 void ConcreteVisitorA::VisitConcreteElementB(Element* elm)
 {
-	cout<<"i will visit ConcreteElementB..."<<endl;
+	cout<<"i will visit ConcreteElementAB..."<<endl;
 } 
 
 
@@ -26,10 +26,10 @@ ConcreteVisitorB::~ConcreteVisitorB() {}
 
 void ConcreteVisitorB::VisitConcreteElementA(Element* elm)
 {
-	cout<<"i will visit ConcreteElementA..."<<endl;
+	cout<<"i will visit ConcreteElementBA..."<<endl;
 } 
 
 void ConcreteVisitorB::VisitConcreteElementB(Element* elm)
 {
-	cout<<"i will visit ConcreteElementB..."<<endl;
+	cout<<"i will visit ConcreteElementBB..."<<endl;
 }
