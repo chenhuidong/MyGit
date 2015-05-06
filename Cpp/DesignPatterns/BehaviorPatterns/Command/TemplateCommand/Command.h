@@ -2,6 +2,15 @@
 #ifndef _COMMAND_H_ 
 #define _COMMAND_H_
 
+class Command { 
+public: 
+	virtual ~Command();
+	virtual void Excute() = 0;
+protected: 
+	Command();
+private:
+};
+
 template <class Reciever> 
 class SimpleCommand:public Command 
 { 
