@@ -1,19 +1,26 @@
 #include <event.h>
-struct event ev;
-struct timeval tv;
+#include <stdio.h>
+#include <time.h>
 
-void time_cb(int fd, short event, void *argc)
+static void
+hello(int fd, short event, void *arg)
 {
-    printf("timer wakeup/n");
-    //event_add(&ev, &tv); // reschedule timer
+    printf("hello man\n");
 }
 
-int main()
+int main(int argc, const char *argv[]) 
 {
-    struct event_base *base = event_init();
-    tv.tv_sec = 10; // 10s period
-    tv.tv_usec = 0;
-    evtimer_set(&ev, time_cb, NULL);
-    event_add(&ev, &tv);
-    event_base_dispatch(base);
+    struct event_base *base;
+    struct timeval tm;
+    struct event evt;
+
+    evutil_timerclear(&tm);
+    tm.tv_sec = 10;
+
+    base = event_base_new();
+    evtimer_set(&evt, hello, NULL);
+    event_base_set(base, &evt);
+    evtimer_add(&evt, &tm);
+    event_base_loop(base, 0);
+    return 0;
 }
