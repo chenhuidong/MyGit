@@ -1,11 +1,13 @@
 #include <event.h>
 struct event ev;
 struct timeval tv;
+
 void time_cb(int fd, short event, void *argc)
 {
     printf("timer wakeup/n");
-    event_add(&ev, &tv); // reschedule timer
+    //event_add(&ev, &tv); // reschedule timer
 }
+
 int main()
 {
     struct event_base *base = event_init();
