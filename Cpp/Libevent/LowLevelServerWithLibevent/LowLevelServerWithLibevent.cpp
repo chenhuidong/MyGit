@@ -46,7 +46,7 @@ struct fd_state {
 struct fd_state *
 alloc_fd_state(struct event_base *base, evutil_socket_t fd)
 {
-    struct fd_state *state = malloc(sizeof(struct fd_state));
+    struct fd_state *state = (struct fd_state *)malloc(sizeof(struct fd_state));
     if (!state)
         return NULL;
     state->read_event = event_new(base, fd, EV_READ|EV_PERSIST, do_read, state);
@@ -80,7 +80,7 @@ free_fd_state(struct fd_state *state)
 void
 do_read(evutil_socket_t fd, short events, void *arg)
 {
-    struct fd_state *state = arg;
+    struct fd_state *state = (struct fd_state *)arg;
     char buf[1024];
     int i;
     ssize_t result;
@@ -114,7 +114,7 @@ do_read(evutil_socket_t fd, short events, void *arg)
 void
 do_write(evutil_socket_t fd, short events, void *arg)
 {
-    struct fd_state *state = arg;
+    struct fd_state *state = (struct fd_state *)arg;
 
     while (state->n_written < state->write_upto) {
         ssize_t result = send(fd, state->buffer + state->n_written,
