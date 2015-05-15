@@ -7,6 +7,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+using namespace std;
 
 #define MAX_LINE 16384
 
