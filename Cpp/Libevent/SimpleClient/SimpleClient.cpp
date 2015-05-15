@@ -15,10 +15,11 @@ using namespace std;
 
 int main(int c, char **v)
 {
-    const char query[] =
+    /*const char query[] =
         "GET / HTTP/1.0\r\n"
         "Host: www.baidu.com\r\n"
-        "\r\n";
+        "\r\n";*/
+    const char query[] ="abc123";
     //const char hostname[] = "www.baidu.com";
     struct sockaddr_in sin;
     struct hostent *h;
