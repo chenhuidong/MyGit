@@ -17,7 +17,8 @@ int main(int c, char **v)
         "GET / HTTP/1.0\r\n"
         "Host: www.baidu.com\r\n"
         "\r\n";
-    const char hostname[] = "www.baidu.com";
+    //const char hostname[] = "www.baidu.com";
+    const char hostname[] = "localhost";
     struct sockaddr_in sin;
     struct hostent *h;
     const char *cp;
@@ -48,7 +49,7 @@ int main(int c, char **v)
     sin.sin_family = AF_INET;
     sin.sin_port = htons(54321);
     //sin.sin_addr = *(struct in_addr*)h->h_addr;
-    sin.sin_addr = *(struct in_addr*)"127.0.0.1"; 
+    sin.sin_addr = *(struct in_addr*)h->h_addr; 
     if (connect(fd, (struct sockaddr*) &sin, sizeof(sin))) {
         perror("connect");
         close(fd);
