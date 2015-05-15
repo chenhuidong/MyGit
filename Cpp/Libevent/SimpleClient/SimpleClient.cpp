@@ -8,21 +8,20 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
-#include <arpa/inet.h>
-
 #include <iostream>
 using namespace std;
 
 int main(int c, char **v)
 {
-    const char query[] ="abc123\n";
+    const char query[] =
+        "abc123\r\n";
+    
     struct sockaddr_in sin;
     struct hostent *h;
     const char *cp;
     int fd;
     ssize_t n_written, remaining;
     char buf[1024];
-
     
     /* Allocate a new socket */
     fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -34,7 +33,6 @@ int main(int c, char **v)
     /* Connect to the remote host. */
     sin.sin_family = AF_INET;
     sin.sin_port = htons(54321);
-    //sin.sin_addr = *(struct in_addr*)h->h_addr;
     sin.sin_addr.s_addr=inet_addr("10.163.249.208");
     if (connect(fd, (struct sockaddr*) &sin, sizeof(sin))) {
         perror("connect");
