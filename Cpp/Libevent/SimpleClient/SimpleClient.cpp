@@ -15,12 +15,7 @@ using namespace std;
 
 int main(int c, char **v)
 {
-    /*const char query[] =
-        "GET / HTTP/1.0\r\n"
-        "Host: www.baidu.com\r\n"
-        "\r\n";*/
-    const char query[] ="abc123";
-    //const char hostname[] = "www.baidu.com";
+    const char query[] ="abc123\n";
     struct sockaddr_in sin;
     struct hostent *h;
     const char *cp;
@@ -28,17 +23,6 @@ int main(int c, char **v)
     ssize_t n_written, remaining;
     char buf[1024];
 
-    /* Look up the IP address for the hostname.   Watch out; this isn't
-       threadsafe on most platforms. */
-    /*h = gethostbyname(hostname);
-    if (!h) {
-        fprintf(stderr, "Couldn't lookup %s: %s", hostname, hstrerror(h_errno));
-        return 1;
-    }
-    if (h->h_addrtype != AF_INET) {
-        fprintf(stderr, "No ipv6 support, sorry.");
-        return 1;
-    }*/
     
     /* Allocate a new socket */
     fd = socket(AF_INET, SOCK_STREAM, 0);

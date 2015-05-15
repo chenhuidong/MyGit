@@ -44,10 +44,8 @@ child(int fd)
 
         /* We do this test to keep the user from overflowing the buffer. */
         if (outbuf_used < sizeof(outbuf)) {
-            cout<<outbuf[outbuf_used++];
             outbuf[outbuf_used++] = rot13_char(ch);
         }
-        cout<<endl;
 
         if (ch == '\n') {
             send(fd, outbuf, outbuf_used, 0);
