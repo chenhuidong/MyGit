@@ -58,19 +58,19 @@ int main(int c, char **v)
 
     /* Get an answer back. */
     cout<<"1"<<endl;
-    while (1) {
+    //while (1) {
         ssize_t result = recv(fd, buf, sizeof(buf), 0);
         cout<<result<<endl;
-        if (result == 0) {
+        /*if (result == 0) {
             break;
-        } else if (result < 0) {
+        } else*/ if (result < 0) {
             perror("recv");
             close(fd);
             return 1;
         }
         fwrite(buf, 1, result, stdout);
         cout<<result<<endl;
-    }
+    //}
     close(fd);
     return 0;
 }
