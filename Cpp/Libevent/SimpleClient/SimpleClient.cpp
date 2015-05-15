@@ -60,7 +60,7 @@ int main(int c, char **v)
     cout<<"1"<<endl;
     //while (1) {
         ssize_t result = recv(fd, buf, sizeof(buf), 0);
-        cout<<result<<endl;
+        //cout<<result<<endl;
         /*if (result == 0) {
             break;
         } else*/ if (result < 0) {
@@ -69,7 +69,7 @@ int main(int c, char **v)
             return 1;
         }
         fwrite(buf, 1, result, stdout);
-        cout<<result<<endl;
+        //cout<<result<<endl;
     //}
     close(fd);
     return 0;
