@@ -69,6 +69,7 @@ int main(int c, char **v)
             return 1;
         }
         fwrite(buf, 1, result, stdout);
+        cout<<result<<endl;
     }
     close(fd);
     return 0;
