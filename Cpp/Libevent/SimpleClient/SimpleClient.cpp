@@ -16,7 +16,7 @@ using namespace std;
 int main(int c, char **v)
 {
     const char query[] =
-        "abc123\r\n";
+        "abc123\n";
     
     struct sockaddr_in sin;
     struct hostent *h;
