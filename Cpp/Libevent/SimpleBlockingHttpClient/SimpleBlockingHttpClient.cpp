@@ -15,7 +15,7 @@ int main(int c, char **v)
         "GET / HTTP/1.0\r\n"
         "Host: www.google.com\r\n"
         "\r\n";
-    const char hostname[] = "www.google.com";
+    const char hostname[] = "www.baidu.com";
     struct sockaddr_in sin;
     struct hostent *h;
     const char *cp;
@@ -51,6 +51,7 @@ int main(int c, char **v)
         close(fd);
         return 1;
     }
+
 
     /* Write the query. */
     /* XXX Can send succeed partially? */
