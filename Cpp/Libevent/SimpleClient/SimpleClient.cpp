@@ -48,7 +48,7 @@ int main(int c, char **v)
     sin.sin_family = AF_INET;
     sin.sin_port = htons(54321);
     //sin.sin_addr = *(struct in_addr*)h->h_addr;
-    server.sin_addr.s_addr = inet_addr("127.0.0.1"); 
+    sin.sin_addr = *(struct in_addr*)"127.0.0.1"; 
     if (connect(fd, (struct sockaddr*) &sin, sizeof(sin))) {
         perror("connect");
         close(fd);
