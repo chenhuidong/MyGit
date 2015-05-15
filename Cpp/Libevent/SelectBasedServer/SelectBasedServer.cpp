@@ -41,7 +41,7 @@ struct fd_state {
 struct fd_state *
 alloc_fd_state(void)
 {
-    struct fd_state *state = malloc(sizeof(struct fd_state));
+    struct fd_state *state = (struct fd_state *)malloc(sizeof(struct fd_state));
     if (!state)
         return NULL;
     state->buffer_used = state->n_written = state->writing =
