@@ -57,7 +57,6 @@ int main(int c, char **v)
     }
 
     /* Get an answer back. */
-    cout<<"1"<<endl;
     //while (1) {
         ssize_t result = recv(fd, buf, sizeof(buf), 0);
         //cout<<result<<endl;
