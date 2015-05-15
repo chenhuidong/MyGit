@@ -13,7 +13,7 @@ int main(int c, char **v)
 {
     const char query[] =
         "GET / HTTP/1.0\r\n"
-        "Host: www.google.com\r\n"
+        "Host: www.baidu.com\r\n"
         "\r\n";
     const char hostname[] = "www.baidu.com";
     struct sockaddr_in sin;
@@ -34,7 +34,7 @@ int main(int c, char **v)
         fprintf(stderr, "No ipv6 support, sorry.");
         return 1;
     }
-
+    cout<<"1"<<endl;
     /* Allocate a new socket */
     fd = socket(AF_INET, SOCK_STREAM, 0);
     if (fd < 0) {
@@ -52,7 +52,7 @@ int main(int c, char **v)
         return 1;
     }
 
-
+    cout<<"2"<<endl;
     /* Write the query. */
     /* XXX Can send succeed partially? */
     cp = query;
@@ -67,6 +67,7 @@ int main(int c, char **v)
       cp += n_written;
     }
 
+    cout<<"3"<<endl;
     /* Get an answer back. */
     while (1) {
         ssize_t result = recv(fd, buf, sizeof(buf), 0);
@@ -79,7 +80,7 @@ int main(int c, char **v)
         }
         fwrite(buf, 1, result, stdout);
     }
-
+    cout<<"4"<<endl;
     close(fd);
     return 0;
 }
