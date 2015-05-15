@@ -128,7 +128,7 @@ run(void)
 
     sin.sin_family = AF_INET;
     sin.sin_addr.s_addr = 0;
-    sin.sin_port = htons(40713);
+    sin.sin_port = htons(54321);
 
     for (i = 0; i < FD_SETSIZE; ++i)
         state[i] = NULL;
