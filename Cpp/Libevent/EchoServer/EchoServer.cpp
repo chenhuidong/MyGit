@@ -63,7 +63,7 @@ main(int argc, char **argv)
         struct evconnlistener *listener;
         struct sockaddr_in sin;
 
-        int port = 9876;
+        int port = 54321;
 
         if (argc > 1) {
                 port = atoi(argv[1]);
