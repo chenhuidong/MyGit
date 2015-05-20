@@ -9,6 +9,8 @@
 #include <sys/types.h>
 #include <string.h>
 #include <string>
+//GLog
+#include <glog/logging.h>
 using namespace std;
 
 #define  ___ANONYMOUS1(var, line)  var##line
@@ -43,5 +45,11 @@ typedef u_int64_t uint64;
 
 typedef list<int> IntList;
 typedef vector<int> IntVec;
+
+//Glog
+#define LOG_INFO LOG(INFO)
+#define LOG_WARN LOG(WARNING)
+#define LOG_ERROR LOG(ERROR)
+#define LOG_FATAL LOG(FATAL)
 
 #endif
