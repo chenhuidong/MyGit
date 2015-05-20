@@ -1,6 +1,9 @@
 #ifndef __STD_AFX_H
 #define __STD_AFX_H
 
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
 #include <iostream>
 #include <list>
 #include <vector>
