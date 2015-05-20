@@ -6,6 +6,5 @@ int main(int argc, char* argv[]) {
 	FLAGS_log_dir = "/home/51linux_LxomB0aQ/MyProgram/MyGit/Cpp/Linux/Glog";
 	google::InitGoogleLogging(argv[0]);
 
-     // ...
 	LOG_INFO << "Hello, Glog!";
 }
