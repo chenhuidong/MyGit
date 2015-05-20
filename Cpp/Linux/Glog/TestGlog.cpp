@@ -1,4 +1,3 @@
-#include <glog/logging.h>
 #include "MyLog.h"
 
 int main(int argc, char* argv[]) {
