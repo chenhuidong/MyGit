@@ -2,7 +2,7 @@
 
 int main(int argc, char* argv[]) {
      // Initialize Google's logging library.
-	google::InitGoogleLogging(argv[0]);
+	//google::InitGoogleLogging(argv[0]);
 
      // ...
 	LOG(INFO) << "Hello, Glog!";
