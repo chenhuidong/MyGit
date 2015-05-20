@@ -59,6 +59,7 @@ typedef vector<int> IntVec;
 	FLAGS_logtostderr = 0;\
 	string t_strWorkPath = getenv("WORKPATH");\
 	FLAGS_log_dir = t_strWorkPath + "/Log";\
+	google::SetLogDestination(google::INFO, FLAGS_log_dir+"/loginfo"); 
 	google::InitGoogleLogging(argv[0]);\
 }
 
