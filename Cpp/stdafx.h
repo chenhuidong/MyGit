@@ -54,5 +54,12 @@ typedef vector<int> IntVec;
 #define LOG_WARN LOG(WARNING)
 #define LOG_ERROR LOG(ERROR)
 #define LOG_FATAL LOG(FATAL)
+#define INITIALIZE_LOG() \
+{\
+	FLAGS_logtostderr = 0;\
+	string t_strWorkPath = getenv("WORKPATH");\
+	FLAGS_log_dir = t_strWorkPath + "/Log";\
+	google::InitGoogleLogging(argv[0]);\
+}
 
 #endif
