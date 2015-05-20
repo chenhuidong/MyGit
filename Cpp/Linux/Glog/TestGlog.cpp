@@ -5,5 +5,5 @@
      google::InitGoogleLogging(argv[0]);
 
      // ...
-     LOG(INFO) << "Found " << num_cookies << " cookies";
+     LOG(INFO) << "Found " ;//<< num_cookies << " cookies";
    }
