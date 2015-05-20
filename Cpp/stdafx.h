@@ -56,10 +56,9 @@ typedef vector<int> IntVec;
 #define LOG_FATAL LOG(FATAL)
 
 #define INITIALIZE_LOG() INITIALIZE_LOG1(argv[0])
-#define INITIALIZE_LOG1(var)\
+#define INITIALIZE_LOG1(link)\
 {\
-	cout<<var<<endl;\
-	google::InitGoogleLogging(var);\
+	google::InitGoogleLogging(link);\
 	FLAGS_logtostderr = 0;\
 	string t_strLogPath = getenv("LOGPATH");\
 	FLAGS_log_dir = t_strLogPath;\
