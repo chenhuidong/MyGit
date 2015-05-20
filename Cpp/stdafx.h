@@ -57,11 +57,11 @@ typedef vector<int> IntVec;
 #define INITIALIZE_LOG() \
 {\
 	cout<<argv[0]<<endl;\
+	google::InitGoogleLogging("main");\
 	FLAGS_logtostderr = 0;\
 	string t_strLogPath = getenv("LOGPATH");\
 	FLAGS_log_dir = t_strLogPath;\
 	google::SetLogDestination(google::INFO, (string(FLAGS_log_dir)+"/loginfo.").c_str());\
-	google::InitGoogleLogging(argv[0]);\
 }
 
 #endif
