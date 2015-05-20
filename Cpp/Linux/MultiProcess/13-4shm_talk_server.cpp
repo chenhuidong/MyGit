@@ -313,9 +313,9 @@ int main( int argc, char* argv[] )
                         {
                             case SIGCHLD:
                             {
-	                        pid_t pid;
-	                        int stat;
-	                        while ( ( pid = waitpid( -1, &stat, WNOHANG ) ) > 0 )
+                            pid_t pid;
+                            int stat;
+                            while ( ( pid = waitpid( -1, &stat, WNOHANG ) ) > 0 )
                                 {
                                     int del_user = sub_process[pid];
                                     sub_process[pid] = -1;
