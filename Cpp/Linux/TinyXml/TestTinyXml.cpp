@@ -32,5 +32,5 @@ int main()
     cout << AgeElement->FirstChild()->Value() << endl;  
     cout << IDAttribute->Value() << endl;  
   
-        return 0;  
+    return 0;  
 } 
