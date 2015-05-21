@@ -1,10 +1,10 @@
 <Persons>
 	<Person ID="1">
-		<name>周星星</name>
+		<name>zhou</name>
 		<age>20</age>
 	</Person>
 	<Person ID="2">
-		<name>白晶晶</name>
+		<name>chen</name>
 		<age>18</age>
 	</Person>
 </Persons>
