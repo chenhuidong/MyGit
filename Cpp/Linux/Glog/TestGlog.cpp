@@ -12,4 +12,5 @@ int main(int argc, char* argv[]) {
 
 	INITIALIZE_LOG();
 	LOG_INFO << "Hello, Glog!";
+	LOG_ERROR << "Hello, Glog!";
 }
