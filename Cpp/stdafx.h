@@ -60,7 +60,7 @@ typedef vector<int> IntVec;
 {\
 	google::InitGoogleLogging(link);\
 	FLAGS_logtostderr = 0;\
-	FLAGS_alsologtostderr=1;\
+	FLAGS_alsologtostderr=0;\
 	FLAGS_stderrthreshold=google::FATAL;\
 	string t_strLogPath = getenv("LOGPATH");\
 	FLAGS_log_dir = t_strLogPath;\
