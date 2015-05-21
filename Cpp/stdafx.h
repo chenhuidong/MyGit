@@ -59,11 +59,7 @@ typedef vector<int> IntVec;
 #define INITIALIZE_LOG1(link)\
 {\
 	google::InitGoogleLogging(link);\
-	#ifdef DEBUG_MODE\
-        google::SetStderrLogging(google::GLOG_INFO); \
-    #else\
-        google::SetStderrLogging(google::GLOG_FATAL);\
-    #endif\
+	google::SetStderrLogging(google::GLOG_FATAL);\
 	FLAGS_logtostderr = 0;\
 	FLAGS_servitysinglelog = true;\// 用来按照等级区分log文件
 	string t_strLogPath = getenv("LOGPATH");\
@@ -74,6 +70,12 @@ typedef vector<int> IntVec;
 	google::SetLogDestination(google::FATAL, (string(FLAGS_log_dir)+"/"+link+".fatal.").c_str());\
 }
 
+/*	#ifdef DEBUG_MODE\
+        google::SetStderrLogging(google::GLOG_INFO); \
+    #else\
+        google::SetStderrLogging(google::GLOG_FATAL);\
+    #endif\
+    */
 //FLAGS_servitysinglelog = true;// 用来按照等级区分log文件
 //google::SetStderrLogging(google::GLOG_INFO);//设置级别高于 google::INFO 的日志同时输出到屏幕
 //FLAGS_colorlogtostderr = true; //设置输出到屏幕的日志显示相应颜色
