@@ -2,6 +2,7 @@
 	<Person ID="1">
 		<name>zhou</name>
 		<age>20</age>
+		<sex>male</sex>
 	</Person>
 	<Person ID="2">
 		<name>chen</name>
