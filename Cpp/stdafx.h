@@ -62,9 +62,9 @@ typedef vector<int> IntVec;
 	FLAGS_logtostderr = 0;\
 	string t_strLogPath = getenv("LOGPATH");\
 	FLAGS_log_dir = t_strLogPath;\
-	google::SetLogDestination(google::INFO, (string(FLAGS_log_dir)+"/"+link+".").c_str());\
-	google::SetLogDestination(google::ERROR, (string(FLAGS_log_dir)+"/"+link+".").c_str());\
-	google::SetLogDestination(google::FATAL, (string(FLAGS_log_dir)+"/"+link+".").c_str());\
+	google::SetLogDestination(google::INFO, (string(FLAGS_log_dir)+"/"+link+".info.").c_str());\
+	google::SetLogDestination(google::ERROR, (string(FLAGS_log_dir)+"/"+link+".error.").c_str());\
+	google::SetLogDestination(google::FATAL, (string(FLAGS_log_dir)+"/"+link+".fatal.").c_str());\
 }
 
 #endif
