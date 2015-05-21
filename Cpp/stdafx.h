@@ -61,7 +61,7 @@ typedef vector<int> IntVec;
 	google::InitGoogleLogging(link);\
 	FLAGS_logtostderr = 0;\
 	FLAGS_alsologtostderr=1;\
-	FLAGS_stderrthreshold=google::FATAL;\ 
+	FLAGS_stderrthreshold=3;\ 
 	string t_strLogPath = getenv("LOGPATH");\
 	FLAGS_log_dir = t_strLogPath;\
 	google::SetLogDestination(google::INFO, (string(FLAGS_log_dir)+"/"+link+".info.").c_str());\
