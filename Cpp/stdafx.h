@@ -60,9 +60,9 @@ typedef vector<int> IntVec;
 {\
 	google::InitGoogleLogging(link);\
 	#ifdef DEBUG_MODE\
-        google::SetStderrLogging(google::GLOG_INFO); \//设置级别高于 google::INFO 的日志同时输出到屏幕
+        google::SetStderrLogging(google::GLOG_INFO); \
     #else\
-        google::SetStderrLogging(google::GLOG_FATAL);\//设置级别高于 google::FATAL 的日志同时输出到屏幕
+        google::SetStderrLogging(google::GLOG_FATAL);\
     #endif\
 	FLAGS_logtostderr = 0;\
 	FLAGS_servitysinglelog = true;\// 用来按照等级区分log文件
@@ -74,6 +74,8 @@ typedef vector<int> IntVec;
 	google::SetLogDestination(google::FATAL, (string(FLAGS_log_dir)+"/"+link+".fatal.").c_str());\
 }
 
+//FLAGS_servitysinglelog = true;// 用来按照等级区分log文件
+//google::SetStderrLogging(google::GLOG_INFO);//设置级别高于 google::INFO 的日志同时输出到屏幕
 //FLAGS_colorlogtostderr = true; //设置输出到屏幕的日志显示相应颜色
 //FLAGS_logbufsecs = 0; //缓冲日志输出，默认为30秒，此处改为立即输出
 //FLAGS_max_log_size = 100; //最大日志大小为 100MB
