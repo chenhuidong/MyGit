@@ -25,7 +25,7 @@ int main()
     //获得第一个Person的name节点和age节点和ID属性。  
     TiXmlElement *NameElement = FirstPerson->FirstChildElement();  
     TiXmlElement *AgeElement = NameElement->NextSiblingElement();  
-    TiXmlElement *SexElement = NameElement->NextSiblingElement();  
+    TiXmlElement *SexElement = AgeElement->NextSiblingElement();  
     TiXmlAttribute *IDAttribute = FirstPerson->FirstAttribute();  
       
     //输出第一个Person的name内容，即周星星；age内容，即20；ID属性，即1。  
