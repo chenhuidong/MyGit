@@ -21,3 +21,4 @@ int main()
     return 0;
 }
 
+ //g++ TestSTLPort.cpp -omain -I/home/51linux_LxomB0aQ/usr/lib/stlport/stlport  -L/home/51linux_LxomB0aQ/usr/lib/stlport/lib/ -lstlport
