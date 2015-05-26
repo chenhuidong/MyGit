@@ -1,5 +1,5 @@
 #include <boost/thread.hpp>
-#include "../../../stdafx.h"
+#include <iostream>
 
 void my_func()
 {
