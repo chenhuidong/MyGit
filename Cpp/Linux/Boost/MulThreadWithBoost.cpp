@@ -12,9 +12,8 @@ void task2() {
 }
 
 int main (int argc, char ** argv) {
-    using namespace boost; 
-    thread thread_1 = thread(task1);
-    thread thread_2 = thread(task2);
+    boost::thread thread_1 = boost::thread(task1);
+    boost::thread thread_2 = boost::thread(task2);
 
     // do other stuff
     thread_2.join();
