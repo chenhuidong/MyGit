@@ -21,3 +21,6 @@ int main (int argc, char ** argv) {
     thread_1.join();
     return 0;
 }
+
+//g++ MulThreadWithBoost.cpp -omain -lboost_system -lboost_thread
+//g++ MulThreadWithBoost.cpp -omain -lboost_system -lboost_filesystem -lboost_thread
