@@ -22,7 +22,7 @@ bool ModifyUser(const string& sName, const string& sAge);
 //查找用户
 bool SelectUser();
 
-int _tmain(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
     //打开路径采用utf-8编码
     //如果路径中包含中文，需要进行编码转换
