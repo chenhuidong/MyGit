@@ -28,7 +28,7 @@ int _tmain(int argc, _TCHAR* argv[])
     int nRes = sqlite3_open("D:\\sqlite\\test.db", &pDB);
     if (nRes != SQLITE_OK)
     {
-        cout<<"Open database fail: "<<sqlite3_errmsg(pDB);
+        std::cout<<"Open database fail: "<<sqlite3_errmsg(pDB);
         goto QUIT;
     }
 
@@ -79,12 +79,12 @@ bool AddUser(const string& sName, const string& sAge)
     int nRes = sqlite3_exec(pDB , strSql.c_str() ,0 ,0, &cErrMsg);
     if (nRes != SQLITE_OK)  
     {
-        cout<<"add user fail: "<<cErrMsg<<endl;
+        std::cout<<"add user fail: "<<cErrMsg<<endl;
         return false;
     }
     else
     {
-        cout<<"add user success: "<<sName.c_str()<<"\t"<<sAge.c_str()<<endl;
+        std::cout<<"add user success: "<<sName.c_str()<<"\t"<<sAge.c_str()<<endl;
     }
 
     return true;
@@ -101,12 +101,12 @@ bool DeleteUser(const string& sName)
     int nRes = sqlite3_exec(pDB , strSql.c_str() ,0 ,0, &cErrMsg);
     if (nRes != SQLITE_OK)  
     {
-        cout<<"delete user fail: "<<cErrMsg<<endl;
+        std::cout<<"delete user fail: "<<cErrMsg<<endl;
         return false;
     }
     else
     {
-        cout<<"delete user success: "<<sName.c_str()<<endl;
+        std::cout<<"delete user success: "<<sName.c_str()<<endl;
     }
 
     return true;
@@ -125,12 +125,12 @@ bool ModifyUser(const string& sName, const string& sAge)
     int nRes = sqlite3_exec(pDB , strSql.c_str() ,0 ,0, &cErrMsg);
     if (nRes != SQLITE_OK)  
     {
-        cout<<"modify user fail: "<<cErrMsg<<endl;
+        std::cout<<"modify user fail: "<<cErrMsg<<endl;
         return false;
     }
     else
     {
-        cout<<"modify user success: "<<sName.c_str()<<"\t"<<sAge.c_str()<<endl;
+        std::cout<<"modify user success: "<<sName.c_str()<<"\t"<<sAge.c_str()<<endl;
     }
 
     return true;
@@ -140,9 +140,9 @@ static int UserResult(void *NotUsed, int argc, char **argv, char **azColName)
 {
     for(int i = 0 ; i < argc ; i++)
     {
-        cout<<azColName[i]<<" = "<<(argv[i] ? argv[i] : "NULL")<<", ";
+        std::cout<<azColName[i]<<" = "<<(argv[i] ? argv[i] : "NULL")<<", ";
     }
-    cout<<endl;
+    std::cout<<endl;
 
     return 0;
 }
@@ -154,7 +154,7 @@ bool SelectUser()
 
     if (res != SQLITE_OK)
     {
-        cout<<"select fail: "<<cErrMsg<<endl;
+        std::cout<<"select fail: "<<cErrMsg<<endl;
         return false;
     }
 
