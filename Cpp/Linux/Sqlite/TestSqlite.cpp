@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 {
     //打开路径采用utf-8编码
     //如果路径中包含中文，需要进行编码转换
-    int nRes = sqlite3_open("/home/51linux_LxomB0aQ/MyProgram/MyGit/Cpp/Linux/Sqlite", &pDB);
+    int nRes = sqlite3_open("/home/51linux_LxomB0aQ/MyProgram/MyGit/Cpp/Linux/Sqlite/Sqlite.db", &pDB);
     if (nRes != SQLITE_OK)
     {
         std::cout<<"Open database fail: "<<sqlite3_errmsg(pDB);
