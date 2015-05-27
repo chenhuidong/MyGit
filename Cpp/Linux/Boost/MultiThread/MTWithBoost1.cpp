@@ -21,5 +21,5 @@ int main (int argc, char ** argv) {
     return 0;
 }
 
-//g++ MulThreadWithBoost.cpp -omain -lboost_system -lboost_thread
-//g++ MulThreadWithBoost.cpp -omain -lboost_system -lboost_filesystem -lboost_thread
+//g++ MTWithBoost1.cpp -omain -lboost_system -lboost_thread
+//g++ MTWithBoost1.cpp -omain -lboost_system -lboost_filesystem -lboost_thread

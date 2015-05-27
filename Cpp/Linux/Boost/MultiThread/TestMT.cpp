@@ -1,10 +1,10 @@
 #include <boost/thread.hpp>
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 void my_func()
 {
-	cout<<"thread test."<<endl;
+	std::cout<<"thread test."<<endl;
 }
 
 int main()
