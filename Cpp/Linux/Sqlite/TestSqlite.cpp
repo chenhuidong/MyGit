@@ -8,7 +8,8 @@
 //#include "stdafx.h"
 #include "sqlite3.h"
 #include <iostream>
-//using namespace std;
+#include <string>
+using namespace std;
 
 sqlite3 * pDB = NULL;
 
