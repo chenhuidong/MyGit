@@ -1,11 +1,13 @@
 #include "../../stdafx.h"
+
+#define FLAGS_INFO
 #include "../../MyLog.h"
 
 
 int main(int argc, char* argv[]) 
 {
     // Initialize Google's logging library.
-    #define FLAGS_INFO
+    
 	INITIALIZE_LOG(argv[0]);
 	
 	LOG_INFO << "Hello1, Glog!";
