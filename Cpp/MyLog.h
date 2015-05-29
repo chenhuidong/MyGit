@@ -22,19 +22,21 @@ static void INITIALIZE_LOG(char * filename)
 	FLAGS_log_dir = t_strLogPath;
 
 	string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;
-	#ifdef FLAGS_INFO 
+	#ifdef FLAGS_INFO //info以上单日志
 		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+filename+".info.";
-	#elif FLAGS_WARNING 
+	#elif FLAGS_WARNING //waring以上单日志
 		t_strWarningName=t_strWarningName+FLAGS_log_dir+"/"+filename+".warning.";
-	#elif FLAGS_ERROR 
+	#elif FLAGS_ERROR //error以上单日志
 		t_strErrorName=t_strErrorName+FLAGS_log_dir+"/"+filename+".error.";
-	#elif FLAGS_FATAL 
+	#elif FLAGS_FATAL //fatal以上单日志
 		t_strFatalName=t_strFatalName+FLAGS_log_dir+"/"+filename+".fatal.";
-	#else
+	#elif FLAGS_ALL //各级别分别日志
 		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+filename+".info.";
 		t_strWarningName=t_strWarningName+FLAGS_log_dir+"/"+filename+".warning.";
 		t_strErrorName=t_strErrorName+FLAGS_log_dir+"/"+filename+".error.";
 		t_strFatalName=t_strFatalName+FLAGS_log_dir+"/"+filename+".fatal.";
+	#else //默认INFO单日志
+		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+filename+".info.";
 	#endif 
 
 	google::SetLogDestination(google::INFO, t_strInfoName.c_str());
