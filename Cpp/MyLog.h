@@ -17,7 +17,7 @@
 	FLAGS_logtostderr = 0;\
 	FLAGS_alsologtostderr=0;\
 	FLAGS_stderrthreshold=google::FATAL;\
-	FLAGS_servitysinglelog=false;\
+	FLAGS_minloglevel=google::INFO;\
 	string t_strLogPath = getenv("LOGPATH");\
 	FLAGS_log_dir = t_strLogPath;\
 	google::SetLogDestination(google::INFO, (string(FLAGS_log_dir)+"/"+link+".info.").c_str());\
