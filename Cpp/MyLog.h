@@ -22,6 +22,9 @@
 	string t_strLogPath = getenv("LOGPATH");\
 	FLAGS_log_dir = t_strLogPath;\
 	string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;\
+	#ifdef FLAGS_SEPARATE_INFO \
+		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+filename+".info.";\
+	#endif\
 	google::SetLogDestination(google::INFO, t_strInfoName.c_str());\
 	google::SetLogDestination(google::WARNING, t_strWarningName.c_str());\
 	google::SetLogDestination(google::ERROR, t_strErrorName.c_str());\
