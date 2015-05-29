@@ -45,9 +45,4 @@ static void INITIALIZE_LOG(char * filename)
 	google::SetLogDestination(google::FATAL, t_strFatalName.c_str());
 }
 
-/*	google::SetLogDestination(google::INFO, (string(FLAGS_log_dir)+"/"+filename+".info.").c_str());
-	google::SetLogDestination(google::WARNING, (string(FLAGS_log_dir)+"/"+filename+".warning.").c_str());
-	google::SetLogDestination(google::ERROR, (string(FLAGS_log_dir)+"/"+filename+".error.").c_str());
-	google::SetLogDestination(google::FATAL, (string(FLAGS_log_dir)+"/"+filename+".fatal.").c_str());
-	*/
 #endif
