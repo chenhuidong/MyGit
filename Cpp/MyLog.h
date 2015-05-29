@@ -22,6 +22,13 @@
 	string t_strLogPath = getenv("LOGPATH");\
 	FLAGS_log_dir = t_strLogPath;\
 	string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;\
+
+	google::SetLogDestination(google::INFO, t_strInfoName.c_str());\
+	google::SetLogDestination(google::WARNING, t_strWarningName.c_str());\
+	google::SetLogDestination(google::ERROR, t_strErrorName.c_str());\
+	google::SetLogDestination(google::FATAL, t_strFatalName.c_str());\	
+}
+/*
 	#ifdef FLAGS_SEPARATE_INFO \
 		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+filename+".info.";\
 	#elif FLAGS_SEPARATE_WARNING \
@@ -36,12 +43,7 @@
 		t_strErrorName=t_strErrorName+FLAGS_log_dir+"/"+filename+".error.";\
 		t_strFatalName=t_strFatalName+FLAGS_log_dir+"/"+filename+".fatal.";\
 	#endif \
-	google::SetLogDestination(google::INFO, t_strInfoName.c_str());\
-	google::SetLogDestination(google::WARNING, t_strWarningName.c_str());\
-	google::SetLogDestination(google::ERROR, t_strErrorName.c_str());\
-	google::SetLogDestination(google::FATAL, t_strFatalName.c_str());\	
-}
-
+	*/
 /*	google::SetLogDestination(google::INFO, (string(FLAGS_log_dir)+"/"+filename+".info.").c_str());\
 	google::SetLogDestination(google::WARNING, (string(FLAGS_log_dir)+"/"+filename+".warning.").c_str());\
 	google::SetLogDestination(google::ERROR, (string(FLAGS_log_dir)+"/"+filename+".error.").c_str());\
