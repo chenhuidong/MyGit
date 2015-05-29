@@ -3,6 +3,4 @@
 
 #include <dirent.h>
 
-#define BUFFSIZE 4096
-
 #endif
