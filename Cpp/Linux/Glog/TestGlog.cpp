@@ -6,6 +6,6 @@ int main(int argc, char* argv[]) {
 	INITIALIZE_LOG();
 	
 	LOG_INFO << "Hello1, Glog!";
-	LOG_ERROR << "Hello2, Glog!";
+	//LOG_ERROR << "Hello2, Glog!";
 	//LOG_FATAL << "Hello3, Glog!";
 }
