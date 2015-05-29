@@ -1,4 +1,5 @@
 #include "../../stdafx.h"
+#include "../../MyLog.h"
 
 int main(int argc, char* argv[]) {
      // Initialize Google's logging library.

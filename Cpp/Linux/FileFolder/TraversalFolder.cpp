@@ -1,6 +1,5 @@
 #include <iostream>
-#include <dirent.h>
-using namespace std;
+#include "../../MyFile.h"
 
 int main(int argc, char* argv[])
 {
