@@ -14,11 +14,11 @@ static void INITIALIZE_LOG(char * filename)
 {
 	google::InitGoogleLogging(filename);
 
-	FLAGS_logtostderr = 0;
-	FLAGS_alsologtostderr=0;
-	FLAGS_stderrthreshold=google::FATAL;
-	FLAGS_minloglevel=0;
-	string t_strLogPath = getenv("LOGPATH");
+	FLAGS_logtostderr = 0;	//是否打印到控制台
+	FLAGS_alsologtostderr=0;	//打印到日志同时是否打印到控制台
+	FLAGS_stderrthreshold=google::FATAL;	//需要打印到控制台的日志级别
+	FLAGS_minloglevel=0;	//
+	string t_strLogPath = getenv("LOGPATH");	
 	FLAGS_log_dir = t_strLogPath;
 
 	string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;
