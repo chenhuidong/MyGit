@@ -6,7 +6,7 @@
 class MyXml
 {
 public:
-	MyXml(char * strFileName):m_Document(strFileName)
+	MyXml(const char * strFileName):m_Document(strFileName)
 	{
 		m_Document.LoadFile();
 	}
