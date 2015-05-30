@@ -10,7 +10,7 @@ public:
 	MyXml(const char * strFileName)
 	{
 		m_Document = new TiXmlDocument("test.xml");
-		m_Document.LoadFile();
+		m_Document->LoadFile();
 	}
 private:
 	TiXmlDocument *m_Document;
