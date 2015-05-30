@@ -7,13 +7,14 @@
 class MyXml
 {
 public:
-	MyXml(const char * strFileName)//:m_Document(strFileName)
+	MyXml(const char * strFileName)
 	{
+		m_Document = new TiXmlDocument("test.xml");
 		m_Document.LoadFile();
 	}
 private:
-	TiXmlDocument m_Document;
-	TiXmlElement m_RootElement;
+	TiXmlDocument *m_Document;
+	TiXmlElement *m_RootElement;
 };
 
 #endif
