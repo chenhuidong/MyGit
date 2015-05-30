@@ -9,9 +9,9 @@ class MyXml
 public:
 	MyXml(const char * strFileName);
 	~MyXml();
+	TiXmlElement *m_RootElement;
 private:
 	TiXmlDocument *m_Document;
-	TiXmlElement *m_RootElement;
 };
 
 MyXml::MyXml(const char * strFileName)
