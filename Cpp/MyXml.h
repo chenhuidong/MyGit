@@ -3,11 +3,11 @@
 #include "tinyxml.h"  
 #include "tinystr.h"
 
-/*
+
 class MyXml
 {
 public:
-	MyXml(const char * strFileName):m_Document(strFileName)
+	MyXml(const char * strFileName)//:m_Document(strFileName)
 	{
 		m_Document.LoadFile();
 	}
@@ -15,5 +15,5 @@ private:
 	TiXmlDocument m_Document;
 	TiXmlElement m_RootElement;
 };
-*/
+
 #endif
