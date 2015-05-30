@@ -3,6 +3,7 @@
 #include "tinyxml.h"  
 #include "tinystr.h"
 
+/*
 class MyXml
 {
 public:
@@ -14,5 +15,5 @@ private:
 	TiXmlDocument m_Document;
 	TiXmlElement m_RootElement;
 };
-
+*/
 #endif
