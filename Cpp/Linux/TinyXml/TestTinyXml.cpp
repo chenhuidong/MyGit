@@ -2,7 +2,6 @@
 #include "tinystr.h"  
   
 #include <iostream>  
-  
 using namespace std;  
   
 int main()  
