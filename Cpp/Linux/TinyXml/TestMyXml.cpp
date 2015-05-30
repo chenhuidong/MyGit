@@ -10,6 +10,6 @@ int main()
     TiXmlElement *FirstPerson = oMyXml.m_RootElement->FirstChildElement();  
     cout << FirstPerson->Value() << endl;  
     TiXmlElement *NameElement = FirstPerson->FirstChildElement(); 
-    cout << NameElement->FirstChild()->Key()<< " " <<NameElement->FirstChild()->Value() << endl;   
+    cout << NameElement->Value()<< " " <<NameElement->FirstChild()->Value() << endl;   
 	return 0;
 }
