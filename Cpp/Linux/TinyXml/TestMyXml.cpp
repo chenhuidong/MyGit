@@ -3,6 +3,6 @@
 
 int main()
 {
-	MyXml oMyXml("test.xml");
+	TiXmlDocument t_Document("test.xml");
 	return 0;
 }
