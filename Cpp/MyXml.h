@@ -11,6 +11,7 @@ public:
 	{
 		m_Document = new TiXmlDocument("test.xml");
 		m_Document->LoadFile();
+		m_RootElement = m_Document->RootElement(); 
 	}
 private:
 	TiXmlDocument *m_Document;
