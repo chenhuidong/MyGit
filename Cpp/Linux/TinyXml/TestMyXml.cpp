@@ -3,6 +3,6 @@
 
 int main()
 {
-	TiXmlDocument t_Document("test.xml");
+	TiXmlDocument *myDocument = new TiXmlDocument("test.xml");
 	return 0;
 }
