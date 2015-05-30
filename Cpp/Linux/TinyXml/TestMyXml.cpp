@@ -9,5 +9,7 @@ int main()
 	//获得第一个Person节点。  
     TiXmlElement *FirstPerson = oMyXml.m_RootElement->FirstChildElement();  
     cout << FirstPerson->Value() << endl;  
+    TiXmlElement *NameElement = FirstPerson->FirstChildElement(); 
+    cout << NameElement->FirstChild()->Value() << endl;   
 	return 0;
 }
