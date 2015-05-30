@@ -7,15 +7,23 @@
 class MyXml
 {
 public:
-	MyXml(const char * strFileName)
-	{
-		m_Document = new TiXmlDocument("test.xml");
-		m_Document->LoadFile();
-		m_RootElement = m_Document->RootElement(); 
-	}
+	MyXml(const char * strFileName);
+	~MyXml();
 private:
 	TiXmlDocument *m_Document;
 	TiXmlElement *m_RootElement;
 };
+
+MyXml::MyXml(const char * strFileName)
+{
+	m_Document = new TiXmlDocument("test.xml");
+	m_Document->LoadFile();
+	m_RootElement = m_Document->RootElement(); 
+}
+
+MyXml::~MyXml()
+{
+	delete m_Document;
+}
 
 #endif
