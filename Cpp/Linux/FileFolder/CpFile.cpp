@@ -7,11 +7,11 @@ int main()
 
 	while ((n = read(STDIN_FILENO, buf, BUFFSIZE)) > 0)
 		if(write(STDOUT_FILENO, buf, n) != n)
-			std::out<<"write_error"<<std::endl;
+			cout<<"write_error"<<endl;
 	
 	if (n < 0)
 	{
-		std::cout<<"read error"<<std::endl;
+		cout<<"read error"<<endl;
 	}
 	return 0;
 }
