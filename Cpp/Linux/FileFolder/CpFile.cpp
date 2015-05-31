@@ -1,4 +1,4 @@
-#include "../../stdfile.h"
+#include "../../stdafx.h"
 
 int main()
 {
