@@ -1,5 +1,4 @@
-#include <iostream>
-#include 
+#include "../../stdafx.h"
 #include "../../MyFile.h"
 
 int main(int argc, char* argv[])
