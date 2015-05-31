@@ -2,6 +2,6 @@
 
 int main()
 {
-	cout<< "pid: "<< getpid();
+	cout<< "pid: "<< getpid() <<endl;
 	return 0;
 }
