@@ -37,8 +37,3 @@ int main(void)
 	}
 	return 0;
 }
-
-void sig_int(int signo)
-{
-	printf("interrupt\n%% ");
-}
