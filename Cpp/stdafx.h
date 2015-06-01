@@ -13,7 +13,7 @@
 #include <string>
 using namespace std;
 
-#define BUFFSIZE 2048
+#define BUFFSIZE 4096
 
 //iterator define
 #define  ___ANONYMOUS1(var, line)  var##line
