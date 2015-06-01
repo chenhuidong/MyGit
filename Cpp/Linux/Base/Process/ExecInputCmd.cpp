@@ -8,7 +8,7 @@ int main()
 	pid_t pid;
 	int status;
 
-	cout<< "%% " <<endl;
+	cout<< "%% ";
 	while(fgets(buf, BUFFSIZE, stdin) != NULL)
 	{
 		if(buf[strlen(buf)-1] == '\n')
