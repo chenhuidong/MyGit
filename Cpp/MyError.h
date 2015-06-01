@@ -5,6 +5,8 @@
 #include <errno.h>		/* for definition of errno */
 #include <stdarg.h>		/* ISO C variable aruments */
 
+#define	MAXLINE	4096			/* max line length */
+
 void	err_dump(const char *, ...);		/* {App misc_source} */
 void	err_msg(const char *, ...);
 void	err_quit(const char *, ...);
