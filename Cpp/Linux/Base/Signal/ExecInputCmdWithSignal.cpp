@@ -3,7 +3,10 @@
 #include "../../../MyError.h"
 #include "../../../MySignal.h"
 
-static void sig_init(int);
+void sig_int(int signo)
+{
+	printf("interrupt\n%% ");
+}
 
 int main(void)
 {
