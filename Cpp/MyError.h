@@ -1,6 +1,9 @@
 #ifndef __MY__ERROR_H_
 #define __MY__ERROR_H_
 
+#include <errno.h>		/* for definition of errno */
+#include <stdarg.h>		/* ISO C variable aruments */
+
 void	err_dump(const char *, ...);		/* {App misc_source} */
 void	err_msg(const char *, ...);
 void	err_quit(const char *, ...);
