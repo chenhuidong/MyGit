@@ -15,8 +15,18 @@ int main()
 
 		if((pid = fork()) < 0)
 		{
-			cout<< "fork error." <<endl;
+			err_sys("fork error." );
 		}
+		else if(pid == 0)
+		{
+			execlp(buf, buf, (char *)0);
+			err_ret("couldn't execute: %s", buf);
+			exit(127);
+		}
+
+		if((pid = waitpid(pid, &status, 0)) <0)
+			err_sys("waitpid error." );
+		printf("%% ");
 	}
 	return 0;
 }
