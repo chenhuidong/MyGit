@@ -1,6 +1,7 @@
 #include "../../../stdafx.h"
 #include "../../../MySys.h"
 #include "../../../MyError.h"
+#include "../../../MySignal.h"
 
 static void sig_init(int);
 
