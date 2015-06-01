@@ -1,5 +1,6 @@
 #include "../../../stdafx.h"
 #include "../../../MySys.h"
+#include "../../../MyError.h"
 
 static void sig_init(int);
 
