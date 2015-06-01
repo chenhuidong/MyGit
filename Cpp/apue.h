@@ -3,10 +3,10 @@
 #ifndef	_APUE_H
 #define	_APUE_H
 
-#if defined(SOLARIS)
+#ifdef(SOLARIS)
 #define _XOPEN_SOURCE	500	/* Single UNIX Specification, Version 2  for Solaris 9 */
 #define CMSG_LEN(x)	_CMSG_DATA_ALIGN(sizeof(struct cmsghdr)+(x))
-#elif !defined(BSD)
+#elif defined(BSD)
 #define _XOPEN_SOURCE	600	/* Single UNIX Specification, Version 3 */
 #endif
 
