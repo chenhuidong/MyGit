@@ -11,7 +11,7 @@ int main(void)
 	pid_t	pid;
 	int		status;
 
-	if (signal(SIGINT, sig_int) == SIG_ERR)
+	if (signal(SIGINT, &sig_int) == SIG_ERR)
 		err_sys("signal error");
 
 	printf("%% ");	/* print prompt (printf requires %% to print %) */
@@ -35,8 +35,7 @@ int main(void)
 	return 0;
 }
 
-void
-sig_int(int signo)
+void sig_int(int signo)
 {
 	printf("interrupt\n%% ");
 }
