@@ -20,7 +20,7 @@ typedef list<int> IntList;
 typedef vector<int> IntVec;
 
 //process
-#include <sys/wait>
+#include <sys/wait.h>
 
 
 #endif
