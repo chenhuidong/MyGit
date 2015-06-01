@@ -1,6 +1,7 @@
 #ifndef __MY__ERROR_H_
 #define __MY__ERROR_H_
 
+#include "stdafx.h"
 #include <errno.h>		/* for definition of errno */
 #include <stdarg.h>		/* ISO C variable aruments */
 
