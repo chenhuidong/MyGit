@@ -1,6 +1,7 @@
 #include "../../../stdafx.h"
 #include "../../../MyError.h"
 #include "../../../MySys.h"
+#include "../../../tellwait.h"
 
 static void charatatime(const char *);
 
