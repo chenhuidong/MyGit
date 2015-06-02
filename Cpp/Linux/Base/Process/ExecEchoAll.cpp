@@ -2,7 +2,7 @@
 #include "../../../MyError.h"
 #include <sys/wait.h>
 
-char	*env_init[] = { "USER=unknown", "PATH=/tmp", NULL };
+const char	*env_init[] = { "USER=unknown", "PATH=/tmp", NULL };
 
 int
 main(void)
