@@ -12,9 +12,9 @@ main(void)
 	if ((pid = fork()) < 0) {
 		err_sys("fork error");
 	} else if (pid == 0) {
-		charatatime("output from child\n");
+		charatatime("output from child 1111111111111111111111111111111111111111111\n");
 	} else {
-		charatatime("output from parent\n");
+		charatatime("output from parent 222222222222222222222222222222222222222222\n");
 	}
 	exit(0);
 }
