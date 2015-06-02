@@ -22,7 +22,7 @@ main(void)
 static void
 charatatime(const char *str)
 {
-	char	*ptr;
+	const char	*ptr;
 	int		c;
 
 	setbuf(stdout, NULL);			/* set unbuffered */
