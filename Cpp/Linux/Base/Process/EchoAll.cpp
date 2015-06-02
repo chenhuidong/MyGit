@@ -1,4 +1,5 @@
 #include "apue.h"
+#include "../../../stdafx.h"
 
 int
 main(int argc, char *argv[])
