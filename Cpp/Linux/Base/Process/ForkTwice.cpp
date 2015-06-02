@@ -21,7 +21,7 @@ int main()
 		exit(0);
 	}
 
-	if(wait(pid, NULL, 0) != pid)
+	if(waitpid(pid, NULL, 0) != pid)
 		err_sys("waitpid error");
 	return 0;
 }
