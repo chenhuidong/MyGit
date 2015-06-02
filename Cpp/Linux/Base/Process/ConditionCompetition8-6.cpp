@@ -2,7 +2,7 @@
 #include "../../../MyError.h"
 #include "../../../MySys.h"
 
-static void charatatime(char *);
+static void charatatime(const char *);
 
 int
 main(void)
@@ -20,7 +20,7 @@ main(void)
 }
 
 static void
-charatatime(char *str)
+charatatime(const char *str)
 {
 	char	*ptr;
 	int		c;
