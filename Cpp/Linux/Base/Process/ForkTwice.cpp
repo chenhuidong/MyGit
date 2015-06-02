@@ -17,7 +17,7 @@ int main()
 			exit(0);
 
 		sleep(2);
-		printf("second child, parent pid = %dn", getppid());
+		printf("second child, parent pid = %d\n", getppid());
 		exit(0);
 	}
 
