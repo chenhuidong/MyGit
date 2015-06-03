@@ -21,6 +21,6 @@ typedef vector<int> IntVec;
 
 //process
 #include <sys/wait.h>
-
+#include <pthread.h>
 
 #endif

@@ -1,6 +1,7 @@
 #include "../../../apue.h"
 #include <pthread.h>
 #include "../../../MyError.h"
+#include "../../../MySys.h"
 
 pthread_t ntid;
 
