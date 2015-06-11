@@ -5,6 +5,7 @@
 int
 main(void)
 {
+	//mkstemp
 	char	name[L_tmpnam], line[MAXLINE];
 	FILE	*fp;
 
