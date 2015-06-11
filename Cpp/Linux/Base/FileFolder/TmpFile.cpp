@@ -1,5 +1,6 @@
 #include "../../../stdafx.h"
 #include "../../../apue.h"
+#include "../../../MyError.h"
 
 int
 main(void)
