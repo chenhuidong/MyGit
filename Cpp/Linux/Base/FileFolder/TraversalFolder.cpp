@@ -53,7 +53,7 @@ void dirwalk(char *dir, void (*fcn)(char *))
 }
 
 /* fsize: print the size and name of file "name" */
-void fsize(char *name)
+void fsize(const char *name)
 { 
 	struct stat stbuf; 
 	if (stat(name, &stbuf) == -1) 
