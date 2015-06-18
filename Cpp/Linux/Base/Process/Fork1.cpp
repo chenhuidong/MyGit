@@ -5,7 +5,7 @@
 int main(void)
 { 
 	pid_t pid; 
-	char *message; 
+	const char *message; 
 	int n; 
 	pid = fork(); 
 	if (pid < 0) 
