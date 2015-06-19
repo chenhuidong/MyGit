@@ -1,13 +1,15 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
-#define MAXLINE 
+#define MAXLINE 256
+
 int main(void)
 { 
 	int n;
 	int fd[2]; 
 	pid_t pid; 
 	char line[MAXLINE]; 
+
 	if (pipe(fd) < 0) 
 	{ 
 		perror("pipe"); 
