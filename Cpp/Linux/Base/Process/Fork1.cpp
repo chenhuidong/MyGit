@@ -25,10 +25,10 @@ int main(void)
 		n = 3; 
 	} 
 
-	for(; n > 0; n--) 
+	//for(; n > 0; n--) 
 	{ 
 		printf(message); 
-		sleep(1); 
+	//	sleep(1); 
 	} 
 	return 0;
 }
