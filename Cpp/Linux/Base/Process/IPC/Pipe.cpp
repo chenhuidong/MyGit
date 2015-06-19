@@ -27,7 +27,7 @@ int main(void)
 		/* parent */ 
 		close(fd[0]); 
 		write(fd[1], "hello world\n", 12); 
-		wait(NULL); 
+		wait(); 
 	} 
 	else 
 	{ 
