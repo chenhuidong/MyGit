@@ -31,17 +31,17 @@ int main(void)
 
 	pthread_create(&tid, NULL, thr_fn1, NULL); 
 	pthread_join(tid, &tret); 
-	printf("thread 1 exit code %d\n", (int)tret); 
+	printf("thread 1 exit code %d\n", (int)(*tret)); 
 
 	pthread_create(&tid, NULL, thr_fn2, NULL); 
 	pthread_join(tid, &tret); 
-	printf("thread 2 exit code %d\n", (int)tret); 
+	printf("thread 2 exit code %d\n", (int)(*tret)); 
 
 	pthread_create(&tid, NULL, thr_fn3, NULL); 
 	sleep(3); 
 	pthread_cancel(tid); 
 	pthread_join(tid, &tret); 
-	printf("thread 3 exit code %d\n", (int)tret); 
-	
+	printf("thread 3 exit code %d\n", (int)(*tret)); 
+
 	return 0;
 }
