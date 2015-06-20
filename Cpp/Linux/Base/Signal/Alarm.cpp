@@ -3,12 +3,12 @@
 int main(void)
 { 
 	int counter; 
-	alarm(1); 
+	alarm(5); 
 
 	for(counter=0; 1; counter++) 
 	{
 		printf("counter=%d\n", counter); 
-		usleep(1000);
+		sleep(1);
 	}
 	return 0;
 }
