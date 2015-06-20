@@ -24,7 +24,7 @@ void *thr_fn(void *arg)
 int main(void)
 { 
 	int err; 
-	err = pthread_create(&ntid, NULL, thr_fn, "new thread: "); 
+	err = pthread_create(&ntid, NULL, thr_fn, (void *)"new thread: "); 
 	if (err != 0) 
 	{ 
 		fprintf(stderr, "can't create thread: %s\n", strerror(err)); 
