@@ -6,6 +6,9 @@ int main(void)
 	alarm(1); 
 
 	for(counter=0; 1; counter++) 
-		printf("counter=%d ", counter); 
+	{
+		printf("counter=%d\n", counter); 
+		sleep(1);
+	}
 	return 0;
 }
