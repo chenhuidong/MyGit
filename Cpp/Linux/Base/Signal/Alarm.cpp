@@ -8,7 +8,7 @@ int main(void)
 	for(counter=0; 1; counter++) 
 	{
 		printf("counter=%d\n", counter); 
-		sleep(1);
+		usleep(10);
 	}
 	return 0;
 }
