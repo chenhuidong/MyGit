@@ -17,7 +17,7 @@ void printids(const char *s)
 
 void *thr_fn(void *arg)
 { 
-	printids(arg); 
+	printids((const char *)arg); 
 	return NULL;
 }
 
