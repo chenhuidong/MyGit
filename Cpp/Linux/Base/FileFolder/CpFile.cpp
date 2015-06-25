@@ -1,6 +1,5 @@
 #include "../../../stdafx.h"
 
-
 int main()
 {
 	int n;
@@ -14,5 +13,6 @@ int main()
 	{
 		cout<<"read error"<<endl;
 	}
+	cout<<"1"<<endl;
 	return 0;
 }
