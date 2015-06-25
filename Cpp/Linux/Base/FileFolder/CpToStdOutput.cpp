@@ -1,4 +1,4 @@
-#include "../../stdafx.h"
+#include "../../../stdafx.h"
 #define FLAGS_INFO
 #include "../../MyLog.h"
 
