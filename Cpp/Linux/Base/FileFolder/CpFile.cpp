@@ -13,6 +13,6 @@ int main()
 	{
 		cout<<"read error"<<endl;
 	}
-	cout<<"1"<<endl;
+
 	return 0;
 }

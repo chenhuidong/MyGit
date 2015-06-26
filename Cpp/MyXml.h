@@ -16,7 +16,7 @@ private:
 
 MyXml::MyXml(const char * strFileName)
 {
-	m_Document = new TiXmlDocument("test.xml");
+	m_Document = new TiXmlDocument(strFileName);
 	m_Document->LoadFile();
 	m_RootElement = m_Document->RootElement(); 
 }
