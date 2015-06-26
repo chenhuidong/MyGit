@@ -1,5 +1,5 @@
-#include "../../../stdafx.h"
-#include "../../../MyXml.h"
+#include "../../stdafx.h"
+#include "../../MyXml.h"
 
 int main()
 {
