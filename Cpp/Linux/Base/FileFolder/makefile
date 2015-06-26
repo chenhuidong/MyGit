@@ -1,6 +1,6 @@
 cp:
 	g++ CpFile.cpp -ocp
-.PHONY : clean
+.PHONY:clean
 clean:
 	rm cp
 	
