@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "../../stdafx.h"
  
 static DBusHandlerResult
 filter_func(DBusConnection *connection, DBusMessage *message, void *usr_data)
