@@ -34,22 +34,23 @@ int main(int argc, char *argv[])
  
     dbus_error_init(&dberr);
  
+    cout<<"1"<<endl;
     dbconn = dbus_bus_get(DBUS_BUS_SESSION, &dberr);
     if (dbus_error_is_set(&dberr)) {
         dbus_error_free(&dberr);
         return -1;
     }
- 
+    cout<<"2"<<endl;
     if (!dbus_connection_add_filter(dbconn, filter_func, NULL, NULL)) {
         return -1;
     }
- 
+    cout<<"3"<<endl;
     dbus_bus_add_match(dbconn, "type='signal',interface='client.signal.Type'", &dberr);
     if (dbus_error_is_set(&dberr)) {
         dbus_error_free(&dberr);
         return -1;
     }
- 
+    cout<<"4"<<endl;
     while(dbus_connection_read_write_dispatch(dbconn, -1)) {
         /* loop */
     }
