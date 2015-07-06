@@ -1,13 +1,13 @@
 #include <mysql.h>
 #include <stdlib.h>
 #include <stdio.h>
-static const char *server_args[] =
+static char *server_args[] =
 {
     "this_program",       /* this string is not used */
     "--datadir=.",
     "--key_buffer_size=32M"
 };
-static const char *server_groups[] =
+static char *server_groups[] =
 {
     "embedded",
     "server",
