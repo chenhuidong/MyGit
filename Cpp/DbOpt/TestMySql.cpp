@@ -1,13 +1,13 @@
 #include <mysql.h>
 #include <stdlib.h>
 #include <stdio.h>
-static char *server_args[] =
+static const char *server_args[] =
 {
     "this_program",       /* this string is not used */
     "--datadir=.",
     "--key_buffer_size=32M"
 };
-static char *server_groups[] =
+static const char *server_groups[] =
 {
     "embedded",
     "server",
@@ -22,10 +22,10 @@ int main(void)
     MYSQL *conn;
     MYSQL_RES *res;
     MYSQL_ROW row;
-    char *server = "121.42.27.147";
-    char *user = "public_user";
-    char *password = "111111"; /* 此处改成你的密码 */
-    char *database = "test";
+    const char *server = "121.42.27.147";
+    const char *user = "public_user";
+    const char *password = "111111"; /* 此处改成你的密码 */
+    const char *database = "test";
     conn = mysql_init(NULL);
     /* Connect to database */
     if (!mysql_real_connect(conn, server,
@@ -76,3 +76,5 @@ int main(void)
     mysql_server_end();
     return EXIT_SUCCESS;
 }
+
+//g++ TestMySql.cpp -omain  $(mysql_config --cflags --libs) 
