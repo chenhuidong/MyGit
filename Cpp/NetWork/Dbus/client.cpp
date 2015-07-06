@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+using namespace std;
  
 int db_send(DBusConnection *dbconn)
 {
