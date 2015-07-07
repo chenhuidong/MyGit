@@ -11,11 +11,11 @@ int main(int argc, char **argv)
 {
 	INITIALIZE_LOG(argv[0]);
 
-	struct Stat stat;
+	struct stat stat1;
 	if (argc != 2)
 		LOG_ERROR << "usage: ftok <pathname>";
 
-	Stat(argv[1], &Stat);
-	LOG_INFO << "st_dev:" <<stat.st_dev <<", st_info:" <<stat.st_info <<", key:" <<Ftok(argv[1], 0x57) <<endl;
+	stat(argv[1], &stat1);
+	LOG_INFO << "st_dev:" <<stat1.st_dev <<", st_info:" <<stat1.st_info <<", key:" <<ftok(argv[1], 0x57) <<endl;
 	return 0;
 }
