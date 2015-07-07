@@ -1,5 +1,8 @@
 #include "../../stdafx.h"
+#include "../../MySys.h"
+#include "../../MyFile.h"
 #include "../../MyIPC.h"
+
 
 #define FLAGS_INFO
 #include "../../MyLog.h"
