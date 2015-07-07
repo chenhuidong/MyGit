@@ -11,6 +11,8 @@
 #define FLAGS_INFO
 #include "MyLog.h"
 
+#ifdef __XML_
 #include "MyXml.h"
+#endif
 
 #endif
