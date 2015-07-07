@@ -16,6 +16,6 @@ int main(int argc, char **argv)
 		LOG_ERROR << "usage: ftok <pathname>";
 
 	stat(argv[1], &stat1);
-	cout << "st_dev:" <<stat1.st_dev <<", st_info:" <<stat1.st_ino <<", key:" <<ftok(argv[1], 0x57) <<endl;
+	cout << "st_dev:" <<oct <<stat1.st_dev <<", st_info:" <<oct <<stat1.st_ino <<", key:" <<oct <<ftok(argv[1], 0x57) <<endl;
 	return 0;
 }
