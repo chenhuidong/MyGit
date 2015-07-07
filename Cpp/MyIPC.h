@@ -4,5 +4,6 @@
 #include <sys/msg.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
+#include <sys/ipc.h>
 
 #endif

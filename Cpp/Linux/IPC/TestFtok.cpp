@@ -1,3 +1,4 @@
+/*
 #include "../../stdafx.h"
 #include "../../MySys.h"
 #include "../../MyFile.h"
@@ -6,6 +7,8 @@
 
 #define FLAGS_INFO
 #include "../../MyLog.h"
+*/
+#include "../../MyLinux.h"
 
 int main(int argc, char **argv)
 {
@@ -16,6 +19,6 @@ int main(int argc, char **argv)
 		LOG_ERROR << "usage: ftok <pathname>";
 
 	stat(argv[1], &stat1);
-	cout << "st_dev:" <<hex <<stat1.st_dev <<", st_info:" <<hex <<stat1.st_ino <<", key:" <<hex <<ftok(argv[1], 0x57) <<endl;
+	cout << "st_dev:" <<hex <<stat1.st_dev <<", st_ino:" <<hex <<stat1.st_ino <<", key:" <<hex <<ftok(argv[1], 0x57) <<endl;
 	return 0;
 }
