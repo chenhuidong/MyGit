@@ -8,4 +8,4 @@ testpopen:
 	g++ TestPopen.cpp -otestpopen 
 .PHONY:clean
 clean:
-	rm main
+	rm test*
