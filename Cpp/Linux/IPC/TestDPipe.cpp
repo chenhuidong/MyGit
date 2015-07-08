@@ -2,10 +2,10 @@
 #include <errno.h>		/* for definition of errno */
 #include <stdarg.h>		/* ISO C variable aruments */
 
-int main()
+int main(int argc, char **argv)
 {
 	INITIALIZE_LOG(argv[0]);
-	
+
 	int fd[2], n;
 	char c;
 	pid_t childpid;
