@@ -16,9 +16,9 @@ int main(int argc, char **argv)
 
 	struct stat stat1;
 	if (argc != 2)
-		LOG_ERROR << "usage: ftok <pathname>";
+		LOG_ERROR<< "usage: ftok <pathname>";
 
 	stat(argv[1], &stat1);
-	cout << "st_dev:" <<hex <<stat1.st_dev <<", st_ino:" <<hex <<stat1.st_ino <<", key:" <<hex <<ftok(argv[1], 0x57) <<endl;
+	cout<< "st_dev:"<< hex<< stat1.st_dev<< ", st_ino:"<< hex<< stat1.st_ino<< ", key:"<< hex<< ftok(argv[1], 0x57)<< endl;
 	return 0;
 }
