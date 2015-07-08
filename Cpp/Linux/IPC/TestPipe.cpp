@@ -59,7 +59,7 @@ void server(int readfd, int writefd)
 
 	if((fd = open(buf, O_RDONLY))<0)
 	{
-		snprintf(buf+n, sizeof(buf)-n, "can not open, %sn", stderr(errno));
+		snprintf(buf+n, sizeof(buf)-n, "can not open, %sn", stderror(errno));
 		n = strlen(buf);
 		write(writefd, buf, n);
 	}
