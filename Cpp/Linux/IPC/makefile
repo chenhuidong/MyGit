@@ -5,7 +5,7 @@ testpipe:
 testdpipe:
 	g++ TestDPipe.cpp -otestdpipe -lglog
 testpopen:
-	g++ TestPopen.cpp -otestpopen 
+	g++ TestPopen.cpp -otestpopen -lglog
 .PHONY:clean
 clean:
 	rm test*

@@ -2,6 +2,8 @@
 
 int main(int argc, char **argv)
 {
+	INITIALIZE_LOG(argv[0]);
+	
 	size_t n;
 	char buf[BUFFSIZE], command[BUFFSIZE];
 	FILE *fp;
