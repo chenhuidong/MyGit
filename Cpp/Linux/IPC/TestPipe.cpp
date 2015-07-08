@@ -10,7 +10,7 @@ int main()
 	pid_t childpid;
 
 	pipe(pipe1);
-	Pipe(pipe2);
+	pipe(pipe2);
 
 	if((childpid = fork()) == 0)
 	{
@@ -59,7 +59,7 @@ void server(int readfd, int writefd)
 
 	if((fd = open(buf, O_RDONLY))<0)
 	{
-		snprintf(buf+n, sizeof(buf)-n, "can not open, %sn", stderror(errno));
+		snprintf(buf+n, sizeof(buf)-n, "can not open, %sn", stderr(errno));
 		n = strlen(buf);
 		write(writefd, buf, n);
 	}
