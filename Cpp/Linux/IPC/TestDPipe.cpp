@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 		sleep(3);
 		if((n=read(fd[0], &c, 1))!=1)
 			LOG_ERROR<< "child: read returned "<< n<< endl;
-		printf("child read %cn", c);
+		printf("child read %c\n", c);
 		write(fd[0], "c", 1);
 		exit(0);
 	}
@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	write(fd[1], "p", 1);
 	if((n=read(fd[1], &c, 1))!=1)
 		LOG_ERROR<< "parent: read returned "<< n<< endl;
-	printf("parent read %cn", c);
+	printf("parent read %c\n", c);
 	exit(0);
 	return 0;
 }
