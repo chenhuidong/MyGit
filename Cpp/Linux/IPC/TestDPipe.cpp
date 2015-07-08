@@ -4,6 +4,8 @@
 
 int main()
 {
+	INITIALIZE_LOG(argv[0]);
+	
 	int fd[2], n;
 	char c;
 	pid_t childpid;
