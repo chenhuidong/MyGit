@@ -5,4 +5,6 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#define FILE_MODE (S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH)
+
 #endif
