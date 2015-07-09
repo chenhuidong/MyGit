@@ -29,6 +29,7 @@ int main()
 	return 0;
 }
 
+//parent
 void client(int readfd, int writefd)
 {
 	size_t len;
@@ -46,6 +47,7 @@ void client(int readfd, int writefd)
 		write(STDOUT_FILENO, buf, n);
 }
 
+//child
 void server(int readfd, int writefd)
 {
 	int fd;
