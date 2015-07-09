@@ -39,7 +39,7 @@ int main(int argc, char** argv)
 	unlink(FIFO1);
 	unlink(FIFO2);
 	 */
-	cout << getworkpath()<< endl;
+	cout<< getworkpath()<< endl;
 	return 0;
 }
 
