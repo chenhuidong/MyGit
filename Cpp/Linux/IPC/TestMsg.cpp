@@ -3,9 +3,9 @@
 int main(int argc, char** argv)
 {
 	INITIALIZE_LOG(argv[0]);
-	
+
 	int msgid;
-	struct msgid_ds info;
+	struct msqid_ds info;
 	struct msgbuf buf;
 
 	msgid = msgget(IPC_PRIVATE, SVMSG_MODE | IPC_CREAT);
