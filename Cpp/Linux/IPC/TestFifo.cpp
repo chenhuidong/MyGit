@@ -2,15 +2,13 @@
 #include <errno.h>		/* for definition of errno */
 #include <stdarg.h>		/* ISO C variable aruments */
 
-#define FIFO1 "/tmp/fifo.1"
-#define FIFO2 "/tmp/fifo.2"
+#define FIFO1 "/mnt/home2/51linux_LxomB0aQ/Log/fifo.1"
+#define FIFO2 "/mnt/home2/51linux_LxomB0aQ/Log/fifo.2"
 
 void  client(int, int), server(int, int);
 
 int main(int argc, char** argv)
 {
-	/*
-	
 	int readfd, writefd;
 	pid_t childpid;
 
@@ -38,8 +36,6 @@ int main(int argc, char** argv)
 
 	unlink(FIFO1);
 	unlink(FIFO2);
-	 */
-	cout<< getworkpath()<< endl;
 	return 0;
 }
 
