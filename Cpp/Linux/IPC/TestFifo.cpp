@@ -9,6 +9,8 @@ void  client(int, int), server(int, int);
 
 int main(int argc, char** argv)
 {
+	INITIALIZE_LOG(argv[0]);
+	
 	int readfd, writefd;
 	pid_t childpid;
 

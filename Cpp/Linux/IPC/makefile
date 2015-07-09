@@ -8,6 +8,8 @@ testpopen:
 	g++ TestPopen.cpp -otestpopen -lglog
 testfifo:
 	g++ TestFifo.cpp -otestfifo -lglog
+testmsg:
+	g++ TestMsg.cpp -otestmsg -lglog
 .PHONY:clean
 clean:
 	rm test*
