@@ -10,6 +10,8 @@ testfifo:
 	g++ TestFifo.cpp -otestfifo -lglog
 testmsg:
 	g++ TestMsg.cpp -otestmsg -lglog
+testmsgcreate:
+	g++ Testmsgcreate.cpp -otestmsgcreate -lglog
 .PHONY:clean
 clean:
 	rm test*
