@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 	oflag = SVMSG_MODE | IPC_CREAT;
 	while((c = getopt(argc, argv,"e")) != -1)
 	{
-		swith(c)
+		switch(c)
 		{
 		case "e":
 			oflag != IPC_EXEL;
