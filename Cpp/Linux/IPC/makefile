@@ -11,7 +11,11 @@ testfifo:
 testmsg:
 	g++ TestMsg.cpp -otestmsg -lglog
 testmsgcreate:
-	g++ Testmsgcreate.cpp -otestmsgcreate -lglog
+	g++ TestMsgcreate.cpp -otestmsgcreate -lglog
+testmsgsnd:
+	g++ TestMsgsnd.cpp -otestmsgsnd -lglog
+testmsgrcv:
+	g++ TestMsgrcv.cpp -otestmsgrcv -lglog
 .PHONY:clean
 clean:
 	rm test*
