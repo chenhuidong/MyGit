@@ -12,4 +12,7 @@
 #define SVSEM_MODE 0660
 #define SVSHM_MODE 0660
 
+#define MSG_W 0200
+#define MSG_R 0400
+
 #endif

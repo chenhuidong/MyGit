@@ -12,13 +12,13 @@ int main(int argc, char** argv)
 		switch(c)
 		{
 		case 'e':
-			oflag != IPC_EXCL;
+			oflag |= IPC_EXCL;
 			break;
 		}
 	}
 
 	if((optind != argc -1))
-		LOG_ERROR<< "usage: msgcreate [-e] <pathname>"<< endl;
+		cout<< "usage: msgcreate [-e] <pathname>"<< endl;
 
 	mqid = msgget(ftok(argv[optind], 0), oflag);
 	return 0;
