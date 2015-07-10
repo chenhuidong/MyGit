@@ -11,8 +11,8 @@ int main(int argc, char** argv)
 	{
 		switch(c)
 		{
-		case "e":
-			oflag != IPC_EXEL;
+		case 'e':
+			oflag != IPC_EXCL;
 			break;
 		}
 	}
