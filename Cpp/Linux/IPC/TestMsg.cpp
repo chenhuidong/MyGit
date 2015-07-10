@@ -16,8 +16,8 @@ int main(int argc, char** argv)
 	msgctl(msgid, IPC_STAT, &info);
 
 	printf("read-write: %03o, cbytes = %lu, qnum = %lu, qbytes = %lu\n", 
-		info.msg_perm.mode & 0777, (ulong_t)info.msg_cbytes,
-		(ulong_t)info.msg_qnum, (ulong_t)info.msg_qbytes);
+		info.msg_perm.mode & 0777, (uint64)info.msg_cbytes,
+		(uint64)info.msg_qnum, (uint64)info.msg_qbytes);
 
 	system("ipcs -q");
 	msgctl(msgid, IPC_RMID, NULL);
