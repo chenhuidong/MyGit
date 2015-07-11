@@ -17,9 +17,10 @@ int main(int argc, char** argv)
 		switch(c)
 		{
 		case 'n':
-			flag |= IPC_NCWAIT;
+			flag |= IPC_NOWAIT;
+			break;
 		case 'e':
-			oflag |= IPC_EXCL;
+			flag |= IPC_EXCL;
 			break;
 		}
 	}
@@ -28,7 +29,7 @@ int main(int argc, char** argv)
 		cout<< "usage: msgrcv [-n] [-t type] <pathname>"<< endl;
 
 	mqid = msgget(ftok(argv[optind], 0), MSG_R);
-	buff = malloc(MAXMSG);
+	buff = (struct msgbuf *)malloc(MAXMSG);
 
 	n = msgrcv(mqid, buff, MAXMSG, type, flag);
 	printf("read %d bytes, type = %ld\n", n, buff->mtype);
