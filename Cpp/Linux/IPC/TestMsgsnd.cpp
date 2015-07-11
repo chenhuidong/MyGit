@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 	type = atoi(argv[3]);
 
 	mqid = msgget(ftok(argv[1], 0), MSG_W);
-	ptr = calloc(sizeof(long)+len, sizeof(char));
+	ptr = (struct msgbuf *)calloc(sizeof(long)+len, sizeof(char));
 	ptr->mtype = type;
 
 	msgsnd(mqid, ptr, len, 0);
