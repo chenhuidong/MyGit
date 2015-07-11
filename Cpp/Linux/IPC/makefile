@@ -16,6 +16,8 @@ testmsgsnd:
 	g++ TestMsgsnd.cpp -otestmsgsnd -lglog
 testmsgrcv:
 	g++ TestMsgrcv.cpp -otestmsgrcv -lglog
+testmsgrmid:
+	g++ TestMsgrmid.cpp -otestmsgrmid -lglog
 .PHONY:clean
 clean:
 	rm test*
