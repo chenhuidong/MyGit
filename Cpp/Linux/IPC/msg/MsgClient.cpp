@@ -21,6 +21,7 @@ int main(int argc, char** argv)
 {
 	INITIALIZE_LOG(argv[0]);
 
+	int readid, writeid;
 	writeid = msgget(MQ_KEY1, 0);
 	readid = msgget(MQ_KEY2, 0);
 
