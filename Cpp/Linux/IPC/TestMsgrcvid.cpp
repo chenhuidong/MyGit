@@ -16,6 +16,6 @@ int main(int argc, char** argv)
 	buff = (msgbuf*)malloc(MSGMAX);
 
 	n = msgrcv(mqid, buff, MSGMAX, 0, 0);
-	printf("read %d bytes, type = %ldn", n, buff->mtype);
+	printf("read %d bytes, type = %ld\n", n, buff->mtype);
 	return 0;
 }
