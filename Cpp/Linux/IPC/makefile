@@ -18,6 +18,8 @@ testmsgrcv:
 	g++ TestMsgrcv.cpp -otestmsgrcv -lglog
 testmsgrmid:
 	g++ TestMsgrmid.cpp -otestmsgrmid -lglog
+testmsgrcvid:
+	g++ TestMsgrcvid.cpp -otestmsgrcvid -lglog
 .PHONY:clean
 clean:
 	rm test*
