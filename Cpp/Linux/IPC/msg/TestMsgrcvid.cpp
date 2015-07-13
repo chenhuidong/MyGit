@@ -1,4 +1,4 @@
-#include "../../MyLinux.h"
+#include "../../../MyLinux.h"
 #define MSGMAX (8192+sizeof(long))
 
 int main(int argc, char** argv)
