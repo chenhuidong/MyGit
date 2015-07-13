@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 		cout<< "usage: msgrcvid <mqid>"<< endl;
 
 	mqid = atoi(argv[1]);
-	buff = malloc(MSGMAX);
+	buff = (msgbuf*)malloc(MSGMAX);
 
 	n = msgrcv(mqid, buff, MSGMAX, 0, 0);
 	printf("read %d bytes, type = %ldn", n, buff->mtype);
