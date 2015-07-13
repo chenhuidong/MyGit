@@ -10,6 +10,10 @@ testmsgrmid:
 	g++ TestMsgrmid.cpp -otestmsgrmid -lglog
 testmsgrcvid:
 	g++ TestMsgrcvid.cpp -otestmsgrcvid -lglog
+testmsgserver:
+	g++ TestMsgServer.cpp -otestmsgserver -lglog
+testmsgclient:
+	g++ TestMsgClient.cpp -otestmsgclient -lglog
 .PHONY:clean
 clean:
 	rm test*
