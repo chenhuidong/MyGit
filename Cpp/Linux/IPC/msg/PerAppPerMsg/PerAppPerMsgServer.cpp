@@ -13,6 +13,7 @@ server(int readfd, int writefd)
 	for ( ; ; ) {
 			/* 4read pathname from IPC channel */
 		mesg.mesg_type = 1;
+		cout<<"1"<<endl;
 		if ( (n = Mesg_recv(readfd, &mesg)) == 0) {
 			err_msg("pathname missing");
 			continue;
@@ -28,7 +29,7 @@ server(int readfd, int writefd)
 		pid = atol(mesg.mesg_data);
 		mesg.mesg_type = pid;	/* for messages back to client */
 
-		cout<<"1"<<endl;
+		cout<<"2"<<endl;
 		if ( (fp = fopen(ptr, "r")) == NULL) {
 				/* 4error: must tell client */
 			snprintf(mesg.mesg_data + n, sizeof(mesg.mesg_data) - n,
