@@ -15,4 +15,8 @@
 #include "MyXml.h"
 #endif
 
+#ifdef __ERROR_
+#include "MyError.h"
+#endif
+
 #endif
