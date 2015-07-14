@@ -28,6 +28,7 @@ server(int readfd, int writefd)
 		pid = atol(mesg.mesg_data);
 		mesg.mesg_type = pid;	/* for messages back to client */
 
+		cout<<"1"<<endl;
 		if ( (fp = fopen(ptr, "r")) == NULL) {
 				/* 4error: must tell client */
 			snprintf(mesg.mesg_data + n, sizeof(mesg.mesg_data) - n,
