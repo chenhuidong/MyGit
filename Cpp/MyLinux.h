@@ -11,11 +11,11 @@
 #define FLAGS_INFO
 #include "MyLog.h"
 
-#ifdef __XML_
+#ifdef __MY_XML_
 #include "MyXml.h"
 #endif
 
-#ifdef __ERROR_
+#ifdef __MY_ERROR_
 #include "MyError.h"
 #endif
 

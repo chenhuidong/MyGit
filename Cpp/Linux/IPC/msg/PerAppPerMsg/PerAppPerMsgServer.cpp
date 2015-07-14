@@ -1,3 +1,4 @@
+#define __MY_ERROR_
 #include "../../../../MyLinux.h"
 
 void
