@@ -13,7 +13,7 @@ server(int readfd, int writefd)
 	for ( ; ; ) {
 			/* 4read pathname from IPC channel */
 		mesg.mesg_type = 1;
-		if ( (n = mesg_recv(readfd, &mesg)) == 0) {
+		if ( (n = Mesg_recv(readfd, &mesg)) == 0) {
 			err_msg("pathname missing");
 			continue;
 		}
@@ -34,20 +34,20 @@ server(int readfd, int writefd)
 					 ": can't open, %s\n", strerror(errno));
 			mesg.mesg_len = strlen(ptr);
 			memmove(mesg.mesg_data, ptr, mesg.mesg_len);
-			mesg_send(writefd, &mesg);
+			Mesg_send(writefd, &mesg);
 	
 		} else {
 				/* 4fopen succeeded: copy file to IPC channel */
 			while (fgets(mesg.mesg_data, MAXMESGDATA, fp) != NULL) {
 				mesg.mesg_len = strlen(mesg.mesg_data);
-				mesg_send(writefd, &mesg);
+				Mesg_send(writefd, &mesg);
 			}
 			fclose(fp);
 		}
 	
 			/* 4send a 0-length message to signify the end */
 		mesg.mesg_len = 0;
-		mesg_send(writefd, &mesg);
+		Mesg_send(writefd, &mesg);
 	}
 }
 
