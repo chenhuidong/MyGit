@@ -11,6 +11,7 @@ client(int readfd, int writefd)
 
 		/* 4start buffer with pid and a blank */
 	snprintf(mesg.mesg_data, MAXMESGDATA, "%ld ", (long) getpid());
+	cout<<mesg.mesg_data<<endl;
 	len = strlen(mesg.mesg_data);
 	ptr = mesg.mesg_data + len;
 
