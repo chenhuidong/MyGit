@@ -27,7 +27,7 @@ client(int readid, int writeid)
 
 		/* 4read from our queue, write to standard output */
 	while ( (n = Mesg_recv(readid, &mesg)) > 0)
-		Write(STDOUT_FILENO, mesg.mesg_data, n);
+		write(STDOUT_FILENO, mesg.mesg_data, n);
 }
 
 
