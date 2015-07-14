@@ -1,6 +1,8 @@
 #ifndef __MY_IPC_H_
 #define __MY_IPC_H_
 
+#include "stdafx.h"
+
 #include <sys/msg.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
