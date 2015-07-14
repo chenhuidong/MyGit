@@ -6,7 +6,7 @@ void server(int readfd, int writefd)
 	size_t n;
 	char buf[BUFFSIZE];
 
-	if((n=read(stdin, buf, BUFFSIZE)) == 0)
+	if((n=read(STDIN_FILENO, buf, BUFFSIZE)) == 0)
 		LOG_ERROR << "end-of-file while reading pathname" <<endl;
 
 	buf[n] = '\0';
