@@ -2,6 +2,7 @@
 #define __MY_IPC_H_
 
 #include "stdafx.h"
+#include "MyError.h"
 
 #include <sys/msg.h>
 #include <sys/sem.h>
