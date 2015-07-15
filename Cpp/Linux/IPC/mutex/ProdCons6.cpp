@@ -1,5 +1,5 @@
-/* include globals */
-#include	"unpipc.h"
+#define __MY_THREAD_
+#include "../../../MyLinux.h"
 
 #define	MAXNITEMS 		1000000
 #define	MAXNTHREADS			100
