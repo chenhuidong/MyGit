@@ -9,6 +9,8 @@
 #include <sys/shm.h>
 #include <sys/ipc.h>
 
+#include <semaphore.h>
+
 #define FILE_MODE 0644
 #define DIR_MODE 0755
 #define SVMSG_MODE 0660
