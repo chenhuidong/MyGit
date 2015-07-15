@@ -1,4 +1,5 @@
 #define __MY_ERROR_
+#define __MY_THREAD_
 #include "../../../../MyLinux.h"
 
 #define	MAXNITEMS 		1000000

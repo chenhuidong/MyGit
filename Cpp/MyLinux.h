@@ -19,4 +19,8 @@
 #include "MyError.h"
 #endif
 
+#ifdef __MY_THREAD_
+#include "MyThread.h"
+#endif
+
 #endif

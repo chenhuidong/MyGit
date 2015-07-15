@@ -19,8 +19,4 @@ typedef u_int64_t uint64;
 typedef list<int> IntList;
 typedef vector<int> IntVec;
 
-//process
-#include <sys/wait.h>
-#include <pthread.h>
-
 #endif
