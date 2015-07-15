@@ -11,7 +11,7 @@ struct {
   int	buff[MAXNITEMS];
   int	nput;
   int	nval;
-} shared = { pTHREAD_MUTEX_INITIALIZER };
+} shared = { PTHREAD_MUTEX_INITIALIZER };
 
 void	*produce(void *), *consume(void *);
 
