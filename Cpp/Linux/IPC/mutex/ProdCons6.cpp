@@ -34,7 +34,7 @@ main(int argc, char **argv)
 	nitems = min(atoi(argv[1]), MAXNITEMS);
 	nthreads = min(atoi(argv[2]), MAXNTHREADS);
 
-	Set_concurrency(nthreads + 1);
+	pthread_setconcurrency(nthreads + 1);
 		/* 4create all producers and one consumer */
 	for (i = 0; i < nthreads; i++) {
 		count[i] = 0;
