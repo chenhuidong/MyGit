@@ -17,7 +17,10 @@ main(int argc, char **argv)
 
 		/* 4set: ptr[0] = 0, ptr[1] = 1, etc. */
 	for (i = 0; i < buff.shm_segsz; i++)
+	{
 		*ptr++ = i % 256;
+		cout<< *ptr<< endl;
+	}
 
 	exit(0);
 }
