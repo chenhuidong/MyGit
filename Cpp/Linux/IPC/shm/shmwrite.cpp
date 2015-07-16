@@ -6,7 +6,7 @@ main(int argc, char **argv)
 {
 	int		i, id;
 	struct shmid_ds	buff;
-	unsigned char	*ptr;
+	char	*ptr;
 
 	if (argc != 2)
 		err_quit("usage: shmwrite <pathname>");
