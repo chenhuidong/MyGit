@@ -19,6 +19,7 @@
 #include <sys/shm.h>
 #include <sys/ipc.h>
 #include <errno.h>
+#include "../../../stdafx.h"
 #define MY_SHM_ID 67483
 int main(  )
 {
