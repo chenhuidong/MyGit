@@ -29,6 +29,7 @@ int main(  )
     void* mem;
     oflag = SVSHM_MODE | IPC_CREAT;
     shmid=shmget( MY_SHM_ID,0, oflag);
+    printf( "chd %d\n", shmid);
     if( shmid>=0 )
     {
         mem=shmat( shmid,( const void* )0,0 );
