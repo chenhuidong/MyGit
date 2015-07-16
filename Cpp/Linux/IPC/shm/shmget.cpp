@@ -21,7 +21,7 @@ main(int argc, char **argv)
 	length = atoi(argv[optind + 1]);
 
 	id = shmget(ftok(argv[optind], 0), length, oflag);
-	ptr = shmat(id, NULL, 0);
+	ptr = (char *)shmat(id, NULL, 0);
 
 	exit(0);
 }
