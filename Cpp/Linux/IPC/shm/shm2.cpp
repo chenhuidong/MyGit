@@ -23,14 +23,15 @@
 #define MY_SHM_ID 67483
 int main(  )
 {
-        //共享内存区段的挂载和脱离
-    int shmid,ret;
+    //共享内存区段的挂载和脱离
+    int shmid,ret,oflag;
     void* mem;
-    shmid=shmget( MY_SHM_ID,0,0 );
+    oflag = SVSHM_MODE | IPC_CREAT;
+    shmid=shmget( MY_SHM_ID,0, oflag);
     if( shmid>=0 )
     {
         mem=shmat( shmid,( const void* )0,0 );
-                //shmat()返回进程地址空间中指向区段的指针
+        //shmat()返回进程地址空间中指向区段的指针
         if( (*(( int *)mem))!=-1 )
         {
             printf( "Shared memory was attached in our address space at %p/n",mem );
