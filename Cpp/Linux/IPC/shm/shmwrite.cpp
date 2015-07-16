@@ -12,7 +12,7 @@ main(int argc, char **argv)
 		err_quit("usage: shmwrite <pathname>");
 
 	id = shmget(ftok(argv[1], 0), 0, SVSHM_MODE);
-	ptr = (char *)shmat(id, NULL, 0);
+	ptr = (unsigned char *)shmat(id, NULL, 0);
 	shmctl(id, IPC_STAT, &buff);
 
 		/* 4set: ptr[0] = 0, ptr[1] = 1, etc. */
