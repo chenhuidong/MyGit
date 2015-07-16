@@ -20,7 +20,7 @@ int main(void)
         perror("shmat");  
       
     /* 往共享内存写数据 */  
-    sprintf(shmptr, "%s", "hello, world");  
+    sprintf(shmptr, "%s", "hello world.");  
   
     exit(0);  
 }  
