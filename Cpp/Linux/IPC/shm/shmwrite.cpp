@@ -15,12 +15,7 @@ main(int argc, char **argv)
 	ptr = (unsigned char *)shmat(id, NULL, 0);
 	shmctl(id, IPC_STAT, &buff);
 
-		/* 4set: ptr[0] = 0, ptr[1] = 1, etc. */
-	for (i = 0; i < buff.shm_segsz; i++)
-	{
-		*ptr++ = i % 256;
-		cout<< *ptr<< endl;
-	}
+	strcpy(ptr, "hello world.\n");
 
 	exit(0);
 }

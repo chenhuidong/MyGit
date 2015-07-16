@@ -15,13 +15,7 @@ main(int argc, char **argv)
 	ptr = (unsigned char *)shmat(id, NULL, 0);
 	shmctl(id, IPC_STAT, &buff);
 
-		/* 4check that ptr[0] = 0, ptr[1] = 1, etc. */
-	for (i = 0; i < buff.shm_segsz; i++)
-	{
-		cout<< *ptr<< endl;
-		if ( (c = *ptr++) != (i % 256))
-			err_ret("ptr[%d] = %d", i, c);
-	}
+	printf("%s\n", ptr); 
 
 	exit(0);
 }
