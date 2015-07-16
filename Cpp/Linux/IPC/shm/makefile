@@ -1,9 +1,9 @@
-shmget:
-	g++ shmget.cpp -oshmget -lglog
-shmrmid:
-	g++ shmrmid.cpp -oshmrmid -lglog
-shmwrite:
-	g++ shmwrite.cpp -oshmwrite -lglog
+testshmget:
+	g++ shmget.cpp -otestshmget -lglog
+testshmrmid:
+	g++ shmrmid.cpp -otestshmrmid -lglog
+testshmwrite:
+	g++ shmwrite.cpp -otestshmwrite -lglog
 .PHONY:clean
 clean:
-	rm shm*
+	rm test*
