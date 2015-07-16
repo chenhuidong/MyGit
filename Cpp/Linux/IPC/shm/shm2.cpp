@@ -30,7 +30,7 @@ int main(  )
     {
         mem=shmat( shmid,( const void* )0,0 );
                 //shmat()返回进程地址空间中指向区段的指针
-        if( ( int )mem!=-1 )
+        if( (int)(( int *)mem)!=-1 )
         {
             printf( "Shared memory was attached in our address space at %p/n",mem );
                         //向共享区段内存写入数据
