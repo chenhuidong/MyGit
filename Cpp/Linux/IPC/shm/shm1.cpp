@@ -1,6 +1,5 @@
 #define __MY_THREAD_
 #include "../../../MyLinux.h"
-#include ""
 
 #define	SEM_NAME	"mysem"
 
