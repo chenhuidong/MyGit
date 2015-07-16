@@ -34,22 +34,22 @@ int main(  )
         //shmat()返回进程地址空间中指向区段的指针
         if( (*(( int *)mem))!=-1 )
         {
-            printf( "Shared memory was attached in our address space at %p/n",mem );
+            printf( "Shared memory was attached in our address space at %p\n",mem );
                         //向共享区段内存写入数据
-            strcpy( ( char* )mem,"This is a test string./n" );
-            printf( "%s/n",(char*)mem );
+            strcpy( ( char* )mem,"This is a test string.\n" );
+            printf( "%s\n",(char*)mem );
                         //脱离共享内存区段
             ret=shmdt( mem );
             if( ret==0 )
-                printf( "Successfully detached memory /n" );
+                printf( "Successfully detached memory \n" );
             else
-                printf( "Memory detached failed %d/n",errno );
+                printf( "Memory detached failed %d\n",errno );
         }
         else
-            printf( "shmat(  ) failed/n" );
+            printf( "shmat(  ) failed\n" );
 
     }
     else
-        printf( "shared memory segment not found/n" );
+        printf( "shared memory segment not found\n" );
     return 0;
 }
