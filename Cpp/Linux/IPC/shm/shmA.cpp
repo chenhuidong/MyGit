@@ -35,7 +35,7 @@ int main(void)
  	
  	shmptr++;
 
-    strncpy(shmptr->name, "bbbb", 4);
+    strncpy(shmptr->name, "bbb", 4);
     shmptr->age = 12;
     exit(0);  
 }  
