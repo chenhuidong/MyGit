@@ -11,7 +11,7 @@
 class People
 {
 public:
-	char name[4];
+	char name[10];
 	int age;
 };
   
@@ -35,7 +35,7 @@ int main(void)
  	
  	shmptr++;
 
-    strncpy(shmptr->name, "bbb", 4);
+    strncpy(shmptr->name, "bbbb", 4);
     shmptr->age = 12;
     exit(0);  
 }  
