@@ -10,6 +10,7 @@
 
 class People
 {
+public:
 	char name[4];
 	int age;
 };
