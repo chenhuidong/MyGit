@@ -27,7 +27,7 @@ int main(void)
         perror("shmat");  
   
     /* 从共享内存读数据 */  
-    printf("%s\n", shmptr->name);  
+    printf("%s, %d\n", shmptr->name, shmptr->age);  
   
     exit(0);  
 }  
