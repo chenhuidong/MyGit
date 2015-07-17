@@ -18,20 +18,20 @@ public:
 int main(void)  
 {  
     int     shmid;  
-    char    *shmptr;  
+    People  *shmptr;  
   
     if ( (shmid = shmget(0x44, SHM_SIZE, SHM_MODE | IPC_CREAT)) < 0)  
         perror("shmget");  
   
-    if ( (shmptr = (char *)shmat(shmid, 0, 0)) == (void *) -1)  
+    if ( (shmptr = (People *)shmat(shmid, 0, 0)) == (void *) -1)  
         perror("shmat");  
       
     /* 往共享内存写数据 */  
     //sprintf(shmptr, "%s", "hello world.");  
     
-    People people;
-    strncpy(people.name, "aaa", 4);
-    people.age = 12;
-  
+    //People people;
+    strncpy(shmptr->name, "aaa", 4);
+    people->age = 12;
+ 	
     exit(0);  
 }  
