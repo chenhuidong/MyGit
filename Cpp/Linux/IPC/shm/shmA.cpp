@@ -7,6 +7,12 @@
   
 #define SHM_SIZE    4096  
 #define SHM_MODE    (SHM_R | SHM_W) /* user read/write */  
+
+class People
+{
+	char name[4];
+	int age;
+};
   
 int main(void)  
 {  
@@ -20,7 +26,11 @@ int main(void)
         perror("shmat");  
       
     /* 往共享内存写数据 */  
-    sprintf(shmptr, "%s", "hello world.");  
+    //sprintf(shmptr, "%s", "hello world.");  
+    
+    People people;
+    people.name = "aaa";
+    people.age = 12;
   
     exit(0);  
 }  
