@@ -31,7 +31,7 @@ int main(void)
     
     //People people;
     strncpy(shmptr->name, "aaa", 4);
-    shmptr->age = 12;
+    shmptr->age = 13;
  	
     exit(0);  
 }  
