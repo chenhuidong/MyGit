@@ -30,7 +30,7 @@ int main(void)
     //sprintf(shmptr, "%s", "hello world.");  
     
     People people;
-    people.name = "aaa";
+    strncpy(people.name, "aaa", 4);
     people.age = 12;
   
     exit(0);  
