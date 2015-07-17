@@ -11,7 +11,7 @@
 class People
 {
 public:
-	char name[4];
+	char name[10];
 	int age;
 }; 
 
@@ -30,7 +30,7 @@ int main(void)
     printf("%s, %d\n", shmptr->name, shmptr->age);  
   
   	shmptr++;
-  	
+
   	printf("%s, %d\n", shmptr->name, shmptr->age);  
     exit(0);  
 }  
