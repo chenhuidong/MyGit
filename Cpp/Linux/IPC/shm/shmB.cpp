@@ -29,6 +29,8 @@ int main(void)
     /* 从共享内存读数据 */  
     printf("%s, %d\n", shmptr->name, shmptr->age);  
   
-  	printf("%s, %d\n", (shmptr+1)->name, (shmptr+1)->age);  
+  	shmptr++;
+  	
+  	printf("%s, %d\n", shmptr->name, shmptr->age);  
     exit(0);  
 }  
