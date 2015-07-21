@@ -69,7 +69,7 @@ int main()
  otl_connect::otl_initialize(); // initialize ODBC environment
  try{
 
-  db.rlogon("UID=system;PWD=oracle;DSN=my_db"); // connect to ODBC
+  db.rlogon("UID=root;PWD=Admin_123;DSN=mysql"); // connect to ODBC
 
   otl_cursor::direct_exec
    (
