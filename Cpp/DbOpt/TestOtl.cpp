@@ -5,6 +5,7 @@ using namespace std;
 #define OTL_ODBC // Compile OTL 4/ODBC. Uncomment this when used with MS SQL 7.0/ 2000
 #define OTL_STL // enable STL / ANSI C++ compliance.
 #define OTL_UNCAUGHT_EXCEPTION_ON // enable safe exception handling / error 
+#define OTL_ODBC_UNIX
                                   // recovery.
 #include "otlv4.h" // include the OTL 4 header file
 
