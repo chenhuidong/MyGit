@@ -3,7 +3,7 @@ using namespace std;
 #include <stdio.h>
 
 #define OTL_ODBC_MYSQL // Compile OTL 4/ODBC
-##define OTL_ODBC_UNIX
+#define OTL_ODBC_UNIX
 #include "otlv4.h" // include the OTL 4 header file
 
 otl_connect db; // connect object
