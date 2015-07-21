@@ -46,7 +46,7 @@ int main()
  otl_connect::otl_initialize(); // initialize ODBC environment
  try{
 
-  db.rlogon("public/123456@mysql"); // connect to MS SQL Server
+  db.rlogon("root/Admin_123@mysql"); // connect to MS SQL Server
 
   otl_cursor::direct_exec
    (
