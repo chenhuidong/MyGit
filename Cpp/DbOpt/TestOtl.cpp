@@ -67,14 +67,13 @@ void select()
   i>>f1>>f2;
   cout<<"f1="<<f1<<", f2="<<f2<<endl;
  }
-
 }
 
 int main()
 {
  otl_connect::otl_initialize(); // initialize ODBC environment
+ 
  try{
-
   db.rlogon("scott/tiger@sqlite1"); // connect to ODBC
   //db.rlogon("root/Admin_123@mysql");
 
@@ -93,9 +92,7 @@ int main()
 
   insert(); // insert records into table
   select(); // select records from table
-
  }
-
  catch(otl_exception& p){ // intercept OTL exceptions
   cerr<<p.msg<<endl; // print out error message
   cerr<<p.stm_text<<endl; // print out SQL that caused the error
@@ -106,5 +103,4 @@ int main()
  db.logoff(); // disconnect from Oracle
 
  return 0;
-
 }
