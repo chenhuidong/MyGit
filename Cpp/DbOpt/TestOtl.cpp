@@ -75,7 +75,7 @@ int main()
  otl_connect::otl_initialize(); // initialize ODBC environment
  try{
 
-  db.rlogon("scott/tiger@sqlite"); // connect to ODBC
+  db.rlogon("scott/tiger@sqlite1"); // connect to ODBC
 
   otl_cursor::direct_exec
    (
