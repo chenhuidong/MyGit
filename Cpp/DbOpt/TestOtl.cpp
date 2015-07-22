@@ -11,7 +11,7 @@ otl_connect db; // connect object
 void insert()
 // insert rows into table
 { 
- otl_stream o(50, // buffer size
+ otl_stream o(1, // buffer size
               "insert into test_tab values(:f1<float>,:f2<char[31]>)", 
                  // SQL statement
               db // connect object
