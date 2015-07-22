@@ -4,6 +4,11 @@ using namespace std;
 
 #define OTL_ODBC_MYSQL // Compile OTL 4/ODBC
 #define OTL_ODBC_UNIX
+//#define ODBCVER 0x0250 // ODBC Version # needs to be downgraded
+                       // to 2.5 because the SQLite ODBC driver seems
+                       // to run slower when ODBC 3.x functions
+                       // used (performance is not as good as with
+                       // ODBC 2.5 function calls)
 #include "otlv4.h" // include the OTL 4 header file
 
 otl_connect db; // connect object
@@ -70,7 +75,7 @@ int main()
  otl_connect::otl_initialize(); // initialize ODBC environment
  try{
 
-  db.rlogon("UID=root;PWD=Admin_123;DSN=mysql"); // connect to ODBC
+  db.rlogon("root/Admin_123@mysql"); // connect to ODBC
 
   otl_cursor::direct_exec
    (
