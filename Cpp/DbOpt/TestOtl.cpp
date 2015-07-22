@@ -4,7 +4,7 @@ using namespace std;
 
 #define OTL_ODBC_MYSQL // Compile OTL 4/ODBC
 #define OTL_ODBC_UNIX
-//#define ODBCVER 0x0250 // ODBC Version # needs to be downgraded
+#define ODBCVER 0x0250 // ODBC Version # needs to be downgraded
                        // to 2.5 because the SQLite ODBC driver seems
                        // to run slower when ODBC 3.x functions
                        // used (performance is not as good as with
@@ -75,7 +75,7 @@ int main()
  otl_connect::otl_initialize(); // initialize ODBC environment
  try{
 
-  db.rlogon("UID=;PWD=;DSN=sqlite"); // connect to ODBC
+  db.rlogon("scott/tiger@sqlite"); // connect to ODBC
 
   otl_cursor::direct_exec
    (
