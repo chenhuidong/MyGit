@@ -28,7 +28,7 @@ void insert()
 #else
   sprintf(tmp,"Name%d",i);
 #endif
-  cout<< i<< " chd "<< tmp<<endl;
+  //cout<< i<< " chd "<< tmp<<endl;
   o<<static_cast<float>(i)<<tmp;
  }
 }
