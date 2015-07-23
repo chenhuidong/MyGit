@@ -4,7 +4,7 @@ using namespace std;
 
 #define OTL_ODBC_MYSQL // Compile OTL 4/ODBC
 #define OTL_ODBC_UNIX
-#define ODBCVER 0x0250 // ODBC Version # needs to be downgraded
+//#define ODBCVER 0x0250 // ODBC Version # needs to be downgraded
                        // to 2.5 because the SQLite ODBC driver seems
                        // to run slower when ODBC 3.x functions
                        // used (performance is not as good as with
@@ -67,15 +67,15 @@ void select()
   i>>f1>>f2;
   cout<<"f1="<<f1<<", f2="<<f2<<endl;
  }
-
 }
 
 int main()
 {
  otl_connect::otl_initialize(); // initialize ODBC environment
+ 
  try{
-
   db.rlogon("scott/tiger@sqlite1"); // connect to ODBC
+  //db.rlogon("root/Admin_123@mysql");
 
   otl_cursor::direct_exec
    (
@@ -92,9 +92,7 @@ int main()
 
   insert(); // insert records into table
   select(); // select records from table
-
  }
-
  catch(otl_exception& p){ // intercept OTL exceptions
   cerr<<p.msg<<endl; // print out error message
   cerr<<p.stm_text<<endl; // print out SQL that caused the error
@@ -105,5 +103,4 @@ int main()
  db.logoff(); // disconnect from Oracle
 
  return 0;
-
 }
