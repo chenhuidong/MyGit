@@ -75,7 +75,7 @@ int main()
  
  try{
   db.rlogon("scott/tiger@sqlite1"); // connect to ODBC
-  //db.rlogon("root/Admin_123@mysql");
+  //db.rlogon("public/public@mysql");
 
   otl_cursor::direct_exec
    (
