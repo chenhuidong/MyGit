@@ -1,7 +1,7 @@
 #! /bin/bash
 
 shopt -s expand_aliases
-source /mnt/home2/51linux_LxomB0aQ/.bashrc
+source /mnt/home2/51linux_e6MF016s/.bashrc
 
 usage()
 {
