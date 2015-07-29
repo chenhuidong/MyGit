@@ -167,3 +167,5 @@ int main(int argc, char** argv)
     HTTPTimeServer app;
     return app.run(argc, argv);
 }
+
+//g++ testHttpServer.cpp -omain -lPocoNetSSL
