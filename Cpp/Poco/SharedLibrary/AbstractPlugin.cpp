@@ -12,7 +12,7 @@ AbstractPlugin::~AbstractPlugin()
 #include "AbstractPlugin.h"
 #include "Poco/ClassLibrary.h"
 #include <iostream>
-#include <string>
+
 class PluginA: public AbstractPlugin
 {
 public:
