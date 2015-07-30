@@ -1,5 +1,7 @@
 // LibraryLoaderTest.cpp
 #include "Poco/SharedLibrary.h"
+#include <iostream>
+
 using Poco::SharedLibrary;
 typedef void (*HelloFunc)(); // function pointer type
 int main(int argc, char** argv)
