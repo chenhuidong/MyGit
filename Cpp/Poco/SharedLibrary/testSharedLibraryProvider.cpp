@@ -10,3 +10,5 @@ void hello()
 {
        std::cout << "Hello, world!" << std::endl;
 }
+
+//g++ testSharedLibraryProvider.cpp -fPIC -shared -o libtestSharedLibrary.so
