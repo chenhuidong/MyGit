@@ -66,3 +66,5 @@ int main(int argc, char** argv)
 
     return 0;
 }
+
+//g++ testData.cpp -omain -lPocoDataSQLite
