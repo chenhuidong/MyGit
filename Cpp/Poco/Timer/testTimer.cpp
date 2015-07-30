@@ -1,5 +1,6 @@
 #include "Poco/Timer.h"
 #include "Poco/Thread.h"
+#include <iostream>
 using Poco::Timer;
 using Poco::TimerCallback;
 
@@ -21,3 +22,5 @@ int main(int argc, char** argv)
 	timer.stop();
 	return 0;
 }
+
+//g++ testTimer.cpp -omain -lPocoFoundation
