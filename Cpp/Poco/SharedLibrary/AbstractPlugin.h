@@ -3,6 +3,8 @@
 // This is used both by the class library and by the application.
 #ifndef AbstractPlugin_INCLUDED
 #define AbstractPlugin_INCLUDED
+#include <string>
+
 class AbstractPlugin
 {
 public:
