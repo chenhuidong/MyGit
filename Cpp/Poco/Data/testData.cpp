@@ -17,10 +17,11 @@ struct Person
 int main(int argc, char** argv)
 {
     // register SQLite connector
-    Poco::Data::SQLite::Connector::registerConnector();
+    //Poco::Data::SQLite::Connector::registerConnector();
 
     // create a session
     //Session session("SQLite", "sample.db");
+    Poco::Data::MySQL::Connector::registerConnector();
     Session session("MySQL", "host=121.42.27.147;port=54321;user=public;password=123456;db=public");
     // drop sample table, if it exists
     session << "DROP TABLE IF EXISTS Person", now;
