@@ -1,5 +1,6 @@
 #include "Poco/Data/Session.h"
-#include "Poco/Data/SQLite/Connector.h"
+//#include "Poco/Data/SQLite/Connector.h"
+#include "Poco/Data/MySQL/Connector.h"
 #include <vector>
 #include <iostream>
 
