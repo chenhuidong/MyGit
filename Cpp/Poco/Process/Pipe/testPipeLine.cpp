@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 {
 	std::string cmd("/bin/ps");
 	std::vector<std::string> args;
-	args.push_back("-ax");
+	args.push_back("ax");
 	Poco::Pipe outPipe;
 	ProcessHandle ph = Process::launch(cmd, args, 0, &outPipe, 0);
 	Poco::PipeInputStream istr(outPipe);
