@@ -19,22 +19,24 @@ struct Person
 int main(int argc, char** argv)
 {
     // register SQLite connector
-    //Poco::Data::SQLite::Connector::registerConnector();
+    Poco::Data::SQLite::Connector::registerConnector();
 
     // create a session
-    //Session session("SQLite", "sample.db");
-    Poco::Data::MySQL::Connector::registerConnector();
-    std::cout<<"1"<<std::endl;
-    Session session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, "host=121.42.27.147;port=54321;user=public;password=123456;db=public"));
-    std::cout<<"2"<<std::endl;
+    Session session("SQLite", "sample.db");
+    
+    
+    //Poco::Data::MySQL::Connector::registerConnector();
+    //std::cout<<"1"<<std::endl;
+    //Session session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, "host=121.42.27.147;port=54321;user=public;password=123456;db=public"));
+    //std::cout<<"2"<<std::endl;
     // drop sample table, if it exists
-    //session << "DROP TABLE IF EXISTS Person", now;
+    session << "DROP TABLE IF EXISTS Person", now;
 
-    std::cout<<"3"<<std::endl;
+    //std::cout<<"3"<<std::endl;
 
     // (re)create table
     session << "CREATE TABLE Person (Name VARCHAR(30), Address VARCHAR, Age INTEGER(3))", now;
-    std::cout<<"4"<<std::endl;
+    //std::cout<<"4"<<std::endl;
 
     // insert some rows
     Person person = 
