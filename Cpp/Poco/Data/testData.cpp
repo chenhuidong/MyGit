@@ -27,12 +27,13 @@ int main(int argc, char** argv)
     Session session("MySQL", "host=121.42.27.147;port=54321;user=public;password=123456;db=public");
     std::cout<<"2"<<std::endl;
     // drop sample table, if it exists
-    session << "DROP TABLE IF EXISTS Person", now;
+    //session << "DROP TABLE IF EXISTS Person", now;
 
     std::cout<<"3"<<std::endl;
 
     // (re)create table
     session << "CREATE TABLE Person (Name VARCHAR(30), Address VARCHAR, Age INTEGER(3))", now;
+    std::cout<<"4"<<std::endl;
 
     // insert some rows
     Person person = 
