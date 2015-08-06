@@ -1,4 +1,5 @@
 #include "Poco/Data/Session.h"
+#include "Poco/Data/SessionFactory.h"
 //#include "Poco/Data/SQLite/Connector.h"
 #include "Poco/Data/MySQL/Connector.h"
 #include <vector>
@@ -24,7 +25,7 @@ int main(int argc, char** argv)
     //Session session("SQLite", "sample.db");
     Poco::Data::MySQL::Connector::registerConnector();
     std::cout<<"1"<<std::endl;
-    Session session("MySQL", "host=121.42.27.147;port=54321;user=public;password=123456;db=public");
+    Session session(SessionFactory::instance().create(MySQL::Connector::KEY, "host=121.42.27.147;port=54321;user=public;password=123456;db=public"));
     std::cout<<"2"<<std::endl;
     // drop sample table, if it exists
     //session << "DROP TABLE IF EXISTS Person", now;
