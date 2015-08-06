@@ -29,6 +29,8 @@ int main(int argc, char** argv)
     // drop sample table, if it exists
     session << "DROP TABLE IF EXISTS Person", now;
 
+    std::cout<<"3"<<std::endl;
+
     // (re)create table
     session << "CREATE TABLE Person (Name VARCHAR(30), Address VARCHAR, Age INTEGER(3))", now;
 
