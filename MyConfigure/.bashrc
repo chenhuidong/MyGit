@@ -52,7 +52,7 @@ alias gh="git push"
 alias gl="git pull"
 
 #mysql
-alias mr="mysql -h'121.42.27.147' -uroot -pChenhd@123 -P54321 -Dmysql"
+alias mr="mysql -h'121.42.27.147' -uroot -p123456 -P54321 -Dmysql"
 alias mp="mysql -h'121.42.27.147' -upublic -p123456 -P54321 -Dpublic"
 
 #connect
