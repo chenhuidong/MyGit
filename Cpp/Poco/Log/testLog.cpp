@@ -17,7 +17,7 @@ void FormatLog()
 	//设置日志输入的格式内容
 	FormattingChannel* pFCApp = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %N %P %l %s %q ]%t"));
 	//设置日志文件的路径
-	pFCApp->setChannel(new FileChannel("./FCApp.log"));
+	pFCApp->setChannel(new FileChannel("./mylog.log"));
 	//打开channel
 	pFCApp->open();
 
