@@ -15,22 +15,26 @@ using Poco::FileChannel;
 using Poco::FormattingChannel;
 using std::string;
 
+FormattingChannel* pFC;
+Logger* logger;
+
 static void INITIALIZE_LOG(char * filename)
 {
+	cout<< "1"<<endl;
 	string t_strLogPath = getenv("PLOGPATH");	
 
 	//设置日志输入的格式内容
-	FormattingChannel* pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p] %t"));
+	pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p] %t"));
 	//设置日志文件的路径
-	pFC->setChannel(new FileChannel("./testlog.log"));
+	pFC->setChannel(new FileChannel(t_strLogPath+"/"+filename+".log"));
 	//打开channel
 	pFC->open();
 
 	//获取日志引用
-	Logger& logger = Logger::create("testlog", pFC, Message::PRIO_INFORMATION);
+	logger = &(Logger::create(filename, pFC, Message::PRIO_INFORMATION));
 }
 
-static void UNINITIALIZE_LOG(char * filename)
+static void UNINITIALIZE_LOG()
 {
 	pFC->close();
 }
@@ -49,7 +53,6 @@ static void UNINITIALIZE_LOG(char * filename)
 
 static void INITIALIZE_LOG(char * filename)
 {
-	cout<< "1"<<endl;
 	google::InitGoogleLogging(filename);
 
 	FLAGS_logtostderr = 0;	//是否打印到控制台
