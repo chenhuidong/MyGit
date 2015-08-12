@@ -24,16 +24,11 @@ void FormatLog()
 	//获取日志引用
 	Logger& appLogger = Logger::create("FCAppLog",pFCApp,Message::PRIO_INFORMATION);
 
-	for (int i = 0; i < 10;i++)
-	{
-		string msg;
-		msg += "FCAppLog information";
-		appLogger.information(msg);
-
-	}
+	string msg;
+	msg += "This is an informational message.";
+	appLogger.information(msg);
 
 	pFCApp->close();
-
 }
 
 int main(int argc, char** argv)
