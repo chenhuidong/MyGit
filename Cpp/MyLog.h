@@ -17,7 +17,7 @@ using std::string;
 
 static void INITIALIZE_LOG(char * filename)
 {
-	string t_strLogPath = getenv("LOGPATH");	
+	string t_strLogPath = getenv("PLOGPATH");	
 
 	//设置日志输入的格式内容
 	FormattingChannel* pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p] %t"));
@@ -56,7 +56,7 @@ static void INITIALIZE_LOG(char * filename)
 	FLAGS_alsologtostderr=0;	//打印到日志同时是否打印到控制台
 	FLAGS_stderrthreshold=google::FATAL;	//需要打印到控制台的日志级别
 	FLAGS_minloglevel=0;	//
-	string t_strLogPath = getenv("LOGPATH");	
+	string t_strLogPath = getenv("PLOGPATH");	
 	FLAGS_log_dir = t_strLogPath;
 
 	string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;
