@@ -15,26 +15,23 @@ using std::string;
 void FormatLog()
 {
 	//设置日志输入的格式内容
-	FormattingChannel* pFCApp = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %N %P %l %s %q ]%t"));
+	FormattingChannel* pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %N %P %l %s %q ]%t"));
 	//设置日志文件的路径
-	pFCApp->setChannel(new FileChannel("./mylog.log"));
+	pFC->setChannel(new FileChannel("./mylog.log"));
 	//打开channel
-	pFCApp->open();
+	pFC->open();
 
 	//获取日志引用
-	Logger& logger = Logger::create("FCAppLog",pFCApp,Message::PRIO_INFORMATION);
+	Logger& logger = Logger::create("testlog", pFC, Message::PRIO_INFORMATION);
 
 	logger.information("This is an informational message.");
 	logger.warning("This is a warning message");
 
-	pFCApp->close();
+	pFC->close();
 }
 
 int main(int argc, char** argv)
 {
-	//Logger& logger = Logger::get("TestLogger");
-	//logger.information("This is an informational message");
-	//logger.warning("This is a warning message");
 	FormatLog();
 	return 0;
 }
