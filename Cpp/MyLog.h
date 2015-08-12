@@ -1,5 +1,42 @@
 #ifndef __MY_LOG_H_
 #define __MY_LOG_H_
+
+#ifdef __POCO_LOG_
+
+#include "Poco/Logger.h"
+#include "Poco/FormattingChannel.h"
+#include "Poco/FileChannel.h"
+#include "Poco/PatternFormatter.h"
+#include <string>
+using Poco::Logger;
+using Poco::Message;
+using Poco::PatternFormatter;
+using Poco::FileChannel;
+using Poco::FormattingChannel;
+using std::string;
+
+static void INITIALIZE_LOG(char * filename)
+{
+	string t_strLogPath = getenv("LOGPATH");	
+
+	//设置日志输入的格式内容
+	FormattingChannel* pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p] %t"));
+	//设置日志文件的路径
+	pFC->setChannel(new FileChannel("./testlog.log"));
+	//打开channel
+	pFC->open();
+
+	//获取日志引用
+	Logger& logger = Logger::create("testlog", pFC, Message::PRIO_INFORMATION);
+}
+
+static void UNINITIALIZE_LOG(char * filename)
+{
+	pFC->close();
+}
+
+#else
+
 //GLog
 #include <glog/logging.h>
 #include <string>
@@ -45,4 +82,5 @@ static void INITIALIZE_LOG(char * filename)
 	google::SetLogDestination(google::FATAL, t_strFatalName.c_str());
 }
 
+#endif
 #endif
