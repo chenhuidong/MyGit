@@ -49,6 +49,7 @@ static void UNINITIALIZE_LOG(char * filename)
 
 static void INITIALIZE_LOG(char * filename)
 {
+	cout<< "1"<<endl;
 	google::InitGoogleLogging(filename);
 
 	FLAGS_logtostderr = 0;	//是否打印到控制台
