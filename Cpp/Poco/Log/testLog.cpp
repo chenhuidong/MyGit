@@ -15,7 +15,7 @@ using std::string;
 void FormatLog()
 {
 	//设置日志输入的格式内容
-	FormattingChannel* pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p ] %t"));
+	FormattingChannel* pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p] %t"));
 	//设置日志文件的路径
 	pFC->setChannel(new FileChannel("./testlog.log"));
 	//打开channel
