@@ -24,9 +24,8 @@ void FormatLog()
 	//获取日志引用
 	Logger& appLogger = Logger::create("FCAppLog",pFCApp,Message::PRIO_INFORMATION);
 
-	string msg;
-	msg += "This is an informational message.";
-	appLogger.information(msg);
+	appLogger.information("This is an informational message.");
+	logger.warning("This is a warning message");
 
 	pFCApp->close();
 }
