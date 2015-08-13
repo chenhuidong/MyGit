@@ -11,6 +11,6 @@ int main(int argc, char* argv[])
 	mylog.INITIALIZE(argv[0]);
 	
 	//LOG_INFO("This is a warning %d.", 1);
-	//GetLogger->information("This is a warning %d", 1);
+	GetLogger->information("This is a warning %d", 1);
 	mylog.UNINITIALIZE();
 }
