@@ -38,6 +38,12 @@ static void UNINITIALIZE_LOG()
 	pFC->close();
 }
 
+//Glog
+#define LOG_INFO(var)	poco_infomation(*logger, var);
+#define LOG_WARN(var)	poco_warning(*logger, var);
+#define LOG_ERROR(var)	poco_error(*logger, var);
+#define LOG_FATAL(var)	poco_fatal(*logger, var);
+
 #else
 
 //GLog
