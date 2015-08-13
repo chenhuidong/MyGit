@@ -8,9 +8,9 @@ int main(int argc, char* argv[])
 {
     // Initialize Google's logging library.
     CMyLog mylog;
-	mylog.INITIALIZE_LOG(argv[0]);
+	mylog.INITIALIZE(argv[0]);
 	
 	//LOG_INFO("This is a warning %d.", 1);
 	//GetLogger->information("This is a warning %d", 1);
-	mylog.UNINITIALIZE_LOG();
+	mylog.UNINITIALIZE();
 }
