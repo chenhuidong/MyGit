@@ -42,8 +42,8 @@
 			return m_pLogger;
 		}
 	private:
-		FormattingChannel* m_pFC;
-		Logger* m_pLogger;
+		static FormattingChannel* m_pFC;
+		static Logger* m_pLogger;
 	};
 
 	//Glog
