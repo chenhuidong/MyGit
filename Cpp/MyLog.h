@@ -17,7 +17,7 @@
 
 	class CMyLog{
 	public:
-		static void INITIALIZE(char * filename)
+		void INITIALIZE(char * filename)
 		{
 			string t_strLogPath = getenv("PLOGPATH");	
 
@@ -32,28 +32,28 @@
 			m_pLogger = &(Logger::create(filename, m_pFC, Message::PRIO_INFORMATION));
 		}
 
-		static void UNINITIALIZE()
+		void UNINITIALIZE()
 		{
 			m_pFC->close();
 		}
 
-		static Logger* GetLogger()
+		Logger* GetLogger()
 		{
 			return m_pLogger;
 		}
 	private:
-		static FormattingChannel* m_pFC;
-		static Logger* m_pLogger;
+		FormattingChannel* m_pFC;
+		Logger* m_pLogger;
 	};
 
 	//Glog
-	#define INITIALIZE_LOG(var) CMyLog::INITIALIZE(var)
+	/*#define INITIALIZE_LOG(var) CMyLog::INITIALIZE(var)
 	#define UNINITIALIZE_LOG(var) CMyLog::UNINITIALIZE(var)
 	#define LOG_INFO(...)	CMyLog::GetLogger()->information(__VA_ARGS__)
 	#define LOG_WARN(...)	CMyLog::GetLogger()->warning(__VA_ARGS__)
 	#define LOG_ERROR(...)	CMyLog::GetLogger()->error(__VA_ARGS__)
 	#define LOG_FATAL(...)	CMyLog::GetLogger()->fatal(__VA_ARGS__)
-
+	*/
 #else
 
 	//GLog

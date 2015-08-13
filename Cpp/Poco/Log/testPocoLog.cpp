@@ -7,9 +7,10 @@
 int main(int argc, char* argv[]) 
 {
     // Initialize Google's logging library.
-	CMyLog::INITIALIZE_LOG(argv[0]);
+    CMyLog mylog;
+	mylog.INITIALIZE_LOG(argv[0]);
 	
 	//LOG_INFO("This is a warning %d.", 1);
-	//logger->information("This is a warning %d", 1);
-	CMyLog::UNINITIALIZE_LOG();
+	//GetLogger->information("This is a warning %d", 1);
+	mylog.UNINITIALIZE_LOG();
 }
