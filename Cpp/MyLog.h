@@ -20,7 +20,6 @@ Logger* logger;
 
 static void INITIALIZE_LOG(char * filename)
 {
-	cout<< "1"<<endl;
 	string t_strLogPath = getenv("PLOGPATH");	
 
 	//设置日志输入的格式内容
