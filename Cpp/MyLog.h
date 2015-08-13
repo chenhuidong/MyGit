@@ -39,7 +39,7 @@ static void UNINITIALIZE_LOG()
 }
 
 //Glog
-#define LOG_INFO(var)	poco_information(*logger, var);
+#define LOG_INFO(fmt, ...)	poco_information(*logger, fmt);
 #define LOG_WARN(var)	poco_warning(*logger, var);
 #define LOG_ERROR(var)	poco_error(*logger, var);
 #define LOG_FATAL(var)	poco_fatal(*logger, var);
