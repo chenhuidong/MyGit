@@ -10,6 +10,6 @@ int main(int argc, char* argv[])
 	INITIALIZE_LOG(argv[0]);
 	
 	//LOG_INFO("This is a warning %d", 1);
-	logger->information("This is a warning");
+	logger->information("This is a warning %d", 1);
 	UNINITIALIZE_LOG();
 }
