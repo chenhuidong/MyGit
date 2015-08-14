@@ -25,7 +25,7 @@
 			string t_strLogPath = getenv("PLOGPATH");	
 
 			if(t_strLogPath.length()==0)
-				t_strLogPath='.';
+				t_strLogPath=getenv(".");
 
 			//设置日志输入的格式内容
 			m_pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p] %t"));
