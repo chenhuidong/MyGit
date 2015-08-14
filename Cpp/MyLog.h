@@ -21,12 +21,9 @@
 		{
 			if(!filename)
 				filename="main";
-			cout<<"1"<<endl;
+
 			string t_strLogPath = getenv("PLOGPATH");	
-			cout<<"2"<<endl;
-			if(t_strLogPath.length()==0)
-				t_strLogPath=getenv("HOME");
-			cout<<"3"<<endl;
+
 			//设置日志输入的格式内容
 			m_pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p] %t"));
 			//设置日志文件的路径
