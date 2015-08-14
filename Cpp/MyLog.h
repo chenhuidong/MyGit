@@ -24,6 +24,9 @@
 
 			string t_strLogPath = getenv("PLOGPATH");	
 
+			if(t_strLogPath.length()==0)
+				t_strLogPath='.';
+
 			//设置日志输入的格式内容
 			m_pFC = new FormattingChannel(new PatternFormatter("[%Y-%m-%d %H-%M-%S.%c %P %s %p] %t"));
 			//设置日志文件的路径
@@ -69,8 +72,11 @@
 	#define LOG_ERROR LOG(ERROR)
 	#define LOG_FATAL LOG(FATAL)
 
-	static void INITIALIZE_LOG(char * filename)
+	static void INITIALIZE_LOG(const char * filename = NULL)
 	{
+		if(!filename)
+			filename="main";
+
 		google::InitGoogleLogging(filename);
 
 		FLAGS_logtostderr = 0;	//是否打印到控制台
