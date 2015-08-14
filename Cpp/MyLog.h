@@ -19,7 +19,7 @@
 	public:
 		void INITIALIZE(const char * filename)
 		{
-			if(filename)
+			if(!filename)
 				filename="main";
 
 			string t_strLogPath = getenv("PLOGPATH");	
