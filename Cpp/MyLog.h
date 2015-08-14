@@ -17,7 +17,7 @@
 
 	class CMyLog{
 	public:
-		void INITIALIZE(const char * filename)
+		void INITIALIZE(const char * filename = NULL)
 		{
 			if(!filename)
 				filename="main";
