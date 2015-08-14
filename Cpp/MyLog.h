@@ -17,11 +17,11 @@
 
 	class CMyLog{
 	public:
-		void INITIALIZE(char * filename)
+		void INITIALIZE(const char * filename)
 		{
 			if(filename)
 				filename="main";
-			
+
 			string t_strLogPath = getenv("PLOGPATH");	
 
 			//设置日志输入的格式内容
