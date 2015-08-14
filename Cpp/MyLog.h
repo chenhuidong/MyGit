@@ -17,8 +17,11 @@
 
 	class CMyLog{
 	public:
-		void INITIALIZE(char * filename)
+		void INITIALIZE(const char * filename = NULL)
 		{
+			if(!filename)
+				filename="main";
+
 			string t_strLogPath = getenv("PLOGPATH");	
 
 			//设置日志输入的格式内容
@@ -66,8 +69,11 @@
 	#define LOG_ERROR LOG(ERROR)
 	#define LOG_FATAL LOG(FATAL)
 
-	static void INITIALIZE_LOG(char * filename)
+	static void INITIALIZE_LOG(const char * filename = NULL)
 	{
+		if(!filename)
+			filename="main";
+
 		google::InitGoogleLogging(filename);
 
 		FLAGS_logtostderr = 0;	//是否打印到控制台
