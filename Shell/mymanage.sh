@@ -3,6 +3,8 @@
 shopt -s expand_aliases
 source /mnt/home2/51linux_e6MF016s/.bashrc
 
+mr="mysql -h121.42.27.147 -uroot -p111111 -P54321 -Dmysql"
+
 usage()
 {
     echo "usage:"
@@ -20,7 +22,7 @@ hid=`id -u`
 huser=`whoami`
 
 #验证用户名密码是否正确
-vuser=`mysql -h'121.42.27.147' -uroot -p111111 -P54321 -Dmysql << ! | sed '1d'
+vuser=`$mr << ! | sed '1d'
 select user from user where user = '$3' and password = PASSWORD('$4');
 !`
 
@@ -35,7 +37,7 @@ then
 fi
 
 #验证主机uid user 数据库用户 及数据库实例 
-vhid=`mysql -h'121.42.27.147' -uroot -p111111 -P54321 -Dmysql << ! | sed '1d'
+vhid=`$mr << ! | sed '1d'
 select hid from userdatabaserel where hid = '$hid' and huser = '$huser' and duser = '$3' and dbname = '$2';
 !`
 
@@ -50,7 +52,7 @@ then
 fi
 
 #删除数据库用户及数据库实例
-mysql -h'121.42.27.147' -uroot -p111111 -P54321 -Dmysql << !
+$mr << !
 drop user $3;
 drop database $2;
 delete from userdatabaserel where hid = '$hid' and huser = '$huser' and duser = '$3' and dbname = '$2';
@@ -69,7 +71,7 @@ hid=`id -u`
 huser=`whoami`
 
 #验证用户是否已创建过数据库实例
-vhid=`mysql -h'121.42.27.147' -uroot -p111111 -P54321 -Dmysql << ! | sed '1d'
+vhid=`$mr << ! | sed '1d'
 select hid from userdatabaserel where hid = $hid;
 !`
 
@@ -84,7 +86,7 @@ then
 fi
 
 #验证该数据库实例名是否已创建
-vhid=`mysql -h'121.42.27.147' -uroot -p111111 -P54321 -Dmysql << ! | sed '1d'
+vhid=`$mr << ! | sed '1d'
 select hid from userdatabaserel where dbname = '$2';
 !`
 
@@ -99,7 +101,7 @@ then
 fi
 
 #创建数据库用户及实例并赋权
-mysql -h'121.42.27.147' -uroot -p111111 -P54321 -Dmysql << !
+$mr << !
 create database $2;
 CREATE USER $3@'%' IDENTIFIED BY '$4';
 grant all on $2.*  to $3;
