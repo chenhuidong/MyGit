@@ -49,7 +49,7 @@
 		Logger* m_pLogger;
 	};
 
-	//Glog
+	//pocolog
 	/*#define INITIALIZE_LOG(var) CMyLog::INITIALIZE(var)
 	#define UNINITIALIZE_LOG(var) CMyLog::UNINITIALIZE(var)
 	#define LOG_INFO(...)	CMyLog::GetLogger()->information(__VA_ARGS__)
