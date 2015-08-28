@@ -63,8 +63,10 @@ int main(int argc, char** argv)
 	Thread::sleep(2000);
 	example.stop();
 
+	Thread::sleep(2000);
+
 	example.start();
-	Thread::sleep(1000);
+	Thread::sleep(2000);
 	example.stop();
 
 	return 0;
