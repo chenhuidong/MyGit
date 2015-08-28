@@ -31,7 +31,7 @@ int main(int argc, char** argv)
 	Poco::Stopwatch sw;
 
 	std::string dir = Poco::Environment::get("POCO_BASE") + "/JSON/Benchmark/";
-	std::string cout<< dir << std::endl;
+	std::cout<< dir << std::endl;
 	Poco::Path filePath(dir, "input.big.json");
 
 	std::ostringstream ostr;
