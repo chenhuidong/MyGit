@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 	
 	DateTime dt;
 	int tzd;
-	DateTimeParser::parse(DateTimeFormat::ISO8601_FORMAT, str, dt, tzd);
+	DateTimeParser::parse(DateTimeFormat::HTTP_FORMAT, str, dt, tzd);
 
 	dt.makeUTC(tzd);
 	LocalDateTime ldt(tzd, dt);
