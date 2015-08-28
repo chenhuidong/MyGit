@@ -18,6 +18,8 @@
 #include "Poco/DateTimeFormatter.h"
 #include "Poco/DateTimeParser.h"
 #include <iostream>
+#include <string>
+using namespace std;
 
 
 using Poco::LocalDateTime;
