@@ -42,7 +42,7 @@ int main(int argc, char** argv)
 	dt.makeUTC(tzd);
 	LocalDateTime ldt(tzd, dt);
 	cout<< str<< endl;
-	cout<< dt<< endl;
+	//cout<< dt<< endl;
 	cout<< tzd<< endl;
 	return 0;
 }
