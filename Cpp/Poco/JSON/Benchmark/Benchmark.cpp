@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 {
 	Poco::Stopwatch sw;
 
-	std::string dir = Poco::Environment::get("POCO_BASE") + "/JSON/samples/Benchmark/";
+	std::string dir = Poco::Environment::get("POCO_BASE") + "/JSON/Benchmark/";
 	Poco::Path filePath(dir, "input.big.json");
 
 	std::ostringstream ostr;
