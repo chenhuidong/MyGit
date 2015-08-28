@@ -34,12 +34,15 @@ int main(int argc, char** argv)
 	LocalDateTime now;
 	
 	std::string str = DateTimeFormatter::format(now, DateTimeFormat::ISO8601_FORMAT);
-	cout<< str<< endl;
+	
 	DateTime dt;
 	int tzd;
 	DateTimeParser::parse(DateTimeFormat::ISO8601_FORMAT, str, dt, tzd);
-	cout<< str<< endl;
+
 	dt.makeUTC(tzd);
 	LocalDateTime ldt(tzd, dt);
+	cout<< str<< endl;
+	cout<< dt<< endl;
+	cout<< tzd<< endl;
 	return 0;
 }
