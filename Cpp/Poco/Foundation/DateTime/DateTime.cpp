@@ -38,6 +38,7 @@ int main(int argc, char** argv)
 	DateTime dt;
 	int tzd;
 	DateTimeParser::parse(DateTimeFormat::ISO8601_FORMAT, str, dt, tzd);
+	cout<< str<< endl;
 	dt.makeUTC(tzd);
 	LocalDateTime ldt(tzd, dt);
 	return 0;
