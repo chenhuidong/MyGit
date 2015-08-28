@@ -94,3 +94,5 @@ int main()
 
   return 0;
 }
+
+//g++ echo-server.cpp -oserver -ldbus-c++-1
