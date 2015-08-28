@@ -64,6 +64,7 @@ int main(int argc, char** argv)
 	example.stop();
 
 	example.start();
+	Thread::sleep(1000);
 	example.stop();
 
 	return 0;
