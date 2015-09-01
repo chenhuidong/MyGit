@@ -250,3 +250,5 @@ int main(int argc, char** argv)
 	EchoServer app;
 	return app.run(argc, argv);
 }
+
+//g++ EchoServer.cpp -omain -lPocoUtil -lPocoNet
