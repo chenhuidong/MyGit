@@ -38,7 +38,7 @@ int main(int argc, char** argv)
 	// Parse an XML document from standard input
 	// and use a NodeIterator to print out all nodes.
 	
-	InputSource src(std::cin);
+	InputSource src(std::cin.getline());
 	try
 	{
 		DOMParser parser;
