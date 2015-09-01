@@ -45,7 +45,7 @@ int main(int argc, char** argv)
 
 	try
 	{
-		InputSource source("/mnt/home2/51linux_LxomB0aQ/MyProgram/MyGit/Cpp/Poco/XML/sample.xml");
+		InputSource source(std::cin);
 		filter.parse(&source);
 	}
 	catch (Exception& exc)
