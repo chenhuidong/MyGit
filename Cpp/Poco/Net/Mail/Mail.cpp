@@ -66,7 +66,8 @@ int main(int argc, char** argv)
 		message.addAttachment("logo", new StringPartSource(logo, "image/gif"));
 		
 		SMTPClientSession session(mailhost);
-		session.login();
+		//session.login();
+		session.loginUsingLogin("chdyczx@163.com","Chenhd@420462");
 		session.sendMessage(message);
 		session.close();
 	}
