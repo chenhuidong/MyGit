@@ -28,6 +28,16 @@ using Poco::Net::StringPartSource;
 using Poco::Path;
 using Poco::Exception;
 
+using Poco::DigestEngine;
+using Poco::HMACEngine;
+using Poco::MD5Engine;
+using Poco::SHA1Engine;
+using Poco::DigestOutputStream;
+using Poco::StreamCopier;
+using Poco::Base64Encoder;
+using Poco::Base64Decoder;
+using Poco::Environment;
+
 
 const unsigned char PocoLogo[] =
 {
