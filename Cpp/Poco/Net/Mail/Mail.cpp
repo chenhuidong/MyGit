@@ -64,9 +64,11 @@ int main(int argc, char** argv)
 		std::string logo(reinterpret_cast<const char*>(PocoLogo), sizeof(PocoLogo));
 		message.addContent(new StringPartSource(content));
 		message.addAttachment("logo", new StringPartSource(logo, "image/gif"));
+
+		LoginMethod loginMethod = AUTH_LOGIN;
 		
 		SMTPClientSession session(mailhost);
-		session.login(LoginMethod::AUTH_LOGIN, "chdyczx@163.com", "Chenhd@420462");
+		//session.login(LoginMethod::AUTH_LOGIN, "chdyczx@163.com", "Chenhd@420462");
 		session.sendMessage(message);
 		session.close();
 	}
