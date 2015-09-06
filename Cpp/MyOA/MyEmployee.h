@@ -24,6 +24,7 @@ public:
 	TEmployee(Session *in_pSession):m_oStatement(*in_pSession){}
 	//int ImportData();
 	int InsertData(Employee& in_oEmployee);
+	int DeleteData
 
 	Statement m_oStatement;
 };

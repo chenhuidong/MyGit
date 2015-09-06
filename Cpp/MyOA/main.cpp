@@ -7,7 +7,7 @@ int main()
 	t_oMyData.Initialize("employee.db");
 
 	//create table
-    *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Employee (Empno int, Name VARCHAR(30), Email VARCHAR)", now;
+    *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Employee (Empno int primary key, Name VARCHAR(30), Email VARCHAR, ValidFlag interger(1) default 0)", now;
 
     TEmployee t_oTEmployee(t_oMyData.GetSession());
 
