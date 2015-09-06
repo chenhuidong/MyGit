@@ -14,7 +14,7 @@ int main()
     // insert some rows
     Employee t_oEmployee = 
     {
-    	14,
+    	15,
     	"chenhuidong",
     	"chdyczx@live.com"
     };

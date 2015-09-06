@@ -21,14 +21,15 @@ struct Employee
 class TEmployee
 {
 public:
-	TEmployee(Session *in_pSession):m_oStatement(*in_pSession){}
+	TEmployee(Session *in_pSession):m_oInsertStatement(*in_pSession), m_oSelectStatement(*in_pSession){}
 	//int ImportData();
 	int InsertData(Employee& in_oEmployee);
 	int DeleteData();
 	int SelectData();
 
 
-	Statement m_oStatement;
+	Statement m_oInsertStatement;
+	Statement m_oSelectStatement;
 };
 
 #endif
