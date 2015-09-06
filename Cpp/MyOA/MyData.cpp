@@ -1,12 +1,12 @@
 #include "MyData.h"
 
-int MyData::Initialize(const char* dbname)
+int MyData::Initialize(const char* in_sDbName)
 {
 	// register SQLite connector
     Poco::Data::SQLite::Connector::registerConnector();
 
     // create a session
-    m_pSession = new Session("SQLite", dbname);
+    m_pSession = new Session("SQLite", in_sDbName);
 
     if(!m_pSession)
     	return -1;

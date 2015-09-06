@@ -16,7 +16,7 @@ class MyData
 public:
 	MyData():m_pSession(NULL){}
 	~MyData(){};
-	int Initialize(const char* dbname);
+	int Initialize(const char* in_sDbName);
 	int Uninitialize();
 	Session* GetSession();
 private:

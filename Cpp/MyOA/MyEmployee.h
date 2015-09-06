@@ -21,9 +21,9 @@ struct Employee
 class TEmployee
 {
 public:
-	TEmployee(Session *pSession):m_oStatement(*pSession){}
+	TEmployee(Session *in_pSession):m_oStatement(*in_pSession){}
 	//int ImportData();
-	int InsertData(Employee& employee);
+	int InsertData(Employee& in_oEmployee);
 
 	Statement m_oStatement;
 };
