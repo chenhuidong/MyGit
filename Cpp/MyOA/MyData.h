@@ -11,18 +11,13 @@ using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
 
-struct Employee
-{
-	int			empno;
-    std::string name;
-    std::string email;
-};
-
 class MyData
 {
 public:
-	void Initialize(const char* dbname);
-	void Uninitialize();
+	MyData():m_pSession(NULL){}
+	~MyData(){};
+	int Initialize(const char* dbname);
+	int Uninitialize();
 	Session* GetSession();
 private:
 	Session *m_pSession;
