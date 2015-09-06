@@ -11,7 +11,7 @@ int TEmployee::InsertData(Employee& in_oEmployee)
 	return 0;
 }
 
-int SelectData()
+int TEmployee::SelectData()
 {
 	std::vector<Employee> t_vecEmployee;
 
