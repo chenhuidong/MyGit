@@ -37,10 +37,10 @@ const unsigned char PocoLogo[] =
 
 int main(int argc, char** argv)
 {
-	if (argc != 4)
+	if (argc != 5)
 	{
 		Path p(argv[0]);
-		std::cerr << "usage: " << p.getBaseName() << " <mailhost> <sender> <recipient>" << std::endl;
+		std::cerr << "usage: " << p.getBaseName() << " <mailhost> <sender> <password> <recipient>" << std::endl;
 		std::cerr << "       Send an email greeting from <sender> to <recipient>," << std::endl;
 		std::cerr << "       using the SMTP server at <mailhost>." << std::endl;
 		return 1;
@@ -48,7 +48,8 @@ int main(int argc, char** argv)
 	
 	std::string mailhost(argv[1]);
 	std::string sender(argv[2]);
-	std::string recipient(argv[3]);
+	std::string password(argv[3]);
+	std::string recipient(argv[4]);
 	
 	try
 	{
@@ -68,7 +69,7 @@ int main(int argc, char** argv)
 		SMTPClientSession session(mailhost);
 
 		//session.login();
-		session.login(SMTPClientSession::AUTH_LOGIN, "chdyczx@163.com", "Chenhd@420462");
+		session.login(SMTPClientSession::AUTH_LOGIN, sender, password);
 
 		session.sendMessage(message);
 		session.close();
