@@ -20,7 +20,8 @@ int main()
     };
 
 	t_oTEmployee.InsertData(t_oEmployee);
-
+    t_oTEmployee.SelectData();
+    
     t_oMyData.Uninitialize();
 	return 0;
 }
