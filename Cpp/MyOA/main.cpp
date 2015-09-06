@@ -3,6 +3,11 @@
 int main()
 {
 	MyData mysqlite;
-	mysqlite.Initialize("sample.db");
+	mysqlite.Initialize("employee.db");
+
+	//create table
+    session << "CREATE TABLE Employee (empno int, Name VARCHAR(30), email VARCHAR)", now;
+
+    
 	return 0;
 }
