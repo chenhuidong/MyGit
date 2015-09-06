@@ -1,6 +1,6 @@
 #include "MyData.h"
 
-void MyData::Initialize(string &dbname)
+void MyData::Initialize(std::string &dbname)
 {
 	// register SQLite connector
     Poco::Data::SQLite::Connector::registerConnector();
