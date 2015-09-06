@@ -20,7 +20,7 @@ int TEmployee::SelectData()
 	m_oStatement << "SELECT Empno, Name, Email FROM Employee",
 	into(t_vecEmployee),
 	now;
-
+	std::cout << "1"<<std::endl;
 	for (VEmployee::const_iterator it = t_vecEmployee.begin(); it != t_vecEmployee.end(); ++it)
 	{
 		std::cout << "Empno: " << it->get<0>() << 
