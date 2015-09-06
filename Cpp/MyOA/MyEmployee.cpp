@@ -3,17 +3,14 @@
 int TEmployee::InsertData()
 {
 	// insert some rows
-    Employee t_oEmployee = 
-    {
-        11,
-        "chenhuidong",
-        "chdyczx@live.com"
-    };
+    m_oEmployee.empno = 11;
+    m_oEmployee.name = "chenhuidong";
+    m_oEmployee.email = "chdyczx@live.com";
 
     m_oStatement << "INSERT INTO Employee VALUES(?, ?, ?)",
-    use(t_oEmployee.empno),
-    use(t_oEmployee.name),
-    use(t_oEmployee.email);
+    use(m_oEmployee.empno),
+    use(m_oEmployee.name),
+    use(m_oEmployee.email);
 
     m_oStatement.execute();
 	return 0;
