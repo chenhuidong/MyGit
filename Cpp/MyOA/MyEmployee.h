@@ -25,6 +25,8 @@ public:
 	//int ImportData();
 	int InsertData(Employee& in_oEmployee);
 	int DeleteData();
+	int SelectData();
+
 
 	Statement m_oStatement;
 };

@@ -10,3 +10,12 @@ int TEmployee::InsertData(Employee& in_oEmployee)
     m_oStatement.execute();
 	return 0;
 }
+
+int SelectData()
+{
+	std::vector<Employee> t_vecEmployee;
+
+	m_oStatement << "SELECT Empno, Name, Email FROM Employee",
+	into(t_vecEmployee),
+	now;
+}
