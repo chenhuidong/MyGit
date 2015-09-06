@@ -11,13 +11,6 @@ using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
 
-struct Employee
-{
-	int			empno;
-    std::string name;
-    std::string email;
-};
-
 class TEmployee
 {
 public:
@@ -25,7 +18,12 @@ public:
 	//int ImportData();
 	int InsertData();
 
-	Employee m_oEmployee;
+	struct Employee
+	{
+		int			empno;
+    	std::string name;
+    	std::string email;
+	} m_oEmployee;
 	Statement m_oStatement;
 };
 

@@ -2,7 +2,7 @@
 
 int TEmployee::InsertData()
 {
-	    // insert some rows
+	// insert some rows
     Employee t_oEmployee = 
     {
         11,
