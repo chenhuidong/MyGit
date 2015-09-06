@@ -14,12 +14,12 @@ int main()
     // insert some rows
     Employee t_oEmployee = 
     {
-    	13,
+    	14,
     	"chenhuidong",
     	"chdyczx@live.com"
     };
 
-	//t_oTEmployee.InsertData(t_oEmployee);
+	t_oTEmployee.InsertData(t_oEmployee);
     t_oTEmployee.SelectData();
 
     t_oMyData.Uninitialize();
