@@ -2,12 +2,14 @@
 
 int main()
 {
-	MyData mydata;
-	mydata.Initialize("employee.db");
+	MyData t_oMyData;
+	t_oMyData.Initialize("employee.db");
 
 	//create table
-    *mydata.GetSession() << "CREATE TABLE IF NOT EXISTS Employee (Empno int, Name VARCHAR(30), Email VARCHAR)", now;
+    *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Employee (Empno int, Name VARCHAR(30), Email VARCHAR)", now;
 
-    mydata.Uninitialize();
+    TEmployee t_oTEmployee(t_oMyData.GetSession());
+
+    t_oMyData.Uninitialize();
 	return 0;
 }
