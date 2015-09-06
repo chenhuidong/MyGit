@@ -68,7 +68,7 @@ int main(int argc, char** argv)
 		SMTPClientSession session(mailhost);
 
 		//session.login();
-		session.login(AUTH_LOGIN, "chdyczx@163.com", "Chenhd@420462");
+		session.login(SMTPClientSession::LoginMethod::AUTH_LOGIN, "chdyczx@163.com", "Chenhd@420462");
 
 		session.sendMessage(message);
 		session.close();
