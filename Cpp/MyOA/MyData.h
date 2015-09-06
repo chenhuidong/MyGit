@@ -23,7 +23,7 @@ class MyData
 public:
 	MyData();
 	~MyData();
-	void Initialize(std::string &dbname);
+	void Initialize(char* dbname);
 	Session *m_pSession;
 };
 
