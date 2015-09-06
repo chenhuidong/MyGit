@@ -12,9 +12,9 @@ int main()
     TEmployee t_oTEmployee(t_oMyData.GetSession());
 
 	// insert some rows
-    TEmployee.m_oEmployee.empno = 12;
-    TEmployee.m_oEmployee.name = "chenhuidong";
-    TEmployee.m_oEmployee.email = "chdyczx@live.com";
+    t_oTEmployee.m_oEmployee.empno = 12;
+    t_oTEmployee.m_oEmployee.name = "chenhuidong";
+    t_oTEmployee.m_oEmployee.email = "chdyczx@live.com";
 
 	t_oTEmployee.InsertData();
 
