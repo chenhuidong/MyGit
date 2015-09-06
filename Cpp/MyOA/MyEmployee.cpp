@@ -15,7 +15,8 @@ int SelectData()
 {
 	std::vector<Employee> t_vecEmployee;
 
-	m_oStatement << "SELECT Empno, Name, Email FROM Employee",
-	into(t_vecEmployee),
-	now;
+	//m_oStatement << "SELECT Empno, Name, Email FROM Employee",
+	//into(t_vecEmployee),
+	//now;
+	return 0;
 }
