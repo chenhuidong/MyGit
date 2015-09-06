@@ -15,3 +15,5 @@ int main()
     t_oMyData.Uninitialize();
 	return 0;
 }
+
+//g++ main.cpp  MyData.cpp MyEmployee.cpp -omain -lPocoDataSQLite
