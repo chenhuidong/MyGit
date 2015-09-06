@@ -21,8 +21,6 @@ struct Employee
 class MyData
 {
 public:
-	MyData();
-	~MyData();
 	void Initialize(char* dbname);
 	Session *m_pSession;
 };
