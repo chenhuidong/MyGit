@@ -81,3 +81,6 @@ int main(int argc, char** argv)
 	}
 	return 0;
 }
+
+//g++ Mail.cpp -omain -lPocoNet
+//./main smtp.163.com chdyczx@163.com Chenhd@420462 chdyczx@live.com
