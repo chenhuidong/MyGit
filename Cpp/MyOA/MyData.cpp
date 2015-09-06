@@ -8,3 +8,15 @@ void MyData::Initialize(const char* dbname)
     // create a session
     m_pSession = new Session("SQLite", dbname);
 }
+
+void MyData::Uninitialize()
+{
+    // delete a session
+    delete m_pSession;
+    m_pSession = NULL;
+}
+
+Session* MyData::GetSession()
+{
+	return m_pSession;
+}

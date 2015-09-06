@@ -22,6 +22,9 @@ class MyData
 {
 public:
 	void Initialize(const char* dbname);
+	void Uninitialize();
+	Session* GetSession();
+private:
 	Session *m_pSession;
 };
 
