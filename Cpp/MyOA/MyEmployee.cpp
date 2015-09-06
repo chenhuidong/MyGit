@@ -1,11 +1,11 @@
 #include "MyEmployee.h"
 
-int TEmployee::InsertData()
+int TEmployee::InsertData(Employee& employee)
 {
     m_oStatement << "INSERT INTO Employee VALUES(?, ?, ?)",
-    use(m_oEmployee.empno),
-    use(m_oEmployee.name),
-    use(m_oEmployee.email);
+    use(employee.empno),
+    use(employee.name),
+    use(employee.email);
 
     m_oStatement.execute();
 	return 0;

@@ -11,12 +11,15 @@ int main()
 
     TEmployee t_oTEmployee(t_oMyData.GetSession());
 
-	// insert some rows
-    t_oTEmployee.m_oEmployee.empno = 12;
-    t_oTEmployee.m_oEmployee.name = "chenhuidong";
-    t_oTEmployee.m_oEmployee.email = "chdyczx@live.com";
+    // insert some rows
+    Employee t_oEmployee = 
+    {
+    	12,
+    	"chenhuidong",
+    	"chdyczx@live.com"
+    };
 
-	t_oTEmployee.InsertData();
+	t_oTEmployee.InsertData(t_oEmployee);
 
     t_oMyData.Uninitialize();
 	return 0;
