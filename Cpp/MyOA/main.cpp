@@ -18,9 +18,6 @@ int main()
     t_oOPTEmployee.SelectData();
     t_oOPTEmployee.m_oEmployees.clear();
     t_oOPTEmployee.DeleteData();
-    t_oOPTEmployee.m_oEmployees.clear();
-    t_oOPTEmployee.SelectData();
-    t_oOPTEmployee.m_oEmployees.clear();
 
     t_oMyData.Uninitialize();
 	return 0;
