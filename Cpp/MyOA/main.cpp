@@ -12,8 +12,10 @@ int main()
     OPTEmployee t_oOPTEmployee(t_oMyData.GetSession());
 
 
-    //t_oOPTEmployee.m_oEmployees.push_back(Employee(16,"chenhuidong","chdyczx@live.com"));
-	//t_oOPTEmployee.InsertData(t_oEmployee);
+    t_oOPTEmployee.m_oEmployees.push_back(Employee(16,"chenhuidong","chdyczx@live.com"));
+	t_oOPTEmployee.InsertData(t_oEmployee);
+	t_oOPTEmployee.m_oEmployees.clear();
+	
     t_oOPTEmployee.SelectData();
 
     t_oMyData.Uninitialize();
