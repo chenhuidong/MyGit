@@ -39,9 +39,9 @@ int OPTEmployee::SelectData()
         into(person.validflag),
         range(0, 1); //  iterate over result set one row at a time
 
-    while (!select.done())
+    while (!m_oSelectStatement.done())
     {
-        select.execute();
+        m_oSelectStatement.execute();
         std::cout << person.empno << " " << person.name << " " << person.email << std::endl;
     }
 	return 0;
