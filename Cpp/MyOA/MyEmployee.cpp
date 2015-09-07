@@ -29,14 +29,12 @@ int OPTEmployee::SelectData()
 		int			empno;
 		std::string name;
 		std::string email;
-		int 		validflag;
 	} person;
 
-    m_oSelectStatement << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
+    m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee",
         into(person.empno),
         into(person.name),
         into(person.email),
-        into(person.validflag),
         range(0, 1); //  iterate over result set one row at a time
 
     while (!m_oSelectStatement.done())
