@@ -22,6 +22,7 @@ int main()
     //
     Poco::Data::SQLite::Connector::registerConnector();
     Session session("SQLite", "employee.db");
+    session << "CREATE TABLE IF NOT EXISTS Employee (Empno int primary key, Name VARCHAR(30), Email VARCHAR, ValidFlag interger(1) default 0)", now;
 
     struct Employee
 	{
