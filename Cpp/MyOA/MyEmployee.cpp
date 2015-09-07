@@ -10,7 +10,7 @@ int OPTEmployee::InsertData()
 
 int OPTEmployee::SelectData()
 {
-	m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee",
+	m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee where ValidFlag = 0",
 		into(m_oEmployees), now;
 	
 	for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
@@ -22,7 +22,10 @@ int OPTEmployee::SelectData()
 	return 0;
 }
 
-int OPTEmployee::InsertData()
+int OPTEmployee::DeleteData()
 {
+	m_oUpdateStatement << "update Employee set ValidFlag = 1 where Empno = :Empno",
+		use(20), now;
+		
 	return 0;
 }

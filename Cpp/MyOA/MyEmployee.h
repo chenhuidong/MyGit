@@ -17,7 +17,7 @@ typedef std::vector<Employee> Employees;
 class OPTEmployee
 {
 public:
-	OPTEmployee(Session *in_pSession): m_oInsertStatement(*in_pSession) ,m_oSelectStatement(*in_pSession){}
+	OPTEmployee(Session *in_pSession): m_oInsertStatement(*in_pSession), m_oSelectStatement(*in_pSession), m_oUpdateStatement(*in_pSession){}
 	//int ImportData();
 	int InsertData();
 	int DeleteData();
@@ -27,6 +27,7 @@ public:
 private:
 	Statement m_oInsertStatement;
 	Statement m_oSelectStatement;
+	Statement m_oUpdateStatement;
 };
 
 #endif
