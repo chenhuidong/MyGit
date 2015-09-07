@@ -25,7 +25,7 @@ int OPTEmployee::SelectData()
 int OPTEmployee::DeleteData()
 {
 	int i = 20;
-	m_oUpdateStatement << "update Employee set ValidFlag = 1 where Empno = :Empno", use(i);
+	m_oUpdateStatement << "update Employee set ValidFlag = 1 where Empno = :Empno", use(i), now;
 	m_oUpdateStatement.execute();
 	return 0;
 }
