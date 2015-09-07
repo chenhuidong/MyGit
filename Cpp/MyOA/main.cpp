@@ -12,9 +12,9 @@ int main()
     OPTEmployee t_oOPTEmployee(t_oMyData.GetSession());
 
 
-    t_oOPTEmployee.m_oEmployees.push_back(Employee(1,"chenhuidong","chdyczx@live.com"));
-	t_oOPTEmployee.InsertData();
-	t_oOPTEmployee.m_oEmployees.clear();
+    //t_oOPTEmployee.m_oEmployees.push_back(Employee(1,"chenhuidong","chdyczx@live.com"));
+	//t_oOPTEmployee.InsertData();
+	//t_oOPTEmployee.m_oEmployees.clear();
 
     t_oOPTEmployee.SelectData();
 

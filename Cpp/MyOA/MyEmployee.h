@@ -31,7 +31,7 @@ public:
 	int SelectData();
 
 	Employees m_oEmployees;
-
+private:
 	Statement m_oInsertStatement;
 	Statement m_oSelectStatement;
 };
