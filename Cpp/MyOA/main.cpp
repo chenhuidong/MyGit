@@ -22,28 +22,26 @@ int main()
     //
     Poco::Data::SQLite::Connector::registerConnector();
     Session session("SQLite", "employee.db");
-    session << "CREATE TABLE IF NOT EXISTS Employee (Empno int primary key, Name VARCHAR(30), Email VARCHAR, ValidFlag interger(1) default 0)", now;
+    session << "CREATE TABLE Person (Name VARCHAR(30), Address VARCHAR, Age INTEGER(3))", now;
 
-    struct Employee
+	struct Person
 	{
-		int			empno;
-		std::string name;
-		std::string email;
-		int 		validflag;
+	    std::string name;
+	    std::string address;
+	    int         age;
 	} person;
 
 	Statement select(session);
-    select << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
-        into(person.empno),
+    select << "SELECT Name, Address, Age FROM Person",
         into(person.name),
-        into(person.email),
-        into(person.validflag),
+        into(person.address),
+        into(person.age),
         range(0, 1); //  iterate over result set one row at a time
 
     while (!select.done())
     {
         select.execute();
-        std::cout << person.empno << " " << person.name << " " << person.email << std::endl;
+        std::cout << person.name << " " << person.address << " " << person.age << std::endl;
     }
 	return 0;
 }
