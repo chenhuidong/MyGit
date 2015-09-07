@@ -10,10 +10,9 @@ int OPTEmployee::InsertData()
 
 int OPTEmployee::SelectData()
 {
+	/*
 	m_oSelectStatement << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
 		into(m_oEmployees), now;
-	//m_oSelectStatement << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
-	//	into(m_oEmployees), now;
 	//std::cout<< "2"<< std::endl;
 	for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
 	{
@@ -22,8 +21,8 @@ int OPTEmployee::SelectData()
 			", Email: " << it->get<2>() << 
 			", ValidFlag: " << it->get<3>() <<std::endl;
 	}
-
-	/*
+	*/
+	
 	struct Employee
 	{
 		int			empno;
@@ -42,6 +41,6 @@ int OPTEmployee::SelectData()
         m_oSelectStatement.execute();
         std::cout << person.empno << " " << person.name << " " << person.email << std::endl;
     }
-    */
+    
 	return 0;
 }
