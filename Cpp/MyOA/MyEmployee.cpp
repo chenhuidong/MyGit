@@ -14,7 +14,7 @@ int OPTEmployee::SelectData()
 	m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee",
 		into(m_oEmployees), now;
 	//std::cout<< "2"<< std::endl;
-	/*
+	
 	for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
 	{
 		std::cout << "Empno: " << it->get<0>() << 
@@ -22,7 +22,7 @@ int OPTEmployee::SelectData()
 			", Email: " << it->get<2>() << std::endl;
 	}
 	
-	
+	/*
 	struct Employee
 	{
 		int			empno;
