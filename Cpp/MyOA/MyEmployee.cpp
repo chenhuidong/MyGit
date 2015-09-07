@@ -2,6 +2,7 @@
 
 int OPTEmployee::InsertData()
 {
+	std::cout<< "1"<< std::endl;
     m_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)",
     use(m_oEmployees), now;
 
