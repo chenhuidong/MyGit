@@ -24,7 +24,7 @@ int OPTEmployee::SelectData()
 
 int OPTEmployee::DeleteData()
 {
-	m_oUpdateStatement << "update Employee set ValidFlag = 1 where Empno = 20";
+	m_oUpdateStatement << "update Employee set ValidFlag = 1 where Empno = 1";
 
 	return 0;
 }
