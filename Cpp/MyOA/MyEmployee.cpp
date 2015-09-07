@@ -1,5 +1,5 @@
 #include "MyEmployee.h"
-/*
+
 int OPTEmployee::InsertData()
 {
     m_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email, ValidFlag) VALUES(:Empno, :Name, :Email, :ValidFlag)",
@@ -7,7 +7,7 @@ int OPTEmployee::InsertData()
 
 	return 0;
 }
-*/
+
 int OPTEmployee::SelectData()
 {
 	//std::cout<< "1"<< std::endl;
