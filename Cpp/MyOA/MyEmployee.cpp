@@ -12,8 +12,6 @@ int OPTEmployee::InsertData()
 
 int OPTEmployee::SelectData()
 {
-	Employees m_oEmployees;
-
 	m_oSelectStatement << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
 		into(m_oEmployees),now;
 
