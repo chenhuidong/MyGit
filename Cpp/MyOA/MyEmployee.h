@@ -10,26 +10,31 @@
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
-
+/*
 struct Employee
 {
 	int			empno;
 	std::string name;
 	std::string email;
 };
+*/
+typedef Poco::Tuple<int, std::string, std::string> Employee;
+typedef std::vector<Employee> Employees;
 
-class TEmployee
+class OPTEmployee
 {
 public:
-	TEmployee(Session *in_pSession):m_oInsertStatement(*in_pSession), m_oSelectStatement(*in_pSession){}
+	OPTEmployee(Session *in_pSession):m_oInsertStatement(*in_pSession), m_oSelectStatement(*in_pSession){}
 	//int ImportData();
-	int InsertData(Employee& in_oEmployee);
+	int InsertData();
 	int DeleteData();
 	int SelectData();
 
-
+	Employees m_oEmployees;
+private:
 	Statement m_oInsertStatement;
 	Statement m_oSelectStatement;
+	
 };
 
 #endif

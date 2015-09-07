@@ -1,27 +1,24 @@
 #include "MyEmployee.h"
 
-int TEmployee::InsertData(Employee& in_oEmployee)
+int OPTEmployee::InsertData()
 {
-    m_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email) VALUES(?, ?, ?)",
-    use(in_oEmployee.empno),
-    use(in_oEmployee.name),
-    use(in_oEmployee.email);
+    m_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)",
+    use(m_oEmployees), now;
 
     m_oInsertStatement.execute();
 	return 0;
 }
 
-int TEmployee::SelectData()
+int OPTEmployee::SelectData()
 {
-	typedef Poco::Tuple<int, std::string, std::string> Employee1;
-	typedef std::vector<Employee1> VEmployee;
-	VEmployee t_vecEmployee;
+
+	Employees m_oEmployees;
 
 	m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee",
-	into(t_vecEmployee),
+	into(m_oEmployees),
 	now;
 
-	for (VEmployee::const_iterator it = t_vecEmployee.begin(); it != t_vecEmployee.end(); ++it)
+	for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
 	{
 		std::cout << "Empno: " << it->get<0>() << 
 			", Name: " << it->get<1>() << 

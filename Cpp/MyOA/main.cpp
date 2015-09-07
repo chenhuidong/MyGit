@@ -19,7 +19,7 @@ int main()
     	"chdyczx@live.com"
     };
 
-	t_oTEmployee.InsertData(t_oEmployee);
+	//t_oTEmployee.InsertData(t_oEmployee);
     t_oTEmployee.SelectData();
 
     t_oMyData.Uninitialize();
