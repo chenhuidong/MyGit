@@ -21,7 +21,7 @@ int main()
     //t_oMyData.Uninitialize();
     //
     Session session("SQLite", "employee.db");
-    
+
     struct Employee
 	{
 		int			empno;
@@ -29,17 +29,17 @@ int main()
 		std::string email;
 		int 		validflag;
 	} person;
-
-    session << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
+	Statement select(session);
+    select << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
         into(person.empno),
         into(person.name),
         into(person.email),
         into(person.validflag),
         range(0, 1); //  iterate over result set one row at a time
 
-    while (!session.done())
+    while (!select.done())
     {
-        session.execute();
+        select.execute();
         std::cout << person.empno << " " << person.name << " " << person.email << std::endl;
     }
 	return 0;
