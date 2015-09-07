@@ -20,6 +20,7 @@ int main()
 
     //t_oMyData.Uninitialize();
     //
+    Poco::Data::SQLite::Connector::registerConnector();
     Session session("SQLite", "employee.db");
 
     struct Employee
@@ -29,6 +30,7 @@ int main()
 		std::string email;
 		int 		validflag;
 	} person;
+
 	Statement select(session);
     select << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
         into(person.empno),
