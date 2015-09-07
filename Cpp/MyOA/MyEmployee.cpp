@@ -10,10 +10,8 @@ int OPTEmployee::InsertData()
 
 int OPTEmployee::SelectData()
 {
-	
 	m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee",
 		into(m_oEmployees), now;
-	//std::cout<< "2"<< std::endl;
 	
 	for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
 	{
@@ -21,26 +19,5 @@ int OPTEmployee::SelectData()
 			", Name: " << it->get<1>() << 
 			", Email: " << it->get<2>() << std::endl;
 	}
-	
-	/*
-	struct Employee
-	{
-		int			empno;
-		std::string name;
-		std::string email;
-	} person;
-
-    m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee",
-        into(person.empno),
-        into(person.name),
-        into(person.email),
-        range(0, 1); //  iterate over result set one row at a time
-
-    while (!m_oSelectStatement.done())
-    {
-        m_oSelectStatement.execute();
-        std::cout << person.empno << " " << person.name << " " << person.email << std::endl;
-    }
-    */
 	return 0;
 }
