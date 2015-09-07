@@ -12,9 +12,10 @@ int OPTEmployee::InsertData()
 
 int OPTEmployee::SelectData()
 {
+	std::cout<< "1"<< std::endl;
 	m_oSelectStatement << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
 		into(m_oEmployees),now;
-
+	std::cout<< "2"<< std::endl;
 	for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
 	{
 		std::cout << "Empno: " << it->get<0>() << 
