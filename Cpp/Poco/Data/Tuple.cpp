@@ -34,21 +34,21 @@ int main(int argc, char** argv)
 	Session session("SQLite", "sample.db");
 
 	// drop sample table, if it exists
-	session << "DROP TABLE IF EXISTS Person", now;
+	//session << "DROP TABLE IF EXISTS Person", now;
 	
 	// (re)create table
-	session << "CREATE TABLE Person (Name VARCHAR(30), Address VARCHAR, Age INTEGER(3))", now;
+	//session << "CREATE TABLE Person (Name VARCHAR(30), Address VARCHAR, Age INTEGER(3))", now;
 	
 	// insert some rows
 	People people;
-	people.push_back(Person("Bart Simpson",	"Springfield", 12));
-	people.push_back(Person("Lisa Simpson",	"Springfield", 10));
+	//people.push_back(Person("Bart Simpson",	"Springfield", 12));
+	//people.push_back(Person("Lisa Simpson",	"Springfield", 10));
 	
-	Statement insert(session);
-	insert << "INSERT INTO Person VALUES(:name, :address, :age)",
-		use(people), now;
+	//Statement insert(session);
+	//insert << "INSERT INTO Person VALUES(:name, :address, :age)",
+	//	use(people), now;
 	
-	people.clear();
+	//people.clear();
 
 	// a simple query
 	Statement select(session);
