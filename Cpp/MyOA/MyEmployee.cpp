@@ -21,3 +21,8 @@ int OPTEmployee::SelectData()
 	}
 	return 0;
 }
+
+int OPTEmployee::InsertData()
+{
+	return 0;
+}

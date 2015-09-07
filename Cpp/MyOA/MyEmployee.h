@@ -10,14 +10,7 @@
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
-/*
-struct Employee
-{
-	int			empno;
-	std::string name;
-	std::string email;
-};
-*/
+
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;
 
