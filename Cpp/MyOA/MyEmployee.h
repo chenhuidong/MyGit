@@ -18,7 +18,7 @@ struct Employee
 	std::string email;
 };
 */
-typedef Poco::Tuple<int, std::string, std::string> Employee;
+typedef Poco::Tuple<int, std::string, std::string, int> Employee;
 typedef std::vector<Employee> Employees;
 
 class OPTEmployee

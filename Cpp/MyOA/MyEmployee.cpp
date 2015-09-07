@@ -3,7 +3,7 @@
 int OPTEmployee::InsertData()
 {
 	std::cout<< "1"<< std::endl;
-    m_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)",
+    m_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email, ValidFlag) VALUES(:Empno, :Name, :Email, :ValidFlag)",
     use(m_oEmployees), now;
 
     m_oInsertStatement.execute();
@@ -15,7 +15,7 @@ int OPTEmployee::SelectData()
 
 	Employees m_oEmployees;
 
-	m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee",
+	m_oSelectStatement << "SELECT Empno, Name, Email, ValidFlag FROM Employee",
 	into(m_oEmployees),
 	now;
 
