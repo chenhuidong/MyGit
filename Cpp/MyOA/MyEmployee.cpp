@@ -21,7 +21,8 @@ int OPTEmployee::SelectData()
 	{
 		std::cout << "Empno: " << it->get<0>() << 
 			", Name: " << it->get<1>() << 
-			", Email: " << it->get<2>() <<std::endl;
+			", Email: " << it->get<2>() << 
+			", ValidFlag: " << it->get<3>() <<std::endl;
 	}
 	return 0;
 }
