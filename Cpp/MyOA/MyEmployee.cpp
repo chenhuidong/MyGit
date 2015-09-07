@@ -6,7 +6,7 @@ int OPTEmployee::InsertData()
     m_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email, ValidFlag) VALUES(:Empno, :Name, :Email, :ValidFlag)",
     use(m_oEmployees), now;
 
-    m_oInsertStatement.execute();
+    //m_oInsertStatement.execute();
 	return 0;
 }
 
