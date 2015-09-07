@@ -20,18 +20,48 @@ int main()
 
     //t_oMyData.Uninitialize();
     //
+
+
+
+// register SQLite connector
     Poco::Data::SQLite::Connector::registerConnector();
-    Session session("SQLite", "employee.db");
+
+    // create a session
+    Session session("SQLite", "sample.db");
+    
+    session << "DROP TABLE IF EXISTS Person", now;
+
     session << "CREATE TABLE Person (Name VARCHAR(30), Address VARCHAR, Age INTEGER(3))", now;
+    struct Person
+{
+    std::string name;
+    std::string address;
+    int         age;
+};
 
-	struct Person
-	{
-	    std::string name;
-	    std::string address;
-	    int         age;
-	} person;
+    Person person = 
+    {
+        "Bart Simpson",
+        "Springfield",
+        12
+    };
 
-	Statement select(session);
+    Statement insert(session);
+    insert << "INSERT INTO Person VALUES(?, ?, ?)",
+        use(person.name),
+        use(person.address),
+        use(person.age);
+
+    insert.execute();
+
+    person.name    = "Lisa Simpson";
+    person.address = "Springfield";
+    person.age     = 10;
+
+    insert.execute();
+
+    // a simple query
+    Statement select(session);
     select << "SELECT Name, Address, Age FROM Person",
         into(person.name),
         into(person.address),
