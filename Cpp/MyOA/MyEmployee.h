@@ -14,6 +14,13 @@ using Poco::Data::Statement;
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;
 
+struct SEmployee
+{
+	int			Empno;
+	std::string Name;
+	std::string Email;
+};
+
 class OPTEmployee
 {
 public:
@@ -22,7 +29,7 @@ public:
 	int InsertData(Employees &in_oEmployees);
 	int SelectData(Employees &out_oEmployees);
 	int DeleteData(int in_iEmpno);
-
+	int UpdateData(SEmployee &in_oSEmployee);
 private:
 	Session *m_pSession;
 };
