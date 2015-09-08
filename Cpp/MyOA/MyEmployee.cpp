@@ -2,7 +2,8 @@
 
 int OPTEmployee::InsertData(Employees &in_oEmployees)
 {
-    m_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)",
+	Statement t_oInsertStatement(*m_pSession);
+    t_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)",
     	use(in_oEmployees), now;
 
 	return 0;
@@ -10,7 +11,8 @@ int OPTEmployee::InsertData(Employees &in_oEmployees)
 
 int OPTEmployee::SelectData(Employees &out_oEmployees)
 {
-	m_oSelectStatement << "SELECT Empno, Name, Email FROM Employee where ValidFlag = 0",
+	Statement t_oSelectStatement(*m_pSession);
+	t_oSelectStatement << "SELECT Empno, Name, Email FROM Employee where ValidFlag = 0",
 		into(out_oEmployees), now;
 	
 	for (Employees::const_iterator it = out_oEmployees.begin(); it != out_oEmployees.end(); ++it)
@@ -24,6 +26,7 @@ int OPTEmployee::SelectData(Employees &out_oEmployees)
 
 int OPTEmployee::DeleteData(int in_iEmpno)
 {
-	m_oUpdateStatement << "update Employee set ValidFlag = 1 where Empno = :Empno", use(in_iEmpno), now;
+	Statement t_oUpdateStatement(*m_pSession);
+	t_oUpdateStatement << "update Employee set ValidFlag = 1 where Empno = :Empno", use(in_iEmpno), now;
 	return 0;
 }
