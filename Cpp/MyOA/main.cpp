@@ -13,7 +13,7 @@ int main()
 
     Employees t_oEmployees;
 
-    t_oEmployees.push_back(Employee(1,"chenhuidong","chdyczx@live.com"));
+    t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
 	t_oOPTEmployee.InsertData(t_oEmployees);
 	t_oEmployees.clear();
 
