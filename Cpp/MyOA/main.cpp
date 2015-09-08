@@ -28,8 +28,8 @@ int main()
     t_oEmployees.clear();
 
     SEmployee t_oEmployee;
-    t_oEmployee.Name = 'chd';
-    t_oEmployee.Email = 'chdyczx@163.com';
+    t_oEmployee.Name = "chd";
+    t_oEmployee.Email = "chdyczx@163.com";
     t_oEmployee.Empno = 4;
     t_oOPTEmployee.UpdateData(t_oEmployee);
 
