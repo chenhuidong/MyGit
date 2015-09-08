@@ -20,7 +20,8 @@ int main()
     t_oOPTEmployee.SelectData(t_oEmployees);
     t_oEmployees.clear();
 
-    t_oOPTEmployee.DeleteData(20);
+    int t_iEmpno = 20;
+    t_oOPTEmployee.DeleteData(t_iEmpno);
     t_oEmployees.clear();
 
     t_oOPTEmployee.SelectData(t_oEmployees);
