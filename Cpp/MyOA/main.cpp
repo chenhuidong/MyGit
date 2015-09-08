@@ -17,11 +17,11 @@ int main()
 	//t_oOPTEmployee.InsertData(t_oEmployees);
 	//t_oEmployees.clear();
 
-    t_oOPTEmployee.SelectData(t_oEmployees);
-    t_oEmployees.clear();
-
-    //t_oOPTEmployee.DeleteData(20);
+    //t_oOPTEmployee.SelectData(t_oEmployees);
     //t_oEmployees.clear();
+
+    t_oOPTEmployee.DeleteData(20);
+    t_oEmployees.clear();
 
     //t_oOPTEmployee.SelectData(t_oEmployees);
     //t_oEmployees.clear();
