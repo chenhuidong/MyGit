@@ -13,18 +13,18 @@ int main()
 
     Employees t_oEmployees;
 
-    t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
-	t_oOPTEmployee.InsertData(t_oEmployees);
-	t_oEmployees.clear();
+    //t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
+	//t_oOPTEmployee.InsertData(t_oEmployees);
+	//t_oEmployees.clear();
 
     t_oOPTEmployee.SelectData(t_oEmployees);
     t_oEmployees.clear();
 
-    t_oOPTEmployee.DeleteData(20);
-    t_oEmployees.clear();
+    //t_oOPTEmployee.DeleteData(20);
+    //t_oEmployees.clear();
 
-    t_oOPTEmployee.SelectData(t_oEmployees);
-    t_oEmployees.clear();
+    //t_oOPTEmployee.SelectData(t_oEmployees);
+    //t_oEmployees.clear();
 
     t_oMyData.Uninitialize();
 	return 0;
