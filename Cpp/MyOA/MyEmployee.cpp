@@ -39,7 +39,7 @@ int OPTEmployee::UpdateData(SEmployee &in_oSEmployee)
     	use(in_oSEmployee.Name),
     	use(in_oSEmployee.Email),
     	use(in_oSEmployee.Empno),
-    	, now;
+    	now;
 
 	return 0;
 }
