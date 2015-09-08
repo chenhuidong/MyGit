@@ -19,11 +19,10 @@ class OPTEmployee
 public:
 	OPTEmployee(Session *in_pSession): m_oInsertStatement(*in_pSession), m_oSelectStatement(*in_pSession), m_oUpdateStatement(*in_pSession){}
 	//int ImportData();
-	int InsertData();
-	int DeleteData();
-	int SelectData();
+	int InsertData(Employees &in_oEmployees);
+	int SelectData(Employees &out_oEmployees);
+	int DeleteData(int in_iEmpno);
 
-	Employees m_oEmployees;
 private:
 	Statement m_oInsertStatement;
 	Statement m_oSelectStatement;
