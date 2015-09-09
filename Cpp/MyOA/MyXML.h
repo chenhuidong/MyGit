@@ -57,7 +57,7 @@ public:
 	void characters(const XMLChar ch[], int start, int length)
 	{
 		//std::cout << std::string(ch + start, length) << std::endl;
-		std::cout<< ch<< std::endl;
+		std::cout<< start<< " "<< length<< std::endl;
 	}
 	
 	void ignorableWhitespace(const XMLChar ch[], int start, int length)
