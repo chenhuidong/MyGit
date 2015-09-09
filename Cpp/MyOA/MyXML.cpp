@@ -12,8 +12,8 @@ int main(int argc, char** argv)
 		AutoPtr<Document> pDoc = parser.parse(&src);
 		
 		NodeIterator it(pDoc, NodeFilter::SHOW_ALL);
-		/*Node* pNode = it.nextNode();
-		while (pNode)
+		Node* pNode = it.nextNode();
+		/*while (pNode)
 		{
 			std::cout << pNode->nodeName() << ":" << pNode->nodeValue() << std::endl;
 			pNode = it.nextNode();
