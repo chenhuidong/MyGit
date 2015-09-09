@@ -34,19 +34,16 @@ public:
 	
 	void startDocument()
 	{
-		where("startDocument");
 	}
 	
 	void endDocument()
 	{
-		where("endDocument");
 	}
 	
 	void startElement(const XMLString& uri, const XMLString& localName, const XMLString& qname, const Attributes& attributes)
 	{
 		where("startElement");
-		std::cout << "uri:       " << uri << std::endl
-		          << "localName: " << localName << std::endl
+		std::cout << "localName: " << localName << std::endl
 		          << "qname:     " << qname << std::endl;
 		std::cout << "Attributes: " << std::endl;
 		for (int i = 0; i < attributes.getLength(); ++i)
