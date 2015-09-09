@@ -2,30 +2,26 @@
 
 int main(int argc, char** argv)
 {
-	// parse an XML document and print the generated SAX events
-
-	if (argc < 2)
-	{
-		std::cout << "usage: " << argv[0] << ": <xmlfile>" << std::endl;
-		return 1;
-	}
+	// Parse an XML document from standard input
+	// and use a NodeIterator to print out all nodes.
 	
-	MyHandler handler;
-
-	SAXParser parser;
-	parser.setFeature(XMLReader::FEATURE_NAMESPACES, true);
-	parser.setFeature(XMLReader::FEATURE_NAMESPACE_PREFIXES, true);
-	parser.setContentHandler(&handler);
-	parser.setProperty(XMLReader::PROPERTY_LEXICAL_HANDLER, static_cast<LexicalHandler*>(&handler));
-	
+	InputSource src("/mnt/home2/51linux_LxomB0aQ/MyProgram/MyGit/Cpp/Poco/XML/sample.xml");
 	try
 	{
-		parser.parse(argv[1]);
+		DOMParser parser;
+		AutoPtr<Document> pDoc = parser.parse(&src);
+		
+		NodeIterator it(pDoc, NodeFilter::SHOW_ALL);
+		Node* pNode = it.nextNode();
+		while (pNode)
+		{
+			std::cout << pNode->nodeName() << ":" << pNode->nodeValue() << std::endl;
+			pNode = it.nextNode();
+		}
 	}
-	catch (Poco::Exception& e)
+	catch (Exception& exc)
 	{
-		std::cerr << e.displayText() << std::endl;
-		return 2;
+		std::cerr << exc.displayText() << std::endl;
 	}
 	
 	return 0;
