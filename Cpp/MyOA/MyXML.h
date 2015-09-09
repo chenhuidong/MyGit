@@ -42,7 +42,6 @@ public:
 	
 	void startElement(const XMLString& uri, const XMLString& localName, const XMLString& qname, const Attributes& attributes)
 	{
-		where("startElement");
 		std::cout << "localName: " << localName << std::endl;
 		std::cout << "Attributes: " << std::endl;
 		for (int i = 0; i < attributes.getLength(); ++i)
@@ -53,7 +52,6 @@ public:
 	
 	void endElement(const XMLString& uri, const XMLString& localName, const XMLString& qname)
 	{
-		where("endElement");
 	}
 	
 	void characters(const XMLChar ch[], int start, int length)
@@ -112,7 +110,6 @@ public:
 protected:
 	void where(const std::string& meth)
 	{
-		std::cout << "*** " << meth<< std::endl;
 	}
 
 private:
