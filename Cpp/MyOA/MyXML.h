@@ -116,15 +116,6 @@ public:
 protected:
 	void where(const std::string& meth)
 	{
-		std::cout << "*** " << meth;
-		if (_pLocator)
-		{
-			std::cout << " in "
-			          << _pLocator->getSystemId()
-			          << ", line " << _pLocator->getLineNumber() 
-			          << ", col " << _pLocator->getColumnNumber() 
-			          << std::endl;
-		}
 	}
 	
 private:
