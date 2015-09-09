@@ -60,6 +60,59 @@ public:
 		where("endElement");
 	}
 	
+	void characters(const XMLChar ch[], int start, int length)
+	{
+	}
+	
+	void ignorableWhitespace(const XMLChar ch[], int start, int length)
+	{
+	}
+	
+	void processingInstruction(const XMLString& target, const XMLString& data)
+	{
+	}
+	
+	void startPrefixMapping(const XMLString& prefix, const XMLString& uri)
+	{
+	}
+	
+	void endPrefixMapping(const XMLString& prefix)
+	{
+	}
+	
+	void skippedEntity(const XMLString& name)
+	{
+	}
+	
+	// LexicalHandler
+	void startDTD(const XMLString& name, const XMLString& publicId, const XMLString& systemId)
+	{
+	}
+	
+	void endDTD()
+	{
+	}
+	
+	void startEntity(const XMLString& name)
+	{
+	}
+	
+	void endEntity(const XMLString& name)
+	{
+	}
+	
+	void startCDATA()
+	{
+	}
+	
+	void endCDATA()
+	{
+	}
+	
+	void comment(const XMLChar ch[], int start, int length)
+	{
+	}
+	
 protected:
 	void where(const std::string& meth)
 	{
