@@ -100,7 +100,7 @@ public:
 	void endEntity(const XMLString& name)
 	{
 	}
-	
+	/*
 	void startCDATA()
 	{
 	}
@@ -108,7 +108,7 @@ public:
 	void endCDATA()
 	{
 	}
-	
+	*/
 	void comment(const XMLChar ch[], int start, int length)
 	{
 	}
