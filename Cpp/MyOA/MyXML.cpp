@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 		}*/
 		//Node* pNode = it.firstChild();
 		std::cout << pNode->nodeName() << ":" << pNode->nodeValue() << std::endl;
-		Node* pNode = it.nextNode();
+		pNode = it.nextNode();
 		std::cout << pNode->nodeName() << ":" << pNode->nodeValue() << std::endl;
 	}
 	catch (Exception& exc)
