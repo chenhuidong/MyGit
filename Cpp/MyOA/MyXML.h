@@ -43,7 +43,6 @@ public:
 	void startElement(const XMLString& uri, const XMLString& localName, const XMLString& qname, const Attributes& attributes)
 	{
 		std::cout << "localName: " << localName << std::endl;
-		std::cout << "Attributes: " << std::endl;
 		for (int i = 0; i < attributes.getLength(); ++i)
 		{
 			std::cout << attributes.getLocalName(i) << "=" << attributes.getValue(i) << std::endl;
