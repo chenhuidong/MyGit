@@ -1,0 +1,7 @@
+<Persons>
+    <Person>
+    	<mailhost>smtp.163.com</mailhost>
+        <sender>chdyczx.163.com</sender>
+        <passwd>123456</passwd>
+    </Person>
+</Persons>
