@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 			std::cout << pNode->nodeName() << ":" << pNode->nodeValue() << std::endl;
 			pNode = it.nextNode();
 		}*/
-		Node* pNode = it.firstChild();
+		//Node* pNode = it.firstChild();
 		std::cout << pNode->nodeName() << ":" << pNode->nodeValue() << std::endl;
 	}
 	catch (Exception& exc)
