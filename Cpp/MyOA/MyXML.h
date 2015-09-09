@@ -100,7 +100,7 @@ public:
 	void endEntity(const XMLString& name)
 	{
 	}
-	/*
+	
 	void startCDATA()
 	{
 	}
@@ -108,16 +108,17 @@ public:
 	void endCDATA()
 	{
 	}
-	*/
+	
 	void comment(const XMLChar ch[], int start, int length)
 	{
 	}
-	
+
 protected:
 	void where(const std::string& meth)
 	{
+		std::cout << "*** " << meth<< std::endl;
 	}
-	
+
 private:
 	const Locator* _pLocator;
 };
