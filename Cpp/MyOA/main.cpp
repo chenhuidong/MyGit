@@ -3,7 +3,6 @@
 
 int main()
 {
-    /*
 	MyData t_oMyData;
 	t_oMyData.Initialize("employee.db");
 
@@ -18,14 +17,8 @@ int main()
 	t_oOPTEmployee.InsertData(t_oEmployees);
 	t_oEmployees.clear();
 
-    t_oOPTEmployee.SelectData(t_oEmployees);
-    t_oEmployees.clear();
-
     int t_iEmpno = 20;
     t_oOPTEmployee.DeleteData(t_iEmpno);
-    t_oEmployees.clear();
-
-    t_oOPTEmployee.SelectData(t_oEmployees);
     t_oEmployees.clear();
 
     SEmployee t_oEmployee;
@@ -35,35 +28,16 @@ int main()
     t_oOPTEmployee.UpdateData(t_oEmployee);
 
     t_oOPTEmployee.SelectData(t_oEmployees);
+    for (Employees::const_iterator it = t_oEmployees.begin(); it != t_oEmployees.end(); ++it)
+    {
+        std::cout << "Empno: " << it->get<0>() << 
+            ", Name: " << it->get<1>() << 
+            ", Email: " << it->get<2>() << std::endl;
+    }
     t_oEmployees.clear();
 
     t_oMyData.Uninitialize();
-    */
 
-    // parse an XML document and print the generated SAX events
-    if (argc < 2)
-    {
-        std::cout << "usage: " << argv[0] << ": <xmlfile>" << std::endl;
-        return 1;
-    }
-    
-    //MyHandler handler;
-
-    SAXParser parser;
-    parser.setFeature(XMLReader::FEATURE_NAMESPACES, true);
-    parser.setFeature(XMLReader::FEATURE_NAMESPACE_PREFIXES, true);
-    //parser.setContentHandler(&handler);
-    parser.setProperty(XMLReader::PROPERTY_LEXICAL_HANDLER, static_cast<LexicalHandler*>(&handler));
-    
-    try
-    {
-        parser.parse(argv[1]);
-    }
-    catch (Poco::Exception& e)
-    {
-        std::cerr << e.displayText() << std::endl;
-        return 2;
-    }
 	return 0;
 }
 
