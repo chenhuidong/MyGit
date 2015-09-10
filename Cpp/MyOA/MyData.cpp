@@ -1,6 +1,5 @@
 #include "MyData.h"
 
-template <class T>
 int MyData::Initialize(const char* in_sDbName)
 {
 	// register SQLite connector
@@ -15,7 +14,6 @@ int MyData::Initialize(const char* in_sDbName)
     return 0;
 }
 
-template <class T>
 int MyData::Uninitialize()
 {
     // delete a session
@@ -23,16 +21,14 @@ int MyData::Uninitialize()
     m_pSession = NULL;
 }
 
-template <class T>
 Session* MyData::GetSession()
 {
 	return m_pSession;
 }
 
-template <class T>
-int MyData::ExecuteSQL(const char* in_sSQL, T &out_oT)
+int MyData::ExecuteSQL(const char* in_sSQL, void* out_pResult)
 {
     Statement t_oStatement(*m_pSession);
-    t_oStatement<< in_sSQL, into(out_oT), now;
+    t_oStatement<< in_sSQL, into(*out_pResult), now;
     return 0;
 }
