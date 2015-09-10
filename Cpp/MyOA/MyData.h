@@ -14,6 +14,7 @@ using Poco::Data::Statement;
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;
 
+template <class T>
 class MyData
 {
 public:
@@ -23,7 +24,7 @@ public:
 	int Uninitialize();
 	Session* GetSession();
 
-	int ExecuteSQL(const char* in_sSQL, Employees &out_oEmployees);
+	int ExecuteSQL(const char* in_sSQL, T &out_oT);
 private:
 	Session *m_pSession;
 };
