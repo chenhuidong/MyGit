@@ -36,17 +36,14 @@ public:
 	
 	void startDocument()
 	{
-		where("startDocument");
 	}
 	
 	void endDocument()
 	{
-		where("endDocument");
 	}
 	
 	void startElement(const XMLString& uri, const XMLString& localName, const XMLString& qname, const Attributes& attributes)
 	{
-		where("startElement");
 		std::cout << "localName: " << localName << std::endl;
 		std::cout << "Attributes: " << std::endl;
 		for (int i = 0; i < attributes.getLength(); ++i)
@@ -57,84 +54,69 @@ public:
 	
 	void endElement(const XMLString& uri, const XMLString& localName, const XMLString& qname)
 	{
-		where("endElement");
 	}
 	
 	void characters(const XMLChar ch[], int start, int length)
 	{
-		where("characters");
 		std::cout << std::string(ch + start, length) << std::endl;
 	}
 	
 	void ignorableWhitespace(const XMLChar ch[], int start, int length)
 	{
-		where("ignorableWhitespace");
 	}
 	
 	void processingInstruction(const XMLString& target, const XMLString& data)
 	{
-		where("processingInstruction");
 		std::cout << "target=" << target << ", data=" << data << std::endl;
 	}
 	
 	void startPrefixMapping(const XMLString& prefix, const XMLString& uri)
 	{
-		where("startPrefixMapping");
 		std::cout << "prefix=" << prefix << " uri=" << uri << std::endl;
 	}
 	
 	void endPrefixMapping(const XMLString& prefix)
 	{
-		where("endPrefixMapping");
 		std::cout << "prefix=" << prefix << std::endl;
 	}
 	
 	void skippedEntity(const XMLString& name)
 	{
-		where("skippedEntity");
 		std::cout << "name=" << name << std::endl;
 	}
 	
 	// LexicalHandler
 	void startDTD(const XMLString& name, const XMLString& publicId, const XMLString& systemId)
 	{
-		where("startDTD");
 	}
 	
 	void endDTD()
 	{
-		where("endDTD");
 	}
 	
 	void startEntity(const XMLString& name)
 	{
-		where("startEntity");
 	}
 	
 	void endEntity(const XMLString& name)
 	{
-		where("endEntity");
 	}
 	
 	void startCDATA()
 	{
-		where("startCDATA");
 	}
 	
 	void endCDATA()
 	{
-		where("endCDATA");
 	}
 	
 	void comment(const XMLChar ch[], int start, int length)
 	{
-		where("comment");
 	}
 	
 protected:
 	void where(const std::string& meth)
 	{
-		std::cout << "*** " << meth;
 		if (_pLocator)
 		{
 			/*std::cout << " in "
