@@ -31,6 +31,12 @@ int main()
     t_oOPTEmployee.SelectData(t_oEmployees);
     */
     Employees t_oEmployees;
+
+    /*
+    t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
+    t_oMyData.ExecuteSQL("INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)", t_oEmployees);
+    t_oEmployees.clear();
+    */
     
     t_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_oEmployees);
     for (Employees::const_iterator it = t_oEmployees.begin(); it != t_oEmployees.end(); ++it)
