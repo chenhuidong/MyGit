@@ -11,6 +11,9 @@ using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
 
+typedef Poco::Tuple<int, std::string, std::string> Employee;
+typedef std::vector<Employee> Employees;
+
 class MyData
 {
 public:
