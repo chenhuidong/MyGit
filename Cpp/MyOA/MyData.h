@@ -24,7 +24,12 @@ public:
 	Session* GetSession();
 
 	template <class T>
-	int ExecuteSQL(const char* in_sSQL, T& out_oT);
+	int ExecuteSQL(const char* in_sSQL, T& out_oT)
+	{
+		Statement t_oStatement(*m_pSession);
+    	t_oStatement<< in_sSQL, into(out_oT), now;
+    	return 0;
+	}
 private:
 	Session *m_pSession;
 };
