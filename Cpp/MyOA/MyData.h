@@ -35,7 +35,7 @@ public:
 	int ExecuteSQL(const char* in_sSQL, T* in_oT)
 	{
 		Statement t_oStatement(*m_pSession);
-    	t_oStatement<< in_sSQL, use(*in_oT), now;
+    	t_oStatement<< in_sSQL, use(*in_oT), into(*in_oT), now;
     	return 0;
 	}
 private:
