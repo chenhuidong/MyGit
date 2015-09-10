@@ -13,6 +13,7 @@ int main()
 
     Employees t_oEmployees;
 
+    /*
     t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
 	t_oOPTEmployee.InsertData(t_oEmployees);
 	t_oEmployees.clear();
@@ -26,8 +27,11 @@ int main()
     t_oEmployee.Email = "chdyczx@163.com";
     t_oEmployee.Empno = 4;
     t_oOPTEmployee.UpdateData(t_oEmployee);
-
-    t_oOPTEmployee.SelectData(t_oEmployees);
+    */
+    
+    //t_oOPTEmployee.SelectData(t_oEmployees);
+    
+    t_oOPTEmployee.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_oEmployees);
     for (Employees::const_iterator it = t_oEmployees.begin(); it != t_oEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 

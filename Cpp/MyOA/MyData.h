@@ -19,6 +19,8 @@ public:
 	int Initialize(const char* in_sDbName);
 	int Uninitialize();
 	Session* GetSession();
+
+	int ExecuteSQL(const char* in_sSQL, Employees &out_oEmployees);
 private:
 	Session *m_pSession;
 };
