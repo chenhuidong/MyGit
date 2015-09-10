@@ -113,22 +113,7 @@ public:
 	void comment(const XMLChar ch[], int start, int length)
 	{
 	}
-	
-protected:
-	void where(const std::string& meth)
-	{
-		if (_pLocator)
-		{
-			/*std::cout << " in "
-			          << _pLocator->getSystemId()
-			          << ", line " << _pLocator->getLineNumber() 
-			          << ", col " << _pLocator->getColumnNumber() 
-			          << std::endl;
-			          */
-			std::cout<< std::endl;
-		}
-	}
-	
+		
 private:
 	const Locator* _pLocator;
 };
