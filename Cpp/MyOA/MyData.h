@@ -23,7 +23,8 @@ public:
 	int Uninitialize();
 	Session* GetSession();
 
-	int ExecuteSQL(const char* in_sSQL, void* out_pResult);
+	template <class T>
+	int ExecuteSQL(const char* in_sSQL, T& out_oT);
 private:
 	Session *m_pSession;
 };
