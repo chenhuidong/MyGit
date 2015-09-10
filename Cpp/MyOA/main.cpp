@@ -32,7 +32,7 @@ int main()
     */
     Employees t_oEmployees;
     
-    t_oMyData.ExecuteSQL<Employees>("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_oEmployees);
+    t_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_oEmployees);
     for (Employees::const_iterator it = t_oEmployees.begin(); it != t_oEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
