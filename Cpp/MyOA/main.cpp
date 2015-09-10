@@ -34,7 +34,7 @@ int main()
 
 
     t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
-    t_oMyData.ExecuteSQL("INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)", t_oEmployees);
+    t_oMyData.ExecuteSQL("INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)", &t_oEmployees);
     t_oEmployees.clear();
 
     /*
