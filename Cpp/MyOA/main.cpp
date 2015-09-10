@@ -31,10 +31,11 @@ int main()
     t_oOPTEmployee.SelectData(t_oEmployees);
     */
     Employees t_oEmployees;
+    Employees t_oEmployees1;
 
 
     t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
-    t_oMyData.ExecuteSQL("INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)", &t_oEmployees);
+    t_oMyData.ExecuteSQL("INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)", t_oEmployees, t_oEmployees1);
     t_oEmployees.clear();
 
     /*

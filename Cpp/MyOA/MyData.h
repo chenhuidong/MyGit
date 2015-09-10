@@ -32,10 +32,10 @@ public:
     	return 0;
 	}
 	*/
-	int ExecuteSQL(const char* in_sSQL, T* in_oT, T* out_oT=NULL)
+	int ExecuteSQL(const char* in_sSQL, T& in_oT, T& out_oT)
 	{
 		Statement t_oStatement(*m_pSession);
-    	t_oStatement<< in_sSQL, use(*in_oT), into(*out_oT), now;
+    	t_oStatement<< in_sSQL, use(in_oT), into(out_oT), now;
     	return 0;
 	}
 private:
