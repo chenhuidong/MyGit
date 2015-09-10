@@ -67,22 +67,18 @@ public:
 	
 	void processingInstruction(const XMLString& target, const XMLString& data)
 	{
-		std::cout << "target=" << target << ", data=" << data << std::endl;
 	}
 	
 	void startPrefixMapping(const XMLString& prefix, const XMLString& uri)
 	{
-		std::cout << "prefix=" << prefix << " uri=" << uri << std::endl;
 	}
 	
 	void endPrefixMapping(const XMLString& prefix)
 	{
-		std::cout << "prefix=" << prefix << std::endl;
 	}
 	
 	void skippedEntity(const XMLString& name)
 	{
-		std::cout << "name=" << name << std::endl;
 	}
 	
 	// LexicalHandler
