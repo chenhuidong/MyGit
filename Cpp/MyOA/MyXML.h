@@ -143,6 +143,7 @@ protected:
 			          << ", col " << _pLocator->getColumnNumber() 
 			          << std::endl;
 			          */
+			std::cout<< std::endl;
 		}
 	}
 	
