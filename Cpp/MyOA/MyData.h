@@ -29,8 +29,8 @@ public:
 	int ExecuteSQL(const char* in_sSQL, T& inout_oT)
 	{
 		StringTokenizer tokenizer(in_sSQL, ";,", StringTokenizer::TOK_TRIM);
-		char* t_pOperateType = *tokenizer.begin();
-		std::cout<< t_pOperateType<< std::endl;
+		std::string t_sOperateType = *tokenizer.begin();
+		std::cout<< t_sOperateType<< std::endl;
 
 		//cout<<pOperateType<<endl;
 		/*
