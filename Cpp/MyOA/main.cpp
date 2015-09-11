@@ -33,24 +33,20 @@ int main()
     */
     Employees t_outEmployees;
 
-    /*
-    t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
-    t_oMyData.ExecuteSQL("INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)", t_inoutEmployees);
-    t_oEmployees.clear();
-    */
     char iSQL[1024] = {0};
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employee (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "cccc", "fdsfs@163.com");
     t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
-    /*
-    t_oMyData.ExecuteSQL("SeleCT Empno, Name, Email FROM Employee where ValidFlag = 0", t_inoutEmployees);
-    for (Employees::const_iterator it = t_inoutEmployees.begin(); it != t_inoutEmployees.end(); ++it)
+    t_outEmployees.clear();
+    
+    t_oMyData.ExecuteSQL("SeleCT Empno, Name, Email FROM Employee where ValidFlag = 0", t_outEmployees);
+    for (Employees::const_iterator it = t_outEmployees.begin(); it != t_outEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
             ", Name: " << it->get<1>() << 
             ", Email: " << it->get<2>() << std::endl;
     }
-    t_inoutEmployees.clear();
-    */
+    t_outEmployees.clear();
+    
     t_oMyData.Uninitialize();
 
 	return 0;
