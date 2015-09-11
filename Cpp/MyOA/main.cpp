@@ -56,7 +56,7 @@ int main()
             //std::cout<< "Email address is empty." <<std::endl;
             //t_oMyData.Uninitialize();
             //return -1;
-            throw NoRecordException();
+            throw Poco::NoRecordException("just test.");
         }
     }
     catch (Exception& exc)
