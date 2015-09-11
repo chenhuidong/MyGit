@@ -1,12 +1,16 @@
 #include "MyData.h"
 #include "MyEmployee.h"
 #include <stdio.h>
+#include "Poco/Exception.h"
+#include <typeinfo>
 
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;
 
 typedef Poco::Tuple<std::string, std::string, std::string> MyEmail;
 typedef std::vector<MyEmail> MyEmails;
+
+POCO_IMPLEMENT_EXCEPTION(NoRecordException, Exception, "Email address is empty.")
 
 int main()
 {
@@ -47,9 +51,19 @@ int main()
             ", Mailhost: " << it->get<2>() << std::endl;
     }
     */
-    if(t_outMyEmails.empty())
+    try
     {
-        std::cout<< "Email address is empty." <<std::endl;
+        if(t_outMyEmails.empty())
+        {
+            //std::cout<< "Email address is empty." <<std::endl;
+            //t_oMyData.Uninitialize();
+            //return -1;
+            throw NoRecordException();
+        }
+    }
+    catch (Exception& exc)
+    {
+        std::cerr << exc.displayText() << std::endl;
         t_oMyData.Uninitialize();
         return -1;
     }
