@@ -64,7 +64,34 @@ int main()
         return -1;
     }
 
+
+    Employees t_outEmployees;
+    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM Employee");
+    t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
     
+    /*
+    for (Employees::const_iterator it = t_outEmployees.begin(); it != t_outEmployees.end(); ++it)
+    {
+        std::cout << "Empno: " << it->get<0>() << 
+            ", Name: " << it->get<1>() << 
+            ", Email: " << it->get<2>() << std::endl;
+    }
+    */
+    try
+    {
+        if(t_outEmployees.empty())
+        {
+            throw Poco::NoRecordException("Employee no record.");
+        }
+    }
+    catch (Poco::NoRecordException& exc)
+    {
+        std::cerr << exc.displayText() << std::endl;
+        t_oMyData.Uninitialize();
+        return -1;
+    }
+
+
 
     t_oMyData.Uninitialize();
 
