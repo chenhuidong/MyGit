@@ -36,7 +36,7 @@ int main()
     */
     char iSQL[1024] = {0};
     MyEmails t_outMyEmails;
-    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM MyEailConf where ValidFlag = 0");
+    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM MyEailConf");
     t_oMyData.ExecuteSQL(iSQL, t_outMyEmails);
     
     for (MyEmails::const_iterator it = t_outMyEmails.begin(); it != t_outMyEmails.end(); ++it)
