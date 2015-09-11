@@ -7,6 +7,7 @@
 #include <vector>
 #include <iostream>
 #include <string>
+#include <stdio.h>
 
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
