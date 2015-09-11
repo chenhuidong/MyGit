@@ -30,7 +30,7 @@ int main()
     
     t_oOPTEmployee.SelectData(t_oEmployees);
     */
-    Employees t_inoutEmployees;
+    //Employees t_outEmployees;
 
     /*
     t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));

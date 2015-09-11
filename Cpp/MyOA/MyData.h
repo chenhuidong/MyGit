@@ -29,7 +29,7 @@ public:
 	Session* GetSession();
 
 	template <class T>
-	int ExecuteSQL(const char* in_sSQL, T& inout_oT)
+	int ExecuteSQL(const char* in_sSQL, T& out_oT)
 	{
 		//StringTokenizer tokenizer(in_sSQL, " ", StringTokenizer::TOK_TRIM);
 		//std::string t_sOperateType = *tokenizer.begin();
