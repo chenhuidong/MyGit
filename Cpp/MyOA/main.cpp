@@ -39,13 +39,20 @@ int main()
     snprintf(iSQL, sizeof(iSQL), "SELECT * FROM MyEail");
     t_oMyData.ExecuteSQL(iSQL, t_outMyEmails);
     
+    /*
     for (MyEmails::const_iterator it = t_outMyEmails.begin(); it != t_outMyEmails.end(); ++it)
     {
         std::cout << "Sender: " << it->get<0>() << 
             ", Password: " << it->get<1>() << 
             ", Mailhost: " << it->get<2>() << std::endl;
     }
-
+    */
+    if(t_outMyEmails.empty())
+    {
+        std::cout<< "Email address is empty." <<std::endl;
+        t_oMyData.Uninitialize();
+        return -1;
+    }
 
     t_oMyData.Uninitialize();
 
