@@ -30,8 +30,7 @@ int main()
     
     t_oOPTEmployee.SelectData(t_oEmployees);
     */
-    Employees t_inEmployees;
-    Employees t_outEmployees;
+    Employees t_inoutEmployees;
 
     /*
     t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
@@ -39,15 +38,14 @@ int main()
     t_oEmployees.clear();
     */
 
-    t_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_inEmployees, t_outEmployees);
-    for (Employees::const_iterator it = t_outEmployees.begin(); it != t_outEmployees.end(); ++it)
+    t_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_inoutEmployees);
+    for (Employees::const_iterator it = t_outEmployees.begin(); it != t_inoutEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
             ", Name: " << it->get<1>() << 
             ", Email: " << it->get<2>() << std::endl;
     }
-    t_inEmployees.clear();
-    t_outEmployees.clear();
+    t_inoutEmployees.clear();
 
     t_oMyData.Uninitialize();
 
