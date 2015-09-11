@@ -46,4 +46,4 @@ int main()
 	return 0;
 }
 
-//g++ main.cpp  MyData.cpp MyEmployee.cpp -omain -lPocoDataSQLite
+//g++ main.cpp  MyData.cpp -omain -lPocoDataSQLite
