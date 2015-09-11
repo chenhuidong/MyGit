@@ -30,6 +30,7 @@ public:
 	{
 		StringTokenizer tokenizer(in_sSQL, " ", StringTokenizer::TOK_TRIM);
 		std::string t_sOperateType = *tokenizer.begin();
+		std::cout<< toUpper(t_sOperateType)<< std::endl;
 		std::cout<< t_sOperateType<< std::endl;
 
 		//cout<<pOperateType<<endl;
