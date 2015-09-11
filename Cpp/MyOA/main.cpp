@@ -1,5 +1,6 @@
 #include "MyData.h"
 #include "MyEmployee.h"
+#include <stdio.h>
 
 int main()
 {
