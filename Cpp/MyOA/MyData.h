@@ -5,7 +5,7 @@
 #include "Poco/Data/SessionFactory.h"
 #include "Poco/Data/SQLite/Connector.h"
 #include "Poco/StringTokenizer.h"
-#include "Poco/String.h"
+
 
 #include <vector>
 #include <iostream>
@@ -15,9 +15,6 @@ using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
 using Poco::StringTokenizer;
-
-typedef Poco::Tuple<int, std::string, std::string> Employee;
-typedef std::vector<Employee> Employees;
 
 class MyData
 {
@@ -31,13 +28,6 @@ public:
 	template <class T>
 	int ExecuteSQL(const char* in_sSQL, T& out_oT)
 	{
-		//StringTokenizer tokenizer(in_sSQL, " ", StringTokenizer::TOK_TRIM);
-		//std::string t_sOperateType = *tokenizer.begin();
-		//t_sOperateType = Poco::toUpper(t_sOperateType);
-		//std::cout<< t_sOperateType<< std::endl;
-		//if(!Poco::compare(pOperateType, "SELECT"))
-		//{
-		//}
 		//std::cout<< in_sSQL<< std::endl;
 		Statement t_oStatement(*m_pSession);
     	t_oStatement<< in_sSQL, into(out_oT), now;

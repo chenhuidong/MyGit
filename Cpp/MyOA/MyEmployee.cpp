@@ -43,3 +43,26 @@ int OPTEmployee::UpdateData(SEmployee &in_oSEmployee)
 
 	return 0;
 }
+
+
+    /*
+    OPTEmployee t_oOPTEmployee(t_oMyData.GetSession());
+
+    Employees t_oEmployees;
+    
+    t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
+	t_oOPTEmployee.InsertData(t_oEmployees);
+	t_oEmployees.clear();
+
+    int t_iEmpno = 20;
+    t_oOPTEmployee.DeleteData(t_iEmpno);
+    t_oEmployees.clear();
+
+    SEmployee t_oEmployee;
+    t_oEmployee.Name = "chd";
+    t_oEmployee.Email = "chdyczx@163.com";
+    t_oEmployee.Empno = 4;
+    t_oOPTEmployee.UpdateData(t_oEmployee);
+    
+    t_oOPTEmployee.SelectData(t_oEmployees);
+    */
