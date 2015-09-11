@@ -39,7 +39,7 @@ int main()
     */
 
     t_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_inoutEmployees);
-    for (Employees::const_iterator it = t_outEmployees.begin(); it != t_inoutEmployees.end(); ++it)
+    for (Employees::const_iterator it = t_inoutEmployees.begin(); it != t_inoutEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
             ", Name: " << it->get<1>() << 
