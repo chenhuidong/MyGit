@@ -28,7 +28,7 @@ public:
 	{
 		char *t_pNext = NULL;
 		char *t_pOperateType = std::strtok_s(in_sSQL, " ", &t_pNext);
-		cout<<*t_pOperateType<<endl;
+		std::cout<<*t_pOperateType<<std::endl;
 		
 		/*
 		Statement t_oStatement(*m_pSession);
