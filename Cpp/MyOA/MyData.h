@@ -5,8 +5,11 @@
 #include "Poco/Data/SessionFactory.h"
 #include "Poco/Data/SQLite/Connector.h"
 #include "Poco/StringTokenizer.h"
+#include "Poco/String.h"
+
 #include <vector>
 #include <iostream>
+
 
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
