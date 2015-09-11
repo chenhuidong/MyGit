@@ -6,6 +6,7 @@
 #include "Poco/Data/SQLite/Connector.h"
 #include <vector>
 #include <iostream>
+#include <string>
 
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
