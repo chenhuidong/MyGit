@@ -60,7 +60,7 @@ int main()
             //throw Poco::NoRecordException("just test.");
         }
     }
-    catch (Exception& exc)
+    catch (Poco::Exception& exc)
     {
         std::cerr << exc.displayText() << std::endl;
         t_oMyData.Uninitialize();
