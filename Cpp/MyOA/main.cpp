@@ -52,9 +52,9 @@ int main()
     */
     try
     {
-        if(t_outMyEmails.empty())
+        //if(t_outMyEmails.empty())
         {
-            //std::cout<< "Email address is empty." <<std::endl;
+            std::cout<< "Email address is empty." <<std::endl;
             //t_oMyData.Uninitialize();
             //return -1;
             //throw Poco::NoRecordException("just test.");
