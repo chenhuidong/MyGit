@@ -15,7 +15,7 @@ int main()
 
 	//create table
     *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Employee (Empno int, Name VARCHAR(30), Email VARCHAR, ValidFlag interger(1) default 0)", now;
-    *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS MyEailConf (Sender VARCHAR(30) primary key, Password VARCHAR(30), Mailhost VARCHAR(30))", now;
+    *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS MyEail (Sender VARCHAR(30) primary key, Password VARCHAR(30), Mailhost VARCHAR(30))", now;
     
     /*
     Employees t_outEmployees;
@@ -36,7 +36,7 @@ int main()
     */
     char iSQL[1024] = {0};
     MyEmails t_outMyEmails;
-    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM MyEailConf");
+    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM MyEail");
     t_oMyData.ExecuteSQL(iSQL, t_outMyEmails);
     
     for (MyEmails::const_iterator it = t_outMyEmails.begin(); it != t_outMyEmails.end(); ++it)
