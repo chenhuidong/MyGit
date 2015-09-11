@@ -31,17 +31,16 @@ public:
 	template <class T>
 	int ExecuteSQL(const char* in_sSQL, T& inout_oT)
 	{
-		StringTokenizer tokenizer(in_sSQL, " ", StringTokenizer::TOK_TRIM);
-		std::string t_sOperateType = *tokenizer.begin();
-		t_sOperateType = Poco::toUpper(t_sOperateType);
+		//StringTokenizer tokenizer(in_sSQL, " ", StringTokenizer::TOK_TRIM);
+		//std::string t_sOperateType = *tokenizer.begin();
+		//t_sOperateType = Poco::toUpper(t_sOperateType);
 		//std::cout<< t_sOperateType<< std::endl;
-		if(!Poco::compare(pOperateType, "SELECT"))
-
+		//if(!Poco::compare(pOperateType, "SELECT"))
+		//{
+		//}
 		
-		/*
 		Statement t_oStatement(*m_pSession);
-    	t_oStatement<< in_sSQL, use(in_oT), into(out_oT), now;
-    	*/
+    	t_oStatement<< in_sSQL, into(out_oT), now;
     	return 0;
 	}
 private:
