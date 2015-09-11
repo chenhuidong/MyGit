@@ -24,18 +24,16 @@ public:
 	Session* GetSession();
 
 	template <class T>
-	/*
-	int ExecuteSQL(const char* in_sSQL, T* in_oT, T* out_oT = NULL)
+	int ExecuteSQL(const char* in_sSQL, T& inout_oT)
 	{
-		Statement t_oStatement(*m_pSession);
-    	t_oStatement<< in_sSQL, use(*in_oT), into(out_oT), now;
-    	return 0;
-	}
-	*/
-	int ExecuteSQL(const char* in_sSQL, T& in_oT, T& out_oT)
-	{
+		char *t_pNext = NULL;
+		char *t_pOperateType = strtok_s(in_sSQL, " ", &t_pNext);
+		cout<<*t_pOperateType<<endl;
+		
+		/*
 		Statement t_oStatement(*m_pSession);
     	t_oStatement<< in_sSQL, use(in_oT), into(out_oT), now;
+    	*/
     	return 0;
 	}
 private:
