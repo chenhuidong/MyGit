@@ -31,7 +31,7 @@ int main()
     
     t_oOPTEmployee.SelectData(t_oEmployees);
     */
-    //Employees t_outEmployees;
+    Employees t_outEmployees;
 
     /*
     t_oEmployees.push_back(Employee(20,"chenhuidong","chdyczx@live.com"));
@@ -40,7 +40,7 @@ int main()
     */
     char iSQL[1024] = {0};
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employee (Empno, Name, Email) VALUES(%d, %s, %s)", 2, "cccc", "fdsfs@163.com");
-    t_oMyData.ExecuteSQL(iSQL, t_inoutEmployees);
+    t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
     /*
     t_oMyData.ExecuteSQL("SeleCT Empno, Name, Email FROM Employee where ValidFlag = 0", t_inoutEmployees);
     for (Employees::const_iterator it = t_inoutEmployees.begin(); it != t_inoutEmployees.end(); ++it)
