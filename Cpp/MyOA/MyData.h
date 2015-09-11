@@ -27,7 +27,7 @@ public:
 	int ExecuteSQL(const char* in_sSQL, T& inout_oT)
 	{
 		char *t_pNext = NULL;
-		char *t_pOperateType = strtok_s(in_sSQL, " ", &t_pNext);
+		char *t_pOperateType = std::strtok_s(in_sSQL, " ", &t_pNext);
 		cout<<*t_pOperateType<<endl;
 		
 		/*
