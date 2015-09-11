@@ -34,9 +34,9 @@ public:
 		StringTokenizer tokenizer(in_sSQL, " ", StringTokenizer::TOK_TRIM);
 		std::string t_sOperateType = *tokenizer.begin();
 		t_sOperateType = Poco::toUpper(t_sOperateType);
-		std::cout<< t_sOperateType<< std::endl;
+		//std::cout<< t_sOperateType<< std::endl;
 
-		//cout<<pOperateType<<endl;
+		
 		/*
 		Statement t_oStatement(*m_pSession);
     	t_oStatement<< in_sSQL, use(in_oT), into(out_oT), now;
