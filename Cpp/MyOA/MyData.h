@@ -30,8 +30,9 @@ public:
 	{
 		StringTokenizer tokenizer(in_sSQL, ";,", StringTokenizer::TOK_TRIM);
 		std::cout<< *tokenizer.begin()<< std::endl;
-		std::cout<< *in_sSQL<< std::endl;
-		
+		std::cout<< in_sSQL<< std::endl;
+
+		//cout<<pOperateType<<endl;
 		/*
 		Statement t_oStatement(*m_pSession);
     	t_oStatement<< in_sSQL, use(in_oT), into(out_oT), now;
