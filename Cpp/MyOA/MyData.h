@@ -28,7 +28,7 @@ public:
 	template <class T>
 	int ExecuteSQL(const char* in_sSQL, T& inout_oT)
 	{
-		StringTokenizer tokenizer(in_sSQL, ";,", StringTokenizer::TOK_TRIM);
+		StringTokenizer tokenizer(in_sSQL, " ", StringTokenizer::TOK_TRIM);
 		std::string t_sOperateType = *tokenizer.begin();
 		std::cout<< t_sOperateType<< std::endl;
 
