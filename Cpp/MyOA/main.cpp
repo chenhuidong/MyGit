@@ -107,9 +107,11 @@ int main()
             ", Password: " << t_outMyEmails[j].get<1>() << 
             ", Mailhost: " << t_outMyEmails[j].get<2>() << std::endl <<std::endl;
 
-        if(j == 1)
+        if(j == t_outEmployeesSize-1)
             sleep(2);
     }
+
+
 
 
     t_oMyData.Uninitialize();
