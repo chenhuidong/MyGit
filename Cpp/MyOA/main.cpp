@@ -104,9 +104,9 @@ int main()
 
         for (Employees::const_iterator it_Employees = t_outEmployees.begin(); it_Employees != t_outEmployees.end(); ++it_Employees)
         {
-            std::cout << "Empno: " << it->get<0>() << 
-                ", Name: " << it->get<1>() << 
-                ", Email: " << it->get<2>() << std::endl;
+            std::cout << "Empno: " << it_Employees->get<0>() << 
+                ", Name: " << it_Employees->get<1>() << 
+                ", Email: " << it_Employees->get<2>() << std::endl;
         }
     }
     
