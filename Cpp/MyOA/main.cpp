@@ -110,18 +110,17 @@ int main()
         }
     }
     */
-   
+    int i = 0;
     for (Employees::const_iterator it_Employees = t_outEmployees.begin(); it_Employees != t_outEmployees.end(); ++it_Employees)
     {
-        int i = 0;
         std::cout << "Empno: " << it_Employees->get<0>() << 
             ", Name: " << it_Employees->get<1>() << 
             ", Email: " << it_Employees->get<2>() << std::endl;
 
         int t_iIndex = i % t_outMyEmailsSize;
-
         std::cout<< i<< std::endl;
         std::cout<< t_iIndex<< std::endl;
+
         /*
         MyEmails::const_iterator it_MyEmails = t_outMyEmails[t_iIndex];
         std::cout << "Sender: " << it_MyEmails->get<0>() << 
