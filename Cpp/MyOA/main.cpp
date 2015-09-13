@@ -92,8 +92,8 @@ int main()
     }
 
 
-    t_outMyEmailsSize = t_outMyEmails.size();
-    t_outEmployeesSize = t_outEmployees.size();
+    int t_outMyEmailsSize = t_outMyEmails.size();
+    int t_outEmployeesSize = t_outEmployees.size();
 
     /*
     for (MyEmails::const_iterator it_MyEmails = t_outMyEmails.begin(); it_MyEmails != t_outMyEmails.end(); ++it_MyEmails)
