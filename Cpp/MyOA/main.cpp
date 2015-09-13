@@ -120,6 +120,7 @@ int main()
 
         int t_iIndex = i % t_outMyEmailsSize;
 
+        std::cout<< i<< std::endl;
         std::cout<< t_iIndex<< std::endl;
         /*
         MyEmails::const_iterator it_MyEmails = t_outMyEmails[t_iIndex];
