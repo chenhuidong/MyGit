@@ -110,7 +110,7 @@ int main()
         }
     }
     */
-    /*
+
     int i = 0;
     for (Employees::const_iterator it_Employees = t_outEmployees.begin(); it_Employees != t_outEmployees.end(); ++it_Employees)
     {
@@ -123,16 +123,13 @@ int main()
         std::cout<< t_iIndex<< std::endl;
 
         //MyEmails::const_iterator it_MyEmails = t_outMyEmails[t_iIndex];
-        std::cout << "Sender: " << t_outMyEmails[t_iIndex]->get<0>() << 
-            ", Password: " << t_outMyEmails[t_iIndex]->get<1>() << 
-            ", Mailhost: " << t_outMyEmails[t_iIndex]->get<2>() << std::endl;
+        std::cout << "Sender: " << t_outMyEmails[t_iIndex].get<0>() << 
+            ", Password: " << t_outMyEmails[t_iIndex].get<1>() << 
+            ", Mailhost: " << t_outMyEmails[t_iIndex].get<2>() << std::endl <<std::endl;
         
         i++;
     }
-    */
-    std::cout << "Sender: " << t_outMyEmails[0].get<0>() << 
-        ", Password: " << t_outMyEmails[0].get<1>() << 
-        ", Mailhost: " << t_outMyEmails[0].get<2>() << std::endl;
+
 
     t_oMyData.Uninitialize();
 
