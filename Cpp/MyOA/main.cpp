@@ -39,7 +39,7 @@ int main()
     */
     char iSQL[1024] = {0};
     MyEmails t_outMyEmails;
-    snprintf(iSQL, sizeof(iSQL), "SELECT Empno, Name, Email FROM MyEail");
+    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM MyEail");
     t_oMyData.ExecuteSQL(iSQL, t_outMyEmails);
     
     /*
@@ -66,7 +66,7 @@ int main()
 
 
     Employees t_outEmployees;
-    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM Employee");
+    snprintf(iSQL, sizeof(iSQL), "SELECT Empno, Name, Email FROM Employee");
     t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
     
     /*
