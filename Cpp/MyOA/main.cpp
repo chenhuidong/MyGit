@@ -127,6 +127,7 @@ int main()
             ", Password: " << it_MyEmails->get<1>() << 
             ", Mailhost: " << it_MyEmails->get<2>() << std::endl;
         */
+       i++;
     }
 
 
