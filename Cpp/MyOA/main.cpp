@@ -95,7 +95,7 @@ int main()
     std::cout<< t_outMyEmails.size() <<std::endl;
     std::cout<< t_outEmployees.size() <<std::endl;
 
-    /*
+    
     for (MyEmails::const_iterator it_MyEmails = t_outMyEmails.begin(); it_MyEmails != t_outMyEmails.end(); ++it_MyEmails)
     {
         std::cout << "Sender: " << it_MyEmails->get<0>() << 
@@ -109,7 +109,7 @@ int main()
                 ", Email: " << it->get<2>() << std::endl;
         }
     }
-    */
+    
 
 
     t_oMyData.Uninitialize();
