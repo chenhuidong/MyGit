@@ -119,10 +119,7 @@ int main()
             ", Email: " << it_Employees->get<2>() << std::endl;
 
         int t_iIndex = i % t_outMyEmailsSize;
-        std::cout<< i<< std::endl;
-        std::cout<< t_iIndex<< std::endl;
 
-        //MyEmails::const_iterator it_MyEmails = t_outMyEmails[t_iIndex];
         std::cout << "Sender: " << t_outMyEmails[t_iIndex].get<0>() << 
             ", Password: " << t_outMyEmails[t_iIndex].get<1>() << 
             ", Mailhost: " << t_outMyEmails[t_iIndex].get<2>() << std::endl <<std::endl;
