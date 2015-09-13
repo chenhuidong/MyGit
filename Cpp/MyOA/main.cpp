@@ -119,11 +119,14 @@ int main()
             ", Email: " << it_Employees->get<2>() << std::endl;
 
         int t_iIndex = i % t_outMyEmailsSize;
+
+        std::cout<< t_iIndex<< std::endl;
+        /*
         MyEmails::const_iterator it_MyEmails = t_outMyEmails[t_iIndex];
         std::cout << "Sender: " << it_MyEmails->get<0>() << 
             ", Password: " << it_MyEmails->get<1>() << 
             ", Mailhost: " << it_MyEmails->get<2>() << std::endl;
-
+        */
     }
 
 
