@@ -97,9 +97,9 @@ int main()
 
     for (int i = 0; i < t_outEmployeesSize; i++)
     {
-        std::cout << "Empno: " << t_outEmployeesSize[i].get<0>() << 
-            ", Name: " << t_outEmployeesSize[i].get<1>() << 
-            ", Email: " << t_outEmployeesSize[i].get<2>() << std::endl;
+        std::cout << "Empno: " << t_outEmployees[i].get<0>() << 
+            ", Name: " << t_outEmployees[i].get<1>() << 
+            ", Email: " << t_outEmployees[i].get<2>() << std::endl;
 
         int j = i % t_outMyEmailsSize;
 
