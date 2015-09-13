@@ -107,8 +107,8 @@ int main()
             ", Password: " << t_outMyEmails[j].get<1>() << 
             ", Mailhost: " << t_outMyEmails[j].get<2>() << std::endl <<std::endl;
 
-        if(j == 0)
-            sleep(5);
+        if(j == 1)
+            sleep(2);
     }
 
 
