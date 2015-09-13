@@ -106,6 +106,9 @@ int main()
         std::cout << "Sender: " << t_outMyEmails[j].get<0>() << 
             ", Password: " << t_outMyEmails[j].get<1>() << 
             ", Mailhost: " << t_outMyEmails[j].get<2>() << std::endl <<std::endl;
+
+        if(j == 0)
+            sleep(5);
     }
 
 
