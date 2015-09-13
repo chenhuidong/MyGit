@@ -92,6 +92,25 @@ int main()
     }
 
 
+    std::cout<< t_outMyEmails.size() <<std::endl;
+    std::cout<< t_outMyEmails.size() <<std::endl;
+
+    /*
+    for (MyEmails::const_iterator it_MyEmails = t_outMyEmails.begin(); it_MyEmails != t_outMyEmails.end(); ++it_MyEmails)
+    {
+        std::cout << "Sender: " << it_MyEmails->get<0>() << 
+            ", Password: " << it_MyEmails->get<1>() << 
+            ", Mailhost: " << it_MyEmails->get<2>() << std::endl;
+
+        for (Employees::const_iterator it_Employees = t_outEmployees.begin(); it_Employees != t_outEmployees.end(); ++it_Employees)
+        {
+            std::cout << "Empno: " << it->get<0>() << 
+                ", Name: " << it->get<1>() << 
+                ", Email: " << it->get<2>() << std::endl;
+        }
+    }
+    */
+
 
     t_oMyData.Uninitialize();
 
