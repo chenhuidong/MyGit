@@ -2,6 +2,7 @@
 #include "MyEmployee.h"
 #include "MyException.h"
 #include <stdio.h>
+#include <unistd.h>
 
 
 typedef Poco::Tuple<int, std::string, std::string> Employee;

@@ -9,14 +9,11 @@
 #include "Poco/Exception.h"
 #include <iostream>
 
-
 using Poco::Net::MailMessage;
 using Poco::Net::MailRecipient;
 using Poco::Net::SMTPClientSession;
 using Poco::Net::StringPartSource;
 using Poco::Path;
 using Poco::Exception;
-
-
 
 #endif
