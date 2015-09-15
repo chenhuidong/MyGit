@@ -1,15 +1,8 @@
 #include "MyData.h"
-#include "MyEmployee.h"
+#include "MyTable.h"
 #include "MyException.h"
 #include <stdio.h>
 #include <unistd.h>
-
-
-typedef Poco::Tuple<int, std::string, std::string> Employee;
-typedef std::vector<Employee> Employees;
-
-typedef Poco::Tuple<std::string, std::string, std::string> MyEmail;
-typedef std::vector<MyEmail> MyEmails;
 
 
 int main()
@@ -19,7 +12,7 @@ int main()
 
 	//create table
     *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Employee (Empno int, Name VARCHAR(30), Email VARCHAR, ValidFlag interger(1) default 0)", now;
-    *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS MyEail (Sender VARCHAR(30) primary key, Password VARCHAR(30), Mailhost VARCHAR(30))", now;
+    *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Email (Sender VARCHAR(30) primary key, Password VARCHAR(30), Mailhost VARCHAR(30))", now;
     
     /*
     Employees t_outEmployees;
@@ -39,12 +32,12 @@ int main()
     t_outEmployees.clear();
     */
     char iSQL[1024] = {0};
-    MyEmails t_outMyEmails;
-    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM MyEail");
-    t_oMyData.ExecuteSQL(iSQL, t_outMyEmails);
+    Emails t_outEmails;
+    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM Email");
+    t_oMyData.ExecuteSQL(iSQL, t_outEmails);
     
     /*
-    for (MyEmails::const_iterator it = t_outMyEmails.begin(); it != t_outMyEmails.end(); ++it)
+    for (Emails::const_iterator it = t_outEmails.begin(); it != t_outEmails.end(); ++it)
     {
         std::cout << "Sender: " << it->get<0>() << 
             ", Password: " << it->get<1>() << 
@@ -53,9 +46,9 @@ int main()
     */
     try
     {
-        if(t_outMyEmails.empty())
+        if(t_outEmails.empty())
         {
-            throw Poco::NoRecordException("MyEail no record.");
+            throw Poco::NoRecordException("Email no record.");
         }
     }
     catch (Poco::NoRecordException& exc)
@@ -93,21 +86,21 @@ int main()
     }
 
 
-    int t_outMyEmailsSize = t_outMyEmails.size();
+    int t_outEmailsSize = t_outEmails.size();
     int t_outEmployeesSize = t_outEmployees.size();
 
     for (int i = 0; i < t_outEmployeesSize; i++)
     {
-        int j = i % t_outMyEmailsSize;
+        int j = i % t_outEmailsSize;
         std::cout << "Empno: " << t_outEmployees[i].get<0>() << 
             ", Name: " << t_outEmployees[i].get<1>() << 
             ", Email: " << t_outEmployees[i].get<2>() << std::endl;
 
-        std::cout << "Sender: " << t_outMyEmails[j].get<0>() << 
-            ", Password: " << t_outMyEmails[j].get<1>() << 
-            ", Mailhost: " << t_outMyEmails[j].get<2>() << std::endl <<std::endl;
+        std::cout << "Sender: " << t_outEmails[j].get<0>() << 
+            ", Password: " << t_outEmails[j].get<1>() << 
+            ", Mailhost: " << t_outEmails[j].get<2>() << std::endl <<std::endl;
 
-        if(j == t_outMyEmailsSize-1)
+        if(j == t_outEmailsSize-1)
             sleep(2);
     }
 
