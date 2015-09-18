@@ -14,69 +14,16 @@ int main()
     *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Employee (Empno int, Name VARCHAR(30), Email VARCHAR, ValidFlag interger(1) default 0)", now;
     *t_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Email (Sender VARCHAR(30) primary key, Password VARCHAR(30), Mailhost VARCHAR(30))", now;
     
-    /*
-    Employees t_outEmployees;
-
-    char iSQL[1024] = {0};
-    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employee (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "cccc", "fdsfs@163.com");
-    t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
-    t_outEmployees.clear();
     
-    t_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_outEmployees);
-    for (Employees::const_iterator it = t_outEmployees.begin(); it != t_outEmployees.end(); ++it)
-    {
-        std::cout << "Empno: " << it->get<0>() << 
-            ", Name: " << it->get<1>() << 
-            ", Email: " << it->get<2>() << std::endl;
-    }
-    t_outEmployees.clear();
-    */
-    char iSQL[1024] = {0};
     Emails t_outEmails;
-    snprintf(iSQL, sizeof(iSQL), "SELECT * FROM Email");
-    t_oMyData.ExecuteSQL(iSQL, t_outEmails);
-    
-    /*
-    for (Emails::const_iterator it = t_outEmails.begin(); it != t_outEmails.end(); ++it)
-    {
-        std::cout << "Sender: " << it->get<0>() << 
-            ", Password: " << it->get<1>() << 
-            ", Mailhost: " << it->get<2>() << std::endl;
-    }
-    */
-    try
-    {
-        if(t_outEmails.empty())
-        {
-            throw Poco::NoRecordException("Email no record.");
-        }
-    }
-    catch (Poco::NoRecordException& exc)
-    {
-        std::cerr << exc.displayText() << std::endl;
-        t_oMyData.Uninitialize();
-        return -1;
-    }
-
-
     Employees t_outEmployees;
-    snprintf(iSQL, sizeof(iSQL), "SELECT Empno, Name, Email FROM Employee");
-    t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
-    
-    /*
-    for (Employees::const_iterator it = t_outEmployees.begin(); it != t_outEmployees.end(); ++it)
-    {
-        std::cout << "Empno: " << it->get<0>() << 
-            ", Name: " << it->get<1>() << 
-            ", Email: " << it->get<2>() << std::endl;
-    }
-    */
+    TEmails t_oTEmails;
+    TEmployees t_oTEmployees;
+
     try
     {
-        if(t_outEmployees.empty())
-        {
-            throw Poco::NoRecordException("Employee no record.");
-        }
+        t_oTEmails.SelectData(t_oMyData, t_outEmails);
+        t_oTEmployees.SelectData(t_oMyData, t_outEmployees);
     }
     catch (Poco::NoRecordException& exc)
     {

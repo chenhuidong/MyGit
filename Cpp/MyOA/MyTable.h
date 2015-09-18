@@ -2,6 +2,7 @@
 #define __MY_OA_MY_TABLE_H_
 
 #include "MyData.h"
+#include "MyException.h"
 
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;
@@ -15,18 +16,18 @@ public:
 	virtual int SelectData() = 0;
 };
 
-class TEmployee: public TTable
+class TEmployees: public TTable
 {
 public:
-	int SelectData(Employees& t_outEmployees);
+	int SelectData(MyData &t_inMyData, Employees& t_outEmployees);
 };
 
-/*
+
 class TEmails: public TTable
 {
 public:
-	int SelectData();
+	int SelectData(MyData &t_inMyData, Emails& t_outEmails);
 };
-*/
+
 
 #endif
