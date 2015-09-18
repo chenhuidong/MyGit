@@ -22,6 +22,8 @@ class TEmployees: public TTable
 {
 public:
 	int SelectData(MyData &t_inMyData, Employees& t_outEmployees);
+	int InsertData(MyData &t_inMyData, Employees& t_inEmployees);
+	int ImportData(MyData &t_inMyData, Employees& t_inEmployees);
 };
 
 

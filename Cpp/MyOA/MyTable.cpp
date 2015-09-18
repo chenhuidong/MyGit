@@ -3,7 +3,7 @@
 int TEmployees::SelectData(MyData &t_inMyData, Employees& t_outEmployees)
 {
 	char iSQL[1024] = {0};
-	snprintf(iSQL, sizeof(iSQL), "SELECT Empno, Name, Email FROM Employee");
+	snprintf(iSQL, sizeof(iSQL), "SELECT Empno, Name, Email FROM Employee where ValidFlag = 0");
     t_inMyData.ExecuteSQL(iSQL, t_outEmployees);
 
     if(t_outEmployees.empty())
@@ -11,6 +11,14 @@ int TEmployees::SelectData(MyData &t_inMyData, Employees& t_outEmployees)
     	throw Poco::NoRecordException("Employee no record.");
     }
 	return 0;
+}
+
+int TEmployees::ImportData(MyData &t_inMyData, Employees& t_inEmployees)
+{
+    Statement t_oInsertStatement(*t_inMyData.GetSession());
+    t_oInsertStatement << "INSERT INTO Employee (Empno, Name, Email) VALUES(:Empno, :Name, :Email)",
+        use(t_inEmployees), now;
+    return 0;
 }
 
 int TEmails::SelectData(MyData &t_inMyData, Emails& t_outEmails)
@@ -25,6 +33,8 @@ int TEmails::SelectData(MyData &t_inMyData, Emails& t_outEmails)
     }
 	return 0;
 }
+
+
 
 
 /*
