@@ -17,7 +17,7 @@ int TEmails::SelectData(MyData &t_inMyData, Emails& t_outEmails)
 {
 	char iSQL[1024] = {0};
 	snprintf(iSQL, sizeof(iSQL), "SELECT * FROM Email");
-    t_oMyData.ExecuteSQL(iSQL, t_outEmails);
+    t_inMyData.ExecuteSQL(iSQL, t_outEmails);
 
     if(t_outEmails.empty())
     {

@@ -1,9 +1,10 @@
 #ifndef __MY_OA_MY_TABLE_H_
 #define __MY_OA_MY_TABLE_H_
 
-#include <unistd.h>
 #include "MyData.h"
 #include "MyException.h"
+#include <stdio.h>
+#include <unistd.h>
 
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;
