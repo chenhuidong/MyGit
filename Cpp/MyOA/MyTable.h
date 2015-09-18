@@ -1,6 +1,7 @@
 #ifndef __MY_OA_MY_TABLE_H_
 #define __MY_OA_MY_TABLE_H_
 
+#include <unistd.h>
 #include "MyData.h"
 #include "MyException.h"
 
