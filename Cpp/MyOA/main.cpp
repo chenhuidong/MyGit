@@ -56,4 +56,4 @@ int main()
 	return 0;
 }
 
-//g++ main.cpp  MyData.cpp MyException.cpp -omain -lPocoDataSQLite -lPocoFoundation
+//g++ main.cpp  MyData.cpp MyTable.cpp MyException.cpp -omain -lPocoDataSQLite -lPocoFoundation

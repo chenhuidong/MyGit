@@ -12,8 +12,8 @@ typedef std::vector<Email> Emails;
 
 class TTable
 {
-public:
-	virtual int SelectData() = 0;
+//public:
+//	virtual int SelectData() = 0;
 };
 
 class TEmployees: public TTable
