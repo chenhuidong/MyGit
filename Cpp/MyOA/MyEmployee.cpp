@@ -14,14 +14,6 @@ int OPTEmployee::SelectData(Employees &out_oEmployees)
 	Statement t_oSelectStatement(*m_pSession);
 	t_oSelectStatement << "SELECT Empno, Name, Email FROM Employee where ValidFlag = 0",
 		into(out_oEmployees), now;
-	/*
-	for (Employees::const_iterator it = out_oEmployees.begin(); it != out_oEmployees.end(); ++it)
-	{
-		std::cout << "Empno: " << it->get<0>() << 
-			", Name: " << it->get<1>() << 
-			", Email: " << it->get<2>() << std::endl;
-	}
-	*/
 	return 0;
 }
 
