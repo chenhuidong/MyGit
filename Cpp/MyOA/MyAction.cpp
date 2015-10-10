@@ -23,7 +23,7 @@ int MyAction::SelectData()
             ", Email: " << it->get<2>() << std::endl;
     }
 
-    t_oMyData.ExecuteSQL("SELECT * FROM Email", m_oEmails);
+    m_oMyData.ExecuteSQL("SELECT * FROM Email", m_oEmails);
 
     for (Emails::const_iterator it = m_oEmails.begin(); it != m_oEmails.end(); ++it)
     {
