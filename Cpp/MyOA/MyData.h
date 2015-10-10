@@ -4,7 +4,7 @@
 #include "Poco/Data/Session.h"
 #include "Poco/Data/SessionFactory.h"
 #include "Poco/Data/SQLite/Connector.h"
-#include "Poco/StringTokenizer.h"
+//#include "Poco/StringTokenizer.h"
 
 
 #include <vector>
@@ -14,7 +14,13 @@
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
-using Poco::StringTokenizer;
+//using Poco::StringTokenizer;
+
+typedef Poco::Tuple<int, std::string, std::string> Employee;
+typedef std::vector<Employee> Employees;
+
+typedef Poco::Tuple<std::string, std::string, std::string> Email;
+typedef std::vector<Email> Emails;
 
 class MyData
 {
@@ -29,6 +35,7 @@ public:
 	int ExecuteSQL(const char* in_sSQL, T& out_oT)
 	{
 		//std::cout<< in_sSQL<< std::endl;
+		out_oT.clear();
 		Statement t_oStatement(*m_pSession);
     	t_oStatement<< in_sSQL, into(out_oT), now;
     	return 0;
