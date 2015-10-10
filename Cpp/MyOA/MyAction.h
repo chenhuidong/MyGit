@@ -21,6 +21,7 @@ public:
 	int DeleteEmployee(int in_iEmpno);
 	int UpdateEmployee();
 	*/
+	int UninitializeDb();
 public:
 	MyData m_oMyData;
 	Employees m_oEmployees;

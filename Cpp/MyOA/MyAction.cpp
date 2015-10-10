@@ -32,3 +32,8 @@ int MyAction::SelectData()
             ", Mailhost: " << it->get<2>() << std::endl;
     }
 }
+
+int MyAction::UninitializeDb()
+{
+	m_oMyData.Uninitialize();
+}

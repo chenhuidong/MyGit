@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
     	throw Poco::NoRecordException("Email no record.");
     }
 	*/
-    t_oMyData.Uninitialize();
+    //t_oMyData.Uninitialize();
 
 	return 0;
 }
