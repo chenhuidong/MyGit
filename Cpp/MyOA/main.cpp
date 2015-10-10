@@ -21,14 +21,14 @@ int main()
     //t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
 
     t_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_outEmployees);
-    /*
+    
     for (Employees::const_iterator it = t_outEmployees.begin(); it != t_outEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
             ", Name: " << it->get<1>() << 
             ", Email: " << it->get<2>() << std::endl;
     }
-	*/
+	
     if(t_outEmployees.empty())
     {
     	throw Poco::NoRecordException("Email no record.");
@@ -37,8 +37,8 @@ int main()
 
 	Emails t_outEmails;
 
-	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Email (Sender, Password, Mailhost) VALUES(%d, \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
-    t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
+	//snprintf(iSQL, sizeof(iSQL), "INSERT INTO Email (Sender, Password, Mailhost) VALUES(%d, \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
+    //t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
 
 	snprintf(iSQL, sizeof(iSQL), "SELECT * FROM Email");
     t_oMyData.ExecuteSQL(iSQL, t_outEmails);
