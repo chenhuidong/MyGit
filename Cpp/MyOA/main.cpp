@@ -10,6 +10,7 @@ int main(int argc, char* argv[])
 	t_oMyAction.InitializeDb("employee.db");
 	t_oMyAction.Install();
 	t_oMyAction.SelectData();
+	t_oMyAction.UninitializeDb();
 
     
     //char iSQL[1024] = {0};
@@ -31,9 +32,6 @@ int main(int argc, char* argv[])
     	throw Poco::NoRecordException("Email no record.");
     }
 	*/
-    //t_oMyData.Uninitialize();
 
 	return 0;
 }
-
-//g++ main.cpp  MyData.cpp MyTable.cpp MyException.cpp -omain -lPocoDataSQLite -lPocoFoundation
