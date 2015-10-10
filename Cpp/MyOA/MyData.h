@@ -6,10 +6,8 @@
 #include "Poco/Data/SQLite/Connector.h"
 //#include "Poco/StringTokenizer.h"
 
-
 #include <vector>
 #include <iostream>
-
 
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;

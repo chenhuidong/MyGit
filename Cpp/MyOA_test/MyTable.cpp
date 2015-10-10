@@ -63,11 +63,3 @@ int TEmails::SelectData(MyData &t_inMyData, Emails& t_outEmails)
             ", Mailhost: " << it->get<2>() << std::endl;
     }
     */
-       /*
-    for (Employees::const_iterator it = t_outEmployees.begin(); it != t_outEmployees.end(); ++it)
-    {
-        std::cout << "Empno: " << it->get<0>() << 
-            ", Name: " << it->get<1>() << 
-            ", Email: " << it->get<2>() << std::endl;
-    }
-    */
