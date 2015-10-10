@@ -16,7 +16,10 @@ int main()
     char iSQL[1024] = {0};
     
     Employees t_outEmployees;
-    
+
+    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employee (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "cccc", "fdsfs@163.com");
+    t_oMyData.ExecuteSQL(iSQL, t_outEmployees);
+
     t_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", t_outEmployees);
     for (Employees::const_iterator it = t_outEmployees.begin(); it != t_outEmployees.end(); ++it)
     {
