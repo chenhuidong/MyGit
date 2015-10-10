@@ -1,6 +1,8 @@
 #ifndef __MY_ACTION_H_
 #define __MY_ACTION_H_
 
+#include "../stdafx.h"
+
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;
 
