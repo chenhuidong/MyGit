@@ -1,0 +1,30 @@
+#ifndef __MY_ACTION_H_
+#define __MY_ACTION_H_
+
+typedef Poco::Tuple<int, std::string, std::string> Employee;
+typedef std::vector<Employee> Employees;
+
+typedef Poco::Tuple<std::string, std::string, std::string> Email;
+typedef std::vector<Email> Emails;
+
+class MyAction
+{
+public:
+	MyAction(){}
+	~MyAction(){}
+
+	int InitializeDb(const char* in_sDbName);
+	int Install();
+	int SelectData();
+	/*int SendEmail();
+	int ImportData();
+	int DeleteEmployee(int in_iEmpno);
+	int UpdateEmployee();
+	*/
+public:
+	MyData m_oMyData;
+	Employees m_oEmployees;
+	Emails m_oEmails;
+};
+
+#endif 

@@ -14,12 +14,6 @@ using Poco::Data::Session;
 using Poco::Data::Statement;
 //using Poco::StringTokenizer;
 
-typedef Poco::Tuple<int, std::string, std::string> Employee;
-typedef std::vector<Employee> Employees;
-
-typedef Poco::Tuple<std::string, std::string, std::string> Email;
-typedef std::vector<Email> Emails;
-
 class MyData
 {
 public:
