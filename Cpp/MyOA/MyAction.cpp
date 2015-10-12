@@ -3,6 +3,7 @@
 int MyAction::InitializeDb(const char* in_sDbName)
 {
 	m_oMyData.Initialize(in_sDbName);
+	return 0;
 }
 
 int MyAction::Install()
@@ -10,6 +11,7 @@ int MyAction::Install()
 	//create table
 	*m_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Employee (Empno int, Name VARCHAR(256), Email VARCHAR(256), ValidFlag interger(1) default 0)", now;
     *m_oMyData.GetSession() << "CREATE TABLE IF NOT EXISTS Email (Sender VARCHAR(256) primary key, Password VARCHAR(256), Mailhost VARCHAR(256))", now;
+    return 0;
 }
 
 int MyAction::SelectData()
@@ -41,11 +43,13 @@ int MyAction::SelectData()
     {
     	throw Poco::NoRecordException("Email no record.");
     }
+    return 0;
 }
 
 int MyAction::UninitializeDb()
 {
 	m_oMyData.Uninitialize();
+	return 0;
 }
 
 int MyAction::InsertData()
@@ -56,4 +60,13 @@ int MyAction::InsertData()
 
    	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Email (Sender, Password, Mailhost) VALUES(%d, \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
     m_oMyData.ExecuteSQL(iSQL, m_oEmails);
+    return 0;
+}
+
+int MyAction::DeleteEmployee(int in_iEmpno)
+{
+	char iSQL[1024] = {0};
+	snprintf(iSQL, sizeof(iSQL), "UPDATE Employee set ValidFlag = 1 where Empno = %d", in_iEmpno);
+	m_oMyData.ExecuteSQL(iSQL, m_oEmployees);
+	return 0;
 }
