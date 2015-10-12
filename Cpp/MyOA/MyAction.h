@@ -3,6 +3,7 @@
 
 #include "../stdafx.h"
 #include "MyData.h"
+#include "MyException.h"
 
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;

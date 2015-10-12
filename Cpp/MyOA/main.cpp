@@ -1,8 +1,4 @@
-#include "../stdafx.h"
-#include "MyData.h"
-#include "MyException.h"
 #include "MyAction.h"
-
 
 int main(int argc, char* argv[])
 {
