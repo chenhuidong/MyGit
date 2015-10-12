@@ -23,6 +23,11 @@ int MyAction::SelectData()
             ", Email: " << it->get<2>() << std::endl;
     }
 
+    if(m_oEmployees.empty())
+    {
+    	throw Poco::NoRecordException("Employees no record.");
+    }
+
     m_oMyData.ExecuteSQL("SELECT * FROM Email", m_oEmails);
 
     for (Emails::const_iterator it = m_oEmails.begin(); it != m_oEmails.end(); ++it)
@@ -31,9 +36,24 @@ int MyAction::SelectData()
             ", Password: " << it->get<1>() << 
             ", Mailhost: " << it->get<2>() << std::endl;
     }
+
+    if(m_oEmails.empty())
+    {
+    	throw Poco::NoRecordException("Email no record.");
+    }
 }
 
 int MyAction::UninitializeDb()
 {
 	m_oMyData.Uninitialize();
+}
+
+int MyAction::InsertData()
+{
+	char iSQL[1024] = {0};
+	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employee (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "cccc", "fdsfs@163.com");
+    m_oMyData.ExecuteSQL(iSQL, m_oEmployees);
+
+   	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Email (Sender, Password, Mailhost) VALUES(%d, \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
+    m_oMyData.ExecuteSQL(iSQL, m_oEmails);
 }

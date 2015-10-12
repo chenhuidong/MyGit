@@ -19,6 +19,7 @@ public:
 	int InitializeDb(const char* in_sDbName);
 	int Install();
 	int SelectData();
+	int InsertData();
 	/*int SendEmail();
 	int ImportData();
 	int DeleteEmployee(int in_iEmpno);
