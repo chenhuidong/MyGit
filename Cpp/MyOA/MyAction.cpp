@@ -17,28 +17,28 @@ int MyAction::Install()
 int MyAction::SelectData()
 {
 	m_oMyData.ExecuteSQL("SELECT Empno, Name, Email FROM Employee where ValidFlag = 0", m_oEmployees);
-
+    /*
 	for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
             ", Name: " << it->get<1>() << 
             ", Email: " << it->get<2>() << std::endl;
     }
-
+    */
     if(m_oEmployees.empty())
     {
     	throw Poco::NoRecordException("Employees no record.");
     }
 
     m_oMyData.ExecuteSQL("SELECT * FROM Email", m_oEmails);
-
+    /*
     for (Emails::const_iterator it = m_oEmails.begin(); it != m_oEmails.end(); ++it)
     {
         std::cout << "Sender: " << it->get<0>() << 
             ", Password: " << it->get<1>() << 
             ", Mailhost: " << it->get<2>() << std::endl;
     }
-
+    */
     if(m_oEmails.empty())
     {
     	throw Poco::NoRecordException("Email no record.");
@@ -69,4 +69,44 @@ int MyAction::DeleteEmployee(int in_iEmpno)
 	snprintf(iSQL, sizeof(iSQL), "UPDATE Employee set ValidFlag = 1 where Empno = %d", in_iEmpno);
 	m_oMyData.ExecuteSQL(iSQL, m_oEmployees);
 	return 0;
+}
+
+int MyAction::UpdateEmployee()
+{
+    return 0;
+}
+
+int MyAction::SelectEmployee(int in_iEmpno)
+{
+    char iSQL[1024] = {0};
+    snprintf(iSQL, sizeof(iSQL), "SELECT Empno, Name, Email FROM Employee where ValidFlag = 0 and Empno = %d", in_iEmpno);
+
+    m_oMyData.ExecuteSQL(iSQL, m_oEmployees);
+    /*
+    for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
+    {
+        std::cout << "Empno: " << it->get<0>() << 
+            ", Name: " << it->get<1>() << 
+            ", Email: " << it->get<2>() << std::endl;
+    }
+    */
+    return 0;
+}
+
+int MyAction::SendEmail()
+{
+    for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
+    {
+        std::cout << "Empno: " << it->get<0>() << 
+            ", Name: " << it->get<1>() << 
+            ", Email: " << it->get<2>() << std::endl;
+    }
+
+    for (Emails::const_iterator it = m_oEmails.begin(); it != m_oEmails.end(); ++it)
+    {
+        std::cout << "Sender: " << it->get<0>() << 
+            ", Password: " << it->get<1>() << 
+            ", Mailhost: " << it->get<2>() << std::endl;
+    }
+    return 0;
 }

@@ -21,11 +21,15 @@ public:
 	int Install();
 	int SelectData();
 	int InsertData();
+
+	int SelectEmployee(int in_iEmpno);
 	int DeleteEmployee(int in_iEmpno);
-	/*
-	int SendEmail();
-	int ImportData();	
 	int UpdateEmployee();
+
+	int SendEmail();
+
+	/*
+	int ImportData();
 	*/
 	int UninitializeDb();
 public:
