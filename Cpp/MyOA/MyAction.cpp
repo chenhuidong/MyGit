@@ -93,8 +93,13 @@ int MyAction::SelectEmployee(int in_iEmpno)
     return 0;
 }
 
-int MyAction::SendEmail()
+int MyAction::CreateEmail()
 {
+    return 0;
+}
+
+int MyAction::SendEmail()
+{   /*
     for (Employees::const_iterator it = m_oEmployees.begin(); it != m_oEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
@@ -108,5 +113,7 @@ int MyAction::SendEmail()
             ", Password: " << it->get<1>() << 
             ", Mailhost: " << it->get<2>() << std::endl;
     }
+    */
+    
     return 0;
 }

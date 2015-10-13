@@ -25,7 +25,8 @@ public:
 	int SelectEmployee(int in_iEmpno);
 	int DeleteEmployee(int in_iEmpno);
 	int UpdateEmployee();
-
+	
+	int CreateEmail();
 	int SendEmail();
 
 	/*
