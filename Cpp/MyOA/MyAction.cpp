@@ -96,16 +96,12 @@ int MyAction::SelectEmployee(int in_iEmpno)
 int MyAction::CreateEmail()
 {
     std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.log");
-    ostr << "hello \
-    world" <<std::endl;
-    /*
-    ostr << "   <div class=\"form-group col-sm-6\">
-        <label class=\"col-sm-4 control-label\" for=\"field_{data.name}\">{data.name}</label>
+    ostr << "<div class=\"form-group col-sm-6\">\
+        <label class=\"col-sm-4 control-label\" for=\"field_{$data.name}\">{$data.name}</label>\
         <div class=\"col-sm-8\">\
-            {:W('UserDefineControl/edit',array(data))}
-        </div>
+            {:W('UserDefineControl/edit',array($data))}\
+        </div>\
     </div>" << std::endl;
-    */
     ostr.close();
     return 0;
 }
