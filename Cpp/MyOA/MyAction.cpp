@@ -95,7 +95,7 @@ int MyAction::SelectEmployee(int in_iEmpno)
 
 int MyAction::CreateEmail()
 {
-    std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.log");
+    std::wofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.log");
     ostr << "<title>陈慧冬Huidong Chen&nbsp;201509工资单</title>\
 <body bgcolor=\"#fffcf2\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\"  marginheight=\"0\">\
 <h1 align=\"center\" style=\"font-family:微软雅黑;font-size=18pt;\"><br>工资通知单<br></h1>\

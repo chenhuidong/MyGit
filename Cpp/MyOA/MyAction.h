@@ -34,7 +34,7 @@ public:
 	int ImportData();
 	*/
 	int UninitializeDb();
-	
+
 private:
 	int CreateEmail();
 
