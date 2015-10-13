@@ -2,6 +2,7 @@
 #define __MY_ACTION_H_
 
 #include "../stdafx.h"
+#include <fstream>
 #include "MyData.h"
 #include "MyException.h"
 
@@ -26,13 +27,17 @@ public:
 	int DeleteEmployee(int in_iEmpno);
 	int UpdateEmployee();
 	
-	int CreateEmail();
+	int CreateEmails();
 	int SendEmail();
 
 	/*
 	int ImportData();
 	*/
 	int UninitializeDb();
+	
+private:
+	int CreateEmail();
+
 public:
 	MyData m_oMyData;
 	Employees m_oEmployees;
