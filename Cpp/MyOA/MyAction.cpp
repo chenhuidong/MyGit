@@ -96,7 +96,7 @@ int MyAction::SelectEmployee(int in_iEmpno)
 int MyAction::CreateEmail()
 {
     std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.log");
-    ostr << "\"hello world\"" << std::endl;
+    ostr << "\"<hello world>\"" << std::endl;
     ostr.close();
     return 0;
 }
