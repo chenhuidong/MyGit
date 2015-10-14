@@ -62,9 +62,9 @@ int main(int argc, char** argv)
 		content += recipient;
 		content += ",\r\n\r\n";
 		content += "This is a greeting from the POCO C++ Libraries.\r\n\r\n";
-		std::string logo(reinterpret_cast<const char*>(PocoLogo), sizeof(PocoLogo));
+		//std::string logo(reinterpret_cast<const char*>(PocoLogo), sizeof(PocoLogo));
 		message.addContent(new StringPartSource(content));
-		message.addAttachment("logo", new StringPartSource(logo, "image/gif"));
+		//message.addAttachment("logo", new StringPartSource(logo, "image/gif"));
 		
 		SMTPClientSession session(mailhost);
 
