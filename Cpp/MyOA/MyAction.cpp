@@ -97,7 +97,7 @@ int MyAction::CreateEmail()
 {
     std::ofstream ostr;
     ostr.open("/mnt/home2/51linux_LxomB0aQ/Log/1.html", std::ios::out | std::ios::binary);
-    ostr << "hello \r\n
+    ostr << "hello  \
     world" << std::endl;
     ostr.close();
     return 0;
