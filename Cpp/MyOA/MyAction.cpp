@@ -97,168 +97,167 @@ int MyAction::CreateEmail()
 {
     std::ofstream ostr;
     ostr.open("/mnt/home2/51linux_LxomB0aQ/Log/1.html", std::ios::out | std::ios::binary);
-    ostr << "<title>陈慧冬Huidong Chen&nbsp;201509工资单</title>\
-<body bgcolor=\"#fffcf2\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\"  marginheight=\"0\">\
-<h1 align=\"center\" style=\"font-family:微软雅黑;font-size=18pt;\"><br>工资通知单<br></h1>\
-<table width=100%><tr><td>\
-  <table width=\"80%\" align=\"center\" style=\"font-family:微软雅黑;font-size:12pt\">\
-    <tr><td style=\"font-weight:bold\">陈慧冬Huidong Chen&nbsp;先生:</td></tr>\
-    <tr><td align=\"center\">(员工编号:71282&nbsp; &nbsp; &nbsp;部门名称:CUC AS-South1-SPMD-NJ)</td></tr>\
-  </table>\
-</td></tr></table>\
-      \
-<table width=\"100%\"><tr><td>\
-   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\
-    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\
-      <tr><td height=\"25\" colspan=7></td></tr>\
-      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>一、基础工资项目</td></tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">实发基础工资</td>\
-                                       <td width=\"10%\" align=right >5300</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">综合津贴</td>\
-                                       <td width=\"10%\" align=right >1000</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">月度岗位奖</td>\
-                                       <td width=\"10%\" align=right >700</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">基础工资项合计 </td>\
-                                       <td width=\"10%\" align=right >7000</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td height=\"25\" colspan=7></td></tr>\
-    </table></div></td></tr>\
-  </table></td></tr>\
-</table>\
-<table width=\"100%\"><tr><td>\
-   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\
-    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\
-      <tr><td height=\"25\" colspan=7></td></tr>\
-      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>二、其他税前工资项目</td></tr>\
-<tr><td height=\"25\" colspan=7></td></tr>\
-    </table></div></td></tr>\
-  </table></td></tr>\
-</table>\
-<table width=\"100%\"><tr><td>\
-   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\
-    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\
-      <tr><td height=\"25\" colspan=7></td></tr>\
-      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>三、社保公积金扣款</td></tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">养老保险</td>\
-                                       <td width=\"10%\" align=right >424</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">失业保险</td>\
-                                       <td width=\"10%\" align=right >26.5</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">住房扣减</td>\
-                                       <td width=\"10%\" align=right >530</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">医疗扣减</td>\
-                                       <td width=\"10%\" align=right >106</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">大病保险</td>\
-                                       <td width=\"10%\" align=right >10</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">福利扣款合计</td>\
-                                       <td width=\"10%\" align=right >1096.5</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td height=\"25\" colspan=7></td></tr>\
-    </table></div></td></tr>\
-  </table></td></tr>\
-</table>\
-<table width=\"100%\"><tr><td>\
-   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\
-    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\
-      <tr><td height=\"25\" colspan=7></td></tr>\
-      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>四、个人所得税扣减</td></tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">所得税</td>\
-                                       <td width=\"10%\" align=right >135.35</td>\
-                                       <td width=\"65%\">所得税=(税前合计-个税免征额)X税率-速算扣除数 </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">个税合计</td>\
-                                       <td width=\"10%\" align=right >135.35</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td height=\"25\" colspan=7></td></tr>\
-    </table></div></td></tr>\
-  </table></td></tr>\
-</table>\
-<table width=\"100%\"><tr><td>\
-   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\
-    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\
-      <tr><td height=\"25\" colspan=7></td></tr>\
-      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>五、税后扣款项</td></tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">工会互助金扣款</td>\
-                                       <td width=\"10%\" align=right >10</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">税后扣款合计</td>\
-                                       <td width=\"10%\" align=right >10</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td height=\"25\" colspan=7></td></tr>\
-    </table></div></td></tr>\
-  </table></td></tr>\
-</table>\
-<table width=\"100%\"><tr><td>\
-   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\
-    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\
-      <tr><td height=\"25\" colspan=7></td></tr>\
-      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>六、最终实发</td></tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">税前合计</td>\
-                                       <td width=\"10%\" align=right >5903.5</td>\
-                                       <td width=\"65%\">税前合计=基础工资项目+其他税前工资项目-社保公积金扣款  </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">扣款合计</td>\
-                                       <td width=\"10%\" align=right >145.35</td>\
-                                       <td width=\"65%\">扣款合计=所得税+税后其他扣款项 </td>\
-                                    </tr>\
-<tr><td width=\"5%\"> &nbsp;  </td>\
-                                       <td width=\"20%\">最终实发</td>\
-                                       <td width=\"10%\" align=right >5758.15</td>\
-                                       <td width=\"65%\"> </td>\
-                                    </tr>\
-<tr><td height=\"25\" colspan=7></td></tr>\
-    </table></div></td></tr>\
-  </table></td></tr>\
-</table>\
-\
-<table width=\"100%\"><tr><td>\
-  <table align=\"center\" width=\"80%\"><tr><td>\
-    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt; font-weight:bold;\">\
-<tr><td align=\"right\"> 亚信集团人力资源部</td></tr>\
-                                   <tr><td align=\"right\">2015-10-08 13:06:45</td></tr>\
-                                   <tr><td align=\"right\" style=\"font-family:微软雅黑;font-size:4pt; align=\"right\">71282</td></tr> \
-\
-      <tr><td colspan=7 height=\"25\"></td></tr>\
-    </table>\
-  </td></tr></table>\
-</td></tr></table>\
-" << std::endl;
+    ostr << "<title>陈慧冬Huidong Chen&nbsp;201509工资单</title>\n\ 
+<body bgcolor=\"#fffcf2\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\"  marginheight=\"0\">\n\ 
+<h1 align=\"center\" style=\"font-family:微软雅黑;font-size=18pt;\"><br>工资通知单<br></h1>\n\ 
+<table width=100%><tr><td>\n\ 
+  <table width=\"80%\" align=\"center\" style=\"font-family:微软雅黑;font-size:12pt\">\n\ 
+    <tr><td style=\"font-weight:bold\">陈慧冬Huidong Chen&nbsp;先生:</td></tr>\n\ 
+    <tr><td align=\"center\">(员工编号:71282&nbsp; &nbsp; &nbsp;部门名称:CUC AS-South1-SPMD-NJ)</td></tr>\n\ 
+  </table>\n\ 
+</td></tr></table>\n\ 
+      \n\ 
+<table width=\"100%\"><tr><td>\n\ 
+   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\n\ 
+    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\n\ 
+      <tr><td height=\"25\" colspan=7></td></tr>\n\ 
+      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>一、基础工资项目</td></tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">实发基础工资</td>\n\ 
+                                       <td width=\"10%\" align=right >5300</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">综合津贴</td>\n\ 
+                                       <td width=\"10%\" align=right >1000</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">月度岗位奖</td>\n\ 
+                                       <td width=\"10%\" align=right >700</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">基础工资项合计 </td>\n\ 
+                                       <td width=\"10%\" align=right >7000</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td height=\"25\" colspan=7></td></tr>\n\ 
+    </table></div></td></tr>\n\ 
+  </table></td></tr>\n\ 
+</table>\n\ 
+<table width=\"100%\"><tr><td>\n\ 
+   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\n\ 
+    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\n\ 
+      <tr><td height=\"25\" colspan=7></td></tr>\n\ 
+      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>二、其他税前工资项目</td></tr>\n\ 
+<tr><td height=\"25\" colspan=7></td></tr>\n\ 
+    </table></div></td></tr>\n\ 
+  </table></td></tr>\n\ 
+</table>\n\ 
+<table width=\"100%\"><tr><td>\n\ 
+   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\n\ 
+    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\n\ 
+      <tr><td height=\"25\" colspan=7></td></tr>\n\ 
+      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>三、社保公积金扣款</td></tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">养老保险</td>\n\ 
+                                       <td width=\"10%\" align=right >424</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">失业保险</td>\n\ 
+                                       <td width=\"10%\" align=right >26.5</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">住房扣减</td>\n\ 
+                                       <td width=\"10%\" align=right >530</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">医疗扣减</td>\n\ 
+                                       <td width=\"10%\" align=right >106</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">大病保险</td>\n\ 
+                                       <td width=\"10%\" align=right >10</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">福利扣款合计</td>\n\ 
+                                       <td width=\"10%\" align=right >1096.5</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td height=\"25\" colspan=7></td></tr>\n\ 
+    </table></div></td></tr>\n\ 
+  </table></td></tr>\n\ 
+</table>\n\ 
+<table width=\"100%\"><tr><td>\n\ 
+   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\n\ 
+    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\n\ 
+      <tr><td height=\"25\" colspan=7></td></tr>\n\ 
+      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>四、个人所得税扣减</td></tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">所得税</td>\n\ 
+                                       <td width=\"10%\" align=right >135.35</td>\n\ 
+                                       <td width=\"65%\">所得税=(税前合计-个税免征额)X税率-速算扣除数 </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">个税合计</td>\n\ 
+                                       <td width=\"10%\" align=right >135.35</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td height=\"25\" colspan=7></td></tr>\n\ 
+    </table></div></td></tr>\n\ 
+  </table></td></tr>\n\ 
+</table>\n\ 
+<table width=\"100%\"><tr><td>\n\ 
+   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\n\ 
+    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\n\ 
+      <tr><td height=\"25\" colspan=7></td></tr>\n\ 
+      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>五、税后扣款项</td></tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">工会互助金扣款</td>\n\ 
+                                       <td width=\"10%\" align=right >10</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">税后扣款合计</td>\n\ 
+                                       <td width=\"10%\" align=right >10</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td height=\"25\" colspan=7></td></tr>\n\ 
+    </table></div></td></tr>\n\ 
+  </table></td></tr>\n\ 
+</table>\n\ 
+<table width=\"100%\"><tr><td>\n\ 
+   <table align=\"center\" width=\"80%\"><tr><td><div style=\"border:1px solid #000000;\">\n\ 
+    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt;\">\n\ 
+      <tr><td height=\"25\" colspan=7></td></tr>\n\ 
+      <tr style=\"font-weight:bold\"><td height=\"25\" colspan=4>六、最终实发</td></tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">税前合计</td>\n\ 
+                                       <td width=\"10%\" align=right >5903.5</td>\n\ 
+                                       <td width=\"65%\">税前合计=基础工资项目+其他税前工资项目-社保公积金扣款  </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">扣款合计</td>\n\ 
+                                       <td width=\"10%\" align=right >145.35</td>\n\ 
+                                       <td width=\"65%\">扣款合计=所得税+税后其他扣款项 </td>\n\ 
+                                    </tr>\n\ 
+<tr><td width=\"5%\"> &nbsp;  </td>\n\ 
+                                       <td width=\"20%\">最终实发</td>\n\ 
+                                       <td width=\"10%\" align=right >5758.15</td>\n\ 
+                                       <td width=\"65%\"> </td>\n\ 
+                                    </tr>\n\ 
+<tr><td height=\"25\" colspan=7></td></tr>\n\ 
+    </table></div></td></tr>\n\ 
+  </table></td></tr>\n\ 
+</table>\n\ 
+\n\ 
+<table width=\"100%\"><tr><td>\n\ 
+  <table align=\"center\" width=\"80%\"><tr><td>\n\ 
+    <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt; font-weight:bold;\">\n\ 
+<tr><td align=\"right\"> 亚信集团人力资源部</td></tr>\n\ 
+                                   <tr><td align=\"right\">2015-10-08 13:06:45</td></tr>\n\ 
+                                   <tr><td align=\"right\" style=\"font-family:微软雅黑;font-size:4pt; align=\"right\">71282</td></tr> \n\ 
+\n\ 
+      <tr><td colspan=7 height=\"25\"></td></tr>\n\ 
+    </table>\n\ 
+  </td></tr></table>\n\ 
+</td></tr></table>\n\ " << std::endl;
     ostr.close();
     return 0;
 }
