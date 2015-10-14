@@ -28,12 +28,12 @@ using Poco::Net::StringPartSource;
 using Poco::Path;
 using Poco::Exception;
 
-
+/*
 const unsigned char PocoLogo[] =
 {
 	#include "PocoLogo.hpp"
 };
-
+*/
 
 int main(int argc, char** argv)
 {
