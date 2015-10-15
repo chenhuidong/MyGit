@@ -2,7 +2,7 @@
 
 int MyEmail::CreateHtml(std::ostringstream &ostr)
 {
-	ostr << L"<title>陈开Kai Chen&nbsp;201509工资单</title>\r\n\
+	ostr << "<title>陈开Kai Chen&nbsp;201509工资单</title>\r\n\
 <body bgcolor=\"#fffcf2\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\"  marginheight=\"0\">\r\n\
 <h1 align=\"center\" style=\"font-family:微软雅黑;font-size=18pt;\"><br>工资通知单<br></h1>\r\n\
 <table width=100%><tr><td>\r\n\
@@ -177,10 +177,10 @@ int MyEmail::CreateEmail()
 	content += recipient;
 	content += ",\r\n\r\n";
 	content += "This is a greeting from the POCO C++ Libraries.\r\n\r\n";
-	m_oMessage.addContent(new StringPartSource(content));
+	m_oMessage.addContent(new StringPartSource(MailMessage::encodeWord(content)));
 	std::ostringstream ostr;
 	CreateHtml(ostr);
-	m_oMessage.addAttachment("1", new StringPartSource(ostr.str(), "text/plain", "1.html"));
+	m_oMessage.addAttachment("1", new StringPartSource(MailMessage::encodeWord(ostr.str()), "text/plain", "1.html"));
 	return 0;
 }
 
