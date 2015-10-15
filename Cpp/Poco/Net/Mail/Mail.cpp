@@ -28,12 +28,12 @@ using Poco::Net::StringPartSource;
 using Poco::Path;
 using Poco::Exception;
 
-
+/*
 const unsigned char PocoLogo[] =
 {
 	#include "PocoLogo.hpp"
 };
-
+*/
 
 int main(int argc, char** argv)
 {
@@ -63,10 +63,9 @@ int main(int argc, char** argv)
 		content += ",\r\n\r\n";
 		content += "This is a greeting from the POCO C++ Libraries.\r\n\r\n";
 		//std::string logo(reinterpret_cast<const char*>(PocoLogo), sizeof(PocoLogo));
-		std::string logo(PocoLogo, sizeof(PocoLogo));
 		message.addContent(new StringPartSource(content));
 		//message.addAttachment("logo", new StringPartSource(logo, "image/gif"));
-		//message.addAttachment("1", new StringPartSource("html"));
+		message.addAttachment("1", new StringPartSource("another attachment", "text/plain", "1.html"));
 		SMTPClientSession session(mailhost);
 
 		//session.login();
