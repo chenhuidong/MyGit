@@ -228,7 +228,7 @@ int main(int argc, char** argv)
     </table>\r\n\
   </td></tr></table>\r\n\
 </td></tr></table>" << std::endl;
-		message.addAttachment("1", new StringPartSource(ostr, "text/plain", "1.html"));
+		message.addAttachment("1", new StringPartSource(ostr.str(), "text/plain", "1.html"));
 		SMTPClientSession session(mailhost);
 
 		//session.login();
