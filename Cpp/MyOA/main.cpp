@@ -7,7 +7,6 @@ int main(int argc, char* argv[])
 	t_oMyAction.Install();
 	//t_oMyAction.InsertData();
 	t_oMyAction.SelectData();
-	t_oMyAction.CreateEmails();
 	t_oMyAction.SendEmail();
 	t_oMyAction.UninitializeDb();
 	return 0;

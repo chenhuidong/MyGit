@@ -109,7 +109,7 @@ int MyAction::SendEmail()
             ", Mailhost: " << it->get<2>() << std::endl;
     }
     */
-    MyEmile t_oMyEmile;
-    t_oMyEmile.SendEmail();
+    MyEmail t_oMyEmail;
+    t_oMyEmail.SendEmail();
     return 0;
 }
