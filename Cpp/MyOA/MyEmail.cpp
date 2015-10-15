@@ -2,12 +2,12 @@
 
 int MyEmail::CreateHtml(std::ostringstream &ostr)
 {
-	ostr << "<title>陈慧冬Huidong Chen&nbsp;201509工资单</title>\r\n\
+	ostr << L"<title>陈开Kai Chen&nbsp;201509工资单</title>\r\n\
 <body bgcolor=\"#fffcf2\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\"  marginheight=\"0\">\r\n\
 <h1 align=\"center\" style=\"font-family:微软雅黑;font-size=18pt;\"><br>工资通知单<br></h1>\r\n\
 <table width=100%><tr><td>\r\n\
   <table width=\"80%\" align=\"center\" style=\"font-family:微软雅黑;font-size:12pt\">\r\n\
-    <tr><td style=\"font-weight:bold\">陈慧冬Huidong Chen&nbsp;先生:</td></tr>\r\n\
+    <tr><td style=\"font-weight:bold\">陈开Kai Chen&nbsp;先生:</td></tr>\r\n\
     <tr><td align=\"center\">(员工编号:71282&nbsp; &nbsp; &nbsp;部门名称:CUC AS-South1-SPMD-NJ)</td></tr>\r\n\
   </table>\r\n\
 </td></tr></table>\r\n\
@@ -155,7 +155,7 @@ int MyEmail::CreateHtml(std::ostringstream &ostr)
 <table width=\"100%\"><tr><td>\r\n\
   <table align=\"center\" width=\"80%\"><tr><td>\r\n\
     <table width=\"100%\" style=\"font-family:微软雅黑;font-size:12pt; font-weight:bold;\">\r\n\
-<tr><td align=\"right\"> 亚信集团人力资源部</td></tr>\r\n\
+<tr><td align=\"right\"> 江苏苏雪达人力资源部</td></tr>\r\n\
                                    <tr><td align=\"right\">2015-10-08 13:06:45</td></tr>\r\n\
                                    <tr><td align=\"right\" style=\"font-family:微软雅黑;font-size:4pt; align=\"right\">71282</td></tr> \r\n\
 \r\n\
@@ -171,7 +171,7 @@ int MyEmail::CreateEmail()
 {
 	m_oMessage.setSender(sender);
 	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
-	m_oMessage.setSubject("工资条");
+	m_oMessage.setSubject(L"工资条");
 	std::string content;
 	content += "Hello ";
 	content += recipient;
