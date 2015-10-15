@@ -5,6 +5,7 @@
 #include <fstream>
 #include "MyData.h"
 #include "MyException.h"
+#include "MyEmail.h"
 
 typedef Poco::Tuple<int, std::string, std::string> Employee;
 typedef std::vector<Employee> Employees;
@@ -27,16 +28,12 @@ public:
 	int DeleteEmployee(int in_iEmpno);
 	int UpdateEmployee();
 	
-	int CreateEmails();
 	int SendEmail();
 
 	/*
 	int ImportData();
 	*/
 	int UninitializeDb();
-
-private:
-	int CreateEmail();
 
 public:
 	MyData m_oMyData;

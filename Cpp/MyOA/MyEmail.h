@@ -16,4 +16,30 @@ using Poco::Net::StringPartSource;
 using Poco::Path;
 using Poco::Exception;
 
+class MyEmail
+{
+public:
+	MyEmail()
+	{
+		mailhost = "smtp.163.com";
+		sender = "chdyczx@163.com";
+		password = "Chenhd@420462";
+		recipient = "chdyczx@live.com";
+	}
+	~MyEmail(){}
+	int SendEmail();
+
+private:
+	int CreateHtml(std::ostringstream &ostr);
+	int CreateEmail();
+	int CreateEmails();
+	
+private:
+	MailMessage m_oMessage;
+	std::string mailhost;
+	std::string sender;
+	std::string password;
+	std::string recipient;
+};
+
 #endif
