@@ -171,7 +171,7 @@ int MyEmail::CreateEmail()
 {
 	m_oMessage.setSender(sender);
 	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
-	m_oMessage.setSubject(encodeWord("工资条"));
+	m_oMessage.setSubject(MailMessage::encodeWord("工资条"));
 	std::string content;
 	content += "Hello ";
 	content += recipient;
