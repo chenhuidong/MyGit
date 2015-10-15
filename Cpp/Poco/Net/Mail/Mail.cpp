@@ -65,7 +65,7 @@ int main(int argc, char** argv)
 		//std::string logo(reinterpret_cast<const char*>(PocoLogo), sizeof(PocoLogo));
 		message.addContent(new StringPartSource(content));
 		//message.addAttachment("logo", new StringPartSource(logo, "image/gif"));
-		message.addAttachment("1", new StringPartSource("another attachment", "text/plain", "1.html"));
+		message.addAttachment("1", new StringPartSource("another attachment", "application/octet-stream", "1.html"));
 		SMTPClientSession session(mailhost);
 
 		//session.login();
