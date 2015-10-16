@@ -173,11 +173,9 @@ int MyEmail::CreateEmail()
 	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
 	m_oMessage.setSubject(MailMessage::encodeWord("工资条"));
 	std::string content;
-	content += "Hello ";
-	content += recipient;
-	content += ",\r\n\r\n";
-	content = content + MailMessage::encodeWord("附件为您的本月工资条。") + "\r\n\r\n";
-	m_oMessage.addContent(new StringPartSource(content));
+	content += "您好：\r\n";
+	content += "附件为您的本月工资条。\r\n\r\n";
+	m_oMessage.addContent(new StringPartSource(MailMessage::encodeWord(content));
 	std::ostringstream ostr;
 	CreateHtml(ostr);
 	m_oMessage.addAttachment("1", new StringPartSource(ostr.str(), "text/plain", "1.html"));
