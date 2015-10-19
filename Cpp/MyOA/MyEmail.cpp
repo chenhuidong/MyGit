@@ -2,7 +2,8 @@
 
 int MyEmail::CreateHtml()
 {
-  std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.html");
+  std::ofstream ostr;
+  ostr.open("/mnt/home2/51linux_LxomB0aQ/Log/1.html", std::ios::out | std::ios::binary);
 	ostr << "<title>陈开Kai Chen&nbsp;201509工资单</title>\r\n\
 <body bgcolor=\"#fffcf2\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\"  marginheight=\"0\">\r\n\
 <h1 align=\"center\" style=\"font-family:微软雅黑;font-size=18pt;\"><br>工资通知单<br></h1>\r\n\
