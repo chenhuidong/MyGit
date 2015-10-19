@@ -5,6 +5,7 @@
 #include "Poco/Net/MailRecipient.h"
 #include "Poco/Net/SMTPClientSession.h"
 #include "Poco/Net/StringPartSource.h"
+#include "Poco/Net/FilePartSource.h"
 #include "Poco/Path.h"
 #include "Poco/Exception.h"
 #include <iostream>
