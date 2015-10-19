@@ -178,7 +178,7 @@ int MyEmail::CreateEmail()
 	content += "附件为您的本月工资条。\r\n\r\n";
 	m_oMessage.addContent(new StringPartSource(content));
 	CreateHtml();
-	m_oMessage.addAttachment("1", new FilePartSource("1.html"));
+	m_oMessage.addAttachment("1", new FilePartSource("/mnt/home2/51linux_LxomB0aQ/Log/1.html"));
 	return 0;
 }
 
