@@ -165,7 +165,7 @@ int MyEmail::CreateHtml(std::ostringstream &ostr)
   </td></tr></table>\r\n\
 </td></tr></table>" << std::endl;
 */
-  ostr << "陈慧冬"<< std::endl;
+  ostr << MailMessage::encodeWord("陈慧冬")<< std::endl;
 	return 0;
 }
 
