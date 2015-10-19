@@ -176,7 +176,7 @@ int MyEmail::CreateEmail()
 	std::string content;
 	content += "您好：\r\n";
 	content += "附件为您的本月工资条。\r\n\r\n";
-	m_oMessage.addContent(new StringPartSource(content.str()));
+	m_oMessage.addContent(new StringPartSource(content));
 	//std::string ostr;
 	//CreateHtml(ostr);
   //ostr = "陈慧冬";
