@@ -165,7 +165,6 @@ int MyEmail::CreateHtml(std::string &ostr)
   </td></tr></table>\r\n\
 </td></tr></table>" << std::endl;
 */
-  ostr << "陈慧冬"<< std::endl;
 	return 0;
 }
 
