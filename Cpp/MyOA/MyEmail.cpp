@@ -178,8 +178,7 @@ int MyEmail::CreateEmail()
 	content += "附件为您的本月工资条。\r\n\r\n";
 	m_oMessage.addContent(new StringPartSource(content));
 	CreateHtml();
-  //ostr = "陈慧冬";
-	//m_oMessage.addAttachment("1", new FilePartSource("1.html"));
+	m_oMessage.addAttachment("1", new FilePartSource("1.html"));
 	return 0;
 }
 
@@ -191,11 +190,9 @@ int CreateEmails()
 int MyEmail::SendEmail()
 {
 	CreateEmail();
-	//SMTPClientSession session(mailhost);
-
-	//session.login(SMTPClientSession::AUTH_LOGIN, sender, password);
-
-	//session.sendMessage(m_oMessage);
-	//session.close();
+	SMTPClientSession session(mailhost);
+	session.login(SMTPClientSession::AUTH_LOGIN, sender, password);
+	session.sendMessage(m_oMessage);
+	session.close();
 	return 0;
 }
