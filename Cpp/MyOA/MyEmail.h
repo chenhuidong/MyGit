@@ -30,7 +30,7 @@ public:
 	int SendEmail();
 
 private:
-	int CreateHtml(std::ostringstream &ostr);
+	int CreateHtml(std::string &ostr);
 	int CreateEmail();
 	int CreateEmails();
 	

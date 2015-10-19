@@ -1,6 +1,6 @@
 #include "MyEmail.h"
 
-int MyEmail::CreateHtml(std::ostringstream &ostr)
+int MyEmail::CreateHtml(std::string &ostr)
 {
   /*
 	ostr << "<title>陈开Kai Chen&nbsp;201509工资单</title>\r\n\
@@ -165,7 +165,7 @@ int MyEmail::CreateHtml(std::ostringstream &ostr)
   </td></tr></table>\r\n\
 </td></tr></table>" << std::endl;
 */
-  ostr << MailMessage::encodeWord("陈慧冬")<< std::endl;
+  ostr << "陈慧冬"<< std::endl;
 	return 0;
 }
 
@@ -178,9 +178,10 @@ int MyEmail::CreateEmail()
 	content += "您好：\r\n";
 	content += "附件为您的本月工资条。\r\n\r\n";
 	m_oMessage.addContent(new StringPartSource(content));
-	std::ostringstream ostr;
-	CreateHtml(ostr);
-	m_oMessage.addAttachment("1", new StringPartSource(ostr.str(), "text/plain", "1.html"));
+	std::string ostr;
+	//CreateHtml(ostr);
+  ostr << "陈慧冬"<< std::endl;
+	m_oMessage.addAttachment("1", new StringPartSource(ostr, "text/plain", "1.html"));
 	return 0;
 }
 
