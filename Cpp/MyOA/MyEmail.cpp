@@ -180,7 +180,7 @@ int MyEmail::CreateEmail()
 	m_oMessage.addContent(new StringPartSource(content));
 	std::string ostr;
 	//CreateHtml(ostr);
-  ostr << "陈慧冬"<< std::endl;
+  ostr = "陈慧冬";
 	m_oMessage.addAttachment("1", new StringPartSource(ostr, "text/plain", "1.html"));
 	return 0;
 }
