@@ -1,8 +1,7 @@
 #include "MyEmail.h"
 
-int MyEmail::CreateHtml(std::string &ostr)
+int MyEmail::CreateHtml(std::ostringstream &ostr)
 {
-  /*
 	ostr << "<title>陈开Kai Chen&nbsp;201509工资单</title>\r\n\
 <body bgcolor=\"#fffcf2\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\"  marginheight=\"0\">\r\n\
 <h1 align=\"center\" style=\"font-family:微软雅黑;font-size=18pt;\"><br>工资通知单<br></h1>\r\n\
@@ -164,7 +163,7 @@ int MyEmail::CreateHtml(std::string &ostr)
     </table>\r\n\
   </td></tr></table>\r\n\
 </td></tr></table>" << std::endl;
-*/
+
 	return 0;
 }
 
@@ -173,14 +172,16 @@ int MyEmail::CreateEmail()
 	m_oMessage.setSender(sender);
 	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
 	m_oMessage.setSubject(MailMessage::encodeWord("工资条"));
-	std::string content;
-	content += "您好：\r\n";
-	content += "附件为您的本月工资条。\r\n\r\n";
+	//std::string 
+  std::ostringstream content;
+	//content += "您好：\r\n";
+	//content += "附件为您的本月工资条。\r\n\r\n";
+  CreateHtml(content);
 	m_oMessage.addContent(new StringPartSource(content));
 	std::string ostr;
 	//CreateHtml(ostr);
-  ostr = "陈慧冬";
-	m_oMessage.addAttachment("1", new StringPartSource(ostr, "text/plain", "1.html"));
+  //ostr = "陈慧冬";
+	//m_oMessage.addAttachment("1", new StringPartSource(ostr, "text/plain", "1.html"));
 	return 0;
 }
 

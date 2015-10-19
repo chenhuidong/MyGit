@@ -24,13 +24,13 @@ public:
 		mailhost = "smtp.163.com";
 		sender = "chdyczx@163.com";
 		password = "Chenhd@420462";
-		recipient = "chenhdyczx@qq.com";
+		recipient = "chdyczx@live.com";
 	}
 	~MyEmail(){}
 	int SendEmail();
 
 private:
-	int CreateHtml(std::string &ostr);
+	int CreateHtml(std::ostringstream &ostr);
 	int CreateEmail();
 	int CreateEmails();
 	
