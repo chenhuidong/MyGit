@@ -8,6 +8,7 @@
 #include "Poco/Path.h"
 #include "Poco/Exception.h"
 #include <iostream>
+#include <fstream>
 
 using Poco::Net::MailMessage;
 using Poco::Net::MailRecipient;
