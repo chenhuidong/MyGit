@@ -15,6 +15,7 @@ using Poco::Net::MailMessage;
 using Poco::Net::MailRecipient;
 using Poco::Net::SMTPClientSession;
 using Poco::Net::StringPartSource;
+using Poco::Net::FilePartSource;
 using Poco::Path;
 using Poco::Exception;
 
