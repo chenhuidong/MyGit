@@ -24,7 +24,7 @@ public:
 		mailhost = "smtp.163.com";
 		sender = "chdyczx@163.com";
 		password = "Chenhd@420462";
-		recipient = "chdyczx@live.com";
+		recipient = "443420462@qq.com";
 	}
 	~MyEmail(){}
 	int SendEmail();
