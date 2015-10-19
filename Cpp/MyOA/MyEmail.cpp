@@ -1,7 +1,8 @@
 #include "MyEmail.h"
 
-int MyEmail::CreateHtml(std::ostringstream &ostr)
+int MyEmail::CreateHtml()
 {
+  std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.html");
 	ostr << "<title>陈开Kai Chen&nbsp;201509工资单</title>\r\n\
 <body bgcolor=\"#fffcf2\" leftmargin=\"0\" topmargin=\"0\" marginwidth=\"0\"  marginheight=\"0\">\r\n\
 <h1 align=\"center\" style=\"font-family:微软雅黑;font-size=18pt;\"><br>工资通知单<br></h1>\r\n\
@@ -172,16 +173,14 @@ int MyEmail::CreateEmail()
 	m_oMessage.setSender(sender);
 	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
 	m_oMessage.setSubject(MailMessage::encodeWord("工资条"));
-	//std::string 
-  std::ostringstream content;
-	//content += "您好：\r\n";
-	//content += "附件为您的本月工资条。\r\n\r\n";
-  CreateHtml(content);
+	std::string content;
+	content += "您好：\r\n";
+	content += "附件为您的本月工资条。\r\n\r\n";
 	m_oMessage.addContent(new StringPartSource(content.str()));
-	std::string ostr;
+	//std::string ostr;
 	//CreateHtml(ostr);
   //ostr = "陈慧冬";
-	//m_oMessage.addAttachment("1", new StringPartSource(ostr, "text/plain", "1.html"));
+	//m_oMessage.addAttachment("1", new FilePartSource("1.html"));
 	return 0;
 }
 
@@ -193,11 +192,11 @@ int CreateEmails()
 int MyEmail::SendEmail()
 {
 	CreateEmail();
-	SMTPClientSession session(mailhost);
+	//SMTPClientSession session(mailhost);
 
-	session.login(SMTPClientSession::AUTH_LOGIN, sender, password);
+	//session.login(SMTPClientSession::AUTH_LOGIN, sender, password);
 
-	session.sendMessage(m_oMessage);
-	session.close();
+	//session.sendMessage(m_oMessage);
+	//session.close();
 	return 0;
 }
