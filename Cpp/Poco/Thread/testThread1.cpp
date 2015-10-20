@@ -1,6 +1,8 @@
 #include "Poco/Thread.h"
 #include "Poco/Runnable.h"
 #include <iostream>
+#include <string>
+using namespace std;
 
 class Test
 {
