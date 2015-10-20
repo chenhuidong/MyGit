@@ -2,16 +2,19 @@
 #include "Poco/Runnable.h"
 #include <iostream>
 
-void run(void *name)
+class test
 {
-	std::cout << "Hello, world!"<< (char*)name << std::endl;
-}
-
+public:
+	static void run(void *name)
+	{
+		std::cout << "Hello, world!"<< (char*)name << std::endl;
+	}
+};
 
 int main(int argc, char** argv)
 {
 	Poco::Thread thread;
-	thread.start(run, (void *)"fdsfds");
+	thread.start(test::run, (void *)"fdsfds");
 	thread.join();
 	return 0;
 }
