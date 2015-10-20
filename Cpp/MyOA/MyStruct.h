@@ -11,6 +11,6 @@ typedef Poco::Tuple<std::string, std::string, std::string> Email;
 typedef std::vector<Email> Emails;
 
 typedef Poco::Tuple<int, int, int, int, int, int, int, int, int, int, int, int> Salary;
-typedef std::vector<Email> Salarys;
+typedef std::vector<Salary> Salarys;
 
 #endif
