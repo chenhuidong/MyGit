@@ -2,9 +2,9 @@
 
 int main(int argc, char* argv[])
 {
+	MyAction t_oMyAction;
 	try
 	{
-		MyAction t_oMyAction;
 		t_oMyAction.InitializeDb("employee.db");
 		t_oMyAction.Install();
 		//t_oMyAction.InsertData();
