@@ -198,6 +198,18 @@ int MyEmail::SendEmail()
 
 int MyEmail::SendEmails(Emails &in_oEmails, Employees &in_oEmployees, Salarys &in_oSalarys)
 {
+  for (Employees::const_iterator it = in_oEmployees.begin(); it != in_oEmployees.end(); ++it)
+  {
+    std::cout << "Empno: " << it->get<0>() << 
+    ", Name: " << it->get<1>() << 
+    ", Email: " << it->get<2>() << std::endl;
+  }
 
+  for (Emails::const_iterator it = in_oEmails.begin(); it != in_oEmails.end(); ++it)
+  {
+    std::cout << "Sender: " << it->get<0>() << 
+    ", Password: " << it->get<1>() << 
+    ", Mailhost: " << it->get<2>() << std::endl;
+  }
   return 0;
 }
