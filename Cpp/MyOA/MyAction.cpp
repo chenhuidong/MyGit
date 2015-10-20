@@ -65,7 +65,10 @@ int MyAction::InsertData()
 	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "cccc", "fdsfs@163.com");
     m_oMyData.ExecuteSQL(iSQL, m_oEmployees);
 
-   	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(%d, \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
+   	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(\'%s\', \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
+    m_oMyData.ExecuteSQL(iSQL, m_oEmails);
+
+    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Salarys VALUES(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
     m_oMyData.ExecuteSQL(iSQL, m_oEmails);
     return 0;
 }
