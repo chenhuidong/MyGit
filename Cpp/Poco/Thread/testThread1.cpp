@@ -11,7 +11,7 @@ void run(void *name)
 int main(int argc, char** argv)
 {
 	Poco::Thread thread;
-	thread.start(run, "fdsfds");
+	thread.start(run, (void *)"fdsfds");
 	thread.join();
 	return 0;
 }
