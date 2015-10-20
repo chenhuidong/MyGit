@@ -2,7 +2,7 @@
 #include "Poco/Runnable.h"
 #include <iostream>
 
-void run()
+void run(void *)
 {
 	std::cout << "Hello, world!" << std::endl;
 }
