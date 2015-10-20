@@ -12,7 +12,7 @@ class HelloRunnable: public Poco::Runnable
 
 int main(int argc, char** argv)
 {
-	HelloRunnable runnable;
+	HelloRunnable runnable();
 	Poco::Thread thread;
 	thread.start(runnable);
 	thread.join();
