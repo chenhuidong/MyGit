@@ -10,7 +10,7 @@ public:
 	Test():name("chenhuidong"){}
 	static void run(void *_this)
 	{
-		std::cout << "Hello, world!"<< _this->name << std::endl;
+		std::cout << "Hello, world!"<< (Test *)_this->name << std::endl;
 	}
 	string name;
 };
