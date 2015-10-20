@@ -10,6 +10,7 @@
 #include "Poco/Exception.h"
 #include <iostream>
 #include <fstream>
+#include "MyStruct.h"
 
 using Poco::Net::MailMessage;
 using Poco::Net::MailRecipient;
@@ -23,19 +24,21 @@ class MyEmail
 {
 public:
 	MyEmail()
-	{
+	{	
+		/*
 		mailhost = "smtp.163.com";
 		sender = "chdyczx@163.com";
 		password = "Chenhd@420462";
 		recipient = "chdyczx@live.com";
+		*/
 	}
 	~MyEmail(){}
-	int SendEmail();
+	int SendEmails(Emails &in_oEmails, Employees &in_oEmployees, Salarys &in_oSalarys);
 
 private:
-	int CreateHtml(/*std::ostringstream &ostr*/);
+	int SendEmail();
+	int CreateHtml();
 	int CreateEmail();
-	int CreateEmails();
 	
 private:
 	MailMessage m_oMessage;

@@ -186,11 +186,6 @@ int MyEmail::CreateEmail()
 	return 0;
 }
 
-int CreateEmails()
-{
-	return 0;
-}
-
 int MyEmail::SendEmail()
 {
 	CreateEmail();
@@ -199,4 +194,10 @@ int MyEmail::SendEmail()
 	session.sendMessage(m_oMessage);
 	session.close();
 	return 0;
+}
+
+int MyEmail::SendEmails(Emails &in_oEmails, Employees &in_oEmployees, Salarys &in_oSalarys)
+{
+
+  return 0;
 }

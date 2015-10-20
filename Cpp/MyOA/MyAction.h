@@ -6,12 +6,7 @@
 #include "MyData.h"
 #include "MyException.h"
 #include "MyEmail.h"
-
-typedef Poco::Tuple<int, std::string, std::string> Employee;
-typedef std::vector<Employee> Employees;
-
-typedef Poco::Tuple<std::string, std::string, std::string> Email;
-typedef std::vector<Email> Emails;
+#include "MyStruct.h"
 
 class MyAction
 {
@@ -37,8 +32,9 @@ public:
 
 public:
 	MyData m_oMyData;
-	Employees m_oEmployees;
 	Emails m_oEmails;
+	Employees m_oEmployees;
+	Salarys m_oSalarys;
 };
 
 #endif 
