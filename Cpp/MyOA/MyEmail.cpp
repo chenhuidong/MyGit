@@ -198,6 +198,7 @@ int MyEmail::SendEmail()
 
 int MyEmail::SendEmails(Emails &in_oEmails, Employees &in_oEmployees, Salarys &in_oSalarys)
 {
+  /*
   for (Employees::const_iterator it = in_oEmployees.begin(); it != in_oEmployees.end(); ++it)
   {
     std::cout << "Empno: " << it->get<0>() << 
@@ -218,5 +219,7 @@ int MyEmail::SendEmails(Emails &in_oEmails, Employees &in_oEmployees, Salarys &i
      it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
+  */
+  
   return 0;
 }

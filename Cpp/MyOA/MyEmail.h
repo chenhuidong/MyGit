@@ -25,12 +25,6 @@ class MyEmail
 public:
 	MyEmail()
 	{	
-		/*
-		mailhost = "smtp.163.com";
-		sender = "chdyczx@163.com";
-		password = "Chenhd@420462";
-		recipient = "chdyczx@live.com";
-		*/
 	}
 	~MyEmail(){}
 	int SendEmails(Emails &in_oEmails, Employees &in_oEmployees, Salarys &in_oSalarys);
@@ -42,10 +36,6 @@ private:
 	
 private:
 	MailMessage m_oMessage;
-	std::string mailhost;
-	std::string sender;
-	std::string password;
-	std::string recipient;
 };
 
 #endif

@@ -7,6 +7,8 @@
 #include "MyException.h"
 #include "MyEmail.h"
 #include "MyStruct.h"
+#include "Poco/Thread.h"
+#include "Poco/Runnable.h"
 
 class MyAction
 {
