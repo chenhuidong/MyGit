@@ -196,7 +196,7 @@ int MyEmail::SendEmail()
 	return 0;
 }
 
-int MyEmail::SendEmails(Emails &in_oEmails, Employees &in_oEmployees, Salarys &in_oSalarys)
+int MyEmail::SendEmails()
 {
   /*
   for (Employees::const_iterator it = in_oEmployees.begin(); it != in_oEmployees.end(); ++it)

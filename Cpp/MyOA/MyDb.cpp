@@ -1,6 +1,6 @@
-#include "MyData.h"
+#include "MyDb.h"
 
-int MyData::Initialize(const char* in_sDbName)
+int MyDb::Initialize(const char* in_sDbName)
 {
 	// register SQLite connector
     Poco::Data::SQLite::Connector::registerConnector();
@@ -14,14 +14,14 @@ int MyData::Initialize(const char* in_sDbName)
     return 0;
 }
 
-int MyData::Uninitialize()
+int MyDb::Uninitialize()
 {
     // delete a session
     delete m_pSession;
     m_pSession = NULL;
 }
 
-Session* MyData::GetSession()
+Session* MyDb::GetSession()
 {
 	return m_pSession;
 }

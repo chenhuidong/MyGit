@@ -27,7 +27,7 @@ public:
 	{	
 	}
 	~MyEmail(){}
-	int SendEmails(Emails &in_oEmails, Employees &in_oEmployees, Salarys &in_oSalarys);
+	int SendEmails();
 
 private:
 	int SendEmail();

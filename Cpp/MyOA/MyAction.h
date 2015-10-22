@@ -3,7 +3,7 @@
 
 #include "../stdafx.h"
 #include <fstream>
-#include "MyData.h"
+#include "MyDb.h"
 #include "MyException.h"
 #include "MyEmail.h"
 #include "MyStruct.h"
@@ -33,7 +33,7 @@ public:
 	int UninitializeDb();
 
 public:
-	MyData m_oMyData;
+	MyDb m_oMyDb;
 	Emails m_oEmails;
 	Employees m_oEmployees;
 	Salarys m_oSalarys;

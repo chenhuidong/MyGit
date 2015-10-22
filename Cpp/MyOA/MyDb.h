@@ -1,5 +1,5 @@
-#ifndef __MY_OA_MY_DATA_H_
-#define __MY_OA_MY_DATA_H_
+#ifndef __MY_OA_MY_DB_H_
+#define __MY_OA_MY_DB_H_
 
 #include "Poco/Data/Session.h"
 #include "Poco/Data/SessionFactory.h"
@@ -14,11 +14,11 @@ using Poco::Data::Session;
 using Poco::Data::Statement;
 //using Poco::StringTokenizer;
 
-class MyData
+class MyDb
 {
 public:
-	MyData():m_pSession(NULL){}
-	~MyData(){};
+	MyDb():m_pSession(NULL){}
+	~MyDb(){};
 	int Initialize(const char* in_sDbName);
 	int Uninitialize();
 	Session* GetSession();
