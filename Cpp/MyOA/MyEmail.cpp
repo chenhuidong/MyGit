@@ -205,7 +205,7 @@ int MyEmail::SendEmails(MyData& in_oMyData)
     ", Email: " << it->get<2>() << std::endl;
   }
 
-  for (Emails::const_iterator it = in_oMyData._oEmails.begin(); it != in_oMyData._oEmails.end(); ++it)
+  for (Emails::const_iterator it = in_oMyData.m_oEmails.begin(); it != in_oMyData.m_oEmails.end(); ++it)
   {
     std::cout << "Sender: " << it->get<0>() << 
     ", Password: " << it->get<1>() << 
