@@ -188,7 +188,7 @@ int MyEmail::CreateEmail()
   return 0;
 }
 
-int MyEmail::SendEmail(void *)
+static int MyEmail::SendEmail(void *)
 {
   /*
 	CreateEmail();
@@ -226,7 +226,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   }
   */
   Poco::Thread thread;
-  thread.start(SendEmail, (void *)(&in_oMyDatas));
+  thread.start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
   thread.join();
   return 0;
 }
