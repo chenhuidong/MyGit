@@ -11,6 +11,7 @@
 #include <iostream>
 #include <fstream>
 #include "MyStruct.h"
+#include "MyData.h"
 
 using Poco::Net::MailMessage;
 using Poco::Net::MailRecipient;
