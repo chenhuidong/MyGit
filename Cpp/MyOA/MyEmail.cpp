@@ -188,7 +188,7 @@ int MyEmail::CreateEmail()
   return 0;
 }
 
-void MyEmail::SendEmail(void *)
+static void MyEmail::SendEmail(void *)
 {
   /*
 	CreateEmail();
