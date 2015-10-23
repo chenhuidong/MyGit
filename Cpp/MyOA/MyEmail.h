@@ -35,8 +35,8 @@ private:
 	int CreateHtml();
 	int CreateEmail();
 	
-private:
-	MailMessage m_oMessage;
+//private:
+//	MailMessage m_oMessage;
 };
 
 #endif

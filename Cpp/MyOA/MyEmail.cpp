@@ -197,6 +197,7 @@ int MyEmail::SendEmail()
 	session.sendMessage(m_oMessage);
 	session.close();
   */
+  std::cout<< "1"<< std::endl;
 	return 0;
 }
 
@@ -224,6 +225,8 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  
+  Poco::Thread thread;
+  thread.start(SendEmail, (void *)(&in_oMyDatas));
+  thread.join();
   return 0;
 }

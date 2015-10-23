@@ -11,5 +11,4 @@ public:
 	Salarys m_oSalarys;
 };
 
-//class My
 #endif
