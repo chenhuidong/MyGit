@@ -226,6 +226,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   */
   Poco::Thread thread;
   thread.start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
+  std::cout<< "2"<< std::endl;
   thread.join();
   return 0;
 }
