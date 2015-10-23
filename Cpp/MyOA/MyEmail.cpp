@@ -188,7 +188,7 @@ int MyEmail::CreateEmail()
   return 0;
 }
 
-void MyEmail::SendEmail(void *)
+void MyEmail::SendEmail(void *in_pMyDatas)
 {
   /*
 	CreateEmail();
@@ -197,27 +197,47 @@ void MyEmail::SendEmail(void *)
 	session.sendMessage(m_oMessage);
 	session.close();
   */
-  std::cout<< "1"<< std::endl;
-}
-
-int MyEmail::SendEmails(MyDatas& in_oMyDatas)
-{
-  /*
-  for (Employees::const_iterator it = in_oMyData.m_oEmployees.begin(); it != in_oMyData.m_oEmployees.end(); ++it)
+  MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
+  for (Employees::const_iterator it = t_pMyDatas->m_oEmployees.begin(); it != t_pMyDatas->m_oEmployees.end(); ++it)
   {
     std::cout << "Empno: " << it->get<0>() << 
     ", Name: " << it->get<1>() << 
     ", Email: " << it->get<2>() << std::endl;
   }
 
-  for (Emails::const_iterator it = in_oMyData.m_oEmails.begin(); it != in_oMyData.m_oEmails.end(); ++it)
+  for (Emails::const_iterator it = t_pMyDatas->m_oEmails.begin(); it != t_pMyDatas->m_oEmails.end(); ++it)
   {
     std::cout << "Sender: " << it->get<0>() << 
     ", Password: " << it->get<1>() << 
     ", Mailhost: " << it->get<2>() << std::endl;
   }
 
-  for (Salarys::const_iterator it = in_oMyData.m_oSalarys.begin(); it != in_oMyData.m_oSalarys.end(); ++it)
+  for (Salarys::const_iterator it = t_pMyDatas->m_oSalarys.begin(); it != t_pMyDatas->m_oSalarys.end(); ++it)
+  {
+    std::cout<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
+     it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
+      it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
+  }
+}
+
+int MyEmail::SendEmails(MyDatas& in_oMyDatas)
+{
+  /*
+  for (Employees::const_iterator it = in_oMyDatas.m_oEmployees.begin(); it != in_oMyDatas.m_oEmployees.end(); ++it)
+  {
+    std::cout << "Empno: " << it->get<0>() << 
+    ", Name: " << it->get<1>() << 
+    ", Email: " << it->get<2>() << std::endl;
+  }
+
+  for (Emails::const_iterator it = in_oMyDatas.m_oEmails.begin(); it != in_oMyDatas.m_oEmails.end(); ++it)
+  {
+    std::cout << "Sender: " << it->get<0>() << 
+    ", Password: " << it->get<1>() << 
+    ", Mailhost: " << it->get<2>() << std::endl;
+  }
+
+  for (Salarys::const_iterator it = in_oMyDatas.m_oSalarys.begin(); it != in_oMyDatas.m_oSalarys.end(); ++it)
   {
     std::cout<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
      it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
@@ -226,7 +246,6 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   */
   Poco::Thread thread;
   thread.start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
-  std::cout<< "2"<< std::endl;
   thread.join();
   return 0;
 }

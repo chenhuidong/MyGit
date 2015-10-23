@@ -31,7 +31,7 @@ public:
 	int SendEmails(MyDatas& in_oMyDatas);
 
 private:
-	static void SendEmail(void *);
+	static void SendEmail(void *in_pMyDatas);
 	int CreateHtml();
 	int CreateEmail();
 	
