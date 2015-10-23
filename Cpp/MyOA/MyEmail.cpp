@@ -198,7 +198,6 @@ static void MyEmail::SendEmail(void *)
 	session.close();
   */
   std::cout<< "1"<< std::endl;
-	return 0;
 }
 
 int MyEmail::SendEmails(MyDatas& in_oMyDatas)
