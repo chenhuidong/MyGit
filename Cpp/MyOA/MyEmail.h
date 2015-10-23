@@ -28,7 +28,7 @@ public:
 	{	
 	}
 	~MyEmail(){}
-	int SendEmails(MyData& in_oMyData);
+	int SendEmails(MyDatas& in_oMyDatas);
 
 private:
 	int SendEmail();
