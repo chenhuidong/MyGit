@@ -197,6 +197,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 	session.sendMessage(m_oMessage);
 	session.close();
   */
+  
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
   for (Employees::const_iterator it = t_pMyDatas->m_oEmployees.begin(); it != t_pMyDatas->m_oEmployees.end(); ++it)
   {
@@ -218,6 +219,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
      it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
+  
 }
 
 int MyEmail::SendEmails(MyDatas& in_oMyDatas)
@@ -244,8 +246,11 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  Poco::Thread thread;
-  thread.start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
-  thread.join();
+  for(int i=0; i<2; i++)
+  {
+    Poco::Thread t_oThread;
+    t_oThread.start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
+    t_oThread.join();
+  }
   return 0;
 }
