@@ -196,30 +196,28 @@ int MyEmail::SendEmail()
 	return 0;
 }
 
-int MyEmail::SendEmails()
+int MyEmail::SendEmails(MyData& in_oMyData)
 {
-  /*
-  for (Employees::const_iterator it = in_oEmployees.begin(); it != in_oEmployees.end(); ++it)
+  for (Employees::const_iterator it = in_oMyData.m_oEmployees.begin(); it != in_oMyData.m_oEmployees.end(); ++it)
   {
     std::cout << "Empno: " << it->get<0>() << 
     ", Name: " << it->get<1>() << 
     ", Email: " << it->get<2>() << std::endl;
   }
 
-  for (Emails::const_iterator it = in_oEmails.begin(); it != in_oEmails.end(); ++it)
+  for (Emails::const_iterator it = in_oMyData._oEmails.begin(); it != in_oMyData._oEmails.end(); ++it)
   {
     std::cout << "Sender: " << it->get<0>() << 
     ", Password: " << it->get<1>() << 
     ", Mailhost: " << it->get<2>() << std::endl;
   }
 
-  for (Salarys::const_iterator it = in_oSalarys.begin(); it != in_oSalarys.end(); ++it)
+  for (Salarys::const_iterator it = in_oMyData.m_oSalarys.begin(); it != in_oMyData.m_oSalarys.end(); ++it)
   {
     std::cout<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
      it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
-  */
   
   return 0;
 }

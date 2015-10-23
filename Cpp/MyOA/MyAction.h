@@ -7,8 +7,10 @@
 #include "MyException.h"
 #include "MyEmail.h"
 #include "MyStruct.h"
+#include "MyData.h"
 #include "Poco/Thread.h"
 #include "Poco/Runnable.h"
+
 
 class MyAction
 {
@@ -33,10 +35,9 @@ public:
 	int UninitializeDb();
 
 public:
+	MyData m_oMyData;
+private:
 	MyDb m_oMyDb;
-	Emails m_oEmails;
-	Employees m_oEmployees;
-	Salarys m_oSalarys;
 };
 
 #endif 
