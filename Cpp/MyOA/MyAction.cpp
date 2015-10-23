@@ -17,20 +17,20 @@ int MyAction::Install()
 
 int MyAction::SelectData()
 {
-	m_oMyDb.ExecuteSQL("SELECT Empno, Name, Email FROM Employees where ValidFlag = 0", m_oMyData.m_oEmployees);
-    if(m_oMyData.m_oEmployees.empty())
+	m_oMyDb.ExecuteSQL("SELECT Empno, Name, Email FROM Employees where ValidFlag = 0", m_oMyDatas.m_oEmployees);
+    if(m_oMyDatas.m_oEmployees.empty())
     {
     	throw Poco::NoRecordException("Employees no record.");
     }
 
-    m_oMyDb.ExecuteSQL("SELECT * FROM Emails", m_oMyData.m_oEmails);
-    if(m_oMyData.m_oEmails.empty())
+    m_oMyDb.ExecuteSQL("SELECT * FROM Emails", m_oMyDatas.m_oEmails);
+    if(m_oMyDatas.m_oEmails.empty())
     {
     	throw Poco::NoRecordException("Emails no record.");
     }
 
-    m_oMyDb.ExecuteSQL("SELECT * FROM Salarys", m_oMyData.m_oSalarys);
-    if(m_oMyData.m_oSalarys.empty())
+    m_oMyDb.ExecuteSQL("SELECT * FROM Salarys", m_oMyDatas.m_oSalarys);
+    if(m_oMyDatas.m_oSalarys.empty())
     {
         throw Poco::NoRecordException("Salarys no record.");
     }
@@ -47,13 +47,13 @@ int MyAction::InsertData()
 {
 	char iSQL[1024] = {0};
 	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "cccc", "fdsfs@163.com");
-    m_oMyDb.ExecuteSQL(iSQL, m_oMyData.m_oEmployees);
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
 
    	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(\'%s\', \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
-    m_oMyDb.ExecuteSQL(iSQL, m_oMyData.m_oEmails);
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmails);
 
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Salarys VALUES(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-    m_oMyDb.ExecuteSQL(iSQL, m_oMyData.m_oSalarys);
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oSalarys);
     return 0;
 }
 
@@ -61,7 +61,7 @@ int MyAction::DeleteEmployee(int in_iEmpno)
 {
 	char iSQL[1024] = {0};
 	snprintf(iSQL, sizeof(iSQL), "UPDATE Employees set ValidFlag = 1 where Empno = %d", in_iEmpno);
-	m_oMyDb.ExecuteSQL(iSQL, m_oMyData.m_oEmployees);
+	m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
 	return 0;
 }
 
@@ -75,9 +75,9 @@ int MyAction::SelectEmployee(int in_iEmpno)
     char iSQL[1024] = {0};
     snprintf(iSQL, sizeof(iSQL), "SELECT Empno, Name, Email FROM Employees where ValidFlag = 0 and Empno = %d", in_iEmpno);
 
-    m_oMyDb.ExecuteSQL(iSQL, m_oMyData.m_oEmployees);
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
     /*
-    for (Employees::const_iterator it = m_oMyData.m_oEmployees.begin(); it != m_oMyData.m_oEmployees.end(); ++it)
+    for (Employees::const_iterator it = m_oMyDatas.m_oEmployees.begin(); it != m_oMyDatas.m_oEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
             ", Name: " << it->get<1>() << 
@@ -90,14 +90,14 @@ int MyAction::SelectEmployee(int in_iEmpno)
 int MyAction::SendEmail()
 {   
     /*
-    for (Employees::const_iterator it = m_oMyData.m_oEmployees.begin(); it != m_oMyData.m_oEmployees.end(); ++it)
+    for (Employees::const_iterator it = m_oMyDatas.m_oEmployees.begin(); it != m_oMyDatas.m_oEmployees.end(); ++it)
     {
         std::cout << "Empno: " << it->get<0>() << 
             ", Name: " << it->get<1>() << 
             ", Email: " << it->get<2>() << std::endl;
     }
 
-    for (Emails::const_iterator it = m_oMyData.m_oEmails.begin(); it != m_oMyData.m_oEmails.end(); ++it)
+    for (Emails::const_iterator it = m_oMyDatas.m_oEmails.begin(); it != m_oMyDatas.m_oEmails.end(); ++it)
     {
         std::cout << "Sender: " << it->get<0>() << 
             ", Password: " << it->get<1>() << 
@@ -105,6 +105,6 @@ int MyAction::SendEmail()
     }
     */
     MyEmail t_oMyEmail;
-    t_oMyEmail.SendEmails(m_oMyData);
+    t_oMyEmail.SendEmails(m_oMyDatas);
     return 0;
 }

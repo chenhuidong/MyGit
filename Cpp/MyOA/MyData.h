@@ -3,7 +3,7 @@
 
 #include "MyStruct.h"
 
-class MyData
+class MyDatas
 {
 public:
 	Emails m_oEmails;
@@ -11,4 +11,5 @@ public:
 	Salarys m_oSalarys;
 };
 
+//class My
 #endif

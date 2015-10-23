@@ -35,7 +35,7 @@ public:
 	int UninitializeDb();
 
 public:
-	MyData m_oMyData;
+	MyDatas m_oMyDatas;
 private:
 	MyDb m_oMyDb;
 };
