@@ -174,6 +174,7 @@ int MyEmail::CreateHtml()
 
 int MyEmail::CreateEmail()
 {
+  /*
 	m_oMessage.setSender(sender);
 	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
 	m_oMessage.setSubject(MailMessage::encodeWord("工资条"));
@@ -183,16 +184,19 @@ int MyEmail::CreateEmail()
 	m_oMessage.addContent(new StringPartSource(content));
 	CreateHtml();
 	m_oMessage.addAttachment("1", new FilePartSource("/mnt/home2/51linux_LxomB0aQ/Log/1.html"));
-	return 0;
+	*/
+  return 0;
 }
 
 int MyEmail::SendEmail()
 {
+  /*
 	CreateEmail();
 	SMTPClientSession session(mailhost);
 	session.login(SMTPClientSession::AUTH_LOGIN, sender, password);
 	session.sendMessage(m_oMessage);
 	session.close();
+  */
 	return 0;
 }
 
