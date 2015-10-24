@@ -235,7 +235,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   }
   */
 
-  int t_iIndex = GetCounter();
+  int t_iIndex = MyEmail::GetCounter();
   while(t_iIndex < t_iEmployeesNum)
   {
     std::cout<< t_iIndex<< std::endl;
