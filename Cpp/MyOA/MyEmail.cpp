@@ -220,7 +220,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  for(int i=1; i<50; i++)
+  for(int i=1; i<20; i++)
   {
     std::cout<< i<<std::endl;
     sleep(1);
@@ -251,21 +251,22 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  Poco::Thread *t_aThread[2];
+  int t_iThreadNum = in_oMyDatas.m_oEmails.size();
+  Poco::Thread *t_aThread[t_iThreadNum];
   
-  for(int i=0; i<2; i++)
+  for(int i=0; i<t_iThreadNum; i++)
   {
     Poco::Thread *t_pThread = new Poco::Thread();
     t_aThread[i] = t_pThread;
     t_pThread->start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
   }
 
-  for(int i=0; i<2; i++)
+  for(int i=0; i<t_iThreadNum; i++)
   {
     t_aThread[i]->join();
   }
 
-  for(int i=0; i<2; i++)
+  for(int i=0; i<t_iThreadNum; i++)
   {
     delete t_aThread[i];
   }
