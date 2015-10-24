@@ -290,7 +290,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   return 0;
 }
 
-int GetCounter()
+int MyEmail::GetCounter()
 {
-  return counter++;
+  return MyEmail::counter++;
 }
