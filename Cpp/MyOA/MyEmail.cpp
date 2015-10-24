@@ -220,7 +220,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  for(int i=1; i<500; i++)
+  for(int i=1; i<50; i++)
   {
     std::cout<< i<<std::endl;
     sleep(1);
