@@ -232,7 +232,10 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     ", Email: " << t_pMyDatas->m_oEmployees[i].get<2>() << std::endl;
   }
   */
-  std::cout<< MyEmail::counter++<< std::endl;
+  for(;MyEmail::counter < 500; MyEmail::counter++)
+  {
+    std::cout<< MyEmail::counter<< std::endl;
+  }
 }
 
 int MyEmail::SendEmails(MyDatas& in_oMyDatas)
