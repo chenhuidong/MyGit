@@ -1,5 +1,7 @@
 #include "MyEmail.h"
 
+int MyEmail::i = 0;
+
 int MyEmail::CreateHtml()
 {
   std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.html");
