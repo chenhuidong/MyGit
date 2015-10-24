@@ -220,8 +220,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  //static Poco::AtomicCounter counter;
-  //return ++counter;
+
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
   int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   for (int i=0; i<t_iEmployeesNum; i++)

@@ -38,6 +38,9 @@ private:
 	
 //private:
 //	MailMessage m_oMessage;
+private:
+	static Poco::AtomicCounter counter;
 };
 
+Poco::AtomicCounter MyEmail::counter = 0;
 #endif
