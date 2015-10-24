@@ -251,12 +251,19 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  Poco::Thread t_oThread;
+  Poco::Thread t_aThread[2];
+  
   for(int i=0; i<2; i++)
   {
+    Poco::Thread t_oThread;
+    t_aThread[i] = t_oThread;
     t_oThread.start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
   }
-  t_oThread.join();
+
+  for(int i=0; i<2; i++)
+  {
+    t_aThread[i].join();
+  }
   std::cout<< "chd"<<std::endl;
   return 0;
 }
