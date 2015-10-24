@@ -1,6 +1,6 @@
 #include "MyEmail.h"
 
-int MyEmail::i = 0;
+Poco::AtomicCounter MyEmail::counter;
 
 int MyEmail::CreateHtml()
 {
@@ -231,8 +231,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     ", Name: " << t_pMyDatas->m_oEmployees[i].get<1>() << 
     ", Email: " << t_pMyDatas->m_oEmployees[i].get<2>() << std::endl;
   }
-  std::cout<< MyEmail::i<< std::endl;
-  //++counter;
+  std::cout<< MyEmail::counter<< std::endl;
 }
 
 int MyEmail::SendEmails(MyDatas& in_oMyDatas)
