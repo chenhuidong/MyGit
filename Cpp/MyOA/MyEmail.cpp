@@ -257,7 +257,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   {
     Poco::Thread *t_pThread = new Poco::Thread();
     t_aThread[i] = &t_pThread;
-    t_oThread.start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
+    t_pThread->start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
   }
 
   for(int i=0; i<2; i++)
