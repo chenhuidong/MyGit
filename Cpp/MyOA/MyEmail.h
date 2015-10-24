@@ -39,8 +39,9 @@ private:
 //private:
 //	MailMessage m_oMessage;
 private:
-	static Poco::AtomicCounter counter;
+	int i;
+	//static Poco::AtomicCounter counter;
 };
-
-Poco::AtomicCounter MyEmail::counter;
+int MyEmail::i = 0;
+//Poco::AtomicCounter MyEmail::counter;
 #endif

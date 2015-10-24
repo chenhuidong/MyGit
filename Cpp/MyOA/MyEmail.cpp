@@ -229,8 +229,8 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     ", Name: " << t_pMyDatas->m_oEmployees[i].get<1>() << 
     ", Email: " << t_pMyDatas->m_oEmployees[i].get<2>() << std::endl;
   }
-  //std::cout<< MyEmail::counter<< std::endl;
-  ++counter;
+  std::cout<< MyEmail::i<< std::endl;
+  //++counter;
 }
 
 int MyEmail::SendEmails(MyDatas& in_oMyDatas)
