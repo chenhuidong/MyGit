@@ -226,9 +226,9 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   for (int i=0; i<t_iEmployeesNum; i++)
   {
-    std::cout << "Empno: " << t_pMyDatas->m_oEmployees[i]->get<0>() << 
-    ", Name: " << t_pMyDatas->m_oEmployees[i]->get<1>() << 
-    ", Email: " << t_pMyDatas->m_oEmployees[i]->get<2>() << std::endl;
+    std::cout << "Empno: " << t_pMyDatas->m_oEmployees[i].get<0>() << 
+    ", Name: " << t_pMyDatas->m_oEmployees[i].get<1>() << 
+    ", Email: " << t_pMyDatas->m_oEmployees[i].get<2>() << std::endl;
   }
 }
 
