@@ -42,6 +42,6 @@ private:
 	static int i;
 	//static Poco::AtomicCounter counter;
 };
-static int MyEmail::i = 0;
+
 //Poco::AtomicCounter MyEmail::counter;
 #endif
