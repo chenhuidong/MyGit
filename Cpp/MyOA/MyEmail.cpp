@@ -220,10 +220,15 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  for(int i=1; i<20; i++)
+  //static Poco::AtomicCounter counter;
+  //return ++counter;
+  MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
+  int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
+  for (int i=0; i<t_iEmployeesNum; i++)
   {
-    std::cout<< i<<std::endl;
-    sleep(1);
+    std::cout << "Empno: " << t_pMyDatas->m_oEmployees[i]->get<0>() << 
+    ", Name: " << t_pMyDatas->m_oEmployees[i]->get<1>() << 
+    ", Email: " << t_pMyDatas->m_oEmployees[i]->get<2>() << std::endl;
   }
 }
 
@@ -271,6 +276,5 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
     delete t_aThread[i];
   }
 
-  std::cout<< "chd"<<std::endl;
   return 0;
 }
