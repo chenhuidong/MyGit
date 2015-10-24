@@ -265,7 +265,10 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
     t_aThread[i]->join();
   }
 
-  delete[] t_aThread;
+  for(int i=0; i<2; i++)
+  {
+    delete t_aThread[i];
+  }
 
   std::cout<< "chd"<<std::endl;
   return 0;
