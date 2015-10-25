@@ -44,4 +44,14 @@ private:
 	static Poco::AtomicCounter counter;
 };
 
+template<int n>
+class CComp
+{
+public:
+  bool operator()(const Salary& lhs)
+  {
+      return (lhs.get<0>()==n);
+  }
+};
+
 #endif
