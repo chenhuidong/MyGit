@@ -190,6 +190,16 @@ int MyEmail::CreateEmail()
   return 0;
 }
 
+template<int n>
+class CComp
+{
+public:
+  bool operator()(const Salary& lhs)
+  {
+      return (lhs.get<0>()==n);
+  }
+};
+
 void MyEmail::SendEmail(void *in_pMyDatas)
 {
   /*
@@ -313,12 +323,3 @@ bool findx(Salary &zz,int ww)
 }
 */
 
-template<int n>
-class CComp
-{
-public:
-  bool operator()(const Salary& lhs)
-  {
-      return (lhs.get<0>()==n);
-  }
-};
