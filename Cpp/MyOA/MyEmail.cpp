@@ -224,8 +224,8 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   */
   
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
-  //int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
-  int t_iEmployeesNum = 500;
+  int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
+  //int t_iEmployeesNum = 500;
   /*
   for (int i=0; i<t_iEmployeesNum; i++)
   {
@@ -239,6 +239,9 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   while(t_iIndex < t_iEmployeesNum)
   {
     std::cout<< t_iIndex<< std::endl;
+    std::cout << "Empno: " << t_pMyDatas->m_oEmployees[t_iIndex].get<0>() << 
+    ", Name: " << t_pMyDatas->m_oEmployees[t_iIndex].get<1>() << 
+    ", Email: " << t_pMyDatas->m_oEmployees[t_iIndex].get<2>() << std::endl;
     t_iIndex = MyEmail::GetCounter();
   }
 }
@@ -267,8 +270,8 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
-  //int t_iThreadNum = in_oMyDatas.m_oEmails.size();
-  int t_iThreadNum = 2;
+  int t_iThreadNum = in_oMyDatas.m_oEmails.size();
+  //int t_iThreadNum = 2;
   Poco::Thread *t_aThread[t_iThreadNum];
   
   for(int i=0; i<t_iThreadNum; i++)
