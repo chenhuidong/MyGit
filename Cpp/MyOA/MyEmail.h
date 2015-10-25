@@ -13,6 +13,7 @@
 #include "MyStruct.h"
 #include "MyData.h"
 #include <unistd.h>
+#include <algorithm>
 
 using Poco::Net::MailMessage;
 using Poco::Net::MailRecipient;

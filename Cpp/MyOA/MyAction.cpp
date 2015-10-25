@@ -46,7 +46,7 @@ int MyAction::UninitializeDb()
 int MyAction::InsertData()
 {
 	char iSQL[1024] = {0};
-	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "cccc", "fdsfs@163.com");
+	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 1, "cccc", "fdsfs@163.com");
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
 
    	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(\'%s\', \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
