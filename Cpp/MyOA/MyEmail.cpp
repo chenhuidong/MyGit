@@ -243,9 +243,10 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     ", Name: " << t_pMyDatas->m_oEmployees[t_iIndex].get<1>() << 
     ", Email: " << t_pMyDatas->m_oEmployees[t_iIndex].get<2>() << std::endl;
 
-    Salarys::const_iterator it = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), t_pMyDatas->m_oEmployees[t_iIndex].get<0>());
+    /*Salarys::const_iterator it = */
+    std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), t_pMyDatas->m_oEmployees[t_iIndex].get<0>());
 
-    
+
 
     t_iIndex = MyEmail::GetCounter();
   }
