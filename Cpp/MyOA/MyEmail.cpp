@@ -245,11 +245,9 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 
     int t_iEmpno = t_pMyDatas->m_oEmployees[t_iIndex].get<0>();
 
-    
+
     /*Salarys::const_iterator it = */
-    //std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), t_pMyDatas->m_oEmployees[t_iIndex].get<0>());
-
-
+    std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp</*t_pMyDatas->m_oEmployees[t_iIndex].get<0>()*/1>());
 
     t_iIndex = MyEmail::GetCounter();
   }
@@ -308,7 +306,19 @@ int MyEmail::GetCounter()
   return MyEmail::counter++;
 }
 
+/*
 bool findx(Salary &zz,int ww)
 {
   return zz.get<0>()==ww;
 }
+*/
+
+template<int n>
+class CComp
+{
+public:
+  bool operator()(const Salary& lhs)
+  {
+      return (lhs.get<0>()==n);
+  }
+};
