@@ -50,7 +50,7 @@ public:
 	CComp(int in_iN):m_iN(in_iN){}
 	bool operator()(Salary& lhs)
 	{
-		return (lhs.get<0>()==n);
+		return (lhs.get<0>()==m_iN);
 	}
 private:
 	int m_iN;
