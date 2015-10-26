@@ -5,6 +5,7 @@ int main(int argc, char* argv[])
 	MyAction t_oMyAction;
 	try
 	{
+		LOG_INFO<< "MyOA begin.";
 		t_oMyAction.Initialize("MyOA.log", "employee.db");
 		t_oMyAction.Install();
 		//t_oMyAction.InsertData();
