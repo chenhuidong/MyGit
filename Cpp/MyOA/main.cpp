@@ -5,7 +5,7 @@ int main(int argc, char* argv[])
 	MyAction t_oMyAction;
 	try
 	{
-		t_oMyAction.InitializeDb("employee.db");
+		t_oMyAction.Initialize("MyOA.log", "employee.db");
 		t_oMyAction.Install();
 		//t_oMyAction.InsertData();
 		t_oMyAction.SelectData();
