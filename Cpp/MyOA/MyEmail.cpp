@@ -251,6 +251,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     if(it == t_pMyDatas->m_oSalarys.end())
     {
       std::cout<< "salary relation is empty"<< std::endl;
+      return;
     }
 
     std::cout<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
