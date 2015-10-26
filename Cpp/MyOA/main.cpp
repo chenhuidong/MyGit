@@ -12,6 +12,7 @@ int main(int argc, char* argv[])
 		t_oMyAction.SelectData();
 		t_oMyAction.SendEmail();
 		t_oMyAction.UninitializeDb();
+		LOG_INFO<< "MyOA end.";
 	}
     catch (Poco::NoRecordException& exc)
     {

@@ -15,15 +15,18 @@ int MyAction::InitializeDb(const char* in_sDbName)
 
 int MyAction::Install()
 {
+    LOG_INFO<< "Create tables begin.";
 	//create table
 	*m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Employees (Empno int, Name VARCHAR(256), Email VARCHAR(256), ValidFlag interger(1) default 0)", now;
     *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Emails (Sender VARCHAR(256) primary key, Password VARCHAR(256), Mailhost VARCHAR(256))", now;
     *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Salarys (Empno int, BaseSalary int, Performance int, BaseTotal int, EndowmentInsurance int, UnemployedInsurance int, MedicalInsurance int, HousingInsurance int, SocialInsuranceTotal int, IncomeTax int, OtherPay int, ActualSalary int)", now;
+    LOG_INFO<< "Create tables end.";
     return 0;
 }
 
 int MyAction::SelectData()
 {
+    LOG_INFO<< "Select tables begin.";
 	m_oMyDb.ExecuteSQL("SELECT Empno, Name, Email FROM Employees where ValidFlag = 0", m_oMyDatas.m_oEmployees);
     if(m_oMyDatas.m_oEmployees.empty())
     {
@@ -41,6 +44,7 @@ int MyAction::SelectData()
     {
         throw Poco::NoRecordException("Salarys no record.");
     }
+    LOG_INFO<< "Select tables end.";
     return 0;
 }
 
@@ -111,7 +115,9 @@ int MyAction::SendEmail()
             ", Mailhost: " << it->get<2>() << std::endl;
     }
     */
+    LOG_INFO<< "Send emails begin.";
     MyEmail t_oMyEmail;
     t_oMyEmail.SendEmails(m_oMyDatas);
+    LOG_INFO<< "Send emails end.";
     return 0;
 }
