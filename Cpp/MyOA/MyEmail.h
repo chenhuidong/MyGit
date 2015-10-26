@@ -1,6 +1,7 @@
 #ifndef __MY_OA_MY_EMAIL_H_
 #define __MY_OA_MY_EMAIL_H_
 
+#include "../stdafx.h"
 #include "Poco/Net/MailMessage.h"
 #include "Poco/Net/MailRecipient.h"
 #include "Poco/Net/SMTPClientSession.h"
@@ -8,14 +9,9 @@
 #include "Poco/Net/FilePartSource.h"
 #include "Poco/Path.h"
 #include "Poco/Exception.h"
-#include <iostream>
-#include <fstream>
 #include "MyStruct.h"
 #include "MyData.h"
-#include <unistd.h>
-#include <algorithm>
 #include "MyException.h"
-#include "../MyLog.h"
 
 using Poco::Net::MailMessage;
 using Poco::Net::MailRecipient;

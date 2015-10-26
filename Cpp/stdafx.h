@@ -5,13 +5,18 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <iostream>
+#include <fstream>
 #include <list>
 #include <vector>
 #include <map>
 #include <set>
+#include <algorithm>
 #include <string.h>
 #include <string>
 using namespace std;
+
+#define FLAGS_INFO
+#include "MyLog.h"
 
 #define BUFFSIZE 4096
 

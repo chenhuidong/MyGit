@@ -10,8 +10,6 @@
 #include "MyData.h"
 #include "Poco/Thread.h"
 #include "Poco/Runnable.h"
-#include "../MyLog.h"
-
 
 class MyAction
 {
