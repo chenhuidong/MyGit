@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <algorithm>
 #include "MyException.h"
+#include "../MyLog.h"
 
 using Poco::Net::MailMessage;
 using Poco::Net::MailRecipient;

@@ -251,7 +251,6 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     {
       //std::cout<< "salary relation is empty"<< std::endl;
       //return;
-      throw Poco::NoRecordException("Salarys no record.");
     }
 
     std::cout<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<

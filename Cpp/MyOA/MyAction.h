@@ -10,6 +10,7 @@
 #include "MyData.h"
 #include "Poco/Thread.h"
 #include "Poco/Runnable.h"
+#include "../MyLog.h"
 
 
 class MyAction
@@ -18,7 +19,7 @@ public:
 	MyAction(){}
 	~MyAction(){}
 
-	int InitializeDb(const char* in_sDbName);
+	int Initialize(const char* in_sLogName, const char* in_sDbName);
 	int Install();
 	int SelectData();
 	int InsertData();
@@ -33,6 +34,8 @@ public:
 	int ImportData();
 	*/
 	int UninitializeDb();
+private:
+	int InitializeDb(const char* in_sDbName);
 
 public:
 	MyDatas m_oMyDatas;
