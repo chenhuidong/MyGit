@@ -252,9 +252,9 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       return;
     }
 
-    LOG_INFO<<"Salary " it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
+    LOG_INFO<<"Salary "<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
       it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
-      it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " ";
+      it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>();
 
     t_iIndex = MyEmail::GetCounter();
   }
