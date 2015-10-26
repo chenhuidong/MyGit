@@ -48,7 +48,7 @@ template<int n>
 class CComp
 {
 public:
-  bool operator()(const Salary& lhs)
+  bool operator()(Salary& lhs)
   {
       return (lhs.get<0>()==n);
   }
