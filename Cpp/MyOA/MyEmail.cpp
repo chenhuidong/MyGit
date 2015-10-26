@@ -248,7 +248,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 
     Salarys::const_iterator it = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp</*t_pMyDatas->m_oEmployees[t_iIndex].get<0>()*/1>());
 
-    if(!it)
+    if(it == t_pMyDatas->m_oSalarys.end())
     {
       std::cout<< "salary relation is empty"<< std::endl;
     }
