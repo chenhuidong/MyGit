@@ -62,7 +62,8 @@
 	//GLog
 	#include <glog/logging.h>
 	#include <string>
-
+	using std::string;
+	
 	//Glog
 	#define LOG_INFO LOG(INFO)
 	#define LOG_WARN LOG(WARNING)
