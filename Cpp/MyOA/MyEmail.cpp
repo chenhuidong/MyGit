@@ -4,6 +4,7 @@ Poco::AtomicCounter MyEmail::counter;
 
 int MyEmail::CreateHtml()
 {
+  LOG_INFO<< "Create html begin.";
   std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.html");
 	ostr << "<!DOCTYPE html>\r\n\
 <html lang=\"en\"> \r\n\
@@ -170,12 +171,13 @@ int MyEmail::CreateHtml()
     </table>\r\n\
   </td></tr></table>\r\n\
 </td></tr></table>" << std::endl;
-
+  LOG_INFO<< "Create html end.";
 	return 0;
 }
 
 int MyEmail::CreateEmail()
 {
+  LOG_INFO<< "Create email begin.";
   /*
 	m_oMessage.setSender(sender);
 	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
@@ -187,6 +189,7 @@ int MyEmail::CreateEmail()
 	CreateHtml();
 	m_oMessage.addAttachment("1", new FilePartSource("/mnt/home2/51linux_LxomB0aQ/Log/1.html"));
 	*/
+  LOG_INFO<< "Create email end.";
   return 0;
 }
 
