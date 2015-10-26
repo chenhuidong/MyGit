@@ -44,17 +44,16 @@ private:
 	static Poco::AtomicCounter counter;
 };
 
-template <class T>
 class CComp
 {
 public:
-	CComp(T in_T):m_T(in_T){}
+	CComp(int in_iN):m_iN(in_iN){}
 	bool operator()(Salary& lhs)
 	{
-		return (lhs.get<0>()==m_T);
+		return (lhs.get<0>()==m_iN);
 	}
 private:
-	T m_T;
+	int m_iN;
 };
 
 #endif
