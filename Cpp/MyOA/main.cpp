@@ -3,10 +3,10 @@
 int main(int argc, char* argv[])
 {
 	MyAction t_oMyAction;
+	t_oMyAction.Initialize("MyOA.log", "employee.db");
 	try
 	{
 		LOG_INFO<< "MyOA begin.";
-		t_oMyAction.Initialize("MyOA.log", "employee.db");
 		t_oMyAction.Install();
 		//t_oMyAction.InsertData();
 		t_oMyAction.SelectData();
