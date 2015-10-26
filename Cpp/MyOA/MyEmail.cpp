@@ -238,10 +238,9 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   int t_iIndex = MyEmail::GetCounter();
   while(t_iIndex < t_iEmployeesNum)
   {
-    //std::cout<< t_iIndex<< std::endl;
-    std::cout << "Empno: " << t_pMyDatas->m_oEmployees[t_iIndex].get<0>() << 
-    ", Name: " << t_pMyDatas->m_oEmployees[t_iIndex].get<1>() << 
-    ", Email: " << t_pMyDatas->m_oEmployees[t_iIndex].get<2>() << std::endl;
+    LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iIndex].get<0>() << 
+      ", Name: " << t_pMyDatas->m_oEmployees[t_iIndex].get<1>() << 
+      ", Email: " << t_pMyDatas->m_oEmployees[t_iIndex].get<2>();
 
     int t_iEmpno = t_pMyDatas->m_oEmployees[t_iIndex].get<0>();
 
