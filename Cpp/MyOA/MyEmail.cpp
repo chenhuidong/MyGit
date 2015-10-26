@@ -247,12 +247,10 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 
 
     Salarys::const_iterator it = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp</*t_pMyDatas->m_oEmployees[t_iIndex].get<0>()*/1>());
-    for (Salarys::const_iterator it = t_pMyDatas->m_oSalarys.begin(); it != t_pMyDatas->m_oSalarys.end(); ++it)
-    {
+
       std::cout<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
        it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
         it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
-    }
 
     t_iIndex = MyEmail::GetCounter();
   }
