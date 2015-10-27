@@ -206,8 +206,8 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
   string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
 
-  //SMTPClientSession t_oSession(t_sMailhost);
-  //t_oSession.login(SMTPClientSession::AUTH_LOGIN, t_sSender, t_sPassword);
+  SMTPClientSession t_oSession(t_sMailhost);
+  t_oSession.login(SMTPClientSession::AUTH_LOGIN, t_sSender, t_sPassword);
   
   while(t_iEmployeeIndex < t_iEmployeesNum)
   { 
@@ -215,8 +215,6 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     LOG_INFO << "Sender: " << t_sSender << 
       ", Password: " << t_sPassword << 
       ", Mailhost: " << t_sMailhost;
-    
-    LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
     
     /*LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
       ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
@@ -244,7 +242,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
   }
 
-  //t_oSession.close();
+  t_oSession.close();
 }
 
 int MyEmail::SendEmails(MyDatas& in_oMyDatas)
