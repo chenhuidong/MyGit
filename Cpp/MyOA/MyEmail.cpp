@@ -1,6 +1,7 @@
 #include "MyEmail.h"
 
-Poco::AtomicCounter MyEmail::counter;
+Poco::AtomicCounter MyEmail::m_oEmployeeCounter;
+Poco::AtomicCounter MyEmail::m_oEmailCounter;
 
 int MyEmail::CreateHtml()
 {
