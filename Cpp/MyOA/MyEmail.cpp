@@ -203,16 +203,19 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 	session.sendMessage(m_oMessage);
 	session.close();
   */
-
-  LOG_INFO<< "The thread no is "<< MyEmail::GetEmailCounter();
+  int t_iThreadNo = MyEmail::GetEmailCounter();
+  LOG_INFO<< "The thread no is "<< t_iThreadNo;
 
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
-  int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
-  //int t_iEmployeesNum = 500;
+  //int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
+  int t_iEmployeesNum = 500;
 
   int t_iIndex = MyEmail::GetEmployeeCounter();
   while(t_iIndex < t_iEmployeesNum)
-  {
+  { 
+    LOG_INFO<< "The thread no is "<< t_iThreadNo;
+    LOG_INFO<< "EmployeeNo is "<< t_iIndex;
+    /*
     LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iIndex].get<0>() << 
       ", Name: " << t_pMyDatas->m_oEmployees[t_iIndex].get<1>() << 
       ", Email: " << t_pMyDatas->m_oEmployees[t_iIndex].get<2>();
@@ -230,7 +233,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     LOG_INFO<<"Salary "<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
       it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>();
-
+    */
     //MailMessage t_oMessage;
     //CreateEmail(t_oMessage);
     t_iIndex = MyEmail::GetEmployeeCounter();
