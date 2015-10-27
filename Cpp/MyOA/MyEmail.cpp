@@ -197,8 +197,8 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage)
 void MyEmail::SendEmail(void *in_pMyDatas)
 {
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
-  //int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
-  int t_iEmployeesNum = 100;
+  int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
+  //int t_iEmployeesNum = 100;
   int t_iEmailIndex = MyEmail::GetEmailCounter();
   int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
 
