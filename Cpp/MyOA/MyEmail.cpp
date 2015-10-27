@@ -202,7 +202,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   int t_iEmailIndex = MyEmail::GetEmailCounter();
   int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
 
-  //string t_sMailhost = t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
+  string t_sMailhost = t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
   //string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
   //string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
 
