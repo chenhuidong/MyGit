@@ -57,14 +57,30 @@ int MyAction::UninitializeDb()
 int MyAction::InsertData()
 {
 	char iSQL[1024] = {0};
-	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 1, "cccc", "fdsfs@163.com");
+	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 1, "chenhd", "chdyczx@live.com");
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
 
-   	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(\'%s\', \'%s\', \'%s\')", "chdyczx@live.com", "cccc", "smtp@163.com");
+   	snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(\'%s\', \'%s\', \'%s\')", "chdyczx@163.com", "123456", "smtp@163.com");
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmails);
 
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Salarys VALUES(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oSalarys);
+
+    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "chenhd2", "chdyczx2@live.com");
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
+
+    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(\'%s\', \'%s\', \'%s\')", "chdyczx2@163.com", "123456", "smtp@163.com");
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmails);
+
+    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Salarys VALUES(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 2, 22, 23, 24, 25, 26, 27, 28, 29, 210, 211, 212);
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oSalarys);
+
+    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 3, "chenhd3", "chdyczx3@live.com");
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
+
+    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Salarys VALUES(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 3, 32, 33, 34, 35, 36, 37, 38, 39, 310, 311, 312);
+    m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oSalarys);
+
     return 0;
 }
 
