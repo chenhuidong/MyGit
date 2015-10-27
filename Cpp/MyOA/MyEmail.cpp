@@ -270,6 +270,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
   }
   */
+  LOG_INFO<< "Begin Threads.";
   int t_iThreadNum = in_oMyDatas.m_oEmails.size();
   //int t_iThreadNum = 2;
   Poco::Thread *t_aThread[t_iThreadNum];
@@ -291,7 +292,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   {
     delete t_aThread[i];
   }
-
+  LOG_INFO<< "All Threads end.";
   return 0;
 }
 
