@@ -37,8 +37,6 @@ private:
 	static int GetEmployeeCounter();
 	static int GetEmailCounter();
 	
-//private:
-//	MailMessage m_oMessage;
 private:
 	static Poco::AtomicCounter m_oEmailCounter;
 	static Poco::AtomicCounter m_oEmployeeCounter;

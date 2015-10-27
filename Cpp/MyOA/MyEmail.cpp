@@ -196,24 +196,24 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage)
 
 void MyEmail::SendEmail(void *in_pMyDatas)
 {
-  /*
-	CreateEmail();
-	SMTPClientSession session(mailhost);
-	session.login(SMTPClientSession::AUTH_LOGIN, sender, password);
-	session.sendMessage(m_oMessage);
-	session.close();
-  */
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
   int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   //int t_iEmployeesNum = 100;
   int t_iEmailIndex = MyEmail::GetEmailCounter();
   int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
 
+  string t_sMailhost = t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
+  string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
+  string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
+
+  SMTPClientSession t_oSession(mailhost);
+  t_oSession.login(SMTPClientSession::AUTH_LOGIN, sender, password);
+  
   while(t_iEmployeeIndex < t_iEmployeesNum)
   { 
-    LOG_INFO << "Sender: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>() << 
-      ", Password: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>() << 
-      ", Mailhost: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
+    LOG_INFO << "Sender: " << t_sSender << 
+      ", Password: " << t_sPassword << 
+      ", Mailhost: " << t_sMailhost;
 
     //LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
     
@@ -235,11 +235,15 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>();
     
-    //MailMessage t_oMessage;
-    //CreateEmail(t_oMessage);
+    MailMessage t_oMessage;
+    CreateEmail(t_oMessage); 
+    //session.sendMessage(t_oMessage);
+    
     sleep(1);
     t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
   }
+
+  t_oSession.close();
 }
 
 int MyEmail::SendEmails(MyDatas& in_oMyDatas)
