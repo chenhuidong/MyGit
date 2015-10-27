@@ -32,8 +32,8 @@ public:
 
 private:
 	static void SendEmail(void *in_pMyDatas);
-	static int CreateHtml(MailMessage &in_oMessage);
-	static int CreateEmail();
+	static int CreateHtml();
+	static int CreateEmail(MailMessage &in_oMessage);
 	static int GetCounter();
 	
 //private:

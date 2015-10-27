@@ -175,7 +175,7 @@ int MyEmail::CreateHtml()
 	return 0;
 }
 
-int MyEmail::CreateEmail()
+int MyEmail::CreateEmail(MailMessage &in_oMessage)
 {
   LOG_INFO<< "Create email begin.";
   /*
