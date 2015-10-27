@@ -203,24 +203,29 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 	session.sendMessage(m_oMessage);
 	session.close();
   */
-  int t_iThreadNo = MyEmail::GetEmailCounter();
-  LOG_INFO<< "The thread no is "<< t_iThreadNo;
+  int t_iEmailIndex = MyEmail::GetEmailCounter();
+  LOG_INFO << "Sender: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>() << 
+    ", Password: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>() << 
+    ", Mailhost: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
 
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
   //int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
-  int t_iEmployeesNum = 500;
+  int t_iEmployeesNum = 100;
 
-  int t_iIndex = MyEmail::GetEmployeeCounter();
-  while(t_iIndex < t_iEmployeesNum)
+  int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
+  while(t_iEmployeeIndex < t_iEmployeesNum)
   { 
-    LOG_INFO<< "The thread no is "<< t_iThreadNo;
-    LOG_INFO<< "EmployeeNo is "<< t_iIndex;
+    LOG_INFO << "Sender: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>() << 
+      ", Password: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>() << 
+      ", Mailhost: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
+      
+    LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
     /*
-    LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iIndex].get<0>() << 
-      ", Name: " << t_pMyDatas->m_oEmployees[t_iIndex].get<1>() << 
-      ", Email: " << t_pMyDatas->m_oEmployees[t_iIndex].get<2>();
+    LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
+      ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
+      ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
 
-    int t_iEmpno = t_pMyDatas->m_oEmployees[t_iIndex].get<0>();
+    int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
 
     Salarys::const_iterator it = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
 
@@ -237,7 +242,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     //MailMessage t_oMessage;
     //CreateEmail(t_oMessage);
     sleep(1);
-    t_iIndex = MyEmail::GetEmployeeCounter();
+    t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
   }
 }
 
