@@ -203,8 +203,8 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
 
   string t_sMailhost = t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
-  //string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
-  //string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
+  string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
+  string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
 
   //SMTPClientSession t_oSession(t_sMailhost);
   //t_oSession.login(SMTPClientSession::AUTH_LOGIN, t_sSender, t_sPassword);
@@ -212,16 +212,16 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   while(t_iEmployeeIndex < t_iEmployeesNum)
   { 
     
-    /*LOG_INFO << "Sender: " << t_sSender << 
+    LOG_INFO << "Sender: " << t_sSender << 
       ", Password: " << t_sPassword << 
       ", Mailhost: " << t_sMailhost;
-    */
+    
     LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
     
-    LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
+    /*LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
       ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
       ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
-
+    */
     int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
 
     Salarys::const_iterator it = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
@@ -273,7 +273,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   */
   LOG_INFO<< "Begin all Threads.";
   int t_iThreadNum = in_oMyDatas.m_oEmails.size();
-  std::cout<< "ThreadNum is "<< t_iThreadNum;
+  LOG_INFO<< "ThreadNum is "<< t_iThreadNum;
   //int t_iThreadNum = 2;
   Poco::Thread *t_aThread[t_iThreadNum];
   
