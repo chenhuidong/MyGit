@@ -236,6 +236,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     */
     //MailMessage t_oMessage;
     //CreateEmail(t_oMessage);
+    sleep(1);
     t_iIndex = MyEmail::GetEmployeeCounter();
   }
 }
