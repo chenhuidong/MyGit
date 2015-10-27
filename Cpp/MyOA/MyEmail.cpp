@@ -203,14 +203,14 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 	session.sendMessage(m_oMessage);
 	session.close();
   */
+  MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
+  //int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
+  int t_iEmployeesNum = 100;
+
   int t_iEmailIndex = MyEmail::GetEmailCounter();
   LOG_INFO << "Sender: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>() << 
     ", Password: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>() << 
     ", Mailhost: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
-
-  MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
-  //int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
-  int t_iEmployeesNum = 100;
 
   int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
   while(t_iEmployeeIndex < t_iEmployeesNum)
@@ -218,7 +218,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     LOG_INFO << "Sender: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>() << 
       ", Password: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>() << 
       ", Mailhost: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
-      
+
     LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
     /*
     LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
