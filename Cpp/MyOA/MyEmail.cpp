@@ -273,7 +273,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   */
   LOG_INFO<< "Begin all Threads.";
   int t_iThreadNum = in_oMyDatas.m_oEmails.size();
-  LOG_INFO<< "ThreadNum is "<< t_iThreadNum;
+  std::cout<< "ThreadNum is "<< t_iThreadNum;
   //int t_iThreadNum = 2;
   Poco::Thread *t_aThread[t_iThreadNum];
   
