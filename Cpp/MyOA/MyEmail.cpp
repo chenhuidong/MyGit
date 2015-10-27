@@ -215,7 +215,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       ", Password: " << t_sPassword << 
       ", Mailhost: " << t_sMailhost;
 
-    //LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
+    LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
     
     LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
       ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
