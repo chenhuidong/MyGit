@@ -217,7 +217,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       ", Mailhost: " << t_sMailhost;
     */
     LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
-    /*
+    
     LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
       ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
       ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
@@ -239,7 +239,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     MailMessage t_oMessage;
     CreateEmail(t_oMessage); 
     //session.sendMessage(t_oMessage);
-    */
+    
     sleep(1);
     t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
   }
