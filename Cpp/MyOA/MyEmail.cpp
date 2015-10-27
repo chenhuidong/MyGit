@@ -203,12 +203,13 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 	session.close();
   */
 
-  MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
-  LOG_INFO<< "The thread no is "<< t_pMyDatas->m_iThreadNo;
+  LOG_INFO<< "The thread no is "<< MyEmail::GetEmailCounter();
+
+  MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
   int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   //int t_iEmployeesNum = 500;
 
-  int t_iIndex = MyEmail::GetCounter();
+  int t_iIndex = MyEmail::GetEmployeeCounter();
   while(t_iIndex < t_iEmployeesNum)
   {
     LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iIndex].get<0>() << 
@@ -231,7 +232,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 
     //MailMessage t_oMessage;
     //CreateEmail(t_oMessage);
-    t_iIndex = MyEmail::GetCounter();
+    t_iIndex = MyEmail::GetEmployeeCounter();
   }
 }
 
@@ -284,8 +285,13 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   return 0;
 }
 
-int MyEmail::GetCounter()
+int MyEmail::GetEmployeeCounter()
 {
-  return MyEmail::counter++;
+  return MyEmail::m_oEmployeeCounter++;
+}
+
+int MyEmail::GetEmailCounter()
+{
+  return MyEmail::m_oEmailCounter++;
 }
 

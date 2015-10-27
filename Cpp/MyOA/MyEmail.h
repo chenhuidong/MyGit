@@ -34,12 +34,14 @@ private:
 	static void SendEmail(void *in_pMyDatas);
 	static int CreateHtml();
 	static int CreateEmail(MailMessage &in_oMessage);
-	static int GetCounter();
+	static int GetEmployeeCounter();
+	static int GetEmailCounter();
 	
 //private:
 //	MailMessage m_oMessage;
 private:
-	static Poco::AtomicCounter counter;
+	static Poco::AtomicCounter m_oEmailCounter;
+	static Poco::AtomicCounter m_oEmployeeCounter;
 };
 
 class CComp
