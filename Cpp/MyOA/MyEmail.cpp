@@ -204,7 +204,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   */
 
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
-  LOG_INFO<< "The thread no is "<< in_pMyDatas->m_iThreadNo;
+  LOG_INFO<< "The thread no is "<< t_pMyDatas->m_iThreadNo;
   int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   //int t_iEmployeesNum = 500;
 
