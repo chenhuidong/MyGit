@@ -197,8 +197,8 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage)
 void MyEmail::SendEmail(void *in_pMyDatas)
 {
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
-  int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
-  //int t_iEmployeesNum = 100;
+  //int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
+  int t_iEmployeesNum = 100;
   int t_iEmailIndex = MyEmail::GetEmailCounter();
   int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
 
@@ -211,12 +211,13 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   
   while(t_iEmployeeIndex < t_iEmployeesNum)
   { 
-    LOG_INFO << "Sender: " << t_sSender << 
+    
+    /*LOG_INFO << "Sender: " << t_sSender << 
       ", Password: " << t_sPassword << 
       ", Mailhost: " << t_sMailhost;
-
+    */
     LOG_INFO<< "EmployeeNo is "<< t_iEmployeeIndex;
-    
+    /*
     LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
       ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
       ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
@@ -238,7 +239,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     MailMessage t_oMessage;
     CreateEmail(t_oMessage); 
     //session.sendMessage(t_oMessage);
-    
+    */
     sleep(1);
     t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
   }
