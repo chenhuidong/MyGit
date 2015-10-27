@@ -206,13 +206,9 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
   //int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   int t_iEmployeesNum = 100;
-
   int t_iEmailIndex = MyEmail::GetEmailCounter();
-  LOG_INFO << "Sender: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>() << 
-    ", Password: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>() << 
-    ", Mailhost: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
-
   int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
+  
   while(t_iEmployeeIndex < t_iEmployeesNum)
   { 
     LOG_INFO << "Sender: " << t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>() << 
