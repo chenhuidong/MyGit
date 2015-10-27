@@ -206,8 +206,8 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
   string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
 
-  SMTPClientSession t_oSession(mailhost);
-  t_oSession.login(SMTPClientSession::AUTH_LOGIN, sender, password);
+  SMTPClientSession t_oSession(t_sMailhost);
+  t_oSession.login(SMTPClientSession::AUTH_LOGIN, t_sSender, t_sPassword);
   
   while(t_iEmployeeIndex < t_iEmployeesNum)
   { 
