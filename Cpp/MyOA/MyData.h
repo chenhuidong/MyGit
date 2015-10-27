@@ -9,6 +9,7 @@ public:
 	Emails m_oEmails;
 	Employees m_oEmployees;
 	Salarys m_oSalarys;
+	int m_iThreadNo;
 };
 
 #endif

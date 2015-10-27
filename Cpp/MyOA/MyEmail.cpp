@@ -202,41 +202,11 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 	session.sendMessage(m_oMessage);
 	session.close();
   */
-  /*
-  MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
-  for (Employees::const_iterator it = t_pMyDatas->m_oEmployees.begin(); it != t_pMyDatas->m_oEmployees.end(); ++it)
-  {
-    std::cout << "Empno: " << it->get<0>() << 
-    ", Name: " << it->get<1>() << 
-    ", Email: " << it->get<2>() << std::endl;
-  }
+  LOG_INFO<< "The thread no is "<< in_pMyDatas->m_iThreadNo;
 
-  for (Emails::const_iterator it = t_pMyDatas->m_oEmails.begin(); it != t_pMyDatas->m_oEmails.end(); ++it)
-  {
-    std::cout << "Sender: " << it->get<0>() << 
-    ", Password: " << it->get<1>() << 
-    ", Mailhost: " << it->get<2>() << std::endl;
-  }
-
-  for (Salarys::const_iterator it = t_pMyDatas->m_oSalarys.begin(); it != t_pMyDatas->m_oSalarys.end(); ++it)
-  {
-    std::cout<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
-     it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
-      it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>()<< " "<<  std::endl;
-  }
-  */
-  
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;
   int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   //int t_iEmployeesNum = 500;
-  /*
-  for (int i=0; i<t_iEmployeesNum; i++)
-  {
-    std::cout << "Empno: " << t_pMyDatas->m_oEmployees[i].get<0>() << 
-    ", Name: " << t_pMyDatas->m_oEmployees[i].get<1>() << 
-    ", Email: " << t_pMyDatas->m_oEmployees[i].get<2>() << std::endl;
-  }
-  */
 
   int t_iIndex = MyEmail::GetCounter();
   while(t_iIndex < t_iEmployeesNum)
@@ -259,6 +229,8 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
       it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>();
 
+    //MailMessage t_oMessage;
+    //CreateEmail(t_oMessage);
     t_iIndex = MyEmail::GetCounter();
   }
 }
@@ -295,6 +267,7 @@ int MyEmail::SendEmails(MyDatas& in_oMyDatas)
   {
     Poco::Thread *t_pThread = new Poco::Thread();
     t_aThread[i] = t_pThread;
+    in_oMyDatas.m_iThreadNo = i;
     t_pThread->start(MyEmail::SendEmail, (void *)(&in_oMyDatas));
   }
 
