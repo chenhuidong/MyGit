@@ -81,6 +81,7 @@
 		FLAGS_alsologtostderr=0;	//打印到日志同时是否打印到控制台
 		FLAGS_stderrthreshold=google::FATAL;	//需要打印到控制台的日志级别
 		FLAGS_minloglevel=0;	//
+		FLAGS_logbufsecs = 60;	//缓存的最大时长，超时会写入文件
 		string t_strLogPath = getenv("PLOGPATH");	
 		FLAGS_log_dir = t_strLogPath;
 
