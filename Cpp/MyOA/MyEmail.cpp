@@ -223,11 +223,12 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       LOG_INFO << "Sender: " << t_sSender << 
         ", Password: " << t_sPassword << 
         ", Mailhost: " << t_sMailhost;
-            
+      
+      /*     
       LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
         ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
         ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
-      
+      */
       
       int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
 
@@ -240,9 +241,11 @@ void MyEmail::SendEmail(void *in_pMyDatas)
         continue;
       }
 
+      /*
       LOG_INFO<<"Salary "<< t_itSalary->get<0>()<< " "<< t_itSalary->get<1>()<< " "<< t_itSalary->get<2>()<< " "<< t_itSalary->get<3>()<< " "<<
         t_itSalary->get<4>()<< " "<< t_itSalary->get<5>()<< " "<< t_itSalary->get<6>()<< " "<< t_itSalary->get<7>()<< " "<<
         t_itSalary->get<8>()<< " "<< t_itSalary->get<9>()<< " "<< t_itSalary->get<10>()<< " "<< t_itSalary->get<11>();
+      */
       
       MailMessage t_oMessage;
       t_oMessage.setSender(t_sSender);

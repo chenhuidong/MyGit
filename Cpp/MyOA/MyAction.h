@@ -18,6 +18,8 @@ public:
 	~MyAction(){}
 
 	int Initialize(const char* in_sLogName, const char* in_sDbName);
+	int Uninitialize();
+	
 	int Install();
 	int SelectData();
 	int InsertData();
@@ -31,9 +33,10 @@ public:
 	/*
 	int ImportData();
 	*/
-	int UninitializeDb();
+	
 private:
 	int InitializeDb(const char* in_sDbName);
+	int UninitializeDb();
 
 public:
 	MyDatas m_oMyDatas;

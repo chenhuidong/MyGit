@@ -13,6 +13,17 @@ int MyAction::InitializeDb(const char* in_sDbName)
 	return 0;
 }
 
+int MyAction::Uninitialize()
+{
+    UninitializeDb();
+}
+
+int MyAction::UninitializeDb()
+{
+    m_oMyDb.Uninitialize();
+    return 0;
+}
+
 int MyAction::Install()
 {
     LOG_INFO<< "Create tables begin.";
@@ -46,12 +57,6 @@ int MyAction::SelectData()
     }
     LOG_INFO<< "Select tables end.";
     return 0;
-}
-
-int MyAction::UninitializeDb()
-{
-	m_oMyDb.Uninitialize();
-	return 0;
 }
 
 int MyAction::InsertData()

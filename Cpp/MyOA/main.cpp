@@ -16,14 +16,15 @@ int main(int argc, char* argv[])
 	}
     catch (Poco::NoRecordException& exc)
     {
+    	t_oMyAction.Uninitialize();
         LOG_ERROR << exc.displayText();
-        t_oMyAction.UninitializeDb();
         return -1;
     }
     catch (Exception& exc)
 	{
+		t_oMyAction.Uninitialize();
 		LOG_ERROR<< exc.displayText();
-		return 1;
+		return -1;
 	}
 	return 0;
 }
