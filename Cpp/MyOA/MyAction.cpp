@@ -33,7 +33,7 @@ int MyAction::SelectData()
     	throw Poco::NoRecordException("Employees no record.");
     }
 
-    m_oMyDb.ExecuteSQL("SELECT * FROM Emails", m_oMyDatas.m_oEmails);
+    m_oMyDb.ExecuteSQL("SELECT Sender, Password, Mailhost FROM Emails", m_oMyDatas.m_oEmails);
     if(m_oMyDatas.m_oEmails.empty())
     {
     	throw Poco::NoRecordException("Emails no record.");
