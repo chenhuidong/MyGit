@@ -203,14 +203,14 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
     //int t_iEmployeesNum = 100;
     int t_iEmailIndex = MyEmail::GetEmailCounter();
-    int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
-
     string t_sMailhost = t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
     string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
     string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
     SMTPClientSession t_oSession(t_sMailhost);
     t_oSession.login(SMTPClientSession::AUTH_LOGIN, t_sSender, t_sPassword);
     
+    int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
+
     while(t_iEmployeeIndex < t_iEmployeesNum)
     { 
       LOG_INFO << "Sender: " << t_sSender << 
