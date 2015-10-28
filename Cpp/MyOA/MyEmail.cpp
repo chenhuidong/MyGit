@@ -245,6 +245,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     sleep(1);
     t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
   }
+}
   catch (Exception& exc)
   {
     std::cerr << exc.displayText() << std::endl;
