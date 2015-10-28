@@ -3,9 +3,17 @@
 Poco::AtomicCounter MyEmail::m_oEmployeeCounter;
 Poco::AtomicCounter MyEmail::m_oEmailCounter;
 
-int MyEmail::CreateHtml()
+int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
 {
   LOG_INFO<< "Create html begin.";
+
+  LOG_INFO<< "Empno2: " << in_oEmployee.get<0>() << 
+    ", Name2: " << in_oEmployee.get<1>() << 
+    ", Email2: " << in_oEmployee.get<2>();
+  LOG_INFO<<"Salary2 "<< in_oSalary.get<0>()<< " "<< in_oSalary.get<1>()<< " "<< in_oSalary.get<2>()<< " "<< in_oSalary.get<3>()<< " "<<
+    in_oSalary.get<4>()<< " "<< in_oSalary.get<5>()<< " "<< in_oSalary.get<6>()<< " "<< in_oSalary.get<7>()<< " "<<
+    in_oSalary.get<8>()<< " "<< in_oSalary.get<9>()<< " "<< in_oSalary.get<10>()<< " "<< in_oSalary.get<11>();
+  /*
   std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.html");
 	ostr << "<!DOCTYPE html>\r\n\
 <html lang=\"en\"> \r\n\
@@ -171,7 +179,7 @@ int MyEmail::CreateHtml()
       <tr><td colspan=7 height=\"25\"></td></tr>\r\n\
     </table>\r\n\
   </td></tr></table>\r\n\
-</td></tr></table>" << std::endl;
+</td></tr></table>" << std::endl;*/
   LOG_INFO<< "Create html end.";
 	return 0;
 }
@@ -195,7 +203,7 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salar
 	content += "您好：\r\n";
 	content += "附件为您的本月工资条。\r\n\r\n";
 	in_oMessage.addContent(new StringPartSource(content));
-	//CreateHtml();
+	CreateHtml(in_oEmployee, in_oSalary);
 	//in_oMessage.addAttachment(t_iEmpno, new FilePartSource("/mnt/home2/51linux_LxomB0aQ/Log/1.html"));
 	
   LOG_INFO<< "Create email end.";
