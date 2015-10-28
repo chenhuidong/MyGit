@@ -225,7 +225,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
 
       int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
 
-      Salarys::const_iterator t_itSalary = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
+      Salarys::iterator t_itSalary = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
 
       if(t_itSalary == t_pMyDatas->m_oSalarys.end())
       {
