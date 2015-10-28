@@ -176,7 +176,7 @@ int MyEmail::CreateHtml()
 	return 0;
 }
 
-int MyEmail::CreateEmail(MailMessage &in_oMessage/*, Employee *in_pEmployee*/, Salary *in_pSalary)
+int MyEmail::CreateEmail(MailMessage &in_oMessage, /*Employee &in_oEmployee,*/ Salary in_oSalary)
 {
   LOG_INFO<< "Create email begin.";
   /*
@@ -242,7 +242,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       
       MailMessage t_oMessage;
       t_oMessage.setSender(t_sSender);
-      CreateEmail(t_oMessage, /*t_itEmployee,*/ t_itSalary); 
+      CreateEmail(t_oMessage, /*t_itEmployee,*/ *t_itSalary); 
       //session.sendMessage(t_oMessage);
       
       sleep(1);
