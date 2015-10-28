@@ -196,6 +196,7 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage)
 
 void MyEmail::SendEmail(void *in_pMyDatas)
 {
+  LOG_INFO<< "Enter SendEmail.";
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
   int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   //int t_iEmployeesNum = 100;
@@ -210,7 +211,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   
   while(t_iEmployeeIndex < t_iEmployeesNum)
   { 
-    SMTPClientSession t_oSession(t_sMailhost);
+    //SMTPClientSession t_oSession(t_sMailhost);
 
     LOG_INFO << "Sender: " << t_sSender << 
       ", Password: " << t_sPassword << 
@@ -241,7 +242,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     sleep(1);
     t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
   }
-
+  LOG_INFO<< "Leave SendEmail.";
   //t_oSession.close();
 }
 
