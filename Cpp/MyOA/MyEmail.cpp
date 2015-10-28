@@ -176,7 +176,7 @@ int MyEmail::CreateHtml()
 	return 0;
 }
 
-int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salary &in_oSalary)
+int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee *in_pEmployee, Salary *in_pSalary)
 {
   LOG_INFO<< "Create email begin.";
   /*
@@ -218,12 +218,14 @@ void MyEmail::SendEmail(void *in_pMyDatas)
         ", Password: " << t_sPassword << 
         ", Mailhost: " << t_sMailhost;
       
-      LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
-        ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
-        ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
-      
+      Employees::iterator t_itEmployee = &(t_pMyDatas->m_oEmployees[t_iEmployeeIndex]);
 
-      int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
+      LOG_INFO<< "Empno: " << t_itEmployee->get<0>() << 
+        ", Name: " << t_itEmployee->get<1>() << 
+        ", Email: " << t_itEmployee->get<2>();
+      
+      
+      int t_iEmpno = t_itEmployee->get<0>();
 
       Salarys::iterator t_itSalary = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
 
@@ -240,7 +242,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       
       MailMessage t_oMessage;
       t_oMessage.setSender(t_sSender);
-      CreateEmail(t_oMessage, t_pMyDatas->m_oEmployees[t_iEmployeeIndex], *t_itSalary); 
+      CreateEmail(t_oMessage, t_itEmployee, t_itSalary); 
       //session.sendMessage(t_oMessage);
       
       sleep(1);
