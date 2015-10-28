@@ -218,10 +218,10 @@ void MyEmail::SendEmail(void *in_pMyDatas)
         ", Password: " << t_sPassword << 
         ", Mailhost: " << t_sMailhost;
       
-      /*LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
+      LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
         ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
         ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
-      */
+      
 
       int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
 
