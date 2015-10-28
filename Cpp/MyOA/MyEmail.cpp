@@ -16,7 +16,8 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
   
   int t_iEmpno = in_oEmployee.get<0>();
   string t_sName = in_oEmployee.get<1>();
-  string t_sFileName += "/mnt/home2/51linux_LxomB0aQ/Log/" + t_sName + ".html";
+  string t_sFileName;
+  t_sFileName = t_sFileName + "/mnt/home2/51linux_LxomB0aQ/Log/" + t_sName + ".html";
 
   LOG_INFO<< "FileName is "<< t_sFileName;
   /*
