@@ -13,6 +13,12 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
   LOG_INFO<<"Salary2 "<< in_oSalary.get<0>()<< " "<< in_oSalary.get<1>()<< " "<< in_oSalary.get<2>()<< " "<< in_oSalary.get<3>()<< " "<<
     in_oSalary.get<4>()<< " "<< in_oSalary.get<5>()<< " "<< in_oSalary.get<6>()<< " "<< in_oSalary.get<7>()<< " "<<
     in_oSalary.get<8>()<< " "<< in_oSalary.get<9>()<< " "<< in_oSalary.get<10>()<< " "<< in_oSalary.get<11>();
+  
+  int t_iEmpno = in_oEmployee.get<0>();
+  string t_sName = in_oEmployee.get<1>();
+  string t_sFileName += "/mnt/home2/51linux_LxomB0aQ/Log/" + t_sName + ".html";
+
+  LOG_INFO<< "FileName is "<< t_sFileName;
   /*
   std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.html");
 	ostr << "<!DOCTYPE html>\r\n\
