@@ -176,7 +176,7 @@ int MyEmail::CreateHtml()
 	return 0;
 }
 
-int MyEmail::CreateEmail(MailMessage &in_oMessage)
+int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee *in_pEmployee, Salarys *in_pSalary)
 {
   LOG_INFO<< "Create email begin.";
   /*
@@ -222,22 +222,25 @@ void MyEmail::SendEmail(void *in_pMyDatas)
         ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
         ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
       */
-      int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
+      Employees::const_iterator t_itEmployee = &(t_pMyDatas->m_oEmployees[t_iEmployeeIndex]);
+      int t_iEmpno = t_itEmployee->get<0>();
 
-      Salarys::const_iterator it = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
+      Salarys::const_iterator t_itSalary = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
 
-      if(it == t_pMyDatas->m_oSalarys.end())
+      if(t_itSalary == t_pMyDatas->m_oSalarys.end())
       {
         LOG_ERROR<<  "Salary relation is empty";
-        return;
+        t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
+        continue;
       }
 
-      LOG_INFO<<"Salary "<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
-        it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
-        it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>();
+      LOG_INFO<<"Salary "<< t_itSalary->get<0>()<< " "<< t_itSalary->get<1>()<< " "<< t_itSalary->get<2>()<< " "<< t_itSalary->get<3>()<< " "<<
+        t_itSalary->get<4>()<< " "<< t_itSalary->get<5>()<< " "<< t_itSalary->get<6>()<< " "<< t_itSalary->get<7>()<< " "<<
+        t_itSalary->get<8>()<< " "<< t_itSalary->get<9>()<< " "<< t_itSalary->get<10>()<< " "<< t_itSalary->get<11>();
       
       MailMessage t_oMessage;
-      CreateEmail(t_oMessage); 
+      t_oMessage.setSender(t_sSender);
+      CreateEmail(t_oMessage, t_itEmployee, t_itSalary); 
       //session.sendMessage(t_oMessage);
       
       sleep(1);
