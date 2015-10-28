@@ -197,6 +197,8 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage)
 void MyEmail::SendEmail(void *in_pMyDatas)
 {
   LOG_INFO<< "Enter SendEmail.";
+  try
+  {
   MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
   int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
   //int t_iEmployeesNum = 100;
@@ -242,6 +244,11 @@ void MyEmail::SendEmail(void *in_pMyDatas)
     
     sleep(1);
     t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
+  }
+  catch (Exception& exc)
+  {
+    std::cerr << exc.displayText() << std::endl;
+    return;
   }
   LOG_INFO<< "Leave SendEmail.";
   //t_oSession.close();
