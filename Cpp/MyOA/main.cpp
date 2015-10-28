@@ -20,5 +20,10 @@ int main(int argc, char* argv[])
         t_oMyAction.UninitializeDb();
         return -1;
     }
+    catch (Exception& exc)
+	{
+		std::cerr << exc.displayText() << std::endl;
+		return 1;
+	}
 	return 0;
 }
