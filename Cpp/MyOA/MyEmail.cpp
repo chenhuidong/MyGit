@@ -176,7 +176,7 @@ int MyEmail::CreateHtml()
 	return 0;
 }
 
-int MyEmail::CreateEmail(MailMessage &in_oMessage/*, Employee *in_pEmployee*/, Salary *in_pSalary)
+int MyEmail::CreateEmail(MailMessage &in_oMessage/*, Employee *in_pEmployee*/, Salarys::iterator &in_itSalary)
 {
   LOG_INFO<< "Create email begin.";
   /*

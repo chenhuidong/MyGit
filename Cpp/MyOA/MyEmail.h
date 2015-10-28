@@ -33,7 +33,7 @@ public:
 private:
 	static void SendEmail(void *in_pMyDatas);
 	static int CreateHtml();
-	static int CreateEmail(MailMessage &in_oMessage/*, Employee *in_pEmployee*/, Salary *in_pSalary);
+	static int CreateEmail(MailMessage &in_oMessage/*, Employee *in_pEmployee*/, Salarys::iterator &in_itSalary);
 	static int GetEmployeeCounter();
 	static int GetEmailCounter();
 	
