@@ -16,13 +16,13 @@ int main(int argc, char* argv[])
 	}
     catch (Poco::NoRecordException& exc)
     {
-        std::cerr << exc.displayText() << std::endl;
+        LOG_ERROR << exc.displayText();
         t_oMyAction.UninitializeDb();
         return -1;
     }
     catch (Exception& exc)
 	{
-		std::cerr << exc.displayText() << std::endl;
+		LOG_ERROR<< exc.displayText();
 		return 1;
 	}
 	return 0;

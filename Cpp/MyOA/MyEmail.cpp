@@ -199,60 +199,57 @@ void MyEmail::SendEmail(void *in_pMyDatas)
   LOG_INFO<< "Enter SendEmail.";
   try
   {
-  MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
-  int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
-  //int t_iEmployeesNum = 100;
-  int t_iEmailIndex = MyEmail::GetEmailCounter();
-  int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
+    MyDatas* t_pMyDatas=(MyDatas*)in_pMyDatas;  
+    int t_iEmployeesNum = t_pMyDatas->m_oEmployees.size();
+    //int t_iEmployeesNum = 100;
+    int t_iEmailIndex = MyEmail::GetEmailCounter();
+    int t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
 
-  string t_sMailhost = t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
-  string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
-  string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
-  LOG_INFO<< "MailHost is "<< t_sMailhost;
-
-  SMTPClientSession t_oSession(t_sMailhost);
-  LOG_INFO<< "MailHost1 is "<< t_sMailhost;
-  //t_oSession.login(SMTPClientSession::AUTH_LOGIN, t_sSender, t_sPassword);
-  
-  while(t_iEmployeeIndex < t_iEmployeesNum)
-  { 
-    LOG_INFO << "Sender: " << t_sSender << 
-      ", Password: " << t_sPassword << 
-      ", Mailhost: " << t_sMailhost;
+    string t_sMailhost = t_pMyDatas->m_oEmails[t_iEmailIndex].get<2>();
+    string t_sSender = t_pMyDatas->m_oEmails[t_iEmailIndex].get<0>();
+    string t_sPassword = t_pMyDatas->m_oEmails[t_iEmailIndex].get<1>();
+    SMTPClientSession t_oSession(t_sMailhost);
+    t_oSession.login(SMTPClientSession::AUTH_LOGIN, t_sSender, t_sPassword);
     
-    /*LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
-      ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
-      ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
-    */
-    int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
+    while(t_iEmployeeIndex < t_iEmployeesNum)
+    { 
+      LOG_INFO << "Sender: " << t_sSender << 
+        ", Password: " << t_sPassword << 
+        ", Mailhost: " << t_sMailhost;
+      
+      /*LOG_INFO<< "Empno: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>() << 
+        ", Name: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<1>() << 
+        ", Email: " << t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<2>();
+      */
+      int t_iEmpno = t_pMyDatas->m_oEmployees[t_iEmployeeIndex].get<0>();
 
-    Salarys::const_iterator it = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
+      Salarys::const_iterator it = std::find_if(t_pMyDatas->m_oSalarys.begin(), t_pMyDatas->m_oSalarys.end(), CComp(t_iEmpno));
 
-    if(it == t_pMyDatas->m_oSalarys.end())
-    {
-      LOG_ERROR<<  "Salary relation is empty";
-      return;
+      if(it == t_pMyDatas->m_oSalarys.end())
+      {
+        LOG_ERROR<<  "Salary relation is empty";
+        return;
+      }
+
+      LOG_INFO<<"Salary "<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
+        it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
+        it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>();
+      
+      MailMessage t_oMessage;
+      CreateEmail(t_oMessage); 
+      //session.sendMessage(t_oMessage);
+      
+      sleep(1);
+      t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
     }
-
-    LOG_INFO<<"Salary "<< it->get<0>()<< " "<< it->get<1>()<< " "<< it->get<2>()<< " "<< it->get<3>()<< " "<<
-      it->get<4>()<< " "<< it->get<5>()<< " "<< it->get<6>()<< " "<< it->get<7>()<< " "<<
-      it->get<8>()<< " "<< it->get<9>()<< " "<< it->get<10>()<< " "<< it->get<11>();
-    
-    MailMessage t_oMessage;
-    CreateEmail(t_oMessage); 
-    //session.sendMessage(t_oMessage);
-    
-    sleep(1);
-    t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
+    t_oSession.close();
   }
-}
   catch (Exception& exc)
   {
-    std::cerr << exc.displayText() << std::endl;
+    LOG_ERROR<< exc.displayText();
     return;
   }
-  LOG_INFO<< "Leave SendEmail.";
-  //t_oSession.close();
+  LOG_INFO<< "Leave SendEmail."; 
 }
 
 int MyEmail::SendEmails(MyDatas& in_oMyDatas)
