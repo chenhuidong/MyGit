@@ -18,7 +18,7 @@ int MyAction::Install()
     LOG_INFO<< "Create tables begin.";
 	//create table
 	*m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Employees (Empno int, Name VARCHAR(256), Email VARCHAR(256), ValidFlag interger(1) default 0)", now;
-    *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Emails (Id int PRIMARY KEY autoincrement, Sender VARCHAR(256) primary key, Password VARCHAR(256), Mailhost VARCHAR(256))", now;
+    *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Emails (Id INTEGER PRIMARY KEY autoincrement, Sender VARCHAR(256) primary key, Password VARCHAR(256), Mailhost VARCHAR(256))", now;
     *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Salarys (Empno int, BaseSalary int, Performance int, BaseTotal int, EndowmentInsurance int, UnemployedInsurance int, MedicalInsurance int, HousingInsurance int, SocialInsuranceTotal int, IncomeTax int, OtherPay int, ActualSalary int)", now;
     LOG_INFO<< "Create tables end.";
     return 0;
@@ -69,7 +69,7 @@ int MyAction::InsertData()
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "chenhd2", "chdyczx2@live.com");
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
 
-    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(\'%s\', \'%s\', \'%s\')", "chdyczx2@163.com", "123456", "smtp@163.com");
+    snprintf(iSQL, sizeof(iSQL), "INSERT INTO Emails (Sender, Password, Mailhost) VALUES(\'%s\', \'%s\', \'%s\')", "15996228219@163.com", "123456", "smtp@163.com");
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmails);
 
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Salarys VALUES(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 2, 22, 23, 24, 25, 26, 27, 28, 29, 210, 211, 212);
