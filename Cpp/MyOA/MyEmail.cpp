@@ -185,17 +185,19 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salar
   LOG_INFO<<"Salary1 "<< in_oSalary.get<0>()<< " "<< in_oSalary.get<1>()<< " "<< in_oSalary.get<2>()<< " "<< in_oSalary.get<3>()<< " "<<
     in_oSalary.get<4>()<< " "<< in_oSalary.get<5>()<< " "<< in_oSalary.get<6>()<< " "<< in_oSalary.get<7>()<< " "<<
     in_oSalary.get<8>()<< " "<< in_oSalary.get<9>()<< " "<< in_oSalary.get<10>()<< " "<< in_oSalary.get<11>();
-  /*
-	m_oMessage.setSender(sender);
-	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
-	m_oMessage.setSubject(MailMessage::encodeWord("工资条"));
+  
+  int t_iEmpno = in_oEmployee.get<1>();
+  string t_sRecipient = in_oEmployee.get<2>();
+	//in_oMessage.setSender(sender);
+	in_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, t_sRecipient));
+	in_oMessage.setSubject(MailMessage::encodeWord("工资条"));
 	std::string content;
 	content += "您好：\r\n";
 	content += "附件为您的本月工资条。\r\n\r\n";
-	m_oMessage.addContent(new StringPartSource(content));
-	CreateHtml();
-	m_oMessage.addAttachment("1", new FilePartSource("/mnt/home2/51linux_LxomB0aQ/Log/1.html"));
-	*/
+	in_oMessage.addContent(new StringPartSource(content));
+	//CreateHtml();
+	//in_oMessage.addAttachment(t_iEmpno, new FilePartSource("/mnt/home2/51linux_LxomB0aQ/Log/1.html"));
+	
   LOG_INFO<< "Create email end.";
   return 0;
 }
