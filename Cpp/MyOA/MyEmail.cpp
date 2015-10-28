@@ -176,7 +176,7 @@ int MyEmail::CreateHtml()
 	return 0;
 }
 
-int MyEmail::CreateEmail(MailMessage &in_oMessage/*, Employee *in_pEmployee*/, Salary &in_oSalary)
+int MyEmail::CreateEmail(MailMessage &in_oMessage/*, Employee *in_pEmployee*/, Salary *in_pSalary)
 {
   LOG_INFO<< "Create email begin.";
   /*
@@ -218,8 +218,8 @@ void MyEmail::SendEmail(void *in_pMyDatas)
         ", Password: " << t_sPassword << 
         ", Mailhost: " << t_sMailhost;
       
-      Employees::iterator t_itEmployee = &(t_pMyDatas->m_oEmployees[t_iEmployeeIndex]);
-
+      //Employees::iterator t_itEmployee = &(t_pMyDatas->m_oEmployees[t_iEmployeeIndex]);
+      Employees::iterator t_itEmployee;
       LOG_INFO<< "Empno: " << t_itEmployee->get<0>() << 
         ", Name: " << t_itEmployee->get<1>() << 
         ", Email: " << t_itEmployee->get<2>();
@@ -242,7 +242,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       
       MailMessage t_oMessage;
       t_oMessage.setSender(t_sSender);
-      CreateEmail(t_oMessage, /*t_itEmployee,*/ *t_itSalary); 
+      CreateEmail(t_oMessage, /*t_itEmployee,*/ t_itSalary); 
       //session.sendMessage(t_oMessage);
       
       sleep(1);
