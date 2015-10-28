@@ -179,6 +179,12 @@ int MyEmail::CreateHtml()
 int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salary &in_oSalary)
 {
   LOG_INFO<< "Create email begin.";
+  LOG_INFO<< "Empno1: " << in_oEmployee.get<0>() << 
+    ", Name1: " << in_oEmployee.get<1>() << 
+    ", Email1: " << in_oEmployee.get<2>();
+  LOG_INFO<<"Salary1 "<< in_oSalary.get<0>()<< " "<< in_oSalary.get<1>()<< " "<< in_oSalary.get<2>()<< " "<< in_oSalary.get<3>()<< " "<<
+    in_oSalary.get<4>()<< " "<< in_oSalary.get<5>()<< " "<< in_oSalary.get<6>()<< " "<< in_oSalary.get<7>()<< " "<<
+    in_oSalary.get<8>()<< " "<< in_oSalary.get<9>()<< " "<< in_oSalary.get<10>()<< " "<< in_oSalary.get<11>();
   /*
 	m_oMessage.setSender(sender);
 	m_oMessage.addRecipient(MailRecipient(MailRecipient::PRIMARY_RECIPIENT, recipient));
