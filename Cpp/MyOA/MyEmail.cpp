@@ -19,7 +19,7 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
   char t_sEmpno[BUFFSIZE] = {0};
   snprintf(t_sEmpno, sizeof(t_sEmpno), "%d", t_iEmpno);  
   string t_sFileName;
-  t_sFileName = t_sFileName + "/mnt/home2/51linux_LxomB0aQ/Log/" + t_sEmpno + ".html";
+  t_sFileName = t_sFileName + LOGPATH + t_sEmpno + ".html";
 
   LOG_INFO<< "FileName is "<< t_sFileName;
   
@@ -213,7 +213,13 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salar
 	content += "附件为您的本月工资条。\r\n\r\n";
 	in_oMessage.addContent(new StringPartSource(content));
 	CreateHtml(in_oEmployee, in_oSalary);
-	//in_oMessage.addAttachment(t_iEmpno, new FilePartSource("/mnt/home2/51linux_LxomB0aQ/Log/1.html"));
+
+  char t_sEmpno[BUFFSIZE] = {0};
+  snprintf(t_sEmpno, sizeof(t_sEmpno), "%d", t_iEmpno);  
+  string t_sFileName;
+  t_sFileName = t_sFileName + LOGPATH + t_sEmpno + ".html";
+
+	in_oMessage.addAttachment(t_iEmpno, new FilePartSource(t_sFileName.c_str()));
 	
   LOG_INFO<< "Create email end.";
   return 0;
