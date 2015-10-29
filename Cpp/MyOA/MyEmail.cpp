@@ -18,12 +18,12 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
   string t_sName = in_oEmployee.get<1>(); 
   char t_sEmpno[BUFFSIZE] = {0};
   snprintf(t_sEmpno, sizeof(t_sEmpno), "%d", t_iEmpno);  
-  string t_sFileName;
-  t_sFileName = t_sFileName + LOGPATH + t_sEmpno + ".html";
+  string t_sFilePath;
+  t_sFilePath = t_sFilePath + LOGPATH + t_sEmpno + ".html";
 
-  LOG_INFO<< "FileName is "<< t_sFileName;
+  LOG_INFO<< "FileName is "<< t_sFilePath;
   
-  std::ofstream ostr(t_sFileName.c_str());
+  std::ofstream ostr(t_sFilePath.c_str());
 	ostr << "<!DOCTYPE html>\r\n\
 <html lang=\"en\"> \r\n\
 <head>\r\n\
@@ -217,9 +217,13 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salar
   char t_sEmpno[BUFFSIZE] = {0};
   snprintf(t_sEmpno, sizeof(t_sEmpno), "%d", t_iEmpno);  
   string t_sFileName;
-  t_sFileName = t_sFileName + LOGPATH + t_sEmpno + ".html";
+  t_sFileName = t_sEmpno + ".html";
+  string t_sFilePath;
+  t_sFilePath = t_sFilePath + LOGPATH + t_sEmpno + ".html";
 
-	in_oMessage.addAttachment(t_iEmpno, new FilePartSource(t_sFileName.c_str()));
+  LOG_INFO<< "CreateEmail: FileName is "<< t_sFileName<< " , FilePath is "<< t_sFilePath<< ".";
+
+	in_oMessage.addAttachment(t_iEmpno, new FilePartSource(t_sFilePath.c_str()));
 	
   LOG_INFO<< "Create email end.";
   return 0;
