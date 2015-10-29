@@ -217,7 +217,7 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salar
   char t_sEmpno[BUFFSIZE] = {0};
   snprintf(t_sEmpno, sizeof(t_sEmpno), "%d", t_iEmpno);  
   string t_sFileName;
-  t_sFileName = t_sEmpno + ".html";
+  t_sFileName = t_sFileName + t_sEmpno + ".html";
   string t_sFilePath;
   t_sFilePath = t_sFilePath + LOGPATH + t_sEmpno + ".html";
 
