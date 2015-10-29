@@ -23,7 +23,7 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
 
   LOG_INFO<< "FileName is "<< t_sFileName;
   
-  std::ofstream ostr(t_sFileName);
+  std::ofstream ostr(t_sFileName.c_str());
 	ostr << "<!DOCTYPE html>\r\n\
 <html lang=\"en\"> \r\n\
 <head>\r\n\
