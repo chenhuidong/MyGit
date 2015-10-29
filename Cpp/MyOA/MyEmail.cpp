@@ -223,7 +223,7 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salar
 
   LOG_INFO<< "CreateEmail: FileName is "<< t_sFileName<< " , FilePath is "<< t_sFilePath<< ".";
 
-	in_oMessage.addAttachment(t_iEmpno, new FilePartSource(t_sFilePath.c_str()));
+	in_oMessage.addAttachment(t_sFileName.c_str(), new FilePartSource(t_sFilePath.c_str()));
 	
   LOG_INFO<< "Create email end.";
   return 0;
