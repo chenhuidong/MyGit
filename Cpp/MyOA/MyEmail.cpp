@@ -16,7 +16,7 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
   
   int t_iEmpno = in_oEmployee.get<0>();
   string t_sName = in_oEmployee.get<1>(); 
-  char buf[BUFFSIZE] = 0;
+  char buf[BUFFSIZE] = {0};
   string t_sEmpno = itoa(t_iEmpno, buf, 10);
   string t_sFileName;
   t_sFileName = t_sFileName + "/mnt/home2/51linux_LxomB0aQ/Log/" + t_sEmpno + ".html";
