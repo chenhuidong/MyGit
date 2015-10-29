@@ -22,8 +22,8 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
   t_sFileName = t_sFileName + "/mnt/home2/51linux_LxomB0aQ/Log/" + t_sEmpno + ".html";
 
   LOG_INFO<< "FileName is "<< t_sFileName;
-  /*
-  std::ofstream ostr("/mnt/home2/51linux_LxomB0aQ/Log/1.html");
+  
+  std::ofstream ostr(t_sFileName);
 	ostr << "<!DOCTYPE html>\r\n\
 <html lang=\"en\"> \r\n\
 <head>\r\n\
@@ -188,7 +188,7 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
       <tr><td colspan=7 height=\"25\"></td></tr>\r\n\
     </table>\r\n\
   </td></tr></table>\r\n\
-</td></tr></table>" << std::endl;*/
+</td></tr></table>" << std::endl;
   LOG_INFO<< "Create html end.";
 	return 0;
 }
