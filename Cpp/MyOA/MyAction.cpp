@@ -28,8 +28,15 @@ int MyAction::Install()
 {
     LOG_INFO<< "Create tables begin.";
 	//create table
+    //SQLite
+    /*
 	*m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Employees (Empno int, Name VARCHAR(256), Email VARCHAR(256), ValidFlag interger(1) default 0)", now;
     *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Emails (Id INTEGER PRIMARY KEY autoincrement, Sender VARCHAR(256), Password VARCHAR(256), Mailhost VARCHAR(256))", now;
+    *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Salarys (Empno int, BaseSalary int, Performance int, BaseTotal int, EndowmentInsurance int, UnemployedInsurance int, MedicalInsurance int, HousingInsurance int, SocialInsuranceTotal int, IncomeTax int, OtherPay int, ActualSalary int)", now;
+    */
+    //MySQL
+    *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Employees (Empno int, Name VARCHAR(256), Email VARCHAR(256), ValidFlag int(1) default 0)", now;
+    *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Emails (Id int auto_increment, Sender VARCHAR(256), Password VARCHAR(256), Mailhost VARCHAR(256), primary key(Id))", now;
     *m_oMyDb.GetSession() << "CREATE TABLE IF NOT EXISTS Salarys (Empno int, BaseSalary int, Performance int, BaseTotal int, EndowmentInsurance int, UnemployedInsurance int, MedicalInsurance int, HousingInsurance int, SocialInsuranceTotal int, IncomeTax int, OtherPay int, ActualSalary int)", now;
     LOG_INFO<< "Create tables end.";
     return 0;
