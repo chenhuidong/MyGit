@@ -5,12 +5,17 @@
 #include "Poco/Data/Session.h"
 #include "Poco/Data/SessionFactory.h"
 #include "Poco/Data/SQLite/Connector.h"
+#include "Poco/Data/MySQL/Connector.h"
+#include "Poco/Data/MySQL/MySQLException.h"  
 //#include "Poco/StringTokenizer.h"
 
+using namespace Poco::Data;  
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
 //using Poco::StringTokenizer;
+using Poco::Data::MySQL::ConnectionException;  
+using Poco::Data::MySQL::StatementException;  
 
 class MyDb
 {
