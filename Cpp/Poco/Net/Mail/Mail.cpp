@@ -246,4 +246,4 @@ int main(int argc, char** argv)
 }
 
 //g++ Mail.cpp -omain -lPocoNet
-//./main smtp.163.com chdyczx@163.com Chenhd@420462 chdyczx@live.com
+//./main smtp.163.com chdyczx@163.com 123456 chdyczx@live.com
