@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 	{
 		LOG_INFO<< "MyOA begin.";
 		t_oMyAction.Install();
-		t_oMyAction.InsertData();
+		//t_oMyAction.InsertData();
 		t_oMyAction.SelectData();
 		t_oMyAction.SendEmail();
 		t_oMyAction.Uninitialize();
