@@ -63,7 +63,7 @@ alias gh="git push"
 alias gl="git pull"
 
 #mysql
-alias my="mysql -h'121.42.27.147' -umysql -P54321 -pChenhd@443420 -Dpublic"
+alias my="mysql -h'121.42.27.147' -umysql -P54321 -p123456 -Dpublic"
 alias init="/mnt/home2/51linux_LxomB0aQ/MyTools/init.sh"
 
 #connect
