@@ -11,7 +11,7 @@ int MyDb::Initialize(const char* in_sDbName)
     */
     Poco::Data::MySQL::Connector::registerConnector();
     m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY,\
-     "host=121.42.27.147;port=54321;user=mysql;password=Chenhd@443420;db=public;compress=true;auto-reconnect=true"));
+     "host=121.42.27.147;port=54321;user=mysql;password=123456;db=public;compress=true;auto-reconnect=true"));
 
     if(!m_pSession)
     	return -1;
