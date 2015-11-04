@@ -1,17 +1,23 @@
 #include "MyDb.h"
 
-int MyDb::Initialize(const char* in_sDbName)
+int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
 {
-    /*
-	// register SQLite connector
-    Poco::Data::SQLite::Connector::registerConnector();
-
     // create a session
-    m_pSession = new Session("SQLite", in_sDbName);
-    */
-    Poco::Data::MySQL::Connector::registerConnector();
-    m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY,\
-     "host=121.42.27.147;port=54321;user=mysql;password=123456;db=public;compress=true;auto-reconnect=true"));
+    if(DbType::SQLite == in_eDbType)
+    {
+        // register SQLite connector
+        Poco::Data::SQLite::Connector::registerConnector();
+        m_pSession = new Session("SQLite", in_sDbName);
+    }
+    else if(DbType::MySQL == in_eDbType)
+    {
+        Poco::Data::MySQL::Connector::registerConnector();
+        m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, in_sDbName));
+    }
+    else
+    {
+        return -1;
+    }
 
     if(!m_pSession)
     	return -1;

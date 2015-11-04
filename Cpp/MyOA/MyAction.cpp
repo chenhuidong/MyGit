@@ -1,15 +1,15 @@
 #include "MyAction.h"
 
-int MyAction::Initialize(const char* in_sLogName, const char* in_sDbName)
+int MyAction::Initialize(const char* in_sLogName, DbType in_eDbType, const char* in_sDbName)
 {
     INITIALIZE_LOG(in_sLogName);
-    InitializeDb(in_sDbName);
+    InitializeDb(in_eDbType, in_sDbName);
     return 0;
 }
 
-int MyAction::InitializeDb(const char* in_sDbName)
+int MyAction::InitializeDb(DbType in_eDbType, const char* in_sDbName)
 {
-	m_oMyDb.Initialize(in_sDbName);
+	m_oMyDb.Initialize(in_eDbType, in_sDbName);
 	return 0;
 }
 

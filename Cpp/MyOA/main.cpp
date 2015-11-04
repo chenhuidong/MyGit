@@ -3,7 +3,13 @@
 int main(int argc, char* argv[])
 {
 	MyAction t_oMyAction;
-	t_oMyAction.Initialize("MyOA.log", "employee.db");
+	//sqlite
+	//t_oMyAction.Initialize("MyOA.log", DbType::SQLite, "employee.db");
+	
+	//mysql
+	t_oMyAction.Initialize("MyOA.log", DbType::MySQL, \
+		"host=121.42.27.147;port=54321;user=mysql;password=123456;db=public;compress=true;auto-reconnect=true");
+
 	try
 	{
 		LOG_INFO<< "MyOA begin.";
