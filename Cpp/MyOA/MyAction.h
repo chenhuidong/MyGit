@@ -17,7 +17,7 @@ public:
 	MyAction(){}
 	~MyAction(){}
 
-	int Initialize(const char* in_sLogName, const char* in_sDbName);
+	int Initialize(const char* in_sLogName, DbType in_eDbType, const char* in_sDbName);
 	int Uninitialize();
 	
 	int Install();
