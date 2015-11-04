@@ -17,8 +17,7 @@ using Poco::Data::Statement;
 using Poco::Data::MySQL::ConnectionException;  
 using Poco::Data::MySQL::StatementException;  
 
-enum DbType
-{SQLite, MySQL};
+enum DbType {SQLite, MySQL};
 
 class MyDb
 {
