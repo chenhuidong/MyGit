@@ -35,7 +35,7 @@ public:
 	*/
 	
 private:
-	int InitializeDb(const char* in_sDbName);
+	int InitializeDb(DbType in_eDbType, const char* in_sDbName);
 	int UninitializeDb();
 
 public:
