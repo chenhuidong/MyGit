@@ -18,11 +18,12 @@ using Poco::Data::Statement;
 using Poco::Data::MySQL::ConnectionException;  
 using Poco::Data::MySQL::StatementException; 
 
-enum DbType {MyOA_SQLite, MyOA_MySQL};
 
 class MyDb
 {
 public:
+	enum DbType {MyOA_SQLite, MyOA_MySQL};
+
 	MyDb():m_pSession(NULL){}
 	~MyDb(){};
 	int Initialize(DbType in_eDbType, const char* in_sDbName);
