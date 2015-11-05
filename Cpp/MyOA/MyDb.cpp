@@ -3,7 +3,7 @@
 int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
 {
     // create a session
-    if(SQLite == in_eDbType)
+    if(MyDb::SQLite == in_eDbType)
     {
         // register SQLite connector
         LOG_INFO<< "initialize sqlite begin.";
@@ -12,7 +12,7 @@ int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
         m_pSession = new Session("SQLite", in_sDbName);
         LOG_INFO<< "initialize sqlite end.";
     }
-    else if(MySQL == in_eDbType)
+    else if(MyDb::MySQL == in_eDbType)
     {
         LOG_INFO<< "initialize mysql begin.";
         Poco::Data::MySQL::Connector::registerConnector();

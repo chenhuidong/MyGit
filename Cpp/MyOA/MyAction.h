@@ -20,7 +20,6 @@ public:
 	int Initialize(const char* in_sLogName, MyDb::DbType in_eDbType, const char* in_sDbName);
 	int Uninitialize();
 	
-	int Install();
 	int SelectData();
 	int InsertData();
 
@@ -35,6 +34,7 @@ public:
 	*/
 	
 private:
+	int Install(MyDb::DbType in_eDbType);
 	int InitializeDb(MyDb::DbType in_eDbType, const char* in_sDbName);
 	int UninitializeDb();
 

@@ -8,11 +8,10 @@ int main(int argc, char* argv[])
 	
 	//mysql
 	t_oMyAction.Initialize("MyOA.log", MyDb::MySQL, \
-		"host=121.42.27.147;port=54321;user=mysql;password=123456;db=public;compress=true;auto-reconnect=true");
+		"host=121.42.27.147;port=54321;user=mysql;password=Chenhd@420462;db=public;compress=true;auto-reconnect=true");
 	LOG_INFO<< "MyOA begin.";
 	try
 	{
-		t_oMyAction.Install();
 		//t_oMyAction.InsertData();
 		t_oMyAction.SelectData();
 		t_oMyAction.SendEmail();
