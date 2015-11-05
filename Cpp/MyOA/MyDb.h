@@ -22,7 +22,7 @@ using Poco::Data::MySQL::StatementException;
 class MyDb
 {
 public:
-	enum DbType {MyOA_SQLite, MyOA_MySQL};
+	enum DbType {SQLite, MySQL};
 
 	MyDb():m_pSession(NULL){}
 	~MyDb(){};
