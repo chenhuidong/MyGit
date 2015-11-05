@@ -7,6 +7,7 @@
 #include "Poco/Data/SQLite/Connector.h"
 #include "Poco/Data/MySQL/Connector.h"
 #include "Poco/Data/MySQL/MySQLException.h"  
+#include "MyException.h"
 //#include "Poco/StringTokenizer.h"
 
 using namespace Poco::Data;  
