@@ -15,13 +15,16 @@ using Poco::Data::Session;
 using Poco::Data::Statement;
 //using Poco::StringTokenizer;
 using Poco::Data::MySQL::ConnectionException;  
-using Poco::Data::MySQL::StatementException;  
+using Poco::Data::MySQL::StatementException; 
 
-enum DbType {My_SQLite, My_MySQL};
+
 
 class MyDb
 {
 public:
+	enum DbType {SQLite, MySQL};
+
+
 	MyDb():m_pSession(NULL){}
 	~MyDb(){};
 	int Initialize(DbType in_eDbType, const char* in_sDbName);
