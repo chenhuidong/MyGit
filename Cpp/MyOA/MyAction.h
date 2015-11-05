@@ -17,7 +17,7 @@ public:
 	MyAction(){}
 	~MyAction(){}
 
-	int Initialize(const char* in_sLogName, DbType in_eDbType, const char* in_sDbName);
+	int Initialize(const char* in_sLogName, MyDb::DbType in_eDbType, const char* in_sDbName);
 	int Uninitialize();
 	
 	int Install();
@@ -35,7 +35,7 @@ public:
 	*/
 	
 private:
-	int InitializeDb(DbType in_eDbType, const char* in_sDbName);
+	int InitializeDb(MyDb::DbType in_eDbType, const char* in_sDbName);
 	int UninitializeDb();
 
 public:
