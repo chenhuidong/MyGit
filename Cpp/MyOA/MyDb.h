@@ -17,9 +17,7 @@ using Poco::Data::Statement;
 using Poco::Data::MySQL::ConnectionException;  
 using Poco::Data::MySQL::StatementException; 
 
-namespace MyDb
-{
-enum DbType {SQLite, MySQL};
+enum DbType {MyOA_SQLite, MyOA_MySQL};
 
 class MyDb
 {
@@ -41,6 +39,5 @@ public:
 	}
 private:
 	Session *m_pSession;
-};
 };
 #endif

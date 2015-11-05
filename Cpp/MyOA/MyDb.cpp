@@ -1,17 +1,15 @@
 #include "MyDb.h"
 
-namespace MyDb
-{
 int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
 {
     // create a session
-    if(MyDb::SQLite == in_eDbType)
+    if(MyOA_SQLite == in_eDbType)
     {
         // register SQLite connector
         Poco::Data::SQLite::Connector::registerConnector();
         m_pSession = new Session("SQLite", in_sDbName);
     }
-    else if(My::DbMySQL == in_eDbType)
+    else if(MyOA_bMySQL == in_eDbType)
     {
         Poco::Data::MySQL::Connector::registerConnector();
         m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, in_sDbName));
@@ -38,4 +36,4 @@ Session* MyDb::GetSession()
 {
 	return m_pSession;
 }
-};
+
