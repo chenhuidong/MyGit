@@ -4,6 +4,7 @@ int MyAction::Initialize(const char* in_sLogName, DbType in_eDbType, const char*
 {
     INITIALIZE_LOG(in_sLogName);
     LOG_INFO<< "initialize log success.";
+    
     InitializeDb(in_eDbType, in_sDbName);
     return 0;
 }
