@@ -1,5 +1,7 @@
 #include "MyDb.h"
 
+namespace MyDb
+{
 int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
 {
     // create a session
@@ -36,3 +38,4 @@ Session* MyDb::GetSession()
 {
 	return m_pSession;
 }
+};

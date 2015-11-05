@@ -17,14 +17,13 @@ using Poco::Data::Statement;
 using Poco::Data::MySQL::ConnectionException;  
 using Poco::Data::MySQL::StatementException; 
 
-
+namespace MyDb
+{
+enum DbType {SQLite, MySQL};
 
 class MyDb
 {
 public:
-	enum DbType {SQLite, MySQL};
-
-
 	MyDb():m_pSession(NULL){}
 	~MyDb(){};
 	int Initialize(DbType in_eDbType, const char* in_sDbName);
@@ -43,5 +42,5 @@ public:
 private:
 	Session *m_pSession;
 };
-
+};
 #endif
