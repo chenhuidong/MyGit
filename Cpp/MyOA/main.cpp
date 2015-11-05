@@ -9,10 +9,10 @@ int main(int argc, char* argv[])
 	//mysql
 	t_oMyAction.Initialize("MyOA.log", MyOA_MySQL, \
 		"host=121.42.27.147;port=54321;user=mysql;password=123456;db=public;compress=true;auto-reconnect=true");
-
+	LOG_INFO<< "MyOA begin.";
 	try
 	{
-		LOG_INFO<< "MyOA begin.";
+		
 		t_oMyAction.Install();
 		//t_oMyAction.InsertData();
 		t_oMyAction.SelectData();

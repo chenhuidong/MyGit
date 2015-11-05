@@ -3,12 +3,14 @@
 int MyAction::Initialize(const char* in_sLogName, DbType in_eDbType, const char* in_sDbName)
 {
     INITIALIZE_LOG(in_sLogName);
+    LOG_INFO<< "initialize log success.";
     InitializeDb(in_eDbType, in_sDbName);
     return 0;
 }
 
 int MyAction::InitializeDb(DbType in_eDbType, const char* in_sDbName)
 {
+    LOG_INFO<< "initialize db begin.";
 	m_oMyDb.Initialize(in_eDbType, in_sDbName);
 	return 0;
 }
