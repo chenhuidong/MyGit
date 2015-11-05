@@ -32,7 +32,8 @@ public:
 	template <class T>
 	int ExecuteSQL(const char* in_sSQL, T& out_oT)
 	{
-		//std::cout<< in_sSQL<< std::endl;
+		
+		LOG_INFO<< "initialize mysql begin."<< in_sSQL;
 		out_oT.clear();
 		Statement t_oStatement(*m_pSession);
     	t_oStatement<< in_sSQL, into(out_oT), now;
