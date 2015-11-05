@@ -16,7 +16,7 @@ int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
     {
         LOG_INFO<< "initialize mysql begin.";
         Poco::Data::MySQL::Connector::registerConnector();
-        m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, in_sDbName));
+        //m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, in_sDbName));
         LOG_INFO<< "initialize mysql end.";
     }
     else

@@ -7,6 +7,7 @@
 namespace Poco {
 
 POCO_DECLARE_EXCEPTION(Foundation_API, NoRecordException, Exception)
+POCO_DECLARE_EXCEPTION(Foundation_API, InitializeDbException, Exception)
 
 }
 
