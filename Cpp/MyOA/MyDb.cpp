@@ -3,13 +3,13 @@
 int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
 {
     // create a session
-    if(SQLite == in_eDbType)
+    if(My_SQLite == in_eDbType)
     {
         // register SQLite connector
         Poco::Data::SQLite::Connector::registerConnector();
         m_pSession = new Session("SQLite", in_sDbName);
     }
-    else if(MySQL == in_eDbType)
+    else if(My_MySQL == in_eDbType)
     {
         Poco::Data::MySQL::Connector::registerConnector();
         m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, in_sDbName));

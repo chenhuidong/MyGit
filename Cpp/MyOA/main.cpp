@@ -7,7 +7,7 @@ int main(int argc, char* argv[])
 	//t_oMyAction.Initialize("MyOA.log", DbType::SQLite, "employee.db");
 	
 	//mysql
-	t_oMyAction.Initialize("MyOA.log", DbType::MySQL, \
+	t_oMyAction.Initialize("MyOA.log", My_MySQL, \
 		"host=121.42.27.147;port=54321;user=mysql;password=123456;db=public;compress=true;auto-reconnect=true");
 
 	try
