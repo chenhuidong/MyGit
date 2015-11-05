@@ -221,7 +221,7 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salar
   string t_sFilePath;
   t_sFilePath = t_sFilePath + LOGPATH + t_sEmpno + ".html";
 
-  LOG_INFO<< "CreateEmail: FileName is "<< t_sFileName<< " , FilePath is "<< t_sFilePath<< ".";
+  LOG_INFO<< "CreateEmail: FileName is "<< t_sFileName<< ", FilePath is "<< t_sFilePath<< ".";
 
 	in_oMessage.addAttachment(t_sFileName.c_str(), new FilePartSource(t_sFilePath.c_str()));
 	

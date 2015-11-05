@@ -4,11 +4,11 @@ int main(int argc, char* argv[])
 {
 	MyAction t_oMyAction;
 	//sqlite
-	//t_oMyAction.Initialize("MyOA.log", DbType::SQLite, "employee.db");
+	t_oMyAction.Initialize("MyOA.log", DbType::SQLite, "employee.db");
 	
 	//mysql
-	t_oMyAction.Initialize("MyOA.log", MyDb::MySQL, \
-		"host=121.42.27.147;port=54321;user=mysql;password=Chenhd@443420;db=public;compress=true;auto-reconnect=true");
+	//t_oMyAction.Initialize("MyOA.log", MyDb::MySQL, \
+	//	"host=121.42.27.147;port=54321;user=mysql;password=Chenhd@443420;db=public;compress=true;auto-reconnect=true");
 	LOG_INFO<< "MyOA begin.";
 	try
 	{
