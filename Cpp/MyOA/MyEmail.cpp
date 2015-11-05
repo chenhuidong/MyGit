@@ -281,7 +281,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       CreateEmail(t_oMessage, t_pMyDatas->m_oEmployees[t_iEmployeeIndex], *t_itSalary); 
       //t_oSession.sendMessage(t_oMessage);
       
-      sleep(2);
+      sleep(1);
       t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
     }
     t_oSession.close();
