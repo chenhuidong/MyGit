@@ -9,7 +9,7 @@ int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
         Poco::Data::SQLite::Connector::registerConnector();
         m_pSession = new Session("SQLite", in_sDbName);
     }
-    else if(MyOA_bMySQL == in_eDbType)
+    else if(MyOA_MySQL == in_eDbType)
     {
         Poco::Data::MySQL::Connector::registerConnector();
         m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, in_sDbName));
