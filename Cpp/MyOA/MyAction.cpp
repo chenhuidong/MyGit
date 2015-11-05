@@ -12,6 +12,7 @@ int MyAction::InitializeDb(DbType in_eDbType, const char* in_sDbName)
 {
     LOG_INFO<< "initialize db begin.";
 	m_oMyDb.Initialize(in_eDbType, in_sDbName);
+    LOG_INFO<< "initialize db end.";
 	return 0;
 }
 
