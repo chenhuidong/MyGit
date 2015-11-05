@@ -21,11 +21,11 @@ int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
     }
     else
     {
-        return -1;
+        throw Poco::InitializeDbException("Initialize db failed.");
     }
 
     if(!m_pSession)
-    	return -1;
+    	throw Poco::InitializeDbException("Initialize db failed.");
     
     return 0;
 }

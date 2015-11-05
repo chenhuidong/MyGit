@@ -12,10 +12,6 @@ int MyAction::InitializeDb(DbType in_eDbType, const char* in_sDbName)
 {
     LOG_INFO<< "initialize db begin.";
     int t_iReturn = m_oMyDb.Initialize(in_eDbType, in_sDbName);
-
-    if(-1 == t_iReturn)
-        throw Poco::InitializeDbException("Initialize db failed.");
-
     LOG_INFO<< "initialize db end.";
 	return 0;
 }
