@@ -4,7 +4,7 @@ int main(int argc, char* argv[])
 {
 	MyAction t_oMyAction;
 	//sqlite
-	t_oMyAction.Initialize("MyOA.log", DbType::SQLite, "employee.db");
+	t_oMyAction.Initialize("MyOA.log", MyDb::SQLite, "employee.db");
 	
 	//mysql
 	//t_oMyAction.Initialize("MyOA.log", MyDb::MySQL, \
