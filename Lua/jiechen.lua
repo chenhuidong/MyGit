@@ -7,5 +7,5 @@ function fact( n )
 end
 
 print("enter a number:")
-a = is.read("*number")
+a = io.read("*number")
 print(fact(a))
