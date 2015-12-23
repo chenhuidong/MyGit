@@ -17,6 +17,7 @@ int main ( int argc, char *argv[] ){
   /*加载lua脚本*/  
   luaL_dofile(L, "test.lua");  
   int iError = lua_pcall(L, 0, 0, 0);  
+  cout<<"1" <<" " <<iError <<endl; 
   if (iError)  
   {
     cout<<"1" <<endl;  
