@@ -29,14 +29,14 @@ int main(int argc, char* argv[])
   int error;
   lua_State *L = luaL_newstate();  /* opens Lua,由于我使用的是lua5.2版本,lua_open函数不存在了 */
   luaL_openlibs(L);
-  //luaopen_base(L);         /* opens the basic library 这些是在引入一些库,就如如果add函数在编译成dll后如果在lua中要使用需要require “动态库名"一样*/
-  //luaopen_table(L);        /* opens the table library这些库是加在这里只是测试 */
-  //luaopen_io(L);           /* opens the I/O library */
-  //luaopen_string(L);       /* opens the string lib. */
-  //luaopen_math(L);         /* opens the math lib. */
+  luaopen_base(L);         /* opens the basic library 这些是在引入一些库,就如如果add函数在编译成dll后如果在lua中要使用需要require “动态库名"一样*/
+  luaopen_table(L);        /* opens the table library这些库是加在这里只是测试 */
+  luaopen_io(L);           /* opens the I/O library */
+  luaopen_string(L);       /* opens the string lib. */
+  luaopen_math(L);         /* opens the math lib. */
 
   
-  //lua_register(L,"add",add);//注册add函数,好像还可以使用luaL_register函数注册，该函数使用结构体的方式
+  lua_register(L,"add",add);//注册add函数,好像还可以使用luaL_register函数注册，该函数使用结构体的方式
 
   luaL_dofile(L,"test.lua");//加载lua文件，回将里面的函数加载到全局表中
   lua_getglobal(L,"add");//查找lua_add函数,并压入栈底
