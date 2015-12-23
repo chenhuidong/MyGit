@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
   lua_register(L,"add",add);//注册add函数,好像还可以使用luaL_register函数注册，该函数使用结构体的方式
 
   luaL_dofile(L,"test.lua");//加载lua文件，回将里面的函数加载到全局表中
-  lua_getglobal(L,"lua_add");//查找lua_add函数,并压入栈底
+  lua_getglobal(L,"add");//查找lua_add函数,并压入栈底
   lua_pushinteger(L,6);//函数参数1
   lua_pushinteger(L,5);//函数参数2
   lua_pcall(L,2,1,0);//调用lua_add函数，同时会对lua_add及两个参加进行出栈操作,并压入返回值
