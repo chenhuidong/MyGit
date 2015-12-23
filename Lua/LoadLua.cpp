@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
   //luaopen_math(L);         /* opens the math lib. */
 
   
-  lua_register(L,"add",add);//注册add函数,好像还可以使用luaL_register函数注册，该函数使用结构体的方式
+  //lua_register(L,"add",add);//注册add函数,好像还可以使用luaL_register函数注册，该函数使用结构体的方式
 
   luaL_dofile(L,"test.lua");//加载lua文件，回将里面的函数加载到全局表中
   lua_getglobal(L,"add");//查找lua_add函数,并压入栈底
