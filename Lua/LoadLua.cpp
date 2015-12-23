@@ -23,7 +23,7 @@ struct luaL_Reg luaCppReg[] =//可以使用该结构体一次注册多个函数,
   {"add",add},
   {NULL,NULL}
 };
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char* argv[])
 {
   char buff[256];
   int error;
