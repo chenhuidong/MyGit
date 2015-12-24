@@ -36,7 +36,7 @@ static int average(lua_State *L)
 int main ( int argc, char *argv[] )  
 {  
 /* 初始化Lua */  
-	L = lua_open();  
+	L = luaL_newstate();
 
 /* 载入Lua基本库 */  
 	luaL_openlibs(L);  
