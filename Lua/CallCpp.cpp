@@ -48,11 +48,6 @@ int main ( int argc, char *argv[] )
 	luaL_dofile(L, "CallCpp.lua");  
 
 /* 清除Lua */  
-	lua_close(L);  
-
-/* 暂停 */  
-	printf( "Press enter to exit…" );  
-	getchar();  
-
+	lua_close(L);
 	return 0;  
 } 
