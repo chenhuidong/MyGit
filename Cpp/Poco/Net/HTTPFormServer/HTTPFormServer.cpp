@@ -278,7 +278,7 @@ protected:
 		}
 		else
 		{
-			unsigned short port = (unsigned short) config().getInt("HTTPFormServer.port", 54321);
+			unsigned short port = (unsigned short) config().getInt("HTTPFormServer.port", 54322);
 			
 			// set-up a server socket
 			ServerSocket svs(port);
