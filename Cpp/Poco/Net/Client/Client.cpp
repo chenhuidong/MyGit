@@ -26,9 +26,9 @@ int main(int argc, char** argv)
 		StreamSocket sock(sa);
 		SocketStream str(sock);
 
-		str << "chenhuidong" << "\r\n" << std::flush;
+		//str << "chenhuidong" << "\r\n" << std::flush;
 
-		//sock.shutdownSend();
+		sock.shutdownSend();
 		StreamCopier::copyStream(str, std::cout);
 	}
 	catch (Exception& exc)
