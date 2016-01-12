@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 
 		str << "chenhuidong" << "\r\n" << std::flush;
 
-		sock.shutdownSend();
+		//sock.shutdownSend();
 		StreamCopier::copyStream(str, std::cout);
 	}
 	catch (Exception& exc)
