@@ -179,7 +179,7 @@ struct in_pktinfo {
 #define	BUFFSIZE	8192	/* buffer size for reads and writes */
 
 /* Define some port number that can be used for client-servers */
-#define	SERV_PORT		 9877			/* TCP and UDP client-servers */
+#define	SERV_PORT		 54321			/* TCP and UDP client-servers */
 #define	SERV_PORT_STR	"9877"			/* TCP and UDP client-servers */
 #define	UNIXSTR_PATH	"/tmp/unix.str"	/* Unix domain stream cli-serv */
 #define	UNIXDG_PATH		"/tmp/unix.dg"	/* Unix domain datagram cli-serv */

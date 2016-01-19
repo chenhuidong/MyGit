@@ -219,7 +219,7 @@ protected:
 		else
 		{
 			// get parameters from configuration file
-			unsigned short port = (unsigned short) config().getInt("EchoServer.port", 9977);
+			unsigned short port = (unsigned short) config().getInt("EchoServer.port", 54321);
 			
 			// set-up a server socket
 			ServerSocket svs(port);
