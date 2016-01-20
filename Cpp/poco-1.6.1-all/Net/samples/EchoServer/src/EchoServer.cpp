@@ -124,7 +124,7 @@ public:
 			std::string t_sReceive(_fifoIn.begin(), _fifoIn.begin()+_fifoIn.used()-1);
 			std::string t_sReceiveDecode;
 
-			MyBase64::Base64Decode(t_sReceive, t_sReceiveDecode);
+			//MyBase64::Base64Decode(t_sReceive, t_sReceiveDecode);
 			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToMap, t_sReceiveDecode);
 			//t_oMyAnalyseRecv.AnalyseStringToMap();
 			t_oMyAnalyseRecv.AnalyseStringToList();
