@@ -2,7 +2,7 @@
 
 int MyAnalyseRecv::AnalyseStringToMap()
 {
-	m_mRecv.clear();
+	m_mapRecv.clear();
 	StringTokenizer t_oTokenizer(m_sRecv, "|", StringTokenizer::TOK_TRIM);
 	
 	std::string t_sKey, t_sValue;
@@ -13,12 +13,23 @@ int MyAnalyseRecv::AnalyseStringToMap()
 	{
 		t_sKey=t_oTokenizer[i];
 		t_sValue=t_oTokenizer[++i];
-		m_mRecv.insert(make_pair(t_sKey, t_sValue));
+		m_mapRecv.insert(make_pair(t_sKey, t_sValue));
 	}
 
-	for(std::map<std::string, std::string>::iterator it=m_mRecv.begin(); it!=m_mRecv.end(); ++it)
+	for(std::map<std::string, std::string>::iterator it=m_mapRecv.begin(); it!=m_mapRecv.end(); ++it)
 	{
 		std::cout<< it->first<< " "<< it->second<< std::endl;
 	}
 	return 0;
+}
+
+int MyAnalyseRecv::AnalyseStringToList()
+{
+	m_listRecv.clear();
+	StringTokenizer t_oTokenizer(m_sRecv, "|", StringTokenizer::TOK_TRIM);
+
+	for(std::list<std::string>::iterator it=t_oTokenizer.begin(); it!=t_oTokenizer.end(); ++it)
+	{
+		std::cout<< *it<< std::endl;
+	}
 }

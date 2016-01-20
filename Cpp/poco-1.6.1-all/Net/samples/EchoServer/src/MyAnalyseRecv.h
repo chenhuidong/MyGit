@@ -4,6 +4,7 @@
 #include <string>
 #include "Poco/StringTokenizer.h"
 #include <map>
+#include <list>
 
 using Poco::StringTokenizer;
 
@@ -20,10 +21,12 @@ public:
 	~MyAnalyseRecv(){}
 
 	int AnalyseStringToMap();
+	int AnalyseStringToList();
 private:
 	MyAnalyseType m_eMyAnalyseType;
 	std::string m_sRecv;
-	std::map<std::string, std::string> m_mRecv;
+	std::map<std::string, std::string> m_mapRecv;
+	std::list<std::string> m_listRecv;
 };
 
 #endif
