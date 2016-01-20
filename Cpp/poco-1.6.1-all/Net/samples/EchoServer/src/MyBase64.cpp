@@ -12,6 +12,6 @@ int MyBase64::Base64Decode(std::string &in_sSource, std::string &in_sDest)
 
 	Base64Decoder decoder(t_sSourceStream);
 	StreamCopier::copyStream(decoder, t_sDestStream);
-	in_sDest << t_sDestStream;
+	t_sDestStream >> in_sDest;
 	return 0;
 }
