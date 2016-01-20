@@ -26,7 +26,6 @@
 #include "Poco/Util/Option.h"
 #include "Poco/Util/OptionSet.h"
 #include "Poco/Util/HelpFormatter.h"
-#include "Poco/StringTokenizer.h"
 #include <iostream>
 #include <stdio.h>
 #include <map>
@@ -49,7 +48,6 @@ using Poco::Util::Application;
 using Poco::Util::Option;
 using Poco::Util::OptionSet;
 using Poco::Util::HelpFormatter;
-using Poco::StringTokenizer;
 
 
 class EchoServiceHandler
@@ -125,23 +123,8 @@ public:
 			std::string t_sReceive(_fifoIn.begin(), _fifoIn.begin()+_fifoIn.used()-1);
 
 			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToMap, t_sReceive);
-			StringTokenizer t_oTokenizer(t_sReceive, "|", StringTokenizer::TOK_TRIM);
-			std::map<std::string, std::string> t_mReceive;
-			std::string t_sKey, t_sValue;
+			t_oMyAnalyseRecv.AnalyseStringToMap();
 			
-			std::cout<< t_oTokenizer.count()<< std::endl;
-			std::size_t t_iSize = t_oTokenizer.count();
-			for (std::size_t i=0; i<t_iSize-1; ++i)
-			{
-				t_sKey=t_oTokenizer[i];
-				t_sValue=t_oTokenizer[++i];
-				t_mReceive.insert(make_pair(t_sKey, t_sValue));
-			}
-			
-			for(std::map<std::string, std::string>::iterator it=t_mReceive.begin(); it!=t_mReceive.end(); ++it)
-			{
-				std::cout<< it->first<< " "<< it->second<< std::endl;
-			}
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
 		}
 	}
