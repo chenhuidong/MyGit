@@ -7,7 +7,7 @@ enum MyAnalyseType
 {
 	StringToMap,
 	XML,
-}
+};
 
 class MyAnalyseRecv
 {
