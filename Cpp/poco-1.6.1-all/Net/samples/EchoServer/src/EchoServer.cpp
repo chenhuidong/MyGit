@@ -124,7 +124,7 @@ public:
 
 			std::string t_sReceive(_fifoIn.begin(), _fifoIn.begin()+_fifoIn.used()-1);
 
-			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseType::StringToMap, t_sReceive);
+			MyAnalyseRecv t_oMyAnalyseRecv(StringToMap, t_sReceive);
 			StringTokenizer t_oTokenizer(t_sReceive, "|", StringTokenizer::TOK_TRIM);
 			std::map<std::string, std::string> t_mReceive;
 			std::string t_sKey, t_sValue;
