@@ -7,7 +7,10 @@ int MyBase64::Base64Encode(std::string &in_sSource, std::string &in_sDest)
 
 int MyBase64::Base64Decode(std::string &in_sSource, std::string &in_sDest)
 {
-	Base64Decoder decoder(in_sSource);
-	StreamCopier::copyStream(decoder, in_sDest);
+	stringstream t_sSourceStream, t_sDestStream;
+	t_sSourceStream << in_sSource;
+
+	Base64Decoder decoder(t_sSourceStream);
+	StreamCopier::copyStream(decoder, t_sDestStream);
 	return 0;
 }

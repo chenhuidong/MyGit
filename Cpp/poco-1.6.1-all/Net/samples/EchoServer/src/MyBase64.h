@@ -3,6 +3,7 @@
 #include "Poco/Base64Decoder.h"
 #include "Poco/StreamCopier.h"
 #include <string>
+#include <sstream>
 
 using Poco::Base64Decoder;
 using Poco::StreamCopier;
