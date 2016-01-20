@@ -30,6 +30,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <map>
+#include "MyAnalyseRecv.h"
 
 using Poco::Net::SocketReactor;
 using Poco::Net::SocketAcceptor;
@@ -120,7 +121,10 @@ public:
 		{
 			int len = _socket.receiveBytes(_fifoIn);
 			
+
 			std::string t_sReceive(_fifoIn.begin(), _fifoIn.begin()+_fifoIn.used()-1);
+
+			MyAnalyseRecv t_oMyAnalyseRecv(t_sReceive);
 			StringTokenizer t_oTokenizer(t_sReceive, "|", StringTokenizer::TOK_TRIM);
 			std::map<std::string, std::string> t_mReceive;
 			std::string t_sKey, t_sValue;
