@@ -28,7 +28,7 @@ int MyAnalyseRecv::AnalyseStringToList()
 	m_listRecv.clear();
 	StringTokenizer t_oTokenizer(m_sRecv, "|", StringTokenizer::TOK_TRIM);
 
-	for(std::list<std::string>::iterator it=t_oTokenizer.begin(); it!=t_oTokenizer.end(); ++it)
+	for(StringTokenizer::Iterator it=t_oTokenizer.begin(); it!=t_oTokenizer.end(); ++it)
 	{
 		std::cout<< *it<< std::endl;
 	}
