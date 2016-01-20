@@ -123,7 +123,7 @@ public:
 			std::string t_sReceive(_fifoIn.begin(), _fifoIn.begin()+_fifoIn.used()-1);
 
 			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToMap, t_sReceive);
-			t_oMyAnalyseRecv.AnalyseStringToMap();
+			//t_oMyAnalyseRecv.AnalyseStringToMap();
 			
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
 		}
