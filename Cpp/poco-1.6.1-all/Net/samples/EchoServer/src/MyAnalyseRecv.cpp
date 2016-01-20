@@ -33,3 +33,8 @@ int MyAnalyseRecv::AnalyseStringToList()
 		std::cout<< *it<< std::endl;
 	}
 }
+
+int MyAnalyseRecv::AnalyseXML()
+{
+	return 0;
+}

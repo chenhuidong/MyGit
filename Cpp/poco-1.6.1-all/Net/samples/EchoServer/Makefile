@@ -8,7 +8,7 @@
 
 include $(POCO_BASE)/build/rules/global
 
-objects = EchoServer MyAnalyseRecv
+objects = EchoServer MyAnalyseRecv MyBase64
 
 target         = EchoServer
 target_version = 1

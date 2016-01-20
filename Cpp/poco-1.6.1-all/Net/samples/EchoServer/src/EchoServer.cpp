@@ -30,6 +30,8 @@
 #include <stdio.h>
 #include <map>
 #include "MyAnalyseRecv.h"
+#include "MyBase64.h"
+
 
 using Poco::Net::SocketReactor;
 using Poco::Net::SocketAcceptor;
@@ -118,11 +120,12 @@ public:
 		if (_socket.available())
 		{
 			int len = _socket.receiveBytes(_fifoIn);
-			
 
 			std::string t_sReceive(_fifoIn.begin(), _fifoIn.begin()+_fifoIn.used()-1);
+			std::string t_sReceiveDecode;
 
-			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToMap, t_sReceive);
+			MyBase64::Base64Decode(t_sReceive, t_sReceiveDecode);
+			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToMap, t_sReceiveDecode);
 			//t_oMyAnalyseRecv.AnalyseStringToMap();
 			t_oMyAnalyseRecv.AnalyseStringToList();
 			

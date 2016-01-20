@@ -17,11 +17,12 @@ public:
 		StringToMap,
 		XML,
 	};
-	MyAnalyseRecv(MyAnalyseType t_eMyAnalyseType, std::string t_sRecv) : m_eMyAnalyseType(t_eMyAnalyseType), m_sRecv(t_sRecv){}
+	MyAnalyseRecv(MyAnalyseType in_eMyAnalyseType, std::string in_sRecv) : m_eMyAnalyseType(in_eMyAnalyseType), m_sRecv(in_sRecv){}
 	~MyAnalyseRecv(){}
 
 	int AnalyseStringToMap();
 	int AnalyseStringToList();
+	int AnalyseXML();
 private:
 	MyAnalyseType m_eMyAnalyseType;
 	std::string m_sRecv;
