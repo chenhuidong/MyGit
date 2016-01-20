@@ -124,6 +124,7 @@ public:
 
 			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToMap, t_sReceive);
 			//t_oMyAnalyseRecv.AnalyseStringToMap();
+			t_oMyAnalyseRecv.AnalyseStringToList();
 			
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
 		}
