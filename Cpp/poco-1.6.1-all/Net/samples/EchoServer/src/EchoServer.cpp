@@ -31,6 +31,7 @@
 #include <map>
 #include "MyAnalyseRecv.h"
 #include "MyBase64.h"
+#include "MyDeal.h"
 
 
 using Poco::Net::SocketReactor;
@@ -140,6 +141,9 @@ public:
 			//MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::XML, t_sReceive);
 			//t_oMyAnalyseRecv.AnalyseXML();
 			
+			//处理事务
+			MyDealaAdapter t_oMyDealAdapter;
+
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
 		}
 	}
