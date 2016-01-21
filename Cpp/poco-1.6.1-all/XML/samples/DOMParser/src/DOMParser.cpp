@@ -44,7 +44,7 @@ int main(int argc, char** argv)
 		DOMParser parser;
 		AutoPtr<Document> pDoc = parser.parse(&src);
 		
-		NodeIterator it(pDoc, NodeFilter::SHOW_ATTRIBUTE);
+		NodeIterator it(pDoc, NodeFilter::SHOW_ALL);
 		Node* pNode = it.nextNode();
 		/*while (pNode)
 		{
