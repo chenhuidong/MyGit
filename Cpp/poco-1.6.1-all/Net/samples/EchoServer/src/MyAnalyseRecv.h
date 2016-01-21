@@ -24,6 +24,7 @@ public:
 	int AnalyseStringToMap();
 	int AnalyseStringToList();
 	int AnalyseXML();
+	int AnalyseJSON();
 private:
 	MyAnalyseType m_eMyAnalyseType;
 	std::string m_sRecv;

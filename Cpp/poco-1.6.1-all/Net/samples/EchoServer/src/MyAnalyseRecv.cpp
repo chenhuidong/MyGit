@@ -16,10 +16,12 @@ int MyAnalyseRecv::AnalyseStringToMap()
 		m_mapRecv.insert(make_pair(t_sKey, t_sValue));
 	}
 
+	/*
 	for(std::map<std::string, std::string>::iterator it=m_mapRecv.begin(); it!=m_mapRecv.end(); ++it)
 	{
 		std::cout<< it->first<< " "<< it->second<< std::endl;
 	}
+	*/
 	return 0;
 }
 
@@ -30,11 +32,24 @@ int MyAnalyseRecv::AnalyseStringToList()
 
 	for(StringTokenizer::Iterator it=t_oTokenizer.begin(); it!=t_oTokenizer.end(); ++it)
 	{
+		m_listRecv.push_back(*it);
+		//std::cout<< *it<< std::endl;
+	}
+
+	/*
+	for(std::list<std::string>::iterator it=m_listRecv.begin(); it!=m_listRecv.end(); ++it)
+	{
 		std::cout<< *it<< std::endl;
 	}
+	*/
 }
 
 int MyAnalyseRecv::AnalyseXML()
+{
+	return 0;
+}
+
+int MyAnalyseRecv::AnalyseJSON()
 {
 	return 0;
 }
