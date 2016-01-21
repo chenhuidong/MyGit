@@ -143,7 +143,7 @@ public:
 			//t_oMyAnalyseRecv.AnalyseXML();
 			
 			//处理事务
-			MyDealaAdapter t_oMyDealAdapter;
+			MyDealAdapter t_oMyDealAdapter;
 			t_oMyDealAdapter.DealTransaction();
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
 		}
