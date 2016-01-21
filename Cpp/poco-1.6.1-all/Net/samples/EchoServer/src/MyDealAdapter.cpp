@@ -12,8 +12,10 @@ int MyDealAdapter::DealTransaction()
 
     MyDeal1* t_pMyDeal1 = dynamic_cast<MyDeal1*>(t_oMyDealFactory.createInstance("MyDeal1"));  
     //std::auto_ptr<MyDeal2> t_pMyDeal2(dynamic_cast<MyDeal2*>(t_oMyDealFactory.createInstance("MyDea2"))); 
+    MyDeal2* t_pMyDeal2 = dynamic_cast<MyDeal2*>(t_oMyDealFactory.createInstance("MyDeal2"));  
+
 
     t_pMyDeal1->test();
-    //t_pMyDeal2->test();
+    t_pMyDeal2->test();
 	return 0;
 }
