@@ -2,6 +2,11 @@
 
 int MyBase64::Base64Encode(std::string &in_sSource, std::string &in_sDest)
 {
+	std::stringstream t_sSourceStream, t_sDestStream;
+	t_sSourceStream << in_sSource;
+	Base64Encoder encoder(t_sDestStream);
+	StreamCopier::copyStream(t_sSourceStream, encoder);
+	t_sDestStream >> in_sDest;
 	return 0;
 }
 

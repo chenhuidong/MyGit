@@ -121,13 +121,24 @@ public:
 		{
 			int len = _socket.receiveBytes(_fifoIn);
 
+			//获取接收的字符串
 			std::string t_sReceive(_fifoIn.begin(), _fifoIn.begin()+_fifoIn.used()-1);
 			std::string t_sReceiveDecode;
 
-			MyBase64::Base64Decode(t_sReceive, t_sReceiveDecode);
-			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToMap, t_sReceiveDecode);
+			//解密
+			//MyBase64::Base64Decode(t_sReceive, t_sReceiveDecode);
+			
+			//以Map方式解析
+			MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToMap, t_sReceive);
 			t_oMyAnalyseRecv.AnalyseStringToMap();
+
+			//以List方式解析
+			//MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::StringToList, t_sReceive);
 			//t_oMyAnalyseRecv.AnalyseStringToList();
+			
+			//以XML方式解析
+			//MyAnalyseRecv t_oMyAnalyseRecv(MyAnalyseRecv::XML, t_sReceive);
+			//t_oMyAnalyseRecv.AnalyseXML();
 			
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
 		}
