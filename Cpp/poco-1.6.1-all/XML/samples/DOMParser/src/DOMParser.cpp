@@ -46,11 +46,12 @@ int main(int argc, char** argv)
 		
 		NodeIterator it(pDoc, NodeFilter::SHOW_ATTRIBUTE);
 		Node* pNode = it.nextNode();
-		while (pNode)
+		/*while (pNode)
 		{
 			std::cout << pNode->nodeName() << ":" << pNode->nodeValue() << std::endl;
 			pNode = it.nextNode();
-		}
+		}*/
+		std::cout<< pNode->nodeValue()<< std::endl;
 	}
 	catch (Exception& exc)
 	{
