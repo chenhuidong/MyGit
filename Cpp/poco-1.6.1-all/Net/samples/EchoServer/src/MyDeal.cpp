@@ -4,6 +4,7 @@
 MyDealBase::MyDealBase() {}
 MyDealBase::~MyDealBase() {}
 
+
 MyDeal1::MyDeal1() 
 { 
 	std::cout<<"MyDeal1...."<<std::endl; 

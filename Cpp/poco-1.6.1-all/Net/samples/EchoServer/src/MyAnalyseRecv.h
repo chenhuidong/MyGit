@@ -19,7 +19,7 @@ public:
 		XML,
 	};
 	MyAnalyseRecv(MyAnalyseType in_eMyAnalyseType, std::string in_sRecv) : m_eMyAnalyseType(in_eMyAnalyseType), m_sRecv(in_sRecv){}
-	~MyAnalyseRecv(){}
+	virtual ~MyAnalyseRecv(){}
 
 	int AnalyseStringToMap();
 	int AnalyseStringToList();

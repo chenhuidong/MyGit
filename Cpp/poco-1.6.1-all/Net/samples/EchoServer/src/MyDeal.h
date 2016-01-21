@@ -5,7 +5,7 @@
 class MyDealBase
 { 
 public: 
-	virtual ~MyDealBase() =0;
+	virtual ~MyDealBase() = 0;
 	virtual void test() = 0;
 protected: 
 	MyDealBase();

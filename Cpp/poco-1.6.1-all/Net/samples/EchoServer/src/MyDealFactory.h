@@ -2,7 +2,6 @@
 #define __MY_DEAL_FACTORY_H_
 #include "MyDeal.h"
 
-Poco::DynamicFactory<MyDealBase> MyDealFactory; 
- 
+typedef Poco::DynamicFactory<MyDealBase> MyDealFactory; 
 
 #endif 
