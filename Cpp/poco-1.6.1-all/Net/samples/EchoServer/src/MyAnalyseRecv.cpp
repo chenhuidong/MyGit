@@ -36,6 +36,5 @@ int MyAnalyseRecv::AnalyseStringToList()
 
 int MyAnalyseRecv::AnalyseXML()
 {
-	
 	return 0;
 }
