@@ -42,8 +42,6 @@ MyFactoryFactory::MyFactoryFactory()
 {
     //注册子类
     m_oFFactory.registerClass<MyDealFactory>("MyDealFactory");  
-    
-    return 0;
 }
 
 int MyFactoryFactory::CreateAllInstance()
