@@ -15,7 +15,7 @@ public:
 	MyDealFactory(){}
 	virtual ~MyDealFactory(){}
 	int InitializeDFactory();
-	int CreateInstance(std::string& in_sDealName);
+	int CreateInstance(const std::string& in_sDealName);
 private:
 	DFactory m_oDFactory;
 };

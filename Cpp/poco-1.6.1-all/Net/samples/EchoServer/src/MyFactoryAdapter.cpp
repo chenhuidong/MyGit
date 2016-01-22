@@ -7,7 +7,6 @@ MyFactoryAdapter::MyFactoryAdapter()
 
 int MyFactoryAdapter::DealTransaction()
 {	
-    std::string s = "MyDeal1"; 
-    m_oMyDealFactory.CreateInstance(s);
+    m_oMyDealFactory.CreateInstance("MyDeal1");
 	return 0;
 }
