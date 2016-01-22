@@ -1,6 +1,7 @@
 #ifndef __MY_FACTORY_ADAPTER_H_
 #define __MY_FACTORY_ADAPTER_H_
 #include "MyDealFactory.h"
+#include <string>
 
 class MyFactoryAdapter
 {
