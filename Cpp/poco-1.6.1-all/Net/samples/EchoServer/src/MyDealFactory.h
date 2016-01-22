@@ -3,6 +3,7 @@
 #include "Poco/DynamicFactory.h"
 #include "MyDeal.h"
 #include <string>
+#include <assert.h>
 
 using Poco::DynamicFactory;
 
