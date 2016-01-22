@@ -32,7 +32,7 @@
 #include "MyAnalyseRecv.h"
 #include "MyBase64.h"
 #include "MyDeal.h"
-#include "MyFactoryAdapter.h"
+#include "MyFactoryFactory.h"
 
 
 using Poco::Net::SocketReactor;
@@ -143,8 +143,11 @@ public:
 			//t_oMyAnalyseRecv.AnalyseXML();
 			
 			//处理事务
-			MyFactoryAdapter t_oMyFactoryAdapter;
-			t_oMyFactoryAdapter.DealTransaction();
+			MyFactoryFactory t_oMyFactoryFactory;
+			MyFactoryFactory.CreateAllInstance();
+			MyFactoryFactory.m_pMyDealFactory->Initialize();
+			MyFactoryFactory.m_pMyDealFactory->CreateInstance("MyDeal1");
+
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
 		}
 	}

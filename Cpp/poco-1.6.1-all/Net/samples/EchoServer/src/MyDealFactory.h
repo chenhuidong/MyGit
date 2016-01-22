@@ -9,12 +9,23 @@ using Poco::DynamicFactory;
 
 typedef Poco::DynamicFactory<MyDealBase> DFactory;
 
-class MyDealFactory
+class Factory
+{
+public:
+	virtual ~Factory() = 0;
+	virtual int Initialize() = 0;
+protected:
+	Factory(){};
+private:
+};
+
+class MyDealFactory: public Factory
 {
 public:
 	MyDealFactory(){}
 	virtual ~MyDealFactory(){}
-	int InitializeDFactory();
+	int Initialize();
+public:
 	MyDealBase* CreateInstance(const std::string& in_sDealName);
 private:
 	DFactory m_oDFactory;

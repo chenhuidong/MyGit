@@ -3,6 +3,29 @@
 
 MyDealBase::MyDealBase() {}
 MyDealBase::~MyDealBase() {}
+int MyDealBase::DealTransaction()
+{
+	/*
+	if(std::strcmp(m_sDealName, "MyDeal1") == 0)
+    {
+        MyDeal1* t_pMyDeal1 = dynamic_cast<MyDeal1*>(m_oMyDealFactory.CreateInstance("MyDeal1"));
+        t_pMyDeal1->test();
+        delete t_pMyDeal1;
+    }
+    else if(std::strcmp(m_sDealName, "MyDeal2") == 0)
+    {
+        MyDeal2* t_pMyDeal2 = dynamic_cast<MyDeal2*>(m_oMyDealFactory.CreateInstance("MyDeal2"));
+        t_pMyDeal2->test();
+        delete t_pMyDeal2;
+    }
+    else
+    {
+        return -1;
+    }
+    */
+	return 0;
+}
+
 
 
 MyDeal1::MyDeal1() 

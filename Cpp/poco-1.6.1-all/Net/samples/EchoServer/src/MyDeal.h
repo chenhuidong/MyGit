@@ -7,6 +7,7 @@ class MyDealBase
 public: 
 	virtual ~MyDealBase() = 0;
 	virtual void test() = 0;
+	int DealTransaction();
 protected: 
 	MyDealBase();
 private:
