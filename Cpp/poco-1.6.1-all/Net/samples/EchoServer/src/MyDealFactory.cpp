@@ -1,6 +1,6 @@
 #include "MyDealFactory.h"
 
-int MyDealFacotry::InitializeDFactory()
+int MyDealFactory::InitializeDFactory()
 {
 	m_oDFactory.registerClass<MyDeal1>("MyDeal1");  
     m_oDFactory.registerClass<MyDeal2>("MyDeal2");  

@@ -9,11 +9,11 @@ using Poco::DynamicFactory;
 
 typedef Poco::DynamicFactory<MyDealBase> DFactory;
 
-class MyDealFacotry
+class MyDealFactory
 {
 public:
-	MyDealFacotry(){}
-	virtual ~MyDealFacotry(){}
+	MyDealFactory(){}
+	virtual ~MyDealFactory(){}
 	int InitializeDFactory();
 	int CreateInstance(std::string &in_sDealName);
 private:
