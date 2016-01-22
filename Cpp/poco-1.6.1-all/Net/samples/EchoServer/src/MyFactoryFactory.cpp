@@ -46,7 +46,7 @@ MyFactoryFactory::MyFactoryFactory()
     return 0;
 }
 
-int MyFactoryFactory::CreateAllInstance(const std::string& in_sFactoryName)
+int MyFactoryFactory::CreateAllInstance()
 {
     //创建子类实例
     m_pMyDealFactory = dynamic_cast<MyDealFactory*>(m_oFFactory.createInstance("MyDealFactory"));

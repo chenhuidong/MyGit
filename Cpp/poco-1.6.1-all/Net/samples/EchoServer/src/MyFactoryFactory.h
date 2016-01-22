@@ -28,7 +28,7 @@ public:
 	MyFactoryFactory();
 	virtual ~MyFactoryFactory(){}
 public:
-	int CreateAllInstance(const std::string& in_sFactoryName);
+	int CreateAllInstance();
 private:
 	MyDealFactory* m_pMyDealFactory;
 private:
