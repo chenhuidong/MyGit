@@ -1,19 +1,11 @@
 #include "MyDealAdapter.h"
 
-int MyDealAdapter::DealTransaction()
+MyDealAdapter::MyDealAdapter()
 {
-	MyDealFactory t_oMyDealFactory;
+     m_oMyDealFactory.InitializeDFactory();
+}
 
-	t_oMyDealFactory.registerClass<MyDeal1>("MyDeal1");  
-    t_oMyDealFactory.registerClass<MyDeal2>("MyDeal2");  
-
-    assert (t_oMyDealFactory.isClass("MyDeal1"));  
-    assert (t_oMyDealFactory.isClass("MyDeal2")); 
-
-    MyDeal1* t_pMyDeal1 = dynamic_cast<MyDeal1*>(t_oMyDealFactory.createInstance("MyDeal1"));  
-    MyDeal2* t_pMyDeal2 = dynamic_cast<MyDeal2*>(t_oMyDealFactory.createInstance("MyDeal2"));  
-
-    t_pMyDeal1->test();
-    t_pMyDeal2->test();
+int MyDealAdapter::DealTransaction()
+{	
 	return 0;
 }

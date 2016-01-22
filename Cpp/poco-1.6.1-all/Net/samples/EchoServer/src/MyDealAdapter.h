@@ -6,9 +6,11 @@
 class MyDealAdapter
 {
 public:
-	MyDealAdapter(){}
+	MyDealAdapter();
 	virtual ~MyDealAdapter(){}
 	int DealTransaction();
+private:
+	MyDealFactory m_oMyDealFactory;
 };
 
 #endif 
