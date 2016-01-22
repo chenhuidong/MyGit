@@ -8,7 +8,7 @@ int MyDealFactory::InitializeDFactory()
 	return 0;
 }
 
-int MyDealFactory::CreateInstance(std::string &in_sDealName)
+int MyDealFactory::CreateInstance(std::string& in_sDealName)
 {
 	assert (m_oDFactory.isClass(in_sDealName));  
 	m_oDFactory.createInstance(in_sDealName);
