@@ -144,9 +144,9 @@ public:
 			
 			//处理事务
 			MyFactoryFactory t_oMyFactoryFactory;
-			MyFactoryFactory.CreateAllInstance();
-			MyFactoryFactory.m_pMyDealFactory->Initialize();
-			MyFactoryFactory.m_pMyDealFactory->CreateInstance("MyDeal1");
+			t_oMyFactoryFactory.CreateAllInstance();
+			t_oMyFactoryFactory.m_pMyDealFactory->Initialize();
+			t_oMyFactoryFactory.m_pMyDealFactory->CreateInstance("MyDeal1");
 
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
 		}
