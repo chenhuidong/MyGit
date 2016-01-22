@@ -32,7 +32,7 @@
 #include "MyAnalyseRecv.h"
 #include "MyBase64.h"
 #include "MyDeal.h"
-#include "MyDealAdapter.h"
+#include "MyFactoryAdapter.h"
 
 
 using Poco::Net::SocketReactor;
