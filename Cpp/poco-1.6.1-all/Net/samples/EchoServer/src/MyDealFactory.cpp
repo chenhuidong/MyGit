@@ -18,5 +18,6 @@ int MyDealFactory::CreateInstance(const std::string& in_sDealName)
 
     t_pMyDeal1->test();
     //t_pMyDeal2->test();
+    delete t_pMyDeal1;
 	return 0;
 }
