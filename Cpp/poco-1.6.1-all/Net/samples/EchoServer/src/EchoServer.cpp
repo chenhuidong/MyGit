@@ -150,6 +150,9 @@ public:
 			t_pMyDealFactory->Initialize();
 			MyDeal1* t_pMyDeal1 = dynamic_cast<MyDeal1*>(t_pMyDealFactory->CreateInstance("MyDeal1"));
 			t_pMyDeal1->test();
+			MyDeal2* t_pMyDeal2 = dynamic_cast<MyDeal2*>(t_pMyDealFactory->CreateInstance("MyDeal2"));
+			t_pMyDeal2->test();
+			delete t_pMyDeal1;
 			delete t_pMyDeal1;
 
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
