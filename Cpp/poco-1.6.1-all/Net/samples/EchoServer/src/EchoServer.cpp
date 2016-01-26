@@ -147,7 +147,7 @@ public:
 			t_oMyFactoryFactory.CreateAllFactory();
 			t_oMyFactoryFactory.InitializeAllFactory();
 			MyDealFactory* t_pMyDealFactory = t_oMyFactoryFactory.getMyDealFactory();
-			MyDeal1 t_pMyDeal1 = t_pMyDealFactory->CreateInstance("MyDeal1");
+			MyDeal1 t_pMyDeal1 = dynamic_cast<MyDeal1*>(t_pMyDealFactory->CreateInstance("MyDeal1"));
 			delete t_pMyDeal1;
 
 			_fifoIn.drain(_fifoOut.write(_fifoIn.buffer(), _fifoIn.used()));
