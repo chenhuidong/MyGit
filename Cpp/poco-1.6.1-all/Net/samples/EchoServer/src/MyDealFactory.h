@@ -19,6 +19,8 @@ protected:
 private:
 };
 
+Factory::~Factory(){}
+
 class MyDealFactory: public Factory
 {
 public:
