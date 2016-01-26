@@ -3,23 +3,6 @@
 #include "MyDealFactory.h"
 #include <string>
 
-/*
-class MyFactoryAdapter
-{
-public:
-	MyFactoryAdapter();
-	virtual ~MyFactoryAdapter(){}
-	int Deal();
-
-	void setClassName(const std::string &in_sClassName);
-	const std::string& getClassName();
-private:
-	MyDealFactory m_oMyDealFactory;
-	//MyDealFactory1 m_oMyDealFactory1;
-	std::string m_sClassName;
-};
-*/
-
 typedef Poco::DynamicFactory<Factory> FFactory;
 
 class MyFactoryFactory
