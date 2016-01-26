@@ -6,6 +6,15 @@ MyFactoryFactory::MyFactoryFactory()
     m_oFFactory.registerClass<MyDealFactory>("MyDealFactory");  
 }
 
+MyFactoryFactory::~MyFactoryFactory()
+{
+	for(std::map<std::string, Factory*>::iterator it=m_mFFactory.begin(); it!=m_mFFactory.end();++it)
+	{
+		std::cout<< it->first<< " end"<< std::endl;
+		delete it->second;
+	}
+}
+
 int MyFactoryFactory::CreateAllFactory()
 {
     //创建子类实例

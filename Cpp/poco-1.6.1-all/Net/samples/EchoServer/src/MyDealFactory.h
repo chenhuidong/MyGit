@@ -23,11 +23,12 @@ class MyDealFactory: public Factory
 {
 public:
 	MyDealFactory(){}
-	virtual ~MyDealFactory(){}
+	virtual ~MyDealFactory();
 	int Initialize();
 public:
 	MyDealBase* CreateInstance(const std::string& in_sDealName);
 private:
+	std::map<std::string, MyDealBase*> m_mMyDealBase;
 	DFactory m_oDFactory;
 };
 

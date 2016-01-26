@@ -10,7 +10,7 @@ class MyFactoryFactory
 {
 public:
 	MyFactoryFactory();
-	virtual ~MyFactoryFactory(){}
+	virtual ~MyFactoryFactory();
 public:
 	int CreateAllFactory();
 	Factory* getFactory(const std::string& in_sFactoryName);
