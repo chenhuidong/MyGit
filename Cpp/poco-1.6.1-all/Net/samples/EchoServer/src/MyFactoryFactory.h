@@ -2,6 +2,7 @@
 #define __MY_FACTORY_ADAPTER_H_
 #include "MyDealFactory.h"
 #include <string>
+#include <map>
 
 typedef Poco::DynamicFactory<Factory> FFactory;
 
@@ -12,10 +13,10 @@ public:
 	virtual ~MyFactoryFactory(){}
 public:
 	int CreateAllFactory();
-	int InitializeAllFactory();
-	MyDealFactory* getMyDealFactory();
+	Factory* getFactory(const std::string& in_sFactoryName);
 private:
-	MyDealFactory* m_pMyDealFactory;
+	//MyDealFactory* m_pMyDealFactory;
+	map<std::string, Factory*> m_mFFactory;
 	FFactory m_oFFactory;
 };
 

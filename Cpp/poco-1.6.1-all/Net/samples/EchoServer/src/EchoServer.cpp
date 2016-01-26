@@ -145,8 +145,9 @@ public:
 			//处理事务
 			MyFactoryFactory t_oMyFactoryFactory;
 			t_oMyFactoryFactory.CreateAllFactory();
-			t_oMyFactoryFactory.InitializeAllFactory();
-			MyDealFactory* t_pMyDealFactory = t_oMyFactoryFactory.getMyDealFactory();
+
+			MyDealFactory* t_pMyDealFactory = dynamic_cast<MyDealFactory>(t_oMyFactoryFactory.getFactory("MyDealFactory"));
+			MyDealFactory->Initialize();
 			MyDeal1* t_pMyDeal1 = dynamic_cast<MyDeal1*>(t_pMyDealFactory->CreateInstance("MyDeal1"));
 			t_pMyDeal1->test();
 			delete t_pMyDeal1;

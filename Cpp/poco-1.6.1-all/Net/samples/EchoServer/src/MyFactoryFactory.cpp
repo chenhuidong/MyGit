@@ -9,17 +9,13 @@ MyFactoryFactory::MyFactoryFactory()
 int MyFactoryFactory::CreateAllFactory()
 {
     //创建子类实例
-    m_pMyDealFactory = dynamic_cast<MyDealFactory*>(m_oFFactory.createInstance("MyDealFactory"));
+    //m_pMyDealFactory = dynamic_cast<MyDealFactory*>(m_oFFactory.createInstance("MyDealFactory"));
+    //m_pMyDealFactory->Initialize();
+    m_mFFactory.insert(make_pair("MyDealFactory", m_oFFactory.createInstance("MyDealFactory")));
     return 0;
 }
 
-int MyFactoryFactory::InitializeAllFactory()
+Factory* MyFactoryFactory::getFactory(const std::string& in_sFactoryName)
 {
-    m_pMyDealFactory->Initialize();
-    return 0;
-}
-
-MyDealFactory* MyFactoryFactory::getMyDealFactory()
-{
-    return m_pMyDealFactory;
+    return m_mFFactory[in_sFactoryName];
 }
