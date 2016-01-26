@@ -57,7 +57,7 @@ int MyFactoryFactory::InitializeAllFactory()
     return 0;
 }
 
-MyDealFactory* getMyDealFactory()
+MyDealFactory* MyFactoryFactory::getMyDealFactory()
 {
     return m_pMyDealFactory;
 }
