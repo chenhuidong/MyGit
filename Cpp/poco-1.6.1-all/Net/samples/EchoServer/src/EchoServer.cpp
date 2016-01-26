@@ -146,7 +146,7 @@ public:
 			MyFactoryFactory t_oMyFactoryFactory;
 			t_oMyFactoryFactory.CreateAllFactory();
 
-			MyDealFactory* t_pMyDealFactory = dynamic_cast<MyDealFactory>(t_oMyFactoryFactory.getFactory("MyDealFactory"));
+			MyDealFactory* t_pMyDealFactory = dynamic_cast<MyDealFactory*>(t_oMyFactoryFactory.getFactory("MyDealFactory"));
 			MyDealFactory->Initialize();
 			MyDeal1* t_pMyDeal1 = dynamic_cast<MyDeal1*>(t_pMyDealFactory->CreateInstance("MyDeal1"));
 			t_pMyDeal1->test();
