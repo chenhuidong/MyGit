@@ -1,5 +1,7 @@
 #include "MyDealFactory.h"
 
+Factory::~Factory(){}
+
 int MyDealFactory::Initialize()
 {
 	//注册子类
