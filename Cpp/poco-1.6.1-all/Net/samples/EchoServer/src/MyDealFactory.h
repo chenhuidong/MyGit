@@ -15,7 +15,7 @@ public:
 	virtual ~Factory() = 0;
 	virtual int Initialize() = 0;
 protected:
-	Factory(){};
+	Factory(){}
 private:
 };
 
