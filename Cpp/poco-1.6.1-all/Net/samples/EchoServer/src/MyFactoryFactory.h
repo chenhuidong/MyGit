@@ -16,7 +16,7 @@ public:
 	Factory* getFactory(const std::string& in_sFactoryName);
 private:
 	//MyDealFactory* m_pMyDealFactory;
-	map<std::string, Factory*> m_mFFactory;
+	std::map<std::string, Factory*> m_mFFactory;
 	FFactory m_oFFactory;
 };
 
