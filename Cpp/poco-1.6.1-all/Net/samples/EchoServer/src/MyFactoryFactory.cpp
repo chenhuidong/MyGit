@@ -11,7 +11,7 @@ int MyFactoryFactory::CreateAllFactory()
     //创建子类实例
     //m_pMyDealFactory = dynamic_cast<MyDealFactory*>(m_oFFactory.createInstance("MyDealFactory"));
     //m_pMyDealFactory->Initialize();
-    m_mFFactory.insert(make_pair("MyDealFactory", m_oFFactory.createInstance("MyDealFactory")));
+    m_mFFactory.insert(std::make_pair("MyDealFactory", m_oFFactory.createInstance("MyDealFactory")));
     return 0;
 }
 
