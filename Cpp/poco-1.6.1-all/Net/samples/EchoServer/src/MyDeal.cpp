@@ -1,8 +1,16 @@
 #include "MyDeal.h"
 
 
-MyDealBase::MyDealBase() {}
-MyDealBase::~MyDealBase() {}
+MyDealBase::MyDealBase() 
+{
+    std::cout<<"MyDeal...."<<std::endl; 
+}
+
+MyDealBase::~MyDealBase() 
+{
+    std::cout<<"MyDeal....end"<<std::endl; 
+}
+
 int MyDealBase::DealTransaction()
 {
 	/*
