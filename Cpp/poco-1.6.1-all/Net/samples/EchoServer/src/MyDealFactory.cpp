@@ -17,7 +17,7 @@ MyDealBase* MyDealFactory::CreateInstance(const std::string& in_sDealName)
 	//return m_oDFactory.createInstance(in_sDealName);
 
 	MyDealBase* t_pMyDealBase = m_oDFactory.createInstance(in_sDealName);
-	m_mMyDealBase.insert(in_sDealName, t_pMyDealBase);
+	m_mMyDealBase.insert(std::make_pair(in_sDealName, t_pMyDealBase));
 	return t_pMyDealBase;
 }
 
