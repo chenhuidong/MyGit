@@ -44,9 +44,20 @@ MyFactoryFactory::MyFactoryFactory()
     m_oFFactory.registerClass<MyDealFactory>("MyDealFactory");  
 }
 
-int MyFactoryFactory::CreateAllInstance()
+int MyFactoryFactory::CreateAllFactory()
 {
     //创建子类实例
     m_pMyDealFactory = dynamic_cast<MyDealFactory*>(m_oFFactory.createInstance("MyDealFactory"));
     return 0;
+}
+
+int MyFactoryFactory::InitializeAllFactory()
+{
+    m_pMyDealFactory->Initialize();
+    return 0;
+}
+
+MyDealFactory* getMyDealFactory()
+{
+    return m_pMyDealFactory;
 }

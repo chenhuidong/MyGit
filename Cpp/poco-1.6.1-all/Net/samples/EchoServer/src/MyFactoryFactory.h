@@ -28,9 +28,11 @@ public:
 	MyFactoryFactory();
 	virtual ~MyFactoryFactory(){}
 public:
-	int CreateAllInstance();
-	MyDealFactory* m_pMyDealFactory;
+	int CreateAllFactory();
+	int InitializeAllFactory();
+	MyDealFactory* getMyDealFactory();
 private:
+	MyDealFactory* m_pMyDealFactory;
 	FFactory m_oFFactory;
 };
 
