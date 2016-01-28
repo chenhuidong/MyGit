@@ -17,13 +17,7 @@ MyDealFactory::~MyDealFactory()
 		delete it->second;
 	}
 }
-/*
-int MyDealFactory::Initialize()
-{
 
-	return 0;
-}
-*/
 MyDealBase* MyDealFactory::CreateInstance(const std::string& in_sDealName)
 {
 	//创建子类实例
