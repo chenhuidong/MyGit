@@ -1,6 +1,27 @@
 #include "MyDealFactory.h"
+Factory::Factory()
+{
+	std::cout<< "Factory"<< std::endl; 
+}
 
-Factory::~Factory(){}
+Factory::~Factory()
+{
+	std::cout<< "~Factory"<< std::endl; 
+}
+
+MyDealFactory::MyDealFactory()
+{
+	std::cout<< "MyDealFactory"<< std::endl; 
+}
+
+MyDealFactory::~MyDealFactory()
+{
+	for(std::map<std::string, MyDealBase*>::iterator it=m_mMyDealBase.begin(); it!=m_mMyDealBase.end(); ++it)
+	{
+		delete it->second;
+	}
+	std::cout<< "~MyDealFactory"<< std::endl; 
+}
 
 int MyDealFactory::Initialize()
 {
@@ -19,10 +40,3 @@ MyDealBase* MyDealFactory::CreateInstance(const std::string& in_sDealName)
 	return t_pMyDealBase;
 }
 
-MyDealFactory::~MyDealFactory()
-{
-	for(std::map<std::string, MyDealBase*>::iterator it=m_mMyDealBase.begin(); it!=m_mMyDealBase.end(); ++it)
-	{
-		delete it->second;
-	}
-}

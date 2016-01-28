@@ -11,7 +11,8 @@ MyFactoryFactory& MyFactoryFactory::DefaultFFactory()
 MyFactoryFactory::MyFactoryFactory()
 {
     //注册子类
-    m_oFFactory.registerClass<MyDealFactory>("MyDealFactory");  
+    m_oFFactory.registerClass<MyDealFactory>("MyDealFactory");
+    std::cout<< "MyFactoryFactory"<< std::endl;  
 }
 
 MyFactoryFactory::~MyFactoryFactory()
@@ -21,6 +22,7 @@ MyFactoryFactory::~MyFactoryFactory()
 		//std::cout<< it->first<< " end"<< std::endl;
 		delete it->second;
 	}
+    std::cout<< "~MyFactoryFactory"<< std::endl; 
 }
 
 int MyFactoryFactory::CreateAllFactory()

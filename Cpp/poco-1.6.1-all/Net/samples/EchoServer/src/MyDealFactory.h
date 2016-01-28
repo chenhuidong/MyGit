@@ -15,14 +15,14 @@ public:
 	virtual ~Factory() = 0;
 	virtual int Initialize() = 0;
 protected:
-	Factory(){}
+	Factory();
 private:
 };
 
 class MyDealFactory: public Factory
 {
 public:
-	MyDealFactory(){}
+	MyDealFactory();
 	virtual ~MyDealFactory();
 	int Initialize();
 public:

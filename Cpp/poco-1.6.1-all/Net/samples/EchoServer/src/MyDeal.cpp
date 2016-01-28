@@ -3,12 +3,12 @@
 
 MyDealBase::MyDealBase() 
 {
-    std::cout<<"MyDeal...."<<std::endl; 
+    std::cout<<"MyDealBase"<<std::endl; 
 }
 
 MyDealBase::~MyDealBase() 
 {
-    std::cout<<"MyDeal....end"<<std::endl; 
+    std::cout<<"~MyDealBase"<<std::endl; 
 }
 
 int MyDealBase::DealTransaction()
@@ -38,12 +38,12 @@ int MyDealBase::DealTransaction()
 
 MyDeal1::MyDeal1() 
 { 
-	std::cout<<"MyDeal1...."<<std::endl; 
+	std::cout<<"MyDeal1"<<std::endl; 
 }
 
 MyDeal1::~MyDeal1() 
 {
-	std::cout<<"MyDeal1....end"<<std::endl; 
+	std::cout<<"~MyDeal1"<<std::endl; 
 }
 
 void MyDeal1::test() 
@@ -54,12 +54,12 @@ void MyDeal1::test()
 
 MyDeal2::MyDeal2() 
 { 
-	std::cout<<"MyDeal2...."<<std::endl; 
+	std::cout<<"MyDeal2"<<std::endl; 
 }
 
 MyDeal2::~MyDeal2() 
 {
-	std::cout<<"MyDeal2....end"<<std::endl; 
+	std::cout<<"~MyDeal2"<<std::endl; 
 }
 
 void MyDeal2::test() 
