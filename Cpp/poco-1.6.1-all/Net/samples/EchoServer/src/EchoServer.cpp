@@ -143,7 +143,7 @@ public:
 			//t_oMyAnalyseRecv.AnalyseXML();
 			
 			//处理事务
-			MyFactoryFactory t_oMyFactoryFactory;
+			MyFactoryFactory& t_oMyFactoryFactory = MyFactoryFactory::DefaultFFactory();
 			t_oMyFactoryFactory.CreateAllFactory();
 
 			MyDealFactory* t_pMyDealFactory = dynamic_cast<MyDealFactory*>(t_oMyFactoryFactory.getFactory("MyDealFactory"));

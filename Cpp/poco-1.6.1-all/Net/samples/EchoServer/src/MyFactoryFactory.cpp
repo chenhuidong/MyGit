@@ -1,5 +1,13 @@
 #include "MyFactoryFactory.h"
 
+//单件
+static Poco::SingletonHolder<MyFactoryFactory> holder;
+
+static MyFactoryFactory& MyFactoryFactory::DefaultFFactory()
+{
+    return *holder.get();
+}
+
 MyFactoryFactory::MyFactoryFactory()
 {
     //注册子类
