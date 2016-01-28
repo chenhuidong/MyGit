@@ -30,6 +30,9 @@ public:
 private:
 	std::map<std::string, MyDealBase*> m_mMyDealBase;
 	DFactory m_oDFactory;
+private:
+	MyDealFactory(const MyDealFactory&);
+	MyDealFactory& operator = (const MyDealFactory&);
 };
 
 #endif 

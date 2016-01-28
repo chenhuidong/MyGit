@@ -1,26 +1,15 @@
 #include "MyDealFactory.h"
-Factory::Factory()
-{
-	std::cout<< "Factory"<< std::endl; 
-}
 
-Factory::~Factory()
-{
-	std::cout<< "~Factory"<< std::endl; 
-}
+Factory::Factory(){}
+Factory::~Factory(){}
 
-MyDealFactory::MyDealFactory()
-{
-	std::cout<< "MyDealFactory"<< std::endl; 
-}
-
+MyDealFactory::MyDealFactory(){}
 MyDealFactory::~MyDealFactory()
 {
 	for(std::map<std::string, MyDealBase*>::iterator it=m_mMyDealBase.begin(); it!=m_mMyDealBase.end(); ++it)
 	{
 		delete it->second;
 	}
-	std::cout<< "~MyDealFactory"<< std::endl; 
 }
 
 int MyDealFactory::Initialize()

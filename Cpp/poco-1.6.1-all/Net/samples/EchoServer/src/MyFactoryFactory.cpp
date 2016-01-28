@@ -1,18 +1,17 @@
 #include "MyFactoryFactory.h"
 
 //单件
-static Poco::SingletonHolder<MyFactoryFactory> holder;
+static Poco::SingletonHolder<MyFactoryFactory> MyFactoryFactoryHolder;
 
 MyFactoryFactory& MyFactoryFactory::DefaultFFactory()
 {
-    return *holder.get();
+    return *MyFactoryFactoryHolder.get();
 }
 
 MyFactoryFactory::MyFactoryFactory()
 {
     //注册子类
     m_oFFactory.registerClass<MyDealFactory>("MyDealFactory");
-    std::cout<< "MyFactoryFactory"<< std::endl;  
 }
 
 MyFactoryFactory::~MyFactoryFactory()
@@ -22,7 +21,6 @@ MyFactoryFactory::~MyFactoryFactory()
 		//std::cout<< it->first<< " end"<< std::endl;
 		delete it->second;
 	}
-    std::cout<< "~MyFactoryFactory"<< std::endl; 
 }
 
 int MyFactoryFactory::CreateAllFactory()
