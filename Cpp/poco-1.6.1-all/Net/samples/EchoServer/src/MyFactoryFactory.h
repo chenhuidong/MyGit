@@ -13,7 +13,6 @@ public:
 	MyFactoryFactory();
 	virtual ~MyFactoryFactory();
 public:
-	int CreateAllFactory();
 	Factory* getFactory(const std::string& in_sFactoryName);
 	static MyFactoryFactory& DefaultFFactory();
 private:
@@ -21,6 +20,7 @@ private:
 	std::map<std::string, Factory*> m_mFFactory;
 	FFactory m_oFFactory;
 private:
+	int CreateAllFactory();
 	MyFactoryFactory(const MyFactoryFactory&);
 	MyFactoryFactory& operator = (const MyFactoryFactory&);
 };
