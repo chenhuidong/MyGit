@@ -3,7 +3,7 @@
 //单件
 static Poco::SingletonHolder<MyFactoryFactory> holder;
 
-static MyFactoryFactory& MyFactoryFactory::DefaultFFactory()
+MyFactoryFactory& MyFactoryFactory::DefaultFFactory()
 {
     return *holder.get();
 }
