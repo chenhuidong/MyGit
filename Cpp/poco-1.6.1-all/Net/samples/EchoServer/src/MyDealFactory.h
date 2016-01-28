@@ -24,7 +24,7 @@ class MyDealFactory: public Factory
 public:
 	MyDealFactory();
 	virtual ~MyDealFactory();
-	int Initialize();
+	//int Initialize();
 public:
 	MyDealBase* CreateInstance(const std::string& in_sDealName);
 private:
