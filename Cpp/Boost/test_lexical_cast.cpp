@@ -53,7 +53,7 @@ int main(int /*argc*/, char * argv[])
 	FILE *fp = fopen("1.txt", "w");
 	number_to_file(20, fp);
 
-	convert_strings_part("123456789", 2, 3);
+	std::cout<< convert_strings_part("123456789", 2, 3)<< std::endl;
 	return 0;
 }
 
