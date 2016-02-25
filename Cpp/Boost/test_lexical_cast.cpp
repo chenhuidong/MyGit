@@ -2,6 +2,16 @@
 #include <vector>
 #include <iostream>
 
+void log_message(const std::string &s)
+{
+	std::cout<< s<< std::endl;
+}
+
+void log_errno(int yoko)
+{
+	log_message("Error " + boost::lexical_cast<std::string>(yoko) + ": " + strerror(yoko));
+}
+
 int main(int /*argc*/, char * argv[])
 {
 	using boost::lexical_cast;
@@ -23,5 +33,8 @@ int main(int /*argc*/, char * argv[])
 	{
 		std::cout<< *it<< std::endl;
 	}
+
+	log_errno(2);
 // ...
 }
+
