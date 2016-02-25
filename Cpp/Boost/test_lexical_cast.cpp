@@ -12,15 +12,16 @@ int main(int /*argc*/, char * argv[])
 		try
 		{
 			args.push_back(lexical_cast<short>(*argv));
-			for(std::vector<short>::iterator it=args.begin(); it!=args.end(); ++it)
-			{
-				std::cout<< *it<< std::endl;
-			}
 		}
 		catch(const bad_lexical_cast &)
 		{
 			args.push_back(0);
 		}
+	}
+
+	for(std::vector<short>::iterator it=args.begin(); it!=args.end(); ++it)
+	{
+		std::cout<< *it<< std::endl;
 	}
 // ...
 }
