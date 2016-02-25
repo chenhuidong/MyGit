@@ -1,3 +1,4 @@
+all:lexical_cast stringize variant
 lexical_cast:
 	g++ test_lexical_cast.cpp -olexical_cast
 stringize:
