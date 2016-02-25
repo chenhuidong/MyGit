@@ -45,8 +45,8 @@ int main(int /*argc*/, char * argv[])
 
 	log_errno(2);
 	
-	FILE *fp；
-	fp=fopen("1.txt","r");
+	FILE *fp;
+	fp = fopen("1.txt", "rw");
 	number_to_file(20, fp);
 
 	return 0;
