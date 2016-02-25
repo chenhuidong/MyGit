@@ -17,7 +17,7 @@ public:
 int main()
 {    
 	boost::variant< int, std::string > u("hello world");    
-	std::cout << u; // output: hello world    
+	std::cout << u<< std::endl; // output: hello world    
 	int result = boost::apply_visitor( my_visitor(), u );    
-	std::cout << result; // output: 11 (i.e., length of "hello world")
+	std::cout << result<< std::endl; // output: 11 (i.e., length of "hello world")
 }
