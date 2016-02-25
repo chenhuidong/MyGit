@@ -21,6 +21,11 @@ void number_to_file(int number, FILE* file)
 	fputs(buffer.begin(), file);
 }
 
+int convert_strings_part(const std::string& s, std::size_t pos, std::size_t n)
+{
+	return boost::lexical_cast<int>(s.data() + pos, n);
+}
+
 int main(int /*argc*/, char * argv[])
 {
 	using boost::lexical_cast;
@@ -48,6 +53,7 @@ int main(int /*argc*/, char * argv[])
 	FILE *fp = fopen("1.txt", "w");
 	number_to_file(20, fp);
 
+	convert_strings_part("123456789", 2, 3);
 	return 0;
 }
 
