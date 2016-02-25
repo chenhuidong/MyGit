@@ -15,9 +15,15 @@ const char* const de_short_month_names[] =
 };
 const char* const de_long_month_names[] =
 {
-	"Januar", "Februar", "Marz", "April", "Mai",
-	"Juni", "Juli", "August", "September", "Oktober",
-	"November", "Dezember", "NichtDerMonat"
+"Januar", "Februar", "Marz", "April", "Mai",
+"Juni", "Juli", "August", "September", "Oktober",
+"November", "Dezember", "NichtDerMonat"
+};
+const char* const de_long_month_namess[] =
+{
+	"January", "February", "March", "April", "May",
+	"June", "July", "August", "September", "October",
+	"November", "December"
 };
 const char* const de_long_weekday_names[] =
 {
