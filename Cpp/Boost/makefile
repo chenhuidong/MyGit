@@ -1,7 +1,7 @@
 lexical_cast:
 	g++ test_lexical_cast.cpp -olexical_cast
-stringlize:
-	g++ stringlize.cpp -ostringlize
+stringize:
+	g++ stringize.cpp -ostringize
 .PHONY:clean
 clean:
-	rm lexical_cast stringlize
+	rm lexical_cast stringize
