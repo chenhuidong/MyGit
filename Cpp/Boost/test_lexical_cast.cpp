@@ -44,6 +44,11 @@ int main(int /*argc*/, char * argv[])
 	}
 
 	log_errno(2);
-	number_to_file(20, "1.txt");
+	
+	FILE *fp；
+	fp=("1.txt","r");
+	number_to_file(20, fp);
+
+	return 0;
 }
 
