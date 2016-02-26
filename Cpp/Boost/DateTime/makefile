@@ -1,5 +1,5 @@
 all:dates_as_strings days_alive days_between_new_years lastday_of_month localization_demonstration \
-	time_math print_hours
+	time_math print_hours local_to_utc_conversion
 dates_as_strings:
 	g++ dates_as_strings.cpp -odates_as_strings -lboost_date_time
 days_alive:
@@ -16,7 +16,9 @@ time_math:
 	g++ time_math.cpp -otime_math -lboost_date_time
 print_hours:
 	g++ print_hours.cpp -oprint_hours -lboost_date_time
+local_to_utc_conversion:
+	g++ local_to_utc_conversion.cpp -olocal_to_utc_conversion -lboost_date_time
 .PHONY:clean
 clean:
 	rm dates_as_strings days_alive days_between_new_years lastday_of_month localization_demonstration \
-	time_math print_hours 
+	time_math print_hours local_to_utc_conversion
