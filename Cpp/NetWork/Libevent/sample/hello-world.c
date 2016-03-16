@@ -4,6 +4,7 @@
   each client connection, and closes each connection once it is flushed.
 
   Where possible, it exits cleanly in response to a SIGINT (ctrl-c).
+  gcc -I/usr/local/include -o hello-world hello-world.c -L/usr/local/lib -levent
 */
 
 

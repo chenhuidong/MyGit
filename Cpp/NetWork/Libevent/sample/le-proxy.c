@@ -3,6 +3,7 @@
   with Libevent's bufferevent layer.
 
   XXX It's a little ugly and should probably be cleaned up.
+  gcc -I/usr/local/include -o le-proxy le-proxy.c -L/usr/local/lib -levent -levent_openssl
  */
 
 #include <stdio.h>
