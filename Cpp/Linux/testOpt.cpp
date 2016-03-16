@@ -12,11 +12,11 @@ int main(int argc, char**argv)
 		switch (c) 
 		{
 			case 'a':
-			cout<< "chd a" <<endl;break;
+				cout<< "chd a" <<optarg <<endl; break;
 			case 'p':
-			cout<< "chd p" <<endl;break;
+				cout<< "chd p" <<endl; break;
 			default:
-			break;
+				break;
 		}
 	}
 	return 0;
