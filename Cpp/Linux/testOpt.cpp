@@ -12,7 +12,7 @@ int main(int argc, char**argv)
 		switch (c) 
 		{
 			case 'a':
-				cout<< "chd a" <<optarg <<endl; break;
+				cout<< "chd a " <<atoi(optarg) <<endl; break;
 			case 'p':
 				cout<< "chd p" <<endl; break;
 			default:
