@@ -6,8 +6,8 @@ int main(int argc, char**argv)
 {
 	int c;
 	while (-1 != (c = getopt(argc, argv,
-          "a:"  /* Max item size */
-          "p"   /* Sasl ON */
+          "a:"  
+          "p"
 		)))
 	{
 		switch (c) 
