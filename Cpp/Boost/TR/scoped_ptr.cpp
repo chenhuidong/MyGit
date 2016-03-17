@@ -10,3 +10,5 @@ int main()
 	cout<< *sp<< endl;
 	return 0;
 }
+
+//g++ scoped_ptr.cpp -omain -lboost_math_tr1
