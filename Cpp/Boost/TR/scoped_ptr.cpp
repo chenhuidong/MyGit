@@ -10,7 +10,7 @@ int main()
 	cout<< *sp<< endl;
 	cout<< sp->size()<< endl;
 
-	if(p)
+	if(sp)
 	{
 
 	}
