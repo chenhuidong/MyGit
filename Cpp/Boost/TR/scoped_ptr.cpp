@@ -1,8 +1,7 @@
-//#include <boost/smart_ptr.hpp>
+#include <boost/smart_ptr.hpp>
 #include <iostream>
-#include <memory>
 #include <string>
-//using namespace boost;
+using namespace boost;
 using namespace std;
 
 int main()
