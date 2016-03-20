@@ -8,6 +8,7 @@ int main()
 {
 	scoped_ptr<string> sp(new string("text"));
 	cout<< *sp<< endl;
+	cout<< sp->size()<< endl;
 	return 0;
 }
 
