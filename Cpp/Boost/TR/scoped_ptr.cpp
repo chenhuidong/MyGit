@@ -1,7 +1,8 @@
-#include <boost/smart_ptr.hpp>
+//#include <boost/smart_ptr.hpp>
 #include <iostream>
+#include <memory>
 #include <string>
-using namespace boost;
+//using namespace boost;
 using namespace std;
 
 int main()
@@ -9,6 +10,11 @@ int main()
 	scoped_ptr<string> sp(new string("text"));
 	cout<< *sp<< endl;
 	cout<< sp->size()<< endl;
+
+	if(p)
+	{
+
+	}
 	return 0;
 }
 
