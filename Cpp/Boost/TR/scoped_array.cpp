@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	scoped_ptr<int> sa1(new int[100]);
+	scoped_array<int> sa1(new int[100]);
 	sa1[0] = 10;
 	cout<< sa1[0]<< endl;
 
