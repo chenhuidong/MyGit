@@ -12,7 +12,7 @@ int main()
 	cout<< *spi<< endl;
 	
 	shared_ptr<string> sps(new string("smart"));
-	assert(sps->size() == 5);
+	assert(sps->size() == 6);
 	cout<< sps->size()<< endl;
 	return 0;
 }
