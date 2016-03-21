@@ -6,9 +6,9 @@ using namespace std;
 
 int main()
 {
-	scoped_ptr<string> sa1(new int[100]);
+	scoped_ptr<int> sa1(new int[100]);
 	sa1[0] = 10;
-	cout<< sa1[0]<<endl;
+	cout<< sa1[0]<< endl;
 
 	int arr* = new int[100];
 	scoped_array<int> sa(arr);
