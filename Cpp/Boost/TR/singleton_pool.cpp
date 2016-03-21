@@ -9,7 +9,7 @@ typedef singleton_pool<pool_tag, sizeof(int)> spl;
 int main()
 {
 	int *p = (int *)spl::malloc();
-	assert(spl::is_from(p))
+	assert(spl::is_from(p));
 	spl::release_memory();
 	return 0;
 }
