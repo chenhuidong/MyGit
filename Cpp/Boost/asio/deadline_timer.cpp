@@ -8,7 +8,7 @@ int main()
 {
 	io_service ios;
 
-	deadline_timer t(ios, posix_time::seconds(2));
+	deadline_timer t(ios, boost::posix_time::seconds(2));
 	cout<< t.expires_at()<< endl;
 
 	t.wait();
