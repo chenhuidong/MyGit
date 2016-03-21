@@ -10,7 +10,7 @@ int main()
 	sa1[0] = 10;
 	cout<< sa1[0]<< endl;
 
-	int arr* = new int[100];
+	int *arr = new int[100];
 	scoped_array<int> sa(arr);
 
 	fill_n(&sa[0], 100, 5);
