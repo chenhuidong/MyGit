@@ -21,4 +21,6 @@ int main()
 	return 0;
 }
 
-//g++ scoped_ptr.cpp -omain -lboost_math_tr1
+//g++ scoped_array.cpp -oscoped_array -lboost_math_tr1
+//不推荐
+//vector代替
