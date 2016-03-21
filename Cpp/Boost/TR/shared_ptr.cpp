@@ -14,6 +14,7 @@ int main()
 	shared_ptr<string> sps(new string("smart"));
 	assert(sps->size() == 5);
 	cout<< sps->size()<< endl;
-	cout<< sps->use_count()<< endl;
+
+	cout<< spi.use_count()<< endl;
 	return 0;
 }
