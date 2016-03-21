@@ -1,7 +1,6 @@
 #include <boost/pool/singleton_pool.hpp>
 #include <iostream>
 using namespace boost;
-using namespace boost::posix_time;
 using namespace std;
 
 struct pool_tag{};
