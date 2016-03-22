@@ -7,11 +7,11 @@ using namespace std;
 class server
 {
 private:
-	ios_service &ios;
+	io_service &ios;
 	ip::tcp::acceptor acceptor;
 	typedef shared_ptr<ip::tcp::socket> sock_pt;
 public:
-	server(ios_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), 54321))
+	server(io_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), 54321))
 	{
 		start();
 	}
@@ -33,7 +33,7 @@ public:
 
 		start();
 	}
-	
+
 	void write_handler(const boost::system::error_code&)
 	{
 		cout<< "send msg complete."<< endl;
@@ -45,7 +45,7 @@ int main()
 	try
 	{
 		cout<< "server start."<< endl;
-		ios_service ios;
+		io_service ios;
 
 		server serv(ios);
 		ios.run();
