@@ -33,7 +33,7 @@ int main()
 	{
 		io_service ios;
 		ip::tcp::socket sock(ios);
-		resolve_connect(ios, sock, "www.boost.org", 80);
+		resolve_connect(sock, "www.boost.org", 80);
 		ios.run();
 	}
 	catch(std::exception& e)
