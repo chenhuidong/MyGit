@@ -24,7 +24,7 @@ void resolve_connect(ip::tcp::socket &sock, const char* name, int port)
 		cout<< "can not connect."<< endl;
 		throw system::system_error(ec);
 	}
-	cout<< *iter<< "connect success."<< endl;
+	cout<< sock.remote_endpoint().address()<< "connect success."<< endl;
 }
 
 int main()
