@@ -32,3 +32,5 @@ int main()
 	}
 	return 0;
 }
+
+//g++ object_pool.cpp -oobject_pool -lboost_system
