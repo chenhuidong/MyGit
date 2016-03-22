@@ -1,4 +1,9 @@
 #include <boost/lexical_cast.hpp>
+#include <boost/asio.hpp>
+#include <iostream>
+using namespace boost;
+using namespace boost::asio;
+using namespace std;
 
 void resolver_connect(ip::tcp::socket &sock, const char* name, int port)
 {
