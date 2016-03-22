@@ -1,6 +1,7 @@
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 #include <iostream>
+ #include <unistd.h>
 using namespace boost;
 using namespace boost::asio;
 using namespace std;
@@ -28,11 +29,12 @@ public:
 		if(ec)
 			return;
 
-		cout<< "recive from "<< sock->remote_endpoint().address();
+		cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 		shared_ptr<vector<char> > str(new vector<char>(100, 0));
 
 		sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholders::error, str));
 
+		sleep(2);
 		start();
 	}
 
@@ -41,7 +43,7 @@ public:
 		if(ec)
 			return;
 
-		cout<< &(*str)[0]<< endl;
+		cout<< &(*str)[0]<< endl<< endl;
 	}
 };
 
