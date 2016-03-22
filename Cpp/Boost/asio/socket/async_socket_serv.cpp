@@ -1,6 +1,7 @@
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 #include <iostream>
+#include <unistd.h>
 using namespace boost;
 using namespace boost::asio;
 using namespace std;
@@ -29,6 +30,7 @@ public:
 			return ;
 		cout<< "clients:";
 		cout<< sock->remote_endpoint().address()<< endl;
+		sleep(10);
 		sock->async_write_some(buffer("hello asio"), \
 			boost::bind(&server::write_handler, this, boost::asio::placeholders::error));
 
