@@ -59,7 +59,7 @@ int main()
 {
 	io_service ios;
 	a_timer at(ios, 5, bind(client, ref(ios)));
-	//a_timer at1(ios, 5, bind(client, ref(ios)));
+	a_timer at1(ios, 5, bind(client, ref(ios)));
 	ios.run();
 	return 0;
 }
