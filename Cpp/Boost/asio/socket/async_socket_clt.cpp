@@ -34,8 +34,8 @@ public:
 
 		sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholders::error, str));
 
-		sleep(2);
-		start();
+		//sleep(2);
+		//start();
 	}
 
 	void read_handler(const system::error_code& ec, shared_ptr<vector<char> > str)
