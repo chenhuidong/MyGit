@@ -17,7 +17,7 @@ public:
 	a_timer(io_service& ios, int x, F func):f(func), count_max(x), count(0),\
 	t(ios, boost::posix_time::millisec(500))
 	{
-		t.async_wait(bind(&a_timer::call_func, this, placeholders::error));
+		t.async_wait(bind(&a_timer::call_func, this, boost::asio::placeholders::error));
 	}
 
 	void call_func(const boost::system::error_code&)
@@ -27,7 +27,7 @@ public:
 		++count;
 		f();
 		t.expires_at(t.expires_at() + boost::posix_time::millisec(500));
-		t.async_wait(bind(&a_timer::call_func, this, placeholders::error));
+		t.async_wait(bind(&a_timer::call_func, this, boost::asio::placeholders::error));
 	}
 };
 
