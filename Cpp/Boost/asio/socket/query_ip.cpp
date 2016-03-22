@@ -24,7 +24,7 @@ void resolve_connect(ip::tcp::socket &sock, const char* name, int port)
 		cout<< "can not connect."<< endl;
 		throw system::system_error(ec);
 	}
-	cout<< "connect success."<< endl;
+	cout<< *iter<< "connect success."<< endl;
 }
 
 int main()
@@ -33,7 +33,7 @@ int main()
 	{
 		io_service ios;
 		ip::tcp::socket sock(ios);
-		resolve_connect(sock, "www.boost.org", 80);
+		resolve_connect(sock, "www.baidu.com", 80);
 		ios.run();
 	}
 	catch(std::exception& e)
