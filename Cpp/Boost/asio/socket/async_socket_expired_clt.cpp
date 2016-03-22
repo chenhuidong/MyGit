@@ -36,7 +36,7 @@ public:
 		sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholders::error, str));
 
 		deadline_timer t(ios, boost::posix_time::seconds(5));
-		sock->async_wait(boost::bind(time_expired, boost::asio::placeholders::error, &sock));
+		sock->async_wait(boost::bind(&client::time_expired, boost::asio::placeholders::error, &sock));
 
 		//start();
 	}
