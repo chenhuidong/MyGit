@@ -1,4 +1,5 @@
 #include <boost/asio.hpp>
+#include <boost/bind.hpp>
 #include <iostream>
 using namespace boost;
 using namespace boost::asio;
