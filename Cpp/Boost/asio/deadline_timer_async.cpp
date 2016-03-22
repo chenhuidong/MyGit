@@ -3,14 +3,21 @@
 #include <iostream>
 using namespace boost::asio;
 using namespace std;
-
+/*
 void print(system::error_code&)
 {
 	cout<< "hello asio"<< endl;
 }
+*/
+
+void f()
+{
+	
+}
 
 int main()
 {
+	/*
 	io_service ios;
 
 	deadline_timer t(ios, boost::posix_time::seconds(2));
@@ -19,5 +26,6 @@ int main()
 	cout<< "it show before expired"<< endl;
 	
 	ios.run();
+	*/
 	return 0;
 }
