@@ -31,12 +31,12 @@ public:
 	}
 };
 
-print1()
+void print1()
 {
 	cout<< "hello asio"<< endl;
 }
 
-print2()
+void print2()
 {
 	cout<< "hello boost"<< endl;
 }
