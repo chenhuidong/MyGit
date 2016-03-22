@@ -5,7 +5,7 @@ using namespace boost;
 using namespace boost::asio;
 using namespace std;
 
-void print(system::error_code&)
+void print(const boost::system::error_code&)
 {
 	cout<< "hello asio"<< endl;
 }
