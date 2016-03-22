@@ -5,7 +5,7 @@ using namespace boost;
 using namespace boost::asio;
 using namespace std;
 
-void resolver_connect(ip::tcp::socket &sock, const char* name, int port)
+void resolve_connect(ip::tcp::socket &sock, const char* name, int port)
 {
 	ip::tcp::resolver rlv(sock.get_io_service());
 	ip::tcp::resolver::query qry(name, lexical_cast<string> (port));
