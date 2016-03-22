@@ -1,12 +1,13 @@
 #include <boost/asio.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>
 #include <boost/function.hpp>
+#include <boost/bind.hpp>
 #include <iostream>
 using namespace boost;
 using namespace boost::asio;
 using namespace std;
 
-/*
+
 class a_timer
 {
 private:
@@ -31,7 +32,7 @@ public:
 		t.async_wait(boost::bind(&a_timer::call_func, this, boost::asio::placeholders::error));
 	}
 };
-*/
+
 
 void client(io_service &ios)
 {
