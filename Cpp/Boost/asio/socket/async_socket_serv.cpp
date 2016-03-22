@@ -19,7 +19,7 @@ public:
 	void start()
 	{
 		sock_pt sock(new ip::tcp::socket(ios));
-		acceptor.async_accept(*sock, bind(&server::accept_handler, this, boost::asio::placeholders::error, sock));		
+		acceptor.async_accept(*sock, boost::bind(&server::accept_handler, this, boost::asio::placeholders::error, sock));		
 	}
 
 	void accept_handler(const boost::system::error_code& ec, sock_pt sock)
@@ -29,7 +29,7 @@ public:
 		cout<< "clients:";
 		cout<< sock->remote_endpoint().address()<< endl;
 		sock->async_write_some(buffer("hello asio"), \
-			bind(&server::write_handler, this, boost::asio::placeholders::error));
+			boost::bind(&server::write_handler, this, boost::asio::placeholders::error));
 
 		start();
 	}
