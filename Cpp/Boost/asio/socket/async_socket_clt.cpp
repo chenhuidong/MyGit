@@ -29,14 +29,14 @@ public:
 			return 0;
 
 		cout<< "recive from "<< sock->remote_endpoint().address();
-		shared_ptr<vector<char>> str(new vector<char>(100, 0));
+		shared_ptr<vector<char> > str(new vector<char>(100, 0));
 
 		sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholder::error, str));
 
 		start();
 	}
 
-	void read_handler(const system::error_code& ec, shared_ptr<vector<char>> str)
+	void read_handler(const system::error_code& ec, shared_ptr<vector<char> > str)
 	{
 		if(ec)
 			return;
