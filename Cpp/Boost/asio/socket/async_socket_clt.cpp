@@ -26,12 +26,12 @@ public:
 	void conn_handler(const system::error_code& ec, sock_pt sock)
 	{
 		if(ec)
-			return 0;
+			return;
 
 		cout<< "recive from "<< sock->remote_endpoint().address();
 		shared_ptr<vector<char> > str(new vector<char>(100, 0));
 
-		sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholder::error, str));
+		sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholders::error, str));
 
 		start();
 	}
