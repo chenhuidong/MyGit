@@ -46,8 +46,8 @@ void client(io_service &ios)
 
 		std::vector<char> str(100, 0);
 		sock.read_some(buffer(str));
-		cout<< "recive from "<< sock.remote_endpoint().address();
-		cout<< &str[0]<< endl;
+		cout<< "recive from "<< sock.remote_endpoint().address()<< endl;
+		cout<< &str[0]<< endl<< endl;
 	}
 	catch(std::exception& e)
 	{
@@ -59,6 +59,7 @@ int main()
 {
 	io_service ios;
 	a_timer at(ios, 5, bind(client, ref(ios)));
+	//a_timer at1(ios, 5, bind(client, ref(ios)));
 	ios.run();
 	return 0;
 }
