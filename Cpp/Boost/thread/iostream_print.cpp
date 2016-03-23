@@ -6,7 +6,7 @@ using namespace std;
 
 boost::mutex io_mu;
 
-void printing(atomix_int& x, const string& str)
+void printing(atomic_int& x, const string& str)
 {
 	for(int i=0; i<5; ++i)
 	{
