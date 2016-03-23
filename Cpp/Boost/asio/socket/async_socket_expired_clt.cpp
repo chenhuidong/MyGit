@@ -43,7 +43,6 @@ public:
 	{
 		if(ec)
 			return;
-		cout<< "1kkk"<< endl;
 		cout<< &(*str)[0]<< endl<< endl;
 	}
 

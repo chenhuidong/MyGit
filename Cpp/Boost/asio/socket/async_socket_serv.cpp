@@ -30,7 +30,7 @@ public:
 			return ;
 		cout<< "clients:";
 		cout<< sock->remote_endpoint().address()<< endl;
-		sleep(20);
+
 		sock->async_write_some(buffer("hello asio"), \
 			boost::bind(&server::write_handler, this, boost::asio::placeholders::error));
 
