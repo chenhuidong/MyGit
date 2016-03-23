@@ -20,7 +20,7 @@ int main()
 		boost::system::error_code ec;
 		sock.receive_from(buffer(buf), ep, 0, ec);
 
-		if(ec && ec!=boost::error::message_size)
+		if(ec && ec!=error::message_size)
 			throw boost::system::system_error(ec);
 
 		cout<< "send to "<< ep.address()<< endl;
