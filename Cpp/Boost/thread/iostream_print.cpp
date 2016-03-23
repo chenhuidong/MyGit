@@ -2,7 +2,6 @@
 #include <boost/thread/mutex.hpp>  
 #include <iostream>
 using namespace boost;
-using namespace boost::asio;
 using namespace std;
 
 boost::mutex io_mu;
