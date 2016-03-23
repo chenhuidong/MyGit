@@ -38,7 +38,7 @@ public:
 		deadline_timer t(ios, boost::posix_time::seconds(5));
 		//t.async_wait(boost::bind(&client::time_expired, boost::asio::placeholders::error, &sock));
 		//t.async_wait(boost::bind(&client::time_expired, this, boost::asio::placeholders::error, sock));
-		t.async_wait(boost::bind(&client::time_expired, boost::asio::placeholders::error, &sock));
+		t.async_wait(boost::bind(&client::time_expired, boost::asio::placeholders::error, &t, &sock));
 		//t.async_wait(&client::time_expired);
 
 		//start();
@@ -52,7 +52,7 @@ public:
 		cout<< &(*str)[0]<< endl<< endl;
 	}
 
-	void time_expired(const system::error_code&, ip::tcp::socket *sock)
+	void time_expired(const system::error_code& ec, ip::tcp::socket *sock)
 	{
 		cout<< "time expired"<< endl;
 		sock->close();
