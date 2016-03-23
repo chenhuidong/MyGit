@@ -49,7 +49,7 @@ public:
 	void time_expired(const system::error_code& ec, sock_pt sock)
 	{	
 		cout<< "fdsfdsf"<< endl;
-		if(ec)
+		if(!ec)
 			return;
 		cout<< "time expired"<< endl;
 		sock->close();
