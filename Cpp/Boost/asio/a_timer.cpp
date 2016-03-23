@@ -45,7 +45,7 @@ void print2()
 int main()
 {
 	io_service ios;
-	a_timer at1(ios, 1, 3000, print1);
+	a_timer at1(ios, 5, 3000, print1);
 	//a_timer at2(ios, 5, print2);
 	ios.run();
 	return 0;
