@@ -29,14 +29,13 @@ public:
 	{
 		if(ec)
 			return;
+		deadline_timer t(ios, boost::posix_time::seconds(200));
+		t.async_wait(boost::bind(&client::time_expired, this, boost::asio::placeholders::error, sock));
 
 		cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 		shared_ptr<vector<char> > str(new vector<char>(100, 0));
 
 		sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholders::error, str));
-
-		deadline_timer t(ios, boost::posix_time::seconds(20));
-		t.async_wait(boost::bind(&client::time_expired, this, boost::asio::placeholders::error, sock));
 		//start();
 	}
 
@@ -50,6 +49,8 @@ public:
 
 	void time_expired(const system::error_code& ec, sock_pt sock)
 	{
+		if(ec)
+			return;
 		cout<< "time expired"<< endl;
 		sock->close();
 	}
