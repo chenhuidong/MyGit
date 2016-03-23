@@ -7,31 +7,6 @@ using namespace boost;
 using namespace boost::asio;
 using namespace std;
 
-class a_timer
-{
-private:
-	int count, count_max;
-	function<void()> f;
-	deadline_timer t;
-public:
-	template<typename F>
-	a_timer(io_service& ios, int x, F func):f(func), count_max(x), count(0),\
-	t(ios, boost::posix_time::millisec(500))
-	{
-		t.async_wait(boost::bind(&a_timer::call_func, this, boost::asio::placeholders::error));
-	}
-
-	void call_func(const boost::system::error_code&)
-	{
-		if(count >= count_max)
-			return;
-		++count;
-		f();
-		t.expires_at(t.expires_at() + boost::posix_time::millisec(500));
-		t.async_wait(boost::bind(&a_timer::call_func, this, boost::asio::placeholders::error));
-	}
-};
-
 class client
 {
 private:
@@ -60,10 +35,9 @@ public:
 
 		sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholders::error, str));
 
-		//deadline_timer t(ios, boost::posix_time::seconds(5));
-		//t.async_wait(boost::bind(&client::time_expired, boost::asio::placeholders::error, &sock));
-		//t.async_wait(boost::bind(&client::time_expired, boost::asio::placeholders::error, &t, &sock));
-		a_timer at(ios, 5, boost::bind(&client::time_expired, boost::asio::placeholders::error, &sock));
+		deadline_timer t(ios, boost::posix_time::seconds(5));
+		t.async_wait(boost::bind(&client::time_expired, this, boost::asio::placeholders::error, &sock));
+
 		//start();
 	}
 
