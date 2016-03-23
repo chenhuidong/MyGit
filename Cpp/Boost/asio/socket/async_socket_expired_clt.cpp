@@ -38,7 +38,7 @@ public:
 		deadline_timer t(ios, boost::posix_time::seconds(5));
 		//t.async_wait(boost::bind(&client::time_expired, boost::asio::placeholders::error, &sock));
 		//t.async_wait(boost::bind(&client::time_expired, this, boost::asio::placeholders::error, sock));
-		t.async_wait(boost::bind(&client::time_expired, this, boost::asio::placeholders::error, sock));
+		t.async_wait(boost::bind(&client::time_expired, this, boost::asio::placeholders::error, &sock));
 		//t.async_wait(&client::time_expired);
 
 		//start();
