@@ -29,7 +29,7 @@ public:
 	{
 		if(ec)
 			return;
-		deadline_timer t(ios, boost::posix_time::seconds(200));
+		deadline_timer t(ios, boost::posix_time::seconds(10));
 		t.async_wait(boost::bind(&client::time_expired, this, boost::asio::placeholders::error, sock));
 
 		cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
