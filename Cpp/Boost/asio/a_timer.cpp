@@ -27,7 +27,7 @@ public:
 			return;
 		++count;
 		f();
-		t.expires_at(t.expires_at() + boost::posix_time::millisec(interval));
+		t.expires_at(t.expires_at() + boost::posix_time::millisec(500));
 		t.async_wait(boost::bind(&a_timer::call_func, this, boost::asio::placeholders::error));
 	}
 };
