@@ -50,10 +50,10 @@ public:
 		cout<< &(*str)[0]<< endl<< endl;
 	}
 
-	void time_expired(const system::error_code&/*, ip::tcp::socket *sock*/)
+	void time_expired(const system::error_code&, ip::tcp::socket *sock)
 	{
 		cout<< "time expired"<< endl;
-		//sock->close();
+		sock->close();
 	}
 };
 
