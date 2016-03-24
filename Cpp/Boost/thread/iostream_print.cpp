@@ -22,6 +22,6 @@ int main()
 
 	boost::thread(printing, ref(x), "hello");
 	boost::thread(printing, ref(x), "boost");
-	boost::this_thread::sleep_for(chrono::seconds(2));
+	boost::this_thread::sleep_for(boost::chrono::seconds(2));
 	return 0;
 }
