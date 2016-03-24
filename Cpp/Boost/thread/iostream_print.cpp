@@ -20,8 +20,8 @@ int main()
 {
 	boost::atomic_int x;
 
-	thread(printing, ref(x), "hello");
-	thread(printing, ref(x), "boost");
-	this_thread::sleep_for(chrono::seconds(2));
+	boost::thread(printing, ref(x), "hello");
+	boost::thread(printing, ref(x), "boost");
+	boost::this_thread::sleep_for(chrono::seconds(2));
 	return 0;
 }
