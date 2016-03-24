@@ -20,8 +20,13 @@ int main()
 {
 	boost::atomic_int x;
 
-	boost::thread(printing, ref(x), "hello");
-	boost::thread(printing, ref(x), "boost");
-	boost::this_thread::sleep_for(boost::chrono::seconds(2));
+	boost::thread t1(printing, ref(x), "hello");
+	boost::thread t2(printing, ref(x), "boost");
+	//boost::this_thread::sleep_for(boost::chrono::seconds(2));
+	
+	t1.timed_join(boost::posix_time::seconds(1));
+	t2.join();
 	return 0;
 }
+
+//g++ iostream_print.cpp -oiostream_print -lboost_system -lboost_thread-mt
