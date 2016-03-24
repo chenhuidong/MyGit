@@ -14,8 +14,8 @@ void printing(boost::atomic_int& x, const string& str)
 	{
 		//mutex::scoped_lock lock(io_mu);
 		cout<< str<< ++x<< endl;
-		//boost::this_thread::yield();
-		boost::this_thread::sleep(boost::posix_time::seconds(2));
+		boost::this_thread::yield();
+		//boost::this_thread::sleep(boost::posix_time::seconds(2));
 	}
 	
 	//thread::sleep(get_system_time() + boost::posix_time::seconds(1));
