@@ -28,24 +28,24 @@ void to_interrupt(atom_int& x, const string& str)
 {
 	try
 	{
-		assert(interruption_enabled());//此时允许中断
+		assert(boost::interruption_enabled());//此时允许中断
 		for(int i=0; i<10; ++i)
 		{
-			disable_interruption di;//关闭中断
-			assert(!interruption_enabled());//此时中断不可用
+			boost::disable_interruption di;//关闭中断
+			assert(!boost::interruption_enabled());//此时中断不可用
 			//boost::this_thread::sleep(boost::posix_time::seconds(1));
 			mutex::scoped_lock lock(io_mu);
 			cout<< str<< ++x<< endl;
 			cout<< boost::this_thread::interruption_requested()<< end;
 			boost::this_thread::interruption_point();//中断点被禁用
 
-			restore_interruption ri(di);//临时恢复中断
-			assert(interruption_enabled());
+			boost::restore_interruption ri(di);//临时恢复中断
+			assert(boost::interruption_enabled());
 			cout<< "can interrupted"<< endl;
-			cout<< this_thread::interruption_requested()<< endl;
-			this_thread::interruption_point();//可被中断
+			cout<< boost::this_thread::interruption_requested()<< endl;
+			boost::this_thread::interruption_point();//可被中断
 		}
-		assert(interruption_enabled());
+		assert(boost::interruption_enabled());
 	}
 	catch(boost::thread_interrupted&)
 	{
