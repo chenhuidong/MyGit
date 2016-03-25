@@ -5,6 +5,8 @@
 using namespace boost;
 using namespace std;
 
+boost::mutex io_mu;
+
 template<typename T> 
 class basic_atom: noncopyable 
 { 
