@@ -46,6 +46,6 @@ int main()
 	atom_int x;
 	thread t(to_interrupt, ref(x), "hello");
 	boost::this_thread::sleep(boost::posix_time::seconds(2));
-	t.to_interrupt();
+	t.interrupt();
 	t.join();
 }
