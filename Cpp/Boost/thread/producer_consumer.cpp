@@ -14,7 +14,7 @@ private:
 	condition_variable_any cond_put;
 	condition_variable_any cond_get;
 
-	stack<int> sock;
+	std::stack<int> sock;
 	int un_read, capacity;
 	bool is_full()
 	{	return un_read == capacity;}
