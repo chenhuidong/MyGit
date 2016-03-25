@@ -36,7 +36,7 @@ void to_interrupt(atom_int& x, const string& str)
 			//boost::this_thread::sleep(boost::posix_time::seconds(1));
 			mutex::scoped_lock lock(io_mu);
 			cout<< str<< ++x<< endl;
-			cout<< boost::this_thread::interruption_requested()<< end;
+			cout<< boost::this_thread::interruption_requested()<< endl;
 			boost::this_thread::interruption_point();//中断点被禁用
 
 			boost::this_thread::restore_interruption ri(di);//临时恢复中断
