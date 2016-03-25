@@ -14,7 +14,7 @@ private:
 	condition_variable_any cond_put;
 	condition_variable_any cond_get;
 
-	std::stack<int> sock;
+	std::stack<int> stk;
 	int un_read, capacity;
 	bool is_full()
 	{	return un_read == capacity;}
@@ -31,7 +31,7 @@ public:
 			{
 				{
 					mutex::scoped_lock lock(io_mu);
-					std::cout<< "full waiting..."<< endl;
+					std::cout<< "full waiting..."<< std::endl;
 				}
 				cond_put.wait(mu);
 			}
@@ -49,7 +49,7 @@ public:
 			{
 				{
 					mutex::scoped_lock lock(io_mu);
-					std::cout<< "empty waiting..."<< endl;
+					std::cout<< "empty waiting..."<< std::endl;
 				}
 				cond_get.wait(mu);
 			}
@@ -68,7 +68,7 @@ void producer(int n)
 	{
 		{
 			mutex::scoped_lock lock(io_mu);
-			std::cout<< "put "<< i<<endl;
+			std::cout<< "put "<< i<<std::endl;
 		}
 		buf.put(i);
 	}
@@ -81,7 +81,7 @@ void consumer(int n)
 	{
 		buf.get(&x);
 		mutex::scoped_lock lock(io_mu);
-		std::cout<< "get "<< x<< endl;
+		std::cout<< "get "<< x<< std::endl;
 	}
 }
 
