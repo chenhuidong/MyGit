@@ -5,6 +5,23 @@
 using namespace boost;
 using namespace std;
 
+template<typename T> 
+class basic_atom: noncopyable 
+{ 
+private: 
+T n; 
+mutex mu; 
+public: 
+basic_atom(T x = T()) :n(x) {} 
+T operator++() { 
+mutex::scoped_lock lock(mu); 
+return ++n; 
+} 
+operator T() { return n; } 
+}; 
+
+typedef basic_atom<int> atom_int; 
+
 void to_interrupt(atom_int& x, const string& str)
 {
 	try
