@@ -26,6 +26,7 @@ typedef basic_atom<int> atom_int;
 
 void to_interrupt(atom_int& x, const string& str)
 {
+	sleep
 	try
 	{
 		for(int i=0; i<10; ++i)
@@ -46,7 +47,7 @@ int main()
 {
 	atom_int x;
 	thread t(to_interrupt, ref(x), "hello");
-	boost::this_thread::sleep(boost::posix_time::seconds(2));
+	//boost::this_thread::sleep(boost::posix_time::seconds(2));
 	t.interrupt();
 	t.join();
 }
