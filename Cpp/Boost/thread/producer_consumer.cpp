@@ -1,9 +1,17 @@
+#include <boost/thread/thread.hpp>
+#include <boost/thread/mutex.hpp>  
+#include <boost/thread/once.hpp>
+#include <iostream>
 #include <stack>
+using namespace boost;
+using namespace std;
+
+boost::mutex io_mu;
 
 class buffer
 {
 private:
-	mutex mu;
+	boost::mutex mu;
 	condition_variable_any cond_put;
 	condition_variable_any cond_get;
 
