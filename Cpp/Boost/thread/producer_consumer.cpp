@@ -4,7 +4,6 @@
 #include <iostream>
 #include <stack>
 using namespace boost;
-using namespace std;
 
 boost::mutex io_mu;
 
@@ -32,7 +31,7 @@ public:
 			{
 				{
 					mutex::scoped_lock lock(io_mu);
-					cout<< "full waiting..."<< endl;
+					std::cout<< "full waiting..."<< endl;
 				}
 				cond_put.wait(mu);
 			}
@@ -50,7 +49,7 @@ public:
 			{
 				{
 					mutex::scoped_lock lock(io_mu);
-					cout<< "empty waiting..."<< endl;
+					std::cout<< "empty waiting..."<< endl;
 				}
 				cond_get.wait(mu);
 			}
@@ -69,7 +68,7 @@ void producer(int n)
 	{
 		{
 			mutex::scoped_lock lock(io_mu);
-			cout<< "put "<< i<<endl;
+			std::cout<< "put "<< i<<endl;
 		}
 		buf.put(i);
 	}
@@ -82,7 +81,7 @@ void consumer(int n)
 	{
 		buf.get(&x);
 		mutex::scoped_lock lock(io_mu);
-		cout<< "get "<< x<< endl;
+		std::cout<< "get "<< x<< endl;
 	}
 }
 
