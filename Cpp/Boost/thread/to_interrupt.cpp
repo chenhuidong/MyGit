@@ -30,9 +30,10 @@ void to_interrupt(atom_int& x, const string& str)
 	{
 		for(int i=0; i<5; ++i)
 		{
-			boost::this_thread::sleep(boost::posix_time::seconds(1));
+			//boost::this_thread::sleep(boost::posix_time::seconds(1));
 			mutex::scoped_lock lock(io_mu);
 			cout<< str<< ++x<< endl;
+			boost::this_thread::interruption_point();
 		}
 	}
 	catch(boost::thread_interrupted&)
