@@ -5,7 +5,7 @@
 using namespace boost;
 using namespace std;
 
-void to_interrupt(boost::atom_int& x, const string& str)
+void to_interrupt(atom_int& x, const string& str)
 {
 	try
 	{
