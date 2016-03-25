@@ -6,6 +6,8 @@ using namespace boost;
 using std::cout;
 using std::endl;
 
+mutex io_mu;
+
 class rw_data
 {
 private:
