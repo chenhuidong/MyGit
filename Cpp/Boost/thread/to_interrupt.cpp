@@ -26,7 +26,6 @@ typedef basic_atom<int> atom_int;
 
 void to_interrupt(atom_int& x, const string& str)
 {
-	sleep
 	try
 	{
 		for(int i=0; i<10; ++i)
