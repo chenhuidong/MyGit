@@ -1,57 +1,71 @@
-/* server.c */
- 
-#include <dbus/dbus.h>
-#include <stdbool.h>
-#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
- 
-static DBusHandlerResult
-filter_func(DBusConnection *connection, DBusMessage *message, void *usr_data)
+#include <string.h>
+#include <dbus/dbus-glib.h>
+#include <dbus/dbus.h>
+#include <unistd.h>
+
+void listen_signal()
 {
-    dbus_bool_t handled = false;
-    char *word = NULL;
-    DBusError dberr;
- 
-    if (dbus_message_is_signal(message, "client.signal.Type", "Test")) {
-        dbus_error_init(&dberr);
-        dbus_message_get_args(message, &dberr, DBUS_TYPE_STRING,
-            &word, DBUS_TYPE_INVALID);
-        if (dbus_error_is_set(&dberr)) {
-            dbus_error_free(&dberr);
-        } else {
-            printf("receive message %s\n", word);
-            handled = true;
+    DBusMessage * msg;
+    DBusMessageIter arg;
+    DBusConnection * connection;
+    DBusError err;
+    int ret;
+    char * sigvalue;
+
+     //步骤1:建立与D-Bus后台的连接
+    dbus_error_init(&err);
+    connection =dbus_bus_get(DBUS_BUS_SESSION, &err);
+    if(dbus_error_is_set(&err)){
+        fprintf(stderr,"ConnectionError %s\n",err.message);
+        dbus_error_free(&err);
+    }
+    if(connection == NULL)
+        return;
+
+   //步骤2:给连接名分配一个可记忆名字test.singal.dest作为Bus name，这个步骤不是必须的,但推荐这样处理
+    ret =dbus_bus_request_name(connection,"test.singal.dest",DBUS_NAME_FLAG_REPLACE_EXISTING,&err);
+    if(dbus_error_is_set(&err)){
+        fprintf(stderr,"Name Error%s\n",err.message);
+        dbus_error_free(&err);
+    }
+    if(ret !=DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER)
+        return;
+
+    //步骤3:通知D-Bus daemon，希望监听来行接口test.signal.Type的信号
+    dbus_bus_add_match(connection,"type='signal',interface='test.signal.Type'",&err);
+    //实际需要发送东西给daemon来通知希望监听的内容，所以需要flush
+    dbus_connection_flush(connection);
+    if(dbus_error_is_set(&err)){
+        fprintf(stderr,"Match Error%s\n",err.message);
+        dbus_error_free(&err);
+    }
+   
+    //步骤4:在循环中监听，每隔开1秒，就去试图自己的连接中获取这个信号。这里给出的是中连接中获取任何消息的方式，所以获取后去检查一下这个消息是否我们期望的信号，并获取内容。我们也可以通过这个方式来获取method call消息。
+    while(1){
+        dbus_connection_read_write(connection,0);
+        msg =dbus_connection_pop_message (connection);
+        if(msg == NULL){
+            sleep(1);
+            continue;
         }
-    }
-    return (handled ? DBUS_HANDLER_RESULT_HANDLED : DBUS_HANDLER_RESULT_NOT_YET_HANDLED);
+   
+        if(dbus_message_is_signal(msg,"test.signal.Type","Test")){
+            if(!dbus_message_iter_init(msg,&arg))
+                fprintf(stderr,"MessageHas no Param");
+            else if(dbus_message_iter_get_arg_type(&arg)!= DBUS_TYPE_STRING)
+                g_printerr("Param isnot string");
+            else
+                dbus_message_iter_get_basic(&arg,&sigvalue);
+            printf("Got Singal withvalue : %s\n",sigvalue);
+        }
+        dbus_message_unref(msg);
+    }//End of while
+       
 }
- 
-int main(int argc, char *argv[])
-{
-    DBusError dberr;
-    DBusConnection *dbconn;
- 
-    dbus_error_init(&dberr);
- 
-    dbconn = dbus_bus_get(DBUS_BUS_SESSION, &dberr);
-    if (dbus_error_is_set(&dberr)) {
-        dbus_error_free(&dberr);
-        return -1;
-    }
- 
-    if (!dbus_connection_add_filter(dbconn, filter_func, NULL, NULL)) {
-        return -1;
-    }
- 
-    dbus_bus_add_match(dbconn, "type='signal',interface='client.signal.Type'", &dberr);
-    if (dbus_error_is_set(&dberr)) {
-        dbus_error_free(&dberr);
-        return -1;
-    }
- 
-    while(dbus_connection_read_write_dispatch(dbconn, -1)) {
-        /* loop */
-    }
+
+int main( int argc , char ** argv){
+    listen_signal();
     return 0;
 }
