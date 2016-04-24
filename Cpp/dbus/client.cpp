@@ -7,7 +7,7 @@
 int db_send(DBusConnection *dbconn)
 {
     DBusMessage *dbmsg;
-    char *word;
+    const char *word;
     int i;
  
     dbmsg = dbus_message_new_signal("/client/signal/Object", // object name of the signal
