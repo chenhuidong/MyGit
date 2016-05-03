@@ -3,7 +3,7 @@
 
 #define MESSAGE "Welcome to the echo service!\n"
 
-int port = 7777;
+int port = 54321;
 static GOptionEntry cmd_entries[] = {
   {"port", 'p', 0, G_OPTION_ARG_INT, &port,
    "Local port to bind to", NULL},
