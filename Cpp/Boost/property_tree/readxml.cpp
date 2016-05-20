@@ -8,7 +8,7 @@ using namespace boost::property_tree;
 int main()
 {
 	ptree pt;
-	read_xml("conf.xml", pt);
+	read_xml("conf.xml", pt, xml_parser::no_concat_text | xml_parser::no_comments | xml_parser::trim_whitespace);
 
 	cout<< pt.get<string>("conf.theme")<< endl;
 	cout<< pt.get<int>("conf.clock_style")<< endl;
