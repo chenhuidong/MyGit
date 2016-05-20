@@ -8,7 +8,7 @@ using namespace boost::property_tree;
 int main()
 {
 	ptree pt;
-	read_xml("conf1.xml", pt);
+	read_xml("conf1.xml", pt, xml_parser::no_concat_text | xml_parser::no_comments | xml_parser::trim_whitespace);
 
 	pt.put("conf.theme", "Matrix Reloaded");
 	pt.put("conf.clock_style", 12);
