@@ -4,7 +4,6 @@
 #include <boost/accumulators/statistics/mean.hpp>
 #include <boost/accumulators/statistics/moment.hpp>
 using namespace boost::accumulators;
-using namespace std;
 
 int main()
 {
