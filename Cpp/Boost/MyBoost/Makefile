@@ -6,7 +6,7 @@ CFLAGS=-ansi -Wall -fPic -shared
 #TEMPALTES = Makefile.myconf
 all:
 	for i in $(SUBDIRS); do\
-		(cd $$i && make) || exit 1;\
+		(cd $$i && make all) || exit 1;\
 	done
 .PHONY:clean
 clean:

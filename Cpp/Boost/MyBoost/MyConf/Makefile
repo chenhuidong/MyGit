@@ -1,9 +1,9 @@
 include ../Makefile
- 
+
 TARGET=libMyConf.so
 OBJ=MyConf.o
 
-$(TARGET): $(OBJ)
+all:$(TARGET)
 	$(LINK) -o $(TARGET) $(OBJ) 
 MyConf.o: MyConf.cpp MyConf.h
 	$(COMPILE) MyConf.cpp
