@@ -4,7 +4,9 @@ using namespace MMyLib;
 int main()
 {
 	IMyConf t_oMyConf;
-	ptree t_oPt = t_oMyConf.ReadFile(IMyConf::XML, "conf.xml");
+	//ptree t_oPt = t_oMyConf.ReadFile(IMyConf::XML, "conf.xml");
+	ptree t_oPt = t_oMyConf.ReadFile(IMyConf::JSON, "conf.json");
+	//ptree t_oPt = t_oMyConf.ReadFile(IMyConf::INFO, "conf.info");
 
 	try
 	{
@@ -21,6 +23,14 @@ int main()
 		cout<< endl;
 	}
 	catch(xml_parser::xml_parser_error &e)
+	{
+		cout<< e.what()<< endl;
+	}
+	catch(json_parser::json_parser_error &e)
+	{
+		cout<< e.what()<< endl;
+	}
+	catch(info_parser::info_parser_error &e)
 	{
 		cout<< e.what()<< endl;
 	}
