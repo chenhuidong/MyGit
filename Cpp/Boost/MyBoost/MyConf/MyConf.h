@@ -1,7 +1,7 @@
 #ifndef __MY_LIB_MY_CONF_H_
 #define __MY_LIB_MY_CONF_H_
 
-#include <MyStdAfx.h>
+#include "../MyStdAfx.h"
 #include <boost/property_tree/ptree.hpp>
 #include <boost/typeof/typeof.hpp> 
 #include <boost/property_tree/info_parser.hpp>
