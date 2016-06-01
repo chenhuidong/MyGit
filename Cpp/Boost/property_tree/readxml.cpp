@@ -8,7 +8,7 @@ using namespace boost::property_tree;
 int main()
 {
 	ptree pt;
-	read_xml("conf.xml", pt/*, xml_parser::no_concat_text | xml_parser::no_comments | xml_parser::trim_whitespace*/);
+	read_xml("conf.xml", pt, xml_parser::no_concat_text | xml_parser::no_comments | xml_parser::trim_whitespace);
 
 	try
 	{
