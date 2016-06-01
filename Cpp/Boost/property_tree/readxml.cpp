@@ -13,7 +13,7 @@ int main()
 	try
 	{
 		cout<< pt.get<string>("conf.theme")<< endl;
-		/*cout<< pt.get<int>("conf.clock_style")<< endl;
+		cout<< pt.get<int>("conf.clock_style")<< endl;
 		cout<< pt.get<long>("conf.gui")<< endl;
 		cout<< pt.get("conf.no_prop", 100)<< endl;	
 		
@@ -22,7 +22,7 @@ int main()
 		{
 			cout<< pos->second.data()<< ",";
 		}
-		cout<< endl;	*/
+		cout<< endl;
 	}
 	catch(xml_parser::xml_parser_error &e)
 	{
