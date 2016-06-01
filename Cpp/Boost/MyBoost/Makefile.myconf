@@ -1,17 +1,13 @@
 CC=g++
-COMPILE.c=$(CC) $(CFLAGS) $(CPPFLAGS) -c
-LINK.c=$(CC) $(CFLAGS) $(CPPFLAGS) $(LDDIR) $(LDFLAGS)
-LDDIR=-L../lib
-LDLIBS=../lib/libapue.a $(EXTRALIBS)
-CFLAGS=-DLINUX -ansi -I$(WKDIR)/include -Wall -D_GNU_SOURCE $(EXTRA)
+COMPILE=$(CC) $(CFLAGS) -c
+LINK=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS)
+CFLAGS=-ansi -Wall
+OBJ=testMyConf.o
 
-# Our library that almost every program needs.
-LIB=../libapue.a
-
-# Common temp files to delete from each directory.
-TEMPFILES=core core.* *.o temp.* *.out typescript*
-main:
-	g++ main.cpp  MyDb.cpp MyException.cpp MyAction.cpp MyEmail.cpp -omain -lPocoDataSQLite -lPocoDataMySQL -lPocoFoundation -lPocoNet -lglog
+testMyConf: $(OBJ)
+	$(LINK) -o testMyConf $(OBJ) 
+testMyConf.o: testMyConf.cpp MyConf.cpp MyConf.h
+	$(COMPILE) testMyConf.cpp
 .PHONY:clean
 clean:
-	rm main
+	rm testMyConf $(OBJ)
