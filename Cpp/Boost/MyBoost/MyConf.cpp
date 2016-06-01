@@ -6,7 +6,7 @@ ptree& MMyLib::IMyConf::ReadFile(MMyLib::IMyConf::ConfType in_eConfType, string 
 	{
 		case XML:
 		{
-			read_xml(in_sFileName, m_oPt, xml_parser::no_concat_text | xml_parser::no_comments | xml_parser::trim_whitespace);
+			read_xml(in_sFileName, m_oPt);
 			break;
 		}
 		case JSON:
