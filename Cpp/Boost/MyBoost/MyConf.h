@@ -17,11 +17,11 @@ namespace MMyLib
 	{
 	public:
 		enum ConfType{XML, JSON, INFO};
-		IMyConf(){}
-		virtual ~IMyConf(){}
-		ptree& ReadFile(ConfType in_eConfType, string in_sFileName);
+		IMyConf();
+		virtual ~IMyConf();
+		ptree* ReadFile(ConfType in_eConfType, string in_sFileName);
 	private:
-		ptree m_oPt;
+		ptree *m_pPt;
 	};
 };
 

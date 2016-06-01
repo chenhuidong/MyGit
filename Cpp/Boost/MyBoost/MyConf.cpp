@@ -1,28 +1,39 @@
 #include "MyConf.h"
 
-ptree& MMyLib::IMyConf::ReadFile(MMyLib::IMyConf::ConfType in_eConfType, string in_sFileName)
+MMyLib::IMyConf::IMyConf()
+{
+	m_pPt = new ptree;
+}
+
+MMyLib::IMyConf::~IMyConf()
+{
+	delete m_pPt;
+}
+
+ptree* MMyLib::IMyConf::ReadFile(MMyLib::IMyConf::ConfType in_eConfType, string in_sFileName)
 {
 	switch(in_eConfType)
 	{
-		case XML:
+		case MMyLib::IMyConf::XML:
 		{
-			read_xml(in_sFileName, m_oPt);
+			read_xml(in_sFileName, *m_pPt);
 			break;
 		}
-		case JSON:
+		case MMyLib::IMyConf::JSON:
 		{
-			read_json(in_sFileName, m_oPt);
+			read_json(in_sFileName, *m_pPt);
 			break;
 		}
-		case INFO:
+		case MMyLib::IMyConf::INFO:
 		{
-			read_info(in_sFileName, m_oPt);
+			read_info(in_sFileName, *m_pPt);
 			break;
 		}
 		default:
 		{
+			m_pPt = NULL;
 			break;
 		}
 	}
-	return m_oPt;
+	return m_pPt;
 }

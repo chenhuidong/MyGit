@@ -4,18 +4,18 @@ using namespace MMyLib;
 int main()
 {
 	IMyConf t_oMyConf;
-	//ptree t_oPt = t_oMyConf.ReadFile(IMyConf::XML, "conf.xml");
-	//ptree t_oPt = t_oMyConf.ReadFile(IMyConf::JSON, "conf.json");
-	ptree t_oPt = t_oMyConf.ReadFile(IMyConf::INFO, "conf.info");
+	//ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::XML, "conf.xml");
+	//ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::JSON, "conf.json");
+	ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::INFO, "conf.info");
 
 	try
 	{
-		cout<< t_oPt.get<string>("conf.theme")<< endl;
-		cout<< t_oPt.get<int>("conf.clock_style")<< endl;
-		cout<< t_oPt.get<long>("conf.gui")<< endl;
-		cout<< t_oPt.get("conf.no_prop", 100)<< endl;	
+		cout<< t_pPt->get<string>("conf.theme")<< endl;
+		cout<< t_pPt->get<int>("conf.clock_style")<< endl;
+		cout<< t_pPt->get<long>("conf.gui")<< endl;
+		cout<< t_pPt->get("conf.no_prop", 100)<< endl;	
 		
-		BOOST_AUTO(child, t_oPt.get_child("conf.urls"));
+		BOOST_AUTO(child, t_pPt->get_child("conf.urls"));
 		for(BOOST_AUTO(pos, child.begin()); pos!= child.end(); ++pos)
 		{
 			cout<< pos->second.data()<< ",";
