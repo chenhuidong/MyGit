@@ -1,4 +1,4 @@
-TEMPALTES=Makefile.myconf
+TEMPALTES = Makefile.myconf
 all:
 	for i in $(TEMPALTES); do\
 		(make -f $i) || exit 1;\
