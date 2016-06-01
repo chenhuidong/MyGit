@@ -7,6 +7,7 @@ all:
 	done
 install:
 	mkdir -p $(LIBPATH) $(INCLUDEPATH);\
+	cp -rf *.h $(INCLUDEPATH);\
 	for i in $(SUBDIRS); do\
 		(cd $$i && cp *"$$i"*.so $(LIBPATH) && cp -rf *.h $(INCLUDEPATH)) || exit 1;\
 	done
