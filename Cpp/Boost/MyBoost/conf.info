@@ -4,7 +4,7 @@ conf
 	theme "matrix"
 	urls
 	{
-		url "http://www.url1.com"
+		url "http://www.url3.com"
 	}
 	clock_style 24
 }
