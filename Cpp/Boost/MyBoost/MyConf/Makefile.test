@@ -1,0 +1,2 @@
+SUBMAKES =  Makefile.myconf
+SUBDIRS = 

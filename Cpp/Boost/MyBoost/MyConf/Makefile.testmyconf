@@ -1,0 +1,13 @@
+OBJ=testMyConf.o MyConf.o
+
+testMyConf: $(OBJ)
+	$(LINK) -o testMyConf $(OBJ) 
+testMyConf.o: testMyConf.cpp 
+	$(COMPILE) testMyConf.cpp
+MyConf.o: MyConf.cpp MyConf.h
+	$(COMPILE) MyConf.cpp
+.PHONY:clean
+clean:
+	rm testMyConf $(OBJ)
+testMyConf:
+	make -f Makefile.myconf
