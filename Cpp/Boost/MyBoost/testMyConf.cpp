@@ -5,8 +5,8 @@ int main()
 {
 	IMyConf t_oMyConf;
 	//ptree t_oPt = t_oMyConf.ReadFile(IMyConf::XML, "conf.xml");
-	ptree t_oPt = t_oMyConf.ReadFile(IMyConf::JSON, "conf.json");
-	//ptree t_oPt = t_oMyConf.ReadFile(IMyConf::INFO, "conf.info");
+	//ptree t_oPt = t_oMyConf.ReadFile(IMyConf::JSON, "conf.json");
+	ptree t_oPt = t_oMyConf.ReadFile(IMyConf::INFO, "conf.info");
 
 	try
 	{
