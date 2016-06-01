@@ -1,7 +1,4 @@
-CC=g++
-COMPILE=$(CC) $(CFLAGS) -c
-LINK=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS)
-CFLAGS=-ansi -Wall -fPIC -shared
+include ../Makefile
 TARGET=libMyConf.so
 OBJ=MyConf.o
 
