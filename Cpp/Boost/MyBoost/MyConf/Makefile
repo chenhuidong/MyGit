@@ -1,4 +1,4 @@
-include ../Makefile
+include ../Makefile.defines.linux
 TARGET=libMyConf.so
 OBJ=MyConf.o
 

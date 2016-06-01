@@ -1,9 +1,3 @@
-SUBDIRS = MyConf
-CC=g++
-COMPILE=$(CC) $(CFLAGS) -c
-LINK=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS)
-CFLAGS=-ansi -Wall -fPIC -shared
-#TEMPALTES = Makefile.myconf
 all:
 	for i in $(SUBDIRS); do\
 		(cd $$i && make) || exit 1;\
