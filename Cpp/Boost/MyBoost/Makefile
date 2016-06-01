@@ -1,11 +1,15 @@
-TEMPALTES = Makefile.myconf
+SUBDIRS = MyConf
+CC=g++
+COMPILE=$(CC) $(CFLAGS) -c
+LINK=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS)
+CFLAGS=-ansi -Wall -fPic -shared
+#TEMPALTES = Makefile.myconf
 all:
-	for i in $(TEMPALTES); do\
-		(make -f $$i) || exit 1;\
+	for i in $(SUBDIRS); do\
+		(cd $$i && make) || exit 1;\
 	done
-testMyConf:
-	make -f Makefile.myconf
+.PHONY:clean
 clean:
-	for i in $(TEMPALTES); do\
-		(make -f $$i clean) || exit 1;\
+	for i in $(SUBDIRS); do\
+		(cd $$i && make clean) || exit 1;\
 	done
