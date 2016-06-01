@@ -1,4 +1,4 @@
-include "Makefile.defines.linux"
+include Makefile.defines.linux
 
 SUBDIRS = MyConf
 all:
