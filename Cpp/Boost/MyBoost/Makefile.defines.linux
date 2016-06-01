@@ -5,3 +5,4 @@ CFLAGS=-ansi -Wall -fPIC -shared
 WORKPATH=/home/chenhuidong/MyTools
 LIBPATH=$(WORKPATH)/MyLib
 INCLUDEPATH=$(WORKPATH)/MyInclude
+LDFLAGS=-lMyConf
