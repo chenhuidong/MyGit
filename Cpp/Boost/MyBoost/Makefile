@@ -8,7 +8,7 @@ all:
 install:
 	mkdir -p $(LIBPATH) $(INCLUDEPATH);\
 	for i in $(SUBDIRS); do\
-		(cd $$i && cp *"$$i"*.so $(LIBPATH)) || exit 1;\
+		(cd $$i && cp *"$$i"*.so $(LIBPATH) && cp -rf *.h $(LIBPATH)) || exit 1;\
 	done
 .PHONY:clean
 clean:
