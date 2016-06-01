@@ -6,6 +6,7 @@ all:
 		(cd $$i && make && cp *"$$i"*.so $(LIBPATH)) || exit 1;\
 	done
 install:
+	mkdir -p $(LIBPATH) $(INCLUDEPATH);\
 	for i in $(SUBDIRS); do\
 		(cd $$i && cp *"$$i"*.so $(LIBPATH)) || exit 1;\
 	done
