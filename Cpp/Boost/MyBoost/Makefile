@@ -3,7 +3,11 @@ include Makefile.defines.linux
 SUBDIRS = MyConf
 all:
 	for i in $(SUBDIRS); do\
-		(cd $$i && make && mv *"$$i"*.so $(LIBPATH)) || exit 1;\
+		(cd $$i && make && cp *"$$i"*.so $(LIBPATH)) || exit 1;\
+	done
+install:
+	for i in $(SUBDIRS); do\
+		(cd $$i && cp *"$$i"*.so $(LIBPATH)) || exit 1;\
 	done
 .PHONY:clean
 clean:
