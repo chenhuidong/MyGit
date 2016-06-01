@@ -2,7 +2,7 @@
 
 ptree& MMyLib::IMyConf::ReadFile(MMyLib::IMyConf::ConfType in_eConfType, string in_sFileName)
 {
-	swich(in_eConfType)
+	switch(in_eConfType)
 	{
 		case XML:
 		{
