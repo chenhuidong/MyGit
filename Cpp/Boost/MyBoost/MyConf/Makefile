@@ -5,7 +5,7 @@ CFLAGS=-ansi -Wall -fPIC -shared
 TARGET=libMyConf.so
 OBJ=MyConf.o
 
-all:$(TARGET)
+$(TARGET):$(OBJ)
 	$(LINK) -o $(TARGET) $(OBJ) 
 MyConf.o: MyConf.cpp MyConf.h
 	$(COMPILE) MyConf.cpp
