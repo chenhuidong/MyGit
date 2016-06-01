@@ -1,6 +1,6 @@
 #include "MyConf.h"
 
-ptree& IMyConf::ReadFile(IMyConf::ConfType in_eConfType, string in_sFileName)
+ptree& MMyLib::IMyConf::ReadFile(MMyLib::IMyConf::ConfType in_eConfType, string in_sFileName)
 {
 	swich(in_eConfType)
 	{
