@@ -11,4 +11,4 @@ MyConf.o: MyConf.cpp MyConf.h
 	$(COMPILE) MyConf.cpp
 .PHONY:clean
 clean:
-	rm testMyConf $(OBJ)
+	rm $(TARGET) $(OBJ)
