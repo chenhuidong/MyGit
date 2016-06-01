@@ -1,3 +1,4 @@
+include ../Makefile
 TARGET=libMyConf.so
 OBJ=MyConf.o
 
