@@ -1,3 +1,4 @@
+SUBDIRS = MyConf
 all:
 	for i in $(SUBDIRS); do\
 		(cd $$i && make) || exit 1;\
