@@ -1,6 +1,6 @@
 CC=g++
 COMPILE=$(CC) $(CFLAGS) -c
-LINK=$(CC) $(LDDIR) $(LDFLAGS)
+LINK=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS)
 CFLAGS=-ansi -Wall -fPIC -shared
 WORKPATH=/home/chenhuidong/MyTools
 LIBPATH=$(WORKPATH)/MyLib
