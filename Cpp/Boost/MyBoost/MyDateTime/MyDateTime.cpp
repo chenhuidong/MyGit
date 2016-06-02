@@ -20,7 +20,7 @@ ptime& MMLIB::MyDateTime::AddDays(ptime& io_oDstDateTime, ptime& in_oSrcDateTime
 {
 	date t_oSrcDateTime = in_oSrcDateTime.date();
 	date t_oDstDateTime = t_oSrcDateTime + days(in_iDays);
-	return io_oDstDateTime << t_oDstDateTime;
+	return io_oDstDateTime;
 }
 
 time_duration& MMLIB::MyDateTime::GetDuration(ptime& in_oDateTimeLeft, ptime& in_oDateTimeRight, time_duration& ot_oDuration)
