@@ -4,7 +4,7 @@ OBJ=MyConf.o
 
 $(TARGET):$(OBJ)
 	$(LINK) -o $(TARGET) $(OBJ) 
-MyConf.o: MyConf.cpp MyConf.h
+$(OBJ): MyConf.cpp MyConf.h
 	$(COMPILE) MyConf.cpp
 testMyConf:
 	make -f Makefile.testmyconf

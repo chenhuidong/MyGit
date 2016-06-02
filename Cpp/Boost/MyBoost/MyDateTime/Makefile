@@ -1,11 +1,11 @@
 include ../Makefile.defines.linux
-TARGET=libMyTR.so
-OBJ=MyTR.o
+TARGET=libMyDateTime.so
+OBJ=MyDateTime.o
 
 $(TARGET):$(OBJ)
 	$(LINK) -o $(TARGET) $(OBJ) 
-$(OBJ): MyTR.cpp MyTR.h
-	$(COMPILE) MyTR.cpp
+$(OBJ): MyDateTime.cpp MyDateTime.h
+	$(COMPILE) MyDateTime.cpp
 .PHONY:clean
 clean:
 	rm $(TARGET) $(OBJ)
