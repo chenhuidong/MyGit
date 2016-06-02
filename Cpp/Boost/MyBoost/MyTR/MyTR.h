@@ -3,7 +3,7 @@
 
 #include "../MyStdAfx.h"
 #include <boost/smart_ptr.hpp>
-using namespace boost::smart_ptr;
+using namespace boost;
 
 //auto_ptr<int> p;
 //scoped_ptr<int> sp(new int);
