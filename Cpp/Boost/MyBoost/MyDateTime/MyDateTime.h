@@ -6,7 +6,7 @@
 using namespace boost::posix_time;
 using namespace boost::gregorian;
 
-namespace MMLIB
+namespace MMyLib
 {
 	class IMyDateTime
 	{
