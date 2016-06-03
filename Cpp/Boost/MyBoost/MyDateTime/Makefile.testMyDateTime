@@ -2,7 +2,7 @@ include ../Makefile.defines.linux
 OBJ=testMyDateTime.o 
 
 testMyDateTime: $(OBJ)
-	$(LINK) -o testMyDateTime $(OBJ)
+	$(LINKEXE) -o testMyDateTime $(OBJ)
 $(OBJ): testMyDateTime.cpp 
 	$(COMPILE) testMyDateTime.cpp
 .PHONY:clean

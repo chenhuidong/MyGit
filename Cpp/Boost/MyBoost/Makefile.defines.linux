@@ -1,7 +1,9 @@
 CC=g++
 COMPILE=$(CC) $(CFLAGS) -c
-LINK=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS)
-CFLAGS=-ansi -Wall -fPIC -shared
+LINK=$(CC) $(CFLAGS) $(CFLAGSEX) $(LDDIR) $(LDFLAGS)
+LINKEXE=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS)
+CFLAGS=-ansi -Wall -fPIC 
+CFLAGSEX=-shared
 WORKPATH=/home/chenhuidong/MyTools
 LIBPATH=$(WORKPATH)/MyLib
 INCLUDEPATH=$(WORKPATH)/MyInclude
