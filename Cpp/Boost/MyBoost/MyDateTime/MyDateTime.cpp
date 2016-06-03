@@ -6,24 +6,23 @@ MMLIB::MyDateTime::MyDateTime()
 MMLIB::MyDateTime::~MyDateTime()
 {}
 
-string& MMLIB::MyDateTime::ToSimpleString(string& io_sDstDateTime, ptime& in_oDateTime)
+ptime MMLIB::MyDateTime::GetCurrentTime()
 {
-	return io_sDstDateTime = to_simple_string(in_oDateTime);
+	return second_clock::local_time();
 }
 
-ptime& MMLIB::MyDateTime::GetCurrentTime(ptime& io_oDateTime)
+string MMLIB::MyDateTime::ToSimpleString(ptime& in_oDateTime)
 {
-	return io_oDateTime = second_clock::local_time();
+	return to_simple_string(in_oDateTime);
 }
 
-ptime& MMLIB::MyDateTime::AddDays(ptime& io_oDstDateTime, ptime& in_oSrcDateTime, int in_iDays)
+ptime MMLIB::MyDateTime::AddDays(ptime& in_oDateTime, int in_iDays)
 {
-	date t_oSrcDateTime = in_oSrcDateTime.date();
-	date t_oDstDateTime = t_oSrcDateTime + days(in_iDays);
-	return io_oDstDateTime << t_oDstDateTime;
+	date t_oDateTime = in_oDateTime.date();
+	return ptime(t_oDateTime + days(in_iDays));
 }
 
-time_duration& MMLIB::MyDateTime::GetDuration(ptime& in_oDateTimeLeft, ptime& in_oDateTimeRight, time_duration& ot_oDuration)
+time_duration MMLIB::MyDateTime::GetDuration(ptime& in_oDateTimeLeft, ptime& in_oDateTimeRight)
 {
-	return ot_oDuration = in_oDateTimeLeft - in_oDateTimeRight;
+	return in_oDateTimeLeft - in_oDateTimeRight;
 }

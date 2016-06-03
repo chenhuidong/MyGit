@@ -13,10 +13,10 @@ namespace MMLIB
 	public:
 		MyDateTime();
 		~MyDateTime();
-		string& ToSimpleString(string& io_sDstDateTime, ptime& in_oDateTime);
-		ptime& GetCurrentTime(ptime& io_oDateTime);
-		ptime& AddDays(ptime& io_oDstDateTime, ptime& in_oSrcDateTime, int in_iDays);
-		time_duration& GetDuration(ptime& in_oDateTimeLeft, ptime& in_oDateTimeRight, time_duration& ot_oDuration);
+		ptime GetCurrentTime();
+		string ToSimpleString(ptime& in_oDateTime);	
+		ptime AddDays(ptime& in_oDateTime, int in_iDays);
+		time_duration GetDuration(ptime& in_oDateTimeLeft, ptime& in_oDateTimeRight);
 	private:
 	};
 }; 
