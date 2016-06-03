@@ -11,6 +11,10 @@ install:
 	for i in $(SUBDIRS); do\
 		(cd $$i && cp *"$$i"*.so $(LIBPATH) && cp -rf *.h $(INCLUDEPATH)) || exit 1;\
 	done
+test:
+	for i in $(SUBDIRS); do\
+		(cd $$i && make -f Makefile.*) || exit 1;\
+	done
 .PHONY:clean
 clean:
 	for i in $(SUBDIRS); do\
