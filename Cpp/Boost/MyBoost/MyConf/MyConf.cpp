@@ -10,7 +10,7 @@ MMyLib::IMyConf::~IMyConf()
 	delete m_pPt;
 }
 
-ptree* MMyLib::IMyConf::ReadFile(MMyLib::IMyConf::ConfType in_eConfType, string in_sFileName)
+ptree* MMyLib::IMyConf::ReadFile(MMyLib::IMyConf::ConfType in_eConfType, string& in_sFileName)
 {
 	switch(in_eConfType)
 	{

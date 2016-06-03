@@ -8,11 +8,11 @@ using namespace boost::gregorian;
 
 namespace MMLIB
 {
-	class MyDateTime
+	class IMyDateTime
 	{
 	public:
-		MyDateTime();
-		~MyDateTime();
+		IMyDateTime();
+		~IMyDateTime();
 		ptime GetCurrentTime();
 		string ToSimpleString(ptime& in_oDateTime);	
 		ptime AddDays(ptime& in_oDateTime, int in_iDays);
