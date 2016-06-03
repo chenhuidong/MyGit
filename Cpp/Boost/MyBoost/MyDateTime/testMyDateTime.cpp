@@ -1,4 +1,4 @@
-#include "MyConf.h"
+#include "MyDateTime.h"
 using namespace MMyLib;
 
 int main()
