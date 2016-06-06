@@ -4,6 +4,7 @@ using namespace MMyLib;
 int main()
 {
 	IMyDateTime t_oMyDateTime;
-	cout<< t_oMyDateTime.ToSimpleString(t_oMyDateTime.GetCurrentTime())<< endl;
+	//cout<< t_oMyDateTime.ToSimpleString(t_oMyDateTime.GetCurrentTime())<< endl;
+	ptime t_oPtime = t_oMyDateTime.GetCurrentTime();
 	return 0;
 }
