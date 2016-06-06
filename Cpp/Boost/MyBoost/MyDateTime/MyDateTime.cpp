@@ -11,7 +11,7 @@ ptime MMyLib::IMyDateTime::GetCurrentTime()
 	return second_clock::local_time();
 }
 
-string MMyLib::IMyDateTime::ToSimpleString(ptime& in_oDateTime)
+string MMyLib::IMyDateTime::ToSimpleString(const ptime& in_oDateTime)
 {
 	return to_simple_string(in_oDateTime);
 }
