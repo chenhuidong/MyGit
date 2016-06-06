@@ -15,8 +15,8 @@ namespace MMyLib
 		~IMyDateTime();
 		ptime GetCurrentTime();
 		string ToSimpleString(const ptime& in_oDateTime);	
-		ptime AddDays(ptime& in_oDateTime, int in_iDays);
-		time_duration GetDuration(ptime& in_oDateTimeLeft, ptime& in_oDateTimeRight);
+		ptime AddDays(const ptime& in_oDateTime, int in_iDays);
+		time_duration GetDuration(const ptime& in_oDateTimeLeft, const ptime& in_oDateTimeRight);
 	private:
 	};
 }; 
