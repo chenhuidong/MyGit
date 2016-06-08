@@ -34,7 +34,7 @@ string MMyLib::IMyDateTime::ToSimpleString(const ptime& in_oDateTime)
 ptime MMyLib::IMyDateTime::AddDays(const ptime& in_oDateTime, int in_iDays)
 {
 	date t_oDateTime = in_oDateTime.date();
-	return ptime(t_oDateTime + days(in_iDays));
+	return ptime(t_oDateTime + days(in_iDays) + hours(2));
 }
 
 time_duration MMyLib::IMyDateTime::GetDuration(const ptime& in_oDateTimeLeft,  const ptime& in_oDateTimeRight)
