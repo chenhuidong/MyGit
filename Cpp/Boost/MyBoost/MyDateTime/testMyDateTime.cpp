@@ -8,6 +8,6 @@ int main()
 	cout<< t_oMyDateTime.ToSimpleString(t_oMyDateTime.GetLocalTime())<< endl
 	 << t_oMyDateTime.ToSimpleString(t_oMyDateTime.GetLocalTimeMic())<< endl;
 
-	cout<< t_oMyDateTime.ToSimpleString(t_oMyDateTime.AddDays(t_oMyDateTime.GetLocalTime(), 1))<< endl;
+	cout<< t_oMyDateTime.ToSimpleString(t_oMyDateTime.AddDays(t_oMyDateTime.GetLocalTime(), 1) + hours(2))<< endl;
 	return 0;
 }
