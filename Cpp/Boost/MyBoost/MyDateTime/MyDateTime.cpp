@@ -8,7 +8,8 @@ MMyLib::IMyDateTime::~IMyDateTime()
 
 ptime MMyLib::IMyDateTime::GetCurrentTime()
 {
-	return second_clock::local_time();
+	//return second_clock::local_time();
+	return second_clock::universal_time();
 }
 
 string MMyLib::IMyDateTime::ToSimpleString(const ptime& in_oDateTime)
