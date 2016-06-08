@@ -13,7 +13,7 @@ ptime MMyLib::IMyDateTime::GetCurrentTime()
 
 string MMyLib::IMyDateTime::ToSimpleString(const ptime& in_oDateTime)
 {
-	return to_simple_string(in_oDateTime);
+	return to_simple_string(in_oDateTime, 'yyyymmdd');
 }
 
 ptime MMyLib::IMyDateTime::AddDays(const ptime& in_oDateTime, int in_iDays)
