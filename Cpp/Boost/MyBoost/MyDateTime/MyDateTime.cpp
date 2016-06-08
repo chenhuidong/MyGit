@@ -6,10 +6,24 @@ MMyLib::IMyDateTime::IMyDateTime()
 MMyLib::IMyDateTime::~IMyDateTime()
 {}
 
-ptime MMyLib::IMyDateTime::GetCurrentTime()
+ptime MMyLib::IMyDateTime::GetLocalTime()
 {
 	return second_clock::local_time();
-	//return second_clock::universal_time();
+}
+
+ptime MMyLib::IMyDateTime::GetLocalTimeMic()
+{
+	return microsec_clock::local_time();
+}
+
+ptime MMyLib::IMyDateTime::GetUTCTime()
+{
+	return second_clock::universal_time();
+}
+
+ptime MMyLib::IMyDateTime::GetUTCTimeMic()
+{
+	return microsec_clock::universal_time();
 }
 
 string MMyLib::IMyDateTime::ToSimpleString(const ptime& in_oDateTime)
