@@ -33,7 +33,7 @@ string MMyLib::IMyDateTime::ToSimpleString(const ptime& in_oDateTime)
 
 ptime MMyLib::IMyDateTime::AddDays(const ptime& in_oDateTime, int in_iDays)
 {
-	//date t_oDateTime = in_oDateTime.date();
+	cout<< in_iDays*24<< endl;
 	return in_oDateTime + hours(in_iDays * 24);
 }
 
