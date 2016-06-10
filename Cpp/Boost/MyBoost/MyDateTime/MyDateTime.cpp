@@ -31,7 +31,7 @@ string MMyLib::IMyDateTime::ToSimpleString(const ptime& in_oDateTime)
 	return to_simple_string(in_oDateTime);
 }
 
-ptime MMyLib::IMyDateTime::AddDays(const ptime& in_oDateTime, int in_iDays)
+ptime MMyLib::IMyDateTime::AddDays(const ptime& in_oDateTime, double in_iDays)
 {
 	cout<< in_iDays*24<< endl;
 	return in_oDateTime + hours(in_iDays * 24);

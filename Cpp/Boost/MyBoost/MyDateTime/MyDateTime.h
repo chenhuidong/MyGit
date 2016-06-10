@@ -18,7 +18,7 @@ namespace MMyLib
 		ptime GetUTCTime();
 		ptime GetUTCTimeMic();
 		string ToSimpleString(const ptime& in_oDateTime);	
-		ptime AddDays(const ptime& in_oDateTime, int in_iDays);
+		ptime AddDays(const ptime& in_oDateTime, double in_iDays);
 		time_duration GetDuration(const ptime& in_oDateTimeLeft, const ptime& in_oDateTimeRight);
 	private:
 	};
