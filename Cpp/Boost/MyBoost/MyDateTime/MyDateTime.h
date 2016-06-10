@@ -17,7 +17,7 @@ namespace MMyLib
 		ptime GetLocalTimeMic();
 		ptime GetUTCTime();
 		ptime GetUTCTimeMic();
-		string ToSimpleString(auto& in_oDateTime);	
+		string ToSimpleString(auto in_oDateTime);	
 		ptime AddDays(const ptime& in_oDateTime, double in_iDays);
 		time_duration GetDuration(const ptime& in_oDateTimeLeft, const ptime& in_oDateTimeRight);
 	private:
