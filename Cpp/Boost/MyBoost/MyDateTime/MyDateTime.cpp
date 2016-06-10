@@ -26,7 +26,7 @@ ptime MMyLib::IMyDateTime::GetUTCTimeMic()
 	return microsec_clock::universal_time();
 }
 
-string MMyLib::IMyDateTime::ToSimpleString(const ptime& in_oDateTime)
+string MMyLib::IMyDateTime::ToSimpleString(auto& in_oDateTime)
 {
 	return to_simple_string(in_oDateTime);
 }
