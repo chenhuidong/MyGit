@@ -8,7 +8,7 @@ int main()
 	cout<< to_simple_string(t_oMyDateTime.GetLocalTime())<< endl
 	 << to_simple_string(t_oMyDateTime.GetLocalTimeMic())<< endl;
 
-	cout<< to_simple_string(t_oMyDateTime.AddDays(t_oMyDateTime.GetLocalTime(), 0.5))<< endl;
-	//cout<< to_simple_string(t_oMyDateTime.AddDays(t_oMyDateTime.GetLocalTime(), 0.5) - t_oMyDateTime.GetLocalTime())<< endl;
+	cout<< to_simple_string(t_oMyDateTime.AddDays(t_oMyDateTime.GetLocalTime(), 1))<< endl;
+	cout<< to_simple_string(t_oMyDateTime.AddDays(t_oMyDateTime.GetLocalTime(), 1) - t_oMyDateTime.GetLocalTime())<< endl;
 	return 0;
 }

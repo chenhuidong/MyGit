@@ -28,7 +28,7 @@ ptime MMyLib::IMyDateTime::GetUTCTimeMic()
 
 ptime MMyLib::IMyDateTime::AddDays(const ptime& in_oDateTime, double in_iDays)
 {
-	return in_oDateTime + hours(in_iDays * 24);
+	return in_oDateTime + days(in_iDays);
 }
 
 time_duration MMyLib::IMyDateTime::GetDuration(const ptime& in_oDateTimeLeft,  const ptime& in_oDateTimeRight)
