@@ -11,17 +11,15 @@ using namespace boost;
 
 namespace MMyLib
 {
-	template<typename F>
 	class MyThread
 	{
 	public:
-		MyThread();
-		~MyThread();
-		template<typename F>
-		BeginThread(F func)
+		template <typename F>
+		MyThread(F func): f(func)
 		{
 			boost::thread t(f);
-		}
+		};
+		~MyThread(){};
 	private:
 		function<void()> f;
 	};
