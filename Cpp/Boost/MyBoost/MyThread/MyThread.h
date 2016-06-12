@@ -17,11 +17,12 @@ namespace MMyLib
 		template <typename F>
 		MyThread(F func): f(func)
 		{
-			boost::thread t(f);
+			m_pThread = new boost::thread(f);
 		};
 		~MyThread(){};
 	private:
 		function<void()> f;
+		boost::thread *m_pThread;
 	};
 };
 
