@@ -26,11 +26,6 @@ ptime MMyLib::IMyDateTime::GetUTCTimeMic()
 	return microsec_clock::universal_time();
 }
 
-string MMyLib::IMyDateTime::ToSimpleString(auto in_oDateTime)
-{
-	return to_simple_string(in_oDateTime);
-}
-
 ptime MMyLib::IMyDateTime::AddDays(const ptime& in_oDateTime, double in_iDays)
 {
 	return in_oDateTime + hours(in_iDays * 24);
