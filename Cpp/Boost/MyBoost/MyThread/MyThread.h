@@ -11,6 +11,7 @@ using namespace boost;
 
 namespace MMyLib
 {
+	template<typename F>
 	class MyThread
 	{
 	public:
