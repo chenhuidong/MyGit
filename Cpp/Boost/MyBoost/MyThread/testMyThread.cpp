@@ -9,6 +9,7 @@ void my_func()
 int main()
 {
 	MyThread t_oMyThread(my_func);
-	boost::this_thread::sleep(boost::posix_time::seconds(2));
+	//boost::this_thread::sleep(boost::posix_time::seconds(2));
+	t_oMyThread.Join();
 	return 0;
 }

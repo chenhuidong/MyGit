@@ -19,7 +19,13 @@ namespace MMyLib
 		{
 			m_pThread = new boost::thread(f);
 		};
-		~MyThread(){};
+
+		virtual ~MyThread()
+		{
+			delete m_pThread;
+		};
+
+		void Join();
 	private:
 		function<void()> f;
 		boost::thread *m_pThread;
