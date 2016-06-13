@@ -16,7 +16,7 @@ namespace MMyLib
 	{
 		if(!in_sFileName)
 			in_sFileName="main";
-
+		cout<< "2"<< endl;
 		google::InitGoogleLogging(in_sFileName);
 
 		FLAGS_logtostderr = 0;	//是否打印到控制台
@@ -26,7 +26,7 @@ namespace MMyLib
 		FLAGS_logbufsecs = 60;	//缓存的最大时长，超时会写入文件
 		string t_strLogPath = getenv("LOG_PATH");	
 		FLAGS_log_dir = t_strLogPath;
-
+		cout<< "3"<< endl;
 		string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;
 		#ifdef FLAGS_INFO //info以上单日志
 		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+in_sFileName+".info.";
@@ -44,6 +44,7 @@ namespace MMyLib
 		#else //默认INFO单日志
 		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+in_sFileName+".info.";
 		#endif 
+		cout<< t_strInfoName<< endl;
 
 		google::SetLogDestination(google::INFO, t_strInfoName.c_str());
 		google::SetLogDestination(google::WARNING, t_strWarningName.c_str());
