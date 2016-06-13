@@ -1,7 +1,7 @@
 #include "../../stdafx.h"
 
 #define FLAGS_INFO
-#include "../../MyLog.h"
+#include "MyLog.h"
 
 
 int main(int argc, char* argv[]) 

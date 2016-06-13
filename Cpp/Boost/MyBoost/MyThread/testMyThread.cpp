@@ -9,7 +9,7 @@ void my_func(int x, int y)
 int main()
 {
 	int x = 5, k = 4;
-	MyThread t_oMyThread(boost::bind(my_func, ref(x), ref(k)));
+	IMyThread t_oMyThread(boost::bind(my_func, ref(x), ref(k)));
 	//boost::this_thread::sleep(boost::posix_time::seconds(2));
 	t_oMyThread.Join();
 	return 0;

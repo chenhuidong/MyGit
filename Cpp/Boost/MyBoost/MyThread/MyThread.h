@@ -11,16 +11,16 @@ using namespace boost;
 
 namespace MMyLib
 {
-	class MyThread
+	class IMyThread
 	{
 	public:
 		template <typename F>
-		MyThread(F func): f(func)
+		IMyThread(F func): f(func)
 		{
 			m_pThread = new boost::thread(f);
 		};
 
-		virtual ~MyThread()
+		virtual ~IMyThread()
 		{
 			delete m_pThread;
 		};

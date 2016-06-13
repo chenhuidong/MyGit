@@ -1,6 +1,6 @@
 #include "MyThread.h"
 
-void MMyLib::MyThread::Join()
+void MMyLib::IMyThread::Join()
 {
 	m_pThread->join();
 }
