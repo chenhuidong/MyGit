@@ -1,6 +1,6 @@
 include Makefile.defines.linux
 
-SUBDIRS = MyConf MyTR MyDateTime MyThread
+SUBDIRS = MyConf MyTR MyDateTime MyThread MyLog
 all:
 	for i in $(SUBDIRS); do\
 		(cd $$i && make) || exit 1;\
