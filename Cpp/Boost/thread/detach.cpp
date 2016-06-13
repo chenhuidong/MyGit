@@ -22,10 +22,10 @@ int main()
 
 	boost::thread t1(printing, ref(x), "hello"), t2(printing, ref(x), "boost");
 
-	cout<< t1.get_id()<< endl;
-	assert(t1 != t2);
-	t1.detach();
-	assert(t1.get_id() == thread::id());
+	//cout<< t1.get_id()<< endl;
+	//assert(t1 != t2);
+	//t1.detach();
+	//assert(t1.get_id() == thread::id());
 	return 0;
 }
 
