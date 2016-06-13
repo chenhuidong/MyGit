@@ -21,7 +21,8 @@ int main()
 	boost::atomic_int x;
 
 	boost::thread t1(printing, ref(x), "hello"), t2(printing, ref(x), "boost");
-
+	t1.join();
+	t2.join();
 	//cout<< t1.get_id()<< endl;
 	//assert(t1 != t2);
 	//t1.detach();
