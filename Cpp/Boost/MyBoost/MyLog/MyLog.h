@@ -23,7 +23,7 @@ namespace MMyLib
 		FLAGS_minloglevel=0;	//
 		FLAGS_logbufsecs = 60;	//缓存的最大时长，超时会写入文件
 		const char* t_sLogPath = getenv("LOG_PATH");	
-		if(t_sLogPath)
+		if(!t_sLogPath)
 			return -1;
 		FLAGS_log_dir = t_sLogPath;
 		string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;
