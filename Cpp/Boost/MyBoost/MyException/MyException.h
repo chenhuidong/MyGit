@@ -7,8 +7,11 @@ using Poco::Exception;
 
 namespace MMyLib
 {
-	POCO_DECLARE_EXCEPTION(Foundation_API, NoRecordException, Exception)
-	POCO_DECLARE_EXCEPTION(Foundation_API, TestException, Exception)
+	namespace Poco
+	{
+		POCO_DECLARE_EXCEPTION(Foundation_API, NoRecordException, Exception)
+		POCO_DECLARE_EXCEPTION(Foundation_API, TestException, Exception)
+	}
 };
 
 #endif
