@@ -5,13 +5,12 @@
 #include <typeinfo>
 using Poco::Exception;
 
-namespace MMyLib
-{
+
 	namespace Poco
 	{
 		POCO_DECLARE_EXCEPTION(Foundation_API, NoRecordException, Exception)
 		POCO_DECLARE_EXCEPTION(Foundation_API, TestException, Exception)
 	}
-};
+
 
 #endif
