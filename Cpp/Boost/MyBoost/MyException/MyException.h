@@ -3,6 +3,7 @@
 
 #include "Poco/Exception.h"
 #include <typeinfo>
+using Poco::Exception;
 
 namespace MMyLib
 {
