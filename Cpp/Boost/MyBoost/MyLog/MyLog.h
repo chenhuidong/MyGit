@@ -29,7 +29,9 @@ namespace MMyLib
 		//string t_strLogPath = getenv("LOG_PATH");	
 		//FLAGS_log_dir = t_strLogPath;
 		const char* t_strLogPath = getenv("LOG_PATH");	
+		FLAGS_log_dir = t_strLogPath;
 		cout<< "5"<< t_strLogPath<< endl;
+		cout<< "6"<< endl;
 		string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;
 		#ifdef FLAGS_INFO //info以上单日志
 		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+in_sFileName+".info.";
