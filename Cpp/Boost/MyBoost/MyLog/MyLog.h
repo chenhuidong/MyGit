@@ -16,22 +16,14 @@ namespace MMyLib
 	{
 		if(!in_sFileName)
 			in_sFileName="main";
-		cout<< "2"<< endl;
 		google::InitGoogleLogging(in_sFileName);
-		cout<< "3"<< endl;
 		FLAGS_logtostderr = 0;	//是否打印到控制台
 		FLAGS_alsologtostderr=0;	//打印到日志同时是否打印到控制台
 		FLAGS_stderrthreshold=google::FATAL;	//需要打印到控制台的日志级别
 		FLAGS_minloglevel=0;	//
 		FLAGS_logbufsecs = 60;	//缓存的最大时长，超时会写入文件
-		cout<< "4"<< endl;
-
-		//string t_strLogPath = getenv("LOG_PATH");	
-		//FLAGS_log_dir = t_strLogPath;
-		const char* t_strLogPath = getenv("LOG_PATH");	
+		string t_strLogPath = getenv("LOG_PATH");	
 		FLAGS_log_dir = t_strLogPath;
-		cout<< "5"<< t_strLogPath<< endl;
-		cout<< "6"<< endl;
 		string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;
 		#ifdef FLAGS_INFO //info以上单日志
 		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+in_sFileName+".info.";
