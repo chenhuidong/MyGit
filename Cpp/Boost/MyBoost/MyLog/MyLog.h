@@ -12,7 +12,7 @@ namespace MMyLib
 	#define LOG_ERROR LOG(ERROR)
 	#define LOG_FATAL LOG(FATAL)
 
-	static void INITIALIZE_LOG(const char * in_sFileName = NULL)
+	static int INITIALIZE_LOG(const char * in_sFileName = NULL)
 	{
 		if(!in_sFileName)
 			in_sFileName="main";
@@ -22,8 +22,10 @@ namespace MMyLib
 		FLAGS_stderrthreshold=google::FATAL;	//需要打印到控制台的日志级别
 		FLAGS_minloglevel=0;	//
 		FLAGS_logbufsecs = 60;	//缓存的最大时长，超时会写入文件
-		string t_strLogPath = getenv("LOG_PATH");	
-		FLAGS_log_dir = t_strLogPath;
+		const char* t_sLogPath = getenv("LOG_PATH");	
+		if(t_sLogPath)
+			return -1;
+		FLAGS_log_dir = t_sLogPath;
 		string t_strInfoName, t_strWarningName, t_strErrorName, t_strFatalName;
 		#ifdef FLAGS_INFO //info以上单日志
 		t_strInfoName=t_strInfoName+FLAGS_log_dir+"/"+in_sFileName+".info.";
