@@ -8,11 +8,11 @@ int main()
 	}
 	catch(Poco::TestException& e)
 	{
-		cout<< e.what()<< endl;
+		cout<< e.displayText()<< endl;
 	}
 	catch(Exception& e)
 	{
-		cout<< e.what()<< endl;
+		cout<< e.displayText()<< endl;
 	}
 	return 0;
 }
