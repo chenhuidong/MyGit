@@ -49,6 +49,7 @@ namespace MMyLib
 		google::SetLogDestination(google::WARNING, t_strWarningName.c_str());
 		google::SetLogDestination(google::ERROR, t_strErrorName.c_str());
 		google::SetLogDestination(google::FATAL, t_strFatalName.c_str());
+		return 0;
 	}
 };
 
