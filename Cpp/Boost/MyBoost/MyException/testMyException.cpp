@@ -10,7 +10,7 @@ int main()
 	{
 		cout<< e.displayText()<< endl;
 	}
-	catch(Exception& e)
+	catch(Poco::Exception& e)
 	{
 		cout<< e.displayText()<< endl;
 	}
