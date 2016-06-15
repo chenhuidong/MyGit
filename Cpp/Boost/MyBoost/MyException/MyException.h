@@ -12,4 +12,5 @@ namespace Poco
 	POCO_DECLARE_EXCEPTION(Foundation_API, TestException, Exception)
 }
 
+
 #endif
