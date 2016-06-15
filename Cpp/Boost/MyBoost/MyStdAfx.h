@@ -1,10 +1,43 @@
 #ifndef __MY_LIB_MY_STD_AFX_H_
 #define __MY_LIB_MY_STD_AFX_H_
 
-#include <iostream>
 #include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
-#include <string> 
+#include <iostream>
+#include <fstream>
+#include <list>
+#include <vector>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <string.h>
+#include <string>
 using namespace std;
+
+#define BUFFSIZE 4096
+
+//iterator define
+#define  ___ANONYMOUS1(var, line)  var##line
+#define  __ANONYMOUS0(line)  ___ANONYMOUS1(_anonymous, line)
+#define  ANONYMOUS()  __ANONYMOUS0(__LINE__)
+#define ForEachOf(x, y, z) \
+y::iterator ANONYMOUS() = z.end(); \
+for(y::iterator x = z.begin();x != ANONYMOUS();++x)
+#define ForEachOf_Const(x, y, z) \
+	y::const_iterator ANONYMOUS() = z.end(); \
+for(y::const_iterator x = z.begin();x != ANONYMOUS();++x)
+
+#define ForEachOf_Reverse(x, y, z) \
+	y::reverse_iterator ANONYMOUS() = z.rend(); \
+for(y::reverse_iterator x = z.rbegin();x != ANONYMOUS();++x)
+
+#define ForEachOf_Reverse_Const(x, y, z) \
+	y::const_reverse_iterator ANONYMOUS() = z.rend(); \
+for(y::const_reverse_iterator x = z.rbegin();x != ANONYMOUS();++x)
+
+#define getWorkPath() getenv("WORK_PATH")	
+
+#define getLogPath() getenv("LOG_PATH")
 
 #endif

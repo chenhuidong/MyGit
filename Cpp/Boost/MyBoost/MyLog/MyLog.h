@@ -24,7 +24,7 @@ namespace MMyLib
 		FLAGS_stderrthreshold = google::FATAL;	//需要打印到控制台的日志级别
 		FLAGS_minloglevel = 0;	//
 		FLAGS_logbufsecs = 60;	//缓存的最大时长，超时会写入文件
-		const char* t_sLogPath = getenv("LOG_PATH");	
+		const char* t_sLogPath = getLogPath();	
 		if(!t_sLogPath)
 			return -1;
 		FLAGS_log_dir = t_sLogPath;
