@@ -16,6 +16,8 @@
 using namespace std;
 
 //日志设置
+#define getWorkPath() getenv("WORK_PATH")	
+#define getLogPath() getenv("LOG_PATH")
 #define FLAGS_INFO
 #include "MyLog/MyLog.h"
 
@@ -40,8 +42,6 @@ for(y::reverse_iterator x = z.rbegin();x != ANONYMOUS();++x)
 	y::const_reverse_iterator ANONYMOUS() = z.rend(); \
 for(y::const_reverse_iterator x = z.rbegin();x != ANONYMOUS();++x)
 
-#define getWorkPath() getenv("WORK_PATH")	
 
-#define getLogPath() getenv("LOG_PATH")
 
 #endif
