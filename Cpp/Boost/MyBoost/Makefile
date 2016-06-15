@@ -23,5 +23,5 @@ test:
 clean:
 	for i in $(SUBDIRS); do\
 		(cd $$i && make clean ) || exit 1;\
-		rm $(LIBPATH)/*"$$i"*.so;
+		rm $(LIBPATH)/*"$$i"*.so;\
 	done
