@@ -15,6 +15,10 @@
 #include <string>
 using namespace std;
 
+//日志设置
+#define FLAGS_INFO
+#include <MyLog.h>
+
 #define BUFFSIZE 4096
 
 //iterator define
