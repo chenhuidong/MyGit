@@ -18,8 +18,8 @@ using namespace std;
 //日志设置
 #define getWorkPath() getenv("WORK_PATH")	
 #define getLogPath() getenv("LOG_PATH")
-//#define FLAGS_INFO
-//#include <MyLog/MyLog.h>
+#define FLAGS_INFO
+#include "MyInclude/MyLog.h"
 
 #define BUFFSIZE 4096
 
