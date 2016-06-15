@@ -6,7 +6,7 @@ all:
 	cp -rf *.h $(INCLUDEPATH);\
 	for i in $(SUBDIRS); do\
 		(cd $$i && cp -rf *.h $(INCLUDEPATH)) || exit 1;\
-	done\
+	done;\
 	for i in $(SUBDIRS); do\
 		(cd $$i && make) || exit 1;\
 	done
