@@ -1,7 +1,7 @@
 #ifndef __MY_LIB_MY_THREAD_H_
 #define __MY_LIB_MY_THREAD_H_
 
-#include "../MyStdAfx.h"
+#include "MyStdAfx.h"
 #include <boost/thread/thread.hpp>
 #include <boost/thread/mutex.hpp>  
 #include <boost/thread/once.hpp>
