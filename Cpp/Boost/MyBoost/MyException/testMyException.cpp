@@ -1,4 +1,5 @@
 #include "MyException.h"
+using namespace MMyLib;
 
 int main()
 {
