@@ -4,13 +4,13 @@ int main()
 {
 	try
 	{
-		throw Poco::NoRecordException("Test My Exception.");
+		throw NoRecordException("Test My Exception.");
 	}
-	catch(Poco::TestException& e)
+	catch(TestException& e)
 	{
 		cout<< e.displayText()<< endl;
 	}
-	catch(Poco::Exception& e)
+	catch(Exception& e)
 	{
 		cout<< e.displayText()<< endl;
 	}
