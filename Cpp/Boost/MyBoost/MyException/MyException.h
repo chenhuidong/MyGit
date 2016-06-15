@@ -4,7 +4,6 @@
 #include "../MyStdAfx.h"
 #include "Poco/Exception.h"
 #include <typeinfo>
-using Poco::Exception;
 
 namespace Poco
 {
