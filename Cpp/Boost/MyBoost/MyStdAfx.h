@@ -19,7 +19,7 @@ using namespace std;
 #define getWorkPath() getenv("WORK_PATH")	
 #define getLogPath() getenv("LOG_PATH")
 #define FLAGS_INFO
-#include "MyInclude/MyLog.h"
+#include <MyInclude/MyLog.h>
 
 #define BUFFSIZE 4096
 
