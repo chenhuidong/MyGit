@@ -22,5 +22,6 @@ test:
 .PHONY:clean
 clean:
 	for i in $(SUBDIRS); do\
-		(cd $$i && make clean && rm $(LIBPATH)/*"$$i"*.so) || exit 1;\
+		(cd $$i && make clean ) || exit 1;\
+		rm $(LIBPATH)/*"$$i"*.so;
 	done
