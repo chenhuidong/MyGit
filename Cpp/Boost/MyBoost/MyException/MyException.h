@@ -8,9 +8,9 @@ using Poco::Exception;
 
 namespace MMyLib
 {
-	POCO_DECLARE_EXCEPTION(Foundation_API, NoRecordException, Exception)
 	POCO_DECLARE_EXCEPTION(Foundation_API, InitializeDbException, Exception)
 	POCO_DECLARE_EXCEPTION(Foundation_API, CreateTablesException, Exception)
+	POCO_DECLARE_EXCEPTION(Foundation_API, NoRecordException, Exception)
 	POCO_DECLARE_EXCEPTION(Foundation_API, TestException, Exception)
 }
 

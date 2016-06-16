@@ -21,6 +21,9 @@ using namespace std;
 #define FLAGS_INFO
 #include "MyLog.h"
 
+//异常
+#include "MyException.h"
+
 #define BUFFSIZE 4096
 
 //iterator define

@@ -7,7 +7,6 @@
 #include "Poco/Data/SQLite/Connector.h"
 #include "Poco/Data/MySQL/Connector.h"
 #include "Poco/Data/MySQL/MySQLException.h"
-#include "MyException.h"
 
 using namespace Poco::Data;  
 using namespace Poco::Data::Keywords;
