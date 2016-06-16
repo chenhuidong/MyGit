@@ -1,5 +1,5 @@
 #include <stdio.h> 
-extern C
+extern "C"
 { 
 #include <hiredis/hiredis.h> 
 }
