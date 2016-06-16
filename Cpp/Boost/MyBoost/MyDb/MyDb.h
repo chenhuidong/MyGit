@@ -1,7 +1,6 @@
 #ifndef __MY_LIB_MY_DB_H_
 #define __MY_LIB_MY_DB_H_
 
-<<<<<<< HEAD
 #include "../MyStdAfx.h"
 #include "Poco/Data/Session.h"
 #include "Poco/Data/SessionFactory.h"
@@ -16,10 +15,6 @@ using Poco::Data::Statement;
 //using Poco::StringTokenizer;
 using Poco::Data::MySQL::ConnectionException;  
 using Poco::Data::MySQL::StatementException;   
-
-=======
-#include "MyStdAfx.h"
->>>>>>> 43fabe41f1d72951769edee0c71aec81ae07bc32
 
 namespace MMyLib
 {
