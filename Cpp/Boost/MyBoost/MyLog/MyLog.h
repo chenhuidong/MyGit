@@ -1,7 +1,7 @@
 #ifndef __MY_LIB_MY_LOG_H_
 #define __MY_LIB_MY_LOG_H_
 
-#include "../MyStdAfx.h"
+#include "MyStdAfx.h"
 #include <glog/logging.h>
 
 namespace MMyLib

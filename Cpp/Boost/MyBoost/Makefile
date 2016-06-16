@@ -2,14 +2,18 @@ include Makefile.defines.linux
 
 SUBDIRS = MyConf MyTR MyDateTime MyThread MyLog MyException
 all:
+	mkdir -p $(LIBPATH) $(INCLUDEPATH);\
+	cp -rf *.h $(INCLUDEPATH);\
+	for i in $(SUBDIRS); do\
+		(cd $$i && cp -rf *.h $(INCLUDEPATH)) || exit 1;\
+	done;\
 	for i in $(SUBDIRS); do\
 		(cd $$i && make) || exit 1;\
 	done
 install:
 	mkdir -p $(LIBPATH) $(INCLUDEPATH);\
-	cp -rf *.h $(INCLUDEPATH);\
 	for i in $(SUBDIRS); do\
-		(cd $$i && cp *"$$i"*.so $(LIBPATH) && cp -rf *.h $(INCLUDEPATH)) || exit 1;\
+		(cd $$i && cp *"$$i"*.so $(LIBPATH)) || exit 1;\
 	done
 test:
 	for i in $(SUBDIRS); do\
@@ -18,5 +22,6 @@ test:
 .PHONY:clean
 clean:
 	for i in $(SUBDIRS); do\
-		(cd $$i && make clean && rm $(LIBPATH)/*"$$i"*.so) || exit 1;\
+		(cd $$i && make clean ) || exit 1;\
+		rm $(LIBPATH)/*"$$i"*.so;\
 	done

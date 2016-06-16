@@ -1,7 +1,7 @@
 #ifndef __MY_LIB_MY_EXCEPTION_H_
 #define __MY_LIB_MY_EXCEPTION_H_
 
-#include "../MyStdAfx.h"
+#include "MyStdAfx.h"
 #include "Poco/Exception.h"
 #include <typeinfo>
 using Poco::Exception;
