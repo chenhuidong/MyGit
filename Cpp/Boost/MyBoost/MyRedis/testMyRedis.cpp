@@ -1,5 +1,9 @@
 #include <stdio.h> 
+extern C
+{ 
 #include <hiredis/hiredis.h> 
+}
+
 int main() 
 { 
     redisContext *conn  = redisConnect("127.0.0.1",6379); 
