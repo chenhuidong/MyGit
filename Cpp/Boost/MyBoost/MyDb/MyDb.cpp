@@ -1,6 +1,6 @@
 #include "MyDb.h"
 
-int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
+int MMyLib::MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
 {
     // create a session
     if(MyDb::SQLite == in_eDbType)
@@ -30,14 +30,14 @@ int MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
     return 0;
 }
 
-int MyDb::Uninitialize()
+int MMyLib::MyDb::Uninitialize()
 {
     // delete a session
     delete m_pSession;
     m_pSession = NULL;
 }
 
-Session* MyDb::GetSession()
+Session* MMyLib::MyDb::GetSession()
 {
 	return m_pSession;
 }
