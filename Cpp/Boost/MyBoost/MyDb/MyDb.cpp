@@ -21,11 +21,11 @@ int MMyLib::MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
     }
     else
     {
-        throw InitializeDbException("Initialize db failed.");
+        throw MMyLib::InitializeDbException("Initialize db failed.");
     }
 
     if(!m_pSession)
-    	throw InitializeDbException("Initialize db failed.");
+    	throw MMyLib::InitializeDbException("Initialize db failed.");
     
     return 0;
 }
