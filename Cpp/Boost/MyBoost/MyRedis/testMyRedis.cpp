@@ -1,8 +1,5 @@
 #include <stdio.h> 
-extern "C"
-{ 
 #include <hiredis/hiredis.h> 
-}
 
 int main() 
 { 
