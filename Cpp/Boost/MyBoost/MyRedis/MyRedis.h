@@ -1,6 +1,7 @@
 #ifndef __MY_LIB_MY_REDIS_H_
 #define __MY_LIB_MY_REDIS_H_
 
+#include "MyStdAfx.h"
 #include <hiredis.h>
 #include <async.h>
 #include <adapters/libevent.h>
