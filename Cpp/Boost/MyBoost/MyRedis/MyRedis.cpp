@@ -1,6 +1,6 @@
 #include "MyRedis.h"
 
-int MMyLib::MyRedis::InitializeRedis()
+int MMyLib::IMyRedis::InitializeRedis()
 {
 	signal(SIGPIPE, SIG_IGN);
 	m_pBase = event_base_new();
@@ -13,17 +13,17 @@ int MMyLib::MyRedis::InitializeRedis()
 	}
 
 	redisLibeventAttach(m_pContext, m_pBase);
-    redisAsyncSetConnectCallback(m_pContext, ConnectCallback);
-    redisAsyncSetDisconnectCallback(m_pContext, DisconnectCallback);
+    redisAsyncSetConnectCallback(m_pContext, IMyRedis::ConnectCallback);
+    redisAsyncSetDisconnectCallback(m_pContext, IMyRedis::DisconnectCallback);
     event_base_dispatch(m_pBase);
 }
 
-void MMyLib::MyRedis::GetCallback(redisAsyncContext *c, void *r, void *privdata)
+static void MMyLib::IMyRedis::GetCallback(redisAsyncContext *c, void *r, void *privdata)
 {
-	
+
 }
 
-void MMyLib::MyRedis::ConnectCallback(const redisAsyncContext *c, int status)
+static void MMyLib::IMyRedis::ConnectCallback(const redisAsyncContext *c, int status)
 {
     if (status != REDIS_OK) 
     {
@@ -33,7 +33,7 @@ void MMyLib::MyRedis::ConnectCallback(const redisAsyncContext *c, int status)
     printf("Connected...\n");
 }
 
-void MMyLib::MyRedis::DisconnectCallback(const redisAsyncContext *c, int status)
+static void MMyLib::IMyRedis::DisconnectCallback(const redisAsyncContext *c, int status)
 {
 	if (status != REDIS_OK) 
 	{
