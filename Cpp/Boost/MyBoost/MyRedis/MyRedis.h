@@ -18,7 +18,7 @@ namespace MMyLib
 		virtual void GetCallback(redisAsyncContext *c, void *r, void *privdata) = 0;
 		virtual void ConnectCallback(const redisAsyncContext *c, int status) = 0;
 		virtual void DisconnectCallback(const redisAsyncContext *c, int status) = 0;
-	private:
+	public:
 		struct event_base *m_pBase;
 		redisAsyncContext *m_pContext;
 	};
