@@ -13,11 +13,14 @@ namespace MMyLib
 	public:
 		IMyRedis(){}
 		virtual ~IMyRedis(){}
-		int InitializeRedis();
+		int InitializeRedis() = 0;
 	private:
 		virtual void GetCallback(redisAsyncContext *c, void *r, void *privdata) = 0;
 		virtual void ConnectCallback(const redisAsyncContext *c, int status) = 0;
 		virtual void DisconnectCallback(const redisAsyncContext *c, int status) = 0;
+	private:
+		struct event_base *m_pBase;
+		redisAsyncContext *m_pContext;
 	};
 
 	class MyRedis: public IMyRedis
@@ -25,6 +28,7 @@ namespace MMyLib
 	public:
 		MyRedis(){}
 		virtual ~MyRedis(){}
+		int InitializeRedis();
 	private:
 		void GetCallback(redisAsyncContext *c, void *r, void *privdata);
 		void ConnectCallback(const redisAsyncContext *c, int status);
