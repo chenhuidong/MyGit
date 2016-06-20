@@ -1,7 +1,7 @@
 #include "MyRedis.h"
 using namespace MMyLib;
 
-int main()
+int main(int argc, char**argv)
 {
     IMyRedis t_oMyRedis;
     t_oMyRedis.InitializeRedis();
