@@ -15,7 +15,7 @@ int MMyLib::IMyRedis::InitializeRedis()
 	redisLibeventAttach(m_pContext, m_pBase);
     redisAsyncSetConnectCallback(m_pContext, IMyRedis::ConnectCallback);
     redisAsyncSetDisconnectCallback(m_pContext, IMyRedis::DisconnectCallback);
-    event_base_dispatch(m_pBase);
+    //event_base_dispatch(m_pBase);
 }
 
 void MMyLib::IMyRedis::GetCallback(redisAsyncContext *c, void *r, void *privdata)
