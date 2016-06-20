@@ -20,7 +20,12 @@ int MMyLib::IMyRedis::InitializeRedis()
 
 void MMyLib::IMyRedis::GetCallback(redisAsyncContext *c, void *r, void *privdata)
 {
+    redisReply *reply = (redisReply *)r;
+    if (reply == NULL) return;
+    printf("argv[%s]: %s\n", (char*)privdata, reply->str);
 
+    /* Disconnect after receiving the reply to GET */
+    redisAsyncDisconnect(c);
 }
 
 void MMyLib::IMyRedis::ConnectCallback(const redisAsyncContext *c, int status)

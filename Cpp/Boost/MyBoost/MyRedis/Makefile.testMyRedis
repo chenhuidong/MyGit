@@ -1,0 +1,10 @@
+include ../Makefile.defines.linux
+OBJ=testMyRedis.o 
+
+testMyRedis: $(OBJ)
+	$(LINKEXE) -o testMyRedis $(OBJ)
+$(OBJ): testMyRedis.cpp 
+	$(COMPILE) testMyRedis.cpp
+.PHONY:clean
+clean:
+	rm testMyRedis $(OBJ)
