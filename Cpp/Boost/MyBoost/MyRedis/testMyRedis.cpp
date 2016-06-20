@@ -1,4 +1,4 @@
-#include "MyStdAfx.h"
+#include "MyRedis.h"
 using namespace MMyLib;
 
 int main()
