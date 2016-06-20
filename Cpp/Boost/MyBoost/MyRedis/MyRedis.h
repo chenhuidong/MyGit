@@ -13,7 +13,7 @@ namespace MMyLib
 	public:
 		IMyRedis(){}
 		virtual ~IMyRedis(){}
-		int InitializeRedis() = 0;
+		virtual int InitializeRedis() = 0;
 	private:
 		virtual void GetCallback(redisAsyncContext *c, void *r, void *privdata) = 0;
 		virtual void ConnectCallback(const redisAsyncContext *c, int status) = 0;
