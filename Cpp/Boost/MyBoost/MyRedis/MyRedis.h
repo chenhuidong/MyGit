@@ -14,8 +14,8 @@ namespace MMyLib
 		IMyRedis(){}
 		virtual ~IMyRedis(){}
 		int InitializeRedis();
-	private:
 		static void GetCallback(redisAsyncContext *c, void *r, void *privdata);
+	private:
 		static void ConnectCallback(const redisAsyncContext *c, int status);
 		static void DisconnectCallback(const redisAsyncContext *c, int status);
 	public:
