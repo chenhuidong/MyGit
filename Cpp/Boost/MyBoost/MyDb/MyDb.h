@@ -24,7 +24,7 @@ namespace MMyLib
 		enum DbType {SQLite, MySQL};
 
 		MyDb():m_pSession(NULL){}
-		~MyDb(){};
+		virtual ~MyDb(){};
 		int Initialize(DbType in_eDbType, const char* in_sDbName);
 		int Uninitialize();
 		Session* GetSession();

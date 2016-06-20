@@ -12,7 +12,7 @@ namespace MMyLib
 	{
 	public:
 		IMyDateTime();
-		~IMyDateTime();
+		virtual ~IMyDateTime();
 		ptime GetLocalTime();
 		ptime GetLocalTimeMic();
 		ptime GetUTCTime();

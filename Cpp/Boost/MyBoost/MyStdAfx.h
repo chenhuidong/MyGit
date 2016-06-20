@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <string.h>
 #include <string>
+#include <signal.h>
 using namespace std;
 
 //日志设置
