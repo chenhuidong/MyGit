@@ -8,7 +8,7 @@ int main(int argc, char**argv)
     t_oMyRedis.InitializeRedis();
     string key, value;
     cin>>key >>value;
-    while("$" != i)
+    while("$" != key)
     {
     	redisAsyncCommand(t_oMyRedis.m_pContext, NULL, NULL, "SET %s %s", key.c_str(), value.c_str());
     	redisAsyncCommand(t_oMyRedis.m_pContext, IMyRedis::GetCallback, (char*)key.c_str(), "GET %s", key.c_str());
