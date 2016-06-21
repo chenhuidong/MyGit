@@ -9,8 +9,8 @@ int main(int argc, char**argv)
     cin>>i;
     while("$" != i)
     {
-    	redisAsyncCommand(t_oMyRedis.m_pContext, NULL, NULL, "SET key %s", i);
-    	redisAsyncCommand(t_oMyRedis.m_pContext, IMyRedis::GetCallback, (char*)"end-1", "GET key");
+    	redisAsyncCommand(t_oMyRedis.m_pContext, NULL, NULL, "SET %s %s", i.c_str(), i.c_str());
+    	redisAsyncCommand(t_oMyRedis.m_pContext, IMyRedis::GetCallback, (char*)"end-1", "GET %s", i.c_str());
     	cin>>i;
 	}
 	t_oMyRedis.DisconnectRedis();
