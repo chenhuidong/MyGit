@@ -5,11 +5,11 @@ int main(int argc, char**argv)
 {
     IMyRedis t_oMyRedis;
     t_oMyRedis.InitializeRedis();
-    int i;
+    string i;
     cin>>i;
-    while(i!=0)
+    while(strlen(i))
     {
-    	redisAsyncCommand(t_oMyRedis.m_pContext, NULL, NULL, "SET key %d", i);
+    	redisAsyncCommand(t_oMyRedis.m_pContext, NULL, NULL, "SET key %s", i, strlen(i));
     	redisAsyncCommand(t_oMyRedis.m_pContext, IMyRedis::GetCallback, (char*)"end-1", "GET key");
     	cin>>i;
 	}
