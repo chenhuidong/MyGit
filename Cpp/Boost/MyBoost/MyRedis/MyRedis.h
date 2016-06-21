@@ -16,7 +16,6 @@ namespace MMyLib
 	public:
 		IMyRedis(){}
 		virtual ~IMyRedis(){}
-	private:
 		int InitializeRedis();
 		int DisconnectRedis();
 		int DispatchRedis();
