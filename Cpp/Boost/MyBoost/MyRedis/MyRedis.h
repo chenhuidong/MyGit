@@ -10,11 +10,13 @@ namespace MMyLib
 {
 	#define MY_REDIS_IP "127.0.0.1"
 	#define MY_REDIS_PORT 6379
+
 	class IMyRedis
 	{
 	public:
 		IMyRedis(){}
 		virtual ~IMyRedis(){}
+	private:
 		int InitializeRedis();
 		int DisconnectRedis();
 		int DispatchRedis();
