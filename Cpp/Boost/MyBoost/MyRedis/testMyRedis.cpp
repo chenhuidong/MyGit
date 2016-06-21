@@ -11,8 +11,8 @@ int main(int argc, char**argv)
     {
     	redisAsyncCommand(t_oMyRedis.m_pContext, NULL, NULL, "SET key %d", i);
     	redisAsyncCommand(t_oMyRedis.m_pContext, IMyRedis::GetCallback, (char*)"end-1", "GET key");
+    	t_oMyRedis.DispatchRedis();
     	cin>>i;
 	}
-    t_oMyRedis.DispatchRedis();
     return 0;
 }
