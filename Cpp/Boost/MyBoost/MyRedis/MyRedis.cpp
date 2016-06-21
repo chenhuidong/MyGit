@@ -4,11 +4,12 @@ int MMyLib::IMyRedis::InitializeRedis()
 {
 	signal(SIGPIPE, SIG_IGN);
 	m_pBase = event_base_new();
-	m_pContext = redisAsyncConnect("127.0.0.1", 6379);
+	m_pContext = redisAsyncConnect(MY_REDIS_IP, MY_REDIS_PORT);
 
 	if (m_pContext->err) 
 	{
 		printf("Error: %s\n", m_pContext->errstr);
+        LOG_ERROR<< "Error: "<< m_pContext->errstr<< endl;
 		return 1;
 	}
 
@@ -42,9 +43,11 @@ void MMyLib::IMyRedis::ConnectCallback(const redisAsyncContext *c, int status)
     if (status != REDIS_OK) 
     {
         printf("Error: %s\n", c->errstr);
+        LOG_ERROR<< "Error: "<< c->errstr<< endl;
         return;
     }
     printf("Connected...\n");
+    LOG_INFO<< "Connected..."<< endl;
 }
 
 void MMyLib::IMyRedis::DisconnectCallback(const redisAsyncContext *c, int status)
@@ -55,4 +58,5 @@ void MMyLib::IMyRedis::DisconnectCallback(const redisAsyncContext *c, int status
         return;
     }
     printf("Disconnected...\n");
+    LOG_INFO<< "Disconnected..."<< endl;
 }

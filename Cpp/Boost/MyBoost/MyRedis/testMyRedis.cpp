@@ -3,6 +3,7 @@ using namespace MMyLib;
 
 int main(int argc, char**argv)
 {
+	MMyLib::INITIALIZE_LOG(argv[0]);
     IMyRedis t_oMyRedis;
     t_oMyRedis.InitializeRedis();
     string i;
