@@ -35,8 +35,8 @@ void MMyLib::IMyRedis::GetCallback(redisAsyncContext *c, void *r, void *privdata
 {
     redisReply *reply = (redisReply *)r;
     if (reply == NULL) return;
-    printf("argv[%s]: %s\n", (char*)privdata, reply->str);
-    LOG_INFO<< "argv["<< (char*)privdata<< "]:"<< reply->str<< endl;
+    //printf("argv[%s]: %s\n", (char*)privdata, reply->str);
+    LOG_INFO<< (char*)privdata<< ":"<< reply->str<< endl;
 }
 
 void MMyLib::IMyRedis::ConnectCallback(const redisAsyncContext *c, int status)
