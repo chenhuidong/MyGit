@@ -15,7 +15,19 @@ int MMyLib::IMyRedis::InitializeRedis()
 	redisLibeventAttach(m_pContext, m_pBase);
     redisAsyncSetConnectCallback(m_pContext, IMyRedis::ConnectCallback);
     redisAsyncSetDisconnectCallback(m_pContext, IMyRedis::DisconnectCallback);
-    //event_base_dispatch(m_pBase);
+    return 0;
+}
+
+int MMyLib::IMyRedis::DisconnectRedis()
+{
+    redisAsyncDisconnect(m_pContext);
+    return 0;
+}
+
+int MMyLib::IMyRedis::DispatchRedis()
+{
+    event_base_dispatch(m_pBase);
+    return 0;
 }
 
 void MMyLib::IMyRedis::GetCallback(redisAsyncContext *c, void *r, void *privdata)
@@ -23,9 +35,6 @@ void MMyLib::IMyRedis::GetCallback(redisAsyncContext *c, void *r, void *privdata
     redisReply *reply = (redisReply *)r;
     if (reply == NULL) return;
     printf("argv[%s]: %s\n", (char*)privdata, reply->str);
-
-    /* Disconnect after receiving the reply to GET */
-    //redisAsyncDisconnect(c);
 }
 
 void MMyLib::IMyRedis::ConnectCallback(const redisAsyncContext *c, int status)
