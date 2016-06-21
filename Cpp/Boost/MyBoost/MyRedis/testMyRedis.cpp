@@ -13,6 +13,7 @@ int main(int argc, char**argv)
     	redisAsyncCommand(t_oMyRedis.m_pContext, IMyRedis::GetCallback, (char*)"end-1", "GET key");
     	cin>>i;
 	}
+	t_oMyRedis.DisconnectRedis();
 	t_oMyRedis.DispatchRedis();
     return 0;
 }
