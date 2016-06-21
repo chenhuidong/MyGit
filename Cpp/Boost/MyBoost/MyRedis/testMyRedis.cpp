@@ -9,7 +9,7 @@ int main(int argc, char**argv)
     cin>>i;
     while(i!=0)
     {
-    	redisAsyncCommand(t_oMyRedis.m_pContext, NULL, NULL, "SET key %d", i, strlen(int));
+    	redisAsyncCommand(t_oMyRedis.m_pContext, NULL, NULL, "SET key %d", i);
     	redisAsyncCommand(t_oMyRedis.m_pContext, IMyRedis::GetCallback, (char*)"end-1", "GET key");
     	cin>>i;
 	}
