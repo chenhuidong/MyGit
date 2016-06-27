@@ -1,0 +1,22 @@
+language: cpp
+sudo: false
+
+compiler:
+  - clang
+  - gcc
+
+addons:
+  apt:
+    packages:
+      - cmake
+      - libmsgpack-dev
+      - libboost-test-dev
+      - libhiredis-dev
+      - redis-server
+      - redis-tools
+
+# Run the Build script
+script:
+  - cmake .
+  - make install
+  - bash ./run-tests.sh
