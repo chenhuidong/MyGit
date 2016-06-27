@@ -27,7 +27,7 @@ namespace MMyLib
 
 		void Join();
 	private:
-		function<void()> f;
+		boost::function<void()> f;
 		boost::thread *m_pThread;
 	};
 };
