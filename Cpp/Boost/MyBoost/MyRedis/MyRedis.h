@@ -9,7 +9,6 @@ using namespace redis3m;
 namespace MMyLib
 {
 	connection::ptr_t g_pConn = connection::create();
-	reply g_oReply;
 };
 
 #endif
