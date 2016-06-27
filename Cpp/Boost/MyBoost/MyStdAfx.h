@@ -17,8 +17,8 @@
 using namespace std;
 
 //日志设置
-#define getWorkPath() getenv("WORK_PATH")	
-#define getLogPath() getenv("LOG_PATH")
+#define getWorkPath() getenv("WORKPATH")	
+#define getLogPath() getenv("LOGPATH")
 #define FLAGS_INFO
 #include "MyLog.h"
 
