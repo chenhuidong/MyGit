@@ -1,6 +1,6 @@
 #include "MyDb.h"
 
-int main()
+int main(int argc, char** argv)
 {
 	MMyLib::INITIALIZE_LOG(argv[0]);
 	MMyLib::MyDb t_oMyDb;
