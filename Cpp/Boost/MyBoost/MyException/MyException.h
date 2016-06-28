@@ -5,7 +5,6 @@
 #include "Poco/Exception.h"
 #include <typeinfo>
 using Poco::Exception;
-using Poco::ErrorHandler;
 
 namespace MMyLib
 {
