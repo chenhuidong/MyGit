@@ -4,7 +4,7 @@ LINK=$(CC) $(CFLAGS) $(CFLAGSEX) $(LDDIR) $(LDFLAGS)
 LINKEXE=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS) $(LDFLAGSEX)
 CFLAGS=-ansi -Wall -w -std=c++11 -I/home/chenhuidong/MyTools/MyInclude
 CFLAGSEX=-fPIC -shared
-LDFLAGS=-lboost_system-mt-d -lboost_date_time-mt-d -lboost_thread-mt-d -lglog -lPocoFoundation -lPocoData -lPocoDataSQLite -lPocoDataMySQL -lhiredis -levent -lredis3m -lMyLog -lMyException
+LDFLAGS=-lboost_system-mt-d -lboost_date_time-mt-d -lboost_thread-mt-d -lglog -lPocoFoundation -lPocoData -lPocoDataSQLite -lPocoDataMySQL -lhiredis -levent -lredis3m
 LDFLAGSEX=-lMyLog -lMyConf -lMyDateTime -lMyThread -lMyTR -lMyException -lMyRedis 
 WORKPATH=/home/chenhuidong/MyTools
 LIBPATH=$(WORKPATH)/MyLib
