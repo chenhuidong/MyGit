@@ -6,7 +6,7 @@
 #include <typeinfo>
 using Poco::Exception;
 
-namespace Poco
+namespace MMyLib
 {
 	POCO_DECLARE_EXCEPTION(Foundation_API, InitializeDbException, Exception)
 	POCO_DECLARE_EXCEPTION(Foundation_API, CreateTablesException, Exception)
