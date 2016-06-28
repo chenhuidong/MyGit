@@ -3,7 +3,7 @@ OBJ=testMyDb.o
 
 testMyDb: $(OBJ)
 	$(LINKEXE) -o testMyDb $(OBJ)
-$(OBJ): testMyDb.cpp 
+$(OBJ):  
 	$(COMPILE) testMyDb.cpp ../MyException/MyException.cpp
 .PHONY:clean
 clean:
