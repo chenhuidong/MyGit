@@ -1,5 +1,5 @@
 #include "MyException.h"
-using namespace MMyLib;
+using namespace Poco;
 
 int main()
 {

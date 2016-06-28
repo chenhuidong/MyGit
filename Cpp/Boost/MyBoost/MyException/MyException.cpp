@@ -1,6 +1,6 @@
 #include "MyException.h"
 
-namespace MMyLib
+namespace Poco
 {
 	POCO_IMPLEMENT_EXCEPTION(InitializeDbException, Exception, "Initialize db failed exception")
 	POCO_IMPLEMENT_EXCEPTION(CreateTablesException, Exception, "Create tables failed exception")
