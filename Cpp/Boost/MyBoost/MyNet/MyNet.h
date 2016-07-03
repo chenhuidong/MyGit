@@ -13,7 +13,7 @@ class server
 private:
 	io_service &ios;
 	ip::tcp::acceptor acceptor;
-	typedef std::shared_ptr<ip::tcp::socket> sock_pt;
+	typedef MMyLib::shared_ptr<ip::tcp::socket> sock_pt;
 public:
 	server(io_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), 54322))
 	{

@@ -15,6 +15,7 @@
 #include <string>
 #include <signal.h>
 using namespace std;
+using namespace MMyLib;
 
 //日志设置
 #define getWorkPath() getenv("WORKPATH")	
