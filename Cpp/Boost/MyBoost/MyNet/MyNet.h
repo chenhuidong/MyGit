@@ -15,7 +15,7 @@ private:
 	ip::tcp::acceptor acceptor;
 	typedef std::shared_ptr<ip::tcp::socket> sock_pt;
 public:
-	server(io_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), 54322))
+	server(io_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), 54321))
 	{
 		start();
 	}
