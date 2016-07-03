@@ -1,13 +1,11 @@
 #ifndef __MY_LIB_MY_NET_H_
 #define __MY_LIB_MY_NET_H_
 
+#include "MyStdAfx.h"
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
-#include <iostream>
-#include <unistd.h>
 using namespace boost;
 using namespace boost::asio;
-using namespace std;
 
 namespace MMyLib{
 class server
