@@ -25,7 +25,8 @@ using namespace std;
 //异常
 #include "MyException.h"
 
-#define BUFFSIZE 4096
+#define MYSIZE 4096
+#define MYPORT 54321
 
 //iterator define
 #define  ___ANONYMOUS1(var, line)  var##line
