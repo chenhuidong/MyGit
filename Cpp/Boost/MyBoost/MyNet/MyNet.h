@@ -27,7 +27,7 @@ class MyClient
 private:
 	io_service& ios;
 	ip::tcp::endpoint ep;
-	typedef shared_ptr<ip::tcp::socket> sock_pt;
+	typedef std::shared_ptr<ip::tcp::socket> sock_pt;
 public:
 	MyClient(io_service& io);
 	void start();
