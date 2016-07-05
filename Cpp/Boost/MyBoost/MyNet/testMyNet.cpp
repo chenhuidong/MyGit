@@ -8,7 +8,7 @@ int main(int argc, char** argv)
 		cout<< "server start."<< endl;
 		io_service ios;
 
-		MMyLib::server serv(ios);
+		MMyLib::MyServer serv(ios);
 		ios.run();
 	}
 	catch(std::exception& e)
