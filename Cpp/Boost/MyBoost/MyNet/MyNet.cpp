@@ -39,7 +39,7 @@ public:
 };
 */
 
-MMyLib::MyServer::MyServer(io_service& io)
+MMyLib::MyServer::MyServer(io_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), MYPORT))
 {
 	start();
 }

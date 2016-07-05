@@ -54,7 +54,7 @@ private:
 	ip::tcp::acceptor acceptor;
 	typedef std::shared_ptr<ip::tcp::socket> sock_pt;
 public:
-	MyServer(io_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), MYPORT));
+	MyServer(io_service& io);
 	void start();
 	void accept_handler(const boost::system::error_code& ec, sock_pt sock);
 	void write_handler(const boost::system::error_code&);
