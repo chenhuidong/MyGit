@@ -1,10 +1,14 @@
 include ../Makefile.defines.linux
-OBJ=testMyNet.o 
 
-testMyNet: $(OBJ)
-	$(LINKEXE) -o testMyNet $(OBJ)
-$(OBJ): testMyNet.cpp 
-	$(COMPILE) testMyNet.cpp
+all: testMyServ testMyClt
+testMyClt: testMyClt.o
+	$(LINKEXE) -o testMyClt testMyClt.o
+testMyServ: testMyServ.o
+	$(LINKEXE) -o testMyServ testMyServ.o
+testMyClt.o: testMyClt.cpp 
+	$(COMPILE) testMyClt.cpp
+testMyServ.o: testMyServ.cpp 
+	$(COMPILE) testMyServ.cpp
 .PHONY:clean
 clean:
-	rm testMyNet $(OBJ)
+	rm testMyServ testMyClt testMyClt.o testMyServ.o

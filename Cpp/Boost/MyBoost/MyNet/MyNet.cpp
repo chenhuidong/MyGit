@@ -1,7 +1,7 @@
 #include "MyNet.h"
 
 //MyServer
-MMyLib::MyServer::MyServer(io_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), MYPORT))
+MMyLib::MyServer::MyServer(io_service& io): ios(io), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), SERVPORT))
 {
 	start();
 }
@@ -32,7 +32,7 @@ void MMyLib::MyServer::write_handler(const boost::system::error_code&)
 
 
 //MyClient
-MMyLib::MyClient::MyClient(io_service& io): ios(io), ep(ip::address::from_string("127.0.0.1"), MYPORT)
+MMyLib::MyClient::MyClient(io_service& io): ios(io), ep(ip::address::from_string(CLTIP), CLTPORT)
 {
 	start();
 }

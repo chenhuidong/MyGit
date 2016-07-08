@@ -26,7 +26,10 @@ using namespace std;
 #include "MyException.h"
 
 #define MYSIZE 4096
-#define MYPORT 54321
+#define SERVIP "127.0.0.1"
+#define SERVPORT 54321
+#define CLTIP "127.0.0.1"
+#define CLTPORT 54321
 
 //iterator define
 #define  ___ANONYMOUS1(var, line)  var##line
