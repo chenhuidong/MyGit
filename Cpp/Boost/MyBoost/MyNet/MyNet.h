@@ -6,6 +6,7 @@
 #include <boost/bind.hpp>
 using namespace boost;
 using namespace boost::asio;
+using namespace std::shared_ptr;
 
 namespace MMyLib
 {
@@ -14,7 +15,7 @@ class MyServer
 private:
 	io_service &ios;
 	ip::tcp::acceptor acceptor;
-	typedef std::shared_ptr<ip::tcp::socket> sock_pt;
+	typedef shared_ptr<ip::tcp::socket> sock_pt;
 public:
 	MyServer(io_service& io);
 	void start();
@@ -27,7 +28,7 @@ class MyClient
 private:
 	io_service& ios;
 	ip::tcp::endpoint ep;
-	typedef std::shared_ptr<ip::tcp::socket> sock_pt;
+	typedef shared_ptr<ip::tcp::socket> sock_pt;
 public:
 	MyClient(io_service& io);
 	void start();
