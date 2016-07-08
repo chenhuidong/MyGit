@@ -18,7 +18,6 @@ void MMyLib::MyServer::accept_handler(const boost::system::error_code& ec, sock_
 		return ;
 	cout<< "MyClients:";
 	cout<< sock->remote_endpoint().address()<< endl;
-	sleep(20);
 	sock->async_write_some(buffer("hello asio"), \
 		boost::bind(&MyServer::write_handler, this, boost::asio::placeholders::error));
 
