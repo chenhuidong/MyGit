@@ -49,12 +49,12 @@ void MMyLib::MyClient::conn_handler(const system::error_code& ec, sock_pt sock)
 		return;
 
 	cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
-	shared_ptr<vector<char> > str(new vector<char>(100, 0));
+	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 
 	sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholders::error, str));
 }
 
-void MMyLib::MyClient::read_handler(const system::error_code& ec, shared_ptr<vector<char> > str)
+void MMyLib::MyClient::read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str)
 {
 	if(ec)
 		return;
