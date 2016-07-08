@@ -16,7 +16,7 @@ void MMyLib::MyServer::accept_handler(const boost::system::error_code& ec, sock_
 {
 	if(ec)
 		return ;
-	cout<< "clients:";
+	cout<< "MyClients:";
 	cout<< sock->remote_endpoint().address()<< endl;
 	sleep(20);
 	sock->async_write_some(buffer("hello asio"), \
@@ -40,7 +40,7 @@ MMyLib::MyClient::MyClient(io_service& io): ios(io), ep(ip::address::from_string
 void MMyLib::MyClient::start()
 {
 	sock_pt sock(new ip::tcp::socket(ios));
-	sock->async_connect(ep, boost::bind(&client::conn_handler, this, boost::asio::placeholders::error, sock));
+	sock->async_connect(ep, boost::bind(&MyClient::conn_handler, this, boost::asio::placeholders::error, sock));
 }
 
 void MMyLib::MyClient::conn_handler(const system::error_code& ec, sock_pt sock)
@@ -51,7 +51,7 @@ void MMyLib::MyClient::conn_handler(const system::error_code& ec, sock_pt sock)
 	cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 
-	sock->async_read_some(buffer(*str), boost::bind(&client::read_handler, this, boost::asio::placeholders::error, str));
+	sock->async_read_some(buffer(*str), boost::bind(&MyClient::read_handler, this, boost::asio::placeholders::error, str));
 }
 
 void MMyLib::MyClient::read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str)
