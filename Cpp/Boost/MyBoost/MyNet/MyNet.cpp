@@ -30,6 +30,7 @@ void MMyLib::MyServer::write_handler(const boost::system::error_code&)
 	cout<< "send msg complete."<< endl;
 }
 
+
 //MyClient
 MMyLib::MyClient::MyClient(io_service& io): ios(io), ep(ip::address::from_string("127.0.0.1"), MYPORT)
 {
