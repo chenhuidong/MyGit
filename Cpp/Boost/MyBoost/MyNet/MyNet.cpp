@@ -14,8 +14,10 @@ void MMyLib::MyServer::start()
 
 void MMyLib::MyServer::accept_handler(const boost::system::error_code& ec, sock_pt sock)
 {
+	/*
 	if(ec)
 		return ;
+		*/
 	cout<< "MyClients:";
 	cout<< sock->remote_endpoint().address()<< endl;
 	sock->async_write_some(buffer("hello asio"), \
@@ -44,13 +46,15 @@ void MMyLib::MyClient::start()
 
 void MMyLib::MyClient::conn_handler(const system::error_code& ec, sock_pt sock)
 {
+	/*
 	if(ec)
 		return;
-
+	*/
 	cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 
 	sock->async_read_some(buffer(*str), boost::bind(&MyClient::read_handler, this, boost::asio::placeholders::error, str));
+	start();
 }
 
 void MMyLib::MyClient::read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str)
