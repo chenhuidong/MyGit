@@ -50,7 +50,6 @@ void MMyLib::MyClient::conn_handler(const system::error_code& ec, sock_pt sock)
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 
 	sock->async_read_some(buffer(*str), boost::bind(&MyClient::read_handler, this, boost::asio::placeholders::error, str));
-	//start();
 }
 
 void MMyLib::MyClient::read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str)
