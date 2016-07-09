@@ -55,8 +55,9 @@ void MMyLib::MyClient::conn_handler(const system::error_code& ec, sock_pt sock)
 
 void MMyLib::MyClient::read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str)
 {
+	/*
 	if(ec)
 		return;
-
+	*/
 	cout<< &(*str)[0]<< endl<< endl;
 }
