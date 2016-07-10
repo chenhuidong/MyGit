@@ -8,19 +8,29 @@ MMyLib::MyServer::MyServer(io_service& io): ios(io), acceptor(ios, ip::tcp::endp
 
 void MMyLib::MyServer::start()
 {
-	sock_pt sock(new ip::tcp::socket(ios));
+	//sock_pt sock(new ip::tcp::socket(ios));
+	session* new_session = new session(io_service_);
 	acceptor.async_accept(*sock, boost::bind(&MyServer::accept_handler, this, boost::asio::placeholders::error, sock));		
 }
 
 void MMyLib::MyServer::accept_handler(const boost::system::error_code& ec, sock_pt sock)
 {
+	/*
 	if(ec)
 		return ;
 	cout<< "MyClients:";
 	cout<< sock->remote_endpoint().address()<< endl;
 	sock->async_write_some(buffer("hello asio"), \
 		boost::bind(&MyServer::write_handler, this, boost::asio::placeholders::error));
-
+	*/
+    if (!ec)
+    {
+      new_session->start();
+    }
+    else
+    {
+      delete new_session;
+    }
 	start();
 }
 
