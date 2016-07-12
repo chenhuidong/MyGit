@@ -41,6 +41,17 @@ public:
 	void write_handler(const boost::system::error_code& ec);
 	void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
 };
+
+class MyServer
+{
+public:
+	MyServer(io_service& io);
+	void start();
+	void accept_handler(const boost::system::error_code& ec, sock_pt sock);
+private:
+	boost::asio::io_service& ios;
+  	tcp::acceptor acceptor;
+};
 };
 
 #endif
