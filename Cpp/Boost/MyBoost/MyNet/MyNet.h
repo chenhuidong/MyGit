@@ -65,7 +65,10 @@ private:
 	boost::asio::io_service& ios;
   	ip::tcp::acceptor acceptor;
 };
-};
+
+
+
+
 
 
 
@@ -87,4 +90,6 @@ public:
 	void read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str);
 };
 
+
+};
 #endif
