@@ -25,7 +25,7 @@ void MMyLib::MyServSession1::start()
 	sock->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
-void MMyLib::MyServSession1::write_handler(const boost::system::error_code&)
+void MMyLib::MyServSession1::write_handler(const boost::system::ec&)
 {
 	if (ec)
 		return;
