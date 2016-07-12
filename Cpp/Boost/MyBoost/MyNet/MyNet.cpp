@@ -37,6 +37,7 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, s
 {
 	if (ec)
 		return;
+	cout<< "2"<< endl;
 	cout<< &(*str)[0]<< endl;
 	sock->async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, this, boost::asio::placeholders::error));
 }
