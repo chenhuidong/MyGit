@@ -56,7 +56,7 @@ void MMyLib::MyServer::start()
     acceptor.async_accept(new_session->sock, boost::bind(&MyServer::accept_handler, this, new_session, boost::asio::placeholders::error));
 }
 
-void MMyLib::MyServer::accept_handler(session* new_session, const boost::system::error_code& ec)
+void MMyLib::MyServer::accept_handler(MyServSession1* new_session, const boost::system::error_code& ec)
 {
 	if (ec)
 		return;
