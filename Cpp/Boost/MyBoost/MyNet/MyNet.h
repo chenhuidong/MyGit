@@ -14,8 +14,8 @@ typedef std::shared_ptr<ip::tcp::socket> sock_pt;
 class MySessionBase
 {
 public:
-	MySessionBase(boost::asio::io_service& ios): sock(new ip::tcp::socket(ios)){};
-	virtual ~MySessionBase(){};
+	MySessionBase(boost::asio::io_service& ios);
+	virtual ~MySessionBase();
 public:
     sock_pt sock;
 };
@@ -23,9 +23,8 @@ public:
 class MyServSessionBase: public MySessionBase
 {
 public:
-	MyServSessionBase(boost::asio::io_service& ios): MySessionBase(ios)
-	{};
-	virtual ~MyServSessionBase(){};
+	MyServSessionBase(boost::asio::io_service& ios);
+	virtual ~MyServSessionBase();
 
 	virtual void start() = 0;
 	virtual void write_handler(const boost::system::error_code&) = 0;
