@@ -48,12 +48,12 @@ MMyLib::MyServer::MyServer(io_service& ios): ios(ios), acceptor(ios, ip::tcp::en
 
 void MMyLib::MyServer::start()
 {
-	sock_pt sock(new ip::tcp::socket(ios));
-	acceptor.async_accept(*sock, boost::bind(&MyServer::accept_handler, this, boost::asio::placeholders::error, sock));		
+	//sock_pt sock(new ip::tcp::socket(ios));
+	//acceptor.async_accept(*sock, boost::bind(&MyServer::accept_handler, this, boost::asio::placeholders::error, sock));		
 	
 	std::shared_ptr<MyServSession1> new_session(new MyServSession1(ios));
 	//MyServSession1* new_session = new MyServSession1(ios);
-    acceptor.async_accept(new_session->sock, boost::bind(&server::handle_accept, this, new_session, boost::asio::placeholders::error));
+    acceptor.async_accept(new_session->sock, boost::bind(&MyServer::handle_accept, this, new_session, boost::asio::placeholders::error));
 }
 
 void MMyLib::MyServer::accept_handler(session* new_session, const boost::system::error_code& ec)
