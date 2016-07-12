@@ -25,7 +25,7 @@ void MMyLib::MyServSession1::start()
 	sock->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
-void MMyLib::MyServSession1::write_handler(const boost::system::ec&)
+void MMyLib::MyServSession1::write_handler(const boost::system::error_code& ec)
 {
 	if (ec)
 		return;
@@ -33,7 +33,7 @@ void MMyLib::MyServSession1::write_handler(const boost::system::ec&)
 	sock->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
-void MMyLib::MyServSession1::read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str)
+void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
 {
 	if (ec)
 		return;
