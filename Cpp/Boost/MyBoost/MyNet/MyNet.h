@@ -27,7 +27,7 @@ public:
 	virtual ~MyServSessionBase();
 
 	virtual void start() = 0;
-	virtual void write_handler(const boost::system::error_code&) = 0;
+	virtual void write_handler(const boost::system::error_code& ec) = 0;
 	virtual void read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str) = 0;
 };
 
@@ -38,7 +38,7 @@ public:
 	virtual ~MyServSession1();
 
 	void start();
-	void write_handler(const boost::system::error_code&);
+	void write_handler(const boost::system::error_code& ec);
 	void read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str);
 };
 };
