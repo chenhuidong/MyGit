@@ -47,7 +47,7 @@ class MyServer
 public:
 	MyServer(io_service& io);
 	void start();
-	void accept_handler(const boost::system::error_code& ec, sock_pt sock);
+	void accept_handler(session* new_session, const boost::system::error_code& ec);
 private:
 	boost::asio::io_service& ios;
   	ip::tcp::acceptor acceptor;
