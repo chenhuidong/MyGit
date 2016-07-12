@@ -86,7 +86,7 @@ public:
 	MyClient(io_service& io);
 	void start();
 	void conn_handler(const system::error_code& ec, sock_pt sock);
-	void write_handler(const boost::system::error_code& ec);
+	void write_handler(const boost::system::error_code& ec, sock_pt sock);
 	void read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str);
 };
 

@@ -90,10 +90,10 @@ void MMyLib::MyClient::conn_handler(const system::error_code& ec, sock_pt sock)
 	//cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 	//std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 	//sock->async_read_some(buffer(*str), boost::bind(&MyClient::read_handler, this, boost::asio::placeholders::error, str));
-	sock->async_write_some(buffer("123"), boost::bind(&MyClient::write_handler, this, boost::asio::placeholders::error));
+	sock->async_write_some(buffer("123"), boost::bind(&MyClient::write_handler, this, boost::asio::placeholders::error, sock));
 }
 
-void MMyLib::MyClient::write_handler(const boost::system::error_code& ec)
+void MMyLib::MyClient::write_handler(const boost::system::error_code& ec, sock_pt sock)
 {
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 	sock->async_read_some(buffer(*str), boost::bind(&MyClient::read_handler, this, boost::asio::placeholders::error, str));
