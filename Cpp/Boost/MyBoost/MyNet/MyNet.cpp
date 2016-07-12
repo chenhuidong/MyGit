@@ -20,7 +20,7 @@ MMyLib::MyServSession1::~MyServSession1()
 
 void MMyLib::MyServSession1::start()
 {
-	//cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
+	cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 	sock->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
@@ -57,6 +57,7 @@ void MMyLib::MyServer::accept_handler(std::shared_ptr<MyServSession1> new_sessio
 {
 	if (ec)
 		return;
+	cout<<"1"<<endl;
     new_session->start();
     start();
 }
@@ -90,7 +91,7 @@ void MMyLib::MyClient::conn_handler(const system::error_code& ec, sock_pt sock)
 	//cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 	//std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 	//sock->async_read_some(buffer(*str), boost::bind(&MyClient::read_handler, this, boost::asio::placeholders::error, str));
-	sock->async_write_some(buffer("123"), boost::bind(&MyClient::write_handler, this, boost::asio::placeholders::error, sock));
+	sock->async_write_some(buffer("hello world"), boost::bind(&MyClient::write_handler, this, boost::asio::placeholders::error, sock));
 }
 
 void MMyLib::MyClient::write_handler(const boost::system::error_code& ec, sock_pt sock)
