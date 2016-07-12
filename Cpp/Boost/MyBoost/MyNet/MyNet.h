@@ -42,6 +42,19 @@ public:
 	void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
 };
 
+/*
+class MyCltSession1: public MyServSessionBase
+{
+public:
+	MyCltSession1(boost::asio::io_service& io_service);
+	virtual ~MyCltSession1();
+
+	void start();
+	void write_handler(const boost::system::error_code& ec);
+	void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
+};
+*/
+
 class MyServer
 {
 public:
@@ -52,6 +65,26 @@ private:
 	boost::asio::io_service& ios;
   	ip::tcp::acceptor acceptor;
 };
+};
+
+
+
+
+
+
+
+class MyClient
+{
+private:
+	io_service& ios;
+	ip::tcp::endpoint ep;
+	typedef std::shared_ptr<ip::tcp::socket> sock_pt;
+public:
+	MyClient(io_service& io);
+	void start();
+	void conn_handler(const system::error_code& ec, sock_pt sock);
+	void write_handler(const boost::system::error_code& ec);
+	void read_handler(const system::error_code& ec, std::shared_ptr<vector<char> > str);
 };
 
 #endif
