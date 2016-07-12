@@ -6,10 +6,10 @@ MMyLib::MySessionBase::MySessionBase(boost::asio::io_service& ios): sock(new ip:
 MMyLib::MySessionBase::~MySessionBase()
 {}
 
-MMyLib::MySessionBase::MyServSessionBase(boost::asio::io_service& ios): MySessionBase(ios)
+MMyLib::MyServSessionBase::MyServSessionBase(boost::asio::io_service& ios): MySessionBase(ios)
 {}
 
-MMyLib::MySessionBase::~MyServSessionBase()
+MMyLib::MyServSessionBase::~MyServSessionBase()
 {}
 
 MMyLib::MyServSession1::MyServSession1(boost::asio::io_service& ios): MyServSessionBase(ios)
