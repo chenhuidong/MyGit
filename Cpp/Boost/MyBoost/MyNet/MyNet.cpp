@@ -46,7 +46,7 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, s
 	sock->async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, this, boost::asio::placeholders::error));
 }
 
-MMyLib::MyServer::MyServer(io_service& in_oIos): m_oIos(in_oIos), acceptor(in_oIos, ip::tcp::endpoint(ip::tcp::v4(), SERVPORT))
+MMyLib::MyServer::MyServer(io_service& in_oIos): m_oIos(in_oIos), m_oAcceptor(in_oIos, ip::tcp::endpoint(ip::tcp::v4(), SERVPORT))
 {
 	start();
 }
