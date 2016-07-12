@@ -22,10 +22,12 @@ void MMyLib::MyServSession1::start()
 {
 	cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
+	cout<< "2"<< endl;
 	if(!sock)
 	{
 		cout<< "null"<< endl;
 	}
+	cout<< "3"<< endl;
 	sock->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
