@@ -22,6 +22,10 @@ void MMyLib::MyServSession1::start()
 {
 	cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
+	if(!sock)
+	{
+		cout<< "null"<< endl;
+	}
 	sock->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
@@ -42,14 +46,14 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, s
 	sock->async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, this, boost::asio::placeholders::error));
 }
 
-MMyLib::MyServer::MyServer(io_service& ios): ios(ios), acceptor(ios, ip::tcp::endpoint(ip::tcp::v4(), SERVPORT))
+MMyLib::MyServer::MyServer(io_service& in_oIos): m_oIos(in_oIos), acceptor(in_oIos, ip::tcp::endpoint(ip::tcp::v4(), SERVPORT))
 {
 	start();
 }
 
 void MMyLib::MyServer::start()
 {
-	std::shared_ptr<MyServSession1> new_session(new MyServSession1(ios));
+	std::shared_ptr<MyServSession1> new_session(new MyServSession1(m_oIos));
 	//MyServSession1* new_session = new MyServSession1(ios);
     acceptor.async_accept(*(new_session->sock), boost::bind(&MyServer::accept_handler, this, new_session, boost::asio::placeholders::error));
 }
