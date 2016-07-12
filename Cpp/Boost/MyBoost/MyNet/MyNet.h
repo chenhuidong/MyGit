@@ -50,7 +50,7 @@ public:
 	void accept_handler(const boost::system::error_code& ec, sock_pt sock);
 private:
 	boost::asio::io_service& ios;
-  	tcp::acceptor acceptor;
+  	ip::tcp::acceptor acceptor;
 };
 };
 
