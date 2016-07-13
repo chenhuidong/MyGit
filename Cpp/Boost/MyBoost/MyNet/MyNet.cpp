@@ -44,7 +44,7 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, s
 {
 	if (ec)
 		return;
-	cout<< "2"<< endl;
+	cout<< "3"<< endl;
 	cout<< &(*str)[0]<< endl;
 	m_oSocket.async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, this, boost::asio::placeholders::error));
 }
@@ -57,7 +57,8 @@ MMyLib::MyServer::MyServer(io_service& in_oIos): m_oIos(in_oIos), m_oAcceptor(in
 void MMyLib::MyServer::start()
 {
 	std::shared_ptr<MyServSession1> new_session(new MyServSession1(m_oIos));
-	m_oAcceptor.async_accept(*(new_session->sock), boost::bind(&MyServer::accept_handler, this, new_session, boost::asio::placeholders::error));
+	//MyServSession1 *new_session = new  MyServSession1(m_oIos);
+	m_oAcceptor.async_accept(*(new_session->m_oSocket), boost::bind(&MyServer::accept_handler, this, new_session, boost::asio::placeholders::error));
 	//MyServSession1* new_session = new MyServSession1(ios);
     
 }
