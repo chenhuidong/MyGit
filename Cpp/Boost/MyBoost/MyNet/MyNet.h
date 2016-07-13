@@ -2,6 +2,7 @@
 #define __MY_LIB_MY_NET_H_
 
 #include "MyStdAfx.h"
+#include "MyTR.h"
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 using namespace boost;
@@ -31,7 +32,7 @@ public:
 	virtual void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str) = 0;
 };
 
-class MyServSession1: public MyServSessionBase
+class MyServSession1: public MyServSessionBase, public boost::enable_shared_from_this<MyServSession1>
 {
 public:
 	MyServSession1(boost::asio::io_service& io_service);
@@ -39,7 +40,12 @@ public:
 
 	void start();
 	void write_handler(const boost::system::error_code& ec);
+	//void ccread_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
 	void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
+public:
+	ip::tcp::socket m_oSocket;
+	  enum { max_length = 1024 };
+  char data_[max_length];
 };
 
 /*
