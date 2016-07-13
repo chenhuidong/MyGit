@@ -40,6 +40,8 @@ public:
 	void start();
 	void write_handler(const boost::system::error_code& ec);
 	void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
+public:
+	tcp::socket m_oSocket;
 };
 
 /*

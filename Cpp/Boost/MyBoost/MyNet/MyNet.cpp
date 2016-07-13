@@ -12,7 +12,7 @@ MMyLib::MyServSessionBase::MyServSessionBase(boost::asio::io_service& ios): MySe
 MMyLib::MyServSessionBase::~MyServSessionBase()
 {}
 
-MMyLib::MyServSession1::MyServSession1(boost::asio::io_service& ios): MyServSessionBase(ios)
+MMyLib::MyServSession1::MyServSession1(boost::asio::io_service& ios): MyServSessionBase(ios), m_oSocket(ios)
 {}
 
 MMyLib::MyServSession1::~MyServSession1()
@@ -20,15 +20,15 @@ MMyLib::MyServSession1::~MyServSession1()
 
 void MMyLib::MyServSession1::start()
 {
-	cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
+	//cout<< "recive from "<< sock->remote_endpoint().address()<< endl;
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 	cout<< "2"<< endl;
-	if(!sock)
-	{
-		cout<< "null"<< endl;
-	}
-	cout<< "3"<< endl;
-	sock->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
+	//if(!sock)
+	//{
+	//	cout<< "null"<< endl;
+	//}
+	//cout<< "3"<< endl;
+	m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 	//sock->async_read_some(buffer(*str));
 }
 
@@ -37,7 +37,7 @@ void MMyLib::MyServSession1::write_handler(const boost::system::error_code& ec)
 	if (ec)
 		return;
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
-	sock->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
+	m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
 void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
@@ -46,7 +46,7 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, s
 		return;
 	cout<< "2"<< endl;
 	cout<< &(*str)[0]<< endl;
-	sock->async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, this, boost::asio::placeholders::error));
+	m_oSocket.async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, this, boost::asio::placeholders::error));
 }
 
 MMyLib::MyServer::MyServer(io_service& in_oIos): m_oIos(in_oIos), m_oAcceptor(in_oIos, ip::tcp::endpoint(ip::tcp::v4(), SERVPORT))
