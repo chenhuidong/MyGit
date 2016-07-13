@@ -28,7 +28,7 @@ void MMyLib::MyServSession1::start()
 	//	cout<< "null"<< endl;
 	//}
 	//cout<< "3"<< endl;
-	m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
+	m_oSocket.async_read_some(buffer(*str), boost::bind(&MMyLib::MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 	//sock->async_read_some(buffer(*str));
 }
 
@@ -37,7 +37,7 @@ void MMyLib::MyServSession1::write_handler(const boost::system::error_code& ec)
 	if (ec)
 		return;
 	std::shared_ptr<vector<char> > str(new vector<char>(100, 0));
-	m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
+	m_oSocket.async_read_some(buffer(*str), boost::bind(&MMyLib::MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
 void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
