@@ -29,7 +29,7 @@ void MMyLib::MyServSession1::start()
 	//}
 	//cout<< "3"<< endl;
 	//m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
-	m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
+	m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, shared_from_this(), boost::asio::placeholders::error, str));
 }
 
 void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
@@ -67,7 +67,7 @@ void MMyLib::MyServer::start()
 {
 	std::shared_ptr<MMyLib::MyServSession1> new_session(new MMyLib::MyServSession1(m_oIos));
 	//MyServSession1 *new_session = new  MyServSession1(m_oIos);
-	m_oAcceptor.async_accept(new_session->m_oSocket, boost::bind(&MyServer::accept_handler, new_session, new_session, boost::asio::placeholders::error));
+	m_oAcceptor.async_accept(new_session->m_oSocket, boost::bind(&MyServer::accept_handler, this, new_session, boost::asio::placeholders::error));
 	//MyServSession1* new_session = new MyServSession1(ios);
     
 }
