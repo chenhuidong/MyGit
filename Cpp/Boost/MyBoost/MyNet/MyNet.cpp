@@ -30,13 +30,17 @@ void MMyLib::MyServSession1::start()
 	//cout<< "3"<< endl;
 	//m_oSocket.async_read_some(buffer(*str), boost::bind(&MMyLib::MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 	//sock->async_read_some(buffer(*str));
-	m_oSocket.async_write_some(buffer("hello asio"), \
-		boost::bind(&MyServSession1::ccwrite_handler, this, boost::asio::placeholders::error));
+	//m_oSocket.async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::ccwrite_handler, this, boost::asio::placeholders::error));
+	m_oSocket.async_read_some(boost::asio::buffer(data_, max_length),
+          boost::bind(&MyServSession1::ccwrite_handler, this,
+            boost::asio::placeholders::error,
+            boost::asio::placeholders::bytes_transferred));
 }
 
-void MMyLib::MyServSession1::ccwrite_handler(const boost::system::error_code&)
+void MMyLib::MyServSession1::ccwrite_handler(const boost::system::error_code& ec, size_t bytes_transferred)
 {
 	cout<< "send msg complete."<< endl;
+	cout<< data_<< endl;
 }
 
 void MMyLib::MyServSession1::write_handler(const boost::system::error_code& ec)
