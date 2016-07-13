@@ -32,7 +32,7 @@ public:
 	virtual void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str) = 0;
 };
 
-class MyServSession1: public MyServSessionBase, public std::tr1::enable_shared_from_this<MyServSession1>
+class MyServSession1: public MyServSessionBase, public boost::enable_shared_from_this<MyServSession1>
 {
 public:
 	MyServSession1(boost::asio::io_service& io_service);

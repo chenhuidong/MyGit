@@ -32,7 +32,7 @@ void MMyLib::MyServSession1::start()
 	m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, shared_from_this(), boost::asio::placeholders::error, str));
 }
 
-void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
+void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, boost::shared_ptr<vector<char> > str)
 {
 	if (ec)
 		return;
