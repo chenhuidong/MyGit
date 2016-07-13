@@ -40,7 +40,7 @@ public:
 	void start();
 	void write_handler(const boost::system::error_code& ec);
 	void ccread_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
-	//void ccwrite_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
+	void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str){}
 public:
 	ip::tcp::socket m_oSocket;
 	  enum { max_length = 1024 };
