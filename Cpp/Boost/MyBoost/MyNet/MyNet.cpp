@@ -32,8 +32,10 @@ void MMyLib::MyServSession1::start()
 	m_oSocket.async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
-void MMyLib::MyServSession1::ccwrite_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
+void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
 {
+	if (ec)
+		return;
 	cout<< "send msg complete."<< endl;
 	cout<< &(*str)[0]<< endl<< endl;
 }
@@ -46,7 +48,7 @@ void MMyLib::MyServSession1::write_handler(const boost::system::error_code& ec)
 	m_oSocket.async_read_some(buffer(*str), boost::bind(&MMyLib::MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 }
 
-void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
+/*void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str)
 {
 	if (ec)
 		return;
@@ -54,6 +56,7 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, s
 	cout<< &(*str)[0]<< endl;
 	m_oSocket.async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, this, boost::asio::placeholders::error));
 }
+*/
 
 MMyLib::MyServer::MyServer(io_service& in_oIos): m_oIos(in_oIos), m_oAcceptor(in_oIos, ip::tcp::endpoint(ip::tcp::v4(), SERVPORT))
 {
