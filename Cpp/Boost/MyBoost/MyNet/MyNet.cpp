@@ -28,7 +28,7 @@ void MMyLib::MyServSession1::start()
 	//	cout<< "null"<< endl;
 	//}
 	//cout<< "3"<< endl;
-	m_oSocket.async_read_some(buffer(*str), boost::bind(&MMyLib::MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
+	//m_oSocket.async_read_some(buffer(*str), boost::bind(&MMyLib::MyServSession1::read_handler, this, boost::asio::placeholders::error, str));
 	//sock->async_read_some(buffer(*str));
 }
 
