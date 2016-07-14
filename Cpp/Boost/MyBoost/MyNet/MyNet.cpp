@@ -1,6 +1,6 @@
 #include "MyNet.h"
 
-MMyLib::MySessionBase::MySessionBase(boost::asio::io_service& ios): sock(new ip::tcp::socket(ios))
+MMyLib::MySessionBase::MySessionBase(boost::asio::io_service& ios): m_oSocket(new ip::tcp::socket(ios))
 {}
 
 MMyLib::MySessionBase::~MySessionBase()
@@ -12,7 +12,7 @@ MMyLib::MyServSessionBase::MyServSessionBase(boost::asio::io_service& ios): MySe
 MMyLib::MyServSessionBase::~MyServSessionBase()
 {}
 
-MMyLib::MyServSession1::MyServSession1(boost::asio::io_service& ios): MyServSessionBase(ios), m_oSocket(ios)
+MMyLib::MyServSession1::MyServSession1(boost::asio::io_service& ios): MyServSessionBase(ios)
 {}
 
 MMyLib::MyServSession1::~MyServSession1()
