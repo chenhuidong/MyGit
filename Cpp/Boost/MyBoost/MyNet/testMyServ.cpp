@@ -5,7 +5,7 @@ int main(int argc, char** argv)
 	try
 	{
 		MMyLib::INITIALIZE_LOG(argv[0]);
-		cout<< "server start."<< endl;
+		LOG_INFO<< "server start."<< endl;
 		io_service ios;
 
 		MMyLib::MyServer serv(ios);
