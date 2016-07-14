@@ -65,7 +65,7 @@ class MyClient
 public:
 	MyClient(io_service& in_oIos);
 	void start();
-	void conn_handler(boost::shared_ptr<MyServSession1> new_session, const system::error_code& ec);
+	void conn_handler(boost::shared_ptr<MyCltSession1> new_session, const system::error_code& ec);
 private:
 	boost::asio::io_service& m_oIos;
 	ip::tcp::endpoint m_oEp;

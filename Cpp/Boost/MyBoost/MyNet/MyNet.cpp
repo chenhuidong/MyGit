@@ -96,10 +96,10 @@ MMyLib::MyClient::MyClient(io_service& in_oIos): m_oIos(in_oIos), m_oEp(ip::addr
 void MMyLib::MyClient::start()
 {
 	boost::shared_ptr<MMyLib::MyCltSession1> new_session = boost::make_shared<MMyLib::MyCltSession1>(m_oIos);
-	m_oSocket->async_connect(m_oEp, boost::bind(&MyClient::conn_handler, this, new_session, boost::asio::placeholders::error));
+	new_session->m_oSocket->async_connect(m_oEp, boost::bind(&MyClient::conn_handler, this, new_session, boost::asio::placeholders::error));
 }
 
-void MMyLib::MyClient::conn_handler(boost::shared_ptr<MyServSession1> new_session, const system::error_code& ec)
+void MMyLib::MyClient::conn_handler(boost::shared_ptr<MyCltSession1> new_session, const system::error_code& ec)
 {
 	if(ec)
 		return;
