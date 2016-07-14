@@ -17,22 +17,15 @@ class MySessionBase
 public:
 	MySessionBase(boost::asio::io_service& ios);
 	virtual ~MySessionBase();
-public:
-    sock_pt m_oSocket;
-};
-
-class MyServSessionBase: public MySessionBase
-{
-public:
-	MyServSessionBase(boost::asio::io_service& ios);
-	virtual ~MyServSessionBase();
 
 	virtual void start() = 0;
 	virtual void write_handler(const boost::system::error_code& ec) = 0;
 	virtual void read_handler(const boost::system::error_code& ec, boost::shared_ptr<vector<char> > str) = 0;
+public:
+    sock_pt m_oSocket;
 };
 
-class MyServSession1: public MyServSessionBase, public boost::enable_shared_from_this<MyServSession1>
+class MyServSession1: public MySessionBase, public boost::enable_shared_from_this<MyServSession1>
 {
 public:
 	MyServSession1(boost::asio::io_service& io_service);
@@ -43,8 +36,8 @@ public:
 	void read_handler(const boost::system::error_code& ec, boost::shared_ptr<vector<char> > str);
 };
 
-/*
-class MyCltSession1: public MyServSessionBase
+
+class MyCltSession1: public MySessionBase, public boost::enable_shared_from_this<MyServSession1>
 {
 public:
 	MyCltSession1(boost::asio::io_service& io_service);
@@ -54,7 +47,7 @@ public:
 	void write_handler(const boost::system::error_code& ec);
 	void read_handler(const boost::system::error_code& ec, std::shared_ptr<vector<char> > str);
 };
-*/
+
 
 class MyServer
 {
@@ -67,30 +60,16 @@ private:
   	ip::tcp::acceptor m_oAcceptor;
 };
 
-
-
-
-
-
-
-
-
-
-
 class MyClient
 {
-private:
-	io_service& ios;
-	ip::tcp::endpoint ep;
-	typedef boost::shared_ptr<ip::tcp::socket> sock_pt;
 public:
-	MyClient(io_service& io);
+	MyClient(io_service& in_oIos);
 	void start();
-	void conn_handler(const system::error_code& ec, sock_pt sock);
-	void write_handler(const boost::system::error_code& ec, sock_pt sock);
-	void read_handler(const system::error_code& ec, boost::shared_ptr<vector<char> > str);
+	void conn_handler(boost::shared_ptr<MyServSession1> new_session, const system::error_code& ec);
+private:
+	boost::asio::io_service& m_oIos;
+	ip::tcp::endpoint m_oEp;
 };
-
 
 };
 #endif
