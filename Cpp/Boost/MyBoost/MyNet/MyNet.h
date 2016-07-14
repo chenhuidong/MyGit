@@ -56,7 +56,7 @@ public:
 	virtual ~MyServer();
 
 	void start();
-	template <class T>
+	template <typename T>
 	void accept_handler(boost::shared_ptr<T> new_session, const boost::system::error_code& ec)
 	{
 		if (ec)
