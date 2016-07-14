@@ -48,7 +48,7 @@ public:
 	void read_handler(const boost::system::error_code& ec, boost::shared_ptr<vector<char> > str);
 };
 
-
+template <class T>
 class MyServer
 {
 public:
@@ -56,7 +56,13 @@ public:
 	virtual ~MyServer();
 
 	void start();
-	void accept_handler(boost::shared_ptr<MyServSession1> new_session, const boost::system::error_code& ec);
+	void accept_handler(boost::shared_ptr<T> new_session, const boost::system::error_code& ec)
+	{
+		if (ec)
+			return;
+    	new_session->start();
+   		start();
+	}
 private:
 	boost::asio::io_service& m_oIos;
   	ip::tcp::acceptor m_oAcceptor;
