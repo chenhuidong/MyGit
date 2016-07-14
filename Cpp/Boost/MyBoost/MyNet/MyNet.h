@@ -56,12 +56,13 @@ public:
 	virtual ~MyServer();
 
 	void start();
+	template <class T>
 	void accept_handler(boost::shared_ptr<T> new_session, const boost::system::error_code& ec)
 	{
 		if (ec)
 			return;
-    	new_session->start();
-   		start();
+	    new_session->start();
+	    start();		
 	}
 private:
 	boost::asio::io_service& m_oIos;

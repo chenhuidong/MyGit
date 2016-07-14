@@ -48,8 +48,9 @@ MMyLib::MyServer::~MyServer()
 void MMyLib::MyServer::start()
 {
 	boost::shared_ptr<MMyLib::MyServSession1> new_session = boost::make_shared<MMyLib::MyServSession1>(m_oIos);
-	m_oAcceptor.async_accept(*(new_session->m_oSocket), boost::bind(&MyServer::accept_handler, this, new_session, boost::asio::placeholders::error));
+	m_oAcceptor.async_accept(*(new_session->m_oSocket), boost::bind(&MyServer::accept_handler<MMyLib::MyServSession1>, this, new_session, boost::asio::placeholders::error));
 }
+
 /*
 void MMyLib::MyServer::accept_handler(boost::shared_ptr<MyServSession1> new_session, const boost::system::error_code& ec)
 {
@@ -59,6 +60,7 @@ void MMyLib::MyServer::accept_handler(boost::shared_ptr<MyServSession1> new_sess
     start();
 }
 */
+
 
 //MyCltSession
 MMyLib::MyCltSession1::MyCltSession1(boost::asio::io_service& ios): MySessionBase(ios)
