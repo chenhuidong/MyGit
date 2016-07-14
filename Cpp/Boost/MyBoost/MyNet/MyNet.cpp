@@ -34,8 +34,7 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, b
 {
 	if (ec)
 		return;
-	cout<< "3"<< endl;
-	cout<< &(*str)[0]<< endl;
+	LOG_INFO<< &(*str)[0]<< endl;
 	m_oSocket->async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, shared_from_this(), boost::asio::placeholders::error));
 }
 
@@ -87,7 +86,7 @@ void MMyLib::MyCltSession1::read_handler(const boost::system::error_code& ec, bo
 {
 	if(ec)
 		return;
-	cout<< &(*str)[0]<< endl<< endl;
+	LOG_INFO<< &(*str)[0]<< endl<< endl;
 }
 
 //MyClient
