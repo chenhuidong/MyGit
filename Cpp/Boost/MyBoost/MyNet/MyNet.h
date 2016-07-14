@@ -48,7 +48,6 @@ public:
 	void read_handler(const boost::system::error_code& ec, boost::shared_ptr<vector<char> > str);
 };
 
-template <class T>
 class MyServer
 {
 public:
