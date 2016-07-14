@@ -37,7 +37,7 @@ public:
 };
 
 
-class MyCltSession1: public MySessionBase, public boost::enable_shared_from_this<MyServSession1>
+class MyCltSession1: public MySessionBase, public boost::enable_shared_from_this<MyCltSession1>
 {
 public:
 	MyCltSession1(boost::asio::io_service& io_service);
