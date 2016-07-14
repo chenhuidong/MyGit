@@ -53,6 +53,8 @@ class MyServer
 {
 public:
 	MyServer(io_service& in_oIos);
+	virtual ~MyServer();
+
 	void start();
 	void accept_handler(boost::shared_ptr<MyServSession1> new_session, const boost::system::error_code& ec);
 private:
@@ -64,8 +66,9 @@ class MyClient
 {
 public:
 	MyClient(io_service& in_oIos);
+	virtual ~MyClient();
 	void start();
-	void conn_handler(boost::shared_ptr<MyCltSession1> new_session, const system::error_code& ec);
+	void conn_handler(boost::shared_ptr<MyCltSession1> new_session, const boost::system::error_code& ec);
 private:
 	boost::asio::io_service& m_oIos;
 	ip::tcp::endpoint m_oEp;
