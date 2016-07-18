@@ -8,6 +8,13 @@ void func(const map<int, int>& in_oMap)
 	{
 		cout<< it->first<< " "<< it->second<< endl;
 	}
+
+	in_oMap.insert(make_pair(3, 33));
+
+	for(map<int, int>::const_iterator it = in_oMap.begin(); it!=in_oMap.end(); ++it)
+	{
+		cout<< it->first<< " "<< it->second<< endl;
+	}
 }
 
 int main()
