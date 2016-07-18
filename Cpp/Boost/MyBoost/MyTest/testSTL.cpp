@@ -5,8 +5,8 @@ using namespace std;
 int main()
 {
 	map<int, int> t_oMap;
-	t_oMap.insert(1, 11);
-	t_oMap.insert(2, 22);
+	t_oMap.insert(make_pair(1, 11));
+	t_oMap.insert(make_pair(2, 22));
 
 	for(map<int, int>::iterator it = t_oMap.begin(); it!=t_oMap.end(); ++it)
 	{
