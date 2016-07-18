@@ -9,7 +9,7 @@ void func(const map<int, int>& in_oMap)
 		cout<< it->first<< " "<< it->second<< endl;
 	}
 
-	(const_cast<map<int, int>&>in_oMap).insert(make_pair(3, 33));
+	const_cast<map<int, int>&>(in_oMap).insert(make_pair(3, 33));
 
 	for(map<int, int>::const_iterator it = in_oMap.begin(); it!=in_oMap.end(); ++it)
 	{
