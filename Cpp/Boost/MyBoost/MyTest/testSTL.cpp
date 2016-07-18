@@ -2,6 +2,14 @@
 #include <map>
 using namespace std;
 
+void func(const map<int, int>& in_oMap)
+{
+	for(map<int, int>::iterator it = in_oMap.begin(); it!=in_oMap.end(); ++it)
+	{
+		cout<< it->first<< " "<< it->second<< endl;
+	}
+}
+
 int main()
 {
 	map<int, int> t_oMap;
@@ -12,5 +20,8 @@ int main()
 	{
 		cout<< it->first<< " "<< it->second<< endl;
 	}
+
+	func(t_oMap);
+
 	return 0;
 }
