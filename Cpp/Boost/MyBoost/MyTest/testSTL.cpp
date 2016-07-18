@@ -4,7 +4,7 @@ using namespace std;
 
 void func(const map<int, int>& in_oMap)
 {
-	for(map<int, int>::iterator it = in_oMap.begin(); it!=in_oMap.end(); ++it)
+	for(map<int, int>::const_iterator it = in_oMap.begin(); it!=in_oMap.end(); ++it)
 	{
 		cout<< it->first<< " "<< it->second<< endl;
 	}
