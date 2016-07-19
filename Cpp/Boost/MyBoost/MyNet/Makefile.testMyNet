@@ -12,3 +12,4 @@ testMyServ.o: testMyServ.cpp
 .PHONY:clean
 clean:
 	rm testMyServ testMyClt testMyClt.o testMyServ.o
+#protoc --cpp_out=.  student.proto

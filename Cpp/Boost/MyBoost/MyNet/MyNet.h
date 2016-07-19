@@ -8,6 +8,8 @@
 using namespace boost;
 using namespace boost::asio;
 
+#include "student.pb.h"
+
 namespace MMyLib
 {
 typedef boost::shared_ptr<ip::tcp::socket> sock_pt;

@@ -71,7 +71,13 @@ MMyLib::MyCltSession1::~MyCltSession1()
 
 void MMyLib::MyCltSession1::start()
 {
-	m_oSocket->async_write_some(buffer("123"), boost::bind(&MyCltSession1::write_handler, shared_from_this(), boost::asio::placeholders::error));
+	lm::helloworld t_ohello; 
+  	t_ohello.set_id(101); 
+  	t_ohello.set_str("hello my."); 
+  	string t_sMsg;
+	t_ohello.SerailzeToString(&t_sMsg);
+
+	m_oSocket->async_write_some(buffer(t_sMsg), boost::bind(&MyCltSession1::write_handler, shared_from_this(), boost::asio::placeholders::error));
 }
 
 void MMyLib::MyCltSession1::write_handler(const boost::system::error_code& ec)
