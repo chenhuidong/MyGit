@@ -1,0 +1,6 @@
+message Student
+{
+    required string id = 1;
+    required string name = 2;
+}
+
