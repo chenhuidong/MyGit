@@ -34,7 +34,7 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, b
 		return;
 	LOG_INFO<< &(*str)[0]<< endl;
 	lm::helloworld t_ohello;
-	t_ohello.SerializePartialToString(&(*str)[0]);
+	t_ohello.ParseFromString(&(*str)[0]);
 	LOG_INFO<< "id: "<< t_ohello.id<< " str: "<< t_ohello.str<< end;
 	m_oSocket->async_write_some(buffer("hello asio"), boost::bind(&MyServSession1::write_handler, shared_from_this(), boost::asio::placeholders::error));
 }
