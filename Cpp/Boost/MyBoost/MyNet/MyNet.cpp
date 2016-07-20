@@ -32,7 +32,7 @@ void MMyLib::MyServSession1::read_handler(const boost::system::error_code& ec, b
 {
 	if (ec)
 		return;
-	LOG_INFO<< &(*str)[0]<< endl;
+	//LOG_INFO<< &(*str)[0]<< endl;
 	lm::helloworld t_ohello;
 	t_ohello.ParseFromString(&(*str)[0]);
 	LOG_INFO<< "id: "<< t_ohello.id()<< " str: "<< t_ohello.str()<< endl;
