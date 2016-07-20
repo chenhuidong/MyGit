@@ -4,8 +4,8 @@ OBJ=MyNet.o
 
 $(TARGET):$(OBJ)
 	$(LINK) -o $(TARGET) $(OBJ) 
-$(OBJ): MyNet.cpp MyNet.h
-	$(COMPILE) MyNet.cpp
+$(OBJ): MyNet.cpp MyNet.h student.pb.cc
+	$(COMPILE) MyNet.cpp student.pb.cc
 .PHONY:clean
 clean:
 	rm $(TARGET) $(OBJ)
