@@ -1,10 +1,10 @@
 include ../Makefile.defines.linux
 
 all: testMyServ testMyClt
-testMyClt: testMyClt.o
-	$(LINKEXE) -o testMyClt testMyClt.o
-testMyServ: testMyServ.o
-	$(LINKEXE) -o testMyServ testMyServ.o
+testMyClt: testMyClt.o student.pb.o
+	$(LINKEXE) -o testMyClt testMyClt.o student.pb.o
+testMyServ: testMyServ.o student.pb.o
+	$(LINKEXE) -o testMyServ testMyServ.o student.pb.o
 testMyClt.o: testMyClt.cpp  student.pb.cc
 	$(COMPILE) testMyClt.cpp student.pb.cc
 testMyServ.o: testMyServ.cpp student.pb.cc

@@ -1,6 +1,6 @@
 include ../Makefile.defines.linux
 TARGET=libMyNet.so
-OBJ=MyNet.o
+OBJ=MyNet.o student.pb.o
 
 $(TARGET):$(OBJ)
 	$(LINK) -o $(TARGET) $(OBJ) 
