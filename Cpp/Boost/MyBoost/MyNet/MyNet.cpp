@@ -75,7 +75,7 @@ void MMyLib::MyCltSession1::start()
   	t_ohello.set_id(101); 
   	t_ohello.set_str("hello my."); 
   	string t_sMsg;
-	t_ohello.SerailzeToString(&t_sMsg);
+	t_ohello.SerializePartialToString(&t_sMsg);
 
 	m_oSocket->async_write_some(buffer(t_sMsg), boost::bind(&MyCltSession1::write_handler, shared_from_this(), boost::asio::placeholders::error));
 }
