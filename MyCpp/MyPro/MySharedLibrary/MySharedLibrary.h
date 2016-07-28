@@ -4,6 +4,8 @@
 #include "MyStdAfx.h"
 #include "Poco/SharedLibrary.h"
 
+using Poco::SharedLibrary;
+
 namespace MMyLib
 {
 class IMySharedLibrary
