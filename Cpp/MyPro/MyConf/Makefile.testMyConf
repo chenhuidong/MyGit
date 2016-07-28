@@ -1,0 +1,10 @@
+include ../Makefile.defines.linux
+OBJ=testMyConf.o 
+
+testMyConf: $(OBJ)
+	$(LINKEXE) -o testMyConf $(OBJ)
+$(OBJ): testMyConf.cpp 
+	$(COMPILE) testMyConf.cpp
+.PHONY:clean
+clean:
+	rm testMyConf $(OBJ)

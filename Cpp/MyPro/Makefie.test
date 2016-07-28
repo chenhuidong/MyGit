@@ -1,0 +1,6 @@
+define myls
+ls -l
+endef
+ 
+all:
+   $(myls)
