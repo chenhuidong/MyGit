@@ -5,18 +5,19 @@
 #else
 #define LIBRARY_API
 #endif
+/*
 extern "C" void LIBRARY_API hello();
 void hello()
 {
        std::cout << "Hello, world!" << std::endl;
 }
-
+*/
 class PluginA
 {
 public:
 	PluginA();
 	virtual ~PluginA();
-	
+
 	void HelloWorld()
 	{
        std::cout << "hello, world!" << std::endl;
