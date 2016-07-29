@@ -3,6 +3,8 @@
 
 #include "MyStdAfx.h"
 #include "Poco/SharedLibrary.h"
+#include "Poco/ClassLoader.h"
+#include "Poco/Manifest.h"
 
 using Poco::SharedLibrary;
 
@@ -17,6 +19,7 @@ public:
 	virtual ~IMySharedLibrary();
 public:
 	void ExecFunc(string in_sFuncName);
+	void ExecClassFunc(string in_sClassName, string in_sFuncName);
 private:
 	SharedLibrary m_oLibrary;
 };

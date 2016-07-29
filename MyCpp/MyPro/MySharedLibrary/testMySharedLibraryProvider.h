@@ -1,5 +1,6 @@
-// TestLibrary.cpp
+#include "Poco/ClassLibrary.h"
 #include <iostream>
+
 #if defined(_WIN32)
 #define LIBRARY_API __declspec(dllexport)
 #else
@@ -12,7 +13,7 @@ void hello()
        std::cout << "Hello, world!" << std::endl;
 }
 */
-extern "C" class PluginA
+class PluginA
 {
 public:
 	PluginA();

@@ -15,3 +15,8 @@ void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
 		throw LoadFuncException("Func name not exist.");
 	t_pFunc();
 }
+
+void MMyLib::IMySharedLibrary::ExecClassFunc(string in_sClassName, string in_sFuncName)
+{
+	//pPluginA = m_oLibrary.create(in_sClassName);
+}
