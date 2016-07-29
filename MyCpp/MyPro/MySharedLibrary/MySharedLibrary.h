@@ -16,7 +16,7 @@ public:
 	IMySharedLibrary(string in_sPathName);
 	virtual ~IMySharedLibrary();
 public:
-	int ExecFunc(string in_sFuncName);
+	void ExecFunc(string in_sFuncName);
 private:
 	SharedLibrary m_oLibrary;
 };
