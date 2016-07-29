@@ -14,6 +14,9 @@ void hello()
 class PluginA
 {
 public:
+	PluginA();
+	virtual ~PluginA();
+	
 	void HelloWorld()
 	{
        std::cout << "hello, world!" << std::endl;
