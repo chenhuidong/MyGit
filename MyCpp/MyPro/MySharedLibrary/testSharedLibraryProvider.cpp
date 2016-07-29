@@ -11,4 +11,14 @@ void hello()
        std::cout << "Hello, world!" << std::endl;
 }
 
+class PluginA
+{
+public:
+	void HelloWorld()
+	{
+       std::cout << "hello, world!" << std::endl;
+	}
+};
+
+POCO_EXPORT_CLASS(PluginA)
 //g++ testSharedLibraryProvider.cpp -fPIC -shared -o libtestSharedLibrary.so
