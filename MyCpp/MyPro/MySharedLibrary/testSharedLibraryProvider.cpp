@@ -20,5 +20,4 @@ public:
 	}
 };
 
-POCO_EXPORT_CLASS(PluginA)
 //g++ testSharedLibraryProvider.cpp -fPIC -shared -o libtestSharedLibrary.so
