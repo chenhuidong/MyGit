@@ -1,0 +1,15 @@
+include ../Makefile.defines.linux
+OBJ=testMySharedLibrary.o testSharedLibraryProvider.o
+
+all: testSharedLibraryProvider testMySharedLibrary
+testSharedLibraryProvider:
+	g++ testSharedLibraryProvider.cpp -fPIC -shared -o libtestSharedLibrary.so
+
+testMySharedLibrary: $(OBJ)
+	$(LINKEXE) -o testMySharedLibrary $(OBJ)
+$(OBJ): testMySharedLibrary.cpp testSharedLibraryProvider.cpp
+	$(COMPILE) testMySharedLibrary.cpp testSharedLibraryProvider.cpp
+.PHONY:clean
+clean:
+	rm testMySharedLibrary $(OBJ)
+
