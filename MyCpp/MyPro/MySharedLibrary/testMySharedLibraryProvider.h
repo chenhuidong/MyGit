@@ -12,7 +12,7 @@ void hello()
        std::cout << "Hello, world!" << std::endl;
 }
 */
-LIBRARY_API class PluginA
+class LIBRARY_API PluginA
 {
 public:
 	PluginA();
