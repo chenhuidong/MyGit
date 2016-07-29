@@ -12,4 +12,3 @@ $(OBJ): testMySharedLibrary.cpp testSharedLibraryProvider.cpp
 .PHONY:clean
 clean:
 	rm testMySharedLibrary $(OBJ)
-
