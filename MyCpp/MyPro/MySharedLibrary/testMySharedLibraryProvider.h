@@ -12,16 +12,13 @@ void hello()
        std::cout << "Hello, world!" << std::endl;
 }
 */
-class LIBRARY_API PluginA
+class PluginA
 {
 public:
 	PluginA();
 	virtual ~PluginA();
 
-	void HelloWorld()
-	{
-       std::cout << "hello, world!" << std::endl;
-	}
+	void HelloWorld();
 };
 
 //g++ testSharedLibraryProvider.cpp -fPIC -shared -o libtestSharedLibrary.so
