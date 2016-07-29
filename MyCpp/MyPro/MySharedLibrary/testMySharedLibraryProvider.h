@@ -12,7 +12,7 @@ void hello()
        std::cout << "Hello, world!" << std::endl;
 }
 */
-class PluginA
+extern "C" class PluginA
 {
 public:
 	PluginA();
