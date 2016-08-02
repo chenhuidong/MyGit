@@ -24,6 +24,7 @@ public:
 	void ExecFunc(string in_sFuncName);
 	void ExecClassFunc(string in_sClassName, string in_sFuncName);
 private:
+	string 		  m_sFileName;
 	SharedLibrary m_oLibrary;
 	PluginLoader  m_oLoader;
 };
