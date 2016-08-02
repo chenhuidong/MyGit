@@ -6,13 +6,12 @@
 #else
 #define LIBRARY_API
 #endif
-/*
+
 extern "C" void LIBRARY_API hello();
 void hello()
 {
        std::cout << "Hello, world!" << std::endl;
 }
-*/
 
 class AbstractPlugin
 {
