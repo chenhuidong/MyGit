@@ -22,7 +22,7 @@ public:
 	virtual ~IMySharedLibrary();
 public:
 	void ExecFunc(string in_sFuncName);
-	void ExecClassFunc(string in_sClassName, string in_sFuncName);
+	AbstractPlugin* CreateClass(string in_sClassName);
 private:
 	string 		  m_sPathName;
 	SharedLibrary m_oLibrary;

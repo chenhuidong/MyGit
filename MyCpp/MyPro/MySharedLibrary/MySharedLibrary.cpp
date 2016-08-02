@@ -8,6 +8,7 @@ MMyLib::IMySharedLibrary::IMySharedLibrary(string in_sPathName): m_oLibrary(m_sP
 MMyLib::IMySharedLibrary::~IMySharedLibrary()
 {
 	m_oLibrary.unload();
+	m_oLoader.classFor(in_sClassName).autoDelete(pPluginA);	
 	m_oLoader.unloadLibrary(m_sPathName);
 }
 
@@ -19,9 +20,7 @@ void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
 	t_pFunc();
 }
 
-void MMyLib::IMySharedLibrary::ExecClassFunc(string in_sClassName, string in_sFuncName)
+AbstractPlugin* MMyLib::IMySharedLibrary::CreateClass(string in_sClassName)
 {
-	AbstractPlugin* pPluginA = m_oLoader.create("PluginA");
-	pPluginA->HelloWorld();
-	m_oLoader.classFor("PluginA").autoDelete(pPluginA);	
+	return m_oLoader.create(in_sClassName);
 }
