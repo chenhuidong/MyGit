@@ -1,11 +1,16 @@
 #include "testMySharedLibraryProvider.h"
 
+AbstractPlugin::AbstractPlugin()
+{}
+AbstractPlugin::~AbstractPlugin()
+{}
+
 void PluginA::HelloWorld()
 {
 	std::cout << "hello, world!" << std::endl;
 }
 
-POCO_BEGIN_MANIFEST(PluginA)
+POCO_BEGIN_MANIFEST(AbstractPlugin)
 POCO_EXPORT_CLASS(PluginA)
 POCO_END_MANIFEST
 

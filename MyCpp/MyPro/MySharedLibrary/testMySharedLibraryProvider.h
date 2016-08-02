@@ -13,7 +13,16 @@ void hello()
        std::cout << "Hello, world!" << std::endl;
 }
 */
-class PluginA
+
+class AbstractPlugin
+{
+public:
+	AbstractPlugin();
+	virtual ~AbstractPlugin();
+	virtual void HelloWorld() = 0;
+};
+
+class PluginA: public AbstractPlugin
 {
 public:
 	PluginA();
