@@ -8,7 +8,7 @@ MMyLib::IMySharedLibrary::IMySharedLibrary(string in_sFileName): m_oLibrary(in_s
 MMyLib::IMySharedLibrary::~IMySharedLibrary()
 {
 	m_oLibrary.unload();
-	m_oLoader.unloadLibrary(m_sFileName);
+	//m_oLoader.unloadLibrary(m_sFileName);
 }
 
 void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
