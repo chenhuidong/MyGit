@@ -2,7 +2,7 @@
 
 int main(int argc, char** argv)
 {
-	MMyLib::IMySharedLibrary m_oProvider("/home/chenhuidong/MyProgram/MyGit/MyCpp/MyPro/MySharedLibrary/libMySharedLibraryProvider");
+	MMyLib::IMySharedLibrary m_oProvider(argv[1]);
     //m_oProvider.ExecFunc("hello");
     //m_oProvider.ExecClassFunc("PluginA", "HelloWorld");
     return 0;
