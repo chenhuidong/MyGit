@@ -22,6 +22,6 @@ void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
 void MMyLib::IMySharedLibrary::ExecClassFunc(string in_sClassName, string in_sFuncName)
 {
 	AbstractPlugin* pPluginA = m_oLoader.create("PluginA");
-	std::cout << pPluginA->HelloWorld() << std::endl;
+	pPluginA->HelloWorld();
 	m_oLoader.classFor("PluginA").autoDelete(pPluginA);	
 }
