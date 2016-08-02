@@ -1,9 +1,9 @@
 #include "MySharedLibrary.h"
 
-MMyLib::IMySharedLibrary::IMySharedLibrary(string in_sPathName): m_oLibrary(in_sPathName.append(SharedLibrary::suffix())), m_sPathName(in_sPathName.append(SharedLibrary::suffix()))
+MMyLib::IMySharedLibrary::IMySharedLibrary(string in_sPathName): /*m_oLibrary(in_sPathName.append(SharedLibrary::suffix())),*/ m_sPathName(in_sPathName.append(SharedLibrary::suffix()))
 {
 	//m_oLoader.loadLibrary(in_sFileName.append(SharedLibrary::suffix()));
-	cout<< in_sPathName<< endl;
+	cout<< m_sPathName<< endl;
 }
 
 MMyLib::IMySharedLibrary::~IMySharedLibrary()
