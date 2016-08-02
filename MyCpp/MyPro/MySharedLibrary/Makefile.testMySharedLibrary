@@ -7,8 +7,8 @@ libMySharedLibraryProvider.so:
 
 testMySharedLibrary: $(OBJ)
 	$(LINKEXE) -o testMySharedLibrary $(OBJ)
-$(OBJ): testMySharedLibrary.cpp testMySharedLibraryProvider.cpp
-	$(COMPILE) testMySharedLibrary.cpp testMySharedLibraryProvider.cpp
+$(OBJ): testMySharedLibrary.cpp
+	$(COMPILE) testMySharedLibrary.cpp
 .PHONY:clean
 clean:
 	rm testMySharedLibrary $(OBJ) libMySharedLibraryProvider.so
