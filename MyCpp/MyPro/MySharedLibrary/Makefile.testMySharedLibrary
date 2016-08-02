@@ -1,5 +1,5 @@
 include ../Makefile.defines.linux
-OBJ=testMySharedLibrary.o testMySharedLibraryProvider.o
+OBJ=testMySharedLibrary.o
 
 all: libMySharedLibraryProvider.so testMySharedLibrary
 libMySharedLibraryProvider.so:
