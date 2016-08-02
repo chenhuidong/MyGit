@@ -12,8 +12,8 @@ using Poco::SharedLibrary;
 namespace MMyLib
 {
 typedef void (*Func)(); 
-//typedef Poco::ClassLoader<AbstractPlugin> PluginLoader;
-//typedef Poco::Manifest<AbstractPlugin> PluginManifest;
+typedef Poco::ClassLoader<AbstractPlugin> PluginLoader;
+typedef Poco::Manifest<AbstractPlugin> PluginManifest;
 
 class IMySharedLibrary
 {
@@ -22,11 +22,11 @@ public:
 	virtual ~IMySharedLibrary();
 public:
 	void ExecFunc(string in_sFuncName);
-	//void ExecClassFunc(string in_sClassName, string in_sFuncName);
+	void ExecClassFunc(string in_sClassName, string in_sFuncName);
 private:
 	string 		  m_sPathName;
 	SharedLibrary m_oLibrary;
-	//PluginLoader  m_oLoader;
+	PluginLoader  m_oLoader;
 };
 };
 
