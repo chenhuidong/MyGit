@@ -6,5 +6,6 @@ int main(int argc, char** argv)
 	t_oProvider.ExecFunc("hello");
 	AbstractPlugin* t_pPluginA = t_oProvider.CreateClass("PluginA");
 	t_pPluginA->HelloWorld();
+	delete t_pPluginA;	
 	return 0;
 }
