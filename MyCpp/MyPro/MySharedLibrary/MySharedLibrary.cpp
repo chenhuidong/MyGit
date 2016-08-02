@@ -2,7 +2,7 @@
 
 MMyLib::IMySharedLibrary::IMySharedLibrary(string in_sFileName): m_oLibrary(in_sFileName.append(SharedLibrary::suffix())), m_sFileName(in_sFileName.append(SharedLibrary::suffix()))
 {
-	m_oLoader.loadLibrary(in_sFileName.append(SharedLibrary::suffix()));
+	//m_oLoader.loadLibrary(in_sFileName.append(SharedLibrary::suffix()));
 }
 
 MMyLib::IMySharedLibrary::~IMySharedLibrary()

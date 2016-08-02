@@ -26,7 +26,7 @@ public:
 private:
 	string 		  m_sFileName;
 	SharedLibrary m_oLibrary;
-	PluginLoader  m_oLoader;
+	//PluginLoader  m_oLoader;
 };
 };
 
