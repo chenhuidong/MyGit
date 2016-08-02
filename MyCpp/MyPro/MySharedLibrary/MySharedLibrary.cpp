@@ -8,7 +8,7 @@ MMyLib::IMySharedLibrary::IMySharedLibrary(string in_sFileName): m_oLibrary(in_s
 MMyLib::IMySharedLibrary::~IMySharedLibrary()
 {
 	m_oLibrary.unload();
-	loader.unloadLibrary(m_sFileName);
+	m_oLoader.unloadLibrary(m_sFileName);
 }
 
 void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
@@ -21,7 +21,7 @@ void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
 
 void MMyLib::IMySharedLibrary::ExecClassFunc(string in_sClassName, string in_sFuncName)
 {
-	AbstractPlugin* pPluginA = loader.create("PluginA");
+	AbstractPlugin* pPluginA = m_oLoader.create("PluginA");
 	std::cout << pPluginA->HelloWorld() << std::endl;
-	loader.classFor("PluginA").autoDelete(pPluginA);	
+	m_oLoader.classFor("PluginA").autoDelete(pPluginA);	
 }
