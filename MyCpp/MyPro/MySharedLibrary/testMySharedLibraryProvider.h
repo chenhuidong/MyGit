@@ -18,7 +18,7 @@ class AbstractPlugin
 public:
 	AbstractPlugin();
 	virtual ~AbstractPlugin();
-	virtual void HelloWorld() = 0;
+	//virtual void HelloWorld() = 0;
 };
 
 class PluginA: public AbstractPlugin
