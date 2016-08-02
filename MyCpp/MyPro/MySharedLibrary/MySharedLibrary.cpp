@@ -2,13 +2,13 @@
 
 MMyLib::IMySharedLibrary::IMySharedLibrary(string in_sPathName): m_oLibrary(m_sPathName), m_sPathName(in_sPathName.append(SharedLibrary::suffix()))
 {
-	m_oLoader.loadLibrary(in_sFileName.append(SharedLibrary::suffix()));
+	m_oLoader.loadLibrary(m_sPathName);
 }
 
 MMyLib::IMySharedLibrary::~IMySharedLibrary()
 {
 	m_oLibrary.unload();
-	m_oLoader.unloadLibrary(m_sFileName);
+	m_oLoader.unloadLibrary(m_sPathName);
 }
 
 void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
