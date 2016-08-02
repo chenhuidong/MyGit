@@ -13,6 +13,7 @@ void hello()
     std::cout<< "Hello, world!"<< std::endl;
 }
 
+/*
 class AbstractPlugin
 {
 public:
@@ -29,5 +30,5 @@ public:
 
 	void HelloWorld();
 };
-
+*/
 //g++ testSharedLibraryProvider.cpp -fPIC -shared -o libtestSharedLibrary.so

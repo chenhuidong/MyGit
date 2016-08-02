@@ -19,9 +19,11 @@ void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
 	t_pFunc();
 }
 
+/*
 void MMyLib::IMySharedLibrary::ExecClassFunc(string in_sClassName, string in_sFuncName)
 {
 	AbstractPlugin* pPluginA = m_oLoader.create("PluginA");
 	pPluginA->HelloWorld();
 	m_oLoader.classFor("PluginA").autoDelete(pPluginA);	
 }
+*/

@@ -1,5 +1,5 @@
 #include "testMySharedLibraryProvider.h"
-
+/*
 AbstractPlugin::AbstractPlugin()
 {}
 
@@ -31,3 +31,4 @@ void pocoUninitializeLibrary()
 {
 	std::cout << "PluginLibrary uninitializing" << std::endl;
 }
+*/
