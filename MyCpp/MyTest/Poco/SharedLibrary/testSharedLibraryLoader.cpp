@@ -6,7 +6,7 @@ using Poco::SharedLibrary;
 typedef void (*HelloFunc)(); // function pointer type
 int main(int argc, char** argv)
 {
-        std::string path("/mnt/home2/51linux_LxomB0aQ/MyProgram/MyGit/Cpp/Poco/SharedLibrary/libtestSharedLibrary");
+        std::string path(argv[1]);
         path.append(SharedLibrary::suffix()); // adds ".dll" or ".so"
         SharedLibrary library(path); // will also load the library
         HelloFunc func = (HelloFunc) library.getSymbol("hello");
