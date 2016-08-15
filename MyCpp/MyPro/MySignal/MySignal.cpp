@@ -4,6 +4,7 @@ static void	sig_usr(int);	/* one handler for both signals */
 
 int main(int argc, char** argv)
 {
+	MMyLib::INITIALIZE_LOG(argv[0]);
 	if (signal(SIGUSR1, sig_usr) == SIG_ERR)
 		printf("can't catch SIGUSR1");
 	if (signal(SIGUSR2, sig_usr) == SIG_ERR)
