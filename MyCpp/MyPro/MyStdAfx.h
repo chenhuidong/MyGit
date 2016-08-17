@@ -17,11 +17,13 @@
 using namespace std;
 
 //日志设置
+#ifdef UNIMPORT_MY_LOG
+#else
 #define getWorkPath() getenv("WORKPATH")	
 #define getLogPath() getenv("LOGPATH")
 #define FLAGS_INFO
 #include "MyLog.h"
-
+#endif
 //异常
 #include "MyException.h"
 
