@@ -13,8 +13,6 @@ extern "C" {
 #include "lauxlib.h"
 }
 
-#include "Test.h"
-
 int  tolua_Test_open (lua_State* tolua_S);
 
 int main(int argc, char**argv)

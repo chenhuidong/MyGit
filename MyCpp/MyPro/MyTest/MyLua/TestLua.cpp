@@ -10,6 +10,8 @@
 
 #include "tolua++.h"
 
+#include "Test.h"
+
 /* Exported function */
 TOLUA_API int  tolua_Test_open (lua_State* tolua_S);
 
