@@ -1,7 +1,7 @@
 #include "MyStdAfx.h"
 #ifdef __cplusplus                                                                                                      
 extern "C" {
-#endif                                                                                   #endif                                                                           
+#endif                                                                         
 #include "tolua++.h"                                                               
 #ifdef __cplusplus
 }                                                                 
