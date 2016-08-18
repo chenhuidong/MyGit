@@ -1,5 +1,5 @@
 --lua函数定义，实现加法  
-function add(a,b)  
+function sum(a,b)  
     return a+b ;  
 end
 
