@@ -34,11 +34,11 @@ int main(int argc, char**argv)
     lua_pushinteger(L,a);
     lua_pushinteger(L,b);
     int t_iReturn = lua_pcall(L,2,1,0);
-
+	cout<< t_iReturn<< endl;  
     if (t_iReturn)                       // 调用出错  
     {  
         const char *pErrorMsg = lua_tostring(L, -1);  
-        cout << pErrorMsg<< "123"<< endl;  
+        cout<< pErrorMsg<< endl;  
         lua_close(L);  
         return -1;  
     }
