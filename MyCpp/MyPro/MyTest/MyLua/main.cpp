@@ -25,20 +25,20 @@ int main(int argc, char**argv)
     /*载入Lua基本库*/  
   	luaL_openlibs(L);  
     tolua_Test_open(L);
-    
+
     //luaL_dofile(L, "test.lua"); 
     
     int a = 1, b=2;
     luaL_loadfile(L,"test1.lua");
     lua_getglobal(L,"sum");
-    lua_pushinteger(L,a) ;  
-    lua_pushinteger(L,b) ;  
+    lua_pushinteger(L,a);
+    lua_pushinteger(L,b);
     int t_iReturn = lua_pcall(L,2,1,0);
 
     if (t_iReturn)                       // 调用出错  
     {  
         const char *pErrorMsg = lua_tostring(L, -1);  
-        cout << pErrorMsg << endl;  
+        cout << pErrorMsg<< "123"<< endl;  
         lua_close(L);  
         return -1;  
     }
