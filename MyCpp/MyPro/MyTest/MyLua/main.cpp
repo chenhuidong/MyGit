@@ -89,8 +89,6 @@ int main(int argc, char**argv)
         cout << "Result is " << fValue << endl;  
     }
     */
-   	
-   	CTest t_oTest = lua_tovalue(L,-1);
 
     lua_close(L); 
 	return 0;

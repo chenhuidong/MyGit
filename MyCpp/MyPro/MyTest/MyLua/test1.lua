@@ -12,5 +12,4 @@ function testclass(a,b)
 	mytest:SetB(b)
 	print(mytest:GetA())
 	print(mytest:GetB())
-	return mytest
 end
