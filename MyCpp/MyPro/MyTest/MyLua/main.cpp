@@ -13,6 +13,8 @@ extern "C" {
 #include "lauxlib.h"
 }
 
+#include "Test.h"
+
 int  tolua_Test_open (lua_State* tolua_S);
 
 int main(int argc, char**argv)
@@ -87,6 +89,9 @@ int main(int argc, char**argv)
         cout << "Result is " << fValue << endl;  
     }
     */
+   	
+   	CTest t_oTest = lua_tovalue(L,-1);
+
     lua_close(L); 
 	return 0;
 }
