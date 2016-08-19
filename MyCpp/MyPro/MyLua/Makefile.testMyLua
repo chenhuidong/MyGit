@@ -1,11 +1,11 @@
 include ../Makefile.defines.linux
 
 testMyLua: Test.o testLua.o testMyLua.o
-	$(LINKEXE) -o testMyLua Test.o testLua.o testMyLua.o
+	$(LINKEXE) -o testMyLua Test.o TestLua.o testMyLua.o
 Test.o: Test.cpp
 	$(COMPILE) Test.cpp
-testLua.o: testLua.cpp
-	$(COMPILE) testLua.cpp
+TestLua.o: TestLua.cpp
+	$(COMPILE) TestLua.cpp
 testMyLua.o: testMyLua.cpp 
 	$(COMPILE) testMyLua.cpp
 lua:
