@@ -16,6 +16,4 @@ extern "C" {
 #include "lauxlib.h"
 }
 
-#include "Test.h"
-
 #endif

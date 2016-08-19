@@ -1,4 +1,5 @@
 #include "MyLua.h"
+#include "Test.h"
 
 int  tolua_Test_open (lua_State* tolua_S);
 
