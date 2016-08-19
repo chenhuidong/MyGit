@@ -70,7 +70,7 @@ int main(int argc, char**argv)
     string c= "abc";
     lua_getglobal(L,"testclass");
     lua_pushinteger(L,a);
-    lua_pushstring(L,c);
+    lua_pushstring(L,c.c_str());
     t_iReturn = lua_pcall(L,2,0,0);
     if (t_iReturn)				// 调用出错  
     {  
