@@ -67,10 +67,10 @@ int main(int argc, char**argv)
     }
 
     int m = 6;
-    string b= "abc";
+    string c= "abc";
     lua_getglobal(L,"testclass");
     lua_pushinteger(L,a);
-    lua_pushstring(L,b);
+    lua_pushstring(L,c);
     t_iReturn = lua_pcall(L,2,0,0);
     if (t_iReturn)				// 调用出错  
     {  
@@ -79,7 +79,7 @@ int main(int argc, char**argv)
         lua_close(L);
         return -1;  
     }
-    
+
     /*
     if(lua_isnumber(L, -1))		//取值输出  
     {  
