@@ -1,19 +1,4 @@
-#include "MyStdAfx.h"
-#ifdef __cplusplus
-extern "C" {
-#endif
-#include "tolua++.h"
-#ifdef __cplusplus
-}
-#endif
-
-extern "C" {
-#include "lua.h"
-#include "lualib.h"
-#include "lauxlib.h"
-}
-
-#include "Test.h"
+#include "MyLua.h"
 
 int  tolua_Test_open (lua_State* tolua_S);
 

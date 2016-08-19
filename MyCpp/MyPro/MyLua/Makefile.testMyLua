@@ -1,0 +1,15 @@
+include ../Makefile.defines.linux
+
+testMyLua: Test.o testLua.o testMyLua.o
+	$(LINKEXE) -o testMyLua Test.o testLua.o testMyLua.o
+Test.o: Test.cpp
+	$(COMPILE) Test.cpp
+testLua.o: testLua.cpp
+	$(COMPILE) testLua.cpp
+testMyLua.o: testMyLua.cpp 
+	$(COMPILE) testMyLua.cpp
+lua:
+	tolua++ -o TestLua.cpp Test.pkg
+.PHONY:clean
+clean:
+	rm testMyLua $(OBJ)
