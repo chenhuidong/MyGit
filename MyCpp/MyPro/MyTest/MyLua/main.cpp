@@ -46,6 +46,25 @@ int main(int argc, char**argv)
         double fValue = lua_tonumber(L, -1);  
         cout << "Result is " << fValue << endl;  
     } 
+
+    a = 6, b=2;
+    lua_getglobal(L,"minus");
+    lua_pushinteger(L,a);
+    lua_pushinteger(L,b);
+    t_iReturn = lua_pcall(L,2,1,0);
+    if (t_iReturn)				// 调用出错  
+    {  
+        const char *pErrorMsg = lua_tostring(L, -1);  
+        cout<< pErrorMsg<< endl;  
+        lua_close(L);
+        return -1;  
+    }
+
+    if(lua_isnumber(L, -1))		//取值输出  
+    {  
+        double fValue = lua_tonumber(L, -1);  
+        cout << "Result is " << fValue << endl;  
+    } 
     lua_close(L); 
 	return 0;
 }
