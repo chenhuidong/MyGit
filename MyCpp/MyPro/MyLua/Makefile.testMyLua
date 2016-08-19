@@ -4,8 +4,8 @@ testMyLua: Test.o TestLua.o testMyLua.o
 	$(LINKEXE) -o testMyLua Test.o TestLua.o testMyLua.o
 Test.o: Test.cpp
 	$(COMPILE) Test.cpp
-TestLua.o: TestLua.cpp Test.cpp
-	$(COMPILE) TestLua.cpp Test.cpp
+TestLua.o: TestLua.cpp 
+	$(COMPILE) TestLua.cpp
 testMyLua.o: testMyLua.cpp 
 	$(COMPILE) testMyLua.cpp
 lua:
