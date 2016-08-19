@@ -5,7 +5,7 @@ LINKEXE=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS) $(LDFLAGSEX)
 CFLAGS=-ansi -Wall -w -std=c++11 -I/home/chenhuidong/MyTools/MyInclude
 CFLAGSEX=-fPIC -shared
 LDFLAGS=-lboost_system -lboost_date_time -lboost_thread-mt -lglog -lPocoFoundation -lPocoData -lPocoDataSQLite -lPocoDataMySQL -lhiredis -levent -lredis3m -lprotoc -ltolua++ -llua
-LDFLAGSEX=-lMyLog -lMyConf -lMyDateTime -lMyThread -lMyException -lMyRedis -lMyDb -lMyNet -lMyTR -lMySharedLibrary -lMyLua
+LDFLAGSEX=-lMyLog -lMyConf -lMyDateTime -lMyThread -lMyException -lMyRedis -lMyDb -lMyNet -lMyTR -lMySharedLibrary -lMyLua -ltolua++ -llua
 WORKPATH=/home/chenhuidong/MyTools
 LIBPATH=$(WORKPATH)/MyLib
 INCLUDEPATH=$(WORKPATH)/MyInclude
