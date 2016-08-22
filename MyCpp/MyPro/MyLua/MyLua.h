@@ -16,13 +16,12 @@ extern "C" {
 #include "lauxlib.h"
 }
 
-namespace MMyLib
-{
-	lua_State *L;
-	#define LuaInit(const char* in_sFileName)\
-	L = luaL_newstate();\
-	luaopen_base(L);\
-	luaL_dofile(L, in_sFileName);
-};
+
+lua_State *L;
+#define LuaInit(const char* in_sFileName)\
+L = luaL_newstate();\
+luaopen_base(L);\
+luaL_dofile(L, in_sFileName);
+
 
 #endif

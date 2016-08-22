@@ -13,7 +13,7 @@ int main(int argc, char**argv)
     /*载入Lua基本库*/  
   	//luaL_openlibs(L);
   	//luaL_dofile(L, "testLua.lua");
-    MMyLib::LuaInit("testLua.lua");
+    LuaInit("testLua.lua");
 
     tolua_Test_open(L);
 
