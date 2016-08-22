@@ -18,10 +18,10 @@ extern "C" {
 
 
 lua_State *L;
-#define LuaInit(const char* in_sFileName)\
-L = luaL_newstate();\
-luaopen_base(L);\
-luaL_dofile(L, in_sFileName);
+#define LuaInit(const char* in_sFileName) \
+	L = luaL_newstate();\
+	luaopen_base(L);\
+	luaL_dofile(L, in_sFileName);
 
 
 #endif
