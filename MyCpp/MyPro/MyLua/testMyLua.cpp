@@ -7,12 +7,13 @@ int main(int argc, char**argv)
 {
 	MMyLib::INITIALIZE_LOG(argv[0]);
     
-    lua_State *L = luaL_newstate(); 
-    luaopen_base(L); 
+    //lua_State *L = luaL_newstate(); 
+    //luaopen_base(L); 
     
     /*载入Lua基本库*/  
   	//luaL_openlibs(L);
-  	luaL_dofile(L, "testLua.lua");
+  	//luaL_dofile(L, "testLua.lua");
+    MMyLib::LuaInit("testLua.lua");
 
     tolua_Test_open(L);
 
