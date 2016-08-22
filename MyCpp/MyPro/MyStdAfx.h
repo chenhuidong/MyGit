@@ -52,6 +52,4 @@ for(y::reverse_iterator x = z.rbegin();x != ANONYMOUS();++x)
 	y::const_reverse_iterator ANONYMOUS() = z.rend(); \
 for(y::const_reverse_iterator x = z.rbegin();x != ANONYMOUS();++x)
 
-
-
 #endif
