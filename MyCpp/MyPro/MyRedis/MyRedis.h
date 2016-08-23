@@ -8,7 +8,7 @@ using namespace redis3m;
 
 namespace MMyLib
 {
-	connection::ptr_t g_pConn = connection::create();
+	connection::ptr_t g_pRedisConn = connection::create();
 };
 
 #endif

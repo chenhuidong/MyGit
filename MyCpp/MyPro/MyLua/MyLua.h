@@ -17,11 +17,14 @@ extern "C" {
 }
 
 
-lua_State *L;
-#define LuaInit(in_sFileName) \
-	L = luaL_newstate();\
-	luaopen_base(L);\
-	luaL_dofile(L, in_sFileName);
+namespace MMyLib
+{
+	lua_State *g_pLua;
 
+	#define LUAINIT(in_sFileName) {\
+		L = luaL_newstate();\
+		luaopen_base(L);\
+		luaL_dofile(L, in_sFileName);}
+};
 
 #endif
