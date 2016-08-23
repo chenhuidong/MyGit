@@ -22,7 +22,7 @@ namespace MMyLib
 	lua_State *g_pLua;
 
 	#define LUAINIT(in_sFileName) {\
-		L = luaL_newstate();\
+		g_pLua = luaL_newstate();\
 		luaopen_base(L);\
 		luaL_dofile(L, in_sFileName);}
 };
