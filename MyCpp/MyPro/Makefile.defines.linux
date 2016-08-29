@@ -1,7 +1,7 @@
 CC=g++
 COMPILE=$(CC) $(CFLAGS) $(CFLAGSEX) -c
-LINK=$(CC) $(CFLAGS) $(CFLAGSEX) $(LDDIR) $(LDFLAGS)
-LINKEXE=$(CC) $(CFLAGS) $(LDDIR) $(LDFLAGS) $(LDFLAGSEX)
+LINK=$(CC) $(CFLAGS) $(CFLAGSEX) $(LDDIR) 
+LINKEXE=$(CC) $(CFLAGS) $(LDDIR) 
 CFLAGS=-ansi -Wall -w -std=c++11 -I/home/chenhuidong/MyTools/MyInclude
 CFLAGSEX=-fPIC -shared
 LDDIR=
