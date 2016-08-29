@@ -2,7 +2,7 @@ include ../Makefile.defines.linux
 OBJ=testMyLog.o 
 
 testMyLog: $(OBJ)
-	$(LINKEXE) -o testMyLog $(OBJ)
+	$(LINKEXE) -o testMyLog $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
 $(OBJ): testMyLog.cpp 
 	$(COMPILE) testMyLog.cpp
 .PHONY:clean
