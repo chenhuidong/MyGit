@@ -2,9 +2,9 @@ include ../Makefile.defines.linux
 
 all: testMyServ testMyClt
 testMyClt: testMyClt.o student.pb.o
-	$(LINKEXE) -o testMyClt testMyClt.o student.pb.o
+	$(LINKEXE) -o testMyClt testMyClt.o student.pb.o $(LDFLAGS) $(LDFLAGSEX)
 testMyServ: testMyServ.o student.pb.o
-	$(LINKEXE) -o testMyServ testMyServ.o student.pb.o
+	$(LINKEXE) -o testMyServ testMyServ.o student.pb.o $(LDFLAGS) $(LDFLAGSEX)
 testMyClt.o: testMyClt.cpp  student.pb.cc
 	$(COMPILE) testMyClt.cpp student.pb.cc
 testMyServ.o: testMyServ.cpp student.pb.cc

@@ -3,7 +3,7 @@ TARGET=libMyConf.so
 OBJ=MyConf.o
 
 $(TARGET):$(OBJ)
-	$(LINK) -o $(TARGET) $(OBJ) 
+	$(LINK) -o $(TARGET) $(OBJ) $(LDFLAGS)
 $(OBJ): MyConf.cpp MyConf.h
 	$(COMPILE) MyConf.cpp
 testMyConf:

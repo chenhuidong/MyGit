@@ -2,7 +2,7 @@ include ../Makefile.defines.linux
 OBJ=testMyRedis.o 
 
 testMyRedis: $(OBJ)
-	$(LINKEXE) -o testMyRedis $(OBJ)
+	$(LINKEXE) -o testMyRedis $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
 $(OBJ): testMyRedis.cpp 
 	$(COMPILE) testMyRedis.cpp
 .PHONY:clean

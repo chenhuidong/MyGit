@@ -2,7 +2,7 @@ include ../Makefile.defines.linux
 OBJ=testMyDb.o 
 
 testMyDb: $(OBJ)
-	$(LINKEXE) -o testMyDb $(OBJ)
+	$(LINKEXE) -o testMyDb $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
 $(OBJ):  
 	$(COMPILE) testMyDb.cpp ../MyException/MyException.cpp
 .PHONY:clean

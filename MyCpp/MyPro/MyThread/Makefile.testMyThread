@@ -2,7 +2,7 @@ include ../Makefile.defines.linux
 OBJ=testMyThread.o 
 
 testMyThread: $(OBJ)
-	$(LINKEXE) -o testMyThread $(OBJ)
+	$(LINKEXE) -o testMyThread $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
 $(OBJ): testMyThread.cpp 
 	$(COMPILE) testMyThread.cpp
 .PHONY:clean
