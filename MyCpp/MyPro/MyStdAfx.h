@@ -32,6 +32,8 @@ using namespace std;
 #define SERVPORT 54321
 #define CLTIP "127.0.0.1"
 #define CLTPORT 54321
+#define REDISIP "127.0.0.1"
+#define REDISPORT "6379"
 
 //iterator define
 #define  ___ANONYMOUS1(var, line)  var##line
