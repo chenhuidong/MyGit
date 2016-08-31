@@ -7,7 +7,7 @@ int main()
 	std::cout << "FOO is: " << t_oReply.str() << std::endl;
 
 	MMyLib::g_pRedisConn->run(command("hset") << "student.chenhuidong" << "name" );
-	t_oReply = MMyLib::g_pRedisConn->run(command("GET") << "foo" );
+	t_oReply = MMyLib::g_pRedisConn->run(command("GET") << "student.chenhuidong" );
 	std::cout << "FOO is: " << t_oReply.str() << std::endl;
 	return 0;
 }
