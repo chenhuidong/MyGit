@@ -6,8 +6,8 @@ int main()
 	reply t_oReply = MMyLib::g_pRedisConn->run(command("GET") << "foo" );
 	std::cout << "FOO is: " << t_oReply.str() << std::endl;
 
-	MMyLib::g_pRedisConn->run(command("hset") << "student.chenhuidong" << "name" );
-	t_oReply = MMyLib::g_pRedisConn->run(command("GET") << "student.chenhuidong" );
+	MMyLib::g_pRedisConn->run(command("hset")<< "student.chenhuidong"<< "name"<< "chenhuidong");
+	t_oReply = MMyLib::g_pRedisConn->run(command("hGET") << "student.chenhuidong" );
 	std::cout << "FOO is: " << t_oReply.str() << std::endl;
 	return 0;
 }
