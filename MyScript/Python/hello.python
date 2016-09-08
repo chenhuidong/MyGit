@@ -1,0 +1,5 @@
+print 'hello, world.'
+print 100 + 200
+
+name = raw_input('please enter your name: ')
+print name
