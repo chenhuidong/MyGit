@@ -10,3 +10,11 @@ classmates.pop()
 print classmates 
 classmates.pop(1)
 print classmates
+
+
+L = ['Apple', 123, True]
+print L
+
+s = ['python', 'java', ['asp', 'php'], 'scheme']
+print s
+print len(s)
