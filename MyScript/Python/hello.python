@@ -14,10 +14,10 @@ else:
 
 print "I'm OK"
 print 'I\'m \"OK\"!'
-print '''line1
-... line2
-... line3'''
 
 print u'中文'
+print 'Hello, %s' % 'world'
 
-'Hello, %s' % 'world'
+classmates = ['Michael', 'Bob', 'Tracy']
+print classmates 
+print classmates[0] classmates[1]
