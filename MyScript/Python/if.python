@@ -1,4 +1,4 @@
-age = raw_input('please enter your age: ')
+age = input('please enter your age: ')
 if age >= 18: 
 	print 'adult' 
 elif age >= 6: 
