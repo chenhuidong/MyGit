@@ -20,4 +20,4 @@ print 'Hello, %s' % 'world'
 
 classmates = ['Michael', 'Bob', 'Tracy']
 print classmates 
-print classmates[0] classmates[1]
+print classmates[0]
