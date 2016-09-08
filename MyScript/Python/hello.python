@@ -17,3 +17,11 @@ print 'I\'m \"OK\"!'
 
 print u'中文'
 print 'Hello, %s' % 'world'
+
+
+L = ['Apple', 123, True]
+print L
+
+s = ['python', 'java', ['asp', 'php'], 'scheme']
+print s
+print len(s)
