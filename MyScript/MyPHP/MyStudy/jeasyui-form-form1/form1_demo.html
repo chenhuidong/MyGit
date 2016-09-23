@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="jquery,ui,easy,easyui,web">
+	<meta name="description" content="easyui help you build your web page easily!">
+	<title>jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="http://www.w3cschool.cc/try/jeasyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="http://www.w3cschool.cc/try/jeasyui/themes/icon.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="http://www.w3cschool.cc/try/jeasyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#ff').form({
+				success:function(data){
+					$.messager.alert('Info', data, 'info');
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div style="width:230px;background:#fafafa;padding:10px;">
+		<div style="padding:3px 2px;border-bottom:1px solid #ccc">Ajax Form</div>
+		<form id="ff" action="form1_proc.php" method="post">
+			<table>
+				<tr>
+					<td>Name:</td>
+					<td><input name="name" type="text"></input></td>
+				</tr>
+				<tr>
+					<td>Email:</td>
+					<td><input name="email" type="text"></input></td>
+				</tr>
+				<tr>
+					<td>Phone:</td>
+					<td><input name="phone" type="text"></input></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="Submit"></input></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
