@@ -1,3 +1,3 @@
 <?php
-echo $fname;
+echo $_POST['fname'];
 ?>
