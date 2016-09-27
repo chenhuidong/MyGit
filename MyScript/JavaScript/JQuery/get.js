@@ -8,7 +8,7 @@
 <script>
 $(document).ready(function(){
 	$("button").click(function(){
-		$.get("/try/ajax/demo_test.php",function(data,status){
+		$.get("./demo_test.php",function(data,status){
 			alert("数据: " + data + "\n状态: " + status);
 		});
 	});

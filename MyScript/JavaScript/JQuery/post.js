@@ -8,7 +8,7 @@
 <script>
 $(document).ready(function(){
 	$("button").click(function(){
-		$.post("/try/ajax/demo_test_post.php",{
+		$.post("./demo_test_post.php",{
 			name:"菜鸟教程",
 			url:"http://www.runoob.com"
 		},
