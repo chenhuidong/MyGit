@@ -2,7 +2,8 @@
 
 int main()
 {
-	MMyLib::g_pRedisConn->run(command("SET") << "foo" << "bar" );
+	const char* t_sStr = "bar";
+	MMyLib::g_pRedisConn->run(command("SET") << "foo" << t_sStr );
 	reply t_oReply = MMyLib::g_pRedisConn->run(command("GET") << "foo" );
 	std::cout << "FOO is: " << t_oReply.str() << std::endl;
 
