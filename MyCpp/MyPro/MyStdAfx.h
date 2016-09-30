@@ -20,7 +20,8 @@ using namespace std;
 #ifdef UNIMPORT_MY_LOG
 #else
 #define getWorkPath() getenv("WORKPATH")	
-#define getLogPath() getenv("LOGPATH")
+//#define getLogPath() getenv("LOGPATH")
+#define getLogPath() "/home/chenhuidong/Log"
 #define FLAGS_INFO
 #include "MyLog.h"
 #endif
