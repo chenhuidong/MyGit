@@ -1,10 +1,11 @@
 #include "MyStdAfx.h"
+using namespace MMyLib;
 
 int main(int argc, char *argv[])
 {
 	if(argc != 2)
 		cout<< "need id"<< endl;
-
+	MMyLib::INITIALIZE_LOG(argv[0]);
 	int t_iConditionId = atoi(argv[1]);
 	//获取id
 	LOG_INFO<< t_iConditionId<< " kkk"<< endl;
