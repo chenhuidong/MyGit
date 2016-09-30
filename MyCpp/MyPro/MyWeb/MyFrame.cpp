@@ -9,6 +9,7 @@ int main()
 	int t_iConditionId = argv[2];
 	//获取id
 	cout<< t_iConditionId<< " kkk"<< endl;
+	
 	//解析xml
 	//执行程序
 	return 0;
