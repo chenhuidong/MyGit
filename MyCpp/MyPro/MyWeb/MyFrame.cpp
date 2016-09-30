@@ -1,4 +1,5 @@
 #include "MyStdAfx.h"
+#include "MyRedis.h"
 using namespace MMyLib;
 
 int main(int argc, char *argv[])
@@ -10,7 +11,10 @@ int main(int argc, char *argv[])
 	int t_iConditionId = atoi(argv[1]);
 	//获取id
 	LOG_INFO<< t_iConditionId<< " kkk"<< endl;
-	std::cout<< t_iConditionId<< " kkk"<< std::endl;
+	cout<< t_iConditionId<< " kkk"<< endl;
+
+	reply t_oReply = g_pRedisConn->run(command("GET") << argv[1] );
+	LOG_INFO << "XML path is: " << t_oReply.str() << endl;
 	//解析xml
 	//执行程序
 	return 0;
