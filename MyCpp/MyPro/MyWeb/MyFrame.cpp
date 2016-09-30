@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	LOG_INFO<< t_iConditionId<< " kkk"<< endl;
 	cout<< t_iConditionId<< " kkk"<< endl;
 
-	reply t_oReply = g_pRedisConn->run(command("GET") << argv[1] );
+	reply t_oReply = g_pRedisConn->run(command("GET") << (const char*)argv[1] );
 	LOG_INFO << "XML path is: " << t_oReply.str() << endl;
 	//解析xml
 	//执行程序
