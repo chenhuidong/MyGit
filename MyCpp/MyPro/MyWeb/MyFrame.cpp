@@ -4,11 +4,10 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-	cout<< argv[1]<< " kkk"<< endl;
 	if(argc != 2)
 		cout<< "need id"<< endl;
 
-	int t_iConditionId = atoi(argv[2]);
+	int t_iConditionId = atoi(argv[1]);
 	//获取id
 	cout<< t_iConditionId<< " kkk"<< endl;
 
