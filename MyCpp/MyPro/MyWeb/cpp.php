@@ -2,7 +2,7 @@
 	$arr = isset($_POST['arr']) ? $_POST['arr'] : '';
 	if(empty($arr))
 	{
-		exit('no id');
+		exit('error: no id');
 	}
 	else
 	{
