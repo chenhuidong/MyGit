@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
 	int t_iConditionId = atoi(argv[1]);
 	//获取id
-	LOG_INFO<<"begin task " t_iConditionId<< "."<< endl;
+	LOG_INFO<< "begin task "<< t_iConditionId<< "."<< endl;
 	cout<< "begin task "<< t_iConditionId<< "."<< endl;
 
 	reply t_oReply = g_pRedisConn->run(command("GET") << (const char*)argv[1] );
