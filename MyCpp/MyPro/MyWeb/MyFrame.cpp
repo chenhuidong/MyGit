@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 	reply t_oReply = g_pRedisConn->run(command("GET")<< (const char*)argv[1]);
 	//LOG_INFO<< "XML filename is: "<< t_oReply.str()<< " "<< t_oReply.type()<< endl;
 	LOG_INFO<< "XML filename is: "<< t_oReply.str()<< endl;
-	const char* t_sFileName = t_oReply.str();
+	string t_sFileName = t_oReply.str();
 
 	//解析xml
 	IMyConf t_oMyConf;
