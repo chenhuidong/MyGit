@@ -7,7 +7,10 @@ int main(int argc, char *argv[])
 {
 	MMyLib::INITIALIZE_LOG(argv[0]);
 	if(argc != 2)
-		LOG_ERROR<< "MyFrame taskid."<< endl;
+	{
+		LOG_ERROR<< "usage: ./MyFrame taskid."<< endl;
+		return -1;
+	}
 
 	int t_iConditionId = atoi(argv[1]);
 	//获取id
