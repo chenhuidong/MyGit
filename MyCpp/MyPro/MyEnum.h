@@ -9,4 +9,11 @@
 #define REDISIP "127.0.0.1"
 #define REDISPORT 6379
 
+enum 
+{
+	SDL_FAILED = -1,
+	SDL_OK = 0,
+	SDL_ONCE = 1;
+}
+
 #endif
