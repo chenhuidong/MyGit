@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	LOG_INFO<< "current lib is "<< t_sCurLib<< ". current interface is "<< t_sCurInterface<< "."<< endl;
 	
 	//执行程序
-	IMySharedLibrary t_oProvider(t_sCurLib);
+	MMyLib::IMySharedLibrary t_oProvider(t_sCurLib);
 	t_oProvider.ExecFunc("hello");
 	return 0;
 }
