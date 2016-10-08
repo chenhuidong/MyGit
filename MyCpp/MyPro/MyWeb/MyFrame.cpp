@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	{
 		t_iReturn = t_oProvider.ExecFunc("hello");
 		LOG_INFO<< "Return code is "<< t_iReturn<< "."<< endl;
-		sleep(5);
+		usleep(1);
 	}while(t_iReturn == SDL_OK);
 
 	return 0;
