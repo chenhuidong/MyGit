@@ -12,6 +12,14 @@ void hello()
     std::cout << "Hello, world!" << std::endl;
 }
 
+extern "C" int LIBRARY_API hellokitty();
+int hellokitty()
+{
+    std::cout << "hello kitty!" << std::endl;
+    return 15;
+}
+
+
 
 class AbstractPlugin
 {
