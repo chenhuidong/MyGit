@@ -1,6 +1,7 @@
 #include "MyStdAfx.h"
 #include "MyRedis.h"
 #include "MyConf.h"
+#include "MySharedLibrary.h"
 using namespace MMyLib;
 
 int main(int argc, char *argv[])
@@ -29,7 +30,9 @@ int main(int argc, char *argv[])
 	string t_sCurInterface = t_pPt->get<string>("conf.curinterface");
 
 	LOG_INFO<< "current lib is "<< t_sCurLib<< ". current interface is "<< t_sCurInterface<< "."<< endl;
-	//执行程序
 	
+	//执行程序
+	IMySharedLibrary t_oProvider(t_sCurLib);
+	t_oProvider.ExecFunc("hello");
 	return 0;
 }
