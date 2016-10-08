@@ -20,12 +20,13 @@ int main(int argc, char *argv[])
 	string t_sFileName = t_oReply.str();
 
 	//解析xml
-	IMyConf t_oMyConf;
+	/*IMyConf t_oMyConf;
 	ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::XML, t_sFileName);
 	string t_sCurLib = t_pPt->get<string>("conf.curlib");
 	string t_sCurInterface = t_pPt->get<string>("conf.curinterface");
 
 	LOG_INFO<< "current lib is "<< t_sCurLib<< ". current interface is "<< t_sCurInterface<< "."<< endl;
 	//执行程序
+	*/
 	return 0;
 }
