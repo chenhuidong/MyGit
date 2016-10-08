@@ -8,7 +8,7 @@ all:
 		(cd $$i && cp -rf *.h $(INCLUDEPATH)) || exit 1;\
 	done;\
 	for i in $(SUBDIRS); do\
-		(cd $$i && make && cp *"$$i"*.so $(LIBPATH)) || exit 1;\
+		(cd $$i && make && cp *"$$i".so $(LIBPATH)) || exit 1;\
 	done
 install:
 	mkdir -p $(LIBPATH) $(INCLUDEPATH);\
