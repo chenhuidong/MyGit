@@ -4,7 +4,7 @@ OBJ=testMyException.o
 testMyException: $(OBJ)
 	$(LINKEXE) -o testMyException $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
 $(OBJ): testMyException.cpp 
-	$(COMPILE) testMyException.cpp
+	$(COMPILE) testMyException.cpp 
 .PHONY:clean
 clean:
 	rm testMyException $(OBJ)
