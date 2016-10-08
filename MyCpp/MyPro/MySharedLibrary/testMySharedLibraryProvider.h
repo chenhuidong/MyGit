@@ -9,7 +9,8 @@
 extern "C" int LIBRARY_API hello();
 int hello()
 {
-    std::cout << "Hello, world!" << std::endl;
+    std::cout << "hello world!" << std::endl;
+    return 10;
 }
 
 class AbstractPlugin
