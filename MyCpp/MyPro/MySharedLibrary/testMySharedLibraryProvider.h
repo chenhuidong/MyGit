@@ -10,7 +10,7 @@
 extern "C" int LIBRARY_API hello();
 int hello()
 {
-    std::cout << "hello world!" << std::endl;
+    LOG_INFO<< "hello world!" << std::endl;
     return SDL_OK;
 }
 
