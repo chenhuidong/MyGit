@@ -3,9 +3,9 @@ TARGET=libMySharedLibrary.so
 OBJ=MySharedLibrary.o
 
 $(TARGET):$(OBJ)
-	$(LINK) -o $(TARGET) $(OBJ) $(LDFLAGS)
-$(OBJ): MySharedLibrary.cpp MySharedLibrary.h ../MyException/MyException.cpp
-	$(COMPILE) MySharedLibrary.cpp ../MyException/MyException.cpp
+	$(LINK) -o $(TARGET) $(OBJ) $(LDFLAGS) -lMyException
+$(OBJ): MySharedLibrary.cpp MySharedLibrary.h
+	$(COMPILE) MySharedLibrary.cpp
 .PHONY:clean
 clean:
 	rm $(TARGET) $(OBJ)
