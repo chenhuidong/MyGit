@@ -18,7 +18,7 @@ namespace MMyLib
 		enum ConfType{XML, JSON, INFO};
 		IMyConf();
 		virtual ~IMyConf();
-		ptree* ReadFile(ConfType in_eConfType, string& in_sFileName);
+		ptree* ReadFile(ConfType in_eConfType, string in_sFileName);
 	private:
 		ptree *m_pPt;
 	};
