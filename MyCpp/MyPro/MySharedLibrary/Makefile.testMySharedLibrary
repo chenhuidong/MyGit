@@ -3,7 +3,7 @@ OBJ=testMySharedLibrary.o
 
 all: libMySharedLibraryProvider.so testMySharedLibrary
 libMySharedLibraryProvider.so:
-	g++ testMySharedLibraryProvider.cpp -fPIC -shared -o libMySharedLibraryProvider.so
+	g++ testMySharedLibraryProvider.cpp -fPIC -shared -o libMySharedLibraryProvider.so $(LDFLAGS)
 
 testMySharedLibrary: $(OBJ)
 	$(LINKEXE) -o testMySharedLibrary $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
