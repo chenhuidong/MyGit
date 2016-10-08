@@ -4,9 +4,9 @@ using namespace MMyLib;
 int main()
 {
 	IMyConf t_oMyConf;
-	//ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::XML, "conf.xml");
+	ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::XML, "conf.xml");
 	//ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::JSON, "conf.json");
-	ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::INFO, "conf.info");
+	//ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::INFO, "conf.info");
 
 	try
 	{
