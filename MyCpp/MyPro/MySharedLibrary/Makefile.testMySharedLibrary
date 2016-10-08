@@ -6,7 +6,7 @@ libMySharedLibraryProvider.so:
 	g++ testMySharedLibraryProvider.cpp -fPIC -shared -o libMySharedLibraryProvider.so
 
 testMySharedLibrary: $(OBJ)
-	$(LINKEXE) -o testMySharedLibrary $(OBJ)
+	$(LINKEXE) -o testMySharedLibrary $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
 $(OBJ): testMySharedLibrary.cpp
 	$(COMPILE) testMySharedLibrary.cpp
 .PHONY:clean
