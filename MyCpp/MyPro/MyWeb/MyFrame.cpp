@@ -31,7 +31,12 @@ int main(int argc, char *argv[])
 	
 	//执行程序
 	IMySharedLibrary t_oProvider(t_sCurLib);
-	int t_iReturn = t_oProvider.ExecFunc("hello");
-	LOG_INFO<< "Return code is "<< t_iReturn<< "."<< endl;
+	do
+	{
+		t_iReturn = t_oProvider.ExecFunc("hello");
+		LOG_INFO<< "Return code is "<< t_iReturn<< "."<< endl;
+		sleep(5);
+	}while(t_iReturn == SDL_OK);
+
 	return 0;
 }
