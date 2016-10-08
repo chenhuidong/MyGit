@@ -11,7 +11,7 @@ MMyLib::IMySharedLibrary::~IMySharedLibrary()
 	m_oLoader.unloadLibrary(m_sPathName);
 }
 
-void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
+int MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
 {
 	Func t_pFunc = (Func) m_oLibrary.getSymbol(in_sFuncName);
 	if(!t_pFunc)
