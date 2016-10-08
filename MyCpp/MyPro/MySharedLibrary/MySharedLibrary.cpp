@@ -15,7 +15,7 @@ void MMyLib::IMySharedLibrary::ExecFunc(string in_sFuncName)
 {
 	Func t_pFunc = (Func) m_oLibrary.getSymbol(in_sFuncName);
 	if(!t_pFunc)
-		throw LoadFuncException("Func name not exist.");
+		throw MMyLib::LoadFuncException("Func name not exist.");
 	t_pFunc();
 }
 
