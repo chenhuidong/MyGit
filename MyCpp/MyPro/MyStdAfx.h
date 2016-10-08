@@ -27,14 +27,7 @@ using namespace std;
 #endif
 //异常
 #include "MyException.h"
-
-#define MYSIZE 4096
-#define SERVIP "127.0.0.1"
-#define SERVPORT 54321
-#define CLTIP "127.0.0.1"
-#define CLTPORT 54321
-#define REDISIP "127.0.0.1"
-#define REDISPORT 6379
+#include "MyEnum.h"
 
 //iterator define
 #define  ___ANONYMOUS1(var, line)  var##line
