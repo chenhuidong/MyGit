@@ -1,3 +1,4 @@
+#include "MyStdAfx.h"
 #include "Poco/ClassLibrary.h"
 #include <iostream>
 
