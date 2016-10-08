@@ -11,7 +11,7 @@ extern "C" int LIBRARY_API hello();
 int hello()
 {
     LOG_INFO<< "hello world!" << std::endl;
-    return SDL_OK;
+    return SDL_ONCE;
 }
 
 class AbstractPlugin
