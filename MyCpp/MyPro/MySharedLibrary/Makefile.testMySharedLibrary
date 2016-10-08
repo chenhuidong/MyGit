@@ -8,7 +8,7 @@ libMySharedLibraryProvider.so:
 testMySharedLibrary: $(OBJ)
 	$(LINKEXE) -o testMySharedLibrary $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
 $(OBJ): testMySharedLibrary.cpp
-	$(COMPILE) testMySharedLibrary.cpp
+	$(COMPILE) testMySharedLibrary.cpp ../MyException/MyException.cpp
 .PHONY:clean
 clean:
 	rm testMySharedLibrary $(OBJ) libMySharedLibraryProvider.so
