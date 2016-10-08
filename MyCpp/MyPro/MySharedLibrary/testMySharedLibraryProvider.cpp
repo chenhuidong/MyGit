@@ -24,10 +24,10 @@ POCO_END_MANIFEST
 
 void pocoInitializeLibrary()
 {
-	LOG_INFO<< "PluginLibrary initializing"<< std::endl;
+	LOG_INFO<< "PluginLibrary initializing."<< std::endl;
 }
 
 void pocoUninitializeLibrary()
 {
-	LOG_INFO<< "PluginLibrary uninitializing"<< std::endl;
+	LOG_INFO<< "PluginLibrary uninitializing."<< std::endl;
 }

@@ -9,16 +9,16 @@ int main(int argc, char *argv[])
 	MMyLib::INITIALIZE_LOG(argv[0]);
 	if(argc != 2)
 	{
-		LOG_ERROR<< "usage: ./MyFrame taskid."<< endl;
+		LOG_ERROR<< "Usage: ./MyFrame taskid."<< endl;
 		return -1;
 	}
 
 	int t_iConditionId = atoi(argv[1]);
 	//获取id
-	LOG_INFO<< "begin task "<< t_iConditionId<< "."<< endl;
+	LOG_INFO<< "Begin task "<< t_iConditionId<< "."<< endl;
 
 	reply t_oReply = g_pRedisConn->run(command("GET")<< (const char*)argv[1]);
-	LOG_INFO<< "XML filename is: "<< t_oReply.str()<< endl;
+	LOG_INFO<< "XML filename is: "<< t_oReply.str()<< "."<< endl;
 	string t_sFileName = t_oReply.str();
 
 	//解析xml
@@ -27,11 +27,11 @@ int main(int argc, char *argv[])
 	string t_sCurLib = t_pPt->get<string>("conf.curlib");
 	string t_sCurInterface = t_pPt->get<string>("conf.curinterface");
 
-	LOG_INFO<< "current lib is "<< t_sCurLib<< ". current interface is "<< t_sCurInterface<< "."<< endl;
+	LOG_INFO<< "Current lib is "<< t_sCurLib<< ". Current interface is "<< t_sCurInterface<< "."<< endl;
 	
 	//执行程序
 	IMySharedLibrary t_oProvider(t_sCurLib);
 	int t_iReturn = t_oProvider.ExecFunc("hello");
-	LOG_INFO<< "return is "<< t_iReturn<< endl;
+	LOG_INFO<< "Return code is "<< t_iReturn<< "."<< endl;
 	return 0;
 }
