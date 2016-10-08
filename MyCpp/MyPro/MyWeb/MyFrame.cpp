@@ -33,9 +33,7 @@ int main(int argc, char *argv[])
 	
 	//执行程序
 	IMySharedLibrary t_oProvider(t_sCurLib);
-	t_oProvider.ExecFunc("hello");
-	
-	int t_iReturn = t_oProvider.ExecFunc("hellokitty");
+	int t_iReturn = t_oProvider.ExecFunc("hello");
 	LOG_INFO<< "return is "<< t_iReturn<< endl;
 	return 0;
 }
