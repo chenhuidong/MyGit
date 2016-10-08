@@ -5,7 +5,7 @@ OBJ=MyDb.o
 $(TARGET):$(OBJ)
 	$(LINK) -o $(TARGET) $(OBJ) $(LDFLAGS)
 $(OBJ): MyDb.cpp MyDb.h
-	$(COMPILE) MyDb.cpp ../MyException/MyException.cpp
+	$(COMPILE) MyDb.cpp
 .PHONY:clean
 clean:
 	rm $(TARGET) $(OBJ)

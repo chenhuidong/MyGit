@@ -2,7 +2,6 @@
 #define __MY_LIB_MY_DB_H_
 
 #include "MyStdAfx.h"
-#include "MyException.h"
 #include "Poco/Data/Session.h"
 #include "Poco/Data/SessionFactory.h"
 #include "Poco/Data/SQLite/Connector.h"
