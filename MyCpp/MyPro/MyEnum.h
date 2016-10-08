@@ -14,6 +14,6 @@ enum
 	SDL_FAILED = -1,
 	SDL_OK = 0,
 	SDL_ONCE = 1;
-}
+};
 
 #endif
