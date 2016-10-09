@@ -5,7 +5,7 @@
 #include "Poco/SharedLibrary.h"
 #include "Poco/ClassLoader.h"
 #include "Poco/Manifest.h"
-class AbstractPlugin;
+#include "testMySharedLibraryProvider.h"
 
 using Poco::SharedLibrary;
 
