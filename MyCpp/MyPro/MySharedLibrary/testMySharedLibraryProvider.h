@@ -1,3 +1,6 @@
+#ifndef __MY_LIB_TEST_MY_SHARED_LIBRARY_H_
+#define __MY_LIB_TEST_MY_SHARED_LIBRARY_H_
+
 #include "MyStdAfx.h"
 #include "Poco/ClassLibrary.h"
 #include <iostream>
@@ -31,4 +34,5 @@ public:
 	void HelloWorld();
 };
 
+#endif
 //g++ testSharedLibraryProvider.cpp -fPIC -shared -o libtestSharedLibrary.so
