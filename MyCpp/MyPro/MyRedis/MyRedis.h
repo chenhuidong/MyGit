@@ -9,7 +9,7 @@ using namespace redis3m;
 
 namespace MMyLib
 {
-	static connection::ptr_t g_pRedisConn = connection::create(REDISIP, REDISPORT);
+	connection::ptr_t g_pRedisConn = connection::create(REDISIP, REDISPORT);
 };
 
 #endif
