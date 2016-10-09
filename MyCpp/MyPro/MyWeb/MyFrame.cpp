@@ -16,7 +16,7 @@ int MMyLib::IMyFrame::GetXMLPath(const char* in_sConditionId)
 	if(0 == m_sXMLPath.length())
 	{
 		LOG_ERROR<< "Condition id "<< in_sConditionId<< " XML path does not exist."<< endl;
-		
+			throw 
 	}
 }
 
