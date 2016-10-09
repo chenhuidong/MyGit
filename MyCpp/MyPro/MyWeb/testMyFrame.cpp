@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 	//string t_sFileName = t_oReply.str();
 	IMyFrame t_oMyFrame;
 	string t_sFileName = t_oMyFrame.GetXMLPath(argv[1]);
-	cout<< "chd"<< t_sFileName<< endl;
 
 	//解析xml
 	IMyConf t_oMyConf;

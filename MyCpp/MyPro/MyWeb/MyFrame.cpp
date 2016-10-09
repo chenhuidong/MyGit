@@ -18,6 +18,7 @@ string& MMyLib::IMyFrame::GetXMLPath(const char* in_sConditionId)
 		LOG_ERROR<< "Condition id "<< in_sConditionId<< " XML path does not exist."<< endl;
 		throw XMLPathNoRecordException("xml path from redis no exist.");
 	}
+	return m_sXMLPath;
 }
 
 string& MMyLib::IMyFrame::GetCurLib()
