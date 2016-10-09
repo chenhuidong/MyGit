@@ -1,10 +1,10 @@
 include ../Makefile.defines.linux
-OBJ=MyFrame.o 
+OBJ=MyFrame.o testMyFrame.o
 
-MyFrame: $(OBJ)
-	$(LINKEXE) -o MyFrame $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
+testMyFrame: $(OBJ)
+	$(LINKEXE) -o testMyFrame $(OBJ) $(LDFLAGS) $(LDFLAGSEX)
 $(OBJ): MyFrame.cpp 
-	$(COMPILE) MyFrame.cpp
+	$(COMPILE) testMyFrame.cpp MyFrame.cpp
 .PHONY:clean
 clean:
 	rm MyFrame $(OBJ)
