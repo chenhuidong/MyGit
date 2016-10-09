@@ -14,7 +14,7 @@ namespace MMyLib
 		IMyFrame();
 		virtual ~IMyFrame();
 
-		int GetXMLPath(int in_iConditionId);
+		string& GetXMLPath(int in_iConditionId);
 		string& GetCurLib();
 		string& GetCurInterface();
 	private:
