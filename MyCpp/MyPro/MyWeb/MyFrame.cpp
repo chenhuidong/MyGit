@@ -10,7 +10,7 @@ MMyLib::IMyFrame::~IMyFrame()
 
 string& MMyLib::IMyFrame::GetXMLPath(const char* in_sConditionId)
 {
-	reply t_oReply = g_pRedisConn->run(command("GET")<< in_sConditionId);
+	reply t_oReply = MMyLib::g_pRedisConn->run(command("GET")<< in_sConditionId);
 	LOG_INFO<< "XML filename is: "<< t_oReply.str()<< "."<< endl;
 	m_sXMLPath = t_oReply.str();
 	if(0 == m_sXMLPath.length())
