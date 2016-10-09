@@ -11,11 +11,6 @@
 #define LIBRARY_API
 #endif
 extern "C" int LIBRARY_API hellokitty();
-int hellokitty()
-{
-    LOG_INFO<< "hello world!" << std::endl;
-    return SDL_ONCE;
-}
 
 class AbstractPlugin
 {

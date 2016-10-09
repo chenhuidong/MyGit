@@ -1,5 +1,11 @@
 #include "testMySharedLibraryProvider.h"
 
+int hellokitty()
+{
+    LOG_INFO<< "hello world!" << std::endl;
+    return SDL_ONCE;
+}
+
 AbstractPlugin::AbstractPlugin()
 {}
 
