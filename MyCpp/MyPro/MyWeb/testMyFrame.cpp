@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 	//解析xml
 	IMyConf t_oMyConf;
-	ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::XML, t_sFileName);
+	ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::XML, t_sFileName.c_str());
 	string t_sCurLib = t_pPt->get<string>("conf.curlib");
 	string t_sCurInterface = t_pPt->get<string>("conf.curinterface");
 
