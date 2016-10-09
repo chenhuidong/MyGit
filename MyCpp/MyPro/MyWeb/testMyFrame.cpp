@@ -1,7 +1,4 @@
-#include "MyStdAfx.h"
-#include "MyRedis.h"
-#include "MyConf.h"
-#include "MySharedLibrary.h"
+#include "MyFrame.h"
 using namespace MMyLib;
 
 int main(int argc, char *argv[])
