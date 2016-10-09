@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	//LOG_INFO<< "XML filename is: "<< t_oReply.str()<< "."<< endl;
 	//string t_sFileName = t_oReply.str();
 	IMyFrame t_oMyFrame;
-	string t_sFileName ;//= t_oMyFrame.GetXMLPath(argv[1]);
+	string t_sFileName = t_oMyFrame.GetXMLPath(argv[1]);
 
 	//解析xml
 	IMyConf t_oMyConf;
