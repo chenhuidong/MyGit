@@ -15,10 +15,10 @@ namespace MMyLib
 		virtual ~IMyFrame();
 
 		string& GetXMLPath(const char* in_iConditionId);
-		string& GetCurLib();
-		string& GetCurInterface();
+		ptree* ParseXML();
 	private:
-		string m_sXMLPath;
+		string 	m_sXMLPath;
+		IMyConf m_oMyConf;
 	};
 };
 

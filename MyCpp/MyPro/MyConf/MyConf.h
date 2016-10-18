@@ -19,6 +19,7 @@ namespace MMyLib
 		IMyConf();
 		virtual ~IMyConf();
 		ptree* ReadFile(ConfType in_eConfType, const char* in_sFileName);
+		ptree* GetPtr();
 	private:
 		ptree *m_pPt;
 	};

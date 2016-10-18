@@ -22,8 +22,9 @@ int main(int argc, char *argv[])
 	string t_sFileName = t_oMyFrame.GetXMLPath(argv[1]);
 
 	//解析xml
-	IMyConf t_oMyConf;
-	ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::XML, t_sFileName.c_str());
+	//IMyConf t_oMyConf;
+	//ptree* t_pPt = t_oMyConf.ReadFile(IMyConf::XML, t_sFileName.c_str());
+	ptree* t_pPt = t_oMyFrame.ParseXML();
 	string t_sCurLib = t_pPt->get<string>("conf.curlib");
 	string t_sCurInterface = t_pPt->get<string>("conf.curinterface");
 

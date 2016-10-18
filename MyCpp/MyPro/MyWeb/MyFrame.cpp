@@ -21,12 +21,7 @@ string& MMyLib::IMyFrame::GetXMLPath(const char* in_sConditionId)
 	return m_sXMLPath;
 }
 
-string& MMyLib::IMyFrame::GetCurLib()
+ptree* MMyLib::IMyFrame::ParseXML()
 {
-
-}
-
-string& MMyLib::IMyFrame::GetCurInterface()
-{
-
+	return m_oMyConf.ReadFile(IMyConf::XML, m_sXMLPath.c_str());
 }
