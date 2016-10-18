@@ -2,7 +2,7 @@
 
 int hellokitty()
 {
-    LOG_INFO<< "hello world!" << std::endl;
+    LOG_INFO<< "hello kitty!" << std::endl;
     return SDL_ONCE;
 }
 
