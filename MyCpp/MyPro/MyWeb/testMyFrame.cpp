@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 	IMySharedLibrary t_oProvider(t_sCurLib);
 	do
 	{
-		t_iReturn = t_oProvider.ExecFunc("hellokitty");
+		t_iReturn = t_oProvider.ExecFunc(t_sCurInterface);
 		LOG_INFO<< "Return code is "<< t_iReturn<< "."<< endl;
 		sleep(1);
 	}while(t_iReturn == SDL_OK);
