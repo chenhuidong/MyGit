@@ -25,3 +25,8 @@ ptree* MMyLib::IMyFrame::ParseXML()
 {
 	return m_oMyConf.ReadFile(IMyConf::XML, m_sXMLPath.c_str());
 }
+
+int MMyLib::IMyFrame::BeginTask(int in_iConditionId)
+{
+	
+}

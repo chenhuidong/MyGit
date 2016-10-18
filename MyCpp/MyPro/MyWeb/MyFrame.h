@@ -16,6 +16,7 @@ namespace MMyLib
 
 		string& GetXMLPath(const char* in_iConditionId);
 		ptree* ParseXML();
+		int BeginTask(int in_iConditionId);
 	private:
 		string 	m_sXMLPath;
 		IMyConf m_oMyConf;
