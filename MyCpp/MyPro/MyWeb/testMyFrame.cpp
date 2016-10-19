@@ -3,19 +3,18 @@ using namespace MMyLib;
 
 int main(int argc, char *argv[])
 {
-	int t_iReturn = SDL_OK;
 	MMyLib::INITIALIZE_LOG(argv[0]);
 	if(argc != 2)
 	{
 		LOG_ERROR<< "Usage: ./MyFrame taskid."<< endl;
-		return -1;
+		return SDL_FAILED;
 	}
 
 	int t_pid = fork();	
 	if(t_pid < 0)
 	{
 		LOG_ERROR<< "Fork error"<< endl;
-		return -1;
+		return SDL_FAILED;
 	}
 	else if(0 == t_pid)
 	{
@@ -31,5 +30,5 @@ int main(int argc, char *argv[])
 	{
 		LOG_INFO<< "Continue my task."<< endl;
 	}
-	return 0;
+	return SDL_OK;
 }

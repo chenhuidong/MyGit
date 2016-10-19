@@ -28,11 +28,12 @@ ptree* MMyLib::IMyFrame::ParseXML()
 
 int MMyLib::IMyFrame::BeginNewTask(const char* in_sConditionId)
 {
+	int t_iReturn = SDL_OK;
 	//reply t_oReply = g_pRedisConn->run(command("GET")<< (const char*)argv[1]);
 	//LOG_INFO<< "XML filename is: "<< t_oReply.str()<< "."<< endl;
 	//string t_sFileName = t_oReply.str();
 	
-	GetXMLPath(argv[1]);
+	GetXMLPath(in_sConditionId);
 
 	//解析xml
 	//IMyConf t_oMyConf;
