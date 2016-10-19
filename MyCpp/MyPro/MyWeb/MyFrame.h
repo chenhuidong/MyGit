@@ -14,9 +14,11 @@ namespace MMyLib
 		IMyFrame();
 		virtual ~IMyFrame();
 
-		string& GetXMLPath(const char* in_iConditionId);
+		int BeginNewTask(const char* in_sConditionId);
+	private:
+		string& GetXMLPath(const char* in_sConditionId);
 		ptree* ParseXML();
-		int BeginTask(int in_iConditionId);
+		
 	private:
 		string 	m_sXMLPath;
 		IMyConf m_oMyConf;
