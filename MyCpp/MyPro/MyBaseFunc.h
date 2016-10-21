@@ -3,8 +3,7 @@
 
 #include "MyStdAfx.h"
 
-namespace MMyLib
-{
+
 	//iterator define
 	#define  ___ANONYMOUS1(var, line)  var##line
 	#define  __ANONYMOUS0(line)  ___ANONYMOUS1(_anonymous, line)
@@ -110,6 +109,5 @@ string toLower(string& in_str)
 	}
 	return in_str;
 }
-};
 
 #endif
