@@ -9,6 +9,10 @@
 #define REDISIP "127.0.0.1"
 #define REDISPORT 6379
 
+typedef long long int64
+typedef int int32
+typedef short int16
+
 enum 
 {
 	SDL_FAILED = -1,
