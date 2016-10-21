@@ -1,16 +1,18 @@
 #include "MyTask.h"
 
-MMyLib::IMyTask::IMyTask()
+using namespace MMyLib;
+
+IMyTask::IMyTask()
 {
 }
 
-MMyLib::IMyTask::~IMyTask()
+IMyTask::~IMyTask()
 {
 }
 
-string& MMyLib::IMyTask::GetXMLPath(int in_iConditionId)
+string& IMyTask::GetXMLPath(int in_iConditionId)
 {
-	reply t_oReply = MMyLib::g_pRedisConn->run(command("GET")<< itoa(in_iConditionId));
+	reply t_oReply = g_pRedisConn->run(command("GET")<< itoa(in_iConditionId));
 	LOG_INFO<< "XML filename is: "<< t_oReply.str()<< "."<< endl;
 	m_sXMLPath = t_oReply.str();
 	if(0 == m_sXMLPath.length())
@@ -21,12 +23,12 @@ string& MMyLib::IMyTask::GetXMLPath(int in_iConditionId)
 	return m_sXMLPath;
 }
 
-ptree* MMyLib::IMyTask::ParseXML()
+ptree* IMyTask::ParseXML()
 {
 	return m_oMyConf.ReadFile(IMyConf::XML, m_sXMLPath.c_str());
 }
 
-int MMyLib::IMyTask::BeginNewTask(int in_iConditionId)
+int IMyTask::BeginNewTask(int in_iConditionId)
 {
 	int t_iReturn = SDL_OK;
 	//reply t_oReply = g_pRedisConn->run(command("GET")<< (const char*)argv[1]);
