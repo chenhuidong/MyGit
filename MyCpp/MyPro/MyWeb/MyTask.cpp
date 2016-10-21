@@ -8,9 +8,9 @@ MMyLib::IMyTask::~IMyTask()
 {
 }
 
-string& MMyLib::IMyTask::GetXMLPath(const char* in_sConditionId)
+string& MMyLib::IMyTask::GetXMLPath(int in_iConditionId)
 {
-	reply t_oReply = MMyLib::g_pRedisConn->run(command("GET")<< in_sConditionId);
+	reply t_oReply = MMyLib::g_pRedisConn->run(command("GET")<< itoa(in_iConditionId));
 	LOG_INFO<< "XML filename is: "<< t_oReply.str()<< "."<< endl;
 	m_sXMLPath = t_oReply.str();
 	if(0 == m_sXMLPath.length())
@@ -26,7 +26,7 @@ ptree* MMyLib::IMyTask::ParseXML()
 	return m_oMyConf.ReadFile(IMyConf::XML, m_sXMLPath.c_str());
 }
 
-int MMyLib::IMyTask::BeginNewTask(const char* in_sConditionId)
+int MMyLib::IMyTask::BeginNewTask(int in_iConditionId)
 {
 	int t_iReturn = SDL_OK;
 	//reply t_oReply = g_pRedisConn->run(command("GET")<< (const char*)argv[1]);

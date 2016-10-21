@@ -1,7 +1,9 @@
 include ../Makefile.defines.linux
 
-testMyFrame:
-	$(LINKEXE) -o testMyFrame testMyFrame.cpp MyFrame.cpp $(LDFLAGS) $(LDFLAGSEX)
+main:
+	$(LINKEXE) -o MyFrame MyFrame.cpp MyTask.cpp $(LDFLAGS) $(LDFLAGSEX)
+MyFrame:
+	$(LINKEXE) -o MyFrame MyFrame.cpp MyTask.cpp $(LDFLAGS) $(LDFLAGSEX)
 .PHONY:clean
 clean:
-	rm testMyFrame *.o
+	rm MyFrame main

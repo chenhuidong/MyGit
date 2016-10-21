@@ -14,9 +14,9 @@ namespace MMyLib
 		IMyTask();
 		virtual ~IMyTask();
 
-		int BeginNewTask(const char* in_sConditionId);
+		int BeginNewTask(int in_iConditionId);
 	private:
-		string& GetXMLPath(const char* in_sConditionId);
+		string& GetXMLPath(int in_iConditionId);
 		ptree* ParseXML();
 		
 	private:
