@@ -24,11 +24,11 @@ namespace MMyLib
 		y::const_reverse_iterator ANONYMOUS() = z.rend(); \
 	for(y::const_reverse_iterator x = z.rbegin();x != ANONYMOUS();++x)
 
-	extern "C" string 	itoa(int32	i);
-	extern "C" string 	itoa(int64	i);
-	extern "C" int64 	atol64(const char * szStr);
-	extern "C" string 	toUpper(string& in_str);
-	extern "C" string 	toLower(string&	in_str);
+	string 	itoa(int32	i);
+	string 	itoa(int64	i);
+	int64 	atol64(const char * szStr);
+	string 	toUpper(string& in_str);
+	string 	toLower(string&	in_str);
 };
 
 #endif
