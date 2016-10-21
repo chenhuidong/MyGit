@@ -1,5 +1,4 @@
 #include "MyTask.h"
-
 using namespace MMyLib;
 
 IMyTask::IMyTask()

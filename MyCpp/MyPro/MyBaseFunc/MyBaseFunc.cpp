@@ -37,7 +37,6 @@ string itoa(int64	i)
 		}
 		buf[idx] = 0;
 	}
-
 	return string(buf[0] == '-' ? buf : buf + 1);
 }
 
@@ -46,43 +45,38 @@ int64 atol64(const char * szStr)
 	int64 n = 0;
 	bool bNegative(false);
 	for ( ; *szStr && isspace(*szStr); ++szStr );
-		if ( *szStr == '-' )
-		{
-			bNegative = true;
-			szStr++;
-		}
-		for ( ; *szStr >= '0' && *szStr <= '9'; ++szStr )
-		{
-			n = n * 10 + (*szStr - '0');
-		}
-		return ( bNegative ) ? -n : n;
-	}
-
-	int64 atol64(const string& str)
+	if ( *szStr == '-' )
 	{
-		return atol64( str.c_str() );
+		bNegative = true;
+		szStr++;
 	}
-
-	string toUpper(string& in_str)
+	for ( ; *szStr >= '0' && *szStr <= '9'; ++szStr )
 	{
-		int32 i = in_str.size();
-		string::iterator itr = in_str.begin();
-		while ( i-- ) 
-		{
-			(*itr) = (unsigned char)toupper((unsigned char)(*itr));
-			itr++;
-		}
-		return in_str;
+		n = n * 10 + (*szStr - '0');
 	}
+	return ( bNegative ) ? -n : n;
+}
 
-	string toLower(string &	in_str)
+string toUpper(string& in_str)
+{
+	int32 i = in_str.size();
+	string::iterator itr = in_str.begin();
+	while ( i-- ) 
 	{
-		int32 i = in_str.size();
-		string::iterator itr = in_str.begin();
-		while ( i-- ) 
-		{
-			(*itr) = (unsigned char)tolower((unsigned char)(*itr));
-			itr++;
-		}
-		return in_str;
+		(*itr) = (unsigned char)toupper((unsigned char)(*itr));
+		itr++;
 	}
+	return in_str;
+}
+
+string toLower(string& in_str)
+{
+	int32 i = in_str.size();
+	string::iterator itr = in_str.begin();
+	while ( i-- ) 
+	{
+		(*itr) = (unsigned char)tolower((unsigned char)(*itr));
+		itr++;
+	}
+	return in_str;
+}
