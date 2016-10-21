@@ -3,7 +3,8 @@
 
 #include "MyStdAfx.h"
 
-
+namespace MMyLib
+{
 	//iterator define
 	#define  ___ANONYMOUS1(var, line)  var##line
 	#define  __ANONYMOUS0(line)  ___ANONYMOUS1(_anonymous, line)
@@ -30,6 +31,7 @@
 	string 	toUpper(string& in_str);
 	string 	toLower(string&	in_str);
 	*/
+
 string itoa(int32	i)
 {
 	char buf[256];
@@ -110,4 +112,5 @@ string toLower(string& in_str)
 	return in_str;
 }
 
+};
 #endif
