@@ -5,6 +5,7 @@
 #include "MyRedis.h"
 #include "MyConf.h"
 #include "MySharedLibrary.h"
+#include "MyBaseFunc.h"
 
 namespace MMyLib
 {
