@@ -15,7 +15,7 @@ string& MMyLib::IMyTask::GetXMLPath(int in_iConditionId)
 	m_sXMLPath = t_oReply.str();
 	if(0 == m_sXMLPath.length())
 	{
-		LOG_ERROR<< "Condition id "<< in_sConditionId<< " XML path does not exist."<< endl;
+		LOG_ERROR<< "Condition id "<< in_iConditionId<< " XML path does not exist."<< endl;
 		throw XMLPathNoRecordException("xml path from redis no exist.");
 	}
 	return m_sXMLPath;
@@ -33,7 +33,7 @@ int MMyLib::IMyTask::BeginNewTask(int in_iConditionId)
 	//LOG_INFO<< "XML filename is: "<< t_oReply.str()<< "."<< endl;
 	//string t_sFileName = t_oReply.str();
 	
-	GetXMLPath(in_sConditionId);
+	GetXMLPath(in_iConditionId);
 
 	//解析xml
 	//IMyConf t_oMyConf;

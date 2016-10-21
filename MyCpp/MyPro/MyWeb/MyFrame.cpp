@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	LOG_INFO<< "Begin a new task."<< endl;
 	IMyTask t_oMyTask;
-	t_oMyTask.BeginNewTask(argv[1]);
+	t_oMyTask.BeginNewTask(t_iConditionId);
 
 	return SDL_OK;
 }
