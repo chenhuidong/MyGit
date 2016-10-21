@@ -1,6 +1,6 @@
 include Makefile.defines.linux
 
-SUBDIRS = MyException MyLog MyBaseFunc MyConf MyDateTime MyThread MyDb MyRedis MyNet MyTR MySharedLibrary MyLua
+SUBDIRS = MyException MyLog MyConf MyDateTime MyThread MyDb MyRedis MyNet MyTR MySharedLibrary MyLua
 all:
 	mkdir -p $(LIBPATH) $(INCLUDEPATH);\
 	cp -rf *.h $(INCLUDEPATH);\
