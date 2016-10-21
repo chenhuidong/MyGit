@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 	MMyLib::INITIALIZE_LOG(argv[0]);
 	if(argc != 2)
 	{
-		LOG_ERROR<< "Usage: ./MyFrame taskid."<< endl;
+		LOG_ERROR<< "Usage: ./MyTask taskid."<< endl;
 		return SDL_FAILED;
 	}
 
@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 	LOG_INFO<< "Begin task "<< t_iConditionId<< "."<< endl;
 
 	LOG_INFO<< "Begin a new task."<< endl;
-	IMyFrame t_oMyFrame;
-	t_oMyFrame.BeginNewTask(argv[1]);
+	IMyTask t_oMyTask;
+	t_oMyTask.BeginNewTask(argv[1]);
 
 	return SDL_OK;
 }
