@@ -10,7 +10,7 @@ MMyLib::IMyTask::~IMyTask()
 
 string& MMyLib::IMyTask::GetXMLPath(int in_iConditionId)
 {
-	reply t_oReply = g_pRedisConn->run(command("GET")<< MMyLib::itoa(in_iConditionId));
+	reply t_oReply = g_pRedisConn->run(command("GET")<< itoa(in_iConditionId));
 	LOG_INFO<< "XML filename is: "<< t_oReply.str()<< "."<< endl;
 	m_sXMLPath = t_oReply.str();
 	if(0 == m_sXMLPath.length())
