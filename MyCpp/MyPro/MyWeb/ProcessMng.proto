@@ -14,10 +14,10 @@ service ProcessMng {
 }
 
 message ProcessMngRequest {
-  int conditionid = 1;
+  int32 conditionid = 1;
 }
 
 message ProcessMngReply {
-  int return = 1;
+  int32 return = 1;
 }
 
