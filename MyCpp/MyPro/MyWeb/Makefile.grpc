@@ -1,3 +1,5 @@
+include ../Makefile.defines.linux
+
 HOST_SYSTEM = $(shell uname | cut -f 1 -d_)
 SYSTEM ?= $(HOST_SYSTEM)
 CXX = g++
@@ -20,11 +22,14 @@ PROTOS_PATH = .
 
 vpath %.proto $(PROTOS_PATH)
 
-all: system-check main
-#greeter_client greeter_server 
+all: system-check main MyFrame
+#greeter_client greeter_server
 
 main: ProcessMng.pb.o ProcessMng.grpc.pb.o main.o
-	$(CXX) $^ $(LDFLAGS) -o $@
+	$(CXX) $^ $(LDFLAGS) $(LDFLAGSEX) -o $@ 
+
+MyFrame:
+	$(LINKEXE) -o MyFrame MyFrame.cpp MyTask.cpp $(LDFLAGS) $(LDFLAGSEX)
 
 #greeter_client: ProcessMng.pb.o ProcessMng.grpc.pb.o greeter_client.o
 #	$(CXX) $^ $(LDFLAGS) -o $@
