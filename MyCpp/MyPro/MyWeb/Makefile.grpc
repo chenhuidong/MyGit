@@ -41,7 +41,7 @@ main: ProcessMng.pb.o ProcessMng.grpc.pb.o main.o
 	$(PROTOC) -I $(PROTOS_PATH) --cpp_out=. $<
 
 clean:
-	rm -f *.o *.pb.cc *.pb.h 
+	rm -f *.o *.pb.cc *.pb.h main
 #greeter_client greeter_server 
 
 
