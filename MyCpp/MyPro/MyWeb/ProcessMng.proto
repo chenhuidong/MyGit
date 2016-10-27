@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.myweb.processmng";
+option java_outer_classname = "ProcessMngProto";
+option objc_class_prefix = "MMyLib";
+
+package processmng;
+
+service ProcessMng {
+  rpc BeginTask (ProcessMngRequest) returns (ProcessMngReply) {}
+  rpc EndTask (ProcessMngRequest) returns (ProcessMngReply) {}
+  rpc GetTaskStatus (ProcessMngRequest) returns (ProcessMngReply) {}
+}
+
+message ProcessMngRequest {
+  int conditionid = 1;
+}
+
+message ProcessMngReply {
+  int return = 1;
+}
+
