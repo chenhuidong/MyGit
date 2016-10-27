@@ -1,45 +1,66 @@
-#include "MyStdAfx.h"
-using namespace MMyLib;
+#include <iostream>
+#include <memory>
+#include <string>
 
-int main(int argc, char *argv[])
+#include <grpc++/grpc++.h>
+
+#include "ProcessMng.grpc.pb.h"
+
+using grpc::Server;
+using grpc::ServerBuilder;
+using grpc::ServerContext;
+using grpc::Status;
+using ProcessMng::ProcessMngRequest;
+using ProcessMng::ProcessMngReply;
+using ProcessMng::ProcessMng;
+
+// Logic and data behind the server's behavior.
+class ProcessMngServiceImpl final : public ProcessMng::Service 
 {
-	MMyLib::INITIALIZE_LOG(argv[0]);
-	/*if(argc != 2)
-	{
-		LOG_ERROR<< "Usage: ./MyFrame taskid."<< endl;
-		return SDL_FAILED;
-	}
-	*/
-	string t_sBinPath = getBinPath();
-	t_sBinPath += "/MyFrame";
+  Status BeginTask(ServerContext* context, const ProcessMngRequest* request,
+                  ProcessMngReply* reply) override 
+  {
+    //std::string prefix("Hello ");
+    //reply->set_message(prefix + request->name());
+    return Status::OK;
+  }
 
-	LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
+  Status EndTask(ServerContext* context, const ProcessMngRequest* request,
+                  ProcessMngReply* reply) override 
+  {
+    return Status::OK;
+  }
 
-	int t_pid = fork();	
-	if(t_pid < 0)
-	{
-		LOG_ERROR<< "Fork error."<< endl;
-		return SDL_FAILED;
-	}
-	else if(0 == t_pid)
-	{
-		/*
-		int t_iConditionId = atoi(argv[1]);
-			//获取id
-		LOG_INFO<< "Begin task "<< t_iConditionId<< "."<< endl;
+  Status GetTaskStatus(ServerContext* context, const ProcessMngRequest* request,
+                  ProcessMngReply* reply) override 
+  {
+    return Status::OK;
+  }
+};
 
-		LOG_INFO<< "Begin a new task."<< endl;
-		IMyFrame t_oMyFrame;
-		t_oMyFrame.BeginNewTask(argv[1]);
-		*/
-		char *arg[]={"MyFrame","15",NULL};
-		execv(t_sBinPath.c_str(), arg);
-	}
-	else
-	{
-		LOG_INFO<< "Continue my task."<< endl;
+void RunServer() 
+{
+  std::string server_address("127.0.0.1:54321");
+  ProcessMngServiceImpl service;
 
-	}
-	
-	return SDL_OK;
+  ServerBuilder builder;
+  // Listen on the given address without any authentication mechanism.
+  builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
+  // Register "service" as the instance through which we'll communicate with
+  // clients. In this case it corresponds to an *synchronous* service.
+  builder.RegisterService(&service);
+  // Finally assemble the server.
+  std::unique_ptr<Server> server(builder.BuildAndStart());
+  std::cout << "Server listening on " << server_address << std::endl;
+
+  // Wait for the server to shutdown. Note that some other thread must be
+  // responsible for shutting down the server for this call to ever return.
+  server->Wait();
+}
+
+int main(int argc, char** argv) 
+{
+  RunServer();
+
+  return 0;
 }
