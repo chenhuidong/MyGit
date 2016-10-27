@@ -4,7 +4,7 @@ require dirname(__FILE__).'/ProcessMng.php';
 
 function greet($name)
 {
-    $client = new ProcessMng\GreeterClient('localhost:54321', [
+    $client = new ProcessMng\ProcessMngClient('localhost:54321', [
         'credentials' => Grpc\ChannelCredentials::createInsecure(),
     ]);
     $request = new ProcessMng\ProcessMngRequest();
