@@ -23,7 +23,8 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     //std::string prefix("Hello ");
     //reply->set_message(prefix + request->name());
     int t_iConditionId = request->conditionid();
-    reply->set_return_(0);
+
+    reply->set_returncode(0);
     return Status::OK;
   }
 
