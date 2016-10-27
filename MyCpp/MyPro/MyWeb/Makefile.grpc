@@ -24,7 +24,7 @@ all: system-check main
 #greeter_client greeter_server 
 
 main: ProcessMng.pb.o ProcessMng.grpc.pb.o main.o
-	$^ $(LDFLAGS) -o $@
+	$(CXX) $^ $(LDFLAGS) -o $@
 
 #greeter_client: ProcessMng.pb.o ProcessMng.grpc.pb.o greeter_client.o
 #	$(CXX) $^ $(LDFLAGS) -o $@
