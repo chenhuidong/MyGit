@@ -20,13 +20,15 @@ PROTOS_PATH = .
 
 vpath %.proto $(PROTOS_PATH)
 
-all: system-check 
+all: system-check main
 #greeter_client greeter_server 
 
-#greeter_client: ProcessMnd.pb.o ProcessMnd.grpc.pb.o greeter_client.o
+main: ProcessMng.pb.o ProcessMng.grpc.pb.o
+
+#greeter_client: ProcessMng.pb.o ProcessMng.grpc.pb.o greeter_client.o
 #	$(CXX) $^ $(LDFLAGS) -o $@
 
-#greeter_server: ProcessMnd.pb.o ProcessMnd.grpc.pb.o greeter_server.o
+#greeter_server: ProcessMng.pb.o ProcessMng.grpc.pb.o greeter_server.o
 #	$(CXX) $^ $(LDFLAGS) -o $@
 
 .PRECIOUS: %.grpc.pb.cc
