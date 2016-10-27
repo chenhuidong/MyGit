@@ -10,9 +10,9 @@ using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
-using ProcessMng::ProcessMngRequest;
-using ProcessMng::ProcessMngReply;
-using ProcessMng::ProcessMng;
+using processmng::ProcessMngRequest;
+using processmng::ProcessMngReply;
+using processmng::ProcessMng;
 
 // Logic and data behind the server's behavior.
 class ProcessMngServiceImpl final : public ProcessMng::Service 
