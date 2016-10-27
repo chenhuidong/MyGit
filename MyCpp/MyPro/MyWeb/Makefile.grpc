@@ -102,3 +102,5 @@ endif
 ifneq ($(SYSTEM_OK),true)
 	@false
 endif
+
+#protoc-gen-php -i . -o . ./route_guide.proto
