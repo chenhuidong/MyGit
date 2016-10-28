@@ -10,9 +10,9 @@ function greet($name)
     $request = new ProcessMng\ProcessMngRequest();
     $request->setConditionid($name);
     list($reply, $status) = $client->BeginTask($request)->wait();
-    //$message = $reply->getReturncode();
+    $message = $reply->getReturncode();
 
-    //return $message;
+    return $message;
 }
 
 //$name = !empty($argv[1]) ? $argv[1] : 'world';
