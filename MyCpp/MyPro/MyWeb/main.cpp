@@ -27,12 +27,14 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     //reply->set_message(prefix + request->name());
     string t_sBinPath = getBinPath();
     t_sBinPath += "/MyFrame";
+    LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
 
-    //LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
     int t_iConditionId = request->conditionid();
-    
+    LOG_INFO<< "Condition id is "<< t_iConditionId<< endl;
+
     char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
     execv(t_sBinPath.c_str(), arg);
+    LOG_INFO<< "Exec success."<< endl;
     reply->set_returncode(0);
     return Status::OK;
   }
