@@ -59,7 +59,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       }
     }
     */
-    int t_iStatus;
+    int *t_pStatus = NULL;
 
     int t_pid = fork();
     if(t_pid < 0)
@@ -72,10 +72,10 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     }
     else
     {
-      wait(&t_iStatus);
-      if(WIFEXITED(t_iStatus))
+      wait(t_pStatus);
+      if(WIFEXITED(*t_pStatus))
       {
-        printf("the return code is %d./n", WEXITSTATUS(t_iStatus));
+        printf("the return code is %d./n", WEXITSTATUS(*t_pStatus));
       }
     }
     return Status::OK;
