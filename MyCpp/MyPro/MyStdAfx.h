@@ -2,6 +2,8 @@
 #define __MY_LIB_MY_STD_AFX_H_
 
 #include <stdlib.h>
+#include <sys/types.h> 
+#include <sys/wait.h> 
 #include <unistd.h>
 #include <stdio.h>
 #include <iostream>
@@ -14,8 +16,7 @@
 #include <string.h>
 #include <string>
 #include <signal.h>
-#include <sys/types.h> 
-#include <sys/wait.h> 
+
 using namespace std;
 
 //日志设置
