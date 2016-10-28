@@ -47,9 +47,9 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     else
     {
       LOG_INFO<< "Wait my son task."<< endl;
-      int t_iStatus;
+      int t_iStatus ;
 
-      wait(&t_iStatus);
+      waitpid(t_pid, &t_iStatus, 0);
       if(WIFEXITED(t_iStatus))
       {
         LOG_INFO<< "Return code is "<< WEXITSTATUS(t_iStatus)<< endl;
