@@ -33,7 +33,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     if(t_pid < 0)
     {
       LOG_ERROR<< "Fork error."<< endl;
-      return SDL_FAILED;
+      return Status::CANCELLED;
     }
     else if(0 == t_pid)
     {
