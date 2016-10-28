@@ -10,7 +10,7 @@ function greet($name)
     $request = new ProcessMng\ProcessMngRequest();
     $request->setConditionid($name);
     list($reply, $status) = $client->BeginTask($request)->wait();
-    echo $status
+    echo $status;
     $message = $reply->getReturncode();
 
     return $message;
