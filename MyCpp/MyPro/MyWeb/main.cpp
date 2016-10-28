@@ -64,7 +64,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     int t_pid = fork();
     if(t_pid < 0)
     {
-      return -1;
+      return Status::CANCELLED;
     }
     else if(0 == t_pid)
     {
