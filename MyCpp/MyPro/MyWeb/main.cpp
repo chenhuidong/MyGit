@@ -41,7 +41,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     else if(0 == t_pid)
     {
       int t_iConditionId = request->conditionid();
-      LOG_INFO<< "Condition id is "<< t_iConditionId<< endl;
+      //LOG_INFO<< "Condition id is "<< t_iConditionId<< endl;
       
       char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
       execv(t_sBinPath.c_str(), arg);
