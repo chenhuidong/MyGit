@@ -50,7 +50,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     else
     {
       LOG_INFO<< "Wait my son task."<< endl;
-      int t_iStatus ;
+      int t_iStatus;
 
       waitpid(t_pid, &t_iStatus, 0);
       if(WIFEXITED(t_iStatus))
@@ -65,7 +65,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
         reply->set_returncode(-1); 
         return Status::CANCELLED;
       }
-    } 
+    }
   }
 
   Status EndTask(ServerContext* context, const ProcessMngRequest* request,
