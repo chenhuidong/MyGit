@@ -49,14 +49,13 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     else
     {
       LOG_INFO<< "Wait my son task."<< endl;
-      /*
+      
       wait(&t_iStatus);
       if(WIFEXITED(t_iStatus))
       {
         printf("the return code is %d./n", WEXITSTATUS(t_iStatus));
         reply->set_returncode(0); 
       }
-       */
     }
     return Status::OK;
   }
