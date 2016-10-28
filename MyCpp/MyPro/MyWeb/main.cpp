@@ -29,13 +29,26 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     t_sBinPath += "/MyFrame";
     LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
 
-    int t_iConditionId = request->conditionid();
-    LOG_INFO<< "Condition id is "<< t_iConditionId<< endl;
+    int t_pid = fork(); 
+    if(t_pid < 0)
+    {
+      LOG_ERROR<< "Fork error."<< endl;
+      return SDL_FAILED;
+    }
+    else if(0 == t_pid)
+    {
+      int t_iConditionId = request->conditionid();
+      LOG_INFO<< "Condition id is "<< t_iConditionId<< endl;
 
-    char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
-    execv(t_sBinPath.c_str(), arg);
-    LOG_INFO<< "Exec success."<< endl;
-    reply->set_returncode(0);
+      char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
+      execv(t_sBinPath.c_str(), arg);
+      LOG_INFO<< "Exec success."<< endl;
+      reply->set_returncode(0);
+    }
+    else
+    {
+      LOG_INFO<< "Continue my task."<< endl;
+    }
     return Status::OK;
   }
 
