@@ -1,19 +1,17 @@
+#include "MyStdAfx.h"
+using namespace MMyLib;
+
 #include <iostream>
 #include <memory>
 #include <string>
-
 #include <grpc++/grpc++.h>
-
 #include "ProcessMng.grpc.pb.h"
-#include "MyStdAfx.h"
-#include <unistd.h>
+/*#include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <stdio.h>
-#include <stdlib.h>
-
-using namespace MMyLib;
-
+#include <stdlib.h> 
+*/
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
