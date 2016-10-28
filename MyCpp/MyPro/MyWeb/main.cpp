@@ -44,12 +44,13 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       execv(t_sBinPath.c_str(), arg);
       LOG_INFO<< "Exec success."<< endl;
       reply->set_returncode(0);
+      return Status::OK;
     }
-    else
+    /*else
     {
       LOG_INFO<< "Continue my task."<< endl;
-    }
-    return Status::OK;
+      return 0;
+    }*/
   }
 
   Status EndTask(ServerContext* context, const ProcessMngRequest* request,
