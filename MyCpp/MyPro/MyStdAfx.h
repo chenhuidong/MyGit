@@ -14,6 +14,8 @@
 #include <string.h>
 #include <string>
 #include <signal.h>
+#include <sys/types.h> 
+#include <sys/wait.h> 
 using namespace std;
 
 //日志设置
