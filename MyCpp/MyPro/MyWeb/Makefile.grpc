@@ -46,7 +46,7 @@ MyFrame:
 	$(PROTOC) -I $(PROTOS_PATH) --cpp_out=. $<
 
 clean:
-	rm -f *.o *.pb.cc *.pb.h main
+	rm -f *.o *.pb.cc *.pb.h main MyFrame
 #greeter_client greeter_server 
 
 
