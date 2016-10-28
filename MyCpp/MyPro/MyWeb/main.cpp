@@ -57,14 +57,15 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       {
         LOG_INFO<< "Return code is "<< WEXITSTATUS(t_iStatus)<< endl;
         reply->set_returncode(0); 
+        return Status::OK;
       }
       else 
       {
         LOG_INFO<< "Child process exit abnormally "<< WEXITSTATUS(t_iStatus)<< endl;
         reply->set_returncode(-1); 
+        return Status::CANCELLED;
       }
-    }
-    return Status::OK;
+    } 
   }
 
   Status EndTask(ServerContext* context, const ProcessMngRequest* request,
