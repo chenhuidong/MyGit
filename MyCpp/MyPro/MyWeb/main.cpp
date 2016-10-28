@@ -6,6 +6,11 @@
 
 #include "ProcessMng.grpc.pb.h"
 #include "MyStdAfx.h"
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace MMyLib;
 
