@@ -50,7 +50,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       LOG_INFO<< "Wait my son task."<< endl;
       
       wait(t_pStatus);
-      if(WIFEXITED(t_pStatus))
+      //if(WIFEXITED(t_pStatus))
       {
         LOG_INFO<< "Return code is"<< WEXITSTATUS(t_pStatus)<< endl;
         reply->set_returncode(0); 
