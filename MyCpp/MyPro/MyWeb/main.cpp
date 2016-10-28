@@ -25,7 +25,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
   {
     //std::string prefix("Hello ");
     //reply->set_message(prefix + request->name());
-    int status;
+    int status = 0;
     string t_sBinPath = getBinPath();
     t_sBinPath += "/MyFrame";
     LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
