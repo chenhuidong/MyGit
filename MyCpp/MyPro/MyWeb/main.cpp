@@ -25,7 +25,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
   {
     //std::string prefix("Hello ");
     //reply->set_message(prefix + request->name());
-    int status = 0;
+    int t_iStatus = 0;
     string t_sBinPath = getBinPath();
     t_sBinPath += "/MyFrame";
     LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
@@ -48,10 +48,10 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     else
     {
       LOG_INFO<< "Wait my son task."<< endl;
-      wait(&status);
-      if(WIFEXITED(status))
+      wait(&t_iStatus);
+      if(WIFEXITED(t_iStatus))
       {
-        printf("the return code is %d./n", WEXITSTATUS(status));
+        printf("the return code is %d./n", WEXITSTATUS(t_iStatus));
         reply->set_returncode(0); 
       }
     }
