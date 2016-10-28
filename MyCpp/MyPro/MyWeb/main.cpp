@@ -73,9 +73,9 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     else
     {
       wait(t_pStatus);
-      if(WIFEXITED(*t_pStatus))
+      if(WIFEXITED(t_pStatus))
       {
-        printf("the return code is %d./n", WEXITSTATUS(*t_pStatus));
+        printf("the return code is %d./n", WEXITSTATUS(t_pStatus));
       }
     }
     return Status::OK;
