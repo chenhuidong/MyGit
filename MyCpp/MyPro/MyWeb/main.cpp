@@ -25,6 +25,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
   {
     //std::string prefix("Hello ");
     //reply->set_message(prefix + request->name());
+    int status;
     string t_sBinPath = getBinPath();
     t_sBinPath += "/MyFrame";
     LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
@@ -43,14 +44,18 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
       execv(t_sBinPath.c_str(), arg);
       LOG_INFO<< "Exec success."<< endl;
-      reply->set_returncode(0);
-      return Status::OK;
     }
-    /*else
+    else
     {
-      LOG_INFO<< "Continue my task."<< endl;
-      return 0;
-    }*/
+      LOG_INFO<< "Wait my son task."<< endl;
+      wait(&status);
+      if(WIFEXITED(status))
+      {
+        printf("the return code is %d./n", WEXITSTATUS(status));
+        reply->set_returncode(0); 
+      }
+    }
+    return Status::OK;
   }
 
   Status EndTask(ServerContext* context, const ProcessMngRequest* request,
