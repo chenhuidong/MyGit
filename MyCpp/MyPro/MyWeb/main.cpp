@@ -21,10 +21,11 @@ using processmng::ProcessMng;
 class ProcessMngServiceImpl final : public ProcessMng::Service 
 {
   Status BeginTask(ServerContext* context, const ProcessMngRequest* request,
-                  ProcessMngReply* reply) override 
+    ProcessMngReply* reply) override 
   {
     //std::string prefix("Hello ");
     //reply->set_message(prefix + request->name());
+    /*
     int t_iStatus;
     string t_sBinPath = getBinPath();
     t_sBinPath += "/MyFrame";
@@ -40,11 +41,11 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     {
       int t_iConditionId = request->conditionid();
       LOG_INFO<< "Condition id is "<< t_iConditionId<< endl;
-      /*
+      
       char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
       execv(t_sBinPath.c_str(), arg);
       LOG_INFO<< "Exec success."<< endl;
-      */
+      
     }
     else
     {
@@ -57,17 +58,37 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
         reply->set_returncode(0); 
       }
     }
+    */
+    int t_iStatus;
+
+    int t_pid = fork();
+    if(t_pid < 0)
+    {
+      return -1;
+    }
+    else if(0 == t_pid)
+    {
+      cout<< "1"<< endl;
+    }
+    else
+    {
+      wait(&t_iStatus);
+      if(WIFEXITED(t_iStatus))
+      {
+        printf("the return code is %d./n", WEXITSTATUS(t_iStatus));
+      }
+    }
     return Status::OK;
   }
 
   Status EndTask(ServerContext* context, const ProcessMngRequest* request,
-                  ProcessMngReply* reply) override 
+    ProcessMngReply* reply) override 
   {
     return Status::OK;
   }
 
   Status GetTaskStatus(ServerContext* context, const ProcessMngRequest* request,
-                  ProcessMngReply* reply) override 
+    ProcessMngReply* reply) override 
   {
     return Status::OK;
   }
