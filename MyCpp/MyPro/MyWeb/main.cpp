@@ -56,7 +56,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       if(WIFEXITED(t_iStatus))
       {
         LOG_INFO<< "Return code is "<< WEXITSTATUS(t_iStatus)<< endl;
-        reply->set_returncode(0); 
+        reply->set_returncode(0);
         return Status::OK;
       }
       else 
