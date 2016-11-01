@@ -57,7 +57,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     {
       LOG_ERROR<< "Fork error."<< endl;
       reply->set_returncode("-1"); 
-      return Status::UNKNOWN;
+      return Status::OK;
     }
     else if(0 == t_pid)
     {
@@ -65,7 +65,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       t_oProcessStat.m_iConditionId = t_iConditionId;
       t_oProcessStat.m_iPid = t_pid;
       t_oProcessStat.m_iPStat = PSTATUS::STARTING;
-      m_listProcess.insert(make_pair(t_oProcessStat.m_iConditionId, t_oProcessStat));
+      m_mapProcess.insert(make_pair(t_oProcessStat.m_iConditionId, t_oProcessStat));
            
       char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
       execv(t_sBinPath.c_str(), arg);
@@ -87,7 +87,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       {
         LOG_INFO<< "Child process exit abnormally "<< WEXITSTATUS(t_iStatus)<< endl;
         reply->set_returncode(MMyLib::itoa(WEXITSTATUS(t_iStatus))); 
-        return Status::UNKNOWN;
+        return Status::OK;
       }
     }
     return Status::OK;
