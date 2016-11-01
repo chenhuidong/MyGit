@@ -28,6 +28,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
   {
     //std::string prefix("Hello ");
     //reply->set_message(prefix + request->name());
+    /*
     string t_sBinPath = getBinPath();
     t_sBinPath += "/MyFrame";
     LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
@@ -65,7 +66,9 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
         reply->set_returncode(-1); 
         return Status::CANCELLED;
       }
-    }
+    }*/
+    reply->set_returncode(0);
+    return Status::OK;
   }
 
   Status EndTask(ServerContext* context, const ProcessMngRequest* request,
