@@ -20,30 +20,53 @@ using processmng::ProcessMngRequest;
 using processmng::ProcessMngReply;
 using processmng::ProcessMng;
 
+enum PSTATUS
+{
+  STARTING = 0,
+  STARTUP = 1,
+  STARTFAILED = 2,
+  STOPING = 3,
+  STOP = 4,
+  STOPFAILED = 5,
+};
+
+struct ProcessStat
+{
+public:
+  int m_iConditionId;
+  int m_iPid;
+  PSTATUS m_iPStat;
+};
+
+typedef map<int,ProcessStat> ProcessMap;
+
 // Logic and data behind the server's behavior.
 class ProcessMngServiceImpl final : public ProcessMng::Service 
 {
   Status BeginTask(ServerContext* context, const ProcessMngRequest* request,
     ProcessMngReply* reply) override 
-  {
-    //std::string prefix("Hello ");
-    //reply->set_message(prefix + request->name());
-    
+  {   
     string t_sBinPath = getBinPath();
     t_sBinPath += "/MyFrame";
-    LOG_INFO<< "Exec file path is "<< t_sBinPath<< endl;
+    LOG_INFO<< "Exec file path is "<< t_sBinPath<< " ."<< endl;
+
+    int t_iConditionId = request->conditionid();
 
     int t_pid = fork(); 
     if(t_pid < 0)
     {
       LOG_ERROR<< "Fork error."<< endl;
-      return Status::CANCELLED;
+      reply->set_returncode("-1"); 
+      return Status::UNKNOWN;
     }
     else if(0 == t_pid)
     {
-      int t_iConditionId = request->conditionid();
-      //LOG_INFO<< "Condition id is "<< t_iConditionId<< endl;
-      
+      ProcessStat t_oProcessStat;
+      t_oProcessStat.m_iConditionId = t_iConditionId;
+      t_oProcessStat.m_iPid = t_pid;
+      t_oProcessStat.m_iPStat = PSTATUS::STARTING;
+      m_listProcess.insert(make_pair(t_oProcessStat.m_iConditionId, t_oProcessStat));
+           
       char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
       execv(t_sBinPath.c_str(), arg);
       exit(-1);
@@ -56,7 +79,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       waitpid(t_pid, &t_iStatus, 0);
       if(WIFEXITED(t_iStatus))
       {
-        LOG_INFO<< "Return code is "<< WEXITSTATUS(t_iStatus)<< endl;
+        LOG_INFO<< "Exec success, Return code is "<< WEXITSTATUS(t_iStatus)<< " ."<< endl;
         reply->set_returncode(MMyLib::itoa(WEXITSTATUS(t_iStatus)));
         return Status::OK;
       }
@@ -64,7 +87,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       {
         LOG_INFO<< "Child process exit abnormally "<< WEXITSTATUS(t_iStatus)<< endl;
         reply->set_returncode(MMyLib::itoa(WEXITSTATUS(t_iStatus))); 
-        return Status::CANCELLED;
+        return Status::UNKNOWN;
       }
     }
     return Status::OK;
@@ -73,6 +96,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
   Status EndTask(ServerContext* context, const ProcessMngRequest* request,
     ProcessMngReply* reply) override 
   {
+
     return Status::OK;
   }
 
@@ -81,6 +105,9 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
   {
     return Status::OK;
   }
+
+private:
+  ProcessMap m_mapProcess;
 };
 
 void RunServer() 
