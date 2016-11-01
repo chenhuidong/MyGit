@@ -11,10 +11,9 @@ function BeginTask($name)
     $request->setConditionid($name);
     list($reply, $status) = $client->BeginTask($request)->wait();
     $returncode = $reply->getReturncode();
-    echo $returncode;
     return $returncode;
 }
 
 //$name = !empty($argv[1]) ? $argv[1] : 'world';
-echo BeginTask(15);
+echo BeginTask(15)."\n";
                           
