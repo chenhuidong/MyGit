@@ -18,6 +18,6 @@ message ProcessMngRequest {
 }
 
 message ProcessMngReply {
-  int32 returncode=1;
+  message returncode=1;
 }
 
