@@ -57,13 +57,13 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       if(WIFEXITED(t_iStatus))
       {
         LOG_INFO<< "Return code is "<< WEXITSTATUS(t_iStatus)<< endl;
-        reply->set_returncode(itoa(WEXITSTATUS(t_iStatus));
+        reply->set_returncode(MMyLib::itoa(WEXITSTATUS(t_iStatus));
         return Status::OK;
       }
       else 
       {
         LOG_INFO<< "Child process exit abnormally "<< WEXITSTATUS(t_iStatus)<< endl;
-        reply->set_returncode(itoa(WEXITSTATUS(t_iStatus)); 
+        reply->set_returncode(MMyLib::itoa(WEXITSTATUS(t_iStatus)); 
         return Status::CANCELLED;
       }
     }
