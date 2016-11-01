@@ -18,6 +18,6 @@ message ProcessMngRequest {
 }
 
 message ProcessMngReply {
-  message returncode=1;
+  string returncode=1;
 }
 
