@@ -10,13 +10,11 @@ function BeginTask($name)
     $request = new ProcessMng\ProcessMngRequest();
     $request->setConditionid($name);
     list($reply, $status) = $client->BeginTask($request)->wait();
-    $hasreturn =$reply->hasReturncode();
-    echo $hasreturn;
     $returncode = $reply->getReturncode();
     echo $returncode;
     return $returncode;
 }
 
 //$name = !empty($argv[1]) ? $argv[1] : 'world';
-BeginTask(15);
+echo BeginTask(15);
                           
