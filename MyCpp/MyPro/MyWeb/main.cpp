@@ -67,7 +67,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
         return Status::CANCELLED;
       }
     }*/
-    reply->set_returncode(0);
+    reply->set_returncode(10);
     return Status::OK;
   }
 
