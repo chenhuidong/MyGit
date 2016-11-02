@@ -66,7 +66,8 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       t_oProcessStat.m_iPid = t_pid;
       t_oProcessStat.m_iPStat = PSTATUS::STARTING;
       m_mapProcess.insert(make_pair(t_oProcessStat.m_iConditionId, t_oProcessStat));
-           
+      
+      sleep(20);    
       char *arg[]={"MyFrame",(char *)MMyLib::itoa(t_iConditionId).c_str(),NULL};
       execv(t_sBinPath.c_str(), arg);
       exit(-1);
