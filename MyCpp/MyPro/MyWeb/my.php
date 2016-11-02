@@ -2,13 +2,13 @@
 require dirname(__FILE__).'/vendor/autoload.php';
 require dirname(__FILE__).'/ProcessMng.php';
 
-$client = new ProcessMng\ProcessMngClient('localhost:54321', 
-	['credentials' => Grpc\ChannelCredentials::createInsecure(),]);
-$request = new ProcessMng\ProcessMngRequest();
+
 
 function BeginTask($name)
 {
-
+	$client = new ProcessMng\ProcessMngClient('localhost:54321', 
+		['credentials' => Grpc\ChannelCredentials::createInsecure(),]);
+	$request = new ProcessMng\ProcessMngRequest();
     $request->setConditionid($name);
     list($reply, $status) = $client->BeginTask($request)->wait();
     $returncode = $reply->getReturncode();
@@ -17,6 +17,9 @@ function BeginTask($name)
 
 function EndTask($name)
 {
+	$client = new ProcessMng\ProcessMngClient('localhost:54321', 
+		['credentials' => Grpc\ChannelCredentials::createInsecure(),]);
+	$request = new ProcessMng\ProcessMngRequest();	
     $request->setConditionid($name);
     list($reply, $status) = $client->EndTask($request)->wait();
     $returncode = $reply->getReturncode();
