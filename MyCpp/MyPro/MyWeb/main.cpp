@@ -26,7 +26,7 @@ enum PSTATUS
   STARTUP = 1,
   STARTFAILED = 2,
   STOPING = 3,
-  STOP = 4,
+  STOPED = 4,
   STOPFAILED = 5,
 };
 
@@ -74,18 +74,20 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
     else
     {
       LOG_INFO<< "Wait my son task."<< endl;
-      int t_iStatus;
+      int t_iStatus = 0;
 
       waitpid(t_pid, &t_iStatus, 0);
       if(WIFEXITED(t_iStatus))
       {
+        m_mapProcess[t_iConditionId].m_iPStat = PSTATUS::STOPED;
         LOG_INFO<< "Exec success, Return code is "<< WEXITSTATUS(t_iStatus)<< " ."<< endl;
         reply->set_returncode(MMyLib::itoa(WEXITSTATUS(t_iStatus)));
         return Status::OK;
       }
       else 
       {
-        LOG_INFO<< "Child process exit abnormally "<< WEXITSTATUS(t_iStatus)<< endl;
+        m_mapProcess[t_iConditionId].m_iPStat = PSTATUS::STOPED;
+        LOG_ERROR<< "Child process exit abnormally "<< WEXITSTATUS(t_iStatus)<< endl;
         reply->set_returncode(MMyLib::itoa(WEXITSTATUS(t_iStatus))); 
         return Status::OK;
       }
@@ -96,7 +98,18 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
   Status EndTask(ServerContext* context, const ProcessMngRequest* request,
     ProcessMngReply* reply) override 
   {
+    int t_iConditionId = request->conditionid();
+    int t_iPid = m_mapProcess[t_iConditionId].m_iPid;
+    int t_iStatus = 0;
 
+    if(kill(t_iPid, SIGINT))
+    {
+      waitpid(t_iPid, &t_iStatus, 0);
+      LOG_ERROR<< "kill "<< t_iConditionId<< " failed."<< endl;
+      reply->set_returncode("-1");
+    }
+    LOG_INFO<< "Kill success."<< end;
+    reply->set_returncode("0");
     return Status::OK;
   }
 
