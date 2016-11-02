@@ -108,7 +108,7 @@ class ProcessMngServiceImpl final : public ProcessMng::Service
       LOG_ERROR<< "kill "<< t_iConditionId<< " failed."<< endl;
       reply->set_returncode("-1");
     }
-    LOG_INFO<< "Kill success."<< end;
+    LOG_INFO<< "Kill success."<< endl;
     reply->set_returncode("0");
     return Status::OK;
   }
