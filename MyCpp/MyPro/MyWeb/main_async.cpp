@@ -114,7 +114,7 @@ private:
         // The actual processing.
         //std::string prefix("Hello ");
         //reply_.set_message(prefix + request_.name());
-        reply_->set_returncode("0");
+        reply_.set_returncode("0");
 
         // And we are done! Let the gRPC runtime know we've finished, using the
         // memory address of this instance as the uniquely identifying tag for
