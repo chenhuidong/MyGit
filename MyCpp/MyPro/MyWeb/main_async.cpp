@@ -13,8 +13,10 @@ using namespace MMyLib;
 #include <stdlib.h> 
 
 using grpc::Server;
+using grpc::ServerAsyncResponseWriter;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
+using grpc::ServerCompletionQueue;
 using grpc::Status;
 using processmng::ProcessMngRequest;
 using processmng::ProcessMngReply;
