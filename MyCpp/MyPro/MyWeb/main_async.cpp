@@ -43,6 +43,15 @@ public:
 
 typedef map<int,ProcessStat> ProcessMap;
 
+#define GPR_ASSERT(x)                                 \
+  do {                                                \
+    if (!(x)) {                                       \
+      gpr_log(GPR_ERROR, "assertion failed: %s", #x); \
+      abort();                                        \
+    }                                                 \
+  } while (0)
+
+
 class ServerImpl final 
 {
 public:
@@ -125,7 +134,7 @@ private:
       } 
       else 
       {
-        //GPR_ASSERT(status_ == FINISH);
+        GPR_ASSERT(status_ == FINISH);
         // Once in the FINISH state, deallocate ourselves (CallData).
         delete this;
       }
@@ -169,8 +178,8 @@ private:
       // memory address of a CallData instance.
       // The return value of Next should always be checked. This return value
       // tells us whether there is any kind of event or cq_ is shutting down.
-      //GPR_ASSERT(cq_->Next(&tag, &ok));
-      //GPR_ASSERT(ok);
+      GPR_ASSERT(cq_->Next(&tag, &ok));
+      GPR_ASSERT(ok);
       static_cast<CallData*>(tag)->Proceed();
     }
   }
