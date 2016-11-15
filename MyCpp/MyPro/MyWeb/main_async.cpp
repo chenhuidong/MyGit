@@ -46,7 +46,7 @@ typedef map<int,ProcessStat> ProcessMap;
 #define GPR_ASSERT(x)                                 \
   do {                                                \
     if (!(x)) {                                       \
-      LOG_ERROR<< "assertion failed: %s", #x);        \
+      LOG_ERROR<< "assertion failed: "<< x;        \
       abort();                                        \
     }                                                 \
   } while (0)
