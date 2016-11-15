@@ -25,7 +25,10 @@ vpath %.proto $(PROTOS_PATH)
 all: system-check main MyFrame
 #greeter_client greeter_server
 
-main: ProcessMng.pb.o ProcessMng.grpc.pb.o main.o
+#main: ProcessMng.pb.o ProcessMng.grpc.pb.o main.o
+#	$(CXX) $^ $(LDFLAGS) $(LDFLAGSEX) -o $@ 
+
+main: ProcessMng.pb.o ProcessMng.grpc.pb.o main_async.o
 	$(CXX) $^ $(LDFLAGS) $(LDFLAGSEX) -o $@ 
 
 MyFrame:
