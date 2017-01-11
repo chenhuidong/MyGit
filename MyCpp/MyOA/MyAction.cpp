@@ -2,7 +2,7 @@
 
 int MyAction::Initialize(const char* in_sLogName, MyDb::DbType in_eDbType, const char* in_sDbName)
 {
-    INITIALIZE_LOG(in_sLogName);
+    MMyLib::INITIALIZE_LOG(in_sLogName);
     LOG_INFO<< "initialize log success.";
 
     InitializeDb(in_eDbType, in_sDbName);
