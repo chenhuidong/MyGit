@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 	
 	//mysql
 	t_oMyAction.Initialize("MyOA.log", MyDb::MySQL, \
-		"host=124.161.110.68;port=3306;user=chenhuidong;password=Chenhd@443420;db=public;compress=true;auto-reconnect=true");
+		"host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public;compress=true;auto-reconnect=true");
 	LOG_INFO<< "MyOA begin.";
 	try
 	{
