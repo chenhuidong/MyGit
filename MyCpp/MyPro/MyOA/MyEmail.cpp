@@ -3,6 +3,7 @@
 Poco::AtomicCounter MyEmail::m_oEmployeeCounter;
 Poco::AtomicCounter MyEmail::m_oEmailCounter;
 
+/*
 int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
 {
   LOG_INFO<< "Create html begin.";
@@ -192,7 +193,7 @@ int MyEmail::CreateHtml(Employee &in_oEmployee, Salary &in_oSalary)
   LOG_INFO<< "Create html end.";
 	return 0;
 }
-
+*/
 int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salary &in_oSalary)
 {
   LOG_INFO<< "Create email begin.";
@@ -212,7 +213,7 @@ int MyEmail::CreateEmail(MailMessage &in_oMessage, Employee &in_oEmployee, Salar
 	content += "您好：\r\n";
 	content += "附件为您的本月工资条。\r\n\r\n";
 	in_oMessage.addContent(new StringPartSource(content));
-	CreateHtml(in_oEmployee, in_oSalary);
+	//CreateHtml(in_oEmployee, in_oSalary);
 
   char t_sEmpno[BUFFSIZE] = {0};
   snprintf(t_sEmpno, sizeof(t_sEmpno), "%d", t_iEmpno);  
@@ -281,7 +282,7 @@ void MyEmail::SendEmail(void *in_pMyDatas)
       CreateEmail(t_oMessage, t_pMyDatas->m_oEmployees[t_iEmployeeIndex], *t_itSalary); 
       //t_oSession.sendMessage(t_oMessage);
       
-      sleep(1);
+      sleep(3);
       t_iEmployeeIndex = MyEmail::GetEmployeeCounter();
     }
     t_oSession.close();

@@ -96,6 +96,7 @@ int MyAction::InsertData()
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Salarys VALUES(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oSalarys);
 
+    /*
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Employees (Empno, Name, Email) VALUES(%d, \'%s\', \'%s\')", 2, "chenhd2", "chdyczx@live.com");
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oEmployees);
 
@@ -110,7 +111,7 @@ int MyAction::InsertData()
 
     snprintf(iSQL, sizeof(iSQL), "INSERT INTO Salarys VALUES(%d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 3, 32, 33, 34, 35, 36, 37, 38, 39, 310, 311, 312);
     m_oMyDb.ExecuteSQL(iSQL, m_oMyDatas.m_oSalarys);
-
+    */
     return 0;
 }
 

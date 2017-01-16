@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 	{
 		t_oMyAction.InsertData();
 		t_oMyAction.SelectData();
-		//t_oMyAction.SendEmail();
+		t_oMyAction.SendEmail();
 		t_oMyAction.Uninitialize();
 		LOG_INFO<< "MyOA end.";
 	}
