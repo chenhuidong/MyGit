@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+d = {'Mich':95, 'Bob':75, 'Tracy':50}
+print d['Mich']
