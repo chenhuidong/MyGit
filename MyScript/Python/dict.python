@@ -7,4 +7,4 @@ print d['Mich']
 d['Adam'] = 67
 print d
 
-'Adam' in d
+print 'Adam' in d
