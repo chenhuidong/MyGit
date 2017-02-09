@@ -7,3 +7,11 @@ print int('123')
 print str(123)
 bool(1)
 bool('')
+
+def my_abs(x):
+	if x>=0:
+		return x
+	else:
+		return -x
+
+print my_abs(-30)
