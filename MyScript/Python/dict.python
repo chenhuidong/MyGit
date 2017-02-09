@@ -11,3 +11,6 @@ print 'Adam' in d
 
 print d.get('Bob')
 print d.get('Bob1',-1)
+
+s = set([1,2,3])
+print s
