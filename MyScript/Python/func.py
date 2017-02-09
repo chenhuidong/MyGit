@@ -15,3 +15,21 @@ def my_abs(x):
 		return -x
 
 print my_abs(-30)
+
+def nop():
+	pass
+
+def add_end(L=None):
+    if L is None:
+        L = []
+    L.append('END')
+    return L
+
+def calc(*numbers):
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+
+nums = [1, 2, 3]
+print calc(*nums)
