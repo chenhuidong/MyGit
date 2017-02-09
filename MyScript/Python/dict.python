@@ -8,3 +8,6 @@ d['Adam'] = 67
 print d
 
 print 'Adam' in d
+
+print d.get('Bob')
+print d.get('Bob1',-1)
