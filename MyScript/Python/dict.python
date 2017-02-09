@@ -3,3 +3,6 @@
 
 d = {'Mich':95, 'Bob':75, 'Tracy':50}
 print d['Mich']
+
+d['Adam'] = 67
+print d
