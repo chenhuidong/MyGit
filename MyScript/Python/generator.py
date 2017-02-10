@@ -14,4 +14,6 @@ def fib(max):
         a, b = b, a + b
         n = n + 1
 
-print fib(6)
+g = fib(6)
+for n in g:
+	print n
