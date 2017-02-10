@@ -7,3 +7,8 @@ for key in d:
 
 for k, v in d.iteritems():
 	print k, '=', v
+
+print [k + '=' + v for k, v in d.iteritems()]
+
+L = ['Hello', 'World', 'IBM', 'Apple']
+print [s.lower() for s in L]
