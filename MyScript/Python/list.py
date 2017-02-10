@@ -21,3 +21,10 @@ print L
 s = ['python', 'java', ['asp', 'php'], 'scheme']
 print s
 print len(s)
+
+print range(1, 11)
+print [x * x for x in range(1, 11)]
+print [m + n for m in 'ABC' for n in 'XYZ']
+
+import os
+print [d for d in os.listdir('.')]
