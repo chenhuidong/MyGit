@@ -44,3 +44,18 @@ func(1, 2, 3, 'a', 'b', x=99)
 args = (1, 2, 3, 4)
 kw = {'x': 99}
 func(*args, **kw)
+
+def fact(n):
+    if n==1:
+        return 1
+    return n * fact(n - 1)
+fact(5)
+
+
+def fact1(n):
+    return fact_iter(n, 1)
+
+def fact_iter(num, product):
+    if num == 1:
+        return product
+    return fact_iter(num - 1, num * product)
