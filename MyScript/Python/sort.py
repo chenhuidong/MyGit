@@ -22,4 +22,4 @@ def cmp_ignore_case(s1, s2):
         return 1
     return 0
 
-sorted(['bob', 'about', 'Zoo', 'Credit'], cmp_ignore_case)
+print sorted(['bob', 'about', 'Zoo', 'Credit'], cmp_ignore_case)
