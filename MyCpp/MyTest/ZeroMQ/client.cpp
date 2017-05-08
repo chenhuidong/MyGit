@@ -6,7 +6,7 @@ int main(int argc, char * argv[])
 {
     void * pCtx = NULL;
     void * pSock = NULL;
-    const char * pAddr = "tcp://*:7766";
+    const char * pAddr = "tcp://127.0.0.1:54321";
 
     //创建context，zmq的socket 需要在context上进行创建 
     if((pCtx = zmq_ctx_new()) == NULL)
