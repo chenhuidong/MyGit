@@ -49,7 +49,6 @@ int main(int argc, char * argv[])
             continue;
         }
         printf("send message : [%s] succeed\n", szMsg);
-        getchar();
     }
 
     return 0;
