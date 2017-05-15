@@ -22,6 +22,6 @@ static void my_op(int signo)
 int main(int argc, char* argv[])
 {
 	signal(SIG_RECVDATA, my_op);
-	sleep(20);
+	sleep(50);
 	return 0;
 }
