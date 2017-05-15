@@ -5,9 +5,18 @@ using namespace std;
 
 #define SIG_RECVDATA __SIGRTMIN+10
 
-static void my_op(int)
+static void my_op(int signo)
 {
-	cout<< "my op"<< endl;
+	cout<< "my op begin"<< endl;
+	switch(signo)
+	{
+		case SIG_RECVDATA:
+			cout<< "SIG_RECVDATA"<< endl;
+			break;
+		default:
+			cout<< "else"<< endl;
+	}
+	cout<< "my op end"<< endl;
 }
 
 int main(int argc, char* argv[])
