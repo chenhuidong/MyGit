@@ -1,5 +1,7 @@
 #include "signal.h"
 #include "unistd.h"
+#include <iostream>
+using namespace std;
 
 #define SIG_RECVDATA __SIGRTMIN+10
 
