@@ -91,6 +91,7 @@
 #define	SERV_PORT		 54321			/* TCP and UDP */
 #define	SERV_PORT_STR	"54321"			/* TCP and UDP */
 #define	SA	struct sockaddr
+#define OPEN_MAX 10
 
 int
 main(int argc, char **argv)
@@ -123,7 +124,7 @@ main(int argc, char **argv)
 
 /* include fig02 */
 	for ( ; ; ) {
-		nready = poll(client, maxi+1, INFTIM);
+		nready = poll(client, maxi+1, -1);
 
 		if (client[0].revents & POLLRDNORM) {	/* new client connection */
 			clilen = sizeof(cliaddr);
