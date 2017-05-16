@@ -90,6 +90,7 @@
 /* Define some port number that can be used for our examples */
 #define	SERV_PORT		 54321			/* TCP and UDP */
 #define	SERV_PORT_STR	"54321"			/* TCP and UDP */
+#define	SA	struct sockaddr
 
 int
 main(int argc, char **argv)
