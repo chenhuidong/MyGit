@@ -81,6 +81,16 @@
 #endif
 #include	<limits.h>		/* for OPEN_MAX */
 
+#define	LISTENQ		1024	/* 2nd argument to listen() */
+
+/* Miscellaneous constants */
+#define	MAXLINE		4096	/* max text line length */
+#define	BUFFSIZE	8192	/* buffer size for reads and writes */
+
+/* Define some port number that can be used for our examples */
+#define	SERV_PORT		 54321			/* TCP and UDP */
+#define	SERV_PORT_STR	"54321"			/* TCP and UDP */
+
 int
 main(int argc, char **argv)
 {
