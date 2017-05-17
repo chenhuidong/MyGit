@@ -184,7 +184,7 @@ int server(const char *url)
         memcpy (&timer, body, sizeof (timer));
         nn_freemsg (body);
 
-        work = (work *)malloc (sizeof (*work));
+        work = (struct work *)malloc (sizeof (*work));
         if (work == NULL) {
             fprintf (stderr, "malloc: %s\n", strerror (errno));
             /*  Fatal error -- other programs can try to handle it better. */
