@@ -48,6 +48,7 @@
 
 #include <nanomsg/nn.h>
 #include <nanomsg/reqrep.h>
+#include <arpa/inet.h>
 
 /*  MAXJOBS is a limit on the on the number of outstanding requests we
     can queue.  We will not accept new inbound jobs if we have more than
@@ -183,7 +184,7 @@ int server(const char *url)
         memcpy (&timer, body, sizeof (timer));
         nn_freemsg (body);
 
-        work = (work *) malloc (sizeof (*work));
+        work = (work *)( malloc (sizeof (*work)));
         if (work == NULL) {
             fprintf (stderr, "malloc: %s\n", strerror (errno));
             /*  Fatal error -- other programs can try to handle it better. */
