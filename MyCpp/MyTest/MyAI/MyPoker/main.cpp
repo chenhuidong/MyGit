@@ -10,7 +10,7 @@ static void sig_handler(int)
 	for(;;)
 	{
 		t_iWpid = waitpid(-1, &t_iStat, WNOHANG);
-		if(t_iWpid <= 0)
+		if(t_iWpid < 0)
 		{
 			break;
 		}
