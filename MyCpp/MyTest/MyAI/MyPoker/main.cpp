@@ -16,6 +16,11 @@ static void sig_handler(int)
 		}
 		else
 		{
+			printf("The child process has not exited \n");  
+            sleep(1);  
+		}
+		else
+		{
 			printf("child %d terminated\n", t_iWpid);
 		}
 	}
