@@ -6,7 +6,7 @@ using namespace mypoker;
 int main(int argc, char** argv)
 {
 	pid_t t_iPid, t_iWpid;
-	int	t_iStat; 
+	int   t_iStat; 
 
 	for(int i=0; i<PLAYER_NUM; ++i)
 	{
@@ -29,10 +29,10 @@ int main(int argc, char** argv)
 		printf("child %d terminated\n", t_iWpid);
 
 		if (WIFEXITED(t_iStat))  
-        	printf("Child %ld terminated normally return status is %d\n",  
+        	printf("Child %d terminated normally return status is %d\n",  
             	t_iWpid, WEXITSTATUS(t_iStat));  
     	else if (WIFSIGNALED(t_iStat));  
-    		printf("Child %ld terminated due to signal %d znot caught\n",  
+    		printf("Child %d terminated due to signal %d znot caught\n",  
             	t_iWpid, WTERMSIG(t_iStat));  
 	} 
 
