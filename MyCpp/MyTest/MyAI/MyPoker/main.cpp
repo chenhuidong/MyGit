@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 	}
 
 	cout<< "parent"<< endl;
-	while((t_iWpid = waitpid(-1, &t_iStat, WNOHANG)) >= 0)
+	while((t_iWpid = waitpid(-1, &t_iStat, WNOHANG)) > 0)
 	{ 
 		printf("child %d terminated\n", t_iWpid);
 	} 
