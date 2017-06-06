@@ -7,31 +7,14 @@ static void sig_handler(int)
 {
 	pid_t t_iWpid;
 	int   t_iStat; 
-	t_iWpid = waitpid(-1, &t_iStat, WNOHANG);
-	if(t_iWpid == 0)
+	for(;;)
 	{
-		printf("The child process has not exited \n");  
-		sleep(1);  
+		t_iWpid = waitpid(-1, &t_iStat, WNOHANG);
+		if(t_iWpid <= 0)
+		{
+			break;
+		}
 	}
-	else if(t_iWpid > 0)
-	{
-		printf("child %d terminated\n", t_iWpid);
-	}
-	else
-	{
-		if (WIFEXITED(t_iStat))  
-			printf("Child %d terminated normally return status is %d\n",  
-				t_iWpid, WEXITSTATUS(t_iStat));  
-		else if (WIFSIGNALED(t_iStat));  
-		printf("Child %d terminated due to signal %d znot caught\n",  
-			t_iWpid, WTERMSIG(t_iStat));  
-	}
-
-	if(signal(SIGCHLD, sig_handler) == SIG_ERR)  
-    {  
-        printf("signal error : %s\n", strerror(errno));  
-        return;
-    }
 }
 
 int main(int argc, char** argv)
@@ -54,7 +37,7 @@ int main(int argc, char** argv)
 		}
 		else if(t_iPid == 0)
 		{
-			cout<< "child "<< t_iPid<< endl;
+			cout<< "child "<< getpid()<< endl;
 			sleep(10);
 			return 0;
 		}
