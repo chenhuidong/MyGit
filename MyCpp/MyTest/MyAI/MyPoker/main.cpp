@@ -7,24 +7,17 @@ static void sig_handler(int)
 {
 	pid_t t_iWpid;
 	int   t_iStat; 
-	for(;;)
-	{
-		t_iWpid = waitpid(-1, &t_iStat, WNOHANG);
-		if(t_iWpid < 0)
-		{
-			break;
-		}
-		else if(t_iWpid == 0)
-		{
-			printf("The child process has not exited \n");  
-            sleep(1);  
-		}
-		else
-		{
-			printf("child %d terminated\n", t_iWpid);
-		}
-	}
-}
+
+    while( (t_iWpid = waitpid(-1,&t_iStat,WNOHANG)) > 0)  
+    {  
+      if ( WIFEXITED(t_iStat) )  
+      {  
+          printf("child process revoked. pid[%6d], exit code[%d]\n",t_iWpid,WEXITSTATUS(t_iStat));  
+      }  
+      else  
+         printf("child process revoked.but ...\n");  
+    } 
+} 
 
 int main(int argc, char** argv)
 {
