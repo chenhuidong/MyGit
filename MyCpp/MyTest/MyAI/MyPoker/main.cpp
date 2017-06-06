@@ -35,7 +35,7 @@ int main(int argc, char** argv)
 		}
 		else if(t_iWpid > 0)
 		{
-			printf("child %d terminated\n", t_iWpid);
+			printf("child %d terminated\n", getpid());
 		}
 		else
 		{
