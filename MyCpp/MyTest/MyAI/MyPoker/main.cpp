@@ -28,14 +28,14 @@ int main(int argc, char** argv)
 	while((t_iWpid = waitpid(-1, &t_iStat, WNOHANG)) >= 0)
 	{ 
 		printf("child %d terminated\n", t_iWpid);
-
-		if (WIFEXITED(t_iStat))  
-        	printf("Child %d terminated normally return status is %d\n",  
-            	t_iWpid, WEXITSTATUS(t_iStat));  
-    	else if (WIFSIGNALED(t_iStat));  
-    		printf("Child %d terminated due to signal %d znot caught\n",  
-            	t_iWpid, WTERMSIG(t_iStat));  
 	} 
+
+	if (WIFEXITED(t_iStat))  
+		printf("Child %d terminated normally return status is %d\n",  
+			t_iWpid, WEXITSTATUS(t_iStat));  
+	else if (WIFSIGNALED(t_iStat));  
+		printf("Child %d terminated due to signal %d znot caught\n",  
+			t_iWpid, WTERMSIG(t_iStat));  
 
 	return 0;
 }
