@@ -40,13 +40,17 @@ int main(int argc, char** argv)
 		else if(t_iPid == 0)
 		{
 			cout<< "child "<< getpid()<< endl;
-			sleep(10);
+			sleep(5);
 			return 0;
 		}
 	}
 
 	cout<< "parent"<< endl;
-	sleep(20);
+	sleep(5);
+	sleep(5);
+	sleep(5);
+	sleep(5);
+	sleep(5);
 	/*
 	do
 	{ 
