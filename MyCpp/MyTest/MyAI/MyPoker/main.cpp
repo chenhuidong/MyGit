@@ -25,10 +25,19 @@ int main(int argc, char** argv)
 	}
 
 	cout<< "parent"<< endl;
-	while((t_iWpid = waitpid(-1, &t_iStat, WNOHANG)) > 0)
+	do
 	{ 
-		printf("child %d terminated\n", t_iWpid);
-	} 
+		t_iWpid = waitpid(-1, &t_iStat, WNOHANG);
+		if(t_iWpid == 0)
+		{
+			printf("The child process has not exited \n");  
+            sleep(1);  
+		}
+		else if(t_iWpid > 0)
+		{
+			printf("child %d terminated\n", t_iWpid);
+		}
+	}while(t_iWpid >= 0);
 
 	if (WIFEXITED(t_iStat))  
 		printf("Child %d terminated normally return status is %d\n",  
