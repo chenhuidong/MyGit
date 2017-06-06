@@ -46,6 +46,8 @@ int main(int argc, char** argv)
 	}
 
 	cout<< "parent"<< endl;
+	int status = 0;  
+    int tt = wait(&status);
 	/*
 	do
 	{ 
