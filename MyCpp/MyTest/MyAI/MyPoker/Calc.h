@@ -2,5 +2,5 @@
 #define _MYPOKER_CALC_H_
 namespace mypocker
 {
-}
+};
 #endif

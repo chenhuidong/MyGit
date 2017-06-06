@@ -2,5 +2,5 @@
 #define _MYPOKER_DISCARD_H_
 namespace mypocker
 {
-}
+};
 #endif

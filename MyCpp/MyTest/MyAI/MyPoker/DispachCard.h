@@ -2,6 +2,5 @@
 #define _MYPOKER_DISPACH_CARD_H_
 namespace mypocker
 {
-#define PLAYER_NUM 4
-}
+};
 #endif

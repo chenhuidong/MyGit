@@ -4,5 +4,5 @@
 namespace mypocker
 {
 #define PLAYER_NUM 4
-}
+};
 #endif
