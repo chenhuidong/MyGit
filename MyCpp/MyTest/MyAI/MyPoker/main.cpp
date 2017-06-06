@@ -6,6 +6,7 @@ using namespace mypoker;
 static void sig_handler(int)
 {
 	pid_t t_iWpid;
+	int   t_iStat; 
 	t_iWpid = waitpid(-1, &t_iStat, WNOHANG);
 	if(t_iWpid == 0)
 	{
@@ -27,7 +28,6 @@ int main(int argc, char** argv)
     } 
 
 	pid_t t_iPid, t_iWpid;
-	int   t_iStat; 
 
 	for(int i=0; i<PLAYER_NUM; ++i)
 	{
