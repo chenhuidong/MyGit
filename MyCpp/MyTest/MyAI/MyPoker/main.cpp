@@ -17,6 +17,21 @@ static void sig_handler(int)
 	{
 		printf("child %d terminated\n", t_iWpid);
 	}
+	else
+	{
+		if (WIFEXITED(t_iStat))  
+			printf("Child %d terminated normally return status is %d\n",  
+				t_iWpid, WEXITSTATUS(t_iStat));  
+		else if (WIFSIGNALED(t_iStat));  
+		printf("Child %d terminated due to signal %d znot caught\n",  
+			t_iWpid, WTERMSIG(t_iStat));  
+	}
+
+	if(signal(SIGCHLD, sig_handler) == SIG_ERR)  
+    {  
+        printf("signal error : %s\n", strerror(errno));  
+        return 1;
+    }
 }
 
 int main(int argc, char** argv)
