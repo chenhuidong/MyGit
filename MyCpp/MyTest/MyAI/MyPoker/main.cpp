@@ -14,17 +14,18 @@ int main(int argc, char** argv)
 		if(t_iPid < 0)
 		{
 			cout<< "fork error."<< endl;
+			exit(1);
 		}
 		else if(t_iPid == 0)
 		{
-			cout<< "child "<< i<< endl;
+			cout<< "child "<< t_iPid<< endl;
 			sleep(10);
-			return 0;
+			exit(0);
 		}
 	}
 
 	cout<< "parent"<< endl;
-	while((t_iWpid = waitpid(-1, &t_iStat, WNOHANG)) > 0)
+	while((t_iWpid = waitpid(-1, &t_iStat, WNOHANG)) >= 0)
 	{ 
 		printf("child %d terminated\n", t_iWpid);
 
