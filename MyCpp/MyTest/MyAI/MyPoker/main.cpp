@@ -14,6 +14,10 @@ static void sig_handler(int)
 		{
 			break;
 		}
+		else
+		{
+			printf("child %d terminated\n", t_iWpid);
+		}
 	}
 }
 
