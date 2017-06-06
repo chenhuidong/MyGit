@@ -30,7 +30,7 @@ static void sig_handler(int)
 	if(signal(SIGCHLD, sig_handler) == SIG_ERR)  
     {  
         printf("signal error : %s\n", strerror(errno));  
-        return 1;
+        return;
     }
 }
 
