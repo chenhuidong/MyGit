@@ -61,7 +61,7 @@ int main(int argc, char** argv)
         	//write(STDOUT_FILENO, buf, len); 
         	cout<< buf<< endl;
 			sleep(5);
-			close(fd[0]); 
+			close(t_iFd[0]); 
 			return 0;
 		}
 	}
@@ -96,6 +96,6 @@ int main(int argc, char** argv)
 		//}
 	}while(t_iWpid >= 0);
 
-	close(fd[1]);  
+	close(t_iFd[1]);  
 	return 0;
 }
