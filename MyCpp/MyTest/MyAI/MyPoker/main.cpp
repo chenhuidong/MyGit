@@ -21,12 +21,13 @@ static void sig_handler(int)
 */
 int main(int argc, char** argv)
 {
+	/*
 	if(signal(SIGCHLD, sig_handler) == SIG_ERR)  
     {  
         printf("signal error : %s\n", strerror(errno));  
         return 1;
     } 
-
+	*/
 	pid_t t_iPid, t_iWpid;
 
 	for(int i=0; i<PLAYER_NUM; ++i)
@@ -68,7 +69,6 @@ int main(int argc, char** argv)
 		//		printf("Child %d terminated due to signal %d znot caught\n",  
 		//			t_iWpid, WTERMSIG(t_iStat));  
 		//}
-		
 	}while(t_iWpid >= 0);
 
 	return 0;
