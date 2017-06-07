@@ -46,7 +46,11 @@ int main(int argc, char** argv)
 	}
 
 	cout<< "parent"<< endl;
-	wait(NULL);
+	sleep(3);
+	sleep(3);
+	sleep(3);
+	sleep(3);
+	sleep(3);
 
 	/*
 	do
