@@ -32,13 +32,7 @@ int main(int argc, char** argv)
 	pid_t t_iPid, t_iWpid;
 	int   t_iStat; 
 	vector<int> t_vMyCards;
-	vector<int> t_vDisCards;
-
-	if (pipe(t_iFd) == -1)
-	{
-		cout<< "pipe error."<< endl;
-		return -1;
-	}      
+	vector<int> t_vDisCards;     
 
 	for(int i=0; i<PLAYER_NUM; ++i)
 	{
