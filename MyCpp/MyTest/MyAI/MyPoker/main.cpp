@@ -36,7 +36,7 @@ int main(int argc, char** argv)
 	int t_iFd[2];
 	char *p = "test for pipe\n"; 
 	char buf[1024];
-	
+
 
 	if (pipe(t_iFd) == -1)
 	{
@@ -61,6 +61,7 @@ int main(int argc, char** argv)
         	//write(STDOUT_FILENO, buf, len); 
         	cout<< buf<< endl;
 			sleep(5);
+			close(fd[0]); 
 			return 0;
 		}
 	}
@@ -95,5 +96,6 @@ int main(int argc, char** argv)
 		//}
 	}while(t_iWpid >= 0);
 
+	close(fd[1]);  
 	return 0;
 }
