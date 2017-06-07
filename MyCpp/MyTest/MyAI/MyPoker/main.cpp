@@ -53,7 +53,7 @@ int main(int argc, char** argv)
 		t_iWpid = waitpid(-1, &t_iStat, WNOHANG);
 		if(t_iWpid == 0)
 		{
-			printf("The child process has not exited \n");  
+			//printf("The child process has not exited \n");  
             sleep(1);  
 		}
 		else if(t_iWpid > 0)
