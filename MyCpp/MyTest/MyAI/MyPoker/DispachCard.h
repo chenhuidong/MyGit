@@ -7,7 +7,7 @@ namespace mypoker
 	public:
 		DispachCard(int* in_pFd):m_pFd(in_pFd){};
 		~DispachCard(){};
-		int Dispach();
+		int Dispach(){};
 	private:
 		int* m_pFd;
 	};

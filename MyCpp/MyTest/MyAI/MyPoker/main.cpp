@@ -54,8 +54,8 @@ int main(int argc, char** argv)
 		else if(t_iPid == 0)
 		{
 			cout<< "child "<< getpid()<< endl;
-			close(fd[1]);
-			int len = read(fd[0], buf, sizeof(buf));  
+			close(t_iFd[1]);
+			int len = read(t_iFd[0], buf, sizeof(buf));  
         	//write(STDOUT_FILENO, buf, len); 
         	cout<< buf<< endl;
 			sleep(5);
@@ -66,9 +66,9 @@ int main(int argc, char** argv)
 	//cout<< "parent"<< endl;
 	//DispachCard t_oDispachCard(t_iFd);
 	//t_oDispachCard.Dispach();
-	close(fd[0]);
-	//write(fd[1], 1, sizeof(int));  
-	write(fd[1], p, strlen(p));  
+	close(t_iFd[0]);
+	//write(t_iFd[1], 1, sizeof(int));  
+	write(t_iFd[1], p, strlen(p));  
 
 	do
 	{ 
