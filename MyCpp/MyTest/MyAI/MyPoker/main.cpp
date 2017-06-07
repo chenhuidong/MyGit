@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Enum.h"
+#include "DispachCard.h"
 
 using namespace mypoker;
 /*
@@ -30,6 +31,18 @@ int main(int argc, char** argv)
 	*/
 	pid_t t_iPid, t_iWpid;
 	int   t_iStat; 
+	vector<int> t_vMyCards;
+	vector<int> t_vDisCards;
+	int t_iFd[2];
+	char *p = "test for pipe\n"; 
+
+	if (pipe(t_iFd) == -1)
+	{
+		cout<< "pipe error."<< endl;
+		return -1;
+	}   
+       
+
 	for(int i=0; i<PLAYER_NUM; ++i)
 	{
 		t_iPid = fork();
@@ -41,12 +54,21 @@ int main(int argc, char** argv)
 		else if(t_iPid == 0)
 		{
 			cout<< "child "<< getpid()<< endl;
+			close(fd[1]);
+			int len = read(fd[0], buf, sizeof(buf));  
+        	//write(STDOUT_FILENO, buf, len); 
+        	cout<< buf<< endl;
 			sleep(5);
 			return 0;
 		}
 	}
 
-	cout<< "parent"<< endl;
+	//cout<< "parent"<< endl;
+	//DispachCard t_oDispachCard(t_iFd);
+	//t_oDispachCard.Dispach();
+	close(fd[0]);
+	//write(fd[1], 1, sizeof(int));  
+	write(fd[1], p, strlen(p));  
 
 	do
 	{ 
