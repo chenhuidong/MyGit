@@ -75,8 +75,6 @@ int main(int argc, char** argv)
 		//		printf("Child %d terminated due to signal %d znot caught\n",  
 		//			t_iWpid, WTERMSIG(t_iStat));  
 		//}
-	}while(t_iWpid >= 0);
-
-	close(t_iFd[1]);  
+	}while(t_iWpid >= 0); 
 	return 0;
 }
