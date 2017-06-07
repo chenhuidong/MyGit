@@ -33,17 +33,12 @@ int main(int argc, char** argv)
 	int   t_iStat; 
 	vector<int> t_vMyCards;
 	vector<int> t_vDisCards;
-	int t_iFd[2];
-	char *p = "test for pipe\n"; 
-	char buf[1024];
-
 
 	if (pipe(t_iFd) == -1)
 	{
 		cout<< "pipe error."<< endl;
 		return -1;
-	}   
-       
+	}      
 
 	for(int i=0; i<PLAYER_NUM; ++i)
 	{
@@ -56,12 +51,7 @@ int main(int argc, char** argv)
 		else if(t_iPid == 0)
 		{
 			cout<< "child "<< getpid()<< endl;
-			close(t_iFd[1]);
-			int len = read(t_iFd[0], buf, sizeof(buf));  
-        	//write(STDOUT_FILENO, buf, len); 
-        	cout<< buf<< " "<< getpid()<< endl;
 			sleep(5);
-			close(t_iFd[0]); 
 			return 0;
 		}
 	}
@@ -69,9 +59,6 @@ int main(int argc, char** argv)
 	//cout<< "parent"<< endl;
 	//DispachCard t_oDispachCard(t_iFd);
 	//t_oDispachCard.Dispach();
-	close(t_iFd[0]);
-	//write(t_iFd[1], 1, sizeof(int));  
-	write(t_iFd[1], p, strlen(p));  
 
 	do
 	{ 
