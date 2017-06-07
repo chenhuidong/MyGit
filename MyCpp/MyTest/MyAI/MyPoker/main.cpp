@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 			close(t_iFd[1]);
 			int len = read(t_iFd[0], buf, sizeof(buf));  
         	//write(STDOUT_FILENO, buf, len); 
-        	cout<< buf<< endl;
+        	cout<< buf<< " "<< getpid()<< endl;
 			sleep(5);
 			close(t_iFd[0]); 
 			return 0;
