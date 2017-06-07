@@ -29,7 +29,7 @@ int main(int argc, char** argv)
     } 
 	*/
 	pid_t t_iPid, t_iWpid;
-
+	int   t_iStat; 
 	for(int i=0; i<PLAYER_NUM; ++i)
 	{
 		t_iPid = fork();
