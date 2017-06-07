@@ -35,6 +35,7 @@ int main(int argc, char** argv)
 	vector<int> t_vDisCards;
 	int t_iFd[2];
 	char *p = "test for pipe\n"; 
+	char buf[1024];
 
 	if (pipe(t_iFd) == -1)
 	{
