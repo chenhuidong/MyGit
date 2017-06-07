@@ -2,7 +2,7 @@
 #include "Enum.h"
 
 using namespace mypoker;
-
+/*
 static void sig_handler(int)
 {
 	pid_t t_iWpid;
@@ -18,7 +18,7 @@ static void sig_handler(int)
          printf("child process revoked.but ...\n");  
     } 
 } 
-
+*/
 int main(int argc, char** argv)
 {
 	if(signal(SIGCHLD, sig_handler) == SIG_ERR)  
@@ -46,13 +46,7 @@ int main(int argc, char** argv)
 	}
 
 	cout<< "parent"<< endl;
-	sleep(3);
-	sleep(3);
-	sleep(3);
-	sleep(3);
-	sleep(3);
 
-	/*
 	do
 	{ 
 		t_iWpid = waitpid(-1, &t_iStat, WNOHANG);
@@ -65,18 +59,17 @@ int main(int argc, char** argv)
 		{
 			printf("child %d terminated\n", getpid());
 		}
-		
-		else
-		{
-			if (WIFEXITED(t_iStat))  
-				printf("Child %d terminated normally return status is %d\n",  
-					t_iWpid, WEXITSTATUS(t_iStat));  
-			else if (WIFSIGNALED(t_iStat));  
-				printf("Child %d terminated due to signal %d znot caught\n",  
-					t_iWpid, WTERMSIG(t_iStat));  
-		}
+		//else
+		//{
+		//	if (WIFEXITED(t_iStat))  
+		//		printf("Child %d terminated normally return status is %d\n",  
+		//			t_iWpid, WEXITSTATUS(t_iStat));  
+		//	else if (WIFSIGNALED(t_iStat));  
+		//		printf("Child %d terminated due to signal %d znot caught\n",  
+		//			t_iWpid, WTERMSIG(t_iStat));  
+		//}
 		
 	}while(t_iWpid >= 0);
-*/
+
 	return 0;
 }
