@@ -170,7 +170,7 @@ typedef	void	Sigfunc_rt(int, siginfo_t *, void *);
 #define	max(a,b)	((a) > (b) ? (a) : (b))
 
 #ifndef	HAVE_TIMESPEC_STRUCT
-struct timespec {
+struct timespec1 {
   time_t	tv_sec;		/* seconds */
   long		tv_nsec;	/* and nanoseconds */
 };
