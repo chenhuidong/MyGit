@@ -10,7 +10,9 @@
 #include	<string.h>
 #include	<sys/stat.h>	/* for S_xxx file mode constants */
 #include	<unistd.h>
-#include	<sys/wait.h> 
+#include	<sys/wait.h>
+#include <sys/ipc.h>  
+#include <sys/msg.h>  
 using namespace std;  
   
 struct msgbuff  
