@@ -150,13 +150,13 @@ union semun {				/* define union for semctl() */
 					/* default permissions for new directories */
 /* $$.ix [DIR_MODE]~constant,~definition~of$$ */
 
-#define	SVMSG_MODE	(MSG_R | MSG_W | MSG_R>>3 | MSG_R>>6)
+#define	SVMSG_MODE	0777//(MSG_R | MSG_W | MSG_R>>3 | MSG_R>>6)
 					/* default permissions for new SV message queues */
 /* $$.ix [SVMSG_MODE]~constant,~definition~of$$ */
-#define	SVSEM_MODE	(SEM_R | SEM_A | SEM_R>>3 | SEM_R>>6)
+#define	SVSEM_MODE	0777//(SEM_R | SEM_A | SEM_R>>3 | SEM_R>>6)
 					/* default permissions for new SV semaphores */
 /* $$.ix [SVSEM_MODE]~constant,~definition~of$$ */
-#define	SVSHM_MODE	(SHM_R | SHM_W | SHM_R>>3 | SHM_R>>6)
+#define	SVSHM_MODE	0777//(SHM_R | SHM_W | SHM_R>>3 | SHM_R>>6)
 					/* default permissions for new SV shared memory */
 /* $$.ix [SVSHM_MODE]~constant,~definition~of$$ */
 
