@@ -1,6 +1,7 @@
 #include <iostream>  
 #include <sys/ipc.h>  
-#include <sys/msg.h>  
+#include <sys/msg.h> 
+#include <sys/types.h>	 
 #include <cstring>  
 using namespace std;  
   
@@ -10,6 +11,8 @@ struct msgbuff
     char mtext[100];  
 };  
 
+#define SVMSG_MODE 0777
+
 int main(int argc, char **argv)
 {
 	int msqid;
@@ -17,8 +20,8 @@ int main(int argc, char **argv)
 	struct msgbuf buf;
 
 	msqid = msgget(IPC_PRIVATE, SVMSG_MODE | IPC_CREAT);
-	bug.mtype = 1;
-	bug.mtext[0] = 1;
+	buf.mtype = 1;
+	buf.mtext[0] = 1;
 	msgsend(msqid, &buf, 1, 0);
 	msgctl(msqid, IPC_STAT, &info);
 	printf("read-write:%03o, cbytes = %lu, qnum = %lu, qbytes = %lu\n",
