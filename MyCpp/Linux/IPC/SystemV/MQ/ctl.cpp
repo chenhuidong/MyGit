@@ -12,6 +12,7 @@ struct msgbuff
 };  
 
 #define SVMSG_MODE 0777
+#define ulong_t ulong
 
 int main(int argc, char **argv)
 {
