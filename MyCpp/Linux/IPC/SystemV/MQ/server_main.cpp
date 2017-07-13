@@ -9,7 +9,7 @@ server(int readfd, int writefd)
 
 		/* 4read pathname from IPC channel */
 	if ( (n = read(readfd, buff, MAXLINE)) == 0)
-		err_quit("end-of-file while reading pathname");
+		printf("end-of-file while reading pathname");
 	buff[n] = '\0';		/* null terminate pathname */
 
 	if ( (fd = open(buff, O_RDONLY)) < 0) {
