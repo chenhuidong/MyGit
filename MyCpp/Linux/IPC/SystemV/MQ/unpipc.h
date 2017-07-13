@@ -37,21 +37,21 @@
 
 #endif
 
-#ifdef	HAVE_SYS_MMAN_H
+//#ifdef	HAVE_SYS_MMAN_H
 # include	<sys/mman.h>	/* Posix shared memory */
-#endif
+//#endif
 
 #ifndef	MAP_FAILED
 #define	MAP_FAILED	((void *)(-1))
 #endif
 
-#ifdef	HAVE_SYS_IPC_H
+//#ifdef	HAVE_SYS_IPC_H
 # include	<sys/ipc.h>		/* System V IPC */
-#endif
+//#endif
 
-#ifdef	HAVE_SYS_MSG_H
+//#ifdef	HAVE_SYS_MSG_H
 # include	<sys/msg.h>		/* System V message queues */
-#endif
+//#endif
 
 #ifdef	HAVE_SYS_SEM_H
 #ifdef	__bsdi__
@@ -70,13 +70,13 @@ union semun {				/* define union for semctl() */
 #endif
 #endif	/* HAVE_SYS_SEM_H */
 
-#ifdef	HAVE_SYS_SHM_H
+//#ifdef	HAVE_SYS_SHM_H
 # include	<sys/shm.h>		/* System V shared memory */
-#endif
+//#endif
 
-#ifdef	HAVE_SYS_SELECT_H
+//#ifdef	HAVE_SYS_SELECT_H
 # include	<sys/select.h>	/* for convenience */
-#endif
+//#endif
 
 #ifdef	HAVE_POLL_H
 # include	<poll.h>		/* for convenience */
