@@ -1,4 +1,6 @@
 #include <iostream>  
+#include <unistd.h>  
+#include <stdio.h>   
 #include <sys/ipc.h>  
 #include <sys/msg.h>  
 #include <cstring>  
