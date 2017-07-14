@@ -100,9 +100,9 @@ union semun {				/* define union for semctl() */
 # include	<sys/filio.h>
 #endif
 
-#ifdef	HAVE_PTHREAD_H
+//#ifdef	HAVE_PTHREAD_H
 # include	<pthread.h>
-#endif
+//#endif
 
 #ifdef	HAVE_DOOR_H
 # include	<door.h>		/* Solaris doors API */
