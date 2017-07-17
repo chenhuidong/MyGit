@@ -17,7 +17,7 @@ struct {
   pthread_mutex_t	mutex;
   pthread_cond_t	cond;
   int				nready;	/* number ready for consumer */
-} nready = { PTHREAD_MUTEX_INITIALIZER, pTHREAD_COND_INITIALIZER };
+} nready = { PTHREAD_MUTEX_INITIALIZER, PTHREAD_COND_INITIALIZER };
 /* end globals */
 
 void	*produce(void *), *consume(void *);
