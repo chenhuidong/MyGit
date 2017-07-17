@@ -11,13 +11,13 @@ struct {
   pthread_mutex_t	mutex;
   int				nput;	/* next index to store */
   int				nval;	/* next value to store */
-} put = { pTHREAD_MUTEX_INITIALIZER };
+} put = { PTHREAD_MUTEX_INITIALIZER };
 
 struct {
   pthread_mutex_t	mutex;
   pthread_cond_t	cond;
   int				nready;	/* number ready for consumer */
-} nready = { pTHREAD_MUTEX_INITIALIZER, pTHREAD_COND_INITIALIZER };
+} nready = { PTHREAD_MUTEX_INITIALIZER, pTHREAD_COND_INITIALIZER };
 /* end globals */
 
 void	*produce(void *), *consume(void *);
