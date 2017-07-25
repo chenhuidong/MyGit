@@ -7,7 +7,10 @@ using namespace std;
 int main(int argc, char** argv)
 {
 	string s("1100");
-	bitset<10> bitvec(s);
+	bitset<5> bitvec(s);
 	cout<< bitvec<< endl;
+
+	bitset<16> bitvec2(0xff);
+	cout<< bitvec2<< endl;
 	return 0;
 }
