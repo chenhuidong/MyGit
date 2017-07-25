@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 	bitvec[3] = 0;
 	cout<< bitvec<< " "<< bitvec.size()<< " "<< bitvec.count()<< endl;
 
-	cout<< (1UL < 2)<< endl;
+	cout<< (1UL << 2)<< endl;
 
 	//bitvec |= 0UL << 2; 
 	//cout<< bitvec<< " "<< bitvec.size()<< " "<< bitvec.count()<< endl; 
