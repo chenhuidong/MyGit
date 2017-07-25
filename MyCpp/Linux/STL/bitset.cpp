@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 	bitset<16> bitvec2(0xff);
 	cout<< bitvec2<< endl;
 
-	bitvec2.set(20);
+	bitvec2.set(15);
 	cout<< bitvec2<< endl; 
 	return 0;
 }
