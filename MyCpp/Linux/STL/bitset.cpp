@@ -13,6 +13,9 @@ int main(int argc, char** argv)
 	bitvec[3] = 0;
 	cout<< bitvec<< " "<< bitvec.size()<< " "<< bitvec.count()<< endl;
 
+	bitvec |= 1UL << 2; 
+	cout<< bitvec<< " "<< bitvec.size()<< " "<< bitvec.count()<< endl; 
+
 	bitset<16> bitvec2(0xff);
 	cout<< bitvec2<< endl;
 
