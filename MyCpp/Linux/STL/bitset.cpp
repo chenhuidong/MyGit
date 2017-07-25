@@ -10,10 +10,14 @@ int main(int argc, char** argv)
 	bitset<5> bitvec(s);
 	cout<< bitvec<< " "<< bitvec.size()<< " "<< bitvec.count()<< endl;
 
+	bitvec[3] = 0;
+	cout<< bitvec<< " "<< bitvec.size()<< " "<< bitvec.count()<< endl;
+
 	bitset<16> bitvec2(0xff);
 	cout<< bitvec2<< endl;
 
 	bitvec2.set(15);
 	cout<< bitvec2<< endl; 
+
 	return 0;
 }
