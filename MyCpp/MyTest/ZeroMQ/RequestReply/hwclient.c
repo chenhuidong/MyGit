@@ -23,7 +23,7 @@ int main (void)
         zmq_msg_init_size (&request, 5);
         memcpy (zmq_msg_data (&request), "Hello", 5);
         printf ("正在发送 Hello %d...\n", request_nbr);
-        zmq_send (requester, &request, 0);
+        zmq_send (requester, &request, sizeof(request), 0);
         zmq_msg_close (&request);
  
         zmq_msg_t reply;
