@@ -28,7 +28,7 @@ int main (void)
  
         zmq_msg_t reply;
         zmq_msg_init (&reply);
-        zmq_recv (requester, &reply, 0);
+        zmq_recv (requester, &reply, sizeof(reply), 0);
         printf ("接收到 World %d\n", request_nbr);
         zmq_msg_close (&reply);
     }
