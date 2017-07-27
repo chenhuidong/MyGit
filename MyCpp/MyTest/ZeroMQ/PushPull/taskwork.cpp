@@ -20,7 +20,7 @@ int main (int argc, char *argv[])
 
     //  Socket to send messages to
     zmq::socket_t sender(context, ZMQ_PUSH);
-    sender.connect("tcp://127.0.0.1:54322");
+    sender.connect("tcp://127.0.0.1:54323");
 
     //  Process tasks forever
     while (1) {
