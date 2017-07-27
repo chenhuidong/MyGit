@@ -16,11 +16,11 @@ int main (int argc, char *argv[])
 
     //  Socket to receive messages on
     zmq::socket_t receiver(context, ZMQ_PULL);
-    receiver.connect("tcp://localhost:5557");
+    receiver.connect("tcp://127.0.0.1:54321");
 
     //  Socket to send messages to
     zmq::socket_t sender(context, ZMQ_PUSH);
-    sender.connect("tcp://localhost:5558");
+    sender.connect("tcp://127.0.0.1:54322");
 
     //  Process tasks forever
     while (1) {

@@ -15,7 +15,7 @@ int main (int argc, char *argv[])
     //  Prepare our context and socket
     zmq::context_t context(1);
     zmq::socket_t receiver(context,ZMQ_PULL);
-    receiver.bind("tcp://*:5558");
+    receiver.bind("tcp://127.0.0.1:54322");
 
     //  Wait for start of batch
     zmq::message_t message;
