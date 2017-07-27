@@ -16,7 +16,7 @@
 static zmq::socket_t * s_client_socket (zmq::context_t & context) {
     std::cout << "I: connecting to server..." << std::endl;
     zmq::socket_t * client = new zmq::socket_t (context, ZMQ_REQ);
-    client->connect ("tcp://localhost:5555");
+    client->connect ("tcp://127.0.0.1:54321");
 
     //  Configure socket to not wait at close time
     int linger = 0;

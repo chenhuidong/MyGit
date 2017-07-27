@@ -13,7 +13,7 @@ int main ()
 
     zmq::context_t context(1);
     zmq::socket_t server(context, ZMQ_REP);
-    server.bind("tcp://*:5555");
+    server.bind("tcp://127.0.0.1:54321");
 
     int cycles = 0;
     while (1) {
