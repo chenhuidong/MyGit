@@ -48,6 +48,10 @@ int main(int argc, char** argv)
 			sleep(5);
 			return 0;
 		}
+		else
+		{
+			waitpid(pid, NULL, WNOHANG)
+		}
 	}
 
 	//cout<< "parent"<< endl;
