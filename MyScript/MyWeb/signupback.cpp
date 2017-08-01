@@ -24,9 +24,11 @@ int main ()
             cout<< "PORT:       22"<< "<br>\n"<< endl;
             cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
             cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
+            cout<< "<br>\n"<< endl;
             cout<< "mysql config:"<< "<br>\n"<< endl;
             cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
             cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
+            cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
         }
         else
         {
