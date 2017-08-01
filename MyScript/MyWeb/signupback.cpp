@@ -3,7 +3,10 @@
 #include <iostream>   
 using namespace std;  
 
-
+int ExistInMysql(char* in_sUsername)
+{
+    return 0;
+}
    
 int main ()  
 {
@@ -19,7 +22,7 @@ int main ()
 
         if(t_sUsername&&t_sPassword)
         {
-
+            ExistInMysql(t_sUsername);
             cout<< "hello,"<< t_sUsername<<". you have signed success." << "<br><br>\n"<< endl;
             cout<< "ssh config:"<< "<br>\n"<< endl;
             cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;

@@ -1,4 +1,6 @@
 main: index.cgi signup.cgi signupback.cgi
+testMyDb:
+	g++ MyDb.cpp testMyDb.cpp -otestMyDb
 index.cgi:
 	g++ index.cpp -oindex.cgi
 signup.cgi:
