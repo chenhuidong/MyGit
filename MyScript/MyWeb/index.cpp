@@ -14,7 +14,6 @@ int main ()
    cout << "<h1>Messi Linux.</h1>\n";
    cout << "<p>Welcome, here is a free linux for you.</p>\n";  
    cout << "</body>\n";  
-   cout << "</html>\n";  
-     
+   cout << "</html>\n";   
    return 0;  
 }
