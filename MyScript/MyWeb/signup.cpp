@@ -11,9 +11,10 @@ int main ()
 	cout << "</head>\n";  
 	cout << "<body>\n";
 	cout << "<h1>Messi Linux.</h1>\n";
-	cout << "<form>\n";
+	cout << "<form action=\"signupback.cgi\">\n";
 	cout << "username: <input type=\"text\" name=\"username\"><br>\n";
 	cout << "password: <input type=\"password\" name=\"password\"><br>\n";
+	cout << "<input type=\"submit\" value=\"Submit\">\n";
 	cout << "</form>\n";
 	cout << "</body>\n";  
 	cout << "</html>\n";  
