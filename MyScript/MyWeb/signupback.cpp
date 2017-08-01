@@ -18,7 +18,7 @@ int main ()
         //cout<< t_sPassword<< "<br>"<< endl;
         if(t_sUsername&&t_sPassword)
         {
-            cout<< "hello,"<< t_sUsername<< "<br>"<< endl;
+            cout<< "hello,"<< t_sUsername<<". you have signed success." << "<br>"<< endl;
         }
         else
         {
