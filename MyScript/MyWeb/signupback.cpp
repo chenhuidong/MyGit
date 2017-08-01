@@ -18,11 +18,19 @@ int main ()
         //cout<< t_sPassword<< "<br>"<< endl;
         if(t_sUsername&&t_sPassword)
         {
-            cout<< "hello,"<< t_sUsername<<". you have signed success." << "<br>"<< endl;
+            cout<< "hello,"<< t_sUsername<<". you have signed success." << "<br><br>\n"<< endl;
+            cout<< "ssh config:"<< "<br>\n"<< endl;
+            cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
+            cout<< "PORT:       22"<< "<br>\n"<< endl;
+            cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
+            cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
+            cout<< "mysql config:"<< "<br>\n"<< endl;
+            cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
+            cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
         }
         else
         {
-            cout<< "username or password is empty."<< "<br>"<< endl;
+            cout<< "username or password is empty."<< "<br>\n"<< endl;
         }
     }
     cout << "</body>\n";  
