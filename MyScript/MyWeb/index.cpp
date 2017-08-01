@@ -12,8 +12,9 @@ int main ()
    cout << "</head>\n";  
    cout << "<body>\n";
    cout << "<h1>Messi Linux.</h1>\n";
-   cout << "<p>Welcome, here is a free linux for you.</p>\n";
+   cout << "<p>Welcome, here is a free linux for you.\n";
    cout << "<a href=\"signup.cgi\">if you want to sign up, click here</a>\n";
+   cout << "</p>\n";
    cout << "<p>list of installed software:<br>\n";
    cout << "&emsp;boost_1_61_0<br>\n";
    cout << "&emsp;poco<br>\n";
