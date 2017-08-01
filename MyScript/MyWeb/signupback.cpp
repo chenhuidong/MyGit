@@ -14,8 +14,16 @@ int main ()
         char t_sUsername[256] = {0};
         char t_sPassword[256] = {0};
         sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
-        cout<< t_sUsername<< "<br>"<< endl;
-        cout<< t_sPassword<< "<br>"<< endl;
+        //cout<< t_sUsername<< "<br>"<< endl;
+        //cout<< t_sPassword<< "<br>"<< endl;
+        if(t_sUsername&&t_sPassword)
+        {
+            cout<< "hello,"<< t_sUsername<< "<br>"<< endl;
+        }
+        else
+        {
+            cout<< "username or password is empty."<< "<br>"<< endl;
+        }
     }
     cout << "</body>\n";  
     cout << "</html>\n"; 
