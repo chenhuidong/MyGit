@@ -82,9 +82,9 @@ int main(int argc, char* argv[])
     //if( getenv("QUERY_STRING" ) )
     {
         char *t_sSignUp = getenv("QUERY_STRING" );
-        char t_sUsername[256] = "chenhd";
-        char t_sPassword[256] = "222";
-        //sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
+        char t_sUsername[256] = {0};
+        char t_sPassword[256] = {0};
+        sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
         if(t_sUsername&&t_sPassword)
         {
             int t_iUsernameNum = ExistUsername(t_sUsername);
