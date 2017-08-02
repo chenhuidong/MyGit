@@ -54,9 +54,9 @@ int main(int argc, char* argv[])
     //if( getenv("QUERY_STRING" ) )
     {
         char *t_sSignUp = getenv("QUERY_STRING" );
-        char t_sUsername[256] = "chenhd";
-        char t_sPassword[256] = "222";
-        //sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
+        char t_sUsername[256] = {0};
+        char t_sPassword[256] = {0};
+        sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
         if(t_sUsername&&t_sPassword)
         {
             int t_iUsernameNum = ExistUsername(t_sUsername);
@@ -65,16 +65,16 @@ int main(int argc, char* argv[])
                 int t_iUserPassNum = ExistUsernamePassword(t_sUsername, t_sPassword);
                 if(t_iUserPassNum > 0)
                 {
-                    cout<< "hello,"<< t_sUsername<<". you have sign in." << "<br><br>\n"<< endl;
+                    cout<< "hello, "<< t_sUsername<<". you have sign in." << "<br><br>\n"<< endl;
                     cout<< "ssh config:"<< "<br>\n"<< endl;
                     cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
                     cout<< "PORT:       22"<< "<br>\n"<< endl;
                     cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
-                    cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
+                    cout<< "PASSWORD is sign in password."<< "<br>\n"<< endl;
                     cout<< "<br>\n"<< endl;
                     cout<< "mysql config:"<< "<br>\n"<< endl;
                     cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
-                    cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
+                    cout<< "PASSWORD is sign in password."<< "<br>\n"<< endl;
                     cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
                 }
                 else
@@ -86,6 +86,7 @@ int main(int argc, char* argv[])
             else
             {
                 LOG_INFO<< "insert messi_users."<< endl;
+
             }
         }
         else
