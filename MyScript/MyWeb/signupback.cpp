@@ -1,15 +1,21 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <iostream>   
+#include <iostream>
+#include "MyDb.h"    
 using namespace std;  
 
 int ExistInMysql(char* in_sUsername)
 {
+    MMyLib::MyDb t_oMyDb;
+    t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
+    
+    t_oMyDb.Uninitialize();
     return 0;
 }
    
 int main ()  
 {
+    MMyLib::INITIALIZE_LOG(argv[0]);
     cout << "Content-type:text/html\r\n\r\n";  
     cout << "<html>\n"; 
     cout << "<body>\n"; 
