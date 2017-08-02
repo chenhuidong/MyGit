@@ -52,6 +52,9 @@ int InsertUsers(char* in_sUsername, char* in_sPassword)
     snprintf(iSQL, sizeof(iSQL), "insert into messi_users (m_username, m_password, m_instance) values ('%s', '%s', '%s')", in_sUsername, in_sPassword, in_sUsername);
     t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
 
+    snprintf(iSQL, sizeof(iSQL), "create database %s;", in_sUsername);
+    t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
+
     t_oMyDb.Uninitialize();
     LOG_INFO<< "InsertUsers end.";
     return 0;
