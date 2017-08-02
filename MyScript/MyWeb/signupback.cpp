@@ -6,16 +6,19 @@ using namespace std;
 
 int ExistInMysql(char* in_sUsername)
 {
+    LOG_INFO<< "ExistInMysql begin.";
     MMyLib::MyDb t_oMyDb;
     t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
     
     t_oMyDb.Uninitialize();
+    LOG_INFO<< "ExistInMysql end.";
     return 0;
 }
    
 int main(int argc, char* argv[])  
 {
     MMyLib::INITIALIZE_LOG(argv[0]);
+    LOG_INFO<< "main begin.";
     cout << "Content-type:text/html\r\n\r\n";  
     cout << "<html>\n"; 
     cout << "<body>\n"; 
@@ -48,5 +51,6 @@ int main(int argc, char* argv[])
     }
     cout << "</body>\n";  
     cout << "</html>\n"; 
+    LOG_INFO<< "main end.";
     return 0;
 }
