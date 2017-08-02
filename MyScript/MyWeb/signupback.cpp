@@ -53,17 +53,17 @@ int InsertUsers(char* in_sUsername, char* in_sPassword)
     t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
     t_oMyDb.Uninitialize();
 
-    MMyLib::MyDb t_oMyDb1;
-    t_oMyDb1.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=root;password=Chenhd@443420;db=mysql");
+    MMyLib::MyDb t_oMyDbRoot;
+    t_oMyDbRoot.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=root;password=Chenhd@443420;db=mysql");
     snprintf(iSQL, sizeof(iSQL), "create database %s;", in_sUsername);
-    t_oMyDb1.ExecuteSQL(iSQL, t_oUsers);
+    t_oMyDbRoot.ExecuteSQL(iSQL, t_oUsers);
 
     snprintf(iSQL, sizeof(iSQL), "create user '%s'@\'%\' identified by '%s';", in_sUsername, in_sPassword);
-    t_oMyDb1.ExecuteSQL(iSQL, t_oUsers);
+    t_oMyDbRoot.ExecuteSQL(iSQL, t_oUsers);
 
-    snprintf(iSQL, sizeof(iSQL), "create user '%s'@\'%\' identified by '%s';", in_sUsername, in_sPassword);
-    t_oMyDb1.ExecuteSQL(iSQL, t_oUsers);
-    t_oMyDb1.Uninitialize();
+    snprintf(iSQL, sizeof(iSQL), "grant all on %s.* to %s;", in_sUsername, in_sUsername);
+    t_oMyDbRoot.ExecuteSQL(iSQL, t_oUsers);
+    t_oMyDbRoot.Uninitialize();
     
     LOG_INFO<< "InsertUsers end.";
     return 0;
