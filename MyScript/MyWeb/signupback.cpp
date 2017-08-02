@@ -40,6 +40,22 @@ int ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
     LOG_INFO<< "ExistUsernamePassword end.";
     return t_oUsers.size();
 }
+
+int InsertUsers(char* in_sUsername, char* in_sPassword)
+{
+    LOG_INFO<< "InsertUsers begin.";
+    MMyLib::MyDb t_oMyDb;
+    Users t_oUsers;
+    t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
+   
+    char iSQL[1024] = {0};
+    snprintf(iSQL, sizeof(iSQL), "insert into messi_users (m_username, m_password, m_instance) values ('%s', '%s', '%s')", in_sUsername, in_sPassword, in_sUsername);
+    t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
+
+    t_oMyDb.Uninitialize();
+    LOG_INFO<< "InsertUsers end.";
+    return 0;
+}
    
 int main(int argc, char* argv[])  
 {
@@ -79,14 +95,25 @@ int main(int argc, char* argv[])
                 }
                 else
                 {
-                    LOG_INFO<< "password is wrong."<< endl;
-                    cout<< "password is wrong."<< "<br>\n"<< endl;
+                    LOG_INFO<< "your password is wrong."<< endl;
+                    cout<< "your password is wrong."<< "<br>\n"<< endl;
                 }
             }
             else
             {
                 LOG_INFO<< "insert messi_users."<< endl;
-
+                InsertUsers(t_sUsername, t_sPassword);
+                cout<< "hello, "<< t_sUsername<<". you have signed up." << "<br><br>\n"<< endl;
+                cout<< "ssh config:"<< "<br>\n"<< endl;
+                cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
+                cout<< "PORT:       22"<< "<br>\n"<< endl;
+                cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
+                cout<< "PASSWORD is sign in password."<< "<br>\n"<< endl;
+                cout<< "<br>\n"<< endl;
+                cout<< "mysql config:"<< "<br>\n"<< endl;
+                cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
+                cout<< "PASSWORD is sign in password."<< "<br>\n"<< endl;
+                cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
             }
         }
         else
