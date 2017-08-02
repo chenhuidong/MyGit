@@ -19,9 +19,12 @@ int main(int argc, char* argv[])
 {
     MMyLib::INITIALIZE_LOG(argv[0]);
     LOG_INFO<< "main begin.";
+    char t_sUsername1[256] = {0};
+    ExistInMysql(t_sUsername1);
     cout << "Content-type:text/html\r\n\r\n";  
     cout << "<html>\n"; 
     cout << "<body>\n"; 
+    
     if( getenv("QUERY_STRING" ) )
     {
         char *t_sSignUp = getenv("QUERY_STRING" );
@@ -29,7 +32,7 @@ int main(int argc, char* argv[])
         char t_sPassword[256] = {0};
         sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
 
-        //if(t_sUsername&&t_sPassword)
+        if(t_sUsername&&t_sPassword)
         {
             ExistInMysql(t_sUsername);
             cout<< "hello,"<< t_sUsername<<". you have signed success." << "<br><br>\n"<< endl;
@@ -44,11 +47,12 @@ int main(int argc, char* argv[])
             cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
             cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
         }
-        /*else
+        else
         {
             cout<< "username or password is empty."<< "<br>\n"<< endl;
-        }*/
+        }
     }
+    
     cout << "</body>\n";  
     cout << "</html>\n"; 
     LOG_INFO<< "main end.";
