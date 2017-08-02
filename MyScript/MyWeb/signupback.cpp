@@ -7,7 +7,7 @@ using namespace std;
 
 int ExistInMysql(char* in_sUsername)
 {
-    //LOG_INFO<< "ExistInMysql begin.";
+    LOG_INFO<< "ExistInMysql begin.";
     MMyLib::MyDb t_oMyDb;
     Users t_oUsers;
     t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
@@ -16,14 +16,14 @@ int ExistInMysql(char* in_sUsername)
     t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
     cout<< t_oUsers.size()<< "<br><br>\n"<< endl;
     t_oMyDb.Uninitialize();
-    //LOG_INFO<< "ExistInMysql end.";
+    LOG_INFO<< "ExistInMysql end.";
     return 0;
 }
    
 int main(int argc, char* argv[])  
 {
-    //MMyLib::INITIALIZE_LOG(argv[0]);
-    //LOG_INFO<< "main begin.";
+    MMyLib::INITIALIZE_LOG(argv[0]);
+    LOG_INFO<< "main begin.";
     char t_sUsername1[256] = {0};
     
     cout << "Content-type:text/html\r\n\r\n";  
@@ -56,9 +56,13 @@ int main(int argc, char* argv[])
             cout<< "username or password is empty."<< "<br>\n"<< endl;
         }
     }
+    else
+    {
+        cout<< "username or password is empty."<< "<br>\n"<< endl;
+    }
     
     cout << "</body>\n";  
     cout << "</html>\n"; 
-    //LOG_INFO<< "main end.";
+    LOG_INFO<< "main end.";
     return 0;
 }
