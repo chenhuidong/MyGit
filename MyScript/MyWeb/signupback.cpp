@@ -5,7 +5,25 @@
 #include "Users.h"    
 using namespace std;  
 
-int ExistInMysql(char* in_sUsername, char* in_sPassword)
+int ExistUsername(char* in_sUsername)
+{
+    LOG_INFO<< "ExistInMysql begin.";
+    MMyLib::MyDb t_oMyDb;
+    Users t_oUsers;
+    t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
+    
+    char iSQL[1024] = {0};
+    snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from messi_users where m_username = '%s'", in_sUsername);
+    t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
+    
+    LOG_INFO<< t_oUsers.size()<< endl;
+    t_oMyDb.Uninitialize();
+
+    LOG_INFO<< "ExistInMysql end.";
+    return t_oUsers.size();
+}
+
+int ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
 {
     LOG_INFO<< "ExistInMysql begin.";
     MMyLib::MyDb t_oMyDb;
@@ -41,18 +59,34 @@ int main(int argc, char* argv[])
         //sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
         if(t_sUsername&&t_sPassword)
         {
-            ExistInMysql(t_sUsername, t_sPassword);
-            cout<< "hello,"<< t_sUsername<<". you have signed success." << "<br><br>\n"<< endl;
-            cout<< "ssh config:"<< "<br>\n"<< endl;
-            cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
-            cout<< "PORT:       22"<< "<br>\n"<< endl;
-            cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
-            cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
-            cout<< "<br>\n"<< endl;
-            cout<< "mysql config:"<< "<br>\n"<< endl;
-            cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
-            cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
-            cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
+            int t_iUsernameNum = ExistUsername(t_sUsername);
+            if(t_iUsernameNum > 1)
+            {
+                int t_iUserPassNum = ExistUsernamePassword(t_sUsername, t_sPassword);
+                if(t_iUserPassNum > 1)
+                {
+                    cout<< "hello,"<< t_sUsername<<". you have sign in." << "<br><br>\n"<< endl;
+                    cout<< "ssh config:"<< "<br>\n"<< endl;
+                    cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
+                    cout<< "PORT:       22"<< "<br>\n"<< endl;
+                    cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
+                    cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
+                    cout<< "<br>\n"<< endl;
+                    cout<< "mysql config:"<< "<br>\n"<< endl;
+                    cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
+                    cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
+                    cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
+                }
+                else
+                {
+                    LOG_INFO<< "password is wrong."<< endl;
+                    cout<< "password is wrong."<< "<br>\n"<< endl;
+                }
+            }
+            else
+            {
+                LOG_INFO<< "insert messi_users."<< endl;
+            }
         }
         else
         {
