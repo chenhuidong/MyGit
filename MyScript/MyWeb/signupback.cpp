@@ -60,10 +60,10 @@ int main(int argc, char* argv[])
         if(t_sUsername&&t_sPassword)
         {
             int t_iUsernameNum = ExistUsername(t_sUsername);
-            if(t_iUsernameNum > 1)
+            if(t_iUsernameNum > 0)
             {
                 int t_iUserPassNum = ExistUsernamePassword(t_sUsername, t_sPassword);
-                if(t_iUserPassNum > 1)
+                if(t_iUserPassNum > 0)
                 {
                     cout<< "hello,"<< t_sUsername<<". you have sign in." << "<br><br>\n"<< endl;
                     cout<< "ssh config:"<< "<br>\n"<< endl;
