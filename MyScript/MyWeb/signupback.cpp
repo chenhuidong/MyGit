@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
     cout << "<html>\n"; 
     cout << "<body>\n"; 
     
-    //if( getenv("QUERY_STRING" ) )
+    if( getenv("QUERY_STRING" ) )
     {
         char *t_sSignUp = getenv("QUERY_STRING" );
         char t_sUsername[256] = {0};
@@ -121,10 +121,10 @@ int main(int argc, char* argv[])
             cout<< "username or password is empty."<< "<br>\n"<< endl;
         }
     }
-    /*else
+    else
     {
         cout<< "username or password is empty."<< "<br>\n"<< endl;
-    }*/
+    }
     
     cout << "</body>\n";  
     cout << "</html>\n"; 
