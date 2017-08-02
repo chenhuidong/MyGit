@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
         char t_sPassword[256] = {0};
         sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
 
-        if(t_sUsername&&t_sPassword)
+        //if(t_sUsername&&t_sPassword)
         {
             ExistInMysql(t_sUsername);
             cout<< "hello,"<< t_sUsername<<". you have signed success." << "<br><br>\n"<< endl;
