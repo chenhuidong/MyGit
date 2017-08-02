@@ -11,13 +11,16 @@ int ExistInMysql(char* in_sUsername, char* in_sPassword)
     MMyLib::MyDb t_oMyDb;
     Users t_oUsers;
     t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
+    
     char iSQL[1024] = {0};
     snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from messi_users where m_username = '%s' and m_password = '%s'", in_sUsername, in_sPassword);
     t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
+    
     LOG_INFO<< t_oUsers.size()<< endl;
     t_oMyDb.Uninitialize();
+
     LOG_INFO<< "ExistInMysql end.";
-    return 0;
+    return t_oUsers.size();
 }
    
 int main(int argc, char* argv[])  
