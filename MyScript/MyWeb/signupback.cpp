@@ -1,26 +1,31 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
-#include "MyDb.h"    
+#include "MyDb.h"
+#include "Users.h"    
 using namespace std;  
 
 int ExistInMysql(char* in_sUsername)
 {
-    LOG_INFO<< "ExistInMysql begin.";
+    //LOG_INFO<< "ExistInMysql begin.";
     MMyLib::MyDb t_oMyDb;
+    Users t_oUsers;
     t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
-    
+    char iSQL[1024] = {0};
+    snprintf(iSQL, sizeof(iSQL), "select * from messi_users where m_username = %s", in_sUsername);
+    t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
+    cout<< t_oUsers.size()<< "<br><br>\n"<< endl;
     t_oMyDb.Uninitialize();
-    LOG_INFO<< "ExistInMysql end.";
+    //LOG_INFO<< "ExistInMysql end.";
     return 0;
 }
    
 int main(int argc, char* argv[])  
 {
-    MMyLib::INITIALIZE_LOG(argv[0]);
-    LOG_INFO<< "main begin.";
+    //MMyLib::INITIALIZE_LOG(argv[0]);
+    //LOG_INFO<< "main begin.";
     char t_sUsername1[256] = {0};
-    ExistInMysql(t_sUsername1);
+    
     cout << "Content-type:text/html\r\n\r\n";  
     cout << "<html>\n"; 
     cout << "<body>\n"; 
@@ -31,7 +36,6 @@ int main(int argc, char* argv[])
         char t_sUsername[256] = {0};
         char t_sPassword[256] = {0};
         sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
-
         if(t_sUsername&&t_sPassword)
         {
             ExistInMysql(t_sUsername);
@@ -55,6 +59,6 @@ int main(int argc, char* argv[])
     
     cout << "</body>\n";  
     cout << "</html>\n"; 
-    LOG_INFO<< "main end.";
+    //LOG_INFO<< "main end.";
     return 0;
 }
