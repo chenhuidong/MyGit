@@ -13,7 +13,7 @@ int ExistInMysql(char* in_sUsername)
     return 0;
 }
    
-int main ()  
+int main(int argc, char* argv[])  
 {
     MMyLib::INITIALIZE_LOG(argv[0]);
     cout << "Content-type:text/html\r\n\r\n";  

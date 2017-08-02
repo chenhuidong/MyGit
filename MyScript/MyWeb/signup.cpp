@@ -1,7 +1,7 @@
 #include <iostream>   
 using namespace std;  
    
-int main ()  
+int main (int argc, char* argv[])  
 {
 	cout << "Content-type:text/html\r\n\r\n";  
 	cout << "<html>\n";  
