@@ -57,6 +57,12 @@ int InsertUsers(char* in_sUsername, char* in_sPassword)
     t_oMyDb1.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=root;password=Chenhd@443420;db=mysql");
     snprintf(iSQL, sizeof(iSQL), "create database %s;", in_sUsername);
     t_oMyDb1.ExecuteSQL(iSQL, t_oUsers);
+
+    snprintf(iSQL, sizeof(iSQL), "create user '%s'@\'%\' identified by '%s';", in_sUsername, in_sPassword);
+    t_oMyDb1.ExecuteSQL(iSQL, t_oUsers);
+
+    snprintf(iSQL, sizeof(iSQL), "create user '%s'@\'%\' identified by '%s';", in_sUsername, in_sPassword);
+    t_oMyDb1.ExecuteSQL(iSQL, t_oUsers);
     t_oMyDb1.Uninitialize();
     
     LOG_INFO<< "InsertUsers end.";
