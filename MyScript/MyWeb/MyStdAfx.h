@@ -24,7 +24,7 @@ using namespace std;
 #else
 #define getWorkPath() getenv("WORKPATH")	
 //#define getLogPath() getenv("LOGPATH")
-#define getLogPath() "/tmp"
+#define getLogPath() "/home/chenhuidong/Log"
 #define getBinPath() getenv("BINPATH")
 #define FLAGS_INFO
 #include "MyLog.h"
