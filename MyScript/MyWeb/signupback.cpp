@@ -5,14 +5,14 @@
 #include "Users.h"    
 using namespace std;  
 
-int ExistInMysql(char* in_sUsername)
+int ExistInMysql(char* in_sUsername, char* in_sPassword)
 {
     LOG_INFO<< "ExistInMysql begin.";
     MMyLib::MyDb t_oMyDb;
     Users t_oUsers;
     t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
     char iSQL[1024] = {0};
-    snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from messi_users where m_username = '%s'", in_sUsername);
+    snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from messi_users where m_username = '%s' and m_password = '%s'", in_sUsername, in_sPassword);
     t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
     LOG_INFO<< t_oUsers.size()<< endl;
     t_oMyDb.Uninitialize();
@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
         //sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
         if(t_sUsername&&t_sPassword)
         {
-            ExistInMysql(t_sUsername);
+            ExistInMysql(t_sUsername, t_sPassword);
             cout<< "hello,"<< t_sUsername<<". you have signed success." << "<br><br>\n"<< endl;
             cout<< "ssh config:"<< "<br>\n"<< endl;
             cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
