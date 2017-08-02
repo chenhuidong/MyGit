@@ -51,11 +51,14 @@ int InsertUsers(char* in_sUsername, char* in_sPassword)
     char iSQL[1024] = {0};
     snprintf(iSQL, sizeof(iSQL), "insert into messi_users (m_username, m_password, m_instance) values ('%s', '%s', '%s')", in_sUsername, in_sPassword, in_sUsername);
     t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
-
-    snprintf(iSQL, sizeof(iSQL), "create database %s;", in_sUsername);
-    t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
-
     t_oMyDb.Uninitialize();
+
+    MMyLib::MyDb t_oMyDb1;
+    t_oMyDb1.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=root;password=Chenhd@443420;db=mysql");
+    snprintf(iSQL, sizeof(iSQL), "create database %s;", in_sUsername);
+    t_oMyDb1.ExecuteSQL(iSQL, t_oUsers);
+    t_oMyDb1.Uninitialize();
+    
     LOG_INFO<< "InsertUsers end.";
     return 0;
 }
