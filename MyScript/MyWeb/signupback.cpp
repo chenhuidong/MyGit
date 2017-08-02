@@ -7,7 +7,7 @@ using namespace std;
 
 int ExistUsername(char* in_sUsername)
 {
-    LOG_INFO<< "ExistInMysql begin.";
+    LOG_INFO<< "ExistUsername begin.";
     MMyLib::MyDb t_oMyDb;
     Users t_oUsers;
     t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
@@ -19,13 +19,13 @@ int ExistUsername(char* in_sUsername)
     LOG_INFO<< t_oUsers.size()<< endl;
     t_oMyDb.Uninitialize();
 
-    LOG_INFO<< "ExistInMysql end.";
+    LOG_INFO<< "ExistUsername end.";
     return t_oUsers.size();
 }
 
 int ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
 {
-    LOG_INFO<< "ExistInMysql begin.";
+    LOG_INFO<< "ExistUsernamePassword begin.";
     MMyLib::MyDb t_oMyDb;
     Users t_oUsers;
     t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
@@ -37,7 +37,7 @@ int ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
     LOG_INFO<< t_oUsers.size()<< endl;
     t_oMyDb.Uninitialize();
 
-    LOG_INFO<< "ExistInMysql end.";
+    LOG_INFO<< "ExistUsernamePassword end.";
     return t_oUsers.size();
 }
    
