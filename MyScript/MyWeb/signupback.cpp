@@ -58,7 +58,7 @@ int InsertUsers(char* in_sUsername, char* in_sPassword)
     snprintf(iSQL, sizeof(iSQL), "create database %s;", in_sUsername);
     t_oMyDbRoot.ExecuteSQL(iSQL, t_oUsers);
 
-    snprintf(iSQL, sizeof(iSQL), "create user %s identified by %s;", in_sUsername, in_sPassword);
+    snprintf(iSQL, sizeof(iSQL), "create user %s@ identified by %s;", in_sUsername, in_sPassword);
     t_oMyDbRoot.ExecuteSQL(iSQL, t_oUsers);
 
     snprintf(iSQL, sizeof(iSQL), "grant all on %s.* to %s;", in_sUsername, in_sUsername);
