@@ -12,9 +12,9 @@ int ExistInMysql(char* in_sUsername)
     Users t_oUsers;
     t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=chenhuidong;password=Chenhd@443420;db=public");
     char iSQL[1024] = {0};
-    snprintf(iSQL, sizeof(iSQL), "select * from messi_users where m_username = %s", in_sUsername);
+    snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from messi_users where m_username = %s", in_sUsername);
     t_oMyDb.ExecuteSQL(iSQL, t_oUsers);
-    cout<< t_oUsers.size()<< "<br><br>\n"<< endl;
+    LOG_INFO<< t_oUsers.size()<< endl;
     t_oMyDb.Uninitialize();
     LOG_INFO<< "ExistInMysql end.";
     return 0;
@@ -30,12 +30,12 @@ int main(int argc, char* argv[])
     cout << "<html>\n"; 
     cout << "<body>\n"; 
     
-    if( getenv("QUERY_STRING" ) )
+    //if( getenv("QUERY_STRING" ) )
     {
         char *t_sSignUp = getenv("QUERY_STRING" );
-        char t_sUsername[256] = {0};
-        char t_sPassword[256] = {0};
-        sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
+        char t_sUsername[256] = "chenhd";
+        char t_sPassword[256] = "222";
+        //sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
         if(t_sUsername&&t_sPassword)
         {
             ExistInMysql(t_sUsername);
@@ -56,10 +56,10 @@ int main(int argc, char* argv[])
             cout<< "username or password is empty."<< "<br>\n"<< endl;
         }
     }
-    else
+    /*else
     {
         cout<< "username or password is empty."<< "<br>\n"<< endl;
-    }
+    }*/
     
     cout << "</body>\n";  
     cout << "</html>\n"; 
