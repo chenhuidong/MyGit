@@ -41,10 +41,10 @@ int main(int argc, char* argv[])
             cout<< "PASSWORD is sign up password."<< "<br>\n"<< endl;
             cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
         }
-        else
+        /*else
         {
             cout<< "username or password is empty."<< "<br>\n"<< endl;
-        }
+        }*/
     }
     cout << "</body>\n";  
     cout << "</html>\n"; 
