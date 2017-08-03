@@ -10,6 +10,29 @@ int UserCheck::UninitializeDb()
     m_oMyDb.Uninitialize();
 }
 
+int UserCheck::UserInputCheck(char* out_sUsername, char* out_sPassword)
+{
+    do
+    {
+        if(!getenv("QUERY_STRING"))
+        {
+            cout<< "username or password is empty."<< "<br>\n"<< endl;
+            break;
+        }
+        
+        char *t_sSignUp = getenv("QUERY_STRING" );
+        sscanf(t_sSignUp,"username=%[^&]&password=%s",out_sUsername, out_sPassword);
+
+        if((0==strlen(out_sUsername)) || (0==strlen(out_sPassword)))
+        {
+            cout<< "username or password is empty."<< "<br>\n"<< endl;
+            break;
+        }
+
+    }while(0);
+    return 0;
+}
+
 int UserCheck::ExistUsername(char* in_sUsername)
 {
     LOG_INFO<< "ExistUsername begin.";

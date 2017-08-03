@@ -14,6 +14,7 @@ public:
 	int InitializeDb();
 	int UninitializeDb();
 
+	int UserInputCheck(char* out_sUsername, char* out_sPassword);
 	int ExistUsername(char* in_sUsername);
 	int ExistUsernamePassword(char* in_sUsername, char* in_sPassword);
 	int InsertUsers(char* in_sUsername, char* in_sPassword);

@@ -15,20 +15,10 @@ int main(int argc, char* argv[])
     cout << "<body>\n"; 
     do
     {
-        //if( getenv("QUERY_STRING" ) )
-        {
-            char *t_sSignUp = getenv("QUERY_STRING" );
             char t_sUsername[256] = {0};
             char t_sPassword[256] = {0};
-            sscanf(t_sSignUp,"username=%[^&]&password=%s",t_sUsername,t_sPassword);
-            if((0==strlen(t_sUsername)) || (0==strlen(t_sPassword)))
-            {
-                cout<< "username or password is empty."<< "<br>\n"<< endl;
-                break;
-            }
-
-            UserCheck t_oUserCheck;
-
+            UserCheck.UserInputCheck(t_sUsername, t_sPassword);
+            
             //if(t_sUsername)
 
                 int t_iUsernameNum = t_oUserCheck.ExistUsername(t_sUsername);
@@ -72,12 +62,6 @@ int main(int argc, char* argv[])
                     cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
                 }
 
-            
-        }
-        /*else
-        {
-            cout<< "username or password is empty."<< "<br>\n"<< endl;
-        }*/
     }while(0);
     cout << "</body>\n";  
     cout << "</html>\n"; 
