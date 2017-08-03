@@ -17,8 +17,9 @@ int main(int argc, char* argv[])
     {
             char t_sUsername[256] = {0};
             char t_sPassword[256] = {0};
-            UserCheck.UserInputCheck(t_sUsername, t_sPassword);
-            
+            UserCheck t_oUserCheck;
+            t_oUserCheck.UserInputCheck(t_sUsername, t_sPassword);
+
             //if(t_sUsername)
 
                 int t_iUsernameNum = t_oUserCheck.ExistUsername(t_sUsername);
