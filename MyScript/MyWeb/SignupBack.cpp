@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream> 
-#include "MyStdAfx.h"   
+#include "MyStdAfx.h"
+#include "CheckUser.h"   
 using namespace std;  
 
 int main(int argc, char* argv[])  
