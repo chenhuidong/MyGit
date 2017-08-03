@@ -18,6 +18,7 @@ int main(int argc, char* argv[])
             char t_sUsername[256] = "chenhd";
             char t_sPassword[256] = "234";
             UserCheck t_oUserCheck;
+            t_oUserCheck.InitializeDb();
             t_oUserCheck.UserInputCheck(t_sUsername, t_sPassword);
 
             //if(t_sUsername)
@@ -62,7 +63,7 @@ int main(int argc, char* argv[])
                     cout<< "PASSWORD is sign in password."<< "<br>\n"<< endl;
                     cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;
                 }
-
+            t_oUserCheck.UninitializeDb(); 
     }while(0);
     cout << "</body>\n";  
     cout << "</html>\n"; 
