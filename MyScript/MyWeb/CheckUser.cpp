@@ -91,7 +91,7 @@ int UserCheck::InsertUsers(char* in_sUsername, char* in_sPassword)
     LOG_INFO<< "InsertUsers begin.";
 
     char iCMD[1024] = {0};
-    snprintf(iCMD, sizeof(iCMD), "echo \"Chenhd@443420\" | sudo -S sh -c \"useradd -s /bin/bash -d \\\"/home/%s\\\" -m %s; echo \\\"%s:%s\\\"  | chpasswd ;\"\n", in_sUsername, in_sUsername, in_sUsername, in_sPassword);
+    snprintf(iCMD, sizeof(iCMD), "echo \"Chenhd@443420\" | sudo -S sh -c \"useradd -s /bin/bash -d \\\"/home/%s\\\" -m %s; echo \\\"%s:%s\\\"  | chpasswd ; su - %s -c \\\"source /etc/profile\\\"\"\n", in_sUsername, in_sUsername, in_sUsername, in_sPassword, in_sUsername);
     system(iCMD);
 
     char iSQL[1024] = {0};
