@@ -7,10 +7,10 @@ int main (int argc, char* argv[])
 	cout << "<html>\n";  
 	cout << "<head>\n"; 
 	cout << "<br>"; 
-	cout << "<title>Messi Linux</title>\n";  
+	cout << "<title>Wizard Linux</title>\n";  
 	cout << "</head>\n";  
 	cout << "<body>\n";
-	cout << "<h1>Messi Linux.</h1>\n";
+	cout << "<h1>Wizard Linux.</h1>\n";
 	cout << "<form action=\"signupback.cgi\" method=\"get\">\n";
 	cout << "username: <input type=\"text\" name=\"username\"><br>\n";
 	cout << "password: <input type=\"password\" name=\"password\"><br>\n";

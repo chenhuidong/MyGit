@@ -8,10 +8,10 @@ int main(int argc, char* argv[])
    cout << "<html>\n";  
    cout << "<head>\n"; 
    cout << "<br>"; 
-   cout << "<title>Messi Linux</title>\n";  
+   cout << "<title>Wizard Linux</title>\n";  
    cout << "</head>\n";  
    cout << "<body>\n";
-   cout << "<h1>Messi Linux.</h1>\n";
+   cout << "<h1>Wizards Linux.</h1>\n";
    cout << "<p>Welcome, here is a free linux for you.\n";
    cout << "<a href=\"signup.cgi\">if you want to sign up, click here</a>\n";
    cout << "<p>we just provide a learn machine, can not ensure absolute security of your data, please backup.\n";

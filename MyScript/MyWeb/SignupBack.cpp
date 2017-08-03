@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
         }
         else
         {
-            LOG_INFO<< "insert messi_users."<< endl;
+            LOG_INFO<< "insert wizard_users."<< endl;
             t_oUserCheck.InsertUsers(t_sUsername, t_sPassword);
             cout<< "hello, "<< t_sUsername<<". you have signed up." << "<br><br>\n"<< endl;
         }
