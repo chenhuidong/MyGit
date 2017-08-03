@@ -15,8 +15,8 @@ int main(int argc, char* argv[])
     cout << "<body>\n"; 
     do
     {
-            char t_sUsername[256] = {0};
-            char t_sPassword[256] = {0};
+            char t_sUsername[256] = "chenhd";
+            char t_sPassword[256] = "234";
             UserCheck t_oUserCheck;
             t_oUserCheck.UserInputCheck(t_sUsername, t_sPassword);
 
