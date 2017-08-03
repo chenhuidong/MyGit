@@ -20,6 +20,6 @@ public:
 private:
 	MMyLib::MyDb m_oMyDb;
 	Users m_oUsers;
-}
+};
 
 #endif
