@@ -3,34 +3,31 @@
 int UserCheck::InitializeDb()
 {
     m_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "host=127.0.0.1;port=3306;user=root;password=Chenhd@443420;db=mysql");
+    return 0;
 }
 
 int UserCheck::UninitializeDb()
 {
     m_oMyDb.Uninitialize();
+    return 0;
 }
 
 int UserCheck::UserInputCheck(char* out_sUsername, char* out_sPassword)
 {
-    do
+    char *t_sSignUp = getenv("QUERY_STRING" );
+    if(!t_sSignUp)
     {
-        char *t_sSignUp = getenv("QUERY_STRING" );
-        /*if(!t_sSignUp)
-        {
-            cout<< "username or password is empty."<< "<br>\n"<< endl;
-            break;
-        }
-        */
+        cout<< "username or password is empty."<< "<br>\n"<< endl;
+        return -1;
+    }
 
-        //sscanf(t_sSignUp,"username=%[^&]&password=%s",out_sUsername, out_sPassword);
-        
-        if((0==strlen(out_sUsername)) || (0==strlen(out_sPassword)))
-        {
-            cout<< "username or password is empty."<< "<br>\n"<< endl;
-            break;
-        }
+    sscanf(t_sSignUp,"username=%[^&]&password=%s",out_sUsername, out_sPassword);
 
-    }while(0);
+    if((0==strlen(out_sUsername)) || (0==strlen(out_sPassword)))
+    {
+        cout<< "username or password is empty."<< "<br>\n"<< endl;
+        return -1;
+    }
     return 0;
 }
 
