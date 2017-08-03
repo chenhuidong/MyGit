@@ -10,7 +10,7 @@ int UserCheck::UninitializeDb()
     m_oMyDb.Uninitialize();
 }
 
-int ExistUsername(char* in_sUsername)
+int UserCheck::ExistUsername(char* in_sUsername)
 {
     LOG_INFO<< "ExistUsername begin.";
 
@@ -22,7 +22,7 @@ int ExistUsername(char* in_sUsername)
     return m_oUsers.size();
 }
 
-int ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
+int UserCheck::ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
 {
     LOG_INFO<< "ExistUsernamePassword begin.";
 
@@ -34,7 +34,7 @@ int ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
     return m_oUsers.size();
 }
 
-int InsertUsers(char* in_sUsername, char* in_sPassword)
+int UserCheck::InsertUsers(char* in_sUsername, char* in_sPassword)
 {
     LOG_INFO<< "InsertUsers begin.";
 
