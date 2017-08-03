@@ -26,12 +26,14 @@ int main(int argc, char* argv[])
                 break;
             }
 
+            UserCheck t_oUserCheck;
+
             //if(t_sUsername)
 
-                int t_iUsernameNum = ExistUsername(t_sUsername);
+                int t_iUsernameNum = t_oUserCheck.ExistUsername(t_sUsername);
                 if(t_iUsernameNum > 0)
                 {
-                    int t_iUserPassNum = ExistUsernamePassword(t_sUsername, t_sPassword);
+                    int t_iUserPassNum = t_oUserCheck.ExistUsernamePassword(t_sUsername, t_sPassword);
                     if(t_iUserPassNum > 0)
                     {
                         cout<< "hello, "<< t_sUsername<<". you have sign in." << "<br><br>\n"<< endl;
@@ -55,7 +57,7 @@ int main(int argc, char* argv[])
                 else
                 {
                     LOG_INFO<< "insert messi_users."<< endl;
-                    InsertUsers(t_sUsername, t_sPassword);
+                    t_oUserCheck.InsertUsers(t_sUsername, t_sPassword);
                     cout<< "hello, "<< t_sUsername<<". you have signed up." << "<br><br>\n"<< endl;
                     cout<< "ssh config:"<< "<br>\n"<< endl;
                     cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
