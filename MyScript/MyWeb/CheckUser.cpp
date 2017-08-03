@@ -28,6 +28,36 @@ int UserCheck::UserInputCheck(char* out_sUsername, char* out_sPassword)
         cout<< "username or password is empty."<< "<br>\n"<< endl;
         return -1;
     }
+
+    if(0 != SpecialWordCheck(out_sUsername))
+    {
+        cout<< "your username contains special word."<< "<br>\n"<< endl;
+        return -1;
+    }
+
+    if(0 != SpecialWordCheck(out_sPassword))
+    {
+        cout<< "your password contains special word."<< "<br>\n"<< endl;
+        return -1;
+    }
+    return 0;
+}
+
+int UserCheck::SpecialWordCheck(char* in_sStr)
+{
+    for(int i=0; i<strlen(in_sStr); ++i)
+    {
+        if( (in_sStr[i]>='a'&&in_sStr[i]<='z')
+            ||(in_sStr[i]>='A'&&in_sStr[i]<='Z')
+            ||(in_sStr[i]>='0'&&in_sStr[i]<='9'))
+        {
+            continue;
+        }
+        else
+        {
+            return -1;
+        }
+    }
     return 0;
 }
 

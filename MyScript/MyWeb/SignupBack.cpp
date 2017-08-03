@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
         }
         cout<< "ssh config:"<< "<br>\n"<< endl;
         cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
-        cout<< "PORT:       22"<< "<br>\n"<< endl;
+        cout<< "PORT:       10302"<< "<br>\n"<< endl;
         cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
         cout<< "PASSWORD is sign in password."<< "<br>\n"<< endl;
         cout<< "<br>\n"<< endl;
