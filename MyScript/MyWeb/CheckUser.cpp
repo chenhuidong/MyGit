@@ -14,6 +14,7 @@ int UserCheck::UninitializeDb()
 
 int UserCheck::UserInputCheck(char* out_sUsername, char* out_sPassword)
 {
+    /*
     char *t_sSignUp = getenv("QUERY_STRING" );
     if(!t_sSignUp)
     {
@@ -22,7 +23,8 @@ int UserCheck::UserInputCheck(char* out_sUsername, char* out_sPassword)
     }
 
     sscanf(t_sSignUp,"username=%[^&]&password=%s",out_sUsername, out_sPassword);
-
+    */
+    
     if((0==strlen(out_sUsername)) || (0==strlen(out_sPassword)))
     {
         cout<< "username or password is empty."<< "<br>\n"<< endl;
