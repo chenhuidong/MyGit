@@ -1,5 +1,5 @@
-#ifndef __MESSI_CHECK_USER_H_
-#define __MESSI_CHECK_USER_H_
+#ifndef __WIZARD_CHECK_USER_H_
+#define __WIZARD_CHECK_USER_H_
 
 #include <stdlib.h>
 #include <stdio.h>

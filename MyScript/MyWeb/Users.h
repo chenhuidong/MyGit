@@ -1,5 +1,5 @@
-#ifndef __MESSI_USER_H_
-#define __MESSI_USER_H_
+#ifndef __WIZARD_USER_H_
+#define __WIZARD_USER_H_
 
 #include "Poco/Tuple.h"
 #include <vector>
