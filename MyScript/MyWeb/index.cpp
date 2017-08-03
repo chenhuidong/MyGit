@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
    cout << "<h1>Messi Linux.</h1>\n";
    cout << "<p>Welcome, here is a free linux for you.\n";
    cout << "<a href=\"signup.cgi\">if you want to sign up, click here</a>\n";
+   cout << "<p>we just provide a learn machine, can not ensure absolute security of your data, please backup.\n";
    cout << "</p>\n";
    cout << "<p>list of installed software:<br>\n";
    cout << "&emsp;boost_1_61_0<br>\n";
