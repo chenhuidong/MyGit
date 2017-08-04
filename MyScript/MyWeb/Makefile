@@ -6,7 +6,7 @@ index.cgi: Index.cpp
 signup.cgi: Signup.cpp
 	g++ Signup.cpp -osignup.cgi
 signupback.cgi: MyDb.cpp MyException.cpp SignupBack.cpp 
-	g++ MyDb.cpp MyException.cpp CheckUser.cpp SignupBack.cpp -osignupback.cgi -lglog -lPocoFoundation -lPocoData -lPocoDataSQLite -lPocoDataMySQL 
+	g++ MyDb.cpp MyException.cpp CheckUser.cpp SignupBack.cpp -osignupback.cgi -lglog -lPocoFoundation -lPocoData -lPocoDataSQLite -lPocoDataMySQL -lPocoFoundation
 .PHONY: clean install
 clean:
 	rm index.cgi signup.cgi signupback.cgi
