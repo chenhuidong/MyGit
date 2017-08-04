@@ -63,6 +63,8 @@ int main(int argc, char* argv[])
         cout<< "PASSWORD is as same as the signed in one."<< "<br>\n"<< endl;
         cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl; 
         cout<< "connect mysql cmd:   mysql -h'127.0.0.1' -uyourusername -pyourpassword -Dyourinstance "<< "<br>\n"<< endl; 
+        cout<< "test port: 54323"<< "<br>\n"<< endl; 
+        cout<< "you can bind this port for test."<< "<br>\n"<< endl; 
           
     }while(0);
 
