@@ -56,12 +56,14 @@ int main(int argc, char* argv[])
         cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
         cout<< "PORT:       10302"<< "<br>\n"<< endl;
         cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
-        cout<< "PASSWORD is sign in password."<< "<br>\n"<< endl;
+        cout<< "PASSWORD as same as the sign in one."<< "<br>\n"<< endl;
         cout<< "<br>\n"<< endl;
         cout<< "mysql config:"<< "<br>\n"<< endl;
         cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
         cout<< "PASSWORD is sign in password."<< "<br>\n"<< endl;
-        cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl;    
+        cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl; 
+        cout<< "connect mysql cmd:   mysql -h'127.0.0.1' -uyourusername -pyourpassword -Dyourinstance "<< "<br>\n"<< endl; 
+          
     }while(0);
 
     t_oUserCheck.UninitializeDb(); 
