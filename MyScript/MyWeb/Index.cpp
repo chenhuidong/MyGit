@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
    cout << "<a href=\"signup.cgi\">if you want to sign up, click here</a>\n";
    cout << "<p>we just provide a learn machine, can not ensure absolute security of your data, please backup.</p>\n";
    cout << "<p>qq cluster: 607304212.</p>\n";
-   cout << "<a href=\"http://124.161.110.68:54322/wizard\">our forum</a>\n";
+   cout << "<a href=\"http://124.161.110.68:54322/wizard\">wizard forum</a>\n";
    cout << "</p>\n";
    cout << "<p>list of installed software:<br>\n";
    cout << "&emsp;boost_1_61_0<br>\n";
