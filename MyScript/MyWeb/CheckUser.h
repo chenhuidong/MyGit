@@ -4,9 +4,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
+#include "Poco/MD5Engine.h"
 #include "MyDb.h"
 #include "Users.h"    
 using namespace std;
+using Poco::MD5Engine;
 
 class UserCheck
 {
@@ -22,6 +24,7 @@ public:
 private:
 	MMyLib::MyDb m_oMyDb;
 	Users m_oUsers;
+	MD5Engine m_oMd5;
 };
 
 #endif

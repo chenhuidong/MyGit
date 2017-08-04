@@ -21,6 +21,12 @@ int UserCheck::UserInputCheck(char* out_sUsername, char* out_sPassword)
         cout<< "QUERY_STRING is empty."<< "<br>\n"<< endl;
         return -1;
     }
+
+    if(strlen(t_sSignUp)>256)
+    {
+        cout<< "your input is too long."<< "<br>\n"<< endl;
+        return -1;
+    }
     
     sscanf(t_sSignUp,"username=%[^&]&password=%s",out_sUsername, out_sPassword);
     
@@ -79,7 +85,8 @@ int UserCheck::ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
     LOG_INFO<< "ExistUsernamePassword begin.";
 
     char iSQL[1024] = {0};
-    snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from wizard_users where m_username = '%s' and m_password = '%s'", in_sUsername, in_sPassword);
+    m_oMd5.update(in_sPassword);
+    snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from wizard_users where m_username = '%s' and m_password = '%s'", in_sUsername, DigestEngine::digestToHex(engine.digest()));
     m_oMyDb.ExecuteSQL(iSQL, m_oUsers);
     
     LOG_INFO<< "ExistUsernamePassword end.";
@@ -96,8 +103,8 @@ int UserCheck::InsertUsers(char* in_sUsername, char* in_sPassword)
     system(iCMD);
 
     char iSQL[1024] = {0};
-
-    snprintf(iSQL, sizeof(iSQL), "insert into wizard_users (m_username, m_password, m_instance) values ('%s', '%s', '%s')", in_sUsername, in_sPassword, in_sUsername);
+    m_oMd5.update(in_sPassword);
+    snprintf(iSQL, sizeof(iSQL), "insert into wizard_users (m_username, m_password, m_instance) values ('%s', '%s', '%s')", in_sUsername, DigestEngine::digestToHex(engine.digest()), in_sUsername);
     LOG_INFO<< iSQL<< endl;
     m_oMyDb.ExecuteSQL(iSQL, m_oUsers);
 
