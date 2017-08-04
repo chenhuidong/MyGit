@@ -14,8 +14,8 @@ int main(int argc, char* argv[])
    cout << "<h1>Wizards Linux.</h1>\n";
    cout << "<p>Welcome, here is a free linux for you.\n";
    cout << "<a href=\"signup.cgi\">if you want to sign up, click here</a>\n";
-   cout << "<p>we just provide a learn machine, can not ensure absolute security of your data, please backup.\n";
-   cout << "<p>qq cluster: 607304212.\n";
+   cout << "<p>we just provide a learn machine, can not ensure absolute security of your data, please backup.</p>\n";
+   cout << "<p>qq cluster: 607304212.</p>\n";
    cout << "<a href=\"http://124.161.110.68:54322/wizard\">our forum</a>\n";
    cout << "</p>\n";
    cout << "<p>list of installed software:<br>\n";
