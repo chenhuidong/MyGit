@@ -14,7 +14,7 @@ int UserCheck::UninitializeDb()
 
 int UserCheck::UserInputCheck(char* out_sUsername, char* out_sPassword)
 {
-    
+    /*
     char *t_sSignUp = getenv("QUERY_STRING" );
     if(!t_sSignUp)
     {
@@ -23,7 +23,7 @@ int UserCheck::UserInputCheck(char* out_sUsername, char* out_sPassword)
     }
     
     sscanf(t_sSignUp,"username=%[^&]&password=%s",out_sUsername, out_sPassword);
-    
+    */
     if((0==strlen(out_sUsername)) || (0==strlen(out_sPassword)))
     {
         cout<< "username or password is empty."<< "<br>\n"<< endl;
@@ -92,20 +92,25 @@ int UserCheck::InsertUsers(char* in_sUsername, char* in_sPassword)
 
     char iCMD[1024] = {0};
     snprintf(iCMD, sizeof(iCMD), "echo \"Chenhd@443420\" | sudo -S sh -c \"useradd -s /bin/bash -d \\\"/home/%s\\\" -m %s; echo \\\"%s:%s\\\"  | chpasswd; \"\n", in_sUsername, in_sUsername, in_sUsername, in_sPassword);
+    LOG_INFO<< iCMD<< endl;
     system(iCMD);
 
     char iSQL[1024] = {0};
 
     snprintf(iSQL, sizeof(iSQL), "insert into wizard_users (m_username, m_password, m_instance) values ('%s', '%s', '%s')", in_sUsername, in_sPassword, in_sUsername);
+    LOG_INFO<< iSQL<< endl;
     m_oMyDb.ExecuteSQL(iSQL, m_oUsers);
 
     snprintf(iSQL, sizeof(iSQL), "create database %s;", in_sUsername);
+    LOG_INFO<< iSQL<< endl;
     m_oMyDb.ExecuteSQL(iSQL, m_oUsers);
 
     snprintf(iSQL, sizeof(iSQL), "create user '%s'@'%%' identified by '%s';", in_sUsername, in_sPassword);
+    LOG_INFO<< iSQL<< endl;
     m_oMyDb.ExecuteSQL(iSQL, m_oUsers);
 
     snprintf(iSQL, sizeof(iSQL), "grant all on %s.* to %s;", in_sUsername, in_sUsername);
+    LOG_INFO<< iSQL<< endl;
     m_oMyDb.ExecuteSQL(iSQL, m_oUsers);
     
     LOG_INFO<< "InsertUsers end.";
