@@ -41,8 +41,8 @@ int main(int argc, char* argv[])
             }
             else
             {
-                LOG_INFO<< "your password is wrong."<< endl;
-                cout<< "your password is wrong."<< "<br>\n"<< endl;
+                LOG_INFO<< "username exist or your password is wrong."<< endl;
+                cout<< "username exist or your password is wrong."<< "<br>\n"<< endl;
                 break;
             }
         }
