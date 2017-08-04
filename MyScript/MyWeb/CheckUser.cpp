@@ -86,7 +86,7 @@ int UserCheck::ExistUsernamePassword(char* in_sUsername, char* in_sPassword)
 
     char iSQL[1024] = {0};
     m_oMd5.update(in_sPassword);
-    snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from wizard_users where m_username = '%s' and m_password = '%s'", in_sUsername, DigestEngine::digestToHex(engine.digest()));
+    snprintf(iSQL, sizeof(iSQL), "select m_id, m_username, m_password, m_instance from wizard_users where m_username = '%s' and m_password = '%s'", in_sUsername, DigestEngine::digestToHex(m_oMd5.digest()));
     m_oMyDb.ExecuteSQL(iSQL, m_oUsers);
     
     LOG_INFO<< "ExistUsernamePassword end.";
@@ -104,7 +104,7 @@ int UserCheck::InsertUsers(char* in_sUsername, char* in_sPassword)
 
     char iSQL[1024] = {0};
     m_oMd5.update(in_sPassword);
-    snprintf(iSQL, sizeof(iSQL), "insert into wizard_users (m_username, m_password, m_instance) values ('%s', '%s', '%s')", in_sUsername, DigestEngine::digestToHex(engine.digest()), in_sUsername);
+    snprintf(iSQL, sizeof(iSQL), "insert into wizard_users (m_username, m_password, m_instance) values ('%s', '%s', '%s')", in_sUsername, DigestEngine::digestToHex(m_oMd5.digest()), in_sUsername);
     LOG_INFO<< iSQL<< endl;
     m_oMyDb.ExecuteSQL(iSQL, m_oUsers);
 

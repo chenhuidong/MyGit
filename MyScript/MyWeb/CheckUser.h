@@ -9,6 +9,7 @@
 #include "Users.h"    
 using namespace std;
 using Poco::MD5Engine;
+using Poco::DigestEngine;
 
 class UserCheck
 {
