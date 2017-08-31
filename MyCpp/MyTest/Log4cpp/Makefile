@@ -6,4 +6,4 @@ File:
 File1:
 	g++ -oFile1 File1.cpp -llog4cpp -lpthread
 clean:
-	rm -rf Console File
+	rm -rf Console File File1
