@@ -31,9 +31,9 @@ int main(int argc, char* argv[])
 		priority = log4cpp::Priority::DEBUG;
 	warn_log.log(priority,"Importance depends on context");
 	
-	warn_log.critStream() << "This will show up << as " 
-	<< 1 << " critical message" 
-	<< log4cpp::CategoryStream::ENDLINE;
+	//warn_log.critStream() << "This will show up << as " 
+	//<< 1 << " critical message" 
+	//<< log4cpp::CategoryStream::ENDLINE;
 	// clean up and flush all appenders
 	log4cpp::Category::shutdown();
 	return 0;
