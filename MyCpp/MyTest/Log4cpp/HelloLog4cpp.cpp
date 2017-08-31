@@ -1,4 +1,3 @@
-#div_code img{border:0px;}
 #include <iostream>
 #include "log4cpp/Category.hh"
 #include "log4cpp/OstreamAppender.hh"
