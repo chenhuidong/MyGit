@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[])
 {
-	std::string initFileName = "log4cpp.properties";
+	std::string initFileName = "log4cpp1.properties";
 	log4cpp::PropertyConfigurator::configure(initFileName);
 	log4cpp::Category& root = log4cpp::Category::getRoot();
 
