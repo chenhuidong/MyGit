@@ -9,7 +9,7 @@ install_headers:
 all: libMyLog.so
 libMyLog.so:
 	$(CC) -o ./src/MyLog/libMyLog.so ./src/MyLog/MyLog.o -llog4cpp -lpthread
-MyLog.o: MyLog.cpp MyLog.h
+MyLog.o: ./src/MyLog/MyLog.cpp MyLog.h
 	$(CC) -c ./src/MyLog/MyLog.cpp $(CFLAGS) -fPIC -shared
 .PHONY:clean
 clean:
