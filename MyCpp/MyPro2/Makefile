@@ -8,9 +8,9 @@ install_headers:
 	cp -rf include/* $(INCLUDEPATH)
 all: libMyLog.so
 libMyLog.so:
-	$(CC) -o libMyLog.so -llog4cpp -lpthread
+	$(CC) -o ./src/MyLog/libMyLog.so ./src/MyLog/MyLog.o -llog4cpp -lpthread
 MyLog.o: MyLog.cpp MyLog.h
-	$(CC) -c MyLog.cpp $(CFLAGS) -fPIC -shared
+	$(CC) -c ./src/MyLog/MyLog.cpp $(CFLAGS) -fPIC -shared
 .PHONY:clean
 clean:
-	rm -rf libMyLog.so
+	rm -rf ./src/MyLog/libMyLog.so
