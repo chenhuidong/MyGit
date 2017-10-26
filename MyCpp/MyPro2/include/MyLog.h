@@ -14,7 +14,7 @@ namespace MMyLib
 
 	//root.warn("Storm is coming");
 
-	class MyLog()
+	class MyLog
 	{
 	public:
 		static int Initialize(const char * in_sFileName = NULL);
