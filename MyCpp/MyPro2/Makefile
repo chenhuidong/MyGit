@@ -4,9 +4,9 @@ INCLUDEPATH=$(WORKPATH)/MyInclude
 CC=g++
 CFLAGS=-ansi -Wall -w -std=c++11 -I$(INCLUDEPATH) -L$(LIBPATH)
 CFLAGSEX=-fPIC -shared
+all: install_headers libMyLog.so libMyBaseFunc.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
-all: libMyLog.so libMyBaseFunc.so
 libMyBaseFunc.so: MyBaseFunc.o
 	$(CC) src/MyBaseFunc/MyBaseFunc.o -o src/MyBaseFunc/libMyBaseFunc.so $(CFLAGSEX)
 MyBaseFunc.o: src/MyBaseFunc/MyBaseFunc.cpp
