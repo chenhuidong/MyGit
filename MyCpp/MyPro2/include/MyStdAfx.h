@@ -32,7 +32,8 @@ using namespace std;
 #endif
 //异常
 #include "MyException.h"
-#include "MyEnum.h"
-#include "MyBaseFunc.h"
 */
+#include "MyEnum.h"
+//#include "MyBaseFunc.h"
+
 #endif
