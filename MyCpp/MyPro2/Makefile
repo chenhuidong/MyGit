@@ -4,9 +4,13 @@ INCLUDEPATH=$(WORKPATH)/MyInclude
 CC=g++
 CFLAGS=-ansi -Wall -w -std=c++11 -I$(INCLUDEPATH) -L$(LIBPATH)
 CFLAGSEX=-fPIC -shared
-all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so
+all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
+libMyLua.so: MyLua.o
+	$(CC) src/MyLua.o -o src/libMyLua.so $(CFLAGSEX)
+MyLua.o: src/MyLua.cpp
+	$(CC) -c src/MyLua.cpp -o src/MyLua.o $(CFLAGS) $(CFLAGSEX)
 libMyRedis.so: MyRedis.o
 	$(CC) src/MyRedis.o -o src/libMyRedis.so $(CFLAGSEX)
 MyRedis.o: src/MyRedis.cpp
