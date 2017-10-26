@@ -4,7 +4,7 @@ INCLUDEPATH=$(WORKPATH)/MyInclude
 CC=g++
 CFLAGS=-ansi -Wall -w -std=c++11 -I$(INCLUDEPATH) -L$(LIBPATH)
 CFLAGSEX=-fPIC -shared
-all: install_headers libMyLog.so libMyBaseFunc.so
+all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
 libMyDateTime.so: MyDateTime.o
