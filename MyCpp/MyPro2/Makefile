@@ -7,7 +7,7 @@ CFLAGSEX=-fPIC -shared
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
 all: libMyLog.so
-libMyLog.so:
+libMyLog.so: MyLog.o
 	$(CC) -o ./src/MyLog/libMyLog.so ./src/MyLog/MyLog.o -llog4cpp -lpthread
 MyLog.o: ./src/MyLog/MyLog.cpp MyLog.h
 	$(CC) -c ./src/MyLog/MyLog.cpp $(CFLAGS) -fPIC -shared
