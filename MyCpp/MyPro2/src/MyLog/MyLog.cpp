@@ -1,5 +1,6 @@
 #include "MyStdAfx.h"
 #include "MyLog.h"
+using namespace MMyLib;
 
 int MyLog::Initialize(const char * in_sInitFileName)
 {

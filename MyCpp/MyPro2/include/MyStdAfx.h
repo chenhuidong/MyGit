@@ -18,7 +18,7 @@
 #include <signal.h>
 
 using namespace std;
-using namespace MMyLib;
+
 /*
 //日志设置
 #ifdef UNIMPORT_MY_LOG
