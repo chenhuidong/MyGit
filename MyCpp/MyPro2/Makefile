@@ -4,13 +4,17 @@ INCLUDEPATH=$(WORKPATH)/MyInclude
 CC=g++
 CFLAGS=-ansi -Wall -w -std=c++11 -I$(INCLUDEPATH) -L$(LIBPATH)
 CFLAGSEX=-fPIC -shared
-all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMySharedLibrary.so
+all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMyException.so libMySharedLibrary.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
 libMySharedLibrary.so: MySharedLibrary.o
-	$(CC) src/MySharedLibrary.o -o src/libMySharedLibrary.so $(CFLAGSEX)
+	$(CC) src/MySharedLibrary.o -o src/libMySharedLibrary.so -lMyException $(CFLAGSEX)
 MySharedLibrary.o: src/MySharedLibrary.cpp
 	$(CC) -c src/MySharedLibrary.cpp -o src/MySharedLibrary.o $(CFLAGS) $(CFLAGSEX)
+libMyException.so: MyException.o
+	$(CC) src/MyException.o -o src/libMyException.so $(CFLAGSEX)
+MyException.o: src/MyException.cpp
+	$(CC) -c src/MyException.cpp -o src/MyException.o $(CFLAGS) $(CFLAGSEX)
 libMyLua.so: MyLua.o
 	$(CC) src/MyLua.o -o src/libMyLua.so $(CFLAGSEX)
 MyLua.o: src/MyLua.cpp
