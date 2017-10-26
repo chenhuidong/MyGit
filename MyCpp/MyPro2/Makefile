@@ -7,6 +7,10 @@ CFLAGSEX=-fPIC -shared
 all: install_headers libMyLog.so libMyBaseFunc.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
+libMyDateTime.so: MyDateTime.o
+	$(CC) src/MyDateTime.o -o src/libMyDateTime.so $(CFLAGSEX)
+MyDateTime.o: src/MyDateTime.cpp
+	$(CC) -c src/MyDateTime.cpp -o src/MyDateTime.o $(CFLAGS) $(CFLAGSEX)
 libMyBaseFunc.so: MyBaseFunc.o
 	$(CC) src/MyBaseFunc.o -o src/libMyBaseFunc.so $(CFLAGSEX)
 MyBaseFunc.o: src/MyBaseFunc.cpp
