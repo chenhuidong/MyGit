@@ -10,7 +10,7 @@ all: libMyLog.so libMyBaseFunc.so
 libMyBaseFunc.so: MyBaseFunc.o
 	$(CC) src/MyBaseFunc/MyBaseFunc.o -o src/MyBaseFunc/libMyBaseFunc.so $(CFLAGSEX)
 MyBaseFunc.o: src/MyBaseFunc/MyBaseFunc.cpp
-	$(CC) -c src/MyBaseFunc/MyBaseFunc.cpp -o src/MyBaseFunc/MyLog.o $(CFLAGS) $(CFLAGSEX)
+	$(CC) -c src/MyBaseFunc/MyBaseFunc.cpp -o src/MyBaseFunc/MyBaseFunc.o $(CFLAGS) $(CFLAGSEX)
 libMyLog.so: MyLog.o
 	$(CC) src/MyLog/MyLog.o -o src/MyLog/libMyLog.so -llog4cpp -lpthread $(CFLAGSEX)
 MyLog.o: src/MyLog/MyLog.cpp
