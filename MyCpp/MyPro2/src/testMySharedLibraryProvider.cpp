@@ -3,7 +3,7 @@
 int hellokitty()
 {
     //LOG_INFO<< "hello kitty!" << std::endl;
-    MyLog::pLog->info("hello kitty!\n");
+    LOG_INFO("hello kitty!\n");
     return SDL_ONCE;
 }
 
@@ -23,7 +23,7 @@ PluginA::~PluginA()
 void PluginA::HelloWorld()
 {
 	//LOG_INFO<< "hello, world!"<< std::endl;
-	MyLog::pLog->info("hello, world!\n");
+	LOG_INFO("hello, world!\n");
 }
 
 POCO_BEGIN_MANIFEST(AbstractPlugin)
@@ -33,11 +33,11 @@ POCO_END_MANIFEST
 void pocoInitializeLibrary()
 {
 	//LOG_INFO<< "PluginLibrary initializing."<< std::endl;
-	MyLog::pLog.info("PluginLibrary initializing.\n");
+	LOG_INFO("PluginLibrary initializing.\n");
 }
 
 void pocoUninitializeLibrary()
 {
 	//LOG_INFO<< "PluginLibrary uninitializing."<< std::endl;
-	MyLog::pLog.info("PluginLibrary uninitializing.\n");
+	LOG_INFO("PluginLibrary uninitializing.\n");
 }
