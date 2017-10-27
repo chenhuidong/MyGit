@@ -4,9 +4,13 @@ INCLUDEPATH=$(WORKPATH)/MyInclude
 CC=g++
 CFLAGS=-ansi -Wall -w -std=c++11 -I$(INCLUDEPATH) -L$(LIBPATH)
 CFLAGSEX=-fPIC -shared
-all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMyException.so libMySharedLibrary.so
+all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMyException.so libMySharedLibrary.so libMyThread.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
+libMyThread.so: MyThread.o
+	$(CC) src/MyThread.o -o src/libMyThread.so -lboost_thread-mt $(CFLAGSEX)
+MyThread.o: src/MyThread.cpp
+	$(CC) -c src/MyThread.cpp -o src/MyThread.o $(CFLAGS) $(CFLAGSEX)
 libMySharedLibrary.so: MySharedLibrary.o testMySharedLibraryProvider.o
 	$(CC) src/MySharedLibrary.o src/testMySharedLibraryProvider.o -o src/libMySharedLibrary.so -lMyException -lMyLog $(CFLAGSEX)
 testMySharedLibraryProvider.o: src/testMySharedLibraryProvider.cpp
