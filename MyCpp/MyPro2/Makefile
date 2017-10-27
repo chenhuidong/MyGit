@@ -4,9 +4,13 @@ INCLUDEPATH=$(WORKPATH)/MyInclude
 CC=g++
 CFLAGS=-ansi -Wall -w -std=c++11 -I$(INCLUDEPATH) -L$(LIBPATH)
 CFLAGSEX=-fPIC -shared
-all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMyException.so libMySharedLibrary.so libMyThread.so libMyDb.so libMyNet.so
+all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMyException.so libMySharedLibrary.so libMyThread.so libMyDb.so libMyNet.so libMyTR.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
+libMyTR.so: MyTR.o
+	$(CC) src/MyTR.o -o src/libMyTR.so $(CFLAGSEX)
+MyTR.o: src/MyTR.cpp
+	$(CC) -c src/MyTR.cpp -o src/MyTR.o $(CFLAGS) $(CFLAGSEX)
 libMyNet.so: MyNet.o
 	$(CC) src/MyNet.o -o src/libMyNet.so $(CFLAGSEX)
 MyNet.o: src/MyNet.cpp
