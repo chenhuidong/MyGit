@@ -6,7 +6,7 @@ int main(int argc, char* argv[])
 {
 	std::string initFileName = "MyLog.properties";
 
-	MyLog::Initialize(initFileName);
+	MyLog::Initialize(initFileName.c_str());
 	LOG_WARN("Storm is coming");
 	LOG_INFO("Ready for storm.");
 	MyLog::Uninitialize();
