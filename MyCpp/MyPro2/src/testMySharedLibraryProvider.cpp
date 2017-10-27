@@ -3,7 +3,7 @@
 int hellokitty()
 {
     //LOG_INFO<< "hello kitty!" << std::endl;
-    MyLog::pLog.info("hello kitty!\n");
+    MyLog::pLog->info("hello kitty!\n");
     return SDL_ONCE;
 }
 
@@ -23,7 +23,7 @@ PluginA::~PluginA()
 void PluginA::HelloWorld()
 {
 	//LOG_INFO<< "hello, world!"<< std::endl;
-	MyLog::pLog.info("hello, world!\n");
+	MyLog::pLog->info("hello, world!\n");
 }
 
 POCO_BEGIN_MANIFEST(AbstractPlugin)

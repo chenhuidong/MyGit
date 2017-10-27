@@ -7,12 +7,10 @@
 
 namespace MMyLib
 {
-	//#define LOG_INFO LOG(INFO)
-	//#define LOG_WARN LOG(WARNING)
-	//#define LOG_ERROR LOG(ERROR)
-	//#define LOG_FATAL LOG(FATAL)
-
-	//root.warn("Storm is coming");
+	#define LOG_INFO MyLog::pLog->info
+	#define LOG_WARN MyLog::pLog->warn
+	#define LOG_ERROR MyLog::pLog->error
+	#define LOG_FATAL MyLog::pLog->fatal
 
 	class MyLog
 	{
