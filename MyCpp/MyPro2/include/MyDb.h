@@ -33,7 +33,7 @@ namespace MMyLib
 		int ExecuteSQL(const char* in_sSQL, T& out_oT)
 		{
 
-			LOG_INFO<< in_sSQL;
+			LOG_INFO(in_sSQL);
 			out_oT.clear();
 			Statement t_oStatement(*m_pSession);
 			t_oStatement<< in_sSQL, into(out_oT), now;

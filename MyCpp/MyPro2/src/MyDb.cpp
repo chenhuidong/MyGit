@@ -6,18 +6,18 @@ int MMyLib::MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
     if(MyDb::SQLite == in_eDbType)
     {
         // register SQLite connector
-        LOG_INFO<< "initialize sqlite begin.";
+        LOG_INFO("initialize sqlite begin.\n");
 
         Poco::Data::SQLite::Connector::registerConnector();
         m_pSession = new Session("SQLite", in_sDbName);
-        LOG_INFO<< "initialize sqlite end.";
+        LOG_INFO("initialize sqlite end.\n");
     }
     else if(MyDb::MySQL == in_eDbType)
     {
-        LOG_INFO<< "initialize mysql begin.";
+        LOG_INFO("initialize mysql begin.\n");
         Poco::Data::MySQL::Connector::registerConnector();
         m_pSession = new Session(Poco::Data::SessionFactory::instance().create(Poco::Data::MySQL::Connector::KEY, in_sDbName));
-        LOG_INFO<< "initialize mysql end.";
+        LOG_INFO("initialize mysql end.\n");
     }
     else
     {
