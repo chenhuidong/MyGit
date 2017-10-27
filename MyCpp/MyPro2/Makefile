@@ -8,7 +8,7 @@ all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so 
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
 libMySharedLibrary.so: MySharedLibrary.o testMySharedLibraryProvider.o
-	$(CC) src/MySharedLibrary.o src/testMySharedLibraryProvider.o -o src/libMySharedLibrary.so -lMyException $(CFLAGSEX)
+	$(CC) src/MySharedLibrary.o src/testMySharedLibraryProvider.o -o src/libMySharedLibrary.so -lMyException -lMyLog $(CFLAGSEX)
 testMySharedLibraryProvider.o: src/testMySharedLibraryProvider.cpp
 	$(CC) -c src/testMySharedLibraryProvider.cpp -o src/testMySharedLibraryProvider.o $(CFLAGS) $(CFLAGSEX)
 MySharedLibrary.o: src/MySharedLibrary.cpp src/testMySharedLibraryProvider.cpp

@@ -33,6 +33,7 @@ using namespace std;
 //异常
 #include "MyException.h"
 */
+#include "MyLog.h"
 #include "MyEnum.h"
 //#include "MyBaseFunc.h"
 
