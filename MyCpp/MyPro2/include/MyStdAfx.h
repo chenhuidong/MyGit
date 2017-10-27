@@ -31,10 +31,10 @@ using namespace std;
 #include "MyLog.h"
 #endif
 //异常
-#include "MyException.h"
 */
 #include "MyLog.h"
 #include "MyEnum.h"
-//#include "MyBaseFunc.h"
+#include "MyException.h"
+#include "MyBaseFunc.h"
 
 #endif
