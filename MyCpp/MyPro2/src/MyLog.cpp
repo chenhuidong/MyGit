@@ -2,7 +2,7 @@
 #include "MyLog.h"
 using namespace MMyLib;
 
-int MyLog::Initialize(const char * in_sInitFileName)
+int Initialize(const char * in_sInitFileName)
 {
 	std::string t_sInitFileName="";
 	if(!in_sInitFileName)
@@ -14,7 +14,7 @@ int MyLog::Initialize(const char * in_sInitFileName)
 	return 0;
 }
 
-int MyLog::Uninitialize()
+int Uninitialize()
 {
 	log4cpp::Category::shutdown();
 	return 0;
