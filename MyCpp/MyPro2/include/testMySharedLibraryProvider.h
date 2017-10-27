@@ -5,6 +5,8 @@
 #include "Poco/ClassLibrary.h"
 #include <iostream>
 
+using namespace MMyLib;
+
 #if defined(_WIN32)
 #define LIBRARY_API __declspec(dllexport)
 #else
