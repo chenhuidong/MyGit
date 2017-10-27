@@ -7,6 +7,10 @@ CFLAGSEX=-fPIC -shared
 all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMyException.so libMySharedLibrary.so libMyThread.so libMyDb.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
+libMyNet.so: MyNet.o
+	$(CC) src/MyNet.o -o src/libMyNet.so $(CFLAGSEX)
+MyNet.o: src/MyNet.cpp
+	$(CC) -c src/MyNet.cpp -o src/MyNet.o $(CFLAGS) $(CFLAGSEX)
 libMyDb.so: MyDb.o
 	$(CC) src/MyDb.o -o src/libMyDb.so -lPocoData -lPocoDataSQLite -lPocoDataMySQL -lMyException $(CFLAGSEX)
 MyDb.o: src/MyDb.cpp
