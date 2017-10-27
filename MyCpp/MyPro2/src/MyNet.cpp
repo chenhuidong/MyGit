@@ -15,7 +15,7 @@ MMyLib::MyServSession1::~MyServSession1()
 
 void MMyLib::MyServSession1::start()
 {
-	LOG_INFO<< "recive from "<< m_oSocket->remote_endpoint().address()<< ":"<< m_oSocket->remote_endpoint().port()<< endl;
+	LOG_INFO("recive from %s: %d\n", m_oSocket->remote_endpoint().address(), m_oSocket->remote_endpoint().port());
 	boost::shared_ptr<vector<char> > str(new vector<char>(100, 0));
 	m_oSocket->async_read_some(buffer(*str), boost::bind(&MyServSession1::read_handler, shared_from_this(), boost::asio::placeholders::error, str));
 }
@@ -97,7 +97,7 @@ void MMyLib::MyCltSession1::read_handler(const boost::system::error_code& ec, bo
 {
 	if(ec)
 		return;
-	LOG_INFO<< &(*str)[0]<< endl<< endl;
+	LOG_INFO("%s", &(*str)[0]);
 }
 
 //MyClient
