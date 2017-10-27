@@ -21,8 +21,7 @@ PluginA::~PluginA()
 
 void PluginA::HelloWorld()
 {
-	//LOG_INFO<< "hello, world!"<< std::endl;
-	MyLog::pLog.info("hello, world!\n");
+	LOG_INFO<< "hello, world!"<< std::endl;
 }
 
 POCO_BEGIN_MANIFEST(AbstractPlugin)
@@ -31,12 +30,10 @@ POCO_END_MANIFEST
 
 void pocoInitializeLibrary()
 {
-	//LOG_INFO<< "PluginLibrary initializing."<< std::endl;
-	MyLog::pLog.info("PluginLibrary initializing.\n");
+	LOG_INFO<< "PluginLibrary initializing."<< std::endl;
 }
 
 void pocoUninitializeLibrary()
 {
-	//LOG_INFO<< "PluginLibrary uninitializing."<< std::endl;
-	MyLog::pLog.info("PluginLibrary uninitializing.\n");
+	LOG_INFO<< "PluginLibrary uninitializing."<< std::endl;
 }
