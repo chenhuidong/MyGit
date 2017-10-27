@@ -7,9 +7,11 @@ CFLAGSEX=-fPIC -shared
 all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMyException.so libMySharedLibrary.so
 install_headers:
 	cp -rf include/* $(INCLUDEPATH)
-libMySharedLibrary.so: MySharedLibrary.o
-	$(CC) src/MySharedLibrary.o -o src/libMySharedLibrary.so -lMyException $(CFLAGSEX)
-MySharedLibrary.o: src/MySharedLibrary.cpp
+libMySharedLibrary.so: MySharedLibrary.o testMySharedLibraryProvider.o
+	$(CC) src/MySharedLibrary.o src/testMySharedLibraryProvider.o -o src/libMySharedLibrary.so -lMyException $(CFLAGSEX)
+testMySharedLibraryProvider.o: src/testMySharedLibraryProvider.cpp
+	$(CC) -c src/testMySharedLibraryProvider.cpp -o src/testMySharedLibraryProvider.o $(CFLAGS) $(CFLAGSEX)
+MySharedLibrary.o: src/MySharedLibrary.cpp src/testMySharedLibraryProvider.cpp
 	$(CC) -c src/MySharedLibrary.cpp -o src/MySharedLibrary.o $(CFLAGS) $(CFLAGSEX)
 libMyException.so: MyException.o
 	$(CC) src/MyException.o -o src/libMyException.so $(CFLAGSEX)

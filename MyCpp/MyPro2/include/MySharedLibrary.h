@@ -6,7 +6,7 @@
 #include "Poco/ClassLoader.h"
 #include "Poco/Manifest.h"
 #include "MyException.h"
-//#include "testMySharedLibraryProvider.h"
+#include "testMySharedLibraryProvider.h"
 
 using Poco::SharedLibrary;
 
