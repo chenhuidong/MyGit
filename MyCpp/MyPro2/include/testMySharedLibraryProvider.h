@@ -2,6 +2,7 @@
 #define __MY_LIB_TEST_MY_SHARED_LIBRARY_H_
 
 #include "MyStdAfx.h"
+#include "MyLog.h"
 #include "Poco/ClassLibrary.h"
 #include <iostream>
 
