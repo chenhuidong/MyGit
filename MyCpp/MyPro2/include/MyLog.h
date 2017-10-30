@@ -12,8 +12,8 @@ namespace MMyLib
 	#define LOG_ERROR pLog->error
 	#define LOG_FATAL pLog->fatal
  
-	extern int Initialize(const char * in_sFileName = NULL);
-	extern int Uninitialize();
+	int Initialize(const char * in_sFileName = NULL);
+	int Uninitialize();
 	static log4cpp::Category* pLog;
 
 };
