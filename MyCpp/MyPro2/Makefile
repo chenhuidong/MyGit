@@ -30,7 +30,7 @@ testMySharedLibraryProvider.o: src/testMySharedLibraryProvider.cpp
 MySharedLibrary.o: src/MySharedLibrary.cpp src/testMySharedLibraryProvider.cpp
 	$(CC) -c src/MySharedLibrary.cpp -o src/MySharedLibrary.o $(CFLAGS) $(CFLAGSEX)
 libMyException.so: MyException.o
-	$(CC) src/MyException.o -o src/libMyException.so $(CFLAGSEX)
+	$(CC) src/MyException.o -o src/libMyException.so -lPocoFoundation $(CFLAGSEX)
 MyException.o: src/MyException.cpp
 	$(CC) -c src/MyException.cpp -o src/MyException.o $(CFLAGS) $(CFLAGSEX)
 libMyLua.so: MyLua.o
