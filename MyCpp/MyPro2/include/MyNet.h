@@ -2,6 +2,7 @@
 #define __MY_LIB_MY_NET_H_
 
 #include "MyStdAfx.h"
+#include "MyLog.h"
 #include "MyTR.h"
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
