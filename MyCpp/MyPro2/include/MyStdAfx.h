@@ -32,7 +32,7 @@ using namespace std;
 #endif
 //异常
 */
-#include "MyLog.h"
+//#include "MyLog.h"
 #include "MyEnum.h"
 #include "MyException.h"
 #include "MyBaseFunc.h"
