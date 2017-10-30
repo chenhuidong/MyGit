@@ -38,7 +38,7 @@ libMyLua.so: MyLua.o
 MyLua.o: src/MyLua.cpp
 	$(CC) -c src/MyLua.cpp -o src/MyLua.o $(CFLAGS) $(CFLAGSEX)
 libMyRedis.so: MyRedis.o
-	$(CC) src/MyRedis.o -o src/libMyRedis.so $(CFLAGSEX)
+	$(CC) src/MyRedis.o -o src/libMyRedis.so -lredis3m $(CFLAGSEX)
 MyRedis.o: src/MyRedis.cpp
 	$(CC) -c src/MyRedis.cpp -o src/MyRedis.o $(CFLAGS) $(CFLAGSEX)
 libMyConf.so: MyConf.o
