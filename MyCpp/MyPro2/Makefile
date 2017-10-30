@@ -12,7 +12,7 @@ libMyTR.so: MyTR.o
 MyTR.o: src/MyTR.cpp
 	$(CC) -c src/MyTR.cpp -o src/MyTR.o $(CFLAGS) $(CFLAGSEX)
 libMyNet.so: MyNet.o
-	$(CC) src/MyNet.o -o src/libMyNet.so -lboost_system $(CFLAGSEX)
+	$(CC) src/MyNet.o -o src/libMyNet.so -lboost_system -lMyLog $(CFLAGSEX)
 MyNet.o: src/MyNet.cpp
 	$(CC) -c src/MyNet.cpp -o src/MyNet.o $(CFLAGS) $(CFLAGSEX)
 libMyDb.so: MyDb.o
