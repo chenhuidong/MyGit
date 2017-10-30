@@ -15,7 +15,7 @@ namespace MMyLib
 
 	extern int Initialize(const char * in_sFileName = NULL);
 	extern int Uninitialize();
-	extern log4cpp::Category* pLog;
+	static log4cpp::Category* pLog;
 
 };
 
