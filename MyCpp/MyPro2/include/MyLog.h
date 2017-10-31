@@ -12,9 +12,9 @@ namespace MMyLib
 	#define LOG_ERROR pLog->error
 	#define LOG_FATAL pLog->fatal
  
-	extern int InitLog(const char * in_sFileName = NULL);
-	extern int UninitLog();
-	extern log4cpp::Category* pLog;
+	int InitLog(const char * in_sFileName = NULL);
+	int UninitLog();
+	log4cpp::Category* pLog;
 
 };
 
