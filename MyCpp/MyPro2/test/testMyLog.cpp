@@ -2,9 +2,6 @@
 #include "MyLog.h"
 using namespace MMyLib;
 
-extern int InitLog(const char * in_sFileName = NULL);
-extern int UninitLog();
-
 int main(int argc, char* argv[])
 {
 	std::string initFileName = "MyLog.properties";
