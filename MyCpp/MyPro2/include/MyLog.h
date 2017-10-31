@@ -15,7 +15,6 @@ namespace MMyLib
 	int InitLog(const char * in_sFileName = NULL);
 	int UninitLog();
 	extern log4cpp::Category* pLog;
-
 };
 
 #endif
