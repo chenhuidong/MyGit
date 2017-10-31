@@ -56,7 +56,7 @@ MyBaseFunc.o: src/MyBaseFunc.cpp
 libMyLog.so: MyLog.o
 	$(CC) src/MyLog.o -o src/libMyLog.so -llog4cpp -lpthread -shared
 MyLog.o: src/MyLog.cpp
-	$(CC) -c src/MyLog.cpp -o src/MyLog.o $(CFLAGS) 
+	$(CC) -c src/MyLog.cpp -o src/MyLog.o $(CFLAGS) -shared
 test: testMyLog
 testMyLog:
 	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog $(CFLAGS) -llog4cpp -lpthread
