@@ -2,8 +2,6 @@
 #include "MyLog.h"
 using namespace MMyLib;
 
-log4cpp::Category* pLog = NULL;
-
 int Initialize(const char * in_sInitFileName)
 {
 	std::string t_sInitFileName="";
