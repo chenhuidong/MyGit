@@ -1,4 +1,4 @@
-#include "MyStdAfx.h"
+/*#include "MyStdAfx.h"
 #include "MyLog.h"
 using namespace MMyLib;
 
@@ -19,3 +19,8 @@ int UninitLog()
 	log4cpp::Category::shutdown();
 	return 0;
 }
+*/
+
+#include "MyLog.h"
+
+int imax = 6;

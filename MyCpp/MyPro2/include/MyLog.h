@@ -1,6 +1,7 @@
 #ifndef __MY_LIB_MY_LOG_H_
 #define __MY_LIB_MY_LOG_H_
 
+/*
 #include "MyStdAfx.h"
 #include <log4cpp/Category.hh>
 #include <log4cpp/PropertyConfigurator.hh>
@@ -16,5 +17,7 @@ namespace MMyLib
 	int UninitLog();
 	extern log4cpp::Category* pLog;
 };
+*/
 
+extern int imax;
 #endif
