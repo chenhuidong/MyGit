@@ -15,12 +15,12 @@ int InitLog(const char * in_sInitFileName)
 	log4cpp::Category* pLog = &log4cpp::Category::getRoot();
 	return 0;
 }
-
+*/
 int UninitLog()
 {
 	log4cpp::Category::shutdown();
 	return 0;
 }
-*/
+
 	log4cpp::Category* pLog = NULL;
 };
