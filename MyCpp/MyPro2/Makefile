@@ -68,7 +68,7 @@ testMyConf:
 	$(CC) test/testMyConf.cpp -o test/testMyConf -lMyConf $(CFLAGS)
 testMyDb:
 	$(CC) test/testMyDb.cpp -o test/testMyDb -lMyDb -lPocoFoundation -lPocoData -lMyException -lMyLog -llog4cpp $(CFLAGS)
-testMyLua: tolua Test.o TestLua.o testMyLua.o
+testMyLua: Test.o TestLua.o testMyLua.o
 	$(CC) -o test/testMyLua test/Test.o test/TestLua.o test/testMyLua.o $(CFLAGS)
 Test.o: test/Test.cpp
 	$(CC) -c test/Test.cpp -o test/Test.o $(CFLAGS) 
@@ -76,7 +76,7 @@ TestLua.o: test/TestLua.cpp
 	$(CC) -c test/TestLua.cpp -o test/TestLua.o $(CFLAGS) 
 testMyLua.o: test/testMyLua.cpp 
 	$(CC) -c test/testMyLua.cpp -o test/testMyLua.o $(CFLAGS)
-tolua:
+lua:
 	tolua++ -o test/TestLua.cpp test/Test.pkg
 install:
 	cp src/lib*.so $(LIBPATH) 
