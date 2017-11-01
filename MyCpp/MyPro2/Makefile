@@ -46,7 +46,7 @@ libMyConf.so: MyConf.o
 MyConf.o: src/MyConf.cpp
 	$(CC) -c src/MyConf.cpp -o src/MyConf.o $(CFLAGS) $(CFLAGSEX)
 libMyDateTime.so: MyDateTime.o
-	$(CC) src/MyDateTime.o -o src/libMyDateTime.so $(CFLAGSEX)
+	$(CC) src/MyDateTime.o -o src/libMyDateTime.so -lboost_date_time $(CFLAGSEX)
 MyDateTime.o: src/MyDateTime.cpp
 	$(CC) -c src/MyDateTime.cpp -o src/MyDateTime.o $(CFLAGS) $(CFLAGSEX)
 libMyBaseFunc.so: MyBaseFunc.o
