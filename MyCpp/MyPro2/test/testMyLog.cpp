@@ -5,14 +5,14 @@ using namespace MMyLib;
 int main(int argc, char* argv[])
 {	
 	
-	const char* initFileName = "MyLog.properties";
+	std::string initFileName = "MyLog.properties";
 
-	InitLog(initFileName);
+	InitLog(initFileName.c_str());
 	//LOG_WARN("Storm is coming");
 	//LOG_INFO("Ready for storm.");
 	UninitLog();
 	
-	MMyLib::pLog = NULL;
-	//MyLogNull;
+	//cout<< imax<< endl;
+	pLog = NULL;
 	return 0;
 }
