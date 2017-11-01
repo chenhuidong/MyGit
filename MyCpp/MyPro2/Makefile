@@ -61,7 +61,7 @@ test: testMyLog testMyBaseFunc
 testMyLog: 
 	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog -llog4cpp $(CFLAGS)
 testMyBaseFunc:
-	$(CC) test/testMyBaseFunc.cpp -o test/testMyBaseFunc -libMyBaseFunc $(CFLAGS)
+	$(CC) test/testMyBaseFunc.cpp -o test/testMyBaseFunc -lMyBaseFunc $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH)
 .PHONY:clean
