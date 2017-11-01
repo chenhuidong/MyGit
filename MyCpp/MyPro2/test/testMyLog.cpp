@@ -12,6 +12,7 @@ int main(int argc, char* argv[])
 	LOG_INFO("Ready for storm.");
 	MMyLib::UninitLog();
 	*/
-	cout<< imax<< endl;
+	//cout<< imax<< endl;
+	pLog = NULL;
 	return 0;
 }

@@ -1,7 +1,7 @@
-/*#include "MyStdAfx.h"
+#include "MyStdAfx.h"
 #include "MyLog.h"
 using namespace MMyLib;
-
+/*
 int InitLog(const char * in_sInitFileName = NULL)
 {
 	std::string t_sInitFileName="";
@@ -21,6 +21,4 @@ int UninitLog()
 }
 */
 
-#include "MyLog.h"
-
-int imax = 6;
+log4cpp::Category* pLog = NULL;
