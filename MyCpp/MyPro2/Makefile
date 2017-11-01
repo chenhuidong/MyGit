@@ -59,7 +59,7 @@ MyLog.o: src/MyLog.cpp
 	$(CC) -c src/MyLog.cpp -o src/MyLog.o $(CFLAGS) $(CFLAGSEX)
 test: testMyLog
 testMyLog: 
-	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog $(CFLAGS) -llog4cpp -lpthread
+	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog -llog4cpp $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH)
 .PHONY:clean
