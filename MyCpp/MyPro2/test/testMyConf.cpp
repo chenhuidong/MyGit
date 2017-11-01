@@ -1,4 +1,4 @@
-#include "MyConf.cpp"
+#include "MyConf.h"
 using namespace MMyLib;
 
 int main()
