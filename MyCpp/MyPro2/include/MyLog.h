@@ -8,9 +8,9 @@
 namespace MMyLib
 {
 	#define LOG_INFO(format, ...)  pLog->info(format, ##__VA_ARGS__)
-	//#define LOG_WARN MMyLib::pLog->warn
-	//#define LOG_ERROR MMyLib::pLog->error
-	//#define LOG_FATAL MMyLib::pLog->fatal
+	#define LOG_WARN(format, ...)  pLog->warn(format, ##__VA_ARGS__)
+	#define LOG_ERROR(format, ...) pLog->error(format, ##__VA_ARGS__)
+	#define LOG_FATAL(format, ...) pLog->fatal(format, ##__VA_ARGS__)
 
 	int InitLog(const char * in_sInitFileName);
 	int UninitLog();
