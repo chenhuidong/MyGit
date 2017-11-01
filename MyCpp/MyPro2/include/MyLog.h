@@ -6,9 +6,9 @@
 #include <log4cpp/Category.hh>
 #include <log4cpp/PropertyConfigurator.hh>
 
-namespace MMyLib
+/*namespace MMyLib
 {
-	/*
+	
 	#define LOG_INFO pLog->info
 	#define LOG_WARN pLog->warn
 	#define LOG_ERROR pLog->error
@@ -18,7 +18,7 @@ namespace MMyLib
 	int UninitLog();
 	*/
 	extern log4cpp::Category* pLog;
-};
+//};
 
 
 //extern int imax;
