@@ -13,7 +13,7 @@ int InitLog(const char * in_sInitFileName)
 	else
 		t_sInitFileName = in_sInitFileName;
 	log4cpp::PropertyConfigurator::configure(t_sInitFileName);
-	log4cpp::Category* pLog = &log4cpp::Category::getRoot();
+	pLog = &log4cpp::Category::getRoot();
 	return 0;
 }
 
