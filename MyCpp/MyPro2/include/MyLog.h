@@ -8,7 +8,6 @@
 
 namespace MMyLib
 {
-	/*
 	#define LOG_INFO pLog->info
 	#define LOG_WARN pLog->warn
 	#define LOG_ERROR pLog->error
@@ -16,7 +15,7 @@ namespace MMyLib
  
 	int InitLog(const char * in_sInitFileName = NULL);
 	int UninitLog();
-	*/
+	
 	extern log4cpp::Category* pLog;
 };
 
