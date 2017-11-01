@@ -5,9 +5,9 @@ using namespace MMyLib;
 int main(int argc, char* argv[])
 {	
 	
-	std::string initFileName = "MyLog.properties";
+	const char* initFileName = "MyLog.properties";
 
-	MMyLib::InitLog(initFileName.c_str());
+	MMyLib::InitLog(initFileName);
 	//LOG_WARN("Storm is coming");
 	//LOG_INFO("Ready for storm.");
 	MMyLib::UninitLog();
