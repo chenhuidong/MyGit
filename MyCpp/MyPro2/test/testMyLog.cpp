@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 	MMyLib::InitLog(initFileName);
 	//LOG_WARN("Storm is coming");
 	//LOG_INFO("Ready for storm.");
-	MMyLib::UninitLog();
+	UninitLog();
 	
 	//cout<< imax<< endl;
 	pLog = NULL;
