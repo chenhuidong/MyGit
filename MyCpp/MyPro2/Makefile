@@ -57,11 +57,13 @@ libMyLog.so: MyLog.o
 	$(CC) src/MyLog.o -o src/libMyLog.so -llog4cpp -lpthread $(CFLAGSEX)
 MyLog.o: src/MyLog.cpp
 	$(CC) -c src/MyLog.cpp -o src/MyLog.o $(CFLAGS) $(CFLAGSEX)
-test: testMyLog testMyBaseFunc
+test: testMyLog testMyBaseFunc testMyDateTime
 testMyLog: 
 	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog -llog4cpp $(CFLAGS)
 testMyBaseFunc:
 	$(CC) test/testMyBaseFunc.cpp -o test/testMyBaseFunc -lMyBaseFunc $(CFLAGS)
+testMyDateTime:
+	$(CC) test/testMyDateTime.cpp -o test/testMyDateTime -lMyDateTime $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH)
 .PHONY:clean
