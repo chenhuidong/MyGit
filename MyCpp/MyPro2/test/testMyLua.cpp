@@ -6,7 +6,9 @@ int  tolua_Test_open (lua_State* tolua_S);
 
 int main(int argc, char**argv)
 {
-	INITIALIZE_LOG(argv[0]);
+	std::string initFileName = "MyLog.properties";
+
+    InitLog(initFileName.c_str());
     
     //lua_State *L = luaL_newstate(); 
     //luaopen_base(g_pLua); 
@@ -79,5 +81,7 @@ int main(int argc, char**argv)
     */
 
     lua_close(g_pLua); 
+
+    UninitLog();
 	return 0;
 }
