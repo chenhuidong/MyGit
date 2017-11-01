@@ -21,4 +21,4 @@ int UninitLog()
 }
 */
 
-log4cpp::Category* pLog = NULL;
+MMyLib::log4cpp::Category* pLog = NULL;

@@ -1,6 +1,6 @@
 #include "MyStdAfx.h"
 #include "MyLog.h"
-//using namespace MMyLib;
+using namespace MMyLib;
 
 int main(int argc, char* argv[])
 {	
@@ -13,6 +13,6 @@ int main(int argc, char* argv[])
 	MMyLib::UninitLog();
 	*/
 	//cout<< imax<< endl;
-	pLog = NULL;
+	MMyLib::pLog = NULL;
 	return 0;
 }
