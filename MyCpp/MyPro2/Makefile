@@ -67,7 +67,7 @@ testMyDateTime:
 testMyConf:
 	$(CC) test/testMyConf.cpp -o test/testMyConf -lMyConf $(CFLAGS)
 testMyDb:
-	$(CC) test/testMyDb.cpp -o test/testMyDb -lMyDb $(CFLAGS)
+	$(CC) test/testMyDb.cpp -o test/testMyDb -lMyDb -lMyLog $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH)
 .PHONY:clean
