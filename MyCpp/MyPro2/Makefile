@@ -71,11 +71,11 @@ testMyDb:
 testMyLua: tolua Test.o TestLua.o testMyLua.o
 	$(CC) -o test/testMyLua test/Test.o test/TestLua.o test/testMyLua.o $(CFLAGS)
 Test.o: test/Test.cpp
-	$(CC) test/Test.cpp -o test/Test.o
+	$(CC) test/Test.cpp -c test/Test.o $(CFLAGS) 
 TestLua.o: test/TestLua.cpp 
-	$(CC) test/TestLua.cpp -o test/TestLua.o
+	$(CC) test/TestLua.cpp -c test/TestLua.o $(CFLAGS) 
 testMyLua.o: test/testMyLua.cpp 
-	$(CC) test/testMyLua.cpp -o test/testMyLua.o
+	$(CC) test/testMyLua.cpp -c test/testMyLua.o $(CFLAGS)
 tolua:
 	tolua++ -o test/TestLua.cpp test/Test.pkg
 install:
