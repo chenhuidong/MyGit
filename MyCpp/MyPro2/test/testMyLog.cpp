@@ -13,6 +13,6 @@ int main(int argc, char* argv[])
 	MMyLib::UninitLog();
 	*/
 	//cout<< imax<< endl;
-	MMyLib::pLog = NULL;
+	pLog = NULL;
 	return 0;
 }
