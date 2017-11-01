@@ -66,6 +66,8 @@ testMyDateTime:
 	$(CC) test/testMyDateTime.cpp -o test/testMyDateTime -lMyDateTime -lboost_date_time $(CFLAGS)
 testMyConf:
 	$(CC) test/testMyConf.cpp -o test/testMyConf -lMyConf $(CFLAGS)
+testMyDb:
+	$(CC) test/testMyDb.cpp -o test/testMyDb -lMyDb $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH)
 .PHONY:clean
