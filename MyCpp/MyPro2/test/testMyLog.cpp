@@ -9,9 +9,10 @@ int main(int argc, char* argv[])
 
 	InitLog(initFileName);
 	//LOG_WARN("Storm is coming");
-	LOG_INFO("Ready for storm.");
+	//LOG_INFO("Ready for storm.");
 	UninitLog();
 	
-	pLog = NULL;
+	//pLog = NULL;
+	MyLogNull;
 	return 0;
 }
