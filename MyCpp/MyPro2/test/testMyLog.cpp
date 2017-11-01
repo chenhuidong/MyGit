@@ -13,6 +13,6 @@ int main(int argc, char* argv[])
 	UninitLog();
 	
 	pLog = NULL;
-	MyLogNull;
+	//MyLogNull;
 	return 0;
 }
