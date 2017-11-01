@@ -3,6 +3,7 @@
 
 namespace MMyLib
 {
+log4cpp::Category* pLog = NULL;
 
 int InitLog(const char * in_sInitFileName)
 {
@@ -21,5 +22,5 @@ int UninitLog()
 	log4cpp::Category::shutdown();
 	return 0;
 }
-	log4cpp::Category* pLog = NULL;
+
 };

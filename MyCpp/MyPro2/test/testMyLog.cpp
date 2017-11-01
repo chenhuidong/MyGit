@@ -9,10 +9,7 @@ int main(int argc, char* argv[])
 
 	InitLog(initFileName.c_str());
 	//LOG_WARN("Storm is coming");
-	//LOG_INFO("Ready for storm.");
+	LOG_INFO("Ready for storm.");
 	UninitLog();
-	
-	//cout<< imax<< endl;
-	pLog = NULL;
 	return 0;
 }
