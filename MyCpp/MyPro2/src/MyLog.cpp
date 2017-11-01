@@ -21,6 +21,4 @@ int UninitLog()
 	log4cpp::Category::shutdown();
 	return 0;
 }
-
-	log4cpp::Category* pLog = NULL;
 };
