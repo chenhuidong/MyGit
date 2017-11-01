@@ -34,7 +34,7 @@ libMyException.so: MyException.o
 MyException.o: src/MyException.cpp
 	$(CC) -c src/MyException.cpp -o src/MyException.o $(CFLAGS) $(CFLAGSEX)
 libMyLua.so: MyLua.o
-	$(CC) src/MyLua.o -o src/libMyLua.so $(CFLAGSEX)
+	$(CC) src/MyLua.o -o src/libMyLua.so -ltolua++ -llua $(CFLAGSEX)
 MyLua.o: src/MyLua.cpp
 	$(CC) -c src/MyLua.cpp -o src/MyLua.o $(CFLAGS) $(CFLAGSEX)
 libMyRedis.so: MyRedis.o
@@ -57,7 +57,7 @@ libMyLog.so: MyLog.o
 	$(CC) src/MyLog.o -o src/libMyLog.so -llog4cpp -lpthread $(CFLAGSEX)
 MyLog.o: src/MyLog.cpp
 	$(CC) -c src/MyLog.cpp -o src/MyLog.o $(CFLAGS) $(CFLAGSEX)
-test: testMyLog testMyBaseFunc testMyDateTime testMyConf testMyDb
+test: testMyLog testMyBaseFunc testMyDateTime testMyConf testMyDb testMyLua
 testMyLog: 
 	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog -llog4cpp $(CFLAGS)
 testMyBaseFunc:
@@ -68,8 +68,18 @@ testMyConf:
 	$(CC) test/testMyConf.cpp -o test/testMyConf -lMyConf $(CFLAGS)
 testMyDb:
 	$(CC) test/testMyDb.cpp -o test/testMyDb -lMyDb -lPocoFoundation -lPocoData -lMyException -lMyLog -llog4cpp $(CFLAGS)
+testMyLua: test/Test.o test/TestLua.o test/testMyLua.o
+	$(CC) -o test/testMyLua test/Test.o test/TestLua.o test/testMyLua.o $(CFLAGS)
+Test.o: Test.cpp
+	$(CC) test/Test.cpp test/Test.o
+TestLua.o: test/TestLua.cpp 
+	$(CC) test/TestLua.cpp test/TestLua.o
+testMyLua.o: test/testMyLua.cpp 
+	$(CC) test/testMyLua.cpp -o test/testMyLua.o
+lua:
+	tolua++ -o test/TestLua.cpp test/Test.pkg
 install:
-	cp src/lib*.so $(LIBPATH)
+	cp src/lib*.so $(LIBPATH) 
 .PHONY:clean
 clean:
-	rm -rf src/lib*.so src/*.o
+	rm -rf src/lib*.so src/*.o test/*.o

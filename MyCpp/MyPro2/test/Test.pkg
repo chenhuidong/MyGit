@@ -1,0 +1,13 @@
+#include "Test.h"
+
+class CTest
+{
+    CTest(void);
+    ~CTest(void);
+    
+    void SetA(int _a);
+    int GetA();
+
+    void SetB(std::string _b);
+    std::string GetB();
+};
