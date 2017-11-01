@@ -68,7 +68,7 @@ testMyConf:
 	$(CC) test/testMyConf.cpp -o test/testMyConf -lMyConf $(CFLAGS)
 testMyDb:
 	$(CC) test/testMyDb.cpp -o test/testMyDb -lMyDb -lPocoFoundation -lPocoData -lMyException -lMyLog -llog4cpp $(CFLAGS)
-testMyLua: tolua test/Test.o test/TestLua.o test/testMyLua.o
+testMyLua: tolua Test.o TestLua.o testMyLua.o
 	$(CC) -o test/testMyLua test/Test.o test/TestLua.o test/testMyLua.o $(CFLAGS)
 Test.o: test/Test.cpp
 	$(CC) test/Test.cpp -o test/Test.o
