@@ -2,7 +2,7 @@
 #include "MyLog.h"
 namespace MMyLib
 {
-int InitLog(const char * in_sInitFileName = NULL)
+int InitLog(const char * in_sInitFileName)
 {
 	std::string t_sInitFileName="";
 	if(!in_sInitFileName)
