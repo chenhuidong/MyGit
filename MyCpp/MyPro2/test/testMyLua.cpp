@@ -1,5 +1,6 @@
 #include "MyLua.h"
 #include "./Test.h"
+#include "MyLog.h"
 using namespace MMyLib;
 
 int  tolua_Test_open (lua_State* tolua_S);
