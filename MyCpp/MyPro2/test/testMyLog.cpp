@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 	//LOG_INFO("Ready for storm.");
 	UninitLog();
 	
-	pLog = NULL;
+	MMyLib::pLog = NULL;
 	//MyLogNull;
 	return 0;
 }
