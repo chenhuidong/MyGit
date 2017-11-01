@@ -7,11 +7,10 @@
 
 namespace MMyLib
 {
-	//#define LOG_INFO(format, ...)  pLog->info(format, ##__VA_ARGS__)
+	#define LOG_INFO(format, ...)  pLog->info(format, ##__VA_ARGS__)
 	//#define LOG_WARN MMyLib::pLog->warn
 	//#define LOG_ERROR MMyLib::pLog->error
 	//#define LOG_FATAL MMyLib::pLog->fatal
- 	#define MyLogNull pLog = NULL
 
 	int InitLog(const char * in_sInitFileName);
 	int UninitLog();
