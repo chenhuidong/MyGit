@@ -70,10 +70,10 @@ testMyDb:
 	$(CC) test/testMyDb.cpp -o test/testMyDb -lMyDb -lPocoFoundation -lPocoData -lMyException -lMyLog -llog4cpp $(CFLAGS)
 testMyLua: test/Test.o test/TestLua.o test/testMyLua.o
 	$(CC) -o test/testMyLua test/Test.o test/TestLua.o test/testMyLua.o $(CFLAGS)
-Test.o: Test.cpp
-	$(CC) test/Test.cpp test/Test.o
+Test.o: test/Test.cpp
+	$(CC) test/Test.cpp -o test/Test.o
 TestLua.o: test/TestLua.cpp 
-	$(CC) test/TestLua.cpp test/TestLua.o
+	$(CC) test/TestLua.cpp -o test/TestLua.o
 testMyLua.o: test/testMyLua.cpp 
 	$(CC) test/testMyLua.cpp -o test/testMyLua.o
 lua:
