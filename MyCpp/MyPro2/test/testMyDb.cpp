@@ -6,7 +6,7 @@ int main(int argc, char** argv)
 	std::string initFileName = "MyLog.properties";
 	InitLog(initFileName.c_str());
 	MMyLib::MyDb t_oMyDb;
-	t_oMyDb.Initialize((MMyLib::MyDb::DbType)1, "testMyDb.db");
+	t_oMyDb.Initialize((MMyLib::MyDb::DbType)0, "testMyDb.db");
 	t_oMyDb.Uninitialize();
 	UninitLog();
 	return 0;
