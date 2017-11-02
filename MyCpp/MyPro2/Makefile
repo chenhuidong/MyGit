@@ -25,6 +25,8 @@ MyThread.o: src/MyThread.cpp
 	$(CC) -c src/MyThread.cpp -o src/MyThread.o $(CFLAGS) $(CFLAGSEX)
 libMySharedLibrary.so: MySharedLibrary.o testMySharedLibraryProvider.o
 	$(CC) src/MySharedLibrary.o src/testMySharedLibraryProvider.o -o src/libMySharedLibrary.so -lMyException -lMyLog -lPocoFoundation $(CFLAGSEX)
+libMySharedLibraryProvider.so: testMySharedLibraryProvider.o
+	$(CC) src/testMySharedLibraryProvider.o -o test/libMySharedLibraryProvider.so -lMyLog $(CFLAGSEX)
 testMySharedLibraryProvider.o: src/testMySharedLibraryProvider.cpp
 	$(CC) -c src/testMySharedLibraryProvider.cpp -o src/testMySharedLibraryProvider.o $(CFLAGS) $(CFLAGSEX)
 MySharedLibrary.o: src/MySharedLibrary.cpp src/testMySharedLibraryProvider.cpp
