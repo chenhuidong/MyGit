@@ -57,7 +57,7 @@ libMyLog.so: MyLog.o
 	$(CC) src/MyLog.o -o src/libMyLog.so -llog4cpp -lpthread $(CFLAGSEX)
 MyLog.o: src/MyLog.cpp
 	$(CC) -c src/MyLog.cpp -o src/MyLog.o $(CFLAGS) $(CFLAGSEX)
-test: testMyLog testMyBaseFunc testMyDateTime testMyConf testMyDb testMyLua
+test: testMyLog testMyBaseFunc testMyDateTime testMyConf testMyDb testMyLua testMyRedis
 testMyLog: 
 	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog -llog4cpp $(CFLAGS)
 testMyBaseFunc:
