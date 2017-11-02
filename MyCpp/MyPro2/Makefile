@@ -85,7 +85,7 @@ testMyRedis:
 testMySharedLibrary: libMySharedLibraryProvider.so 
 	$(CC) test/testMySharedLibrary.cpp -o test/testMySharedLibrary -lMySharedLibrary -lMyLog -llog4cpp $(CFLAGS)
 testMyThread:
-	$(CC) test/testMyThread.cpp -o test/testMyThread -lMyThread -lboost_thread-mt $(CFLAGS)
+	$(CC) test/testMyThread.cpp -o test/testMyThread -lMyThread -lboost_system -lboost_thread-mt $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH) 
 .PHONY:clean
