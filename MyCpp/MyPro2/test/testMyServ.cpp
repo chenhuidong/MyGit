@@ -8,7 +8,7 @@ int main(int argc, char** argv)
 	{
 		std::string initFileName = "MyLog.properties";
 		InitLog(initFileName.c_str());
-		LOG_INFO<< "server start."<< endl;
+		LOG_INFO("server start.");
 		io_service ios;
 
 		MMyLib::MyServer serv(ios);
