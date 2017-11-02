@@ -69,7 +69,7 @@ testMyConf:
 testMyDb:
 	$(CC) test/testMyDb.cpp -o test/testMyDb -lMyDb -lPocoFoundation -lPocoData -lMyException -lMyLog -llog4cpp $(CFLAGS)
 testMyLua: Test.o TestLua.o testMyLua.o
-	$(CC) -o test/testMyLua test/Test.o test/TestLua.o test/testMyLua.o -lMyLog -llog4cpp $(CFLAGS)
+	$(CC) -o test/testMyLua test/Test.o test/TestLua.o test/testMyLua.o -lMyLog -llog4cpp -ltolua++ -llua $(CFLAGS)
 Test.o: test/Test.cpp
 	$(CC) -c test/Test.cpp -o test/Test.o $(CFLAGS) 
 TestLua.o: test/TestLua.cpp 
