@@ -83,7 +83,7 @@ lua:
 testMyRedis:
 	$(CC) test/testMyRedis.cpp -o test/testMyRedis -lMyRedis -lredis3m $(CFLAGS)
 testMySharedLibrary: libMySharedLibraryProvider.so 
-	$(CC) test/testMySharedLibrary.cpp -o test/testMySharedLibrary -lMySharedLibrary $(CFLAGS)
+	$(CC) test/testMySharedLibrary.cpp -o test/testMySharedLibrary -lMySharedLibrary -lMyLog -llog4cpp $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH) 
 .PHONY:clean
