@@ -59,7 +59,7 @@ libMyLog.so: MyLog.o
 	$(CC) src/MyLog.o -o src/libMyLog.so -llog4cpp -lpthread $(CFLAGSEX)
 MyLog.o: src/MyLog.cpp
 	$(CC) -c src/MyLog.cpp -o src/MyLog.o $(CFLAGS) $(CFLAGSEX)
-test: testMyLog testMyBaseFunc testMyDateTime testMyConf testMyDb testMyLua testMyRedis testMySharedLibrary testMyThread
+test: testMyLog testMyBaseFunc testMyDateTime testMyConf testMyDb testMyLua testMyRedis testMySharedLibrary testMyThread testMyServ
 testMyLog: 
 	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog -llog4cpp $(CFLAGS)
 testMyBaseFunc:
@@ -86,6 +86,10 @@ testMySharedLibrary: libMySharedLibraryProvider.so
 	$(CC) test/testMySharedLibrary.cpp -o test/testMySharedLibrary -lMySharedLibrary -lMyLog -llog4cpp $(CFLAGS)
 testMyThread:
 	$(CC) test/testMyThread.cpp -o test/testMyThread -lMyThread -lboost_system -lboost_thread-mt $(CFLAGS)
+testMyServ:
+	$(CC) -o testMyServ test/testMyServ.cpp test/student.pb.cc $(CFLAGS)
+pb:
+	protoc --cpp_out=./test  test/student.proto
 install:
 	cp src/lib*.so $(LIBPATH) 
 .PHONY:clean
