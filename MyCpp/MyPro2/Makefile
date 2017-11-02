@@ -59,7 +59,7 @@ libMyLog.so: MyLog.o
 	$(CC) src/MyLog.o -o src/libMyLog.so -llog4cpp -lpthread $(CFLAGSEX)
 MyLog.o: src/MyLog.cpp
 	$(CC) -c src/MyLog.cpp -o src/MyLog.o $(CFLAGS) $(CFLAGSEX)
-test: testMyLog testMyBaseFunc testMyDateTime testMyConf testMyDb testMyLua testMyRedis
+test: testMyLog testMyBaseFunc testMyDateTime testMyConf testMyDb testMyLua testMyRedis testMySharedLibrary
 testMyLog: 
 	$(CC) test/testMyLog.cpp -o test/testMyLog -lMyLog -llog4cpp $(CFLAGS)
 testMyBaseFunc:
@@ -82,6 +82,8 @@ lua:
 	tolua++ -o test/TestLua.cpp test/Test.pkg
 testMyRedis:
 	$(CC) test/testMyRedis.cpp -o test/testMyRedis -lMyRedis -lredis3m $(CFLAGS)
+testMySharedLibrary: libMySharedLibraryProvider.so 
+	$(CC) test/testMySharedLibrary.cpp -o test/testMySharedLibrary -lMySharedLibrary $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH) 
 .PHONY:clean
