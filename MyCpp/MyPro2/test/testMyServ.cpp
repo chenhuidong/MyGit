@@ -1,5 +1,6 @@
 #include "MyNet.h"
 #include "MyLog.h"
+using namespace MMyLib;
 
 int main(int argc, char** argv)
 {
