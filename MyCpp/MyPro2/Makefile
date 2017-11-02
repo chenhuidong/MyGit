@@ -87,7 +87,7 @@ testMySharedLibrary: libMySharedLibraryProvider.so
 testMyThread:
 	$(CC) test/testMyThread.cpp -o test/testMyThread -lMyThread -lboost_system -lboost_thread-mt $(CFLAGS)
 testMyServ:
-	$(CC) -o testMyServ test/testMyServ.cpp test/student.pb.cc -lMyNet -lMyLog -llog4cpp $(CFLAGS)
+	$(CC) -o testMyServ test/testMyServ.cpp test/student.pb.cc -lMyNet -lMyLog -llog4cpp -lboost_system  $(CFLAGS)
 pb:
 	protoc --cpp_out=./test  test/student.proto
 install:
