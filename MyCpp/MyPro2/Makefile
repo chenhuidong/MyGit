@@ -78,6 +78,8 @@ testMyLua.o: test/testMyLua.cpp
 	$(CC) -c test/testMyLua.cpp -o test/testMyLua.o $(CFLAGS)
 lua:
 	tolua++ -o test/TestLua.cpp test/Test.pkg
+testMyRedis:
+	$(CC) test/testMyRedis.cpp -o test/testMyRedis -lMyRedis -lredis3m $(CFLAGS)
 install:
 	cp src/lib*.so $(LIBPATH) 
 .PHONY:clean
