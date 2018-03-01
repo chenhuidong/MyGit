@@ -1,4 +1,4 @@
-WORKPATH=/home/chenhuidong/MyTools
+WORKPATH=/home/chenhuidong/MyProject
 LIBPATH=$(WORKPATH)/MyLib
 INCLUDEPATH=$(WORKPATH)/MyInclude
 CC=g++
