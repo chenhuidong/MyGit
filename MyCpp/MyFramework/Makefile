@@ -17,7 +17,7 @@ libMyNet.so: MyNet.o
 MyNet.o: src/MyNet.cpp
 	$(CC) -c src/MyNet.cpp -o src/MyNet.o $(CFLAGS) $(CFLAGSEX)
 libMyDb.so: MyDb.o
-	$(CC) src/MyDb.o -o src/libMyDb.so -lMyLog -lPocoData -lPocoDataSQLite -lPocoDataMySQL -lMyException $(CFLAGSEX)
+	$(CC) src/MyDb.o -o src/libMyDb.so -lMyLog -lPocoData -lPocoDataSQLite -lPocoDataMySQL -lMyException $(CFLAGS) $(CFLAGSEX)
 MyDb.o: src/MyDb.cpp
 	$(CC) -c src/MyDb.cpp -o src/MyDb.o $(CFLAGS) $(CFLAGSEX)
 libMyThread.so: MyThread.o
