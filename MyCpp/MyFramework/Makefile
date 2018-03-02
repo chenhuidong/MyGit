@@ -1,8 +1,9 @@
 WORKPATH=/home/chenhuidong/MyProject
 LIBPATH=$(WORKPATH)/MyLib
 INCLUDEPATH=$(WORKPATH)/MyInclude
+COMPLIEPATH=/home/chenhuidong/MyProject/MyGit/MyCpp/MyFramework/src
 CC=g++
-CFLAGS=-ansi -g -Wall -w -std=c++11 -I$(INCLUDEPATH) -L$(LIBPATH)
+CFLAGS=-ansi -g -Wall -w -std=c++11 -I$(INCLUDEPATH) -L$(LIBPATH) -L$(COMPLIEPATH)
 CFLAGSEX=-fPIC -shared
 all: install_headers libMyLog.so libMyBaseFunc.so libMyDateTime.so libMyConf.so libMyRedis.so libMyLua.so libMyException.so libMySharedLibrary.so libMyThread.so libMyDb.so libMyNet.so libMyTR.so
 install_headers:
