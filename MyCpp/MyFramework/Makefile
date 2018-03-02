@@ -21,7 +21,7 @@ libMyDb.so: MyDb.o
 MyDb.o: src/MyDb.cpp
 	$(CC) -c src/MyDb.cpp -o src/MyDb.o $(CFLAGS) $(CFLAGSEX)
 libMyThread.so: MyThread.o
-	$(CC) src/MyThread.o -o src/libMyThread.so -lboost_thread-mt $(CFLAGSEX)
+	$(CC) src/MyThread.o -o src/libMyThread.so -lboost_thread $(CFLAGSEX)
 MyThread.o: src/MyThread.cpp
 	$(CC) -c src/MyThread.cpp -o src/MyThread.o $(CFLAGS) $(CFLAGSEX)
 libMySharedLibrary.so: MySharedLibrary.o testMySharedLibraryProvider.o
@@ -86,7 +86,7 @@ testMyRedis:
 testMySharedLibrary: libMySharedLibraryProvider.so 
 	$(CC) test/testMySharedLibrary.cpp -o test/testMySharedLibrary -lMySharedLibrary -lMyLog -llog4cpp $(CFLAGS)
 testMyThread:
-	$(CC) test/testMyThread.cpp -o test/testMyThread -lMyThread -lboost_system -lboost_thread-mt $(CFLAGS)
+	$(CC) test/testMyThread.cpp -o test/testMyThread -lMyThread -lboost_system -lboost_thread $(CFLAGS)
 testMyServ:
 	$(CC) -o testMyServ test/testMyServ.cpp test/student.pb.cc -lMyNet -lMyLog -llog4cpp -lboost_system -lprotobuf $(CFLAGS)
 pb:
