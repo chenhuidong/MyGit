@@ -11,4 +11,4 @@ signupback.cgi: MyDb.cpp MyException.cpp SignupBack.cpp
 clean:
 	rm index.cgi signup.cgi signupback.cgi
 install:
-	cp ./*.cgi /var/www/html/cgi-bin
+	cp ./*.cgi /home/chenhuidong/MyProject/MyTools/MyInstall/nginx/html/cgi-bin
