@@ -8,10 +8,14 @@
 <title>菜鸟教程(runoob.com)</title>
 </head>
 <body>
-<h1>使用 GET 方法读取数据</h1>
+<h1>使用 POST 方法读取数据</h1>
 <ul>
 <li><p><b>站点名:</b>
-   <%= request.getParameter("name")%>
+<%
+// 解决中文乱码的问题
+String name = new String((request.getParameter("name")).getBytes("ISO-8859-1"),"UTF-8");
+%>
+   <%=name%>
 </p></li>
 <li><p><b>网址:</b>
    <%= request.getParameter("url")%>
@@ -19,4 +23,3 @@
 </ul>
 </body>
 </html>
-<!-- http://39.106.213.97:8080/WizardLinux/jsp/testGet.jsp?name=123&url=www.window.com -->
