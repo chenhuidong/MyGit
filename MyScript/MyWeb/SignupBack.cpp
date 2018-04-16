@@ -53,8 +53,8 @@ int main(int argc, char* argv[])
             cout<< "hello, "<< t_sUsername<<". you have signed up." << "<br><br>\n"<< endl;
         }
         cout<< "ssh config:"<< "<br>\n"<< endl;
-        cout<< "IP:         124.161.110.68"<< "<br>\n"<< endl;
-        cout<< "PORT:       10302"<< "<br>\n"<< endl;
+        cout<< "IP:         39.106.213.97"<< "<br>\n"<< endl;
+        cout<< "PORT:       22"<< "<br>\n"<< endl;
         cout<< "USERNAME:   "<< t_sUsername<< "<br>\n"<< endl;
         cout<< "PASSWORD is as same as the signed in one."<< "<br>\n"<< endl;
         cout<< "<br>\n"<< endl;
@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
         cout<< "PASSWORD is as same as the signed in one."<< "<br>\n"<< endl;
         cout<< "INSTANCE:   "<< t_sUsername<< "<br>\n"<< endl; 
         cout<< "connect mysql cmd:   mysql -h'127.0.0.1' -uyourusername -pyourpassword -Dyourinstance "<< "<br>\n"<< endl; 
-        cout<< "test port: 54323"<< "<br>\n"<< endl; 
+        cout<< "test port: 3306"<< "<br>\n"<< endl; 
         cout<< "you can bind this port for test."<< "<br>\n"<< endl; 
           
     }while(0);
