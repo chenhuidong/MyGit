@@ -20,11 +20,10 @@ int main(int argc, char* argv[])
 
     do
     {
-        
+        /*
         char t_sUsername[256] = "test1";
         char t_sPassword[256] = "test1";
-        
-        /*
+        */
         char t_sUsername[256] = {0};
         char t_sPassword[256] = {0};
         
@@ -32,8 +31,7 @@ int main(int argc, char* argv[])
         t_iReturn = t_oUserCheck.UserInputCheck(t_sUsername, t_sPassword);
         if(0 != t_iReturn)
             break;
-            
-*/
+
         int t_iUsernameNum = t_oUserCheck.ExistUsername(t_sUsername);
         if(t_iUsernameNum > 0)
         {
