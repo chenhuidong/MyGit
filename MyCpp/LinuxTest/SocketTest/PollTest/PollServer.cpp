@@ -4,12 +4,14 @@
 #include <string.h>
 #include <string>
 #include <sys/socket.h>
-#include <sys/select.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <list>
 #include <signal.h>
+#include <poll.h>
 using namespace std;
+
+#define OPEN_MAX 1024
 
 int g_stop = 0;
 
@@ -20,7 +22,7 @@ void handler(int num) {
 
 int main()
 {
-	signal(SIGINT, handler);
+	signal(SIGINT,  handler);
 	signal(SIGQUIT, handler);
 	signal(SIGTERM, handler);
 
@@ -39,60 +41,59 @@ int main()
 	listen(sfd, 10);
 	printf("listen success.\n");
 
-	int maxfd = sfd;
-	fd_set fset;
-	FD_ZERO(&fset);
-	list<int> flist;
-	flist.push_back(sfd);
+	struct pollfd fds[OPEN_MAX];
 	char buf[10];
-	struct timeval timeout;
+
+	for(int i=0; i<OPEN_MAX; ++i)
+	{
+		fds[i].fd = -1;
+	}
+
+	fds[0].fd = sfd;
+	fds[0].events = POLLIN;
 	
 	while(1)
 	{
-		FD_ZERO(&fset);
-		maxfd = sfd;
-		timeout.tv_sec=5;
-		timeout.tv_usec=0;
-		printf("flist %d.\n", flist.size());
-		for(list<int>::iterator it=flist.begin(); it!=flist.end(); ++it)
-		{
-			FD_SET(*it, &fset);
-			maxfd=maxfd>(*it)?maxfd:(*it);
-		}
-
-		select(maxfd+1, &fset, 0, 0, &timeout);
-
 		if(g_stop) break;
-
-		for(list<int>::iterator it=flist.begin(); it!=flist.end(); ++it)
+		//printf("flist %d.\n", flist.size());
+		poll(fds, OPEN_MAX, 0);
+		for(int i=0; i<OPEN_MAX; ++i)
 		{
-			if(FD_ISSET(*it, &fset))
+			if(g_stop) break;
+			if(fds[i].revents & POLLIN)
 			{
-				if(*it == sfd)
+				if(0==i)
 				{
 					int cfd = accept(sfd, 0, 0);
-					flist.push_back(cfd);
-					maxfd=maxfd>cfd?maxfd:cfd;
-					printf("someone connect %d,%d.\n", cfd, maxfd);
+					for(int i=0; i<OPEN_MAX; ++i)
+					{
+						if(fds[i].fd == -1)
+						{
+							fds[i].fd = cfd;
+							fds[i].events = POLLIN;
+						}
+
+					}
+					printf("someone connect %d.\n", cfd);
 				}
 				else
 				{
-					size = read(*it, buf, 9);
+					size = read(fds[i].fd, buf, 9);
 					if(size > 0)
 					{
 						buf[size] = '\0';
-						printf("%d recv msg: %s.\n", *it, buf);
+						printf("%d recv msg: %s.\n", fds[i].fd, buf);
 					}
 					else if(size == 0)
 					{
-						close(*it);
-						flist.erase(it);
+						close(fds[i].fd);
+						fds[i].fd = -1;
 						break;
 					}
 					else
 					{
-						close(*it);
-						flist.erase(it);
+						close(fds[i].fd);
+						fds[i].fd = -1;
 						printf("read err.\n");
 						break;
 					}
@@ -101,9 +102,10 @@ int main()
 		}
 	}
 
-	for(list<int>::iterator it=flist.begin(); it!=flist.end(); ++it)
+	for(int i=0; i<OPEN_MAX; ++i)
 	{
-		close(*it);
+		if(fds[i].fd != -1)
+			close(fds[i].fd);
 	}
 
 	return 0;
