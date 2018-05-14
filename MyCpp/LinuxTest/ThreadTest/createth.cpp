@@ -2,10 +2,16 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <sched.h>
+/*void call()
+{
+	pthread_exit("Kill");
+	return;
+}
+*/
 
 void * run(void *data)
 {
-	printf("i am thread.\n");
+	printf("i am thread. %s\n", (char *)data);
 	//return (void*)"fdsf";
 	pthread_exit((void*)"world");
 }
@@ -13,7 +19,7 @@ void * run(void *data)
 int main()
 {
 	pthread_t tid;
-	pthread_create(&tid, 0, run, 0);
+	pthread_create(&tid, 0, run, (void *)"jack");
 	//sleep(1);
 	//sched_yield();
 	char* re;
