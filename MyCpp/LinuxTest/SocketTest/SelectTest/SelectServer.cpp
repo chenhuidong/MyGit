@@ -10,6 +10,7 @@
 #include <list>
 #include <signal.h>
 using namespace std;
+//异步阻塞
 
 int g_stop = 0;
 
