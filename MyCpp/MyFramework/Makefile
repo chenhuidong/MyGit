@@ -89,6 +89,8 @@ testMyThread:
 	$(CC) test/testMyThread.cpp -o test/testMyThread -lMyThread -lboost_system -lboost_thread $(CFLAGS)
 testMyServ:
 	$(CC) -o testMyServ test/testMyServ.cpp test/student.pb.cc -lMyNet -lMyLog -llog4cpp -lboost_system -lprotobuf $(CFLAGS)
+testMyStart:
+	$(CC) -g -o MyStart/MyStart MyStart/MyStart.cpp -lMyDb -lPocoData -lPocoFoundation -lMyLog -llog4cpp $(CFLAGS)
 pb:
 	protoc --cpp_out=./test  test/student.proto
 install:

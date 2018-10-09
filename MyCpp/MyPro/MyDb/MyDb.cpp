@@ -33,6 +33,7 @@ int MMyLib::MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
 int MMyLib::MyDb::Uninitialize()
 {
     // delete a session
+    LOG_INFO<< "Uninitialize db.";
     delete m_pSession;
     m_pSession = NULL;
 }
