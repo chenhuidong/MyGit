@@ -23,3 +23,5 @@ insert into START_PARAMS(TASK_CODE,TASK,STEP_CODE,STEP,PROCESS_NO,CHANNEL_FIELD,
 	values (1, 'MyTest', 2, 'MyTest2', 1, '', 'libMyTest2', 'MyTest2');
 insert into START_PARAMS(TASK_CODE,TASK,STEP_CODE,STEP,PROCESS_NO,CHANNEL_FIELD,LIB_NAME,FUNC_NAME)
 	values (2, 'MyCheck', 1, 'MyCheck', 1, '', 'libMyCheck', 'MyCheck');
+insert into START_PARAMS(TASK_CODE,TASK,STEP_CODE,STEP,PROCESS_NO,CHANNEL_FIELD,LIB_NAME,FUNC_NAME)
+	values (3, 'MyKitty', 1, 'MyKitty', 1, '', '/home/chenhuidong/MyProject/MyGit/MyCpp/MyFramework/test/libMySharedLibraryProvider', 'hellokitty');
