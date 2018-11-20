@@ -6,8 +6,8 @@
 #define SERVPORT 54321
 #define CLTIP "127.0.0.1"
 #define CLTPORT 54321
-#define REDISIP "127.0.0.1"
-#define REDISPORT 6379
+#define REDISIP "172.17.138.176"
+#define REDISPORT 7000
 
 typedef long long int64;
 typedef int int32;

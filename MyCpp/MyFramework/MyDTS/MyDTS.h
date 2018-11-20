@@ -1,10 +1,12 @@
-#ifndef __MY_START_H_
-#define __MY_START_H_
+#ifndef __MY_DTS_H_
+#define __MY_DTS_H_
 
 #include "MyStdAfx.h"
 #include "MyLog.h"
 #include "MyDb.h"
 #include "MySharedLibrary.h"
+#include "MyRedis.h"
+#include "MyBaseFunc.h"
 #include <iostream>
 using namespace MMyLib;
 
@@ -16,7 +18,7 @@ typedef std::vector<task_paramtotal> task_paramtotals;
 
 #define BUFSIZE 256
 
-class MyStart
+class MyDTS
 {
 public:
 	int InitializeAll();

@@ -95,14 +95,59 @@ int MyStart::BeginTask(int in_iTaskCode)
     }
 }
 
+int MyStart::BeginTask(char* in_sTaskName)
+{
+	char sql[BUFSIZE]={0};
+	sprintf(sql,"select TASK_CODE, TASK, STEP_CODE, STEP, PROCESS_NO, CHANNEL_FIELD, LIB_NAME, FUNC_NAME from START_PARAMS where VALID_TAG = '0' and TASK = '%s' order by STEP_CODE", in_sTaskName);
+	m_oMyDb.ExecuteSQL(sql, m_oTaskParamTotals);
+	/*for (task_paramtotals::const_iterator it = m_oTaskParamTotals.begin(); it != m_oTaskParamTotals.end(); ++it)
+    {
+    	std::cout <<"                                        ";
+        std::cout << it->get<0>() 
+            <<" | " << it->get<1>() 
+            <<" | " << it->get<2>()
+            <<" | " << it->get<3>()
+            <<" | " << it->get<4>()
+            <<" | " << it->get<5>()
+            <<" | " << it->get<6>()
+            <<" | " << it->get<7>()
+            << std::endl;
+    }*/
+
+    for (task_paramtotals::const_iterator it = m_oTaskParamTotals.begin(); it != m_oTaskParamTotals.end(); ++it)
+    {
+    	int t_iStepCode = it->get<2>();
+    	string t_sStep = it->get<3>();
+        string t_sLibName = it->get<6>();
+        string t_sFuncName = it->get<7>();
+        std::cout <<"                                        ";
+        cout<< "begin step "
+        	<< t_iStepCode<< ". "
+        	<< t_sStep<< " "
+        	<< t_sLibName<< " "
+        	<< t_sFuncName << std::endl;
+        LOG_INFO("begin step %d %s %s %s", t_iStepCode, t_sStep.c_str(), t_sLibName.c_str(), t_sFuncName.c_str());
+        IMySharedLibrary t_oProvider(t_sLibName);
+		t_oProvider.ExecFunc(t_sFuncName);
+    }
+}
+
 int main(int argc, char** argv)
 {	
 	MyStart t_oMyStart;
 	t_oMyStart.InitializeAll();
-	LOG_INFO("begin.");
-	int t_iInput = t_oMyStart.ChooseTask();
+	LOG_INFO("begin. %d %s", argc, argv[1]);
+	if(1==argc)
+	{
+		int t_iInput = t_oMyStart.ChooseTask();
 
-	t_oMyStart.BeginTask(t_iInput);
+		t_oMyStart.BeginTask(t_iInput);
+	} else if (2==argc)
+	{
+		char * t_sTaskName=argv[1];
+		t_oMyStart.BeginTask(t_sTaskName);
+	}
+
 	LOG_INFO("end.");
 	t_oMyStart.UninitializeAll();
 }
