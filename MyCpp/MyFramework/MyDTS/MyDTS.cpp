@@ -6,6 +6,7 @@ int MyDTS::InitializeAll()
 	InitLog(initFileName.c_str());
 	LOG_INFO("initialize all begin.");
 	m_oMyDb.Initialize((MMyLib::MyDb::DbType)0, "testMyDb.db");
+    m_oMyRedis.InitMyRedis("172.17.138.176:7000");
 	LOG_INFO("initialize all end.");
 }
 
@@ -52,13 +53,15 @@ int MyDTS::BeginTask(int in_iTaskCode)
         	<< t_sFuncName << std::endl;
         LOG_INFO("begin step %d %s %s %s", t_iStepCode, t_sStep.c_str(), t_sLibName.c_str(), t_sFuncName.c_str());
         
-        MMyLib::g_pRedisConn->run(command("auth")<< "443420");
+        //MMyLib::g_pRedisConn->run(command("auth")<< "443420");
         string t_sKey = "";
         t_sKey += "START_PARAMS" + itoa(t_iStepCode);
-        reply t_oReply = MMyLib::g_pRedisConn->run(command("hset")<< t_sKey<< "STEP_CODE"<< t_iStepCode);
+        m_oMyRedis.m_oMyRedisString.set("stu_1234567","chenhuidong");
+        //m_oMyRedis.m_oMyRedisHash.hset("stu_1234567","name","chenhuidong");
+        //reply t_oReply = MMyLib::g_pRedisConn->run(command("hset")<< t_sKey<< "STEP_CODE"<< t_iStepCode);
         //MMyLib::g_pRedisConn->run(command("hset")<< t_sKey<< "STEP"<< t_sStep);
         //reply t_oReply = MMyLib::g_pRedisConn->run(command("hget") << t_sKey<< "STEP_CODE");
-        std::cout << "step_code1 is: " << t_oReply.str() << std::endl;
+        //std::cout << "step_code1 is: " << t_oReply.str() << std::endl;
     }
 }
 
@@ -66,7 +69,8 @@ int main(int argc, char** argv)
 {	
 	MyDTS t_oMyDTS;
 	t_oMyDTS.InitializeAll();
-	LOG_INFO("begin. %d %s", argc, argv[1]);
+    LOG_INFO("begin.");
+	//LOG_INFO("begin. %d %s", argc, argv[1]);
 
 	t_oMyDTS.BeginTask(1);
 

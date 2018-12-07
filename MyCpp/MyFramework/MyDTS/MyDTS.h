@@ -29,6 +29,7 @@ public:
 
 private:
 	MMyLib::MyDb m_oMyDb;
+	MMyLib::IMyRedis m_oMyRedis;
 	task_params m_oTaskParams;
 	task_paramtotals m_oTaskParamTotals;
 //private:
