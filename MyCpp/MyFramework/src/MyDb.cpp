@@ -1,9 +1,9 @@
 #include "MyDb.h"
 
-int MMyLib::MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
+int MMyLib::IMyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
 {
     // create a session
-    if(MyDb::SQLite == in_eDbType)
+    if(IMyDb::SQLite == in_eDbType)
     {
         // register SQLite connector
         LOG_INFO("initialize sqlite begin.\n");
@@ -12,7 +12,7 @@ int MMyLib::MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
         m_pSession = new Session("SQLite", in_sDbName);
         LOG_INFO("initialize sqlite end.\n");
     }
-    else if(MyDb::MySQL == in_eDbType)
+    else if(IMyDb::MySQL == in_eDbType)
     {
         LOG_INFO("initialize mysql begin.\n");
         Poco::Data::MySQL::Connector::registerConnector();
@@ -30,7 +30,7 @@ int MMyLib::MyDb::Initialize(DbType in_eDbType, const char* in_sDbName)
     return 0;
 }
 
-int MMyLib::MyDb::Uninitialize()
+int MMyLib::IMyDb::Uninitialize()
 {
     // delete a session
     LOG_INFO("Uninitialize.\n");
@@ -38,7 +38,7 @@ int MMyLib::MyDb::Uninitialize()
     m_pSession = NULL;
 }
 
-Session* MMyLib::MyDb::GetSession()
+Session* MMyLib::IMyDb::GetSession()
 {
 	return m_pSession;
 }

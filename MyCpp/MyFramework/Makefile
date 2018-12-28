@@ -92,7 +92,7 @@ testMyServ:
 testMyStart:
 	$(CC) -g -o MyStart/MyStart MyStart/MyStart.cpp -lMyDb -lPocoData -lPocoFoundation -lMyLog -llog4cpp -lMySharedLibrary $(CFLAGS)
 testMyDTS:
-	$(CC) -g -o MyDTS/MyDTS MyDTS/MyDTS.cpp -lMyDb -lPocoData -lPocoFoundation -lMyLog -llog4cpp -lMySharedLibrary -lMyRedis -lredis3m -lacl -lMyBaseFunc $(CFLAGS)
+	$(CC) -g -o MyDTS/MyDTS MyDTS/MyDTS.cpp -lMyDb -lPocoData -lPocoFoundation -lMyLog -llog4cpp -lMySharedLibrary -lMyRedis -lredis3m -lacl -lMyBaseFunc -lMyConf $(CFLAGS)
 testAcl:
 	$(CC) -g -o test/testAcl test/testAcl.cpp -lMyDb -lPocoData -lPocoFoundation -lMyLog -llog4cpp -lMyBaseFunc -lacl $(CFLAGS)
 pb:

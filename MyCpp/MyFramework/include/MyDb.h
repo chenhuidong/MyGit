@@ -19,13 +19,13 @@ using Poco::Data::MySQL::StatementException;
 
 namespace MMyLib
 {
-	class MyDb
+	class IMyDb
 	{
 	public:
 		enum DbType {SQLite, MySQL};
 
-		MyDb():m_pSession(NULL){}
-		virtual ~MyDb(){};
+		IMyDb():m_pSession(NULL){}
+		virtual ~IMyDb(){};
 		int Initialize(DbType in_eDbType, const char* in_sDbName);
 		int Uninitialize();
 		Session* GetSession();
@@ -33,7 +33,6 @@ namespace MMyLib
 	template <class T>
 		int ExecuteSQL(const char* in_sSQL, T& out_oT)
 		{
-
 			LOG_INFO(in_sSQL);
 			out_oT.clear();
 			Statement t_oStatement(*m_pSession);

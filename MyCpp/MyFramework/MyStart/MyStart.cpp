@@ -5,7 +5,7 @@ int MyStart::InitializeAll()
 	std::string initFileName = "MyLog.properties";
 	InitLog(initFileName.c_str());
 	LOG_INFO("initialize all begin.");
-	m_oMyDb.Initialize((MMyLib::MyDb::DbType)0, "testMyDb.db");
+	m_oMyDb.Initialize((MMyLib::IMyDb::DbType)0, "testMyDb.db");
 	LOG_INFO("initialize all end.");
 }
 
