@@ -56,7 +56,7 @@ int64 MMyLib::atol64(const char * szStr)
 	return ( bNegative ) ? -n : n;
 }
 
-string MMyLib::toUpper(string& in_str)
+string& MMyLib::toUpper(string& in_str)
 {
 	int32 i = in_str.size();
 	string::iterator itr = in_str.begin();
@@ -68,7 +68,7 @@ string MMyLib::toUpper(string& in_str)
 	return in_str;
 }
 
-string MMyLib::toLower(string& in_str)
+string& MMyLib::toLower(string& in_str)
 {
 	int32 i = in_str.size();
 	string::iterator itr = in_str.begin();
@@ -78,4 +78,21 @@ string MMyLib::toLower(string& in_str)
 		itr++;
 	}
 	return in_str;
+}
+
+string& MMyLib::ltrim(string &str) {
+    string::iterator p = find_if(str.begin(), str.end(), not1(ptr_fun<int, int>(isspace)));
+    str.erase(str.begin(), p);
+    return str;
+}
+ 
+string& MMyLib::rtrim(string &str) {
+    string::reverse_iterator p = find_if(str.rbegin(), str.rend(), not1(ptr_fun<int , int>(isspace)));
+    str.erase(p.base(), str.end());
+    return str;
+}
+ 
+string& MMyLib::trim(string &str) {
+    ltrim(rtrim(str));
+    return str;
 }

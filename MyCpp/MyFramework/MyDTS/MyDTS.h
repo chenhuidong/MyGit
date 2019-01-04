@@ -11,11 +11,11 @@
 #include <iostream>
 using namespace MMyLib;
 
-typedef Poco::Tuple<int, std::string> task_param;
-typedef std::vector<task_param> task_params;
+//typedef Poco::Tuple<int, std::string> task_param;
+//typedef std::vector<task_param> task_params;
 
-typedef Poco::Tuple<int, std::string, int, std::string, int, std::string, std::string, std::string, std::string> task_paramtotal;
-typedef std::vector<task_paramtotal> task_paramtotals;
+//typedef Poco::Tuple<int, std::string, int, std::string, int, std::string, std::string, std::string, std::string> task_paramtotal;
+//typedef std::vector<task_paramtotal> task_paramtotals;
 
 #define BUFSIZE 256
 #define DEBUG 1
@@ -29,15 +29,21 @@ public:
 	std::vector<string> m_oColumns;		
 };
 
+typedef Poco::Tuple<std::string, std::string, std::string> t_user1;
+typedef std::vector<t_user1> t_user1s;
+
 class MyDTS
 {
 public:
 	int InitializeAll();
 	int UninitializeAll();
 	int AnalyseConf(string in_sConfName);
-	int ImportAllTables();
 	//int AnalyseColumn(string in_sSql, std::vector<std::string> & out_oColunm);
 	int AnalyseColumn(MyTable &in_oMyTable);
+	int ImportAllTables();
+
+	template <typename T>
+	int ImportTable(MyTable& in_oMyTable, std::vector<T>& mytable);
 
 private:
 	MMyLib::IMyDb 	 	m_oMyDb;
@@ -45,7 +51,8 @@ private:
 	MMyLib::IMyConf  	m_oMyConf;
 	//std::vector<string>	m_oSqls;
 	std::vector<MyTable> m_oTables;
-	task_params 		m_oTaskParams;
-	task_paramtotals 	m_oTaskParamTotals;
+	//task_params 		m_oTaskParams;
+	//task_paramtotals 	m_oTaskParamTotals;
+	//t_user1s			m_ot_user1s;
 };
 #endif
