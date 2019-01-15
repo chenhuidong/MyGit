@@ -18,54 +18,6 @@ int MyDTS::UninitializeAll()
 	LOG_INFO("uninitialize all end.");
 }
 
-
-/*
-int MyDTS::BeginTask(int in_iTaskCode)
-{
-	char sql[BUFSIZE]={0};
-	sprintf(sql,"select TASK_CODE, TASK, STEP_CODE, STEP, PROCESS_NO, CHANNEL_FIELD, LIB_NAME, FUNC_NAME from START_PARAMS where VALID_TAG = '0' and TASK_CODE = %d order by STEP_CODE", in_iTaskCode);
-	m_oMyDb.ExecuteSQL(sql, m_oTaskParamTotals);
-*/	/*for (task_paramtotals::const_iterator it = m_oTaskParamTotals.begin(); it != m_oTaskParamTotals.end(); ++it)
-    {
-    	std::cout <<"                                        ";
-        std::cout << it->get<0>() 
-            <<" | " << it->get<1>() 
-            <<" | " << it->get<2>()
-            <<" | " << it->get<3>()
-            <<" | " << it->get<4>()
-            <<" | " << it->get<5>()
-            <<" | " << it->get<6>()
-            <<" | " << it->get<7>()
-            << std::endl;
-    }*/
-
-/*    for (task_paramtotals::const_iterator it = m_oTaskParamTotals.begin(); it != m_oTaskParamTotals.end(); ++it)
-    {
-    	int t_iStepCode = it->get<2>();
-    	string t_sStep = it->get<3>();
-        string t_sLibName = it->get<6>();
-        string t_sFuncName = it->get<7>();
-        std::cout <<"                                        ";
-        cout<< "begin step "
-        	<< t_iStepCode<< ". "
-        	<< t_sStep<< " "
-        	<< t_sLibName<< " "
-        	<< t_sFuncName << std::endl;
-        LOG_INFO("begin step %d %s %s %s", t_iStepCode, t_sStep.c_str(), t_sLibName.c_str(), t_sFuncName.c_str());
-        
-        //MMyLib::g_pRedisConn->run(command("auth")<< "443420");
-        string t_sKey = "";
-        t_sKey += "START_PARAMS" + itoa(t_iStepCode);
-        m_oMyRedis.m_oMyRedisString.set("stu_1234567","chenhuidong");
-        //m_oMyRedis.m_oMyRedisHash.hset("stu_1234567","name","chenhuidong");
-        //reply t_oReply = MMyLib::g_pRedisConn->run(command("hset")<< t_sKey<< "STEP_CODE"<< t_iStepCode);
-        //MMyLib::g_pRedisConn->run(command("hset")<< t_sKey<< "STEP"<< t_sStep);
-        //reply t_oReply = MMyLib::g_pRedisConn->run(command("hget") << t_sKey<< "STEP_CODE");
-        //std::cout << "step_code1 is: " << t_oReply.str() << std::endl;
-    }
-}
-*/
-
 int MyDTS::AnalyseConf(string in_sConfName)
 {
     ptree* t_pPt = m_oMyConf.ReadFile(IMyConf::XML, in_sConfName.c_str());
@@ -75,24 +27,21 @@ int MyDTS::AnalyseConf(string in_sConfName)
         MyTable t_oMyTable;
         if(DEBUG)
         {
-            //cout<< "key_pre:"<< pos->second.get<string>("<xmlattr>.name")<< endl;
-            //cout<< pos->second.get<string>("<xmlattr>.key")<< endl;
-            //cout<< "sql:"<<pos->second.get_child("sql").data()<< endl;
+            cout<< "key_pre:"<< pos->second.get<string>("<xmlattr>.name")<< endl;
+            cout<< pos->second.get<string>("<xmlattr>.key")<< endl;
+            cout<< "sql:"<<pos->second.get_child("sql").data()<< endl;
         }
         t_oMyTable.m_sKeyPre = pos->second.get<string>("<xmlattr>.name");
         t_oMyTable.m_sSql = pos->second.get_child("sql").data();
         m_oTables.push_back(t_oMyTable); 
-        //m_oSqls.push_back(pos->second.data());
     }
-
     return 0;
 }
 
 int MyDTS::ImportAllTables()
 {
-    for(std::vector<MyTable>::iterator it=m_oTables.begin(); it!=m_oTables.end(); it++)
+    for(std::vector<MyTable>::iterator it=m_oTables.begin(); it!=m_oTables.end(); ++it)
     {
-        //std::vector<std::string> t_oColumn;
         if(AnalyseColumn(*it)==-1)
             return -1;
 
@@ -110,18 +59,56 @@ int MyDTS::ImportAllTables()
         cout<< endl;
         }
 
-        t_user1s t_ot_user1s;
-        ImportTable<t_user1>(*it, t_ot_user1s);
-
-        //std::string t_sKey = t_oColumn[0];
-        // hset tablename.key column value
-        //hset it->m_sKeyPre+
-               
+        if(it->m_sKeyPre=="t_user1")
+        {
+            CTUSERS1 t_oCTUSERS1;
+            //t_oCTUSERS1.m_sKeyPre = it->m_sKeyPre;
+            //t_oCTUSERS1.m_sSql = it->m_sSql;
+            //t_oCTUSERS1.m_sTableName = it->m_sTableName;
+            //copy(it->m_oColumns.begin(), it->m_oColumns.end(), back_i//nserter(t_oCTUSERS1.m_oColumns));
+            ImportTable(*it, t_oCTUSERS1);
+        }
+        else if(it->m_sKeyPre=="t_user2")
+        {
+            CTUSERS2 t_oCTUSERS2;
+            ImportTable(*it, t_oCTUSERS2);
+        }
+        else
+        {
+            
+        }
     }
     return 0;
 }
 
+template <typename T>
+int MyDTS::ImportTable(MyTable &in_oMyTable, T& t)
+{
+    t.m_sKeyPre = in_oMyTable.m_sKeyPre;
+    t.m_sSql = in_oMyTable.m_sSql;
+    t.m_sTableName = in_oMyTable.m_sTableName;
+    copy(in_oMyTable.m_oColumns.begin(), in_oMyTable.m_oColumns.end(), back_inserter(t.m_oColumns));
 
+    char sql[BUFSIZE]={0};
+    sprintf(sql, "%s", t.m_sSql.c_str());
+    m_oMyDb.ExecuteSQL(sql, t.m_oVals);
+
+    t.getKeyValues();
+
+    string key = t.m_sKey;
+    for(map<string, string>::iterator it = t.m_oFieldValues.begin();
+        it!=t.m_oFieldValues.end(); ++it)
+    {
+        string field = it->first;
+        string value = it->second;
+        //if(DEBUG)
+        //    cout<< "hset "+ key<< " "<< field<< " "<< value<< endl;
+        LOG_INFO("hset %s %s %s", key.c_str(), field.c_str(), value.c_str());
+        m_oMyRedis.m_oMyRedisHash.hset(key.c_str(), field.c_str(), value.c_str());
+    }
+}
+
+/*
 template <typename T>
 int MyDTS::ImportTable(MyTable& in_oMyTable, std::vector<T>& mytable)
 {
@@ -136,17 +123,20 @@ int MyDTS::ImportTable(MyTable& in_oMyTable, std::vector<T>& mytable)
             <<" | " << (it->template get<2>())
             << std::endl;
 
+        
         //hset tablename.key column value
         string key = in_oMyTable.m_sKeyPre + (it->template get<0>());
+        //int j = 0;
         for(int i=0; i<in_oMyTable.m_oColumns.size();++i)
         {
             string field = in_oMyTable.m_oColumns[i];
-            const int j = i+1;
-            string value = (it->template get<j>());
+            int j = 0;
+            string value = it->template get<j>();
             cout<< "hset "+ key<< " "<< field<< " "<< value<< endl;
-        }  
+        }
+          
     }
-}
+}*/
 
 int MyDTS::AnalyseColumn(MyTable &in_oMyTable)
 {
@@ -176,14 +166,13 @@ int MyDTS::AnalyseColumn(MyTable &in_oMyTable)
     string::size_type t_iEnd = t_iPos2;
     string t_sColumns = in_sSql.substr(t_iBegin, t_iEnd-t_iBegin);
     t_sColumns = MMyLib::trim(t_sColumns);
-    cout<< t_sColumns << endl;
 
     char *t_pToken=strtok((char*)t_sColumns.c_str(),","); 
+    t_pToken=strtok(NULL,",");
     while(t_pToken!=NULL) 
     {
         std::string t_sColumn = t_pToken;
         //cout<<t_pToken<<'\n';
-        //out_oColunm.push_back(t_pToken);
         in_oMyTable.m_oColumns.push_back(MMyLib::trim(t_sColumn));
         t_pToken=strtok(NULL,",");
     }

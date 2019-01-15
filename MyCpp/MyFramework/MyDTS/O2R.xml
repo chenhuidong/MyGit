@@ -4,5 +4,8 @@
 		<table name="t_user1">
 			<sql>select user_id, user_id, user_name from t_user</sql>
 		</table>
+		<table name="t_user2">
+			<sql>select user_id||'_'||user_name, user_id, user_name, phone from t_user</sql>
+		</table>
 	</tables>
 </conf>
