@@ -15,7 +15,7 @@
 using namespace MMyLib;
 
 #define BUFSIZE 256
-#define DEBUG 0
+#define DEBUG 1
 
 class MyDTS
 {

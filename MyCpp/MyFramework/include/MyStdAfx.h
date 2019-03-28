@@ -1,23 +1,42 @@
 #ifndef __MY_LIB_MY_STD_AFX_H_
 #define __MY_LIB_MY_STD_AFX_H_
 
-#include <stdlib.h>
-#include <sys/types.h> 
-#include <sys/wait.h> 
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
 #include <fstream>
-#include <list>
-#include <vector>
-#include <map>
-#include <set>
-#include <algorithm>
 #include <string.h>
+#include <stdarg.h>
+
 #include <string>
+#include <vector>
+#include <list>
+#include <map>
+#include <algorithm>
+
 #include <signal.h>
+#include <pthread.h>
+#include <sys/types.h> 
+#include <sys/wait.h> 
+#include <sys/stat.h>
+#include <sys/statvfs.h>
+
+#include <fcntl.h>
+#include <dirent.h>
+#include <dirent.h>
+#include <regex.h>
+#include <time.h>
+#include <utime.h>
 
 using namespace std;
+
+#include <errno.h>
+extern int errno;
+
+typedef vector<string> VStrings;
+
+
 
 
 

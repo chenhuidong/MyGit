@@ -12,12 +12,15 @@ class CTUSERS2 : public MyTable
 public:
 	int getKeyValues()
 	{
+		m_oKeyRecords.clear();
 		for(std::vector<t_user2>::const_iterator it = m_oVals.begin(); it != m_oVals.end(); ++it)
 	    {	
-	        m_sKey = m_sKeyPre + (it->template get<0>());
+	    	m_oFieldValues.clear();
+	        string t_sKey = m_sKeyPre + (it->template get<0>());
 	        m_oFieldValues.insert(make_pair(m_oColumns[0], it->template get<1>()));
 	        m_oFieldValues.insert(make_pair(m_oColumns[1], it->template get<2>()));
 	        m_oFieldValues.insert(make_pair(m_oColumns[2], it->template get<3>()));
+	        m_oKeyRecords.insert(make_pair(t_sKey, m_oFieldValues));
 	    }
 	}
 	t_user2s m_oVals;

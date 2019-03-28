@@ -27,10 +27,17 @@ namespace MMyLib
 	extern string 	itoa(int32	i);
 	extern string 	itoa(int64	i);
 	extern int64 	atol64(const char * szStr);
+
 	extern string&	toUpper(string& in_str);
 	extern string&	toLower(string&	in_str);
+
 	extern string&	ltrim(string& in_str);
 	extern string& 	rtrim(string& in_str);
 	extern string& 	trim(string& in_str);
+
+	extern void trim_left( char *str);
+	extern void trim_right( char *str);
+	extern void trim_both( char *str);
+	extern void trim_both( AISTD string &str);
 };
 #endif

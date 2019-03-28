@@ -96,3 +96,50 @@ string& MMyLib::trim(string &str) {
     ltrim(rtrim(str));
     return str;
 }
+
+void MMyLib::trim_left( char *str)
+{
+	const char c = ' ';
+	if ( !str ) return;
+	
+	if( strlen(str) == 0 ) return;
+	
+	char *ptr = str;
+	
+	while( *ptr == c ) ptr++;
+	
+	if ( str != ptr )
+	{
+		memmove( str, ptr, strlen( ptr ) + 1 );
+	}
+}
+
+void MMyLib::trim_right( char *str)
+{
+	const char c = ' ';
+	if ( !str ) return;
+	
+	int ilen = 0;
+	if( (ilen = strlen(str)) == 0 ) return;
+	
+	char *ptr = str + (ilen - 1);
+	
+	while( ptr >= str  && *ptr == c ) ptr--;
+	
+	*(++ptr) = '\0';
+}
+
+void MMyLib::trim_both( AISTD string &str)
+{
+	char szBuffer[10240];
+	memset(szBuffer,0,10240);
+	strcpy(szBuffer,str.c_str());
+	trim_both(szBuffer,' ');
+	str = szBuffer;
+}
+
+void MMyLib::trim_both( char *str)
+{
+	trim_left(str);
+	trim_right(str);
+}
